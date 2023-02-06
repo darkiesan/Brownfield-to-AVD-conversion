@@ -1,0 +1,42 @@
+[
+    {
+        "name": "CIT_INFRA", 
+        "vrfVni": "30001"
+    }, 
+    {
+        "name": "CIT_STORAGE", 
+        "vrfVni": "30002"
+    }, 
+    {
+        "name": "CIT_CONTAINER", 
+        "vrfVni": "30003"
+    }, 
+    {
+        "name": "VDI_STANDARD", 
+        "vrfVni": "30004"
+    }, 
+    {
+        "name": "DMZ", 
+        "vrfVni": "30005"
+    }, 
+    {
+        "name": "ENGINEERING", 
+        "vrfVni": "30006"
+    }, 
+    {
+        "name": "ENGINEERING_DLI", 
+        "vrfVni": "30007"
+    }, 
+    {
+        "name": "ENGINEERING_HIL", 
+        "vrfVni": "30008"
+    }, 
+    {
+        "name": "ENGINEERING_CI-CD", 
+        "vrfVni": "30009"
+    }, 
+    {
+        "name": "DATAINGEST_SE1", 
+        "vrfVni": "30010"
+    }
+]

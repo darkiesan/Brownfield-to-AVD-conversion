@@ -1,0 +1,731 @@
+{
+    "SE1": {
+        "10": {
+            "interface_ip": "10.4.15.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "COREIT", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "1002": {
+            "name": "WAN_NL1_SE1-1"
+        }, 
+        "1003": {
+            "name": "WAN_NL1_SE1-2"
+        }, 
+        "1004": {
+            "name": "WAN_NL1_SE2-1"
+        }, 
+        "1013": {
+            "name": "SE2POD01"
+        }, 
+        "1014": {
+            "name": "SE2POD01_MGMT"
+        }, 
+        "14": {
+            "interface_ip": "10.4.5.1", 
+            "interface_subnet": "24", 
+            "name": "ZTWO_ITSECMID", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "15": {
+            "interface_ip": "10.4.12.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "DLI_NVIDIA_DGX", 
+            "vrf": "ENGINEERING_DLI"
+        }, 
+        "16": {
+            "interface_ip": "10.4.6.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.5.10", 
+                "10.4.15.11"
+            ], 
+            "name": "INFRA_MONITOR", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "17": {
+            "name": "EXT_CGIT_ARISTA_MGMT"
+        }, 
+        "18": {
+            "name": "TELENOR_DMZ"
+        }, 
+        "19": {
+            "name": "MGMT_TELENOR_DMZ"
+        }, 
+        "20": {
+            "interface_ip": "10.4.80.1", 
+            "interface_subnet": "22", 
+            "ip_helper": [
+                "10.4.5.12", 
+                "10.4.5.11"
+            ], 
+            "name": "VDI_CLIENTS", 
+            "vrf": "VDI_STANDARD"
+        }, 
+        "2000": {
+            "ip_helper": "10.4.15.20,10.4.5.11+10.4.5.12", 
+            "name": "ODEN_DATA"
+        }, 
+        "2001": {
+            "interface_ip": "10.4.72.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.5.11"
+            ], 
+            "name": "DATAINGEST_ODEN", 
+            "vrf": "CIT_STORAGE"
+        }, 
+        "21": {
+            "interface_ip": "10.4.16.1", 
+            "interface_subnet": "25", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "CI-CD_BUILD", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "22": {
+            "interface_ip": "10.4.18.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "VDI_STANDARD", 
+            "vrf": "VDI_STANDARD"
+        }, 
+        "23": {
+            "interface_ip": "10.4.16.129", 
+            "interface_subnet": "26", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "CI-CD_FRONT", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "24": {
+            "interface_ip": "10.4.20.1", 
+            "interface_subnet": "26", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "CI-CD_MGMT", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "25": {
+            "interface_ip": "10.4.20.65", 
+            "interface_subnet": "26", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "CI-CD_DEV", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "26": {
+            "interface_ip": "10.4.20.129", 
+            "interface_subnet": "26", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "CI-CD_STAGE", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "27": {
+            "interface_ip": "10.4.20.193", 
+            "interface_subnet": "26", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "CI-CD_PROD", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "29": {
+            "interface_ip": "10.4.16.193", 
+            "interface_subnet": "28", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "SQL_HEARTBEAT", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "30": {
+            "name": "COREIT_SERVICES"
+        }, 
+        "31": {
+            "interface_ip": "10.4.31.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "COREIT_LAB", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "32": {
+            "interface_ip": "10.4.16.209", 
+            "interface_subnet": "28", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "POSTGRESQL", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "320": {
+            "interface_ip": "10.4.17.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "DATAINGEST_SE1", 
+            "vrf": "DATAINGEST_SE1"
+        }, 
+        "34": {
+            "interface_ip": "10.4.21.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "DLI_MGMT", 
+            "vrf": "ENGINEERING_DLI"
+        }, 
+        "35": {
+            "interface_ip": "10.4.22.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "DLI_GENERAL", 
+            "vrf": "ENGINEERING_DLI"
+        }, 
+        "36": {
+            "interface_ip": "10.4.24.1", 
+            "interface_subnet": "23", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "DLI_CONTAINER", 
+            "vrf": "ENGINEERING_DLI"
+        }, 
+        "37": {
+            "interface_ip": "10.4.16.225", 
+            "interface_subnet": "28", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "POSTGRESQL2", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "38": {
+            "interface_ip": "10.4.16.241", 
+            "interface_subnet": "28", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "POSTGRESQL3", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "39": {
+            "interface_ip": "10.4.44.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "PROD_MONGODB", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "40": {
+            "interface_ip": "10.4.34.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "ANSIBLE", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "41": {
+            "interface_ip": "10.4.36.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "CI-CD_BUILD", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "42": {
+            "interface_ip": "10.4.37.1", 
+            "interface_subnet": "25", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "SLURM", 
+            "vrf": "ENGINEERING"
+        }, 
+        "43": {
+            "name": "MGMT_DELL_EM7"
+        }, 
+        "430": {
+            "interface_ip": "10.4.30.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "Satellit1_LHP2", 
+            "vrf": "CIT_STORAGE"
+        }, 
+        "432": {
+            "interface_ip": "10.4.32.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "Satellit1_LHP", 
+            "vrf": "CIT_STORAGE"
+        }, 
+        "433": {
+            "interface_ip": "10.4.33.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "CIT_STORAGE", 
+            "vrf": "CIT_STORAGE"
+        }, 
+        "44": {
+            "ip_helper": "10.4.15.20,10.4.5.11+10.4.5.12", 
+            "name": "DLI_VMOTION"
+        }, 
+        "45": {
+            "interface_ip": "172.16.0.129", 
+            "interface_subnet": "25", 
+            "name": "DMZ_F5_OUTSIDE", 
+            "vrf": "DMZ"
+        }, 
+        "46": {
+            "ip_helper": "10.4.15.20,10.4.5.11+10.4.5.12", 
+            "name": "MGMT_F5_HA"
+        }, 
+        "47": {
+            "interface_ip": "10.4.41.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.5.11"
+            ], 
+            "name": "PROD_CEPH_PUBLIC", 
+            "vrf": "CIT_CONTAINER"
+        }, 
+        "48": {
+            "ip_helper": "10.4.15.20,10.4.5.11+10.4.5.12", 
+            "name": "PROD_CEPH_CLUSTER"
+        }, 
+        "49": {
+            "interface_ip": "10.4.43.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "CIT_STORAGE", 
+            "vrf": "CIT_STORAGE"
+        }, 
+        "5": {
+            "interface_ip": "10.4.13.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "VMKERNEL", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "50": {
+            "interface_ip": "10.4.11.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "DLI_ISCSI", 
+            "vrf": "ENGINEERING_DLI"
+        }, 
+        "51": {
+            "interface_ip": "10.4.55.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "SE1DC_FILESHARE", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "519": {
+            "ip_helper": "10.4.15.20,10.4.5.10+11", 
+            "name": "PROD_LAN_RUSK"
+        }, 
+        "52": {
+            "interface_ip": "10.4.56.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "TEAM_KAMELASA", 
+            "vrf": "ENGINEERING"
+        }, 
+        "53": {
+            "interface_ip": "10.4.23.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "CERTEGO_ARX", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "536": {
+            "ip_helper": "10.4.15.20,10.4.5.11,10.4.5.11+10.4.5.12", 
+            "name": "EXT_IOT"
+        }, 
+        "54": {
+            "interface_ip": "10.4.26.1", 
+            "interface_subnet": "23", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "CI-CD_BUILD", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "55": {
+            "interface_ip": "10.4.28.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "CI-CD_PROD", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "56": {
+            "name": "MTU_9000_POC"
+        }, 
+        "57": {
+            "interface_ip": "10.4.88.1", 
+            "interface_subnet": "21", 
+            "ip_helper": [
+                "10.4.5.11"
+            ], 
+            "name": "PROD_OPENSHIFT_BAREMETAL", 
+            "vrf": "CIT_CONTAINER"
+        }, 
+        "58": {
+            "interface_ip": "10.4.46.1", 
+            "interface_subnet": "27", 
+            "ip_helper": [
+                "10.4.5.11"
+            ], 
+            "name": "PROD_CEPH_HA_PROXY", 
+            "vrf": "CIT_STORAGE"
+        }, 
+        "6": {
+            "interface_ip": "10.4.8.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "VMOTION", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "60": {
+            "interface_ip": "10.4.60.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "VSAN", 
+            "vrf": "CIT_STORAGE"
+        }, 
+        "61": {
+            "interface_ip": "10.4.61.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "SE1_VSAN-PRE-PERF-TEST", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "63": {
+            "interface_ip": "10.4.62.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.5.10", 
+                "10.4.5.11"
+            ], 
+            "name": "SE1_OPENSHIFT_WORKERSUBNET_PROD", 
+            "vrf": "CIT_CONTAINER"
+        }, 
+        "64": {
+            "interface_ip": "10.4.63.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.5.10", 
+                "10.4.5.11"
+            ], 
+            "name": "SE1_OPENSHIFT_WORKERSUBNET_TEST", 
+            "vrf": "CIT_CONTAINER"
+        }, 
+        "65": {
+            "interface_ip": "10.4.64.1", 
+            "interface_subnet": "23", 
+            "ip_helper": [
+                "10.4.5.10", 
+                "10.4.5.11"
+            ], 
+            "name": "SE1_OPENSHIFT_LB_PROD", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "66": {
+            "interface_ip": "10.4.66.1", 
+            "interface_subnet": "23", 
+            "ip_helper": [
+                "10.4.5.10", 
+                "10.4.5.11"
+            ], 
+            "name": "SE1_OPENSHIFT_LB_TEST", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "67": {
+            "interface_ip": "10.4.37.129", 
+            "interface_subnet": "28", 
+            "ip_helper": [
+                "10.4.5.10", 
+                "10.4.15.11"
+            ], 
+            "name": "TEST_POSTGRES_ZENSEACT", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "68": {
+            "interface_ip": "10.4.38.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.5.10", 
+                "10.4.15.11"
+            ], 
+            "name": "POSTGRES_ZENSEACT", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "69": {
+            "interface_ip": "10.4.19.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "TEST", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "7": {
+            "interface_ip": "10.4.9.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "DATADOMAIN", 
+            "vrf": "CIT_STORAGE"
+        }, 
+        "70": {
+            "interface_ip": "10.4.68.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.5.11"
+            ], 
+            "name": "SE1_OPENSHIFT_TEST_WORKERS", 
+            "vrf": "CIT_CONTAINER"
+        }, 
+        "71": {
+            "interface_ip": "10.4.69.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.5.11"
+            ], 
+            "name": "SE1_OPENSHIFT_TEST_SAN_LABB", 
+            "vrf": "CIT_CONTAINER"
+        }, 
+        "72": {
+            "interface_ip": "10.4.39.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.5.11"
+            ], 
+            "name": "SE1_PROD_OPENSHIFT_ZUUL_WORKERS", 
+            "vrf": "CIT_CONTAINER"
+        }, 
+        "73": {
+            "interface_ip": "10.4.74.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.5.11"
+            ], 
+            "name": "SE1_OPENSHIFT_BAREMETAL_POC", 
+            "vrf": "CIT_CONTAINER"
+        }, 
+        "74": {
+            "interface_ip": "10.4.75.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.5.11"
+            ], 
+            "name": "SE1_OPENSHIFT_BAREMETAL_PROVISIONING", 
+            "vrf": "CIT_CONTAINER"
+        }, 
+        "75": {
+            "ip_helper": "10.4.15.20,10.4.5.11+10.4.5.12", 
+            "name": "VDI_LUMINAR"
+        }, 
+        "8": {
+            "interface_ip": "10.4.3.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "COREIT", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "830": {
+            "name": "DMZ_SANDBOX1"
+        }, 
+        "850": {
+            "name": "DMZ_COREIT"
+        }, 
+        "851": {
+            "name": "DMZ_VEONEER"
+        }, 
+        "852": {
+            "name": "DMZ_INTERNET"
+        }, 
+        "853": {
+            "ip_helper": "10.4.15.20,10.4.5.10+11", 
+            "name": "DMZ_AD_TEST"
+        }, 
+        "9": {
+            "interface_ip": "10.4.14.1", 
+            "interface_subnet": "24", 
+            "ip_helper": [
+                "10.4.15.20"
+            ], 
+            "name": "ENGINEERING", 
+            "vrf": "ENGINEERING"
+        }, 
+        "910": {
+            "ip_helper": "10.4.15.20,10.4.5.11+10.4.5.12", 
+            "name": "SE1_CAMPUS_MGMT"
+        }
+    }, 
+    "US1": {
+        "11": {
+            "interface_ip": "10.7.67.1", 
+            "interface_subnet": "24", 
+            "name": "MGMT_VMWARE", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "12": {
+            "interface_ip": "10.7.4.9", 
+            "interface_subnet": "29", 
+            "name": "BACKUP_NAS", 
+            "vrf": "CIT_STORAGE"
+        }, 
+        "14": {
+            "interface_ip": "10.7.7.1", 
+            "interface_subnet": "28", 
+            "name": "POSTGRESSQ1", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "20": {
+            "interface_ip": "10.7.69.1", 
+            "interface_subnet": "24", 
+            "name": "ISILON_I4_MGMT", 
+            "vrf": "CIT_STORAGE"
+        }, 
+        "21": {
+            "interface_ip": "10.7.129.1", 
+            "interface_subnet": "24", 
+            "name": "ISILON_I4_NFS", 
+            "vrf": "CIT_STORAGE"
+        }, 
+        "22": {
+            "interface_ip": "10.7.130.1", 
+            "interface_subnet": "24", 
+            "name": "ISILON_I4_SMB", 
+            "vrf": "CIT_STORAGE"
+        }, 
+        "23": {
+            "interface_ip": "10.7.131.1", 
+            "interface_subnet": "24", 
+            "name": "ISILON_I4_REPL", 
+            "vrf": "CIT_STORAGE"
+        }, 
+        "24": {
+            "interface_ip": "10.7.132.1", 
+            "interface_subnet": "24", 
+            "name": "DATAINGEST_US1", 
+            "vrf": "CIT_STORAGE"
+        }, 
+        "30": {
+            "interface_ip": "10.7.133.1", 
+            "interface_subnet": "24", 
+            "name": "VMOTION", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "31": {
+            "interface_ip": "10.7.134.1", 
+            "interface_subnet": "24", 
+            "name": "VSAN", 
+            "vrf": "CIT_STORAGE"
+        }, 
+        "4": {
+            "name": "MGMT_ARISTA"
+        }, 
+        "40": {
+            "interface_ip": "10.7.140.1", 
+            "interface_subnet": "24", 
+            "name": "CI-CD_PROD", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "41": {
+            "interface_ip": "10.7.141.1", 
+            "interface_subnet": "24", 
+            "name": "CI-CD_DEV", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "42": {
+            "interface_ip": "10.7.142.1", 
+            "interface_subnet": "24", 
+            "name": "CI-CD_MGMT", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "43": {
+            "interface_ip": "10.7.143.1", 
+            "interface_subnet": "24", 
+            "name": "CI-CD_STAGE", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "44": {
+            "interface_ip": "10.7.144.1", 
+            "interface_subnet": "24", 
+            "name": "CI-CD_BUILD", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "45": {
+            "interface_ip": "10.7.145.1", 
+            "interface_subnet": "24", 
+            "name": "CI-CD_FRONT", 
+            "vrf": "ENGINEERING_CI-CD"
+        }, 
+        "50": {
+            "interface_ip": "10.7.150.1", 
+            "interface_subnet": "24", 
+            "name": "POSTGRESSQ2", 
+            "vrf": "CIT_INFRA"
+        }, 
+        "8": {
+            "interface_ip": "10.7.3.1", 
+            "interface_subnet": "24", 
+            "name": "COREIT", 
+            "vrf": "CIT_INFRA"
+        }
+    }
+}
