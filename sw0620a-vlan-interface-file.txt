@@ -1,0 +1,930 @@
+interface Vlan2
+   description "Arista CVP"
+   ip address dhcp
+!
+interface Vlan100
+   ip address 10.1.60.221/16
+!
+interface Vlan101
+   description "OTA-MGMT-LOM-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip helper-address 10.22.5.20
+   ip helper-address 10.22.5.22
+   ip helper-address 10.22.5.23
+   ip address virtual 10.22.0.1/23
+!
+interface Vlan102
+   description "OTA-MGMT-MAAS-PXE-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip helper-address 10.22.5.20
+   ip helper-address 10.22.5.22
+   ip helper-address 10.22.5.23
+   ip address virtual 10.22.2.1/23
+!
+interface Vlan103
+   description "OTA-PROD-CephStorage-01"
+   vrf STORAGE
+   arp aging timeout 600
+   ip address virtual 10.25.2.1/24
+!
+interface Vlan107
+   description "OTA-MGMT-OS-Management-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip helper-address 10.22.5.20
+   ip helper-address 10.22.5.22
+   ip helper-address 10.22.5.23
+   ip address virtual 10.22.4.1/24
+!
+interface Vlan108
+   description "OTA-MGMT-Management-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.5.1/24
+!
+interface Vlan109
+   description "OTA-TEST-BISAM-01"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.0.1/24
+!
+interface Vlan110
+   description "OTA-TEST-K8-01"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.3.1/24
+!
+interface Vlan111
+   description "OTA-PROD-K8S-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.1.1/24
+!
+interface Vlan112
+   description "OTA-PROD-kafka-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.6.1/26
+!
+interface Vlan113
+   description "OTA-PROD-BISAM-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.7.1/24
+!
+interface Vlan115
+   description OTA-TEST-EXTERNAL-01
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.4.1/24
+!
+interface Vlan118
+   description Link-lb-ota-test-01-OTA-TEST
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 172.16.106.1/24
+!
+interface Vlan119
+   description Link-lb0x10-OTA-TEST
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 172.16.112.1/24
+!
+interface Vlan121
+   description Link-bigipprod0x01-OTA-PROD
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 172.16.114.1/24
+!
+interface Vlan123
+   description Link-lb-ota-prod-01-OTA-PROD
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 172.16.115.1/24
+!
+interface Vlan124
+   description "OTA-PROD-LB-VIP-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.13.1/24
+!
+interface Vlan125
+   description OTA-TEST-LB-VIP-01
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.13.1/24
+!
+interface Vlan128
+   description "OTA-PROD-HADOOP-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip helper-address 10.22.5.20
+   ip helper-address 10.22.5.22
+   ip helper-address 10.22.5.23
+   ip address virtual 10.25.14.1/24
+!
+interface Vlan130
+   description "OTA-TEST-LB-TEST01-VIP"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.5.1/24
+!
+interface Vlan131
+   description "OTA-PROD-MESSAGING-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.15.1/24
+!
+interface Vlan136
+   description "CEPH INTERNAL DC06"
+   vrf CEPH-INTERNAL
+   ip address 172.16.126.2/24
+   arp aging timeout 600
+   ip virtual-router address 172.16.126.1
+!
+interface Vlan139
+   description "Storage-Servers-Ceph2"
+   vrf STORAGE
+   arp aging timeout 600
+   ip access-group Servers_to_StorageClients_in in
+   ip address virtual 172.19.64.1/24
+!
+interface Vlan140
+   description "Link-lb0x10-OTA-MGMT"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 172.16.129.1/24
+!
+interface Vlan141
+   description "OTA-MGMT-LB-VIP-02"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.15.1/24
+!
+interface Vlan400
+   description OTA-TEST-Openstack-Test
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.2.1/24
+!
+interface Vlan1065
+   description "ADFS GOT"
+   vrf ESXI-MGMT
+   arp aging timeout 600
+   ip address virtual 10.10.65.1/24
+!
+interface Vlan1066
+   description "ESXI-MGMT-DC06 GOT"
+   vrf ESXI-MGMT
+   ip address 10.10.66.6/24
+   arp aging timeout 600
+   ip virtual-router address 10.10.66.1
+!
+interface Vlan1070
+   description "OfficeServer"
+   vrf OfficeServer
+   arp aging timeout 600
+   ip address virtual 10.10.70.1/24
+!
+interface Vlan1071
+   description "OfficeDMZ"
+   vrf OfficeDMZ
+   arp aging timeout 600
+   ip address virtual 10.10.71.1/24
+!
+interface Vlan1147
+   description "OTA-PROD-DC06-DSR-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.93.1/24
+!
+interface Vlan1150
+   description "OTA-TEST-DC06-DSR-01"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.35.1/24
+!
+interface Vlan1181
+   description "OTA-PROD-Ceph-RGW-02"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.80.1/24
+!
+interface Vlan1182
+   description "CEPH-PUBLIC-Ceph-02"
+   vrf CEPH-PUBLIC
+   arp aging timeout 600
+   ip address virtual 172.19.85.1/24
+!
+interface Vlan1186
+   description "OTA-TEST-DEV-BUILD-DC06-01"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.29.1/24
+!
+interface Vlan1200
+   description "OTA-MGMT-OS-Management-02"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.30.1/24
+!
+interface Vlan1202
+   description "OTA-MGMT-OS-Keystone-IC-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.31.1/24
+!
+interface Vlan1210
+   description "OTA-MGMT-OS-Management-03"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.32.1/24
+!
+interface Vlan1212
+   description "OTA-MGMT-OS-Distributed-IC-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.33.1/24
+!
+interface Vlan1213
+   description "OTA-PROD-LB-A10-VIP-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.21.1/24
+!
+interface Vlan1216
+   description "OTA-MGMT-OS-DC06-Management-03"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.62.1/24
+!
+interface Vlan1220
+   description "OTA-MGMT-CephCentral-Management-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.34.1/24
+!
+interface Vlan1221
+   description "CEPH-PUBLIC-CephCentral-01"
+   vrf CEPH-PUBLIC
+   arp aging timeout 600
+   ip address virtual 172.19.71.1/24
+!
+interface Vlan1222
+   description "CEPH-PUBLIC-CephCentral-OS-01"
+   vrf CEPH-PUBLIC
+   arp aging timeout 600
+   ip address virtual 172.19.72.1/24
+!
+interface Vlan1226
+   description "OTA-TEST-DC06-Test-03"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.26.1/24
+!
+interface Vlan1229
+   description "OTA-PROD-DC06-POC-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.34.1/24
+!
+interface Vlan1231
+   description "OTA-MGMT-CephCentral-Mgmt-DC06-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.36.1/24
+!
+interface Vlan1233
+   description "CEPH-PUBLIC-CephCentral-DC06-01"
+   vrf CEPH-PUBLIC
+   arp aging timeout 600
+   ip address virtual 172.19.74.1/24
+!
+interface Vlan1235
+   description "CEPH-PUBLIC-CephCentral-OS-DC06-01"
+   vrf CEPH-PUBLIC
+   arp aging timeout 600
+   ip address virtual 172.19.76.1/24
+!
+interface Vlan1238
+   description "OTA-MGMT-OS-DC06-UTIL-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.98.1/24
+!
+interface Vlan1239
+   description "OTA-MGMT-OS-UTIL-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.99.1/24
+!
+interface Vlan1260
+   description "OTA-MGMT-OS-DC06-Management-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip helper-address 10.22.67.5
+   ip helper-address 10.22.67.6
+   ip address virtual 10.22.60.1/24
+!
+interface Vlan1261
+   description "OTA-MGMT-Ceph-DC06-Management-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip helper-address 10.22.67.5
+   ip helper-address 10.22.67.6
+   ip helper-address 172.18.72.5
+   ip helper-address 172.18.72.6
+   ip address virtual 10.22.61.1/24
+!
+interface Vlan1262
+   description "CEPH-PUBLIC-Ceph-DC06-01"
+   vrf CEPH-PUBLIC
+   arp aging timeout 600
+   ip address virtual 172.19.67.1/24
+!
+interface Vlan1263
+   description "CEPH-PUBLIC-Ceph-OS-DC06-01"
+   vrf CEPH-PUBLIC
+   arp aging timeout 600
+   ip address virtual 172.19.2.1/24
+!
+interface Vlan1266
+   description "OTA-MGMT-OS-DC06-LB-IC-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.88.1/21
+!
+interface Vlan1267
+   description "OTA-MGMT-DC06-MAAS-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.67.1/24
+!
+interface Vlan1268
+   description "OTA-PROD-Ceph-DC06-RGW-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.37.1/24
+!
+interface Vlan1269
+   description "CEPH-PUBLIC-Ceph-RGW-DC06-01"
+   vrf CEPH-PUBLIC
+   arp aging timeout 600
+   ip address virtual 172.19.70.1/24
+!
+interface Vlan1270
+   description "OTA-TEST-GENERIC-10"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.64.1/22
+!
+interface Vlan1273
+   description "OTA-PROD-DC06-API-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.48.1/22
+!
+interface Vlan1276
+   description "OTA-PROD-DC06-COUCHBASE-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.54.1/24
+!
+interface Vlan1279
+   description "OTA-PROD-DC06-EDVIN-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.57.1/24
+!
+interface Vlan1282
+   description "OTA-PROD-DC06-GENERIC-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.60.1/24
+!
+interface Vlan1285
+   description "OTA-PROD-DC06-MESSAGING-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.63.1/24
+!
+interface Vlan1288
+   description "OTA-PROD-DC06-APP-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.66.1/24
+!
+interface Vlan1291
+   description "OTA-PROD-DC06-WEB-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.69.1/24
+!
+interface Vlan1294
+   description "OTA-PROD-DC06-DB-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.72.1/24
+!
+interface Vlan1297
+   description "OTA-PROD-DC06-KAFKA-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.75.1/24
+!
+interface Vlan1299
+   description "CEPH-PUBLIC-CephCentral-Internal-DC06-01"
+   vrf CEPH-PUBLIC
+   arp aging timeout 600
+   ip address virtual 172.19.79.1/24
+!
+interface Vlan1300
+   description "OTA-TEST-Test-03"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.68.1/22
+!
+interface Vlan1301
+   description "OTA-TEST-External-03"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.72.1/24
+!
+interface Vlan1302
+   description "OTA-PROD-DEV-BUILD-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.76.1/24
+!
+interface Vlan1303
+   description "OTA-MGMT-UTIL-02"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.100.1/24
+!
+interface Vlan1304
+   description "OTA-MGMT-INTERNAL-SERVICES-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.101.1/24
+!
+interface Vlan1700
+   description "Client-GOT-DEV1"
+   vrf DEV-GOT
+   arp aging timeout 600
+   ip helper-address 10.10.10.4
+   ip helper-address 10.10.10.6
+   ip address virtual 10.17.0.1/23
+!
+interface Vlan1702
+   description "Client-GOT-DEV2"
+   vrf DEV-GOT
+   arp aging timeout 600
+   ip helper-address 10.10.10.4
+   ip helper-address 10.10.10.6
+   ip address virtual 10.17.2.1/23
+!
+interface Vlan1732
+   description "MGMT-GOT"
+   vrf MGMT-GOT
+   ip helper-address 10.10.10.4
+   ip helper-address 10.10.10.6
+   ip address virtual 10.17.32.1/24
+!
+interface Vlan1733
+   description "MGMT-GOT-Warehouse"
+   vrf MGMT-GOT
+   arp aging timeout 600
+   ip address virtual 10.17.33.1/24
+!
+interface Vlan1748
+   description "Client-GOT-GUEST"
+   vrf GUEST-GOT
+   arp aging timeout 600
+   ip address virtual 10.17.48.1/23
+!
+interface Vlan1750
+   description "Client-GOT-GUEST-Warehouse"
+   vrf GUEST-GOT
+   arp aging timeout 600
+   ip address virtual 10.17.50.1/24
+!
+interface Vlan1752
+   description "Client-GOT-Wifi"
+   vrf GUEST-GOT
+   arp aging timeout 600
+   ip address virtual 10.17.52.1/23
+!
+interface Vlan1754
+   description "Client-GOT-Wifi-IOT"
+   vrf GUEST-GOT
+   arp aging timeout 600
+   ip address virtual 10.17.54.1/24
+!
+interface Vlan1764
+   description "IOT GOT"
+   vrf IOT
+   arp aging timeout 600
+   ip address virtual 10.17.64.1/24
+!
+interface Vlan1780
+   description "FACILITY GOT"
+   vrf FACILITY
+   arp aging timeout 600
+   ip address virtual 10.17.80.1/24
+!
+interface Vlan1781
+   description "FACILITY-Warehouse"
+   vrf FACILITY
+   arp aging timeout 600
+   ip address virtual 10.17.81.1/24
+!
+interface Vlan1899
+   description "OOB-MGMT-IC"
+   vrf Management
+   ip address 172.16.121.64/24
+!
+interface Vlan2010
+   description "ServerProduction"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.20.10.247/24
+!
+interface Vlan2011
+   description "OTA-PROD-Database"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.20.11.1/24
+!
+interface Vlan2013
+   description "ServerProductionAPI"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.20.13.247/24
+!
+interface Vlan2016
+   description "OTA-PROD-API-02"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.4.1/23
+!
+interface Vlan2017
+   description "OTA-PROD-WEB-02"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.3.1/24
+!
+interface Vlan2018
+   description "OTA-PROD-API-03"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip helper-address 10.20.10.6
+   ip address virtual 10.25.10.1/23
+!
+interface Vlan2019
+   description "OTA-PROD-WEB-03"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip helper-address 10.20.10.6
+   ip address virtual 10.25.8.1/24
+!
+interface Vlan2020
+   description "ServerCO"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.20.20.1/24
+!
+interface Vlan2021
+   description "OTA-PROD-DP-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip helper-address 10.20.10.6
+   ip address virtual 10.25.12.1/24
+!
+interface Vlan2022
+   description "OTA-PROD-EDVIN-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.16.1/24
+!
+interface Vlan2023
+   description "OTA-PROD-GENERAL-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.18.1/23
+!
+interface Vlan2024
+   description "OTA-MGMT-Management-02"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.14.1/24
+!
+interface Vlan2025
+   description "OTA-PROD-COUCHBASE-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.17.1/24
+!
+interface Vlan2026
+   description "OTA-PROD-DB-OS"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.20.1/24
+!
+interface Vlan2027
+   description "OTA-TEST-EXTERNAL-02"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.8.1/24
+!
+interface Vlan2028
+   description "OTA-TEST-Test-02"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.6.1/23
+!
+interface Vlan2029
+   description "OTA-TEST-COUCHBASE-01"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.17.1/24
+!
+interface Vlan2030
+   description "OTA-PROD-K8S-02"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.24.1/22
+!
+interface Vlan2031
+   description "OTA-PROD-K8-03"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.28.1/22
+!
+interface Vlan2032
+   description "OTA-TEST-staging-01"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.20.1/22
+!
+interface Vlan2033
+   description "OTA-TEST-K8S-PUBLIC-01"
+   vrf OTA-TEST
+   ip address 10.72.0.6/24
+   arp aging timeout 600
+   ip virtual-router address 10.72.0.1
+!
+interface Vlan2035
+   description "OTA-TEST-K8S-PUBLIC-03"
+   vrf OTA-TEST
+   ip address 10.72.2.6/24
+   arp aging timeout 600
+   ip virtual-router address 10.72.2.1
+!
+interface Vlan2050
+   description "RED-CLU"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.20.50.254/24
+!
+interface Vlan2111
+   description "OTA-TEST-Database"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.11.1/24
+!
+interface Vlan2132
+   description "OTA-TEST-Build-Agents"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.32.1/24
+!
+interface Vlan2208
+   description "OTA-PROD-DNS-06"
+   vrf OTA-PROD
+   ip address 172.16.160.65/29
+   arp aging timeout 600
+!
+interface Vlan2209
+   description "OTA-TEST-DNS-06"
+   vrf OTA-TEST
+   ip address 172.16.160.73/29
+   arp aging timeout 600
+!
+interface Vlan2210
+   description "OTA-MGMT-DNS-06"
+   vrf OTA-MGMT
+   ip address 172.16.160.81/29
+   arp aging timeout 600
+!
+interface Vlan2211
+   description "OTA-PROD-DNS-06-SERVER"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 172.16.160.89/29
+!
+interface Vlan2302
+   description "OTA-TEST-K8S-SANDBOX-DC06-VM"
+   vrf OTA-TEST
+   ip address 10.163.2.2/24
+   arp aging timeout 600
+   ip virtual-router address 10.163.2.1
+!
+interface Vlan2305
+   description "OTA-TEST-K8S-TEST-DC06-VM"
+   vrf OTA-TEST
+   ip address 10.171.2.2/24
+   arp aging timeout 600
+   ip virtual-router address 10.171.2.1
+!
+interface Vlan2308
+   description "OTA-PROD-K8S-PROD-DC06-VM"
+   vrf OTA-PROD
+   ip address 10.179.2.2/24
+   arp aging timeout 600
+   ip virtual-router address 10.179.2.1
+!
+interface Vlan2311
+   description "OFFICESERVER-K8S-INTERNAL-DC06-VM"
+   vrf OfficeServer
+   arp aging timeout 600
+   ip address virtual 10.187.2.1/24
+!
+interface Vlan2314
+   description "OTA-TEST-K8S-DEVSTAGE01-DC06-VM"
+   vrf OTA-TEST
+   ip address 10.171.8.2/24
+   arp aging timeout 600
+   ip virtual-router address 10.171.8.1
+!
+interface Vlan2317
+   description "OTA-TEST-DSR-TEST01-DC06-VM"
+   vrf OTA-TEST
+   ip address 10.171.11.2/24
+   arp aging timeout 600
+   ip virtual-router address 10.171.11.1
+!
+interface Vlan2320
+   description "OTA-PROD-DSR-PROD01-DC06-VM"
+   vrf OTA-PROD
+   ip address 10.179.8.2/24
+   arp aging timeout 600
+   ip virtual-router address 10.179.8.1
+!
+interface Vlan2500
+   description "DC05-ServerMemsql"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.0.1/24
+!
+interface Vlan2501
+   description "OTA-TEST-Test-01"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.1.1/24
+!
+interface Vlan3412
+   description Link-lb0410-LEGACY-OTA-PROD
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 172.16.104.1/24
+!
+interface Vlan3512
+   description Link-lb0510-LEGACY-OTA-PROD
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 172.16.103.1/24
+!
+interface Vlan4009
+   vrf ISP-DC06-Banhof
+   ip address 98.128.165.195/29
+   ip access-group INTERNET_BANHOF in
+   ip virtual-router address 98.128.165.194
+!
+interface Vlan4010
+   vrf ISP-DC06-Banhof
+   ip address 98.128.165.188/26
+   ip virtual-router address 98.128.165.190
+!
+interface Vlan4029
+   description "CEPH-PUBLIC-IC"
+   vrf CEPH-PUBLIC
+   ip address 172.16.160.181/28
+   arp aging timeout 600
+!
+interface Vlan4038
+   description "MGMT-GOT-IC"
+   vrf MGMT-GOT
+   ip address 172.16.98.214/28
+   arp aging timeout 600
+!
+interface Vlan4041
+   description "SERVER-GOT-IC"
+   vrf SERVER-GOT
+   ip address 172.16.98.235/28
+   arp aging timeout 600
+!
+interface Vlan4044
+   description "GUEST-GOT-IC"
+   vrf GUEST-GOT
+   ip address 172.16.98.245/28
+   arp aging timeout 600
+!
+interface Vlan4045
+   description "ESXI-MGMT-IC"
+   vrf ESXI-MGMT
+   ip address 172.16.160.101/28
+   arp aging timeout 600
+!
+interface Vlan4046
+   description "ADFS-IC"
+   vrf ADFS
+   ip address 172.16.160.117/28
+   arp aging timeout 600
+!
+interface Vlan4047
+   description "FACILITY-IC"
+   vrf FACILITY
+   ip address 172.16.160.133/28
+   arp aging timeout 600
+!
+interface Vlan4048
+   description "IOT-IC"
+   vrf IOT
+   ip address 172.16.160.149/28
+   arp aging timeout 600
+!
+interface Vlan4049
+   description "DEV-GOT-IC"
+   vrf DEV-GOT
+   ip address 172.16.160.165/28
+   arp aging timeout 600
+!
+interface Vlan4066
+   vrf TEST-EBBMAR
+   ip address 172.16.98.54/28
+   arp aging timeout 600
+!
+interface Vlan4069
+   ip address 172.16.102.250/29
+   ip virtual-router address 172.16.102.249/29
+!
+interface Vlan4070
+   description OTA-PROD-OUTGOING-IC
+   vrf OTA-PROD
+   ip address 172.16.108.29/24
+!
+interface Vlan4071
+   description OTA-TEST-OUTGOING-IC
+   vrf OTA-TEST
+   ip address 172.16.109.29/24
+!
+interface Vlan4072
+   description OTA-MGMT-OUTGOING-IC
+   vrf OTA-MGMT
+   ip address 172.16.110.29/24
+!
+interface Vlan4074
+   vrf ISP-DC06-Banhof
+   ip address 172.16.130.14/24
+!
+interface Vlan4077
+   vrf OTA-FW-IC
+   ip address 172.16.120.164/24
+   arp aging timeout 600
+!
+interface Vlan4078
+   vrf OTA-PROD
+   ip address 172.16.98.69/28
+   arp aging timeout 600
+!
+interface Vlan4079
+   vrf OTA-TEST
+   ip address 172.16.98.85/28
+   arp aging timeout 600
+!
+interface Vlan4080
+   vrf OTA-MGMT
+   ip address 172.16.98.101/28
+   arp aging timeout 600
+!
+interface Vlan4081
+   description "CEPH-INTERNAL-IC"
+   vrf CEPH-INTERNAL
+   ip address 172.16.102.44/31
+   arp aging timeout 600
+!
+interface Vlan4082
+   description "OfficeServer-IC"
+   vrf OfficeServer
+   ip address 172.21.0.5/28
+   arp aging timeout 600
+!
+interface Vlan4083
+   description "OfficeDMZ-IC"
+   vrf OfficeDMZ
+   ip address 172.21.0.37/28
+   arp aging timeout 600
+!

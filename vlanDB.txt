@@ -1,0 +1,1398 @@
+[
+    {
+        "vlanId": "2",
+        "vlanName": " OTA-MGMT-ARISTA-CVP-01\n"
+    },
+    {
+        "vlanId": "100",
+        "vlanName": " Management\n"
+    },
+    {
+        "vlanId": "101",
+        "vlanName": " OTA-MGMT-LOM-01\n"
+    },
+    {
+        "vlanId": "102",
+        "vlanName": " OTA-MGMT-MAAS-PXE-01\n"
+    },
+    {
+        "vlanId": "103",
+        "vlanName": " OTA-PROD-CephStorage-01\n"
+    },
+    {
+        "vlanId": "104",
+        "vlanName": " OTA-CONN-CephInternal-01\n"
+    },
+    {
+        "vlanId": "105",
+        "vlanName": " OTA-ICSY-OS-Default\n"
+    },
+    {
+        "vlanId": "106",
+        "vlanName": " OTA-ICSY-OS-VXLAN-01\n"
+    },
+    {
+        "vlanId": "107",
+        "vlanName": " OTA-MGMT-OS-Management-01\n"
+    },
+    {
+        "vlanId": "108",
+        "vlanName": " OTA-MGMT-Management-01\n"
+    },
+    {
+        "vlanId": "109",
+        "vlanName": " OTA-TEST-BISAM-01\n"
+    },
+    {
+        "vlanId": "110",
+        "vlanName": " OTA-TEST-K8-01\n"
+    },
+    {
+        "vlanId": "111",
+        "vlanName": " OTA-PROD-K8S-01\n"
+    },
+    {
+        "vlanId": "112",
+        "vlanName": " OTA-PROD-kafka-01\n"
+    },
+    {
+        "vlanId": "113",
+        "vlanName": " OTA-PROD-BISAM-01\n"
+    },
+    {
+        "vlanId": "114",
+        "vlanName": " OTA-PROD-FX2STORAGE-01\n"
+    },
+    {
+        "vlanId": "115",
+        "vlanName": " OTA-TEST-EXTERNAL-01\n"
+    },
+    {
+        "vlanId": "116",
+        "vlanName": " OTA-ICSY-DB-REPL-01\n"
+    },
+    {
+        "vlanId": "117",
+        "vlanName": " OTA-ICSY-lb-ota-test-01-HA\n"
+    },
+    {
+        "vlanId": "118",
+        "vlanName": " Link-lb-ota-test-01-OTA-TEST\n"
+    },
+    {
+        "vlanId": "119",
+        "vlanName": " Link-lb0x10-OTA-TEST\n"
+    },
+    {
+        "vlanId": "120",
+        "vlanName": " OTA-ICSY-FW-LB-OTA-TEST\n"
+    },
+    {
+        "vlanId": "121",
+        "vlanName": " Link-bigipprod0x01-OTA-PROD\n"
+    },
+    {
+        "vlanId": "122",
+        "vlanName": " OTA-ICSY-lb-ota-prod-01-HA\n"
+    },
+    {
+        "vlanId": "123",
+        "vlanName": " Link-lb-ota-prod-01-OTA-PROD\n"
+    },
+    {
+        "vlanId": "124",
+        "vlanName": " OTA-PROD-LB-VIP-01\n"
+    },
+    {
+        "vlanId": "125",
+        "vlanName": " OTA-TEST-LB-VIP-01\n"
+    },
+    {
+        "vlanId": "126",
+        "vlanName": " OTA-MGMT-LB-VIP-01\n"
+    },
+    {
+        "vlanId": "127",
+        "vlanName": " CheckPoint-Sync-fw0x10-cluster\n"
+    },
+    {
+        "vlanId": "128",
+        "vlanName": " OTA-PROD-HADOOP-01\n"
+    },
+    {
+        "vlanId": "129",
+        "vlanName": " CheckPoint-Sync-fw0x10-cluster2\n"
+    },
+    {
+        "vlanId": "130",
+        "vlanName": " OTA-TEST-LB-TEST01-VIP\n"
+    },
+    {
+        "vlanId": "131",
+        "vlanName": " OTA-PROD-MESSAGING-01\n"
+    },
+    {
+        "vlanId": "132",
+        "vlanName": " OTA-ICSY-lb-office-01-HA\n"
+    },
+    {
+        "vlanId": "134",
+        "vlanName": " CEPH-INTERNAL-DC04\n"
+    },
+    {
+        "vlanId": "137",
+        "vlanName": " STORAGE-F5-Prod-Linknet\n"
+    },
+    {
+        "vlanId": "138",
+        "vlanName": " STORAGE-F5-Test-Linknet\n"
+    },
+    {
+        "vlanId": "139",
+        "vlanName": " Storage-Servers-Ceph2\n"
+    },
+    {
+        "vlanId": "140",
+        "vlanName": " Link-lb0x10-OTA-MGMT\n"
+    },
+    {
+        "vlanId": "141",
+        "vlanName": " OTA-MGMT-LB-VIP-02\n"
+    },
+    {
+        "vlanId": "201",
+        "vlanName": " PaloAlto-HA1\n"
+    },
+    {
+        "vlanId": "202",
+        "vlanName": " PaloAlto-HA2\n"
+    },
+    {
+        "vlanId": "203",
+        "vlanName": " CheckPoint-Sync-fw0301\n"
+    },
+    {
+        "vlanId": "300",
+        "vlanName": " PaloAlto-Tap\n"
+    },
+    {
+        "vlanId": "400",
+        "vlanName": " OTA-TEST-Openstack-Test\n"
+    },
+    {
+        "vlanId": "401",
+        "vlanName": " OTA-MGMT-ELK-01\n"
+    },
+    {
+        "vlanId": "509",
+        "vlanName": " LAB-ICSY-LAB-PROD-FW-IC\n"
+    },
+    {
+        "vlanId": "510",
+        "vlanName": " LAB-ICSY-LAB-TEST-FW-IC\n"
+    },
+    {
+        "vlanId": "511",
+        "vlanName": " LAB-ICSY-LAB-MGMT-FW-IC\n"
+    },
+    {
+        "vlanId": "605",
+        "vlanName": " TELnetnord\n"
+    },
+    {
+        "vlanId": "1001",
+        "vlanName": " ManagementOffice\n"
+    },
+    {
+        "vlanId": "1005",
+        "vlanName": " iSCSI\n"
+    },
+    {
+        "vlanId": "1007",
+        "vlanName": " VMotion\n"
+    },
+    {
+        "vlanId": "1010",
+        "vlanName": " ServerOffice\n"
+    },
+    {
+        "vlanId": "1013",
+        "vlanName": " ServerOfficePlatform\n"
+    },
+    {
+        "vlanId": "1014",
+        "vlanName": " ServerOfficePlatformHW\n"
+    },
+    {
+        "vlanId": "1015",
+        "vlanName": " FirewallOffice\n"
+    },
+    {
+        "vlanId": "1017",
+        "vlanName": " ClientVideo\n"
+    },
+    {
+        "vlanId": "1018",
+        "vlanName": " ServerOffice-LB-VIP-01\n"
+    },
+    {
+        "vlanId": "1019",
+        "vlanName": " ServerOffice-LB-LINK-01\n"
+    },
+    {
+        "vlanId": "1020",
+        "vlanName": " ClientUPP\n"
+    },
+    {
+        "vlanId": "1021",
+        "vlanName": " ClientIT\n"
+    },
+    {
+        "vlanId": "1022",
+        "vlanName": " ClientVDI\n"
+    },
+    {
+        "vlanId": "1023",
+        "vlanName": " ClientVM\n"
+    },
+    {
+        "vlanId": "1024",
+        "vlanName": " ClientEX\n"
+    },
+    {
+        "vlanId": "1029",
+        "vlanName": " ClientGOTVideo\n"
+    },
+    {
+        "vlanId": "1030",
+        "vlanName": " ClientDEV\n"
+    },
+    {
+        "vlanId": "1031",
+        "vlanName": " ClientHEL\n"
+    },
+    {
+        "vlanId": "1034",
+        "vlanName": " ClientGOTGuest\n"
+    },
+    {
+        "vlanId": "1036",
+        "vlanName": " ClientGOTWifi\n"
+    },
+    {
+        "vlanId": "1040",
+        "vlanName": " NFS\n"
+    },
+    {
+        "vlanId": "1050",
+        "vlanName": " FlightNet\n"
+    },
+    {
+        "vlanId": "1051",
+        "vlanName": " wifi-network\n"
+    },
+    {
+        "vlanId": "1052",
+        "vlanName": " wifi-telia\n"
+    },
+    {
+        "vlanId": "1064",
+        "vlanName": " ESXI-MGMT\n"
+    },
+    {
+        "vlanId": "1065",
+        "vlanName": " ADFS\n"
+    },
+    {
+        "vlanId": "1066",
+        "vlanName": " ESXI-MGMT-DC06-GOT\n"
+    },
+    {
+        "vlanId": "1067",
+        "vlanName": " ESXI-MGMT-DC04-GOT\n"
+    },
+    {
+        "vlanId": "1069",
+        "vlanName": " OFFICESERVER-ServerRepos\n"
+    },
+    {
+        "vlanId": "1070",
+        "vlanName": " OfficeServer\n"
+    },
+    {
+        "vlanId": "1071",
+        "vlanName": " OfficeDMZ\n"
+    },
+    {
+        "vlanId": "1090",
+        "vlanName": " LAB\n"
+    },
+    {
+        "vlanId": "1129",
+        "vlanName": " Tele\n"
+    },
+    {
+        "vlanId": "1148",
+        "vlanName": " OTA-PROD-Ceph-DC04-RGW-02\n"
+    },
+    {
+        "vlanId": "1181",
+        "vlanName": " OTA-PROD-Ceph-RGW-02\n"
+    },
+    {
+        "vlanId": "1182",
+        "vlanName": " CEPH-PUBLIC-Ceph-02\n"
+    },
+    {
+        "vlanId": "1184",
+        "vlanName": " OTA-TEST-DEV-BUILD-DC04-01\n"
+    },
+    {
+        "vlanId": "1200",
+        "vlanName": " OTA-MGMT-OS-Management-02\n"
+    },
+    {
+        "vlanId": "1201",
+        "vlanName": " OTA-ICSY-OS-Keystone-Underlay-01\n"
+    },
+    {
+        "vlanId": "1202",
+        "vlanName": " OTA-MGMT-OS-Keystone-IC-01\n"
+    },
+    {
+        "vlanId": "1210",
+        "vlanName": " OTA-MGMT-OS-Management-03\n"
+    },
+    {
+        "vlanId": "1211",
+        "vlanName": " OTA-ICSY-OS-Distributed-Underlay\n"
+    },
+    {
+        "vlanId": "1212",
+        "vlanName": " OTA-MGMT-OS-Distributed-IC-01\n"
+    },
+    {
+        "vlanId": "1213",
+        "vlanName": " OTA-PROD-LB-A10-VIP-01\n"
+    },
+    {
+        "vlanId": "1214",
+        "vlanName": " OTA-MGMT-OS-DC04-Management-03\n"
+    },
+    {
+        "vlanId": "1217",
+        "vlanName": " OTA-ICSY-OS-DC04-Distributed-Und\n"
+    },
+    {
+        "vlanId": "1220",
+        "vlanName": " OTA-MGMT-CephCentral-Mgmt-DC04-0\n"
+    },
+    {
+        "vlanId": "1221",
+        "vlanName": " CEPH-PUBLIC-CephCentral-DC04-01\n"
+    },
+    {
+        "vlanId": "1222",
+        "vlanName": " CEPH-PUBLIC-CephCentral-OS-DC04-\n"
+    },
+    {
+        "vlanId": "1223",
+        "vlanName": " CephCentral-Internal-DC04-01\n"
+    },
+    {
+        "vlanId": "1224",
+        "vlanName": " OTA-TEST-DC04-Test-03\n"
+    },
+    {
+        "vlanId": "1227",
+        "vlanName": " OTA-PROD-DC04-POC-01\n"
+    },
+    {
+        "vlanId": "1236",
+        "vlanName": " OTA-MGMT-OS-DC04-UTIL-01\n"
+    },
+    {
+        "vlanId": "1239",
+        "vlanName": " OTA-MGMT-OS-UTIL-01\n"
+    },
+    {
+        "vlanId": "1240",
+        "vlanName": " OTA-MGMT-OS-DC04-Management-01\n"
+    },
+    {
+        "vlanId": "1241",
+        "vlanName": " OTA-MGMT-Ceph-DC04-Management-01\n"
+    },
+    {
+        "vlanId": "1242",
+        "vlanName": " CEPH-PUBLIC-Ceph-DC04-01\n"
+    },
+    {
+        "vlanId": "1243",
+        "vlanName": " CEPH-PUBLIC-Ceph-OS-DC04-01\n"
+    },
+    {
+        "vlanId": "1244",
+        "vlanName": " Ceph-Internal-DC04-01\n"
+    },
+    {
+        "vlanId": "1245",
+        "vlanName": " OTA-ICSY-OS-DC04-Underlay-01\n"
+    },
+    {
+        "vlanId": "1246",
+        "vlanName": " OTA-MGMT-OS-DC04-LB-IC-01\n"
+    },
+    {
+        "vlanId": "1247",
+        "vlanName": " OTA-MGMT-DC04-MAAS-01\n"
+    },
+    {
+        "vlanId": "1248",
+        "vlanName": " OTA-PROD-Ceph-DC04-RGW-01\n"
+    },
+    {
+        "vlanId": "1249",
+        "vlanName": " CEPH-PUBLIC-Ceph-RGW-DC04-01\n"
+    },
+    {
+        "vlanId": "1270",
+        "vlanName": " OTA-TEST-GENERIC-10\n"
+    },
+    {
+        "vlanId": "1271",
+        "vlanName": " OTA-PROD-DC04-API-10\n"
+    },
+    {
+        "vlanId": "1274",
+        "vlanName": " OTA-PROD-DC04-COUCHBASE-10\n"
+    },
+    {
+        "vlanId": "1277",
+        "vlanName": " OTA-PROD-DC04-EDVIN-10\n"
+    },
+    {
+        "vlanId": "1280",
+        "vlanName": " OTA-PROD-DC04-GENERIC-10\n"
+    },
+    {
+        "vlanId": "1283",
+        "vlanName": " OTA-PROD-DC04-MESSAGING-10\n"
+    },
+    {
+        "vlanId": "1286",
+        "vlanName": " OTA-PROD-DC04-APP-10\n"
+    },
+    {
+        "vlanId": "1289",
+        "vlanName": " OTA-PROD-DC04-WEB-10\n"
+    },
+    {
+        "vlanId": "1292",
+        "vlanName": " OTA-PROD-DC04-DB-10\n"
+    },
+    {
+        "vlanId": "1295",
+        "vlanName": " OTA-PROD-DC04-KAFKA-10\n"
+    },
+    {
+        "vlanId": "1300",
+        "vlanName": " OTA-TEST-Test-03\n"
+    },
+    {
+        "vlanId": "1301",
+        "vlanName": " OTA-TEST-External-03\n"
+    },
+    {
+        "vlanId": "1302",
+        "vlanName": " OTA-PROD-DEV-BUILD-01\n"
+    },
+    {
+        "vlanId": "1303",
+        "vlanName": " OTA-MGMT-UTIL-02\n"
+    },
+    {
+        "vlanId": "1304",
+        "vlanName": " OTA-MGMT-INTERNAL-SERVICES-01\n"
+    },
+    {
+        "vlanId": "1700",
+        "vlanName": " Client-GOT-DEV1\n"
+    },
+    {
+        "vlanId": "1702",
+        "vlanName": " Client-GOT-DEV2\n"
+    },
+    {
+        "vlanId": "1704",
+        "vlanName": " Client-GOT-IT\n"
+    },
+    {
+        "vlanId": "1706",
+        "vlanName": " Client-GOT\n"
+    },
+    {
+        "vlanId": "1708",
+        "vlanName": " Client-GOT-Printers\n"
+    },
+    {
+        "vlanId": "1732",
+        "vlanName": " MGMT-GOT\n"
+    },
+    {
+        "vlanId": "1733",
+        "vlanName": " MGMT-GOT-Warehouse\n"
+    },
+    {
+        "vlanId": "1748",
+        "vlanName": " Client-GOT-GUEST\n"
+    },
+    {
+        "vlanId": "1750",
+        "vlanName": " Client-GOT-GUEST-Warehouse\n"
+    },
+    {
+        "vlanId": "1752",
+        "vlanName": " Client-GOT-Wifi\n"
+    },
+    {
+        "vlanId": "1754",
+        "vlanName": " Client-GOT-Wifi-IOT\n"
+    },
+    {
+        "vlanId": "1764",
+        "vlanName": " IOT\n"
+    },
+    {
+        "vlanId": "1780",
+        "vlanName": " FACILITY\n"
+    },
+    {
+        "vlanId": "1781",
+        "vlanName": " FACILITY-Warehouse\n"
+    },
+    {
+        "vlanId": "1804",
+        "vlanName": " MGMT-INFRA-DC04\n"
+    },
+    {
+        "vlanId": "1899",
+        "vlanName": " OOB-MGMT-IC\n"
+    },
+    {
+        "vlanId": "2001",
+        "vlanName": " ManagementProduction\n"
+    },
+    {
+        "vlanId": "2010",
+        "vlanName": " ServerProduction\n"
+    },
+    {
+        "vlanId": "2011",
+        "vlanName": " ServerProductionDB\n"
+    },
+    {
+        "vlanId": "2012",
+        "vlanName": " ServerProductionAPP\n"
+    },
+    {
+        "vlanId": "2013",
+        "vlanName": " ServerProductionAPI\n"
+    },
+    {
+        "vlanId": "2014",
+        "vlanName": " ServerProductionWEB\n"
+    },
+    {
+        "vlanId": "2015",
+        "vlanName": " ServerProductionPOP\n"
+    },
+    {
+        "vlanId": "2016",
+        "vlanName": " OTA-PROD-API-02\n"
+    },
+    {
+        "vlanId": "2017",
+        "vlanName": " OTA-PROD-WEB-02\n"
+    },
+    {
+        "vlanId": "2018",
+        "vlanName": " OTA-PROD-API-03\n"
+    },
+    {
+        "vlanId": "2019",
+        "vlanName": " OTA-PROD-WEB-03\n"
+    },
+    {
+        "vlanId": "2020",
+        "vlanName": " ServerCO\n"
+    },
+    {
+        "vlanId": "2021",
+        "vlanName": " OTA-PROD-DP-01\n"
+    },
+    {
+        "vlanId": "2022",
+        "vlanName": " OTA-PROD-EDVIN-01\n"
+    },
+    {
+        "vlanId": "2023",
+        "vlanName": " OTA-PROD-GENERAL-01\n"
+    },
+    {
+        "vlanId": "2024",
+        "vlanName": " OTA-MGMT-Management-02\n"
+    },
+    {
+        "vlanId": "2025",
+        "vlanName": " OTA-PROD-COUCHBASE-01\n"
+    },
+    {
+        "vlanId": "2026",
+        "vlanName": " OTA-PROD-DB-OS\n"
+    },
+    {
+        "vlanId": "2027",
+        "vlanName": " OTA-TEST-EXTERNAL-02\n"
+    },
+    {
+        "vlanId": "2028",
+        "vlanName": " OTA-TEST-Test-02\n"
+    },
+    {
+        "vlanId": "2029",
+        "vlanName": " OTA-TEST-COUCHBASE-01\n"
+    },
+    {
+        "vlanId": "2030",
+        "vlanName": " OTA-PROD-K8S-02\n"
+    },
+    {
+        "vlanId": "2031",
+        "vlanName": " OTA-PROD-K8S-03\n"
+    },
+    {
+        "vlanId": "2032",
+        "vlanName": " OTA-TEST-K8S-staging-01\n"
+    },
+    {
+        "vlanId": "2033",
+        "vlanName": " OTA-TEST-K8S-PUBLIC-01\n"
+    },
+    {
+        "vlanId": "2035",
+        "vlanName": " OTA-TEST-K8S-PUBLIC-03\n"
+    },
+    {
+        "vlanId": "2050",
+        "vlanName": " RED-CLU\n"
+    },
+    {
+        "vlanId": "2051",
+        "vlanName": " RED-HOST\n"
+    },
+    {
+        "vlanId": "2052",
+        "vlanName": " RED-ACC\n"
+    },
+    {
+        "vlanId": "2060",
+        "vlanName": " BLUE-CLU\n"
+    },
+    {
+        "vlanId": "2062",
+        "vlanName": " BLUE-ACC\n"
+    },
+    {
+        "vlanId": "2070",
+        "vlanName": " GREEN-CLU\n"
+    },
+    {
+        "vlanId": "2072",
+        "vlanName": " GREEN-ACC\n"
+    },
+    {
+        "vlanId": "2090",
+        "vlanName": " RGB-SRV\n"
+    },
+    {
+        "vlanId": "2091",
+        "vlanName": " RGB-DB1\n"
+    },
+    {
+        "vlanId": "2092",
+        "vlanName": " RGB-DB2\n"
+    },
+    {
+        "vlanId": "2100",
+        "vlanName": " RGB-API\n"
+    },
+    {
+        "vlanId": "2104",
+        "vlanName": " RGB-WEB\n"
+    },
+    {
+        "vlanId": "2105",
+        "vlanName": " RGB-APP\n"
+    },
+    {
+        "vlanId": "2108",
+        "vlanName": " RGB-EDVIN\n"
+    },
+    {
+        "vlanId": "2111",
+        "vlanName": " OTA-TEST-Database\n"
+    },
+    {
+        "vlanId": "2132",
+        "vlanName": " OTA-TEST-Internal-Build\n"
+    },
+    {
+        "vlanId": "2200",
+        "vlanName": " OTA-PROD-DNS-04\n"
+    },
+    {
+        "vlanId": "2201",
+        "vlanName": " OTA-TEST-DNS-04\n"
+    },
+    {
+        "vlanId": "2202",
+        "vlanName": " OTA-MGMT-DNS-04\n"
+    },
+    {
+        "vlanId": "2203",
+        "vlanName": " OTA-PROD-DNS-04-SERVER\n"
+    },
+    {
+        "vlanId": "2204",
+        "vlanName": " OTA-PROD-DNS-05\n"
+    },
+    {
+        "vlanId": "2205",
+        "vlanName": " OTA-TEST-DNS-05\n"
+    },
+    {
+        "vlanId": "2206",
+        "vlanName": " OTA-MGMT-DNS-05\n"
+    },
+    {
+        "vlanId": "2207",
+        "vlanName": " OTA-PROD-DNS-05-SERVER\n"
+    },
+    {
+        "vlanId": "2208",
+        "vlanName": " OTA-PROD-DNS-06\n"
+    },
+    {
+        "vlanId": "2209",
+        "vlanName": " OTA-TEST-DNS-06\n"
+    },
+    {
+        "vlanId": "2210",
+        "vlanName": " OTA-MGMT-DNS-06\n"
+    },
+    {
+        "vlanId": "2211",
+        "vlanName": " OTA-PROD-DNS-06-SERVER\n"
+    },
+    {
+        "vlanId": "2300",
+        "vlanName": " OTA-TEST-K8S-SANDBOX-DC04-VM\n"
+    },
+    {
+        "vlanId": "2303",
+        "vlanName": " OTA-TEST-K8S-TEST-DC04-VM\n"
+    },
+    {
+        "vlanId": "2306",
+        "vlanName": " OTA-PROD-K8S-PROD-DC04-VM\n"
+    },
+    {
+        "vlanId": "2309",
+        "vlanName": " OFFICESERVER-K8S-INTERNAL-DC04-V\n"
+    },
+    {
+        "vlanId": "2312",
+        "vlanName": " OTA-TEST-K8S-DEVSTAGE01-DC04-VM\n"
+    },
+    {
+        "vlanId": "2315",
+        "vlanName": " OTA-TEST-DSR-TEST01-DC04-VM\n"
+    },
+    {
+        "vlanId": "2318",
+        "vlanName": " OTA-PROD-DSR-PROD01-DC04-VM\n"
+    },
+    {
+        "vlanId": "2500",
+        "vlanName": " DC05-ServerMemsql\n"
+    },
+    {
+        "vlanId": "2501",
+        "vlanName": " OTA-TEST-Test-01\n"
+    },
+    {
+        "vlanId": "2600",
+        "vlanName": " GENESYS-EDGE-LAN\n"
+    },
+    {
+        "vlanId": "3001",
+        "vlanName": " ISP-DC01-IPOnly\n"
+    },
+    {
+        "vlanId": "3002",
+        "vlanName": " ISP-DC01-Bahnhof\n"
+    },
+    {
+        "vlanId": "3010",
+        "vlanName": " HARNESS-DELEGATES\n"
+    },
+    {
+        "vlanId": "3410",
+        "vlanName": " Link-lb0410-sw0410x-DC04-OUTGOIN\n"
+    },
+    {
+        "vlanId": "3411",
+        "vlanName": " Link-fw0401a-lb0x10-OUTGOING\n"
+    },
+    {
+        "vlanId": "3412",
+        "vlanName": " Link-lb0410-LEGACY-OTA-PROD\n"
+    },
+    {
+        "vlanId": "3511",
+        "vlanName": " Link-fw0501-lb0510-DC05-OUTGOING\n"
+    },
+    {
+        "vlanId": "3512",
+        "vlanName": " Link-lb0510-LEGACY-OTA-PROD\n"
+    },
+    {
+        "vlanId": "3514,3541",
+        "vlanName": " Link-rt0501a-lb0510-DC05-OUTGOIN\n"
+    },
+    {
+        "vlanId": "4001",
+        "vlanName": " ISP-DC02-IPOnly\n"
+    },
+    {
+        "vlanId": "4002",
+        "vlanName": " ISP-DC02-TDC\n"
+    },
+    {
+        "vlanId": "4003",
+        "vlanName": " ISP-DC04-BEARCOM-LINK\n"
+    },
+    {
+        "vlanId": "4004",
+        "vlanName": " ISP-DC04-TS\n"
+    },
+    {
+        "vlanId": "4005",
+        "vlanName": " iSCSI1\n"
+    },
+    {
+        "vlanId": "4006",
+        "vlanName": " iSCSI2\n"
+    },
+    {
+        "vlanId": "4007",
+        "vlanName": " rcip-3par\n"
+    },
+    {
+        "vlanId": "4008",
+        "vlanName": " ISP-DC04-IPOnly\n"
+    },
+    {
+        "vlanId": "4010",
+        "vlanName": " ISP-DC06-BAHNHOF\n"
+    },
+    {
+        "vlanId": "4011",
+        "vlanName": " ISP-DC04-Tele2-LINK\n"
+    },
+    {
+        "vlanId": "4012",
+        "vlanName": " ISP-DC04-Tele2\n"
+    },
+    {
+        "vlanId": "4029",
+        "vlanName": " CEPH-PUBLIC-IC\n"
+    },
+    {
+        "vlanId": "4035",
+        "vlanName": " CLIENT-GOT-IC\n"
+    },
+    {
+        "vlanId": "4038",
+        "vlanName": " MGMT-GOT-IC\n"
+    },
+    {
+        "vlanId": "4041",
+        "vlanName": " SERVER-GOT-IC\n"
+    },
+    {
+        "vlanId": "4044",
+        "vlanName": " GUEST-GOT-IC\n"
+    },
+    {
+        "vlanId": "4045",
+        "vlanName": " ESXI-MGMT-IC\n"
+    },
+    {
+        "vlanId": "4046",
+        "vlanName": " ADFS-IC\n"
+    },
+    {
+        "vlanId": "4047",
+        "vlanName": " FACILITY-IC\n"
+    },
+    {
+        "vlanId": "4048",
+        "vlanName": " IOT-IC\n"
+    },
+    {
+        "vlanId": "4049",
+        "vlanName": " DEV-GOT-IC\n"
+    },
+    {
+        "vlanId": "4050",
+        "vlanName": " DC05-ISP-IPOnly\n"
+    },
+    {
+        "vlanId": "4053",
+        "vlanName": " DC05-API\n"
+    },
+    {
+        "vlanId": "4055",
+        "vlanName": " DC05-web\n"
+    },
+    {
+        "vlanId": "4057",
+        "vlanName": " DC05-app\n"
+    },
+    {
+        "vlanId": "4059",
+        "vlanName": " DC05-srv\n"
+    },
+    {
+        "vlanId": "4060",
+        "vlanName": " DCI\n"
+    },
+    {
+        "vlanId": "4061",
+        "vlanName": " OTA-PROD-IC\n"
+    },
+    {
+        "vlanId": "4062",
+        "vlanName": " OTA-TEST-IC\n"
+    },
+    {
+        "vlanId": "4063",
+        "vlanName": " OTA-MGMT-IC\n"
+    },
+    {
+        "vlanId": "4064",
+        "vlanName": " fw0301-legacy-IC\n"
+    },
+    {
+        "vlanId": "4066",
+        "vlanName": " TEST-EBBMAR-IC\n"
+    },
+    {
+        "vlanId": "4067",
+        "vlanName": " OTA-ICSY-CVX-01\n"
+    },
+    {
+        "vlanId": "4068",
+        "vlanName": " OTA-ICSY-CVX-02\n"
+    },
+    {
+        "vlanId": "4069",
+        "vlanName": " OTA-ICSY-CVX-03\n"
+    },
+    {
+        "vlanId": "4070",
+        "vlanName": " OTA-PROD-OUTGOING-IC\n"
+    },
+    {
+        "vlanId": "4071",
+        "vlanName": " OTA-TEST-OUTGOING-IC\n"
+    },
+    {
+        "vlanId": "4072",
+        "vlanName": " OTA-MGMT-OUTGOING-IC\n"
+    },
+    {
+        "vlanId": "4074",
+        "vlanName": " INTERNET-GOT-IC\n"
+    },
+    {
+        "vlanId": "4076",
+        "vlanName": " OUTGOING-FW-IC\n"
+    },
+    {
+        "vlanId": "4077",
+        "vlanName": " OTA-FIREWALL-IC\n"
+    },
+    {
+        "vlanId": "4078",
+        "vlanName": " OTA-PROD-IC-OVERLAY\n"
+    },
+    {
+        "vlanId": "4079",
+        "vlanName": " OTA-TEST-IC-OVERLAY\n"
+    },
+    {
+        "vlanId": "4080",
+        "vlanName": " OTA-MGMT-IC-OVERLAY\n"
+    },
+    {
+        "vlanId": "4081",
+        "vlanName": " CEPH-INTERNAL-IC\n"
+    },
+    {
+        "vlanId": "4082",
+        "vlanName": " OfficeServer-IC\n"
+    },
+    {
+        "vlanId": "4083",
+        "vlanName": " OfficeDMZ-IC\n"
+    },
+    {
+        "vlanId": "10",
+        "vlanName": " WAN-TEST\n"
+    },
+    {
+        "vlanId": "135",
+        "vlanName": " CEPH-INTERNAL-DC05\n"
+    },
+    {
+        "vlanId": "311",
+        "vlanName": " TEST-IPv6\n"
+    },
+    {
+        "vlanId": "1146",
+        "vlanName": " OTA-PROD-DSR-DC05-01\n"
+    },
+    {
+        "vlanId": "1149",
+        "vlanName": " OTA-TEST-DSR-DC05-01\n"
+    },
+    {
+        "vlanId": "1185",
+        "vlanName": " OTA-TEST-DEV-BUILD-DC05-01\n"
+    },
+    {
+        "vlanId": "1215",
+        "vlanName": " OTA-MGMT-OS-DC05-Management-03\n"
+    },
+    {
+        "vlanId": "1218",
+        "vlanName": " OTA-ICSY-OS-DC05-Distributed-Und\n"
+    },
+    {
+        "vlanId": "1225",
+        "vlanName": " OTA-TEST-DC05-Test-03\n"
+    },
+    {
+        "vlanId": "1228",
+        "vlanName": " OTA-PROD-DC05-POC-01\n"
+    },
+    {
+        "vlanId": "1230",
+        "vlanName": " OTA-MGMT-CephCentral-Mgmt-DC05-0\n"
+    },
+    {
+        "vlanId": "1232",
+        "vlanName": " CEPH-PUBLIC-CephCentral-DC05-01\n"
+    },
+    {
+        "vlanId": "1234",
+        "vlanName": " CEPH-PUBLIC-CephCentral-OS-DC05-\n"
+    },
+    {
+        "vlanId": "1237",
+        "vlanName": " OTA-MGMT-OS-DC05-UTIL-01\n"
+    },
+    {
+        "vlanId": "1250",
+        "vlanName": " OTA-MGMT-OS-DC05-Management-01\n"
+    },
+    {
+        "vlanId": "1251",
+        "vlanName": " OTA-MGMT-Ceph-DC05-Management-01\n"
+    },
+    {
+        "vlanId": "1252",
+        "vlanName": " CEPH-PUBLIC-Ceph-DC05-01\n"
+    },
+    {
+        "vlanId": "1253",
+        "vlanName": " CEPH-PUBLIC-Ceph-OS-DC05-01\n"
+    },
+    {
+        "vlanId": "1254",
+        "vlanName": " Ceph-Internal-DC05-01\n"
+    },
+    {
+        "vlanId": "1255",
+        "vlanName": " OTA-ICSY-OS-DC05-Underlay-01\n"
+    },
+    {
+        "vlanId": "1256",
+        "vlanName": " OTA-MGMT-OS-DC05-LB-IC-01\n"
+    },
+    {
+        "vlanId": "1257",
+        "vlanName": " OTA-MGMT-DC05-MAAS-01\n"
+    },
+    {
+        "vlanId": "1258",
+        "vlanName": " OTA-PROD-Ceph-DC05-RGW-01\n"
+    },
+    {
+        "vlanId": "1259",
+        "vlanName": " CEPH-PUBLIC-Ceph-RGW-DC05-01\n"
+    },
+    {
+        "vlanId": "1272",
+        "vlanName": " OTA-PROD-DC05-API-10\n"
+    },
+    {
+        "vlanId": "1275",
+        "vlanName": " OTA-PROD-DC05-COUCHBASE-10\n"
+    },
+    {
+        "vlanId": "1278",
+        "vlanName": " OTA-PROD-DC05-EDVIN-10\n"
+    },
+    {
+        "vlanId": "1281",
+        "vlanName": " OTA-PROD-DC05-GENERIC-10\n"
+    },
+    {
+        "vlanId": "1284",
+        "vlanName": " OTA-PROD-DC05-MESSAGING-10\n"
+    },
+    {
+        "vlanId": "1287",
+        "vlanName": " OTA-PROD-DC05-APP-10\n"
+    },
+    {
+        "vlanId": "1290",
+        "vlanName": " OTA-PROD-DC05-WEB-10\n"
+    },
+    {
+        "vlanId": "1293",
+        "vlanName": " OTA-PROD-DC05-DB-10\n"
+    },
+    {
+        "vlanId": "1296",
+        "vlanName": " OTA-PROD-DC05-KAFKA-10\n"
+    },
+    {
+        "vlanId": "1298",
+        "vlanName": " CephCentral-Internal-DC05-01\n"
+    },
+    {
+        "vlanId": "1832",
+        "vlanName": " VLAN1832\n"
+    },
+    {
+        "vlanId": "1836",
+        "vlanName": " MGMT-INFRA-DC05\n"
+    },
+    {
+        "vlanId": "2301",
+        "vlanName": " OTA-TEST-K8S-SANDBOX-DC05-VM\n"
+    },
+    {
+        "vlanId": "2304",
+        "vlanName": " OTA-TEST-K8S-TEST-DC05-VM\n"
+    },
+    {
+        "vlanId": "2307",
+        "vlanName": " OTA-PROD-K8S-PROD-DC05-VM\n"
+    },
+    {
+        "vlanId": "2310",
+        "vlanName": " OFFICESERVER-K8S-INTERNAL-DC05-V\n"
+    },
+    {
+        "vlanId": "2313",
+        "vlanName": " OTA-TEST-K8S-DEVSTAGE01-DC05-VM\n"
+    },
+    {
+        "vlanId": "2316",
+        "vlanName": " OTA-TEST-DSR-TEST01-DC05-VM\n"
+    },
+    {
+        "vlanId": "2319",
+        "vlanName": " OTA-PROD-DSR-PROD01-DC05-VM\n"
+    },
+    {
+        "vlanId": "136",
+        "vlanName": " CEPH-INTERNAL-DC06\n"
+    },
+    {
+        "vlanId": "1147",
+        "vlanName": " OTA-PROD-DSR-DC06-01\n"
+    },
+    {
+        "vlanId": "1150",
+        "vlanName": " OTA-TEST-DSR-DC06-01\n"
+    },
+    {
+        "vlanId": "1186",
+        "vlanName": " OTA-TEST-DEV-BUILD-DC06-01\n"
+    },
+    {
+        "vlanId": "1216",
+        "vlanName": " OTA-MGMT-OS-DC06-Management-03\n"
+    },
+    {
+        "vlanId": "1219",
+        "vlanName": " OTA-ICSY-OS-DC06-Distributed-Und\n"
+    },
+    {
+        "vlanId": "1226",
+        "vlanName": " OTA-TEST-DC06-Test-03\n"
+    },
+    {
+        "vlanId": "1229",
+        "vlanName": " OTA-PROD-DC06-POC-01\n"
+    },
+    {
+        "vlanId": "1231",
+        "vlanName": " OTA-MGMT-CephCentral-Mgmt-DC06-0\n"
+    },
+    {
+        "vlanId": "1233",
+        "vlanName": " CEPH-PUBLIC-CephCentral-DC06-01\n"
+    },
+    {
+        "vlanId": "1235",
+        "vlanName": " CEPH-PUBLIC-CephCentral-OS-DC06-\n"
+    },
+    {
+        "vlanId": "1238",
+        "vlanName": " OTA-MGMT-OS-DC06-UTIL-01\n"
+    },
+    {
+        "vlanId": "1260",
+        "vlanName": " OTA-MGMT-OS-DC06-Management-01\n"
+    },
+    {
+        "vlanId": "1261",
+        "vlanName": " OTA-MGMT-Ceph-DC06-Management-01\n"
+    },
+    {
+        "vlanId": "1262",
+        "vlanName": " CEPH-PUBLIC-Ceph-DC06-01\n"
+    },
+    {
+        "vlanId": "1263",
+        "vlanName": " CEPH-PUBLIC-Ceph-OS-DC06-01\n"
+    },
+    {
+        "vlanId": "1264",
+        "vlanName": " Ceph-Internal-DC06-01\n"
+    },
+    {
+        "vlanId": "1265",
+        "vlanName": " OTA-ICSY-OS-DC06-Underlay-01\n"
+    },
+    {
+        "vlanId": "1266",
+        "vlanName": " OTA-MGMT-OS-DC06-LB-IC-01\n"
+    },
+    {
+        "vlanId": "1267",
+        "vlanName": " OTA-MGMT-DC06-MAAS-01\n"
+    },
+    {
+        "vlanId": "1268",
+        "vlanName": " OTA-PROD-Ceph-DC06-RGW-01\n"
+    },
+    {
+        "vlanId": "1269",
+        "vlanName": " CEPH-PUBLIC-Ceph-RGW-DC06-01\n"
+    },
+    {
+        "vlanId": "1273",
+        "vlanName": " OTA-PROD-DC06-10\n"
+    },
+    {
+        "vlanId": "1276",
+        "vlanName": " OTA-PROD-DC06-COUCHBASE-10\n"
+    },
+    {
+        "vlanId": "1279",
+        "vlanName": " OTA-PROD-DC06-EDVIN-10\n"
+    },
+    {
+        "vlanId": "1282",
+        "vlanName": " OTA-PROD-DC06-GENERIC-10\n"
+    },
+    {
+        "vlanId": "1285",
+        "vlanName": " OTA-PROD-DC06-MESSAGING-10\n"
+    },
+    {
+        "vlanId": "1288",
+        "vlanName": " OTA-PROD-DC06-APP-10\n"
+    },
+    {
+        "vlanId": "1291",
+        "vlanName": " OTA-PROD-DC06-WEB-10\n"
+    },
+    {
+        "vlanId": "1294",
+        "vlanName": " OTA-PROD-DC06-DB-10\n"
+    },
+    {
+        "vlanId": "1297",
+        "vlanName": " OTA-PROD-DC06-KAFKA-10\n"
+    },
+    {
+        "vlanId": "1299",
+        "vlanName": " CephCentral-Internal-DC06-01\n"
+    },
+    {
+        "vlanId": "1868",
+        "vlanName": " MGMT-INFRA-DC06\n"
+    },
+    {
+        "vlanId": "2302",
+        "vlanName": " OTA-TEST-K8S-SANDBOX-DC06-VM\n"
+    },
+    {
+        "vlanId": "2305",
+        "vlanName": " OTA-TEST-K8S-TEST-DC06-VM\n"
+    },
+    {
+        "vlanId": "2308",
+        "vlanName": " OTA-PROD-K8S-PROD-DC06-VM\n"
+    },
+    {
+        "vlanId": "2311",
+        "vlanName": " OFFICESERVER-K8S-INTERNAL-DC06-V\n"
+    },
+    {
+        "vlanId": "2314",
+        "vlanName": " OTA-TEST-K8S-DEVSTAGE01-DC06-VM\n"
+    },
+    {
+        "vlanId": "2317",
+        "vlanName": " OTA-TEST-DSR-TEST01-DC06-VM\n"
+    },
+    {
+        "vlanId": "2320",
+        "vlanName": " OTA-PROD-DSR-PROD01-DC06-VM\n"
+    },
+    {
+        "vlanId": "4009",
+        "vlanName": " ISP-DC06-BAHNHOF-LINK\n"
+    }
+]

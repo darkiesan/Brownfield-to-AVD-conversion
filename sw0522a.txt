@@ -1,0 +1,1497 @@
+! Startup-config last modified at Mon Jan  9 13:35:08 2023 by ebbmar
+! device: sw0522a (DCS-7280SR-48C6, EOS-4.27.4M)
+!
+! boot system flash:/EOS-4.27.4M.swi
+!
+no aaa root
+!
+username admin role network-admin secret sha512 $6$5//gOLV4t1CnROE1$4WFceKM3Z5lV8D3DFh/bP9sWbns9yB1VxXSluAK/gbFsAFAi/x/3uvcGdDCTzGtnNkyofrnr.iJqRr2ISWYK0/
+username andlil privilege 15 secret sha512 $6$14OPsvz6iMzT.Te7$8AHdBzmqG4udfdUjWO.UKAv1.d6GvryMqg4mw5TeL8yPtQE/aSeITLZsbZjKJZfZlYiu51y19uSDuZyad0Bg70
+username araabe privilege 15 secret sha512 $6$2Eda3vT/W6hVKy6j$6OweJTEDGBRgjHu58Fp7HG44ipn8R7CIE.sKTzHx5Gz0CTP0cRxb9PQeyneQ1ypJpQ2OtGthQI4ZBXxKysUOF1
+username cvpadmin privilege 15 secret 5 $1$E6VAxeV9$rMrf9bnHXs0AkCM8RJ/kt0
+username df privilege 15 secret 5 $1$yorRLk72$Js0Z3mXVE0hydvFYGAQ0r.
+username ebbmar privilege 15 secret sha512 $6$q2OXDybZzItffhem$T.Exg/Cipgl39IWcc0xztfNiXMVEFgxJxxwO48ehSaPiwepohXWd6AvOhIdFlEsxfhPEvGEHE.KsbxY3Zgsx0/
+username ebbmar ssh-key ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCkENo5rwWXiieuhIMxpMvXmddrj4VFoTPYBUJt6rzzq0vSuZImE+pbvz7DIzgqDsVh2XPYw8dC/0h5m9Tx5tOC6/IsBC7+98/1qLeLGmP7fAbOqKtOIEf0ZrNJS8VC+jf+LLJwZbclIyVq12qflVJ0zRq3UH0bKH8X+56uNkWMh6SWrOUMvBqMK6DoawJ/0XaRyubRAsThwRBS/1R4RXygMf6Wbx1fWXio8ZwZdhFYgR05cynND4LZI/wjlVCbnnKxtZcj5wrAp+F2gCYWe9FUwltcKdKxvC9hzkh7x2cnv5PPM3V1rPZr/WNUSDl8QACKdGIs0/npvDBnJCBYgm2KGcgI1wgyJrq4nhQVwkyH/OR9zeDOqI3lefNNRc3ZW9Txy4JYYzSt5+3ju4p4Q2JMCSlvhfKL6041Pb90pCNyrRk7f20+GVQqk1pNxqgylvIzJXC2N1ONO8X2TQs1rVpZV+vTm7EO0SRCLdjQIpZ9EFEViaNY38JbRX7rcQfmaEc= ebbmar@Micaels-MacBook-Pro.local
+username freols privilege 15 secret sha512 $6$wRK5W/vYeVT6MauE$PrIIvTta6gMWmEfWb6eQkAo/aHDKhH.XvtL5xlYFy8.IpJi6O9FbclvLEbxzj4j6nVspwPTSun1PgwhrdZ1tF1
+username kargan privilege 15 secret sha512 $6$pApdqiDE44VGZJK5$.ULzL8DqPY1ANxd.00uHHmavLI25LkW6AeVshmwd5Q3eFP1LqasLG2DgjXEBXY8BzW2nw49aEsUNF.Zd30n3N1
+username milrod privilege 15 secret sha512 $6$JkgeHuuLKEPe25dv$E.oqnNRjyNiWVWwwnp05J1UNkRwbdsbcWxu.yQ6Y32QWI9bsi5AYWyH78SD3mKEo02kC/frn2ljB4998xuhTo.
+username robcar privilege 15 secret sha512 $6$SHzqt.x.4918leZK$XZIKWBtKMW.LN0HwxUpbHpGyOozxDTW7sKFn03NUDUJMdcjkqpgfZrjTO9ROIglwErYWDskMcWjA0MYV2Woo2.
+username robcar ssh-key ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAEcEuHE5Ztwvrbnvlq6ZQ8rrfKn8tmpxPiYBbacTMTiR4FsKAitzi7697KJUpnPvjhJ+RBttwK3KXaaqRlFLD/gWwAu87DjnppZfmn3tJxOyoM8QPqoLBFO0D3WCBfowFcEi2wV2fLQzY0ZVcufhLBN2d8lHDqqU11sn12WIdvL9vbYPQ== robert.carlsson@etraveligroup.com
+!
+alias b show int status
+!
+daemon TerminAttr
+   exec /usr/bin/TerminAttr -ingestgrpcurl=10.22.5.61:9910,10.22.5.62:9910,10.22.5.63:9910 -cvcompression=gzip -ingestauth=key,bluppfisk -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -ingestvrf=Management -taillogs
+   no shutdown
+!
+vlan internal order ascending range 3600 3699
+!
+event-monitor
+event-monitor backup max-size 200
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+queue-monitor length
+!
+logging buffered 128000
+logging console informational
+logging vrf Management host 10.1.40.50
+logging vrf Management host syslog.maas.etraveli.io 5000
+logging format timestamp high-resolution
+logging source-interface Management1
+!
+hostname sw0522a
+ip name-server vrf Management 10.10.10.1
+ip name-server vrf Management 10.10.10.2
+dns domain etraveli.net
+!
+qos profile TrustDSCP 
+   qos trust dscp
+!
+hardware tcam profile vxlan-routing
+!
+sflow sample 10000
+sflow polling-interval 30
+sflow destination 10.1.10.78
+sflow destination 127.0.0.1
+sflow source-interface Management1
+sflow extension bgp
+sflow run
+!
+snmp-server location DC05
+snmp-server community -snmpRE4D ro
+snmp-server vrf Management
+!
+spanning-tree mode rstp
+no spanning-tree vlan-id 4090
+spanning-tree priority 12288
+!
+service unsupported-transceiver 20170301_Seat24TravelAB c972a1ef
+!
+clock timezone Europe/Stockholm
+!
+vlan 2
+   name OTA-MGMT-ARISTA-CVP-01
+!
+vlan 3
+!
+vlan 100
+   name Management
+!
+vlan 101
+   name OTA-MGMT-LOM-01
+!
+vlan 102
+   name OTA-MGMT-MAAS-PXE-01
+!
+vlan 103
+   name OTA-PROD-CephStorage-01
+!
+vlan 104
+   name OTA-CONN-CephInternal-01
+!
+vlan 105
+   name OTA-ICSY-OS-Default
+!
+vlan 106
+   name OTA-ICSY-OS-VXLAN-01
+!
+vlan 107
+   name OTA-MGMT-OS-Management-01
+!
+vlan 108
+   name OTA-MGMT-Management-01
+!
+vlan 109
+   name OTA-TEST-BISAM-01
+!
+vlan 110
+   name OTA-TEST-K8-01
+!
+vlan 111
+   name OTA-PROD-K8S-01
+!
+vlan 112
+   name OTA-PROD-kafka-01
+!
+vlan 113
+   name OTA-PROD-BISAM-01
+!
+vlan 114
+   name OTA-PROD-FX2STORAGE-01
+!
+vlan 115
+   name OTA-TEST-EXTERNAL-01
+!
+vlan 116
+   name OTA-ICSY-DB-REPL-01
+!
+vlan 117
+   name OTA-ICSY-lb-ota-test-01-HA
+!
+vlan 118
+   name Link-lb-ota-test-01-OTA-TEST
+!
+vlan 119
+   name Link-lb0x10-OTA-TEST
+!
+vlan 120
+   name OTA-ICSY-FW-LB-OTA-TEST
+!
+vlan 121
+   name Link-bigipprod0x01-OTA-PROD
+!
+vlan 122
+   name OTA-ICSY-lb-ota-prod-01-HA
+!
+vlan 123
+   name Link-lb-ota-prod-01-OTA-PROD
+!
+vlan 124
+   name OTA-PROD-LB-VIP-01
+!
+vlan 125
+   name OTA-TEST-LB-VIP-01
+!
+vlan 126
+   name OTA-MGMT-LB-VIP-01
+!
+vlan 127
+   name CheckPoint-Sync-fw0x10-cluster
+!
+vlan 128
+   name OTA-PROD-HADOOP-01
+!
+vlan 129
+   name CheckPoint-Sync-fw0x10-cluster2
+!
+vlan 130
+   name OTA-TEST-LB-TEST01-VIP
+!
+vlan 131
+   name OTA-PROD-MESSAGING-01
+!
+vlan 132
+   name OTA-ICSY-lb-office-01-HA
+!
+vlan 137
+   name STORAGE-F5-Prod-Linknet
+!
+vlan 138
+   name STORAGE-F5-Test-Linknet
+!
+vlan 139
+   name Storage-Servers-Ceph2
+!
+vlan 140
+   name Link-lb0x10-OTA-MGMT
+!
+vlan 141
+   name OTA-MGMT-LB-VIP-02
+!
+vlan 201
+   name PaloAlto-HA1
+!
+vlan 202
+   name PaloAlto-HA2
+!
+vlan 203
+   name CheckPoint-Sync-fw0301
+!
+vlan 300
+   name PaloAlto-Tap
+!
+vlan 400
+   name OTA-TEST-Openstack-Test
+!
+vlan 401
+   name OTA-MGMT-ELK-01
+!
+vlan 509
+   name LAB-ICSY-LAB-PROD-FW-IC
+!
+vlan 510
+   name LAB-ICSY-LAB-TEST-FW-IC
+!
+vlan 511
+   name LAB-ICSY-LAB-MGMT-FW-IC
+!
+vlan 605
+   name TELnetnord
+!
+vlan 1001
+   name ManagementOffice
+!
+vlan 1005
+   name iSCSI
+!
+vlan 1007
+   name VMotion
+!
+vlan 1010
+   name ServerOffice
+!
+vlan 1013
+   name ServerOfficePlatform
+!
+vlan 1014
+   name ServerOfficePlatformHW
+!
+vlan 1015
+   name FirewallOffice
+!
+vlan 1017
+   name ClientVideo
+!
+vlan 1018
+   name ServerOffice-LB-VIP-01
+!
+vlan 1019
+   name ServerOffice-LB-LINK-01
+!
+vlan 1020
+   name ClientUPP
+!
+vlan 1021
+   name ClientIT
+!
+vlan 1022
+   name ClientVDI
+!
+vlan 1023
+   name ClientVM
+!
+vlan 1024
+   name ClientEX
+!
+vlan 1029
+   name ClientGOTVideo
+!
+vlan 1030
+   name ClientDEV
+!
+vlan 1031
+   name ClientHEL
+!
+vlan 1034
+   name ClientGOTGuest
+!
+vlan 1036
+   name ClientGOTWifi
+!
+vlan 1040
+   name NFS
+!
+vlan 1050
+   name FlightNet
+!
+vlan 1051
+   name wifi-network
+!
+vlan 1052
+   name wifi-telia
+!
+vlan 1064
+   name ESXI-MGMT
+!
+vlan 1065
+   name ADFS
+!
+vlan 1066
+   name ESXI-MGMT-DC06-GOT
+!
+vlan 1069
+   name OFFICESERVER-ServerRepos
+!
+vlan 1070
+   name OfficeServer
+!
+vlan 1071
+   name OfficeDMZ
+!
+vlan 1090
+   name LAB
+!
+vlan 1129
+   name Tele
+!
+vlan 1146
+   name OTA-PROD-DSR-DC05-01
+!
+vlan 1149
+   name OTA-TEST-DSR-DC05-01
+!
+vlan 1181
+   name OTA-PROD-Ceph-RGW-02
+!
+vlan 1182
+   name CEPH-PUBLIC-Ceph-02
+!
+vlan 1185
+   name OTA-TEST-DEV-BUILD-DC05-01
+!
+vlan 1200
+   name OTA-MGMT-OS-Management-02
+!
+vlan 1201
+   name OTA-ICSY-OS-Keystone-Underlay-01
+!
+vlan 1202
+   name OTA-MGMT-OS-Keystone-IC-01
+!
+vlan 1210
+   name OTA-MGMT-OS-Management-03
+!
+vlan 1211
+   name OTA-ICSY-OS-Distributed-Underlay
+!
+vlan 1212
+   name OTA-MGMT-OS-Distributed-IC-01
+!
+vlan 1213
+   name OTA-PROD-LB-A10-VIP-01
+!
+vlan 1215
+   name OTA-MGMT-OS-DC05-Management-03
+!
+vlan 1218
+   name OTA-ICSY-OS-DC05-Distributed-Und
+!
+vlan 1220
+   name OTA-MGMT-CephCentral-Mgmt-DC04-0
+!
+vlan 1221
+   name CEPH-PUBLIC-CephCentral-01
+!
+vlan 1222
+   name CEPH-PUBLIC-CephCentral-OS-01
+!
+vlan 1223
+   name CephCentral-Internal-01
+!
+vlan 1225
+   name OTA-TEST-DC05-Test-03
+!
+vlan 1228
+   name OTA-PROD-DC05-POC-01
+!
+vlan 1230
+   name OTA-MGMT-CephCentral-Mgmt-DC05-0
+!
+vlan 1232
+   name CEPH-PUBLIC-CephCentral-DC05-01
+!
+vlan 1234
+   name CEPH-PUBLIC-CephCentral-OS-DC05-
+!
+vlan 1237
+   name OTA-MGMT-OS-DC05-UTIL-01
+!
+vlan 1239
+   name OTA-MGMT-OS-UTIL-01
+!
+vlan 1250
+   name OTA-MGMT-OS-DC05-Management-01
+!
+vlan 1251
+   name OTA-MGMT-Ceph-DC05-Management-01
+!
+vlan 1252
+   name CEPH-PUBLIC-Ceph-DC05-01
+!
+vlan 1253
+   name CEPH-PUBLIC-Ceph-OS-DC05-01
+!
+vlan 1254
+   name Ceph-Internal-DC05-01
+!
+vlan 1255
+   name OTA-ICSY-OS-DC05-Underlay-01
+!
+vlan 1256
+   name OTA-MGMT-OS-DC05-LB-IC-01
+!
+vlan 1257
+   name OTA-MGMT-DC05-MAAS-01
+!
+vlan 1258
+   name OTA-PROD-Ceph-DC05-RGW-01
+!
+vlan 1259
+   name CEPH-PUBLIC-Ceph-RGW-DC05-01
+!
+vlan 1270
+   name OTA-TEST-GENERIC-10
+!
+vlan 1272
+   name OTA-PROD-DC05-API-10
+!
+vlan 1275
+   name OTA-PROD-DC05-COUCHBASE-10
+!
+vlan 1278
+   name OTA-PROD-DC05-EDVIN-10
+!
+vlan 1281
+   name OTA-PROD-DC05-GENERIC-10
+!
+vlan 1284
+   name OTA-PROD-DC05-MESSAGING-10
+!
+vlan 1287
+   name OTA-PROD-DC05-APP-10
+!
+vlan 1290
+   name OTA-PROD-DC05-WEB-10
+!
+vlan 1293
+   name OTA-PROD-DC05-DB-10
+!
+vlan 1296
+   name OTA-PROD-DC05-KAFKA-10
+!
+vlan 1298
+   name CephCentral-Internal-DC05-01
+!
+vlan 1300
+   name OTA-TEST-Test-03
+!
+vlan 1301
+   name OTA-TEST-External-03
+!
+vlan 1302
+   name OTA-PROD-DEV-BUILD-01
+!
+vlan 1303
+   name OTA-MGMT-UTIL-02
+!
+vlan 1304
+   name OTA-MGMT-INTERNAL-SERVICES-01
+!
+vlan 1700
+   name Client-GOT-DEV1
+!
+vlan 1702
+   name Client-GOT-DEV2
+!
+vlan 1704
+   name Client-GOT-IT
+!
+vlan 1706
+   name Client-GOT
+!
+vlan 1708
+   name Client-GOT-Printers
+!
+vlan 1732
+   name MGMT-GOT
+!
+vlan 1733
+   name MGMT-GOT-Warehouse
+!
+vlan 1748
+   name Client-GOT-GUEST
+!
+vlan 1750
+   name Client-GOT-GUEST-Warehouse
+!
+vlan 1752
+   name Client-GOT-Wifi
+!
+vlan 1754
+   name Client-GOT-Wifi-IOT
+!
+vlan 1764
+   name IOT
+!
+vlan 1780
+   name FACILITY
+!
+vlan 1781
+   name FACILITY-Warehouse
+!
+vlan 2001
+   name ManagementProduction
+!
+vlan 2010
+   name ServerProduction
+!
+vlan 2011
+   name ServerProductionDB
+!
+vlan 2012
+   name ServerProductionAPP
+!
+vlan 2013
+   name ServerProductionAPI
+!
+vlan 2014
+   name ServerProductionWEB
+!
+vlan 2015
+   name ServerProductionPOP
+!
+vlan 2016
+   name OTA-PROD-API-02
+!
+vlan 2017
+   name OTA-PROD-WEB-02
+!
+vlan 2018
+   name OTA-PROD-API-03
+!
+vlan 2019
+   name OTA-PROD-WEB-03
+!
+vlan 2020
+   name ServerCO
+!
+vlan 2021
+   name OTA-PROD-DP-01
+!
+vlan 2022
+   name OTA-PROD-EDVIN-01
+!
+vlan 2023
+   name OTA-PROD-GENERAL-01
+!
+vlan 2024
+   name OTA-MGMT-Management-02
+!
+vlan 2025
+   name OTA-PROD-COUCHBASE-01
+!
+vlan 2026
+   name OTA-PROD-DB-OS
+!
+vlan 2027
+   name OTA-TEST-EXTERNAL-02
+!
+vlan 2028
+   name OTA-TEST-Test-02
+!
+vlan 2029
+   name OTA-TEST-COUCHBASE-01
+!
+vlan 2030
+   name OTA-PROD-K8S-02
+!
+vlan 2031
+   name OTA-PROD-K8S-03
+!
+vlan 2032
+   name OTA-TEST-K8S-staging-01
+!
+vlan 2033
+   name OTA-TEST-K8S-PUBLIC-01
+!
+vlan 2035
+   name OTA-TEST-K8S-PUBLIC-03
+!
+vlan 2050
+   name RED-CLU
+!
+vlan 2051
+   name RED-HOST
+!
+vlan 2052
+   name RED-ACC
+!
+vlan 2060
+   name BLUE-CLU
+!
+vlan 2062
+   name BLUE-ACC
+!
+vlan 2070
+   name GREEN-CLU
+!
+vlan 2072
+   name GREEN-ACC
+!
+vlan 2090
+   name RGB-SRV
+!
+vlan 2091
+   name RGB-DB1
+!
+vlan 2092
+   name RGB-DB2
+!
+vlan 2100
+   name RGB-API
+!
+vlan 2104
+   name RGB-WEB
+!
+vlan 2105
+   name RGB-APP
+!
+vlan 2108
+   name RGB-EDVIN
+!
+vlan 2111
+   name OTA-TEST-Database
+!
+vlan 2132
+   name OTA-TEST-Internal-Build
+!
+vlan 2301
+   name OTA-TEST-K8S-SANDBOX-DC05-VM
+!
+vlan 2304
+   name OTA-TEST-K8S-TEST-DC05-VM
+!
+vlan 2307
+   name OTA-PROD-K8S-PROD-DC05-VM
+!
+vlan 2310
+   name OFFICESERVER-K8S-INTERNAL-DC05-V
+!
+vlan 2313
+   name OTA-TEST-K8S-DEVSTAGE01-DC05-VM
+!
+vlan 2316
+   name OTA-TEST-DSR-TEST01-DC05-VM
+!
+vlan 2319
+   name OTA-PROD-DSR-PROD01-DC05-VM
+!
+vlan 2500
+   name DC05-ServerMemsql
+!
+vlan 2501
+   name OTA-TEST-Test-01
+!
+vlan 2600
+   name GENESYS-EDGE-LAN
+!
+vlan 3001
+   name ISP-DC01-IPOnly
+!
+vlan 3002
+   name ISP-DC01-Bahnhof
+!
+vlan 3010
+   name HARNESS-DELEGATES
+!
+vlan 3410
+   name Link-lb0410-sw0410x-DC04-OUTGOIN
+!
+vlan 3411
+   name Link-fw0401a-lb0x10-OUTGOING
+!
+vlan 3412
+   name Link-lb0410-LEGACY-OTA-PROD
+!
+vlan 3511
+   name Link-fw0501-lb0510-DC05-OUTGOING
+!
+vlan 3512
+   name Link-lb0510-LEGACY-OTA-PROD
+!
+vlan 3514
+   name Link-rt0501a-lb0510-DC05-OUTGOIN
+!
+vlan 4001
+   name ISP-DC02-IPOnly
+!
+vlan 4002
+   name ISP-DC02-TDC
+!
+vlan 4003
+   name ISP-DC04-BEARCOM-LINK
+!
+vlan 4004
+   name ISP-DC04-TS
+!
+vlan 4005
+   name iSCSI1
+!
+vlan 4006
+   name iSCSI2
+!
+vlan 4007
+   name rcip-3par
+!
+vlan 4008
+   name ISP-DC04-IPOnly
+!
+vlan 4010
+   name ISP-DC06-BAHNHOF
+!
+vlan 4012
+   name ISP-DC04-Tele2
+!
+vlan 4029
+   name CEPH-PUBLIC-IC
+!
+vlan 4035
+   name CLIENT-GOT-IC
+!
+vlan 4038
+   name MGMT-GOT-IC
+!
+vlan 4041
+   name SERVER-GOT-IC
+!
+vlan 4044
+   name GUEST-GOT-IC
+!
+vlan 4045
+   name ESXI-MGMT-IC
+!
+vlan 4046
+   name ADFS-IC
+!
+vlan 4047
+   name FACILITY-IC
+!
+vlan 4048
+   name IOT-IC
+!
+vlan 4049
+   name DEV-GOT-IC
+!
+vlan 4050
+   name DC05-ISP-IPOnly
+!
+vlan 4053
+   name DC05-API
+!
+vlan 4055
+   name DC05-web
+!
+vlan 4057
+   name DC05-app
+!
+vlan 4059
+   name DC05-srv
+!
+vlan 4060
+   name DCI
+!
+vlan 4061
+   name OTA-PROD-IC
+!
+vlan 4062
+   name OTA-TEST-IC
+!
+vlan 4063
+   name OTA-MGMT-IC
+!
+vlan 4064
+   name fw0301-legacy-IC
+!
+vlan 4067
+   name OTA-ICSY-CVX-01
+!
+vlan 4068
+   name OTA-ICSY-CVX-02
+!
+vlan 4069
+   name OTA-ICSY-CVX-03
+!
+vlan 4070
+   name OTA-PROD-OUTGOING-IC
+!
+vlan 4071
+   name OTA-TEST-OUTGOING-IC
+!
+vlan 4072
+   name OTA-MGMT-OUTGOING-IC
+!
+vlan 4074
+   name INTERNET-GOT-IC
+!
+vlan 4076
+   name OUTGOING-FW-IC
+!
+vlan 4077
+   name OTA-FIREWALL-IC
+!
+vlan 4082
+   name OfficeServer-IC
+!
+vlan 4083
+   name OfficeDMZ-IC
+!
+vlan 4090
+   name MLAG-PEER
+   trunk group MLAG-PEER
+!
+vrf instance Management
+!
+queue-monitor streaming
+   no shutdown
+!
+management api http-commands
+   protocol http
+   protocol unix-socket
+   cors allowed-origin all
+   no shutdown
+   !
+   vrf Management
+      no shutdown
+!
+aaa authorization exec default local
+!
+interface Port-Channel1
+   description "Server:os-comp5020"
+   switchport trunk allowed vlan 1215,1218,1221-1222,1228,1230,1232,1234,1237,1239,1250,1253,1255-1256,1258-1259,1270,1272,1275,1278,1281,1284,1287,1290,1293,1296,1298,2301,2304,2307,2310,2313,2316,2319
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 1
+!
+interface Port-Channel2
+   description "Server:os-comp5021"
+   switchport trunk allowed vlan 1215,1218,1221-1222,1228,1230,1232,1234,1237,1239,1250,1253,1255-1256,1258-1259,1270,1272,1275,1278,1281,1284,1287,1290,1293,1296,1298,2301,2304,2307,2310,2313,2316,2319
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 2
+!
+interface Port-Channel3
+   description "Server:os-comp5022"
+   switchport trunk allowed vlan 1215,1218,1221-1222,1228,1230,1232,1234,1237,1239,1250,1253,1255-1256,1258-1259,1270,1272,1275,1278,1281,1284,1287,1290,1293,1296,1298,2301,2304,2307,2310,2313,2316,2319
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 3
+!
+interface Port-Channel4
+   description "Server:os-comp5023"
+   switchport trunk allowed vlan 1215,1218,1221-1222,1228,1230,1232,1234,1237,1239,1250,1253,1255-1256,1258-1259,1270,1272,1275,1278,1281,1284,1287,1290,1293,1296,1298,2301,2304,2307,2310,2313,2316,2319
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 4
+!
+interface Port-Channel5
+   description "Server:os-comp5024"
+   switchport trunk allowed vlan 1215,1218,1221-1222,1228,1230,1232,1234,1237,1239,1250,1253,1255-1256,1258-1259,1270,1272,1275,1278,1281,1284,1287,1290,1293,1296,1298,2301,2304,2307,2310,2313,2316,2319
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 5
+!
+interface Port-Channel6
+   description "Server:os-comp5025"
+   switchport trunk allowed vlan 1215,1218,1221-1222,1228,1230,1232,1234,1237,1239,1250,1253,1255-1256,1258-1259,1270,1272,1275,1278,1281,1284,1287,1290,1293,1296,1298,2301,2304,2307,2310,2313,2316,2319
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 6
+!
+interface Port-Channel7
+   description "Server:os-comp5026"
+   switchport trunk allowed vlan 1215,1218,1221-1222,1228,1230,1232,1234,1237,1239,1250,1253,1255-1256,1258-1259,1270,1272,1275,1278,1281,1284,1287,1290,1293,1296,1298,2301,2304,2307,2310,2313,2316,2319
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 7
+!
+interface Port-Channel17
+   description "Server:fx0502-bay1-pair1:os-comp0508"
+   switchport trunk native vlan 107
+   switchport trunk allowed vlan 103,107
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 17
+!
+interface Port-Channel18
+   description "Server:fx0502-bay2-pair1:os-comp0509"
+   switchport trunk native vlan 107
+   switchport trunk allowed vlan 103,107
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 18
+!
+interface Port-Channel19
+   description "Server:fx0502-bay3-pair1:os-comp0510"
+   switchport trunk native vlan 107
+   switchport trunk allowed vlan 103,107
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 19
+!
+interface Port-Channel20
+   description "Server:fx0502-bay4-pair1:os-comp0511"
+   switchport trunk native vlan 107
+   switchport trunk allowed vlan 103,107
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 20
+!
+interface Port-Channel21
+   description "Server:fx0502-bay3a-pair1:os-comp0512"
+   switchport trunk native vlan 107
+   switchport trunk allowed vlan 103,107
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 21
+!
+interface Port-Channel22
+   description "Server:fx0502-bay3b-pair1:os-comp0513"
+   switchport trunk native vlan 107
+   switchport trunk allowed vlan 103,107
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 22
+!
+interface Port-Channel23
+   description "Server:fx0502-bay7-pair1:os-comp0523"
+   switchport trunk native vlan 107
+   switchport trunk allowed vlan 103,107
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 23
+!
+interface Port-Channel24
+   description "Server:fx0502-bay8-pair1:os-ctrl0501"
+   switchport trunk native vlan 107
+   switchport trunk allowed vlan 103,107
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 24
+!
+interface Port-Channel25
+   description "Server:fx0502-bay1-pair2:os-comp0508"
+   switchport trunk allowed vlan 101,104,106,108-111,113,115-116,131,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   mlag 25
+!
+interface Port-Channel26
+   description "Server:fx0502-bay2-pair2:os-comp0509"
+   switchport trunk allowed vlan 101,104,106,108-111,113,115-116,131,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   mlag 26
+!
+interface Port-Channel27
+   description "Server:fx0502-bay3-pair2:os-comp0510"
+   switchport trunk allowed vlan 101,104,106,108-111,113,115-116,131,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   mlag 27
+!
+interface Port-Channel28
+   description "Server:fx0502-bay4-pair2:os-comp0511"
+   switchport trunk allowed vlan 101,104,106,108-111,113,115-116,131,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   mlag 28
+!
+interface Port-Channel29
+   description "Server:fx0502-bay5-pair2:os-comp0512"
+   switchport trunk allowed vlan 101,104,106,108-111,113,115-116,131,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   mlag 29
+!
+interface Port-Channel30
+   description "Server:fx0502-bay6-pair2:os-comp0513"
+   switchport trunk allowed vlan 101,104,106,108-111,113,115-116,131,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   mlag 30
+!
+interface Port-Channel31
+   description "Server:fx0502-bay7-pair2:os-comp0523"
+   switchport trunk allowed vlan 101,104,106,108-111,113,115-116,131,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   mlag 31
+!
+interface Port-Channel32
+   description "Server:fx0502-bay8-pair2:os-ctrl0501"
+   switchport trunk allowed vlan 101,104,106,108-111,113,115-116,131,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   mlag 32
+!
+interface Port-Channel33
+   description "Server:mining-db0501"
+   switchport trunk allowed vlan 116,2011
+   switchport mode trunk
+   mlag 33
+!
+interface Port-Channel34
+   description "Server:prod-db0501 - bond0"
+   switchport trunk allowed vlan 116,2010
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 34
+!
+interface Port-Channel35
+   description "Server:kafka0510-bond0"
+   switchport trunk native vlan 2500
+   switchport trunk allowed vlan 2500
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 35
+!
+interface Port-Channel38
+   description "Server:snapshot0501 - <if>"
+   switchport trunk native vlan 2501
+   switchport trunk allowed vlan 116,2010,2501
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 38
+!
+interface Port-Channel39
+   description "Server:qlikview0501 - <if>"
+   switchport trunk native vlan 1070
+   switchport trunk allowed vlan 116,1010,1070
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 39
+!
+interface Port-Channel40
+   description "Server:reconciliationDB"
+   switchport access vlan 1010
+   mlag 40
+!
+interface Port-Channel41
+   description "Server:udpldm0501-ensf0"
+   switchport trunk allowed vlan 100,1010,1040,2010
+   switchport mode trunk
+   mlag 41
+!
+interface Port-Channel42
+   description "Server:Scylla-db0501"
+   switchport access vlan 2011
+   mlag 42
+!
+interface Port-Channel43
+   description "Server:os-comp5034"
+   switchport trunk allowed vlan 1215,1218,1221-1222,1228,1230,1232,1234,1237,1239,1250,1253,1255-1256,1258-1259,1270,1272,1275,1278,1281,1284,1287,1290,1293,1296,1298,2301,2304,2307,2310,2313,2316,2319
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 43
+!
+interface Port-Channel44
+   description "Server:os-comp5035"
+   switchport trunk allowed vlan 1215,1218,1221-1222,1228,1230,1232,1234,1237,1239,1250,1253,1255-1256,1258-1259,1270,1272,1275,1278,1281,1284,1287,1290,1293,1296,1298,2301,2304,2307,2310,2313,2316,2319
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 44
+!
+interface Port-Channel45
+   description "Server:os-comp5036"
+   switchport trunk allowed vlan 1215,1218,1221-1222,1228,1230,1232,1234,1237,1239,1250,1253,1255-1256,1258-1259,1270,1272,1275,1278,1281,1284,1287,1290,1293,1296,1298,2301,2304,2307,2310,2313,2316,2319
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 45
+!
+interface Port-Channel46
+   description "Server:os-comp5037"
+   switchport trunk allowed vlan 1215,1218,1221-1222,1228,1230,1232,1234,1237,1239,1250,1253,1255-1256,1258-1259,1270,1272,1275,1278,1281,1284,1287,1290,1293,1296,1298,2301,2304,2307,2310,2313,2316,2319
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 46
+!
+interface Port-Channel47
+   description "Server:os-comp5038"
+   switchport trunk allowed vlan 1215,1218,1221-1222,1228,1230,1232,1234,1237,1239,1250,1253,1255-1256,1258-1259,1270,1272,1275,1278,1281,1284,1287,1290,1293,1296,1298,2301,2304,2307,2310,2313,2316,2319
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 47
+!
+interface Port-Channel48
+   description "Server:os-comp5039"
+   switchport trunk allowed vlan 1215,1218,1221-1222,1228,1230,1232,1234,1237,1239,1250,1253,1255-1256,1258-1259,1270,1272,1275,1278,1281,1284,1287,1290,1293,1296,1298,2301,2304,2307,2310,2313,2316,2319
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 48
+!
+interface Port-Channel521
+   description "Core:sw0520a/b"
+   switchport mode trunk
+   mlag 521
+!
+interface Port-Channel2000
+   description "Core:MLAG-PEER"
+   switchport mode trunk
+   switchport trunk group MLAG-PEER
+!
+interface Ethernet1
+   description "Server:os-comp5020"
+   switchport access vlan 1250
+   channel-group 1 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet2
+   description "Server:os-comp5021"
+   switchport access vlan 1250
+   channel-group 2 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet3
+   description "Server:os-comp5022"
+   switchport access vlan 1250
+   channel-group 3 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet4
+   description "Server:os-comp5023"
+   switchport access vlan 1250
+   channel-group 4 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet5
+   description "Server:os-comp5024"
+   switchport access vlan 1250
+   channel-group 5 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet6
+   description "Server:os-comp5025"
+   switchport access vlan 1250
+   channel-group 6 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet7
+   description "Server:os-comp5026"
+   switchport access vlan 1250
+   channel-group 7 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet8
+   description "Server:ceph5201_bond0"
+   shutdown
+   switchport access vlan 107
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet9
+   description "Server:ceph5201_bond1"
+   switchport access vlan 107
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet10
+   description "Not_Used"
+   shutdown
+   switchport access vlan 107
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet11
+   description "Not_Used"
+   shutdown
+   switchport access vlan 107
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet12
+   description "Not_Used"
+   shutdown
+   switchport access vlan 107
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet13
+   description "Not_Used"
+   shutdown
+   switchport access vlan 107
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet14
+   description "Not_Used"
+   shutdown
+   switchport access vlan 107
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet15
+   description "Not_Used"
+   shutdown
+   switchport access vlan 107
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet16
+   description "Not_Used"
+   shutdown
+   switchport access vlan 107
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet17
+   description "Server:fx0502-bay1-pair1:os-comp0508"
+   switchport access vlan 107
+   channel-group 17 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet18
+   description "Server:fx0502-bay2-pair1:os-comp0509"
+   switchport access vlan 107
+   channel-group 18 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet19
+   description "Server:fx0502-bay3-pair1:os-comp0510"
+   switchport access vlan 107
+   channel-group 19 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet20
+   description "Server:fx0502-bay4-pair1:os-comp0511"
+   switchport access vlan 107
+   channel-group 20 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet21
+   description "Server:fx0502-bay5-pair1:os-comp0512"
+   switchport access vlan 107
+   channel-group 21 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet22
+   description "Server:fx0502-bay6-pair1:os-comp0513"
+   switchport access vlan 107
+   channel-group 22 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet23
+   description "Server:fx0502-bay7-pair1:os-comp0523"
+   switchport access vlan 107
+   channel-group 23 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet24
+   description "Server:fx0502-bay8-pair1:os-ctrl0501"
+   switchport access vlan 107
+   channel-group 24 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet25
+   description "Server:fx0502-bay1-pair2:os-comp0508"
+   channel-group 25 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet26
+   description "Server:fx0502-bay2-pair2:os-comp0509"
+   channel-group 26 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet27
+   description "Server:fx0502-bay3-pair2:os-comp0510"
+   channel-group 27 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet28
+   description "Server:fx0502-bay4-pair2:os-comp0511"
+   channel-group 28 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet29
+   description "Server:fx0502-bay5-pair2:os-comp0512"
+   channel-group 29 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet30
+   description "Server:fx0502-bay6-pair2:os-comp0513"
+   channel-group 30 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet31
+   description "Server:fx0502-bay7-pair2:os-comp0523"
+   channel-group 31 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet32
+   description "Server:fx0502-bay8-pair2:os-ctrl0501"
+   channel-group 32 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet33
+   description "Server:minig-db0501"
+   channel-group 33 mode active
+!
+interface Ethernet34
+   description "Server:prod-db0501 - em1"
+   switchport access vlan 116
+   channel-group 34 mode active
+!
+interface Ethernet35
+   description "Server:kafka0510"
+   switchport access vlan 2500
+   channel-group 35 mode active
+!
+interface Ethernet36
+   description "Server:genesys-edge0501 WAN"
+   switchport access vlan 4053
+   qos trust dscp
+!
+interface Ethernet37
+   description "Server:genesys-edge0501 LAN"
+   switchport access vlan 2600
+!
+interface Ethernet38
+   description "Server:snapshot0501 - <if>"
+   switchport access vlan 2501
+   channel-group 38 mode active
+!
+interface Ethernet39
+   description "Server:qlikview0501 - <if>"
+   switchport access vlan 1010
+   channel-group 39 mode active
+!
+interface Ethernet40
+   description "Server:reconciliationDB - <if>"
+   channel-group 40 mode active
+!
+interface Ethernet41
+   description "Server:udpldm0501-ens2f0"
+   channel-group 41 mode active
+!
+interface Ethernet42
+   description "Server:Scylla-db0501"
+   switchport access vlan 2011
+   channel-group 42 mode active
+!
+interface Ethernet43
+   description "Server:os-comp5034"
+   switchport access vlan 1250
+   channel-group 43 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet44
+   description "Server:os-comp5035"
+   switchport access vlan 1250
+   channel-group 44 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet45
+   description "Server:os-comp5036"
+   switchport access vlan 1250
+   channel-group 45 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet46
+   description "Server:os-comp5037"
+   switchport access vlan 1250
+   channel-group 46 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet47
+   description "Server:os-comp5038"
+   switchport access vlan 1250
+   channel-group 47 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet48
+   description "Server:os-comp5039"
+   switchport access vlan 1250
+   channel-group 48 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet49/1
+   description "P2P Link to spn0501 Eth3/1"
+   mtu 9214
+   logging event link-status
+   speed forced 100gfull
+   no switchport
+   ip address 172.16.102.145/31
+   arp aging timeout 900
+   service-profile TrustDSCP
+!
+interface Ethernet50/1
+   description "P2P Link to spn0502 Eth3/1"
+   mtu 9214
+   logging event link-status
+   speed forced 100gfull
+   no switchport
+   ip address 172.16.102.157/31
+   arp aging timeout 900
+   service-profile TrustDSCP
+!
+interface Ethernet51/1
+   shutdown
+!
+interface Ethernet52/1
+   description "Core:sw0520a/b"
+   channel-group 521 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet53/1
+   description "MLAG:MLAG trunk to sw0522b - Po2000"
+   channel-group 2000 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet54/1
+   description "MLAG:MLAG trunk to sw0522b - Po2000"
+   channel-group 2000 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Loopback0
+   description BGP VRF default
+   ip address 172.16.99.171/32
+!
+interface Loopback3
+   description CVX VRF default
+   ip address 172.16.116.100/32
+!
+interface Management1
+   description "sw0521a E40"
+   vrf Management
+   ip address 172.18.32.58/23
+!
+interface Vlan2
+   description "Arista CVP"
+   ip address dhcp
+!
+interface Vlan100
+   ip address 10.1.50.219/16
+!
+interface Vlan4090
+   description "MLAG-PEER"
+   mtu 9214
+   ip address 172.16.5.25/29
+   bfd echo
+!
+mac address-table aging-time 601
+!
+ip virtual-router mac-address 42:df:cd:d8:28:9c
+!
+ip routing
+ip routing vrf Management
+!
+mlag configuration
+   domain-id sw0522
+   local-interface Vlan4090
+   peer-address 172.16.5.26
+   peer-link Port-Channel2000
+!
+ip route 0.0.0.0/0 10.1.2.1
+ip route vrf Management 0.0.0.0/0 172.18.32.1
+!
+ntp server vrf Management ntp.se source Management1
+!
+router bgp 65541
+   router-id 172.16.99.171
+   maximum-paths 4 ecmp 4
+   neighbor DCI-MLAG peer group
+   neighbor DCI-MLAG remote-as 65541
+   neighbor DCI-MLAG next-hop-self
+   neighbor DCI-MLAG bfd
+   neighbor DCI-MLAG maximum-routes 12000
+   neighbor DCI-spn0501-0502 peer group
+   neighbor DCI-spn0501-0502 remote-as 65539
+   neighbor DCI-spn0501-0502 maximum-routes 12000
+   neighbor 172.16.5.26 peer group DCI-MLAG
+   neighbor 172.16.5.26 send-community
+   neighbor 172.16.102.144 peer group DCI-spn0501-0502
+   neighbor 172.16.102.144 send-community
+   neighbor 172.16.102.156 peer group DCI-spn0501-0502
+   neighbor 172.16.102.156 send-community
+!
+end

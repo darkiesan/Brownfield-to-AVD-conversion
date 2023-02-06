@@ -1,0 +1,5734 @@
+[
+    {
+        "description": "\"Arista CVP\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "dhcp"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "dhcp"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "dhcp"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "dhcp"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "dhcp"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "dhcp"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2",
+        "vrfName": ""
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "10.1.40.221/16"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "10.1.40.222/16"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "10.1.50.221/16"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "10.1.50.222/16"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "10.1.60.221/16"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "10.1.60.222/16"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "100",
+        "vrfName": ""
+    },
+    {
+        "description": "\"OTA-MGMT-LOM-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.0.1/23"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.0.1/23"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.0.1/23"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.0.1/23"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.0.1/23"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.0.1/23"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "101",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-MAAS-PXE-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.2.1/23"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.2.1/23"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.2.1/23"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.2.1/23"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.2.1/23"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.2.1/23"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "102",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-PROD-CephStorage-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.2.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.2.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.2.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.2.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.2.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.2.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "103",
+        "vrfName": "STORAGE"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-Management-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.4.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.4.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.4.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.4.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.4.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.4.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "107",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-Management-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.5.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.5.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.5.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.5.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.5.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.5.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "108",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-TEST-BISAM-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.0.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.0.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.0.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.0.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.0.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.0.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "109",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-TEST-K8-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.3.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.3.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.3.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.3.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.3.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.3.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "110",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-PROD-K8S-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.1.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.1.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.1.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.1.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.1.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.1.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "111",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-kafka-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.6.1/26"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.6.1/26"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.6.1/26"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.6.1/26"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.6.1/26"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.6.1/26"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "112",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-BISAM-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.7.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.7.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.7.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.7.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.7.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.7.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "113",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "OTA-TEST-EXTERNAL-01",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.4.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.4.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.4.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.4.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.4.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.4.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "115",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "Link-lb-ota-test-01-OTA-TEST",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 172.16.106.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 172.16.106.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.16.106.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.16.106.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.16.106.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.16.106.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "118",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "Link-lb0x10-OTA-TEST",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 172.16.112.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 172.16.112.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.16.112.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.16.112.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.16.112.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.16.112.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "119",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "Link-bigipprod0x01-OTA-PROD",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 172.16.114.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 172.16.114.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.16.114.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.16.114.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.16.114.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.16.114.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "121",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "Link-lb-ota-prod-01-OTA-PROD",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 172.16.115.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 172.16.115.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.16.115.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.16.115.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.16.115.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.16.115.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "123",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-LB-VIP-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.13.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.13.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.13.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.13.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.13.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.13.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "124",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "OTA-TEST-LB-VIP-01",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.13.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.13.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.13.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.13.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.13.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.13.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "125",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-PROD-HADOOP-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.14.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.14.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.14.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.14.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.14.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.14.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "128",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-TEST-LB-TEST01-VIP\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.5.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.5.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.5.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.5.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.5.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.5.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "130",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-PROD-MESSAGING-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.15.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.15.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.15.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.15.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.15.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.15.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "131",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"CEPH INTERNAL DC04\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.124.2/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.124.3/24"
+            }
+        ],
+        "virtualIp": "172.16.124.1",
+        "vlanId": "134",
+        "vrfName": "CEPH-INTERNAL"
+    },
+    {
+        "description": "\"Storage-Servers-Ceph2\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 172.19.64.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 172.19.64.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.19.64.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.19.64.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.19.64.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.19.64.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "139",
+        "vrfName": "STORAGE"
+    },
+    {
+        "description": "\"Link-lb0x10-OTA-MGMT\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 172.16.129.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 172.16.129.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.16.129.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.16.129.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.16.129.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.16.129.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "140",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-LB-VIP-02\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.15.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.15.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.15.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.15.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.15.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.15.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "141",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "OTA-TEST-Openstack-Test",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.2.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.2.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.2.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.2.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.2.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.2.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "400",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "10.10.10.251/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1010",
+        "vrfName": "MILOS-MECK"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "10.10.13.10/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1013",
+        "vrfName": "MILOS-MECK"
+    },
+    {
+        "description": "\"ESXI-MGMT-DC05 GOT\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "10.10.64.6/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "10.10.64.7/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "10.10.64.4/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "10.10.64.5/24"
+            }
+        ],
+        "virtualIp": "10.10.64.1",
+        "vlanId": "1064",
+        "vrfName": "ESXI-MGMT"
+    },
+    {
+        "description": "\"ADFS GOT\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.10.65.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.10.65.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.10.65.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.10.65.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.10.65.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.10.65.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1065",
+        "vrfName": "ESXI-MGMT"
+    },
+    {
+        "description": "\"ESXI-MGMT-DC06 GOT\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "10.10.66.2/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "10.10.66.3/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "10.10.66.4/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "10.10.66.5/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "10.10.66.6/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "10.10.66.7/24"
+            }
+        ],
+        "virtualIp": "10.10.66.1",
+        "vlanId": "1066",
+        "vrfName": "ESXI-MGMT"
+    },
+    {
+        "description": "\"ESXI-MGMT-DC04 GOT\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.10.67.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.10.67.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1067",
+        "vrfName": "ESXI-MGMT"
+    },
+    {
+        "description": "\"OfficeServer\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.10.70.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.10.70.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.10.70.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.10.70.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.10.70.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.10.70.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1070",
+        "vrfName": "OfficeServer"
+    },
+    {
+        "description": "\"OfficeDMZ\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.10.71.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.10.71.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.10.71.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.10.71.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.10.71.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.10.71.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1071",
+        "vrfName": "OfficeDMZ"
+    },
+    {
+        "description": "\"OTA-PROD-Ceph-DC04-RGW-02\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.77.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1148",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-Ceph-RGW-02\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.80.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.80.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.80.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.80.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.80.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.80.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1181",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-Ceph-02\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 172.19.85.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 172.19.85.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.19.85.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.19.85.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.19.85.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.19.85.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1182",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"OTA-TEST-DEV-BUILD-DC04-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.27.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.27.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1184",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-Management-02\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.30.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.30.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.30.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.30.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.30.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.30.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1200",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-Keystone-IC-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.31.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.31.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.31.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.31.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.31.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.31.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1202",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-Management-03\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.32.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.32.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.32.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.32.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.32.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.32.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1210",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-Distributed-IC-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.33.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.33.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.33.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.33.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.33.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.33.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1212",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-PROD-LB-A10-VIP-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.21.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.21.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.21.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.21.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.21.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.21.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1213",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "OTA-MGMT-OS-DC04-Management-03",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.42.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.42.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1214",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-CephCentral-Management-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.34.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.34.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.34.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.34.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.34.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.34.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1220",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-CephCentral-DC04-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 172.19.71.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 172.19.71.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.19.71.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.19.71.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.19.71.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.19.71.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1221",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "CEPH-PUBLIC-CephCentral-OS-DC04-01",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 172.19.72.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 172.19.72.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.19.72.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.19.72.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.19.72.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.19.72.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1222",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-CephCentral-DC04-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 172.19.77.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 172.19.77.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1223",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"OTA-TEST-DC04-Test-03\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.24.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.24.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1224",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-PROD-DC04-POC-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.32.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.32.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1227",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-DC04-UTIL-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.96.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.96.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1236",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-UTIL-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.99.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.99.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.99.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.99.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.99.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.99.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1239",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-DC04-Management-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.40.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.40.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1240",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-Ceph-DC04-Management-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.41.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.41.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1241",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-Ceph-DC04-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 172.19.65.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 172.19.65.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1242",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-Ceph-OS-DC04-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 172.19.0.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 172.19.0.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1243",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-DC04-LB-IC-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.72.1/21"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.72.1/21"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1246",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-DC04-MAAS-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.47.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.47.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1247",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-PROD-Ceph-DC04-RGW-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.35.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.35.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1248",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-Ceph-RGW-DC04-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 172.19.68.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 172.19.68.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1249",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"OTA-TEST-GENERIC-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.64.1/22"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.64.1/22"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.64.1/22"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.64.1/22"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.64.1/22"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.64.1/22"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1270",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-PROD-DC04-API-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.40.1/22"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.40.1/22"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1271",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC04-COUCHBASE-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.52.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.52.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1274",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC04-EDVIN-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.55.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.55.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1277",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC04-GENERIC-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.58.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.58.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1280",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC04-MESSAGING-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.61.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.61.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1283",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC04-APP-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.64.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.64.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1286",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC04-WEB-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.67.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.67.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1289",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC04-DB-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.70.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.70.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1292",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC04-KAFKA-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.73.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.73.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1295",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-TEST-Test-03\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.68.1/22"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.68.1/22"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.68.1/22"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.68.1/22"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.68.1/22"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.68.1/22"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1300",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-TEST-External-03\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.72.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.72.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.72.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.72.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.72.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.72.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1301",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-PROD-DEV-BUILD-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.76.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.76.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.76.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.76.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.76.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.76.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1302",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-MGMT-UTIL-02\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.100.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.100.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.100.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.100.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.100.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.100.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1303",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-INTERNAL-SERVICES-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.101.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.101.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.101.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.101.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.101.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.101.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1304",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"Client-GOT-DEV1\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.17.0.1/23"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.17.0.1/23"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.17.0.1/23"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.17.0.1/23"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.17.0.1/23"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.17.0.1/23"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1700",
+        "vrfName": "DEV-GOT"
+    },
+    {
+        "description": "\"Client-GOT-DEV2\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.17.2.1/23"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.17.2.1/23"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.17.2.1/23"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.17.2.1/23"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.17.2.1/23"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.17.2.1/23"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1702",
+        "vrfName": "DEV-GOT"
+    },
+    {
+        "description": "\"Client-GOT-IT\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.17.4.1/23"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.17.4.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1704",
+        "vrfName": "CLIENT-GOT"
+    },
+    {
+        "description": "\"Client-GOT\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.17.6.1/23"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.17.6.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1706",
+        "vrfName": "CLIENT-GOT"
+    },
+    {
+        "description": "\"Client-GOT-Printers\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.17.8.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.17.8.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1708",
+        "vrfName": "CLIENT-GOT"
+    },
+    {
+        "description": "\"MGMT-GOT\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.17.32.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.17.32.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.17.32.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.17.32.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.17.32.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.17.32.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1732",
+        "vrfName": "MGMT-GOT"
+    },
+    {
+        "description": "\"MGMT-GOT-Warehouse\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.17.33.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.17.33.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.17.33.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.17.33.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.17.33.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.17.33.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1733",
+        "vrfName": "MGMT-GOT"
+    },
+    {
+        "description": "\"Client-GOT-GUEST\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.17.48.1/23"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.17.48.1/23"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.17.48.1/23"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.17.48.1/23"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.17.48.1/23"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.17.48.1/23"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1748",
+        "vrfName": "GUEST-GOT"
+    },
+    {
+        "description": "\"Client-GOT-GUEST-Warehouse\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.17.50.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.17.50.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.17.50.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.17.50.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.17.50.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.17.50.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1750",
+        "vrfName": "GUEST-GOT"
+    },
+    {
+        "description": "\"Client-GOT-Wifi\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.17.52.1/23"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.17.52.1/23"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.17.52.1/23"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.17.52.1/23"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.17.52.1/23"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.17.52.1/23"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1752",
+        "vrfName": "GUEST-GOT"
+    },
+    {
+        "description": "\"Client-GOT-Wifi-IOT\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.17.54.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.17.54.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.17.54.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.17.54.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.17.54.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.17.54.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1754",
+        "vrfName": "GUEST-GOT"
+    },
+    {
+        "description": "\"IOT GOT\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.17.64.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.17.64.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.17.64.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.17.64.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.17.64.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.17.64.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1764",
+        "vrfName": "IOT"
+    },
+    {
+        "description": "\"FACILITY GOT\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.17.80.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.17.80.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.17.80.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.17.80.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.17.80.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.17.80.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1780",
+        "vrfName": "FACILITY"
+    },
+    {
+        "description": "\"FACILITY-Warehouse\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.17.81.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.17.81.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.17.81.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.17.81.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.17.81.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.17.81.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1781",
+        "vrfName": "FACILITY"
+    },
+    {
+        "description": "\"OOB-MGMT-IC\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.121.44/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.121.45/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.121.54/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.121.55/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.121.64/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.121.65/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1899",
+        "vrfName": "Management"
+    },
+    {
+        "description": "\"ServerProduction\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.20.10.247/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.20.10.247/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.20.10.247/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.20.10.247/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.20.10.247/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.20.10.247/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2010",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-Database\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.20.11.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.20.11.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.20.11.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.20.11.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.20.11.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.20.11.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2011",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"ServerProductionAPI\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.20.13.247/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.20.13.247/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.20.13.247/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.20.13.247/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.20.13.247/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.20.13.247/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2013",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-API-02\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.4.1/23"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.4.1/23"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.4.1/23"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.4.1/23"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.4.1/23"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.4.1/23"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2016",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-WEB-02\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.3.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.3.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.3.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.3.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.3.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.3.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2017",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-API-03\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.10.1/23"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.10.1/23"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.10.1/23"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.10.1/23"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.10.1/23"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.10.1/23"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2018",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-WEB-03\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.8.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.8.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.8.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.8.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.8.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.8.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2019",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"ServerCO\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.20.20.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.20.20.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.20.20.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.20.20.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.20.20.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.20.20.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2020",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DP-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.12.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.12.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.12.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.12.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.12.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.12.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2021",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-EDVIN-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.16.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.16.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.16.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.16.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.16.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.16.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2022",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-GENERAL-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.18.1/23"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.18.1/23"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.18.1/23"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.18.1/23"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.18.1/23"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.18.1/23"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2023",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-MGMT-Management-02\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.22.14.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.22.14.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.14.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.14.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.14.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.14.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2024",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-PROD-COUCHBASE-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.17.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.17.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.17.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.17.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.17.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.17.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2025",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DB-OS\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.20.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.20.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.20.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.20.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.20.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.20.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2026",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-TEST-EXTERNAL-02\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.8.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.8.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.8.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.8.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.8.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.8.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2027",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-TEST-Test-02\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.6.1/23"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.6.1/23"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.6.1/23"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.6.1/23"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.6.1/23"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.6.1/23"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2028",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-TEST-COUCHBASE-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.17.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.17.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.17.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.17.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.17.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.17.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2029",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-PROD-K8S-02\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.24.1/22"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.24.1/22"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.24.1/22"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.24.1/22"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.24.1/22"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.24.1/22"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2030",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-K8-03\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.28.1/22"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.28.1/22"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.28.1/22"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.28.1/22"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.28.1/22"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.28.1/22"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2031",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-TEST-staging-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.20.1/22"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.20.1/22"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.20.1/22"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.20.1/22"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.20.1/22"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.20.1/22"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2032",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-TEST-K8S-PUBLIC-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "10.72.0.2/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "10.72.0.3/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "10.72.0.4/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "10.72.0.5/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "10.72.0.6/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "10.72.0.7/24"
+            }
+        ],
+        "virtualIp": "10.72.0.1",
+        "vlanId": "2033",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-TEST-K8S-PUBLIC-03\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "10.72.2.2/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "10.72.2.3/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "10.72.2.4/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "10.72.2.5/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "10.72.2.6/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "10.72.2.7/24"
+            }
+        ],
+        "virtualIp": "10.72.2.1",
+        "vlanId": "2035",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"RED-CLU\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.20.50.254/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.20.50.254/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.20.50.254/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.20.50.254/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.20.50.254/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.20.50.254/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2050",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-TEST-Database\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.11.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.11.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.11.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.11.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.11.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.11.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2111",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-TEST-Build-Agents\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.32.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.32.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.32.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.32.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.32.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.32.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2132",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-PROD-DNS-04\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.160.1/29"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.160.2/29"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2200",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-TEST-DNS-04\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.160.9/29"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.160.10/29"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2201",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-MGMT-DNS-04\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.160.17/29"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.160.18/29"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2202",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-PROD-DNS-04-SERVER\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 172.16.160.25/29"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 172.16.160.25/29"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2203",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-TEST-K8S-SANDBOX-DC04-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "10.163.0.2/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "10.163.0.3/24"
+            }
+        ],
+        "virtualIp": "10.163.0.1",
+        "vlanId": "2300",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-TEST-K8S-TEST-DC04-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "10.171.0.2/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "10.171.0.3/24"
+            }
+        ],
+        "virtualIp": "10.171.0.1",
+        "vlanId": "2303",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-PROD-K8S-PROD-DC04-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "10.179.0.2/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "10.179.0.3/24"
+            }
+        ],
+        "virtualIp": "10.179.0.1",
+        "vlanId": "2306",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OFFICESERVER-K8S-INTERNAL-DC04-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.187.0.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.187.0.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2309",
+        "vrfName": "OfficeServer"
+    },
+    {
+        "description": "\"OTA-TEST-K8S-DEVSTAGE01-DC04-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "10.171.6.2/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "10.171.6.3/24"
+            }
+        ],
+        "virtualIp": "10.171.6.1",
+        "vlanId": "2312",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-TEST-DSR-TEST01-DC04-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "10.171.9.2/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "10.171.9.3/24"
+            }
+        ],
+        "virtualIp": "10.171.9.1",
+        "vlanId": "2315",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-PROD-DSR-PROD01-DC04-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "10.179.6.2/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "10.179.6.3/24"
+            }
+        ],
+        "virtualIp": "10.179.6.1",
+        "vlanId": "2318",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"DC05-ServerMemsql\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.25.0.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.25.0.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.0.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.0.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.0.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.0.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2500",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-TEST-Test-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 10.21.1.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 10.21.1.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.1.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.1.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.1.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.1.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2501",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "Link-lb0410-LEGACY-OTA-PROD",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 172.16.104.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 172.16.104.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.16.104.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.16.104.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.16.104.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.16.104.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "3412",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "Link-lb0510-LEGACY-OTA-PROD",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "virtual 172.16.103.1/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "virtual 172.16.103.1/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.16.103.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.16.103.1/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.16.103.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.16.103.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "3512",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "192.168.200.5/29"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "192.168.200.6/29"
+            }
+        ],
+        "virtualIp": "192.168.200.4",
+        "vlanId": "4003",
+        "vrfName": "ISP-DC04-BEARCOM"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "80.252.209.167/27"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "80.252.209.168/27"
+            }
+        ],
+        "virtualIp": "80.252.209.190",
+        "vlanId": "4004",
+        "vrfName": "ISP-DC04-BEARCOM"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "217.119.171.139/29"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "217.119.171.140/29"
+            }
+        ],
+        "virtualIp": "217.119.171.138",
+        "vlanId": "4011",
+        "vrfName": "ISP-DC04-Tele2"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "212.214.155.124/26"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "212.214.155.125/26"
+            }
+        ],
+        "virtualIp": "212.214.155.126",
+        "vlanId": "4012",
+        "vrfName": "ISP-DC04-Tele2"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-IC\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.160.177/28"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.160.178/28"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.160.179/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.160.180/28"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.160.181/28"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.160.182/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4029",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"CLIENT-GOT-IC\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.98.181/28"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.98.182/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4035",
+        "vrfName": "CLIENT-GOT"
+    },
+    {
+        "description": "\"MGMT-GOT-IC\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.98.209/28"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.98.212/28"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.98.211/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.98.213/28"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.98.214/28"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.98.210/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4038",
+        "vrfName": "MGMT-GOT"
+    },
+    {
+        "description": "\"SERVER-GOT-IC\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.98.225/28"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.98.232/28"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.98.233/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.98.234/28"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.98.235/28"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.98.226/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4041",
+        "vrfName": "SERVER-GOT"
+    },
+    {
+        "description": "\"GUEST-GOT-IC\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.98.241/28"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.98.242/28"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.98.243/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.98.244/28"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.98.245/28"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.98.246/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4044",
+        "vrfName": "GUEST-GOT"
+    },
+    {
+        "description": "\"ESXI-MGMT-IC\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.160.97/28"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.160.98/28"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.160.99/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.160.100/28"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.160.101/28"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.160.102/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4045",
+        "vrfName": "ESXI-MGMT"
+    },
+    {
+        "description": "\"ADFS-IC\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.160.113/28"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.160.114/28"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.160.115/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.160.116/28"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.160.117/28"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.160.118/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4046",
+        "vrfName": "ADFS"
+    },
+    {
+        "description": "\"FACILITY-IC\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.160.129/28"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.160.130/28"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.160.131/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.160.132/28"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.160.133/28"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.160.134/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4047",
+        "vrfName": "FACILITY"
+    },
+    {
+        "description": "\"IOT-IC\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.160.145/28"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.160.146/28"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.160.147/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.160.148/28"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.160.149/28"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.160.150/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4048",
+        "vrfName": "IOT"
+    },
+    {
+        "description": "\"DEV-GOT-IC\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.160.161/28"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.160.162/28"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.160.163/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.160.164/28"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.160.165/28"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.160.166/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4049",
+        "vrfName": "DEV-GOT"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.98.56/28"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.98.57/28"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.98.52/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.98.53/28"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.98.54/28"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.98.55/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4066",
+        "vrfName": "TEST-EBBMAR"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.102.234/29"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.102.235/29"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.102.234/29"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.102.235/29"
+            }
+        ],
+        "virtualIp": "172.16.102.233/29",
+        "vlanId": "4067",
+        "vrfName": ""
+    },
+    {
+        "description": "OTA-PROD-OUTGOING-IC",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.108.27/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.108.28/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.108.25/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.108.26/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.108.29/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.108.30/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4070",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "OTA-TEST-OUTGOING-IC",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.109.27/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.109.28/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.109.25/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.109.26/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.109.29/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.109.30/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4071",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "OTA-MGMT-OUTGOING-IC",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.110.27/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.110.28/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.110.25/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.110.26/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.110.29/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.110.30/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4072",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.130.10/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.130.11/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.130.12/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.130.13/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.130.14/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.130.15/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4074",
+        "vrfName": "ISP-DC04-Tele2"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.120.160/24"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.120.161/24"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.120.162/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.120.163/24"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.120.164/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.120.165/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4077",
+        "vrfName": "OTA-FW-IC"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.98.71/28"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.98.72/28"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.98.67/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.98.68/28"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.98.69/28"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.98.70/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4078",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.98.87/28"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.98.88/28"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.98.83/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.98.84/28"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.98.85/28"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.98.86/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4079",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.98.103/28"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.98.104/28"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.98.99/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.98.100/28"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.98.101/28"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.98.102/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4080",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"CEPH-INTERNAL-IC\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.16.102.40/31"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.16.102.41/31"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.102.42/31"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.102.43/31"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.102.44/31"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.102.45/31"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4081",
+        "vrfName": "CEPH-INTERNAL"
+    },
+    {
+        "description": "\"OfficeServer-IC\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.21.0.1/28"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.21.0.2/28"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.21.0.3/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.21.0.4/28"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.21.0.5/28"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.21.0.6/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4082",
+        "vrfName": "OfficeServer"
+    },
+    {
+        "description": "\"OfficeDMZ-IC\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0420a",
+                "ipAddress": "172.21.0.33/28"
+            },
+            {
+                "deviceName": "sw0420b",
+                "ipAddress": "172.21.0.34/28"
+            },
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.21.0.35/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.21.0.36/28"
+            },
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.21.0.37/28"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.21.0.38/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4083",
+        "vrfName": "OfficeDMZ"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "192.168.10.51/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "192.168.10.52/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "10",
+        "vrfName": "WAN-TEST"
+    },
+    {
+        "description": "\"CEPH-INTERNAL-DC05\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.125.2/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.125.3/24"
+            }
+        ],
+        "virtualIp": "172.16.125.1",
+        "vlanId": "135",
+        "vrfName": "CEPH-INTERNAL"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": ""
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": ""
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "311",
+        "vrfName": "TEST-EBBMAR"
+    },
+    {
+        "description": "\"OTA-PROD-DC05-DSR-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.92.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.92.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1146",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-TEST-DC05-DSR-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.34.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.34.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1149",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-TEST-DEV-BUILD-DC05-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.28.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.28.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1185",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-DC05-Management-03\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.52.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.52.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1215",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-TEST-DC05-Test-03\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.21.25.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.21.25.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1225",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-PROD-DC05-POC-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.33.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.33.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1228",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-MGMT-CephCentral-Mgmt-DC05-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.35.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.35.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1230",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-CephCentral-DC05-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.19.73.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.19.73.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1232",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-CephCentral-OS-DC05-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.19.75.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.19.75.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1234",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-DC05-UTIL-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.97.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.97.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1237",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-DC05-Management-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.50.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.50.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1250",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-Ceph-DC05-Management-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.51.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.51.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1251",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-Ceph-DC05-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.19.66.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.19.66.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1252",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-Ceph-OS-DC05-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.19.1.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.19.1.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1253",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-DC05-LB-IC-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.80.1/21"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.80.1/21"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1256",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-DC05-MAAS-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.22.57.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.22.57.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1257",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-PROD-Ceph-DC05-RGW-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.36.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.36.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1258",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-Ceph-RGW-DC05-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.19.69.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.19.69.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1259",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"OTA-PROD-DC05-API-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.44.1/22"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.44.1/22"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1272",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC05-COUCHBASE-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.53.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.53.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1275",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC05-EDVIN-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.56.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.56.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1278",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC05-GENERIC-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.59.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.59.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1281",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC05-MESSAGING-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.62.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.62.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1284",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC05-APP-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.65.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.65.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1287",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC05-WEB-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.68.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.68.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1290",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC05-DB-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.71.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.71.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1293",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC05-KAFKA-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.25.74.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.25.74.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1296",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-CephCentral-Internal-DC05-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.19.78.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.19.78.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1298",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"OTA-PROD-DNS-05\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.160.33/29"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.160.34/29"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2204",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-TEST-DNS-05\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.160.41/29"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.160.42/29"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2205",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-MGMT-DNS-05\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.160.49/29"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.160.50/29"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2206",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-PROD-DNS-05-SERVER\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 172.16.160.57/29"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 172.16.160.57/29"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2207",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-TEST-K8S-SANDBOX-DC05-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "10.163.1.2/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "10.163.1.3/24"
+            }
+        ],
+        "virtualIp": "10.163.1.1",
+        "vlanId": "2301",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-TEST-K8S-TEST-DC05-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "10.171.1.2/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "10.171.1.3/24"
+            }
+        ],
+        "virtualIp": "10.171.1.1",
+        "vlanId": "2304",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-PROD-K8S-PROD-DC05-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "10.179.1.2/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "10.179.1.3/24"
+            }
+        ],
+        "virtualIp": "10.179.1.1",
+        "vlanId": "2307",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OFFICESERVER-K8S-INTERNAL-DC05-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "virtual 10.187.1.1/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "virtual 10.187.1.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2310",
+        "vrfName": "OfficeServer"
+    },
+    {
+        "description": "\"OTA-TEST-K8S-DEVSTAGE01-DC05-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "10.171.7.2/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "10.171.7.3/24"
+            }
+        ],
+        "virtualIp": "10.171.7.1",
+        "vlanId": "2313",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-TEST-DSR-TEST01-DC05-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "10.171.10.2/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "10.171.10.3/24"
+            }
+        ],
+        "virtualIp": "10.171.10.1",
+        "vlanId": "2316",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-PROD-DSR-PROD01-DC05-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "10.179.7.2/24"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "10.179.7.3/24"
+            }
+        ],
+        "virtualIp": "10.179.7.1",
+        "vlanId": "2319",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "83.145.10.46/30"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": ""
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4050",
+        "vrfName": "ISP0501"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "82.99.22.7/27"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": ""
+            }
+        ],
+        "virtualIp": "82.99.22.1",
+        "vlanId": "4053",
+        "vrfName": "ISP0501"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.98.5/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.98.6/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4061",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.98.21/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.98.22/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4062",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.98.37/28"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.98.38/28"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "4063",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0520a",
+                "ipAddress": "172.16.102.242/29"
+            },
+            {
+                "deviceName": "sw0520b",
+                "ipAddress": "172.16.102.243/29"
+            }
+        ],
+        "virtualIp": "172.16.102.241/29",
+        "vlanId": "4068",
+        "vrfName": ""
+    },
+    {
+        "description": "\"CEPH INTERNAL DC06\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.126.2/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.126.3/24"
+            }
+        ],
+        "virtualIp": "172.16.126.1",
+        "vlanId": "136",
+        "vrfName": "CEPH-INTERNAL"
+    },
+    {
+        "description": "\"OTA-PROD-DC06-DSR-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.93.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.93.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1147",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-TEST-DC06-DSR-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.35.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.35.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1150",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-TEST-DEV-BUILD-DC06-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.29.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.29.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1186",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-DC06-Management-03\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.62.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.62.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1216",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-TEST-DC06-Test-03\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.21.26.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.21.26.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1226",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-PROD-DC06-POC-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.34.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.34.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1229",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-MGMT-CephCentral-Mgmt-DC06-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.36.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.36.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1231",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-CephCentral-DC06-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.19.74.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.19.74.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1233",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-CephCentral-OS-DC06-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.19.76.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.19.76.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1235",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-DC06-UTIL-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.98.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.98.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1238",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-DC06-Management-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.60.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.60.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1260",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-Ceph-DC06-Management-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.61.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.61.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1261",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-Ceph-DC06-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.19.67.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.19.67.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1262",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-Ceph-OS-DC06-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.19.2.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.19.2.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1263",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"OTA-MGMT-OS-DC06-LB-IC-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.88.1/21"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.88.1/21"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1266",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-MGMT-DC06-MAAS-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.22.67.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.22.67.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1267",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-PROD-Ceph-DC06-RGW-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.37.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.37.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1268",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-Ceph-RGW-DC06-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.19.70.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.19.70.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1269",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"OTA-PROD-DC06-API-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.48.1/22"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.48.1/22"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1273",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC06-COUCHBASE-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.54.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.54.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1276",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC06-EDVIN-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.57.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.57.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1279",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC06-GENERIC-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.60.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.60.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1282",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC06-MESSAGING-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.63.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.63.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1285",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC06-APP-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.66.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.66.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1288",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC06-WEB-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.69.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.69.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1291",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC06-DB-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.72.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.72.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1294",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-PROD-DC06-KAFKA-10\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.25.75.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.25.75.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1297",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"CEPH-PUBLIC-CephCentral-Internal-DC06-01\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.19.79.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.19.79.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "1299",
+        "vrfName": "CEPH-PUBLIC"
+    },
+    {
+        "description": "\"OTA-PROD-DNS-06\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.160.65/29"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.160.66/29"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2208",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-TEST-DNS-06\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.160.73/29"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.160.74/29"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2209",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-MGMT-DNS-06\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.160.81/29"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.160.82/29"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2210",
+        "vrfName": "OTA-MGMT"
+    },
+    {
+        "description": "\"OTA-PROD-DNS-06-SERVER\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 172.16.160.89/29"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 172.16.160.89/29"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2211",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OTA-TEST-K8S-SANDBOX-DC06-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "10.163.2.2/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "10.163.2.3/24"
+            }
+        ],
+        "virtualIp": "10.163.2.1",
+        "vlanId": "2302",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-TEST-K8S-TEST-DC06-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "10.171.2.2/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "10.171.2.3/24"
+            }
+        ],
+        "virtualIp": "10.171.2.1",
+        "vlanId": "2305",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-PROD-K8S-PROD-DC06-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "10.179.2.2/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "10.179.2.3/24"
+            }
+        ],
+        "virtualIp": "10.179.2.1",
+        "vlanId": "2308",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "\"OFFICESERVER-K8S-INTERNAL-DC06-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "virtual 10.187.2.1/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "virtual 10.187.2.1/24"
+            }
+        ],
+        "virtualIp": "None",
+        "vlanId": "2311",
+        "vrfName": "OfficeServer"
+    },
+    {
+        "description": "\"OTA-TEST-K8S-DEVSTAGE01-DC06-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "10.171.8.2/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "10.171.8.3/24"
+            }
+        ],
+        "virtualIp": "10.171.8.1",
+        "vlanId": "2314",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-TEST-DSR-TEST01-DC06-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "10.171.11.2/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "10.171.11.3/24"
+            }
+        ],
+        "virtualIp": "10.171.11.1",
+        "vlanId": "2317",
+        "vrfName": "OTA-TEST"
+    },
+    {
+        "description": "\"OTA-PROD-DSR-PROD01-DC06-VM\"",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "10.179.8.2/24"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "10.179.8.3/24"
+            }
+        ],
+        "virtualIp": "10.179.8.1",
+        "vlanId": "2320",
+        "vrfName": "OTA-PROD"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "98.128.165.195/29"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "98.128.165.196/29"
+            }
+        ],
+        "virtualIp": "98.128.165.194",
+        "vlanId": "4009",
+        "vrfName": "ISP-DC06-Banhof"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "98.128.165.188/26"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "98.128.165.189/26"
+            }
+        ],
+        "virtualIp": "98.128.165.190",
+        "vlanId": "4010",
+        "vrfName": "ISP-DC06-Banhof"
+    },
+    {
+        "description": "",
+        "nodeList": [
+            {
+                "deviceName": "sw0620a",
+                "ipAddress": "172.16.102.250/29"
+            },
+            {
+                "deviceName": "sw0620b",
+                "ipAddress": "172.16.102.251/29"
+            }
+        ],
+        "virtualIp": "172.16.102.249/29",
+        "vlanId": "4069",
+        "vrfName": ""
+    }
+]

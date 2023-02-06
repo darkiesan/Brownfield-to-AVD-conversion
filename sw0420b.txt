@@ -1,0 +1,4012 @@
+! Startup-config last modified at Fri Jan 13 08:52:32 2023 by ebbmar
+! device: sw0420b (DCS-7280SR-48C6, EOS-4.25.6M)
+!
+! boot system flash:/EOS-4.27.4M.swi
+!
+no aaa root
+!
+username admin role network-admin secret sha512 $6$5//gOLV4t1CnROE1$4WFceKM3Z5lV8D3DFh/bP9sWbns9yB1VxXSluAK/gbFsAFAi/x/3uvcGdDCTzGtnNkyofrnr.iJqRr2ISWYK0/
+username andlil privilege 15 secret sha512 $6$14OPsvz6iMzT.Te7$8AHdBzmqG4udfdUjWO.UKAv1.d6GvryMqg4mw5TeL8yPtQE/aSeITLZsbZjKJZfZlYiu51y19uSDuZyad0Bg70
+username araabe privilege 15 secret sha512 $6$2Eda3vT/W6hVKy6j$6OweJTEDGBRgjHu58Fp7HG44ipn8R7CIE.sKTzHx5Gz0CTP0cRxb9PQeyneQ1ypJpQ2OtGthQI4ZBXxKysUOF1
+username cvpadmin privilege 15 secret 5 $1$E6VAxeV9$rMrf9bnHXs0AkCM8RJ/kt0
+username df privilege 15 secret 5 $1$yorRLk72$Js0Z3mXVE0hydvFYGAQ0r.
+username ebbmar privilege 15 secret sha512 $6$q2OXDybZzItffhem$T.Exg/Cipgl39IWcc0xztfNiXMVEFgxJxxwO48ehSaPiwepohXWd6AvOhIdFlEsxfhPEvGEHE.KsbxY3Zgsx0/
+username ebbmar ssh-key ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCkENo5rwWXiieuhIMxpMvXmddrj4VFoTPYBUJt6rzzq0vSuZImE+pbvz7DIzgqDsVh2XPYw8dC/0h5m9Tx5tOC6/IsBC7+98/1qLeLGmP7fAbOqKtOIEf0ZrNJS8VC+jf+LLJwZbclIyVq12qflVJ0zRq3UH0bKH8X+56uNkWMh6SWrOUMvBqMK6DoawJ/0XaRyubRAsThwRBS/1R4RXygMf6Wbx1fWXio8ZwZdhFYgR05cynND4LZI/wjlVCbnnKxtZcj5wrAp+F2gCYWe9FUwltcKdKxvC9hzkh7x2cnv5PPM3V1rPZr/WNUSDl8QACKdGIs0/npvDBnJCBYgm2KGcgI1wgyJrq4nhQVwkyH/OR9zeDOqI3lefNNRc3ZW9Txy4JYYzSt5+3ju4p4Q2JMCSlvhfKL6041Pb90pCNyrRk7f20+GVQqk1pNxqgylvIzJXC2N1ONO8X2TQs1rVpZV+vTm7EO0SRCLdjQIpZ9EFEViaNY38JbRX7rcQfmaEc= ebbmar@Micaels-MacBook-Pro.local
+username freols privilege 15 secret sha512 $6$wRK5W/vYeVT6MauE$PrIIvTta6gMWmEfWb6eQkAo/aHDKhH.XvtL5xlYFy8.IpJi6O9FbclvLEbxzj4j6nVspwPTSun1PgwhrdZ1tF1
+username kargan privilege 15 secret sha512 $6$pApdqiDE44VGZJK5$.ULzL8DqPY1ANxd.00uHHmavLI25LkW6AeVshmwd5Q3eFP1LqasLG2DgjXEBXY8BzW2nw49aEsUNF.Zd30n3N1
+username milrod privilege 15 secret sha512 $6$JkgeHuuLKEPe25dv$E.oqnNRjyNiWVWwwnp05J1UNkRwbdsbcWxu.yQ6Y32QWI9bsi5AYWyH78SD3mKEo02kC/frn2ljB4998xuhTo.
+username netdisco role network-operator secret sha512 $6$Bcz0dfRzTifR6GvD$ZF0XhxJ7n4RzCoSZwFYuGdBgWvAnUUbXB.QOfWdNlzpec/cuoHXOOtJA0B8Lqp44xGnF6gN3uFeAgDOrU9QqV0
+username robcar privilege 15 secret sha512 $6$SHzqt.x.4918leZK$XZIKWBtKMW.LN0HwxUpbHpGyOozxDTW7sKFn03NUDUJMdcjkqpgfZrjTO9ROIglwErYWDskMcWjA0MYV2Woo2.
+username robcar ssh-key ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAEcEuHE5Ztwvrbnvlq6ZQ8rrfKn8tmpxPiYBbacTMTiR4FsKAitzi7697KJUpnPvjhJ+RBttwK3KXaaqRlFLD/gWwAu87DjnppZfmn3tJxOyoM8QPqoLBFO0D3WCBfowFcEi2wV2fLQzY0ZVcufhLBN2d8lHDqqU11sn12WIdvL9vbYPQ== robert.carlsson@etraveligroup.com
+!
+alias b show int status
+!
+daemon TerminAttr
+   exec /usr/bin/TerminAttr -ingestgrpcurl=10.22.5.61:9910,10.22.5.62:9910,10.22.5.63:9910 -cvcompression=gzip -ingestauth=key,bluppfisk -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -ingestvrf=Management -taillogs
+   no shutdown
+!
+vlan internal order ascending range 3600 3699
+!
+event-monitor
+event-monitor backup max-size 200
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+queue-monitor length
+queue-monitor length notifying
+!
+logging buffered 128000
+logging console informational
+logging vrf Management host 10.1.40.50 514
+logging vrf Management host syslog.maas.etraveli.io 5000
+logging format timestamp high-resolution
+logging source-interface Management1
+!
+hostname sw0420b
+ip name-server vrf Management 10.10.10.1
+ip name-server vrf Management 10.10.10.2
+dns domain etraveli.net
+!
+ntp server vrf OTA-PROD ntp.se
+!
+qos profile TrustDSCP 
+   qos trust dscp
+!
+hardware tcam profile vxlan-routing
+!
+sflow sample 10000
+sflow polling-interval 30
+sflow destination 10.1.10.78
+sflow destination 127.0.0.1
+sflow source-interface Vlan100
+sflow extension bgp
+sflow run
+!
+snmp-server location DC04
+snmp-server community -snmpRE4D ro
+snmp-server vrf Management
+!
+spanning-tree mode rstp
+no spanning-tree vlan-id 4090
+spanning-tree priority 8192
+!
+service unsupported-transceiver 20170301_Seat24TravelAB c972a1ef
+!
+clock timezone Europe/Stockholm
+!
+vlan 2
+   name OTA-MGMT-ARISTA-CVP-01
+!
+vlan 100
+   name Management
+!
+vlan 101
+   name OTA-MGMT-LOM-01
+!
+vlan 102
+   name OTA-MGMT-MAAS-PXE-01
+!
+vlan 103
+   name OTA-PROD-CephStorage-01
+!
+vlan 104
+   name OTA-CONN-CephInternal-01
+!
+vlan 105
+   name OTA-ICSY-OS-Default
+!
+vlan 106
+   name OTA-ICSY-OS-VXLAN-01
+!
+vlan 107
+   name OTA-MGMT-OS-Management-01
+!
+vlan 108
+   name OTA-MGMT-Management-01
+!
+vlan 109
+   name OTA-TEST-BISAM-01
+!
+vlan 110
+   name OTA-TEST-K8-01
+!
+vlan 111
+   name OTA-PROD-K8S-01
+!
+vlan 112
+   name OTA-PROD-kafka-01
+!
+vlan 113
+   name OTA-PROD-BISAM-01
+!
+vlan 114
+   name OTA-PROD-FX2STORAGE-01
+!
+vlan 115
+   name OTA-TEST-EXTERNAL-01
+!
+vlan 116
+   name OTA-ICSY-DB-REPL-01
+!
+vlan 117
+   name OTA-ICSY-lb-ota-test-01-HA
+!
+vlan 118
+   name Link-lb-ota-test-01-OTA-TEST
+!
+vlan 119
+   name Link-lb0x10-OTA-TEST
+!
+vlan 120
+   name OTA-ICSY-FW-LB-OTA-TEST
+!
+vlan 121
+   name Link-bigipprod0x01-OTA-PROD
+!
+vlan 122
+   name OTA-ICSY-lb-ota-prod-01-HA
+!
+vlan 123
+   name Link-lb-ota-prod-01-OTA-PROD
+!
+vlan 124
+   name OTA-PROD-LB-VIP-01
+!
+vlan 125
+   name OTA-TEST-LB-VIP-01
+!
+vlan 126
+   name OTA-MGMT-LB-VIP-01
+!
+vlan 127
+   name CheckPoint-Sync-fw0x10-cluster
+!
+vlan 128
+   name OTA-PROD-HADOOP-01
+!
+vlan 129
+   name CheckPoint-Sync-fw0x10-cluster2
+!
+vlan 130
+   name OTA-TEST-LB-TEST01-VIP
+!
+vlan 131
+   name OTA-PROD-MESSAGING-01
+!
+vlan 132
+   name OTA-ICSY-lb-office-01-HA
+!
+vlan 134
+   name CEPH-INTERNAL-DC04
+!
+vlan 137
+   name STORAGE-F5-Prod-Linknet
+!
+vlan 138
+   name STORAGE-F5-Test-Linknet
+!
+vlan 139
+   name Storage-Servers-Ceph2
+!
+vlan 140
+   name Link-lb0x10-OTA-MGMT
+!
+vlan 141
+   name OTA-MGMT-LB-VIP-02
+!
+vlan 201
+   name PaloAlto-HA1
+!
+vlan 202
+   name PaloAlto-HA2
+!
+vlan 203
+   name CheckPoint-Sync-fw0301
+!
+vlan 300
+   name PaloAlto-Tap
+!
+vlan 400
+   name OTA-TEST-Openstack-Test
+!
+vlan 401
+   name OTA-MGMT-ELK-01
+!
+vlan 509
+   name LAB-ICSY-LAB-PROD-FW-IC
+!
+vlan 510
+   name LAB-ICSY-LAB-TEST-FW-IC
+!
+vlan 511
+   name LAB-ICSY-LAB-MGMT-FW-IC
+!
+vlan 605
+   name TELnetnord
+!
+vlan 1001
+   name ManagementOffice
+!
+vlan 1005
+   name iSCSI
+!
+vlan 1007
+   name VMotion
+!
+vlan 1010
+   name ServerOffice
+!
+vlan 1013
+   name ServerOfficePlatform
+!
+vlan 1014
+   name ServerOfficePlatformHW
+!
+vlan 1015
+   name FirewallOffice
+!
+vlan 1017
+   name ClientVideo
+!
+vlan 1018
+   name ServerOffice-LB-VIP-01
+!
+vlan 1019
+   name ServerOffice-LB-LINK-01
+!
+vlan 1020
+   name ClientUPP
+!
+vlan 1021
+   name ClientIT
+!
+vlan 1022
+   name ClientVDI
+!
+vlan 1023
+   name ClientVM
+!
+vlan 1024
+   name ClientEX
+!
+vlan 1029
+   name ClientGOTVideo
+!
+vlan 1030
+   name ClientDEV
+!
+vlan 1031
+   name ClientHEL
+!
+vlan 1034
+   name ClientGOTGuest
+!
+vlan 1036
+   name ClientGOTWifi
+!
+vlan 1040
+   name NFS
+!
+vlan 1050
+   name FlightNet
+!
+vlan 1051
+   name wifi-network
+!
+vlan 1052
+   name wifi-telia
+!
+vlan 1064
+   name ESXI-MGMT
+!
+vlan 1065
+   name ADFS
+!
+vlan 1066
+   name ESXI-MGMT-DC06-GOT
+!
+vlan 1067
+   name ESXI-MGMT-DC04-GOT
+!
+vlan 1069
+   name OFFICESERVER-ServerRepos
+!
+vlan 1070
+   name OfficeServer
+!
+vlan 1071
+   name OfficeDMZ
+!
+vlan 1090
+   name LAB
+!
+vlan 1129
+   name Tele
+!
+vlan 1181
+   name OTA-PROD-Ceph-RGW-02
+!
+vlan 1182
+   name CEPH-PUBLIC-Ceph-02
+!
+vlan 1184
+   name OTA-TEST-DEV-BUILD-DC04-01
+!
+vlan 1200
+   name OTA-MGMT-OS-Management-02
+!
+vlan 1201
+   name OTA-ICSY-OS-Keystone-Underlay-01
+!
+vlan 1202
+   name OTA-MGMT-OS-Keystone-IC-01
+!
+vlan 1210
+   name OTA-MGMT-OS-Management-03
+!
+vlan 1211
+   name OTA-ICSY-OS-Distributed-Underlay
+!
+vlan 1212
+   name OTA-MGMT-OS-Distributed-IC-01
+!
+vlan 1213
+   name OTA-PROD-LB-A10-VIP-01
+!
+vlan 1214
+   name OTA-MGMT-OS-DC04-Management-03
+!
+vlan 1217
+   name OTA-ICSY-OS-DC04-Distributed-Und
+!
+vlan 1220
+   name OTA-MGMT-CephCentral-Mgmt-DC04-0
+!
+vlan 1221
+   name CEPH-PUBLIC-CephCentral-DC04-01
+!
+vlan 1222
+   name CEPH-PUBLIC-CephCentral-OS-DC04-
+!
+vlan 1223
+   name CephCentral-Internal-DC04-01
+!
+vlan 1224
+   name OTA-TEST-DC04-Test-03
+!
+vlan 1227
+   name OTA-PROD-DC04-POC-01
+!
+vlan 1236
+   name OTA-MGMT-OS-DC04-UTIL-01
+!
+vlan 1239
+   name OTA-MGMT-OS-UTIL-01
+!
+vlan 1240
+   name OTA-MGMT-OS-DC04-Management-01
+!
+vlan 1241
+   name OTA-MGMT-Ceph-DC04-Management-01
+!
+vlan 1242
+   name CEPH-PUBLIC-Ceph-DC04-01
+!
+vlan 1243
+   name CEPH-PUBLIC-Ceph-OS-DC04-01
+!
+vlan 1244
+   name Ceph-Internal-DC04-01
+!
+vlan 1245
+   name OTA-ICSY-OS-DC04-Underlay-01
+!
+vlan 1246
+   name OTA-MGMT-OS-DC04-LB-IC-01
+!
+vlan 1247
+   name OTA-MGMT-DC04-MAAS-01
+!
+vlan 1248
+   name OTA-PROD-Ceph-DC04-RGW-01
+!
+vlan 1249
+   name CEPH-PUBLIC-Ceph-RGW-DC04-01
+!
+vlan 1270
+   name OTA-TEST-GENERIC-10
+!
+vlan 1271
+   name OTA-PROD-DC04-API-10
+!
+vlan 1274
+   name OTA-PROD-DC04-COUCHBASE-10
+!
+vlan 1277
+   name OTA-PROD-DC04-EDVIN-10
+!
+vlan 1280
+   name OTA-PROD-DC04-GENERIC-10
+!
+vlan 1283
+   name OTA-PROD-DC04-MESSAGING-10
+!
+vlan 1286
+   name OTA-PROD-DC04-APP-10
+!
+vlan 1289
+   name OTA-PROD-DC04-WEB-10
+!
+vlan 1292
+   name OTA-PROD-DC04-DB-10
+!
+vlan 1295
+   name OTA-PROD-DC04-KAFKA-10
+!
+vlan 1300
+   name OTA-TEST-Test-03
+!
+vlan 1301
+   name OTA-TEST-External-03
+!
+vlan 1302
+   name OTA-PROD-DEV-BUILD-01
+!
+vlan 1303
+   name OTA-MGMT-UTIL-02
+!
+vlan 1304
+   name OTA-MGMT-INTERNAL-SERVICES-01
+!
+vlan 1700
+   name Client-GOT-DEV1
+!
+vlan 1702
+   name Client-GOT-DEV2
+!
+vlan 1704
+   name Client-GOT-IT
+!
+vlan 1706
+   name Client-GOT
+!
+vlan 1708
+   name Client-GOT-Printers
+!
+vlan 1732
+   name MGMT-GOT
+!
+vlan 1733
+   name MGMT-GOT-Warehouse
+!
+vlan 1748
+   name Client-GOT-GUEST
+!
+vlan 1750
+   name Client-GOT-GUEST-Warehouse
+!
+vlan 1752
+   name Client-GOT-Wifi
+!
+vlan 1754
+   name Client-GOT-Wifi-IOT
+!
+vlan 1764
+   name IOT
+!
+vlan 1780
+   name FACILITY
+!
+vlan 1781
+   name FACILITY-Warehouse
+!
+vlan 1804
+   name MGMT-INFRA-DC04
+!
+vlan 1899
+   name OOB-MGMT-IC
+!
+vlan 2001
+   name ManagementProduction
+!
+vlan 2010
+   name ServerProduction
+!
+vlan 2011
+   name ServerProductionDB
+!
+vlan 2012
+   name ServerProductionAPP
+!
+vlan 2013
+   name ServerProductionAPI
+!
+vlan 2014
+   name ServerProductionWEB
+!
+vlan 2015
+   name ServerProductionPOP
+!
+vlan 2016
+   name OTA-PROD-API-02
+!
+vlan 2017
+   name OTA-PROD-WEB-02
+!
+vlan 2018
+   name OTA-PROD-API-03
+!
+vlan 2019
+   name OTA-PROD-WEB-03
+!
+vlan 2020
+   name ServerCO
+!
+vlan 2021
+   name OTA-PROD-DP-01
+!
+vlan 2022
+   name OTA-PROD-EDVIN-01
+!
+vlan 2023
+   name OTA-PROD-GENERAL-01
+!
+vlan 2024
+   name OTA-MGMT-Management-02
+!
+vlan 2025
+   name OTA-PROD-COUCHBASE-01
+!
+vlan 2026
+   name OTA-PROD-DB-OS
+!
+vlan 2027
+   name OTA-TEST-EXTERNAL-02
+!
+vlan 2028
+   name OTA-TEST-Test-02
+!
+vlan 2029
+   name OTA-TEST-COUCHBASE-01
+!
+vlan 2030
+   name OTA-PROD-K8S-02
+!
+vlan 2031
+   name OTA-PROD-K8S-03
+!
+vlan 2032
+   name OTA-TEST-K8S-staging-01
+!
+vlan 2033
+   name OTA-TEST-K8S-PUBLIC-01
+!
+vlan 2035
+   name OTA-TEST-K8S-PUBLIC-03
+!
+vlan 2050
+   name RED-CLU
+!
+vlan 2051
+   name RED-HOST
+!
+vlan 2052
+   name RED-ACC
+!
+vlan 2060
+   name BLUE-CLU
+!
+vlan 2062
+   name BLUE-ACC
+!
+vlan 2070
+   name GREEN-CLU
+!
+vlan 2072
+   name GREEN-ACC
+!
+vlan 2090
+   name RGB-SRV
+!
+vlan 2091
+   name RGB-DB1
+!
+vlan 2092
+   name RGB-DB2
+!
+vlan 2100
+   name RGB-API
+!
+vlan 2104
+   name RGB-WEB
+!
+vlan 2105
+   name RGB-APP
+!
+vlan 2108
+   name RGB-EDVIN
+!
+vlan 2111
+   name OTA-TEST-Database
+!
+vlan 2132
+   name OTA-TEST-Internal-Build
+!
+vlan 2200
+   name OTA-PROD-DNS-04
+!
+vlan 2201
+   name OTA-TEST-DNS-04
+!
+vlan 2202
+   name OTA-MGMT-DNS-04
+!
+vlan 2203
+   name OTA-PROD-DNS-04-SERVER
+!
+vlan 2204
+   name OTA-PROD-DNS-05
+!
+vlan 2205
+   name OTA-TEST-DNS-05
+!
+vlan 2206
+   name OTA-MGMT-DNS-05
+!
+vlan 2207
+   name OTA-PROD-DNS-05-SERVER
+!
+vlan 2208
+   name OTA-PROD-DNS-06
+!
+vlan 2209
+   name OTA-TEST-DNS-06
+!
+vlan 2210
+   name OTA-MGMT-DNS-06
+!
+vlan 2211
+   name OTA-PROD-DNS-06-SERVER
+!
+vlan 2300
+   name OTA-TEST-K8S-SANDBOX-DC04-VM
+!
+vlan 2303
+   name OTA-TEST-K8S-TEST-DC04-VM
+!
+vlan 2306
+   name OTA-PROD-K8S-PROD-DC04-VM
+!
+vlan 2309
+   name OFFICESERVER-K8S-INTERNAL-DC04-V
+!
+vlan 2312
+   name OTA-TEST-K8S-DEVSTAGE01-DC04-VM
+!
+vlan 2315
+   name OTA-TEST-DSR-TEST01-DC04-VM
+!
+vlan 2318
+   name OTA-PROD-DSR-PROD01-DC04-VM
+!
+vlan 2500
+   name DC05-ServerMemsql
+!
+vlan 2501
+   name OTA-TEST-Test-01
+!
+vlan 2600
+   name GENESYS-EDGE-LAN
+!
+vlan 3001
+   name ISP-DC01-IPOnly
+!
+vlan 3002
+   name ISP-DC01-Bahnhof
+!
+vlan 3010
+   name HARNESS-DELEGATES
+!
+vlan 3410
+   name Link-lb0410-sw0410x-DC04-OUTGOIN
+!
+vlan 3411
+   name Link-fw0401a-lb0x10-OUTGOING
+!
+vlan 3412
+   name Link-lb0410-LEGACY-OTA-PROD
+!
+vlan 3511
+   name Link-fw0501-lb0510-DC05-OUTGOING
+!
+vlan 3512
+   name Link-lb0510-LEGACY-OTA-PROD
+!
+vlan 3514,3541
+   name Link-rt0501a-lb0510-DC05-OUTGOIN
+!
+vlan 4001
+   name ISP-DC02-IPOnly
+!
+vlan 4002
+   name ISP-DC02-TDC
+!
+vlan 4003
+   name ISP-DC04-BEARCOM-LINK
+!
+vlan 4004
+   name ISP-DC04-TS
+!
+vlan 4005
+   name iSCSI1
+!
+vlan 4006
+   name iSCSI2
+!
+vlan 4007
+   name rcip-3par
+!
+vlan 4008
+   name ISP-DC04-IPOnly
+!
+vlan 4010
+   name ISP-DC06-BAHNHOF
+!
+vlan 4011
+   name ISP-DC04-Tele2-LINK
+!
+vlan 4012
+   name ISP-DC04-Tele2
+!
+vlan 4029
+   name CEPH-PUBLIC-IC
+!
+vlan 4035
+   name CLIENT-GOT-IC
+!
+vlan 4038
+   name MGMT-GOT-IC
+!
+vlan 4041
+   name SERVER-GOT-IC
+!
+vlan 4044
+   name GUEST-GOT-IC
+!
+vlan 4045
+   name ESXI-MGMT-IC
+!
+vlan 4046
+   name ADFS-IC
+!
+vlan 4047
+   name FACILITY-IC
+!
+vlan 4048
+   name IOT-IC
+!
+vlan 4049
+   name DEV-GOT-IC
+!
+vlan 4050
+   name DC05-ISP-IPOnly
+!
+vlan 4053
+   name DC05-API
+!
+vlan 4055
+   name DC05-web
+!
+vlan 4057
+   name DC05-app
+!
+vlan 4059
+   name DC05-srv
+!
+vlan 4060
+   name DCI
+!
+vlan 4061
+   name OTA-PROD-IC
+!
+vlan 4062
+   name OTA-TEST-IC
+!
+vlan 4063
+   name OTA-MGMT-IC
+!
+vlan 4064
+   name fw0301-legacy-IC
+!
+vlan 4066
+   name TEST-EBBMAR-IC
+!
+vlan 4067
+   name OTA-ICSY-CVX-01
+!
+vlan 4068
+   name OTA-ICSY-CVX-02
+!
+vlan 4069
+   name OTA-ICSY-CVX-03
+!
+vlan 4070
+   name OTA-PROD-OUTGOING-IC
+!
+vlan 4071
+   name OTA-TEST-OUTGOING-IC
+!
+vlan 4072
+   name OTA-MGMT-OUTGOING-IC
+!
+vlan 4074
+   name INTERNET-GOT-IC
+!
+vlan 4076
+   name OUTGOING-FW-IC
+!
+vlan 4077
+   name OTA-FIREWALL-IC
+!
+vlan 4078
+   name OTA-PROD-IC-OVERLAY
+!
+vlan 4079
+   name OTA-TEST-IC-OVERLAY
+!
+vlan 4080
+   name OTA-MGMT-IC-OVERLAY
+!
+vlan 4081
+   name CEPH-INTERNAL-IC
+!
+vlan 4082
+   name OfficeServer-IC
+!
+vlan 4083
+   name OfficeDMZ-IC
+!
+vlan 4090
+   name MLAG-PEER
+   trunk group MLAG
+!
+vrf instance ADFS
+!
+vrf instance CEPH-INTERNAL
+   description Ceph Storage
+!
+vrf instance CEPH-PUBLIC
+   description Ceph Public
+!
+vrf instance DEV-GOT
+!
+vrf instance ESXI-MGMT
+!
+vrf instance FACILITY
+!
+vrf instance GUEST-GOT
+!
+vrf instance IOT
+!
+vrf instance ISP-DC04-BEARCOM
+!
+vrf instance ISP-DC04-Tele2
+!
+vrf instance MGMT-GOT
+!
+vrf instance Management
+   description VRF for OOB Management
+!
+vrf instance OTA-FW-IC
+   description VRF for FW-IC
+!
+vrf instance OTA-MGMT
+   description VRF for OTA management
+!
+vrf instance OTA-PROD
+   description VRF for OTA production use
+!
+vrf instance OTA-TEST
+   description VRF for OTA test use
+!
+vrf instance OfficeDMZ
+   description VRF for Office DMZ related
+!
+vrf instance OfficeServer
+   description VRF for Office Servers
+!
+vrf instance SERVER-GOT
+!
+vrf instance STORAGE
+   description Storage
+!
+vrf instance TEST-EBBMAR
+   description VRF for TEST
+!
+interface Port-Channel1
+   description "fw0410 - bond0"
+   switchport mode trunk
+   mlag 1
+!
+interface Port-Channel2
+   description "fw0410 - bond1"
+   switchport mode trunk
+   mlag 2
+!
+interface Port-Channel3
+   description "fw0410 - bond2"
+   switchport access vlan 127
+   mlag 3
+!
+interface Port-Channel4
+   description "Server:pyrabbit0401"
+   switchport trunk native vlan 1010
+   switchport trunk allowed vlan 1010
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 4
+!
+interface Port-Channel5
+   description "Server:net-infra0410"
+   switchport trunk allowed vlan 2,100,103,107-108,998,1010,1214,1220,1247,1804,4008,4012,4067-4069,4077
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 5
+!
+interface Port-Channel7
+   description "Server-infra0412-bond0"
+   switchport trunk allowed vlan 2,100,103,107-108,999,1010,1067,1214,1220,1247,1732,1808,1836,2010,2013,4012,4053,4067-4069,4076-4077
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 7
+!
+interface Port-Channel8
+   description "Server:ceph0412 bond1"
+   switchport trunk allowed vlan 134
+   switchport mode trunk
+   mlag 8
+!
+interface Port-Channel9
+   description "Server:ceph0413 bond1"
+   switchport trunk allowed vlan 134
+   switchport mode trunk
+   mlag 9
+!
+interface Port-Channel10
+   description "Core:rt0401a"
+   switchport trunk allowed vlan 4004,4012,4076
+   switchport mode trunk
+   mlag 10
+!
+interface Port-Channel11
+   description "Core:rt0401b"
+   switchport trunk allowed vlan 4008,4012,4076
+   switchport mode trunk
+   mlag 11
+!
+interface Port-Channel12
+   description "Core:rt0402"
+   switchport trunk allowed vlan 4004,4077
+   switchport mode trunk
+   mlag 12
+!
+interface Port-Channel13
+   description "Server:os-ctrl0401 - onboard (fx0402 A-1)"
+   switchport trunk native vlan 107
+   switchport trunk allowed vlan 103,107
+   switchport mode trunk
+   port-channel lacp fallback individual
+   mlag 13
+!
+interface Port-Channel14
+   description "Server:os-ctrl0401 - pcie (fx0402 A-1)"
+   switchport trunk allowed vlan 101,103-104,106-111,113,115-116,131,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   mlag 14
+!
+interface Port-Channel15
+   description "Server:os-comp0401 - onboard (fx0402 A-7)"
+   switchport trunk native vlan 107
+   switchport trunk allowed vlan 103,107
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 15
+!
+interface Port-Channel16
+   description "Server:os-comp0401 - pcie (fx0402 A-7)"
+   switchport trunk allowed vlan 101,103-104,106-111,113,115-116,131,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   mlag 16
+!
+interface Port-Channel17
+   description "Server:ceph0401"
+   switchport trunk native vlan 108
+   switchport trunk allowed vlan 103-104,108
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 17
+!
+interface Port-Channel18
+   description "Server:ceph0402"
+   switchport trunk native vlan 108
+   switchport trunk allowed vlan 103-104,108
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 18
+!
+interface Port-Channel19
+   description "Server:ceph4101"
+   switchport trunk allowed vlan 1221,1223
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 19
+!
+interface Port-Channel20
+   description "Server:ceph0411 bond0"
+   switchport trunk allowed vlan 103,108,139
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 20
+!
+interface Port-Channel21
+   description "Server:ceph0412 bond0"
+   switchport trunk allowed vlan 103,108,139
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 21
+!
+interface Port-Channel22
+   description "Server:ceph0413 bond0"
+   switchport trunk allowed vlan 103,108,139
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 22
+!
+interface Port-Channel24
+   description "Server:hpebc0401- bay2:os-comp0410"
+   switchport trunk allowed vlan 101,103-104,106-111,113,115-116,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 24
+!
+interface Port-Channel25
+   description "Server:hpebc0401- bay3:os-comp0411"
+   switchport trunk allowed vlan 101,103-104,106-111,113,115-116,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 25
+!
+interface Port-Channel26
+   description "Server:hpebc0401- bay4:os-comp0412"
+   switchport trunk allowed vlan 101,103-104,106-111,113,115-116,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 26
+!
+interface Port-Channel27
+   description "Server:hpebc0401- bay5:os-comp0413"
+   switchport trunk allowed vlan 101,103-104,106-111,113,115-116,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 27
+!
+interface Port-Channel28
+   description "Server:hpebc0401- bay6:os-comp0414"
+   switchport trunk allowed vlan 101,103-104,106-111,113,115-116,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 28
+!
+interface Port-Channel29
+   description "Server:hpebc0401- bay7:os-comp0415"
+   switchport trunk allowed vlan 101,103-104,106-111,113,115-116,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 29
+!
+interface Port-Channel30
+   description "Server:hpebc0401- bay8:os-comp0416"
+   switchport trunk allowed vlan 101,103-104,106-111,113,115-116,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 30
+!
+interface Port-Channel32
+   description "Server:hpebc0401- bay10:os-comp0418"
+   switchport trunk allowed vlan 101,103-104,106-111,113,115-116,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 32
+!
+interface Port-Channel33
+   description "Server:hpebc0401- bay11:os-comp0417"
+   switchport trunk allowed vlan 101,103-104,106-111,113,115-116,400,1010,1013,2010,2013,2016-2019,2021-2039,2132,2501
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 33
+!
+interface Port-Channel34
+   description "Server:net-infra0411"
+   switchport trunk allowed vlan 2,100,103,107-108,999,1010,1214,1220,1247,1808,1836,2013,2028,4012,4053,4067-4069,4076-4077
+   switchport mode trunk
+   port-channel lacp fallback individual
+   port-channel lacp fallback timeout 5
+   mlag 34
+!
+interface Port-Channel35
+   description "LB:Downlink to lb0410"
+   switchport mode trunk
+   mlag 35
+!
+interface Port-Channel38
+   description Tele2 Internet
+   switchport access vlan 4011
+   mlag 38
+!
+interface Port-Channel39
+   description "Server:kafka0401"
+   switchport trunk native vlan 112
+   switchport trunk allowed vlan 112
+   switchport mode trunk
+   mlag 39
+!
+interface Port-Channel43
+   description "Core: Downlink to dm1k0401"
+   switchport mode trunk
+   mlag 43
+!
+interface Port-Channel45
+   description "Core:sw0410a/b"
+   switchport mode trunk
+   mlag 45
+!
+interface Port-Channel46
+   description "Core:sw0421a/b"
+   switchport mode trunk
+   mlag 46
+!
+interface Port-Channel2000
+   description "MLAG peer trunk"
+   switchport mode trunk
+   switchport trunk group MLAG
+!
+interface Ethernet1
+   description "fw0410 - eth2-01"
+   channel-group 1 mode active
+   lacp timer fast
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet2
+   description "fw0410 - eth2-02"
+   channel-group 2 mode active
+   lacp timer fast
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet3
+   description "fw0410 - eth2-04"
+   channel-group 3 mode active
+   lacp timer fast
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet4
+   description "Server:pyrabbit0401"
+   switchport access vlan 1010
+   channel-group 4 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet5
+   description "Server:net-infra0410"
+   switchport access vlan 108
+   channel-group 5 mode active
+   lacp timer fast
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet6
+   description "NotUsed"
+   shutdown
+   mtu 9214
+   no switchport
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet7
+   description "Server:net-infra0412"
+   switchport access vlan 108
+   channel-group 7 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet8
+   description "Server:ceph0412 X2"
+   switchport access vlan 134
+   channel-group 8 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet9
+   description "Server:ceph0413 X2"
+   switchport access vlan 134
+   channel-group 9 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet10
+   description "Core:rt0401a"
+   channel-group 10 mode active
+   lacp timer fast
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet11
+   description "Core:rt0401b"
+   channel-group 11 mode active
+   lacp timer fast
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet12
+   description "Core:rt0402"
+   channel-group 12 mode active
+   lacp timer fast
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet13
+   description "Server:os-ctrl0401 - onboard (fx0402 A-1)"
+   switchport access vlan 107
+   channel-group 13 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet14
+   description "Server:os-ctrl0401 - pcie (fx0402 A-1)"
+   channel-group 14 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet15
+   description "Server:os-comp0401 - onboard (fx0402 A-7)"
+   switchport access vlan 107
+   channel-group 15 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet16
+   description "Server:os-comp0401 - pcie (fx0402 A-7)"
+   channel-group 16 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet17
+   description "Server:ceph0401 - LEFT"
+   switchport access vlan 108
+   channel-group 17 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet18
+   description "Server:ceph0402 - LEFT"
+   switchport access vlan 108
+   channel-group 18 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet19
+   description "Server:ceph4101 - LEFT"
+   switchport access vlan 1220
+   channel-group 19 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet20
+   description "Server:ceph0411"
+   switchport access vlan 108
+   channel-group 20 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet21
+   description "Server:ceph0412
+   switchport access vlan 108
+   channel-group 21 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet22
+   description "Server:ceph0413
+   switchport access vlan 108
+   channel-group 22 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet23
+   description "Server:3par0401-rcip"
+   switchport access vlan 4007
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet24
+   description "Server:hpebc0401- bay2:os-comp0410"
+   switchport access vlan 107
+   channel-group 24 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet25
+   description "Server:hpebc0401- bay3:os-comp0411"
+   switchport access vlan 107
+   channel-group 25 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet26
+   description "Server:hpebc0401- bay4:os-comp0412"
+   switchport access vlan 107
+   channel-group 26 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet27
+   description "Server:hpebc0401- bay5:os-comp0413"
+   switchport access vlan 107
+   channel-group 27 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet28
+   description "Server:hpebc0401- bay6:os-comp0414"
+   switchport access vlan 107
+   channel-group 28 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet29
+   description "Server:hpebc0401- bay7:os-comp0415"
+   switchport access vlan 107
+   channel-group 29 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet30
+   description "Server:hpebc0401- bay8:os-comp0416"
+   switchport access vlan 107
+   channel-group 30 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet31
+   description "NotUsed"
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet32
+   description "Server:hpebc0401- bay10:os-comp0418"
+   switchport access vlan 107
+   channel-group 32 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet33
+   description "Server:hpebc0401- bay11:os-comp0417"
+   switchport access vlan 107
+   channel-group 33 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet34
+   description "Server:net-infra0411"
+   switchport access vlan 108
+   channel-group 34 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet35
+   description "LB:Downlink to lb0410"
+   channel-group 35 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet36
+   description "Ceph:sw0520b E36"
+   mtu 9214
+   no switchport
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet36.133
+   description "Core:L3 to sw0520b Ceph"
+   mtu 9214
+   encapsulation dot1q vlan 133
+   vrf CEPH-INTERNAL
+   ip address 172.16.127.2/31
+   bfd echo
+!
+interface Ethernet37
+   description "Ceph:sw0620b E41"
+   mtu 9214
+   no switchport
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet37.133
+   description "Core:L3 to sw0620b Ceph"
+   mtu 9214
+   encapsulation dot1q vlan 133
+   vrf CEPH-INTERNAL
+   ip address 172.16.127.6/31
+   bfd echo
+!
+interface Ethernet38
+   description "ISP:Tele2-Internet"
+   channel-group 38 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet39
+   description "Server:kafka0401"
+   channel-group 39 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet40
+   description "Core:L3 to sw0421a E46"
+   no switchport
+   vrf Management
+   ip address 172.16.102.30/31
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet41
+   description "Core:sw0520b - DARK FIBER"
+   mtu 9214
+   no switchport
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet41.4065
+   description "Core:L3 to sw0520b"
+   mtu 9214
+   encapsulation dot1q vlan 4065
+   ip address 172.16.102.4/31
+   bfd echo
+!
+interface Ethernet42
+   description "Core:sw0620b - DARK FIBER"
+   mtu 9214
+   no switchport
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet42.4065
+   description "Core:L3 to sw0620b"
+   mtu 9214
+   encapsulation dot1q vlan 4065
+   ip address 172.16.102.8/31
+   bfd echo
+!
+interface Ethernet43
+   description "Core: Downlink to dm1k0401"
+   channel-group 43 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet44
+   description "Core: Downlink to dm1k0401"
+   channel-group 43 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet45
+   description "Core:sw0410a/b"
+   channel-group 45 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet46
+   description "Core:sw0421a/b"
+   channel-group 46 mode active
+   lacp timer fast
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet47
+   description "MLAG"
+   channel-group 2000 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet48
+   description "MLAG"
+   channel-group 2000 mode active
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet49/1
+   description "P2P Link to spn0401 Eth2/1"
+   mtu 9214
+   logging event link-status
+   speed forced 100gfull
+   no switchport
+   ip address 172.16.102.103/31
+   arp aging timeout 900
+   queue-monitor length thresholds 445000000 260000000
+   service-profile TrustDSCP
+!
+interface Ethernet50/1
+   description "P2P Link to spn0402 Eth2/1"
+   mtu 9214
+   logging event link-status
+   speed forced 100gfull
+   no switchport
+   ip address 172.16.102.111/31
+   arp aging timeout 900
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet51/1
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet52/1
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet53/1
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Ethernet54/1
+   queue-monitor length thresholds 445000000 260000000
+!
+interface Loopback0
+   description BGP VRF default
+   ip address 172.16.99.82/32
+!
+interface Loopback2
+   description VXLAN VTEP VRF default
+   ip address 172.16.101.81/32
+   ip address 172.16.101.11/32 secondary
+!
+interface Loopback3
+   description CVX VRF default
+   ip address 172.16.116.82/32
+!
+interface Loopback4
+   description "NTP serving address"
+   vrf OTA-MGMT
+   ip address 172.16.128.1/32
+   ntp serve
+!
+interface Loopback7
+   description NTP for OpenStack in OTA-PROD
+   vrf OTA-PROD
+   ip address 169.254.169.252/32
+   ntp serve
+!
+interface Loopback8
+   description NTP for OpenStack in OTA-TEST
+   vrf OTA-TEST
+   ip address 169.254.169.252/32
+   ntp serve
+!
+interface Loopback9
+   description NTP for OpenStack in OTA-MGMT
+   vrf OTA-MGMT
+   ip address 169.254.169.252/32
+   ntp serve
+!
+interface Management1
+   description "sw0421b E34"
+   vrf Management
+   ip address 172.18.0.55/23
+!
+interface Vlan2
+   description "Arista CVP"
+   ip address dhcp
+!
+interface Vlan100
+   ip address 10.1.40.222/16
+!
+interface Vlan101
+   description "OTA-MGMT-LOM-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip helper-address 10.22.5.20
+   ip helper-address 10.22.5.22
+   ip helper-address 10.22.5.23
+   ip address virtual 10.22.0.1/23
+!
+interface Vlan102
+   description "OTA-MGMT-MAAS-PXE-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip helper-address 10.22.5.20
+   ip helper-address 10.22.5.22
+   ip helper-address 10.22.5.23
+   ip address virtual 10.22.2.1/23
+!
+interface Vlan103
+   description "OTA-PROD-CephStorage-01"
+   vrf STORAGE
+   arp aging timeout 600
+   ip address virtual 10.25.2.1/24
+!
+interface Vlan107
+   description "OTA-MGMT-OS-Management-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip helper-address 10.22.5.20
+   ip helper-address 10.22.5.22
+   ip helper-address 10.22.5.23
+   ip address virtual 10.22.4.1/24
+!
+interface Vlan108
+   description "OTA-MGMT-Management-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.5.1/24
+!
+interface Vlan109
+   description "OTA-TEST-BISAM-01"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.0.1/24
+!
+interface Vlan110
+   description "OTA-TEST-K8-01"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.3.1/24
+!
+interface Vlan111
+   description "OTA-PROD-K8S-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.1.1/24
+!
+interface Vlan112
+   description "OTA-PROD-kafka-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.6.1/26
+!
+interface Vlan113
+   description "OTA-PROD-BISAM-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.7.1/24
+!
+interface Vlan115
+   description OTA-TEST-EXTERNAL-01
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.4.1/24
+!
+interface Vlan118
+   description Link-lb-ota-test-01-OTA-TEST
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 172.16.106.1/24
+!
+interface Vlan119
+   description Link-lb0x10-OTA-TEST
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 172.16.112.1/24
+!
+interface Vlan121
+   description Link-bigipprod0x01-OTA-PROD
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 172.16.114.1/24
+!
+interface Vlan123
+   description Link-lb-ota-prod-01-OTA-PROD
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 172.16.115.1/24
+!
+interface Vlan124
+   description "OTA-PROD-LB-VIP-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.13.1/24
+!
+interface Vlan125
+   description OTA-TEST-LB-VIP-01
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.13.1/24
+!
+interface Vlan128
+   description "OTA-PROD-HADOOP-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip helper-address 10.22.5.20
+   ip helper-address 10.22.5.22
+   ip helper-address 10.22.5.23
+   ip address virtual 10.25.14.1/24
+!
+interface Vlan130
+   description "OTA-TEST-LB-TEST01-VIP"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.5.1/24
+!
+interface Vlan131
+   description "OTA-PROD-MESSAGING-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.15.1/24
+!
+interface Vlan134
+   description "CEPH INTERNAL DC04"
+   vrf CEPH-INTERNAL
+   ip address 172.16.124.3/24
+   arp aging timeout 600
+   ip virtual-router address 172.16.124.1
+!
+interface Vlan139
+   description "Storage-Servers-Ceph2"
+   vrf STORAGE
+   arp aging timeout 600
+   ip access-group Servers_to_StorageClients_in in
+   ip address virtual 172.19.64.1/24
+!
+interface Vlan140
+   description "Link-lb0x10-OTA-MGMT"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 172.16.129.1/24
+!
+interface Vlan141
+   description "OTA-MGMT-LB-VIP-02"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.15.1/24
+!
+interface Vlan400
+   description OTA-TEST-Openstack-Test
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.2.1/24
+!
+interface Vlan1064
+   description "ESXI-MGMT-DC05 GOT"
+   shutdown
+   vrf ESXI-MGMT
+   ip address 10.10.64.7/24
+   arp aging timeout 600
+   ip virtual-router address 10.10.64.1
+!
+interface Vlan1065
+   description "ADFS GOT"
+   vrf ESXI-MGMT
+   arp aging timeout 600
+   ip address virtual 10.10.65.1/24
+!
+interface Vlan1066
+   description "ESXI-MGMT-DC06 GOT"
+   shutdown
+   vrf ESXI-MGMT
+   ip address 10.10.66.3/24
+   arp aging timeout 600
+   ip virtual-router address 10.10.66.1
+!
+interface Vlan1067
+   description "ESXI-MGMT-DC04 GOT"
+   vrf ESXI-MGMT
+   arp aging timeout 600
+   ip address virtual 10.10.67.1/24
+!
+interface Vlan1070
+   description "OfficeServer"
+   vrf OfficeServer
+   arp aging timeout 600
+   ip address virtual 10.10.70.1/24
+!
+interface Vlan1071
+   description "OfficeDMZ"
+   vrf OfficeDMZ
+   arp aging timeout 600
+   ip address virtual 10.10.71.1/24
+!
+interface Vlan1181
+   description "OTA-PROD-Ceph-RGW-02"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.80.1/24
+!
+interface Vlan1182
+   description "CEPH-PUBLIC-Ceph-02"
+   vrf CEPH-PUBLIC
+   arp aging timeout 600
+   ip address virtual 172.19.85.1/24
+!
+interface Vlan1184
+   description "OTA-TEST-DEV-BUILD-DC04-01"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.27.1/24
+!
+interface Vlan1200
+   description "OTA-MGMT-OS-Management-02"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.30.1/24
+!
+interface Vlan1202
+   description "OTA-MGMT-OS-Keystone-IC-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.31.1/24
+!
+interface Vlan1210
+   description "OTA-MGMT-OS-Management-03"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.32.1/24
+!
+interface Vlan1212
+   description "OTA-MGMT-OS-Distributed-IC-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.33.1/24
+!
+interface Vlan1213
+   description "OTA-PROD-LB-A10-VIP-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.21.1/24
+!
+interface Vlan1214
+   description "OTA-MGMT-OS-DC04-Management-03"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   no ip dhcp relay all-subnets
+   ip address virtual 10.22.42.1/24
+!
+interface Vlan1220
+   description "OTA-MGMT-CephCentral-Management-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.34.1/24
+!
+interface Vlan1221
+   description "CEPH-PUBLIC-CephCentral-DC04-01"
+   vrf CEPH-PUBLIC
+   arp aging timeout 600
+   ip address virtual 172.19.71.1/24
+!
+interface Vlan1222
+   description CEPH-PUBLIC-CephCentral-OS-DC04-01
+   vrf CEPH-PUBLIC
+   arp aging timeout 600
+   ip address virtual 172.19.72.1/24
+!
+interface Vlan1223
+   description "CEPH-PUBLIC-CephCentral-DC04-01"
+   vrf CEPH-PUBLIC
+   arp aging timeout 600
+   ip address virtual 172.19.77.1/24
+!
+interface Vlan1224
+   description "OTA-TEST-DC04-Test-03"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.24.1/24
+!
+interface Vlan1227
+   description "OTA-PROD-DC04-POC-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.32.1/24
+!
+interface Vlan1236
+   description "OTA-MGMT-OS-DC04-UTIL-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.96.1/24
+!
+interface Vlan1239
+   description "OTA-MGMT-OS-UTIL-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.99.1/24
+!
+interface Vlan1240
+   description "OTA-MGMT-OS-DC04-Management-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip dhcp relay all-subnets
+   ip helper-address 10.22.47.5
+   ip helper-address 10.22.47.6
+   ip address virtual 10.22.40.1/24
+!
+interface Vlan1241
+   description "OTA-MGMT-Ceph-DC04-Management-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip helper-address 10.22.5.93
+   ip helper-address 10.22.5.94
+   ip helper-address 10.22.47.5
+   ip helper-address 10.22.47.6
+   ip helper-address 172.18.8.5
+   ip helper-address 172.18.8.6
+   ip address virtual 10.22.41.1/24
+!
+interface Vlan1242
+   description "CEPH-PUBLIC-Ceph-DC04-01"
+   vrf CEPH-PUBLIC
+   arp aging timeout 600
+   ip address virtual 172.19.65.1/24
+!
+interface Vlan1243
+   description "CEPH-PUBLIC-Ceph-OS-DC04-01"
+   vrf CEPH-PUBLIC
+   arp aging timeout 600
+   ip address virtual 172.19.0.1/24
+!
+interface Vlan1246
+   description "OTA-MGMT-OS-DC04-LB-IC-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.72.1/21
+!
+interface Vlan1247
+   description "OTA-MGMT-DC04-MAAS-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.47.1/24
+!
+interface Vlan1248
+   description "OTA-PROD-Ceph-DC04-RGW-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.35.1/24
+!
+interface Vlan1249
+   description "CEPH-PUBLIC-Ceph-RGW-DC04-01"
+   vrf CEPH-PUBLIC
+   arp aging timeout 600
+   ip address virtual 172.19.68.1/24
+!
+interface Vlan1270
+   description "OTA-TEST-GENERIC-10"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.64.1/22
+!
+interface Vlan1271
+   description "OTA-PROD-DC04-API-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.40.1/22
+!
+interface Vlan1274
+   description "OTA-PROD-DC04-COUCHBASE-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.52.1/24
+!
+interface Vlan1277
+   description "OTA-PROD-DC04-EDVIN-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.55.1/24
+!
+interface Vlan1280
+   description "OTA-PROD-DC04-GENERIC-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.58.1/24
+!
+interface Vlan1283
+   description "OTA-PROD-DC04-MESSAGING-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.61.1/24
+!
+interface Vlan1286
+   description "OTA-PROD-DC04-APP-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.64.1/24
+!
+interface Vlan1289
+   description "OTA-PROD-DC04-WEB-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.67.1/24
+!
+interface Vlan1292
+   description "OTA-PROD-DC04-DB-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.70.1/24
+!
+interface Vlan1295
+   description "OTA-PROD-DC04-KAFKA-10"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.73.1/24
+!
+interface Vlan1300
+   description "OTA-TEST-Test-03"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.68.1/22
+!
+interface Vlan1301
+   description "OTA-TEST-External-03"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.72.1/24
+!
+interface Vlan1302
+   description "OTA-PROD-DEV-BUILD-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.76.1/24
+!
+interface Vlan1303
+   description "OTA-MGMT-UTIL-02"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.100.1/24
+!
+interface Vlan1304
+   description "OTA-MGMT-INTERNAL-SERVICES-01"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.101.1/24
+!
+interface Vlan1700
+   description "Client-GOT-DEV1"
+   vrf DEV-GOT
+   arp aging timeout 600
+   ip helper-address 10.10.10.4
+   ip helper-address 10.10.10.6
+   ip address virtual 10.17.0.1/23
+!
+interface Vlan1702
+   description "Client-GOT-DEV2"
+   vrf DEV-GOT
+   arp aging timeout 600
+   ip helper-address 10.10.10.4
+   ip helper-address 10.10.10.6
+   ip address virtual 10.17.2.1/23
+!
+interface Vlan1732
+   description "MGMT-GOT"
+   shutdown
+   vrf MGMT-GOT
+   ip helper-address 10.10.10.4
+   ip helper-address 10.10.10.6
+   ip address virtual 10.17.32.1/24
+!
+interface Vlan1733
+   description "MGMT-GOT-Warehouse"
+   vrf MGMT-GOT
+   arp aging timeout 600
+   ip address virtual 10.17.33.1/24
+!
+interface Vlan1748
+   description "Client-GOT-GUEST"
+   vrf GUEST-GOT
+   arp aging timeout 600
+   ip address virtual 10.17.48.1/23
+!
+interface Vlan1750
+   description "Client-GOT-GUEST-Warehouse"
+   vrf GUEST-GOT
+   arp aging timeout 600
+   ip address virtual 10.17.50.1/24
+!
+interface Vlan1752
+   description "Client-GOT-Wifi"
+   vrf GUEST-GOT
+   arp aging timeout 600
+   ip address virtual 10.17.52.1/23
+!
+interface Vlan1754
+   description "Client-GOT-Wifi-IOT"
+   vrf GUEST-GOT
+   arp aging timeout 600
+   ip address virtual 10.17.54.1/24
+!
+interface Vlan1764
+   description "IOT GOT"
+   vrf IOT
+   arp aging timeout 600
+   ip address virtual 10.17.64.1/24
+!
+interface Vlan1780
+   description "FACILITY GOT"
+   vrf FACILITY
+   arp aging timeout 600
+   ip address virtual 10.17.80.1/24
+!
+interface Vlan1781
+   description "FACILITY-Warehouse"
+   vrf FACILITY
+   arp aging timeout 600
+   ip address virtual 10.17.81.1/24
+!
+interface Vlan1899
+   description "OOB-MGMT-IC"
+   vrf Management
+   ip address 172.16.121.45/24
+!
+interface Vlan2010
+   description "ServerProduction"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.20.10.247/24
+!
+interface Vlan2011
+   description "OTA-PROD-Database"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.20.11.1/24
+!
+interface Vlan2013
+   description "ServerProductionAPI"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.20.13.247/24
+!
+interface Vlan2016
+   description "OTA-PROD-API-02"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.4.1/23
+!
+interface Vlan2017
+   description "OTA-PROD-WEB-02"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.3.1/24
+!
+interface Vlan2018
+   description "OTA-PROD-API-03"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip helper-address 10.20.10.6
+   ip address virtual 10.25.10.1/23
+!
+interface Vlan2019
+   description "OTA-PROD-WEB-03"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip helper-address 10.20.10.6
+   ip address virtual 10.25.8.1/24
+!
+interface Vlan2020
+   description "ServerCO"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.20.20.1/24
+!
+interface Vlan2021
+   description "OTA-PROD-DP-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip helper-address 10.20.10.6
+   ip address virtual 10.25.12.1/24
+!
+interface Vlan2022
+   description "OTA-PROD-EDVIN-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.16.1/24
+!
+interface Vlan2023
+   description "OTA-PROD-GENERAL-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.18.1/23
+!
+interface Vlan2024
+   description "OTA-MGMT-Management-02"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.22.14.1/24
+!
+interface Vlan2025
+   description "OTA-PROD-COUCHBASE-01"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.17.1/24
+!
+interface Vlan2026
+   description "OTA-PROD-DB-OS"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.20.1/24
+!
+interface Vlan2027
+   description "OTA-TEST-EXTERNAL-02"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.8.1/24
+!
+interface Vlan2028
+   description "OTA-TEST-Test-02"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.6.1/23
+!
+interface Vlan2029
+   description "OTA-TEST-COUCHBASE-01"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.17.1/24
+!
+interface Vlan2030
+   description "OTA-PROD-K8S-02"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.24.1/22
+!
+interface Vlan2031
+   description "OTA-PROD-K8-03"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.28.1/22
+!
+interface Vlan2032
+   description "OTA-TEST-staging-01"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.20.1/22
+!
+interface Vlan2033
+   description "OTA-TEST-K8S-PUBLIC-01"
+   vrf OTA-TEST
+   ip address 10.72.0.3/24
+   arp aging timeout 600
+   ip virtual-router address 10.72.0.1
+!
+interface Vlan2035
+   description "OTA-TEST-K8S-PUBLIC-03"
+   vrf OTA-TEST
+   ip address 10.72.2.3/24
+   arp aging timeout 600
+   ip virtual-router address 10.72.2.1
+!
+interface Vlan2050
+   description "RED-CLU"
+   vrf OTA-MGMT
+   arp aging timeout 600
+   ip address virtual 10.20.50.254/24
+!
+interface Vlan2111
+   description "OTA-TEST-Database"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.11.1/24
+!
+interface Vlan2132
+   description "OTA-TEST-Build-Agents"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.32.1/24
+!
+interface Vlan2200
+   description "OTA-PROD-DNS-04"
+   vrf OTA-PROD
+   ip address 172.16.160.2/29
+   arp aging timeout 600
+!
+interface Vlan2201
+   description "OTA-TEST-DNS-04"
+   vrf OTA-TEST
+   ip address 172.16.160.10/29
+   arp aging timeout 600
+!
+interface Vlan2202
+   description "OTA-MGMT-DNS-04"
+   vrf OTA-MGMT
+   ip address 172.16.160.18/29
+   arp aging timeout 600
+!
+interface Vlan2203
+   description "OTA-PROD-DNS-04-SERVER"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 172.16.160.25/29
+!
+interface Vlan2300
+   description "OTA-TEST-K8S-SANDBOX-DC04-VM"
+   vrf OTA-TEST
+   ip address 10.163.0.3/24
+   arp aging timeout 600
+   ip virtual-router address 10.163.0.1
+!
+interface Vlan2303
+   description "OTA-TEST-K8S-TEST-DC04-VM"
+   vrf OTA-TEST
+   ip address 10.171.0.3/24
+   arp aging timeout 600
+   ip virtual-router address 10.171.0.1
+!
+interface Vlan2306
+   description "OTA-PROD-K8S-PROD-DC04-VM"
+   vrf OTA-PROD
+   ip address 10.179.0.3/24
+   arp aging timeout 600
+   ip virtual-router address 10.179.0.1
+!
+interface Vlan2309
+   description "OFFICESERVER-K8S-INTERNAL-DC04-VM"
+   vrf OfficeServer
+   arp aging timeout 600
+   ip address virtual 10.187.0.1/24
+!
+interface Vlan2312
+   description "OTA-TEST-K8S-DEVSTAGE01-DC04-VM"
+   vrf OTA-TEST
+   ip address 10.171.6.3/24
+   arp aging timeout 600
+   ip virtual-router address 10.171.6.1
+!
+interface Vlan2315
+   description "OTA-TEST-DSR-TEST01-DC04-VM"
+   vrf OTA-TEST
+   ip address 10.171.9.3/24
+   arp aging timeout 600
+   ip virtual-router address 10.171.9.1
+!
+interface Vlan2318
+   description "OTA-PROD-DSR-PROD01-DC04-VM"
+   vrf OTA-PROD
+   ip address 10.179.6.3/24
+   arp aging timeout 600
+   ip virtual-router address 10.179.6.1
+!
+interface Vlan2500
+   description "DC05-ServerMemsql"
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 10.25.0.1/24
+!
+interface Vlan2501
+   description "OTA-TEST-Test-01"
+   vrf OTA-TEST
+   arp aging timeout 600
+   ip address virtual 10.21.1.1/24
+!
+interface Vlan3412
+   description Link-lb0410-LEGACY-OTA-PROD
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 172.16.104.1/24
+!
+interface Vlan3512
+   description Link-lb0510-LEGACY-OTA-PROD
+   vrf OTA-PROD
+   arp aging timeout 600
+   ip address virtual 172.16.103.1/24
+!
+interface Vlan4003
+   vrf ISP-DC04-BEARCOM
+   ip address 192.168.200.6/29
+   ip access-group INTERNET in
+   ip virtual-router address 192.168.200.4
+!
+interface Vlan4004
+   vrf ISP-DC04-BEARCOM
+   ip address 80.252.209.168/27
+   ip virtual-router address 80.252.209.190
+!
+interface Vlan4011
+   vrf ISP-DC04-Tele2
+   ip address 217.119.171.140/29
+   ip access-group INTERNET_Tele2 in
+   ip virtual-router address 217.119.171.138
+!
+interface Vlan4012
+   vrf ISP-DC04-Tele2
+   ip address 212.214.155.125/26
+   ip virtual-router address 212.214.155.126
+!
+interface Vlan4029
+   description "CEPH-PUBLIC-IC"
+   vrf CEPH-PUBLIC
+   ip address 172.16.160.178/28
+   arp aging timeout 600
+!
+interface Vlan4038
+   description "MGMT-GOT-IC"
+   vrf MGMT-GOT
+   ip address 172.16.98.212/28
+   arp aging timeout 600
+!
+interface Vlan4041
+   description "SERVER-GOT-IC"
+   vrf SERVER-GOT
+   ip address 172.16.98.232/28
+   arp aging timeout 600
+!
+interface Vlan4044
+   description "GUEST-GOT-IC"
+   vrf GUEST-GOT
+   ip address 172.16.98.242/28
+   arp aging timeout 600
+!
+interface Vlan4045
+   description "ESXI-MGMT-IC"
+   vrf ESXI-MGMT
+   ip address 172.16.160.98/28
+   arp aging timeout 600
+!
+interface Vlan4046
+   description "ADFS-IC"
+   vrf ADFS
+   ip address 172.16.160.114/28
+   arp aging timeout 600
+!
+interface Vlan4047
+   description "FACILITY-IC"
+   vrf FACILITY
+   ip address 172.16.160.130/28
+   arp aging timeout 600
+!
+interface Vlan4048
+   description "IOT-IC"
+   vrf IOT
+   ip address 172.16.160.146/28
+   arp aging timeout 600
+!
+interface Vlan4049
+   description "DEV-GOT-IC"
+   vrf DEV-GOT
+   ip address 172.16.160.162/28
+   arp aging timeout 600
+!
+interface Vlan4066
+   vrf TEST-EBBMAR
+   ip address 172.16.98.57/28
+   arp aging timeout 600
+!
+interface Vlan4067
+   ip address 172.16.102.235/29
+   ip virtual-router address 172.16.102.233/29
+!
+interface Vlan4070
+   description OTA-PROD-OUTGOING-IC
+   vrf OTA-PROD
+   ip address 172.16.108.28/24
+!
+interface Vlan4071
+   description OTA-TEST-OUTGOING-IC
+   vrf OTA-TEST
+   ip address 172.16.109.28/24
+!
+interface Vlan4072
+   description OTA-MGMT-OUTGOING-IC
+   vrf OTA-MGMT
+   ip address 172.16.110.28/24
+!
+interface Vlan4074
+   vrf ISP-DC04-Tele2
+   ip address 172.16.130.11/24
+!
+interface Vlan4077
+   vrf OTA-FW-IC
+   ip address 172.16.120.161/24
+   arp aging timeout 600
+!
+interface Vlan4078
+   vrf OTA-PROD
+   ip address 172.16.98.72/28
+   arp aging timeout 600
+!
+interface Vlan4079
+   vrf OTA-TEST
+   ip address 172.16.98.88/28
+   arp aging timeout 600
+!
+interface Vlan4080
+   vrf OTA-MGMT
+   ip address 172.16.98.104/28
+   arp aging timeout 600
+!
+interface Vlan4081
+   description "CEPH-INTERNAL-IC"
+   vrf CEPH-INTERNAL
+   ip address 172.16.102.41/31
+   arp aging timeout 600
+!
+interface Vlan4082
+   description "OfficeServer-IC"
+   vrf OfficeServer
+   ip address 172.21.0.2/28
+   arp aging timeout 600
+!
+interface Vlan4083
+   description "OfficeDMZ-IC"
+   vrf OfficeDMZ
+   ip address 172.21.0.34/28
+   arp aging timeout 600
+!
+interface Vlan4090
+   mtu 9214
+   ip address 172.16.90.6/30
+   arp aging timeout 600
+   bfd echo
+!
+interface Vxlan1
+   vxlan source-interface Loopback2
+   vxlan udp-port 4789
+   vxlan vlan 2 vni 2
+   vxlan vlan 100 vni 100
+   vxlan vlan 101 vni 101
+   vxlan vlan 102 vni 102
+   vxlan vlan 103 vni 103
+   vxlan vlan 104 vni 104
+   vxlan vlan 105 vni 105
+   vxlan vlan 106 vni 106
+   vxlan vlan 107 vni 107
+   vxlan vlan 108 vni 108
+   vxlan vlan 109 vni 109
+   vxlan vlan 110 vni 110
+   vxlan vlan 111 vni 111
+   vxlan vlan 112 vni 112
+   vxlan vlan 113 vni 113
+   vxlan vlan 114 vni 114
+   vxlan vlan 115 vni 115
+   vxlan vlan 116 vni 116
+   vxlan vlan 117 vni 117
+   vxlan vlan 118 vni 118
+   vxlan vlan 119 vni 119
+   vxlan vlan 120 vni 120
+   vxlan vlan 121 vni 121
+   vxlan vlan 122 vni 122
+   vxlan vlan 123 vni 123
+   vxlan vlan 124 vni 124
+   vxlan vlan 125 vni 125
+   vxlan vlan 126 vni 126
+   vxlan vlan 127 vni 127
+   vxlan vlan 128 vni 128
+   vxlan vlan 129 vni 129
+   vxlan vlan 130 vni 130
+   vxlan vlan 131 vni 131
+   vxlan vlan 132 vni 132
+   vxlan vlan 137 vni 137
+   vxlan vlan 138 vni 138
+   vxlan vlan 139 vni 139
+   vxlan vlan 140 vni 140
+   vxlan vlan 141 vni 141
+   vxlan vlan 201 vni 201
+   vxlan vlan 202 vni 202
+   vxlan vlan 203 vni 203
+   vxlan vlan 300 vni 300
+   vxlan vlan 400 vni 400
+   vxlan vlan 401 vni 401
+   vxlan vlan 509 vni 509
+   vxlan vlan 510 vni 510
+   vxlan vlan 511 vni 511
+   vxlan vlan 605 vni 605
+   vxlan vlan 1001 vni 1001
+   vxlan vlan 1005 vni 1005
+   vxlan vlan 1007 vni 1007
+   vxlan vlan 1010 vni 1010
+   vxlan vlan 1013 vni 1013
+   vxlan vlan 1014 vni 1014
+   vxlan vlan 1015 vni 1015
+   vxlan vlan 1017 vni 1017
+   vxlan vlan 1018 vni 1018
+   vxlan vlan 1019 vni 1019
+   vxlan vlan 1020 vni 1020
+   vxlan vlan 1021 vni 1021
+   vxlan vlan 1022 vni 1022
+   vxlan vlan 1023 vni 1023
+   vxlan vlan 1024 vni 1024
+   vxlan vlan 1029 vni 1029
+   vxlan vlan 1030 vni 1030
+   vxlan vlan 1031 vni 1031
+   vxlan vlan 1034 vni 1034
+   vxlan vlan 1036 vni 1036
+   vxlan vlan 1040 vni 1040
+   vxlan vlan 1050 vni 1050
+   vxlan vlan 1051 vni 1051
+   vxlan vlan 1052 vni 1052
+   vxlan vlan 1061 vni 1061
+   vxlan vlan 1062 vni 1062
+   vxlan vlan 1064 vni 1064
+   vxlan vlan 1065 vni 1065
+   vxlan vlan 1066 vni 1066
+   vxlan vlan 1067 vni 1067
+   vxlan vlan 1069 vni 1069
+   vxlan vlan 1070 vni 1070
+   vxlan vlan 1071 vni 1071
+   vxlan vlan 1090 vni 1090
+   vxlan vlan 1129 vni 1129
+   vxlan vlan 1181 vni 1181
+   vxlan vlan 1182 vni 1182
+   vxlan vlan 1184 vni 1184
+   vxlan vlan 1200 vni 1200
+   vxlan vlan 1201 vni 1201
+   vxlan vlan 1202 vni 1202
+   vxlan vlan 1210 vni 1210
+   vxlan vlan 1211 vni 1211
+   vxlan vlan 1212 vni 1212
+   vxlan vlan 1213 vni 1213
+   vxlan vlan 1214 vni 1214
+   vxlan vlan 1217 vni 1217
+   vxlan vlan 1220 vni 1220
+   vxlan vlan 1221 vni 1221
+   vxlan vlan 1222 vni 1222
+   vxlan vlan 1223 vni 1223
+   vxlan vlan 1224 vni 1224
+   vxlan vlan 1227 vni 1227
+   vxlan vlan 1236 vni 1236
+   vxlan vlan 1239 vni 1239
+   vxlan vlan 1240 vni 1240
+   vxlan vlan 1241 vni 1241
+   vxlan vlan 1242 vni 1242
+   vxlan vlan 1243 vni 1243
+   vxlan vlan 1244 vni 1244
+   vxlan vlan 1245 vni 1245
+   vxlan vlan 1246 vni 1246
+   vxlan vlan 1247 vni 1247
+   vxlan vlan 1248 vni 1248
+   vxlan vlan 1249 vni 1249
+   vxlan vlan 1270 vni 1270
+   vxlan vlan 1271 vni 1271
+   vxlan vlan 1274 vni 1274
+   vxlan vlan 1277 vni 1277
+   vxlan vlan 1280 vni 1280
+   vxlan vlan 1283 vni 1283
+   vxlan vlan 1286 vni 1286
+   vxlan vlan 1289 vni 1289
+   vxlan vlan 1292 vni 1292
+   vxlan vlan 1295 vni 1295
+   vxlan vlan 1300 vni 1300
+   vxlan vlan 1301 vni 1301
+   vxlan vlan 1302 vni 1302
+   vxlan vlan 1303 vni 1303
+   vxlan vlan 1304 vni 1304
+   vxlan vlan 1700 vni 1700
+   vxlan vlan 1702 vni 1702
+   vxlan vlan 1704 vni 1704
+   vxlan vlan 1706 vni 1706
+   vxlan vlan 1708 vni 1708
+   vxlan vlan 1732 vni 1732
+   vxlan vlan 1733 vni 1733
+   vxlan vlan 1748 vni 1748
+   vxlan vlan 1750 vni 1750
+   vxlan vlan 1752 vni 1752
+   vxlan vlan 1754 vni 1754
+   vxlan vlan 1764 vni 1764
+   vxlan vlan 1780 vni 1780
+   vxlan vlan 1781 vni 1781
+   vxlan vlan 1899 vni 1899
+   vxlan vlan 2001 vni 2001
+   vxlan vlan 2010 vni 2010
+   vxlan vlan 2011 vni 2011
+   vxlan vlan 2012 vni 2012
+   vxlan vlan 2013 vni 2013
+   vxlan vlan 2014 vni 2014
+   vxlan vlan 2015 vni 2015
+   vxlan vlan 2016 vni 2016
+   vxlan vlan 2017 vni 2017
+   vxlan vlan 2018 vni 2018
+   vxlan vlan 2019 vni 2019
+   vxlan vlan 2020 vni 2020
+   vxlan vlan 2021 vni 2021
+   vxlan vlan 2022 vni 2022
+   vxlan vlan 2023 vni 2023
+   vxlan vlan 2024 vni 2024
+   vxlan vlan 2025 vni 2025
+   vxlan vlan 2026 vni 2026
+   vxlan vlan 2027 vni 2027
+   vxlan vlan 2028 vni 2028
+   vxlan vlan 2029 vni 2029
+   vxlan vlan 2030 vni 2030
+   vxlan vlan 2031 vni 2031
+   vxlan vlan 2032 vni 2032
+   vxlan vlan 2033 vni 2033
+   vxlan vlan 2035 vni 2035
+   vxlan vlan 2050 vni 2050
+   vxlan vlan 2051 vni 2051
+   vxlan vlan 2052 vni 2052
+   vxlan vlan 2060 vni 2060
+   vxlan vlan 2062 vni 2062
+   vxlan vlan 2070 vni 2070
+   vxlan vlan 2072 vni 2072
+   vxlan vlan 2090 vni 2090
+   vxlan vlan 2091 vni 2091
+   vxlan vlan 2092 vni 2092
+   vxlan vlan 2100 vni 2100
+   vxlan vlan 2104 vni 2104
+   vxlan vlan 2105 vni 2105
+   vxlan vlan 2108 vni 2108
+   vxlan vlan 2111 vni 2111
+   vxlan vlan 2132 vni 2132
+   vxlan vlan 2200 vni 2200
+   vxlan vlan 2201 vni 2201
+   vxlan vlan 2202 vni 2202
+   vxlan vlan 2203 vni 2203
+   vxlan vlan 2204 vni 2204
+   vxlan vlan 2205 vni 2205
+   vxlan vlan 2206 vni 2206
+   vxlan vlan 2207 vni 2207
+   vxlan vlan 2208 vni 2208
+   vxlan vlan 2209 vni 2209
+   vxlan vlan 2210 vni 2210
+   vxlan vlan 2211 vni 2211
+   vxlan vlan 2300 vni 2300
+   vxlan vlan 2303 vni 2303
+   vxlan vlan 2306 vni 2306
+   vxlan vlan 2309 vni 2309
+   vxlan vlan 2312 vni 2312
+   vxlan vlan 2315 vni 2315
+   vxlan vlan 2318 vni 2318
+   vxlan vlan 2500 vni 2500
+   vxlan vlan 2501 vni 2501
+   vxlan vlan 2600 vni 2600
+   vxlan vlan 3001 vni 3001
+   vxlan vlan 3002 vni 3002
+   vxlan vlan 3010 vni 3010
+   vxlan vlan 3411 vni 3411
+   vxlan vlan 3412 vni 3412
+   vxlan vlan 3511 vni 3511
+   vxlan vlan 3541 vni 3541
+   vxlan vlan 4001 vni 4001
+   vxlan vlan 4002 vni 4002
+   vxlan vlan 4004 vni 4004
+   vxlan vlan 4005 vni 4005
+   vxlan vlan 4006 vni 4006
+   vxlan vlan 4007 vni 4007
+   vxlan vlan 4008 vni 4008
+   vxlan vlan 4010 vni 4010
+   vxlan vlan 4012 vni 4012
+   vxlan vlan 4029 vni 4029
+   vxlan vlan 4035 vni 4035
+   vxlan vlan 4038 vni 4038
+   vxlan vlan 4041 vni 4041
+   vxlan vlan 4044 vni 4044
+   vxlan vlan 4045 vni 4045
+   vxlan vlan 4046 vni 4046
+   vxlan vlan 4047 vni 4047
+   vxlan vlan 4048 vni 4048
+   vxlan vlan 4049 vni 4049
+   vxlan vlan 4053 vni 4053
+   vxlan vlan 4060 vni 4060
+   vxlan vlan 4061 vni 4061
+   vxlan vlan 4062 vni 4062
+   vxlan vlan 4063 vni 4063
+   vxlan vlan 4064 vni 4064
+   vxlan vlan 4066 vni 4066
+   vxlan vlan 4067 vni 4067
+   vxlan vlan 4068 vni 4068
+   vxlan vlan 4069 vni 4069
+   vxlan vlan 4070 vni 4070
+   vxlan vlan 4071 vni 4071
+   vxlan vlan 4072 vni 4072
+   vxlan vlan 4073 vni 4073
+   vxlan vlan 4074 vni 4074
+   vxlan vlan 4075 vni 4075
+   vxlan vlan 4076 vni 4076
+   vxlan vlan 4077 vni 4077
+   vxlan vlan 4078 vni 4078
+   vxlan vlan 4079 vni 4079
+   vxlan vlan 4080 vni 4080
+   vxlan vlan 4081 vni 4081
+   vxlan vlan 4082 vni 4082
+   vxlan vlan 4083 vni 4083
+   vxlan flood vtep 172.16.101.11 172.16.101.61 172.16.101.71 172.16.101.81 172.16.101.91 172.16.101.101 172.16.101.111 172.16.101.131 172.16.101.151 172.16.101.171
+!
+monitor connectivity
+   vrf OTA-MGMT
+      host Palo
+         description
+         Palo OTA-MGMT
+         ip 172.16.98.45
+   !
+   vrf OTA-PROD
+      host Palo
+         description
+         Palo OTA-PROD
+         ip 172.16.98.13
+   !
+   vrf OTA-TEST
+      interface set Loop Loopback99
+      local-interfaces Loop address-only default
+      !
+      host Palo
+         description
+         Palo OTA-TEST
+         ip 172.16.98.29
+   no shutdown
+   !
+   host git
+      description
+      10.10.10.62 git
+      ip 10.10.10.62
+!
+mac address-table aging-time 601
+!
+ip virtual-router mac-address e2:d6:f1:a8:ac:3f
+!
+ip access-list INTERNET
+   counters per-entry
+   10 deny tcp any host 80.252.209.190
+   20 deny udp any host 80.252.209.190
+   30 permit icmp any host 80.252.209.190 echo
+   40 permit icmp any host 80.252.209.190 echo-reply
+   50 deny tcp any host 80.252.209.167
+   60 deny udp any host 80.252.209.167
+   70 permit icmp any host 80.252.209.167 echo
+   80 permit icmp any host 80.252.209.167 echo-reply
+   90 deny tcp any host 80.252.209.168
+   100 deny udp any host 80.252.209.168
+   110 permit icmp any host 80.252.209.168 echo
+   120 permit icmp any host 80.252.209.168 echo-reply
+   130 permit tcp any 80.252.209.160/27
+   140 permit udp any 80.252.209.160/27
+   150 permit icmp any 80.252.209.160/27
+   160 permit icmp any 192.168.200.0/29 echo
+   170 permit icmp any 192.168.200.0/29 echo-reply
+   180 permit udp any host 80.252.209.189 eq isakmp l2tp non500-isakmp
+   190 permit 50 any host 80.252.209.189
+   200 permit udp any eq 443 945 5060 5061 host 80.252.209.175
+   210 permit udp any host 80.252.209.175 eq 443 945 5060 5061
+   220 permit udp any host 80.252.209.175 range 16384 32768
+   230 permit udp host 162.248.170.4 eq 5060 host 80.252.209.175
+   240 permit udp host 162.248.168.250 eq 5060 host 80.252.209.175
+   250 permit udp host 64.119.212.250 eq 5060 host 80.252.209.175
+   260 permit udp 162.248.168.0/24 host 80.252.209.175 range 5070 65535
+   270 permit udp 64.119.212.224/27 host 80.252.209.175 range 5070 65535
+   280 permit icmp 82.99.21.0/26 host 80.252.209.175
+   290 permit ip host 4.4.4.4 host 80.252.209.175
+   300 permit ip host 8.8.8.8 host 80.252.209.175
+   310 deny tcp any any
+   320 deny udp any any
+   330 deny icmp any any
+!
+ip access-list INTERNET_Tele2
+   counters per-entry
+   10 permit icmp any any
+   20 permit tcp any host 212.214.155.65
+   30 permit udp any host 212.214.155.65
+   40 permit tcp any host 212.214.155.66
+   50 permit udp any host 212.214.155.66
+   60 permit tcp any host 212.214.155.67
+   70 permit udp any host 212.214.155.67
+   80 permit tcp any eq https 945 5060 5061 host 212.214.155.69
+   90 permit udp any eq 443 945 5060 5061 host 212.214.155.69
+   100 permit udp any host 212.214.155.69 eq 443 945 5060 5061
+   110 permit udp any host 212.214.155.69 range 16384 32768
+   120 permit udp 162.248.168.0/24 host 212.214.155.69 range 5070 65535
+   130 permit udp 64.119.212.224/27 host 212.214.155.69 range 5070 65535
+   140 permit udp any eq ntp host 212.214.155.69
+   150 permit icmp 82.99.21.0/26 host 212.214.155.69
+   160 permit ip host 4.4.4.4 host 212.214.155.69
+   170 permit ip host 8.8.8.8 host 212.214.155.69
+   180 permit tcp any host 212.214.155.70
+   190 permit udp any host 212.214.155.70
+   200 permit icmp any host 212.214.155.70
+   210 permit tcp any host 212.214.155.71
+   220 permit udp any host 212.214.155.71
+   230 permit icmp any host 212.214.155.71
+   240 permit tcp any host 212.214.155.74 eq www
+   250 permit tcp any host 212.214.155.74 eq https
+   260 permit tcp any host 212.214.155.75 eq https
+   270 permit tcp any host 212.214.155.76 eq https
+   280 permit tcp any host 212.214.155.80
+   290 permit udp any host 212.214.155.80
+   300 permit icmp any host 212.214.155.80
+   310 permit tcp any host 212.214.155.82
+   320 permit udp any host 212.214.155.82
+   330 permit icmp any host 212.214.155.82
+   340 permit tcp any host 212.214.155.85
+   350 permit udp any host 212.214.155.85
+   360 permit icmp any host 212.214.155.85
+   370 permit tcp any host 212.214.155.122
+   380 permit udp any host 212.214.155.122
+   390 permit icmp any host 212.214.155.122
+   400 permit tcp any host 212.214.155.123
+   410 permit udp any host 212.214.155.123
+   420 permit icmp any host 212.214.155.123
+   430 deny tcp any host 212.214.155.124
+   440 deny udp any host 212.214.155.124
+   450 permit icmp any host 212.214.155.124 echo
+   460 permit icmp any host 212.214.155.124 echo-reply
+   470 deny tcp any host 212.214.155.125
+   480 deny udp any host 212.214.155.125
+   490 permit icmp any host 212.214.155.125 echo
+   500 permit icmp any host 212.214.155.125 echo-reply
+   510 deny tcp any host 212.214.155.126
+   520 deny udp any host 212.214.155.126
+   530 permit icmp any host 212.214.155.126 echo
+   540 permit icmp any host 212.214.155.126 echo-reply
+   550 permit icmp any host 217.119.171.138 echo
+   560 permit icmp any host 217.119.171.138 echo-reply
+   570 permit ip any host 80.252.209.188
+   580 permit tcp any host 212.214.155.83 eq www
+   590 permit tcp any host 212.214.155.83 eq https
+   600 permit udp any host 212.214.155.83 eq 4433
+   610 permit tcp any host 212.214.155.84 eq www
+   620 permit tcp any host 212.214.155.84 eq https
+   630 permit udp any host 212.214.155.84 eq 4433
+   640 deny tcp any any
+   650 deny udp any any
+   660 deny icmp any any
+!
+ip access-list Servers_to_StorageClients_in
+   counters per-entry
+   10 permit ip 172.19.64.0/20 172.19.0.0/19
+   20 permit ip 172.19.64.0/20 10.25.2.0/24
+   30 permit icmp any any
+   40 deny ip any any
+!
+ip access-list StorageClientsProd_to_Servers_in
+   counters per-entry
+   10 permit ip 172.19.0.0/19 172.19.64.0/20
+   20 permit icmp any any
+   30 deny ip any any
+!
+ip access-list StorageClientsTest_to_Servers_in
+   counters per-entry
+   10 permit ip 172.19.32.0/19 172.19.64.0/20
+   20 permit icmp any any
+   30 deny ip any any
+!
+ip access-list mgmtssh
+   counters per-entry
+   10 remark ACL to allow and deny access to SSH on local router
+   20 permit tcp 10.10.60.0/22 any eq ssh
+   30 remark Deny OTA-TEST
+   40 deny tcp 10.21.0.0/26 any eq ssh
+   50 deny tcp 10.72.0.0/13 any eq ssh
+   60 remark Deny OTA-PROD
+   70 deny tcp 10.20.0.0/16 any eq ssh
+   80 deny tcp 10.25.0.0/16 any eq ssh
+   90 deny tcp 10.64.0.0/13 any eq ssh
+   100 remark Allow rest
+   110 permit tcp any any eq ssh
+!
+ip routing
+ip routing vrf ADFS
+ip routing vrf CEPH-INTERNAL
+ip routing vrf CEPH-PUBLIC
+ip routing vrf DEV-GOT
+ip routing vrf ESXI-MGMT
+ip routing vrf FACILITY
+ip routing vrf GUEST-GOT
+ip routing vrf IOT
+ip routing vrf ISP-DC04-BEARCOM
+ip routing vrf ISP-DC04-Tele2
+ip routing vrf MGMT-GOT
+ip routing vrf Management
+ip routing vrf OTA-FW-IC
+ip routing vrf OTA-MGMT
+ip routing vrf OTA-PROD
+ip routing vrf OTA-TEST
+ip routing vrf OfficeDMZ
+ip routing vrf OfficeServer
+ip routing vrf SERVER-GOT
+ip routing vrf STORAGE
+ip routing vrf TEST-EBBMAR
+!
+monitor session 1 source Port-Channel14
+!
+mlag configuration
+   domain-id sw0420
+   local-interface Vlan4090
+   peer-address 172.16.90.5
+   peer-link Port-Channel2000
+!
+ip route 0.0.0.0/0 10.1.2.1
+ip route vrf DEV-GOT 0.0.0.0/0 172.16.160.174
+ip route vrf ESXI-MGMT 0.0.0.0/0 172.16.160.110
+ip route vrf FACILITY 0.0.0.0/0 172.16.160.142
+ip route vrf GUEST-GOT 0.0.0.0/0 172.16.98.254
+ip route vrf ISP-DC04-BEARCOM 0.0.0.0/0 192.168.200.1
+ip route vrf ISP-DC04-Tele2 0.0.0.0/0 217.119.171.137
+ip route vrf Management 0.0.0.0/0 172.18.0.1
+ip route vrf OTA-FW-IC 0.0.0.0/0 172.16.120.10
+ip route vrf OTA-MGMT 0.0.0.0/0 172.16.110.1
+ip route vrf OTA-MGMT 10.1.1.56/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.1.59/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.2.54/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.2.59/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.3.2/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.3.4/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.3.11/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.3.12/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.3.13/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.3.18/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.3.19/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.3.21/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.3.22/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.3.23/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.3.24/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.3.121/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.3.122/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.4.0/24 172.16.98.42
+ip route vrf OTA-MGMT 10.1.30.252/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.30.253/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.40.24/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.40.201/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.50.24/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.60.24/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.60.53/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.60.54/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.60.56/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.60.57/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.60.58/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.60.192/27 172.16.98.42
+ip route vrf OTA-MGMT 10.1.60.224/30 172.16.98.42
+ip route vrf OTA-MGMT 10.1.60.231/32 172.16.98.42
+ip route vrf OTA-MGMT 10.1.70.0/24 172.16.98.42
+ip route vrf OTA-MGMT 10.10.1.0/24 172.16.98.42
+ip route vrf OTA-MGMT 10.10.10.0/24 172.16.98.99
+ip route vrf OTA-MGMT 10.10.21.0/24 172.16.98.99
+ip route vrf OTA-MGMT 10.10.30.0/24 172.16.98.99
+ip route vrf OTA-MGMT 10.10.31.0/24 172.16.98.99
+ip route vrf OTA-MGMT 10.20.0.0/16 172.16.98.46 name OTA-PROD
+ip route vrf OTA-MGMT 10.20.10.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.20.11.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.20.13.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.20.20.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.21.0.0/16 172.16.98.46 name OTA-TEST
+ip route vrf OTA-MGMT 10.21.0.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.21.1.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.21.2.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.21.3.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.21.4.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.21.5.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.21.6.0/23 172.16.98.46
+ip route vrf OTA-MGMT 10.21.8.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.21.11.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.21.13.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.21.17.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.21.20.0/22 172.16.98.46
+ip route vrf OTA-MGMT 10.21.27.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.21.28.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.21.29.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.21.30.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.23.0.0/16 172.16.98.46 name LAB-MGMT
+ip route vrf OTA-MGMT 10.25.0.0/16 172.16.98.46 name OTA-PROD
+ip route vrf OTA-MGMT 10.25.0.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.1.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.3.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.4.0/23 172.16.98.46
+ip route vrf OTA-MGMT 10.25.6.0/26 172.16.98.46
+ip route vrf OTA-MGMT 10.25.7.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.8.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.10.0/23 172.16.98.46
+ip route vrf OTA-MGMT 10.25.12.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.13.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.14.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.15.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.16.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.17.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.18.0/23 172.16.98.46
+ip route vrf OTA-MGMT 10.25.20.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.24.0/22 172.16.98.46
+ip route vrf OTA-MGMT 10.25.28.0/22 172.16.98.46
+ip route vrf OTA-MGMT 10.25.32.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.33.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.34.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.35.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.36.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.37.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.40.0/22 172.16.98.46
+ip route vrf OTA-MGMT 10.25.44.0/22 172.16.98.46
+ip route vrf OTA-MGMT 10.25.48.0/22 172.16.98.46
+ip route vrf OTA-MGMT 10.25.52.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.53.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.54.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.55.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.56.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.57.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.58.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.59.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.60.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.61.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.62.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.63.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.64.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.65.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.66.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.67.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.68.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.69.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.70.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.71.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.72.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.73.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.74.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.75.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.25.80.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.26.0.0/16 172.16.98.46 name LAB-PROD
+ip route vrf OTA-MGMT 10.27.0.0/16 172.16.98.46 name LAB-TEST
+ip route vrf OTA-MGMT 10.64.0.0/13 172.16.98.46 name OTA-PROD-K8S
+ip route vrf OTA-MGMT 10.64.0.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.64.1.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.64.128.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.64.129.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.66.2.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.66.24.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.66.31.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.66.61.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.66.80.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.66.101.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.66.104.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.66.123.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.66.140.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.66.160.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.66.220.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.66.245.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.66.246.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.2.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.3.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.10.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.13.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.16.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.22.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.28.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.34.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.35.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.43.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.45.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.46.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.49.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.53.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.67.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.69.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.75.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.92.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.97.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.105.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.111.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.112.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.121.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.145.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.146.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.147.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.150.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.162.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.169.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.170.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.171.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.178.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.180.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.184.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.185.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.187.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.193.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.208.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.209.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.210.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.212.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.221.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.222.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.223.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.225.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.226.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.230.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.249.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.252.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.253.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.67.254.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.72.0.0/16 172.16.98.46 name OTA-TEST-K8S
+ip route vrf OTA-MGMT 10.72.0.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.72.1.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.72.2.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.72.128.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.72.129.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.72.130.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.74.17.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.74.71.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.74.73.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.74.74.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.74.75.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.74.77.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.74.96.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.74.196.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.74.197.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.74.212.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.74.225.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.74.230.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.74.240.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.75.1.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.75.20.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.75.34.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.75.49.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.75.110.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.75.111.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.75.170.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.75.234.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.75.238.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.76.17.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.76.22.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.76.25.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.76.51.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.76.82.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.76.235.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.160.0.0/13 172.16.98.46 name OTA-TEST-K8S-SANDBOX
+ip route vrf OTA-MGMT 10.163.0.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.163.1.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.163.2.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.168.0.0/13 172.16.98.46 name OTA-TEST-K8S-TEST-01
+ip route vrf OTA-MGMT 10.168.0.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.168.1.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.168.2.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.168.3.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.168.4.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.168.5.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.168.6.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.168.7.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.168.8.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.168.12.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.168.13.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.168.14.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.169.0.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.171.0.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.171.1.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.171.2.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.171.6.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.171.7.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.171.8.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.171.9.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.171.10.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.171.11.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.176.0.0/13 172.16.98.46 name OTA-PROD-K8S-PROD-01
+ip route vrf OTA-MGMT 10.179.0.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.179.1.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.179.2.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.179.6.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.179.7.0/24 172.16.98.46
+ip route vrf OTA-MGMT 10.179.8.0/24 172.16.98.46
+ip route vrf OTA-MGMT 172.16.115.0/24 172.16.98.46
+ip route vrf OTA-MGMT 172.18.0.0/17 172.16.98.46
+ip route vrf OTA-PROD 0.0.0.0/0 172.16.108.1
+ip route vrf OTA-PROD 10.2.0.0/16 172.16.98.10
+ip route vrf OTA-PROD 10.10.10.0/24 172.16.98.67
+ip route vrf OTA-PROD 10.10.21.0/24 172.16.98.67
+ip route vrf OTA-PROD 10.10.30.0/24 172.16.98.67
+ip route vrf OTA-PROD 10.10.31.0/24 172.16.98.67
+ip route vrf OTA-PROD 10.21.0.0/16 172.16.98.14 name OTA-TEST
+ip route vrf OTA-PROD 10.21.0.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.21.1.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.21.2.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.21.3.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.21.4.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.21.5.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.21.6.0/23 172.16.98.14
+ip route vrf OTA-PROD 10.21.8.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.21.11.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.21.13.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.21.17.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.21.20.0/22 172.16.98.14
+ip route vrf OTA-PROD 10.22.0.0/16 172.16.98.14 name OTA-MGMT
+ip route vrf OTA-PROD 10.22.0.0/23 172.16.98.14
+ip route vrf OTA-PROD 10.22.2.0/23 172.16.98.14
+ip route vrf OTA-PROD 10.22.4.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.5.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.14.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.15.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.30.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.31.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.32.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.33.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.34.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.40.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.41.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.42.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.47.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.50.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.51.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.52.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.57.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.60.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.61.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.62.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.67.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.22.72.0/21 172.16.98.14
+ip route vrf OTA-PROD 10.22.80.0/21 172.16.98.14
+ip route vrf OTA-PROD 10.22.88.0/21 172.16.98.14
+ip route vrf OTA-PROD 10.72.0.0/13 172.16.98.14 name OTA-TEST-K8S
+ip route vrf OTA-PROD 10.72.0.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.72.1.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.72.2.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.72.128.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.72.129.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.72.130.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.74.17.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.74.71.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.74.73.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.74.74.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.74.75.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.74.77.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.74.96.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.74.196.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.74.197.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.74.212.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.74.225.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.74.230.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.74.240.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.75.1.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.75.20.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.75.34.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.75.49.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.75.110.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.75.111.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.75.170.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.75.234.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.75.238.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.76.17.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.76.22.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.76.25.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.76.82.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.76.235.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.76.251.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.95.1.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.96.1.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.96.2.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.96.3.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.97.1.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.98.1.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.99.1.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.100.1.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.100.100.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.101.10.0/23 172.16.98.10
+ip route vrf OTA-PROD 10.102.10.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.103.10.0/23 172.16.98.10
+ip route vrf OTA-PROD 10.103.20.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.103.30.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.103.99.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.104.10.0/23 172.16.98.10
+ip route vrf OTA-PROD 10.104.99.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.104.104.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.104.160.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.107.10.0/24 172.16.98.10
+ip route vrf OTA-PROD 10.160.0.0/13 172.16.98.14 name OTA-TEST-K8S-SANDBOX
+ip route vrf OTA-PROD 10.163.0.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.163.1.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.163.2.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.168.0.0/13 172.16.98.14 name OTA-TEST-K8S-TEST-01
+ip route vrf OTA-PROD 10.168.0.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.168.1.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.168.2.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.168.3.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.168.4.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.168.5.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.168.6.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.168.7.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.168.8.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.168.12.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.168.13.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.168.14.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.171.0.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.171.1.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.171.2.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.171.9.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.171.10.0/24 172.16.98.14
+ip route vrf OTA-PROD 10.171.11.0/24 172.16.98.14
+ip route vrf OTA-PROD 172.20.0.0/16 172.16.98.10
+ip route vrf OTA-PROD 172.26.0.0/16 172.16.98.10
+ip route vrf OTA-PROD 192.168.20.0/24 172.16.98.10
+ip route vrf OTA-PROD 192.168.40.0/24 172.16.98.10
+ip route vrf OTA-PROD 192.168.96.0/19 172.16.98.10
+ip route vrf OTA-TEST 0.0.0.0/0 172.16.109.1
+ip route vrf OTA-TEST 10.2.0.0/16 172.16.98.30
+ip route vrf OTA-TEST 10.10.10.0/24 172.16.98.83
+ip route vrf OTA-TEST 10.10.21.0/24 172.16.98.83
+ip route vrf OTA-TEST 10.10.30.0/24 172.16.98.83
+ip route vrf OTA-TEST 10.10.31.0/24 172.16.98.83
+ip route vrf OTA-TEST 10.20.0.0/16 172.16.98.30 name OTA-PROD
+ip route vrf OTA-TEST 10.20.10.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.20.11.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.20.13.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.20.20.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.20.50.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.22.0.0/16 172.16.98.30 name OTA-MGMT
+ip route vrf OTA-TEST 10.22.0.0/23 172.16.98.30
+ip route vrf OTA-TEST 10.22.2.0/23 172.16.98.30
+ip route vrf OTA-TEST 10.22.4.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.22.5.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.22.14.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.22.15.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.22.40.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.22.50.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.22.60.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.0.0/16 172.16.98.30 name OTA-PROD
+ip route vrf OTA-TEST 10.25.0.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.1.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.3.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.4.0/23 172.16.98.30
+ip route vrf OTA-TEST 10.25.6.0/26 172.16.98.30
+ip route vrf OTA-TEST 10.25.7.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.8.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.10.0/23 172.16.98.30
+ip route vrf OTA-TEST 10.25.12.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.13.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.14.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.15.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.16.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.17.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.18.0/23 172.16.98.30
+ip route vrf OTA-TEST 10.25.20.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.24.0/22 172.16.98.30
+ip route vrf OTA-TEST 10.25.28.0/22 172.16.98.30
+ip route vrf OTA-TEST 10.25.35.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.36.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.37.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.52.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.53.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.25.54.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.64.0.0/13 172.16.98.30 name OTA-PROD-K8S
+ip route vrf OTA-TEST 10.64.0.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.64.1.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.64.128.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.64.129.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.66.2.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.66.24.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.66.31.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.66.61.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.66.80.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.66.101.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.66.104.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.66.123.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.66.140.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.66.160.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.66.220.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.66.245.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.66.246.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.2.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.3.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.10.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.13.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.16.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.22.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.28.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.34.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.35.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.43.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.45.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.46.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.49.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.53.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.67.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.69.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.75.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.92.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.97.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.105.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.111.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.112.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.121.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.145.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.146.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.147.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.150.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.162.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.169.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.170.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.171.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.178.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.180.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.184.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.185.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.187.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.193.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.208.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.209.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.210.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.212.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.221.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.222.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.223.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.225.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.226.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.230.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.249.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.252.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.253.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.67.254.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.95.1.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.96.1.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.96.2.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.96.3.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.97.1.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.98.1.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.99.1.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.100.1.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.100.100.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.101.10.0/23 172.16.98.30
+ip route vrf OTA-TEST 10.102.10.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.103.10.0/23 172.16.98.30
+ip route vrf OTA-TEST 10.103.20.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.103.30.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.103.99.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.104.10.0/23 172.16.98.30
+ip route vrf OTA-TEST 10.104.99.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.104.104.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.104.160.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.107.10.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.176.0.0/13 172.16.98.30 name OTA-PROD-K8S
+ip route vrf OTA-TEST 10.179.6.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.179.7.0/24 172.16.98.30
+ip route vrf OTA-TEST 10.179.8.0/24 172.16.98.30
+ip route vrf OTA-TEST 172.20.0.0/16 172.16.98.30
+ip route vrf OTA-TEST 172.26.0.0/16 172.16.98.30
+ip route vrf OTA-TEST 192.168.20.0/24 172.16.98.30
+ip route vrf OTA-TEST 192.168.40.0/24 172.16.98.30
+ip route vrf OTA-TEST 192.168.96.0/19 172.16.98.30
+ip route vrf OfficeDMZ 0.0.0.0/0 172.21.0.42
+ip route vrf OfficeServer 0.0.0.0/0 172.21.0.12
+!
+router bgp 65531
+   !! Default VRF is used for DCI
+   router-id 172.16.99.82
+   maximum-paths 4 ecmp 4
+   neighbor ADFS-CP peer group
+   neighbor ADFS-CP remote-as 64510
+   neighbor ADFS-CP bfd
+   neighbor ADFS-CP maximum-routes 12000
+   neighbor ADFS-DC04 peer group
+   neighbor ADFS-DC04 remote-as 65183
+   neighbor ADFS-DC04 maximum-routes 12000
+   neighbor ADFS-DC05 peer group
+   neighbor ADFS-DC05 remote-as 65184
+   neighbor ADFS-DC05 maximum-routes 12000
+   neighbor ADFS-DC06 peer group
+   neighbor ADFS-DC06 remote-as 65185
+   neighbor ADFS-DC06 maximum-routes 12000
+   neighbor CEPH-DCI-DC05 peer group
+   neighbor CEPH-DCI-DC05 remote-as 65117
+   neighbor CEPH-DCI-DC05 bfd
+   neighbor CEPH-DCI-DC05 maximum-routes 12000
+   neighbor CEPH-DCI-DC06 peer group
+   neighbor CEPH-DCI-DC06 remote-as 65118
+   neighbor CEPH-DCI-DC06 bfd
+   neighbor CEPH-DCI-DC06 maximum-routes 12000
+   neighbor CEPH-MLAG peer group
+   neighbor CEPH-MLAG remote-as 65116
+   neighbor CEPH-MLAG maximum-routes 12000
+   neighbor CEPH-PUBLIC-DC04 peer group
+   neighbor CEPH-PUBLIC-DC04 remote-as 65195
+   neighbor CEPH-PUBLIC-DC04 maximum-routes 12000
+   neighbor CEPH-PUBLIC-DC05 peer group
+   neighbor CEPH-PUBLIC-DC05 remote-as 65196
+   neighbor CEPH-PUBLIC-DC05 maximum-routes 12000
+   neighbor CEPH-PUBLIC-DC06 peer group
+   neighbor CEPH-PUBLIC-DC06 remote-as 65197
+   neighbor CEPH-PUBLIC-DC06 maximum-routes 12000
+   neighbor DCI-DC04 peer group
+   neighbor DCI-DC04 remote-as 65536
+   neighbor DCI-DC04 bfd
+   neighbor DCI-DC04 maximum-routes 12000
+   neighbor DCI-DC05 peer group
+   neighbor DCI-DC05 remote-as 65533
+   neighbor DCI-DC05 bfd
+   neighbor DCI-DC05 maximum-routes 12000
+   neighbor DCI-DC06 peer group
+   neighbor DCI-DC06 remote-as 65532
+   neighbor DCI-DC06 bfd
+   neighbor DCI-DC06 maximum-routes 12000
+   neighbor DCI-MLAG peer group
+   neighbor DCI-MLAG remote-as 65531
+   neighbor DCI-MLAG bfd
+   neighbor DCI-MLAG maximum-routes 12000
+   neighbor DCI-spn0401-0402 peer group
+   neighbor DCI-spn0401-0402 remote-as 65538
+   neighbor DCI-spn0401-0402 maximum-routes 12000
+   neighbor DEV-GOT-CP peer group
+   neighbor DEV-GOT-CP remote-as 64510
+   neighbor DEV-GOT-CP bfd
+   neighbor DEV-GOT-CP maximum-routes 12000
+   neighbor DEV-GOT-DC04 peer group
+   neighbor DEV-GOT-DC04 remote-as 65192
+   neighbor DEV-GOT-DC04 maximum-routes 12000
+   neighbor DEV-GOT-DC05 peer group
+   neighbor DEV-GOT-DC05 remote-as 65193
+   neighbor DEV-GOT-DC05 maximum-routes 12000
+   neighbor DEV-GOT-DC06 peer group
+   neighbor DEV-GOT-DC06 remote-as 65194
+   neighbor DEV-GOT-DC06 maximum-routes 12000
+   neighbor ESXI-MGMT-CP peer group
+   neighbor ESXI-MGMT-CP remote-as 65530
+   neighbor ESXI-MGMT-CP bfd
+   neighbor ESXI-MGMT-CP maximum-routes 12000
+   neighbor ESXI-MGMT-DC04 peer group
+   neighbor ESXI-MGMT-DC04 remote-as 65180
+   neighbor ESXI-MGMT-DC04 maximum-routes 12000
+   neighbor ESXI-MGMT-DC05 peer group
+   neighbor ESXI-MGMT-DC05 remote-as 65181
+   neighbor ESXI-MGMT-DC05 maximum-routes 12000
+   neighbor ESXI-MGMT-DC06 peer group
+   neighbor ESXI-MGMT-DC06 remote-as 65182
+   neighbor ESXI-MGMT-DC06 maximum-routes 12000
+   neighbor FACILITY-CP peer group
+   neighbor FACILITY-CP remote-as 65530
+   neighbor FACILITY-CP bfd
+   neighbor FACILITY-CP maximum-routes 12000
+   neighbor FACILITY-DC04 peer group
+   neighbor FACILITY-DC04 remote-as 65186
+   neighbor FACILITY-DC04 maximum-routes 12000
+   neighbor FACILITY-DC05 peer group
+   neighbor FACILITY-DC05 remote-as 65187
+   neighbor FACILITY-DC05 maximum-routes 12000
+   neighbor FACILITY-DC06 peer group
+   neighbor FACILITY-DC06 remote-as 65188
+   neighbor FACILITY-DC06 maximum-routes 12000
+   neighbor GUEST-GOT-DC04 peer group
+   neighbor GUEST-GOT-DC04 remote-as 65179
+   neighbor GUEST-GOT-DC04 maximum-routes 12000
+   neighbor GUEST-GOT-DC05 peer group
+   neighbor GUEST-GOT-DC05 remote-as 65202
+   neighbor GUEST-GOT-DC05 maximum-routes 12000
+   neighbor GUEST-GOT-DC06 peer group
+   neighbor GUEST-GOT-DC06 remote-as 65203
+   neighbor GUEST-GOT-DC06 maximum-routes 12000
+   neighbor IOT-CP peer group
+   neighbor IOT-CP remote-as 65530
+   neighbor IOT-CP bfd
+   neighbor IOT-CP maximum-routes 12000
+   neighbor IOT-DC04 peer group
+   neighbor IOT-DC04 remote-as 65189
+   neighbor IOT-DC04 maximum-routes 12000
+   neighbor IOT-DC05 peer group
+   neighbor IOT-DC05 remote-as 65190
+   neighbor IOT-DC05 maximum-routes 12000
+   neighbor IOT-DC06 peer group
+   neighbor IOT-DC06 remote-as 65191
+   neighbor IOT-DC06 maximum-routes 12000
+   neighbor ISP-DC04-Tele2 peer group
+   neighbor ISP-DC04-Tele2 remote-as 64554
+   neighbor ISP-DC04-Tele2 maximum-routes 12000
+   neighbor ISP-DC05-IPOnly peer group
+   neighbor ISP-DC05-IPOnly remote-as 64555
+   neighbor ISP-DC05-IPOnly maximum-routes 12000
+   neighbor ISP-DC06-Bahnhof peer group
+   neighbor ISP-DC06-Bahnhof remote-as 64556
+   neighbor ISP-DC06-Bahnhof maximum-routes 12000
+   neighbor LB0x10-DNS-DC04 peer group
+   neighbor LB0x10-DNS-DC04 timers 3 10
+   neighbor LB0x10-DNS-DC04 password 7 r7Bb8nRPfqiGYmAqZleL6l5IUzgWPNDr
+   neighbor LB0x10-DNS-DC04 maximum-routes 12000
+   neighbor MGMT-GOT-DC04 peer group
+   neighbor MGMT-GOT-DC04 remote-as 65176
+   neighbor MGMT-GOT-DC04 maximum-routes 12000
+   neighbor MGMT-GOT-DC05 peer group
+   neighbor MGMT-GOT-DC05 remote-as 65200
+   neighbor MGMT-GOT-DC05 maximum-routes 12000
+   neighbor MGMT-GOT-DC06 peer group
+   neighbor MGMT-GOT-DC06 remote-as 65201
+   neighbor MGMT-GOT-DC06 maximum-routes 12000
+   neighbor OFFICEDMZ-CP peer group
+   neighbor OFFICEDMZ-CP remote-as 65509
+   neighbor OFFICEDMZ-CP maximum-routes 12000
+   neighbor OFFICEDMZ-DC05 peer group
+   neighbor OFFICEDMZ-DC05 remote-as 65507
+   neighbor OFFICEDMZ-DC05 maximum-routes 12000
+   neighbor OFFICEDMZ-DC06 peer group
+   neighbor OFFICEDMZ-DC06 remote-as 65508
+   neighbor OFFICEDMZ-DC06 maximum-routes 12000
+   neighbor OFFICEDMZ-MLAG peer group
+   neighbor OFFICEDMZ-MLAG remote-as 65506
+   neighbor OFFICEDMZ-MLAG maximum-routes 12000
+   neighbor OFFICESERVER-CP peer group
+   neighbor OFFICESERVER-CP remote-as 65530
+   neighbor OFFICESERVER-CP maximum-routes 12000
+   neighbor OFFICESERVER-DC05 peer group
+   neighbor OFFICESERVER-DC05 remote-as 65528
+   neighbor OFFICESERVER-DC05 maximum-routes 12000
+   neighbor OFFICESERVER-DC06 peer group
+   neighbor OFFICESERVER-DC06 remote-as 65529
+   neighbor OFFICESERVER-DC06 maximum-routes 12000
+   neighbor OFFICESERVER-K8S-INTERNAL01 peer group
+   neighbor OFFICESERVER-K8S-INTERNAL01 password 7 jSRSdOCph0l4zGiZZnZGtpvj7i8J52Ru
+   neighbor OFFICESERVER-K8S-INTERNAL01 maximum-routes 12000
+   neighbor OFFICESERVER-MLAG peer group
+   neighbor OFFICESERVER-MLAG remote-as 65527
+   neighbor OFFICESERVER-MLAG maximum-routes 12000
+   neighbor OOB-MGMT-CP peer group
+   neighbor OOB-MGMT-CP remote-as 64518
+   neighbor OOB-MGMT-CP maximum-routes 12000
+   neighbor OOB-MGMT-DC04 peer group
+   neighbor OOB-MGMT-DC04 remote-as 65110
+   neighbor OOB-MGMT-DC04 maximum-routes 12000
+   neighbor OOB-MGMT-SW0421 peer group
+   neighbor OOB-MGMT-SW0421 remote-as 65113
+   neighbor OOB-MGMT-SW0421 maximum-routes 12000
+   neighbor OTA-FW-IC peer group
+   neighbor OTA-FW-IC remote-as 64553
+   neighbor OTA-FW-IC maximum-routes 12000
+   neighbor OTA-MGMT-DC04 peer group
+   neighbor OTA-MGMT-DC04 remote-as 65519
+   neighbor OTA-MGMT-DC04 maximum-routes 12000
+   neighbor OTA-MGMT-DC05 peer group
+   neighbor OTA-MGMT-DC05 remote-as 65517
+   neighbor OTA-MGMT-DC05 maximum-routes 12000
+   neighbor OTA-MGMT-DC06 peer group
+   neighbor OTA-MGMT-DC06 remote-as 65518
+   neighbor OTA-MGMT-DC06 maximum-routes 12000
+   neighbor OTA-PROD-DC04 peer group
+   neighbor OTA-PROD-DC04 remote-as 65516
+   neighbor OTA-PROD-DC04 maximum-routes 12000
+   neighbor OTA-PROD-DC05 peer group
+   neighbor OTA-PROD-DC05 remote-as 65514
+   neighbor OTA-PROD-DC05 maximum-routes 12000
+   neighbor OTA-PROD-DC06 peer group
+   neighbor OTA-PROD-DC06 remote-as 65515
+   neighbor OTA-PROD-DC06 maximum-routes 12000
+   neighbor OTA-PROD-DSR-PROD01 peer group
+   neighbor OTA-PROD-DSR-PROD01 password 7 Qo237NLLIvWpEBt7kJ3fusMSWc82s0V8
+   neighbor OTA-PROD-DSR-PROD01 maximum-routes 12000
+   neighbor OTA-PROD-K8S-03 peer group
+   neighbor OTA-PROD-K8S-03 remote-as 65126
+   neighbor OTA-PROD-K8S-03 password 7 ps+O2naJm4cBVlpNV2i+KetCsvFACFWp
+   neighbor OTA-PROD-K8S-03 maximum-routes 12000
+   neighbor OTA-TEST-DC04 peer group
+   neighbor OTA-TEST-DC04 remote-as 65513
+   neighbor OTA-TEST-DC04 maximum-routes 12000
+   neighbor OTA-TEST-DC05 peer group
+   neighbor OTA-TEST-DC05 remote-as 65511
+   neighbor OTA-TEST-DC05 maximum-routes 12000
+   neighbor OTA-TEST-DC06 peer group
+   neighbor OTA-TEST-DC06 remote-as 65512
+   neighbor OTA-TEST-DC06 maximum-routes 12000
+   neighbor OTA-TEST-DSR-TEST01 peer group
+   neighbor OTA-TEST-DSR-TEST01 password 7 vQtPTlmEV0OJa84e9+7/ohG9pR8KCVW5
+   neighbor OTA-TEST-DSR-TEST01 maximum-routes 12000
+   neighbor OTA-TEST-K8S-01 peer group
+   neighbor OTA-TEST-K8S-01 remote-as 65120
+   neighbor OTA-TEST-K8S-01 maximum-routes 12000
+   neighbor OTA-TEST-K8S-03 peer group
+   neighbor OTA-TEST-K8S-03 remote-as 65122
+   neighbor OTA-TEST-K8S-03 maximum-routes 12000
+   neighbor OTA-TEST-K8S-05 peer group
+   neighbor OTA-TEST-K8S-05 remote-as 65125
+   neighbor OTA-TEST-K8S-05 password 7 EdgItjHCN61GL7Fwa7ysvyNpzXa6whZe
+   neighbor OTA-TEST-K8S-05 maximum-routes 12000
+   neighbor OTA-TEST-K8S-DEVSTAGE01 peer group
+   neighbor OTA-TEST-K8S-DEVSTAGE01 password 7 OESMoDsOG7jNkEka+e6871S0pc97dgG9
+   neighbor OTA-TEST-K8S-DEVSTAGE01 maximum-routes 12000
+   neighbor SERVER-GOT-DC04 peer group
+   neighbor SERVER-GOT-DC04 remote-as 65177
+   neighbor SERVER-GOT-DC04 maximum-routes 12000
+   neighbor SERVER-GOT-DC05 peer group
+   neighbor SERVER-GOT-DC05 remote-as 65145
+   neighbor SERVER-GOT-DC05 maximum-routes 12000
+   neighbor SERVER-GOT-DC06 peer group
+   neighbor SERVER-GOT-DC06 remote-as 65146
+   neighbor SERVER-GOT-DC06 maximum-routes 12000
+   neighbor SERVER-SK1 peer group
+   neighbor SERVER-SK1 remote-as 65171
+   neighbor SERVER-SK1 maximum-routes 12000
+   neighbor 172.16.90.5 peer group DCI-MLAG
+   neighbor 172.16.90.5 send-community
+   neighbor 172.16.102.5 peer group DCI-DC05
+   neighbor 172.16.102.9 peer group DCI-DC06
+   neighbor 172.16.102.9 send-community
+   neighbor 172.16.102.17 peer group DCI-DC04
+   neighbor 172.16.102.17 send-community
+   neighbor 172.16.102.102 peer group DCI-spn0401-0402
+   neighbor 172.16.102.102 send-community
+   neighbor 172.16.102.110 peer group DCI-spn0401-0402
+   neighbor 172.16.102.110 send-community
+   redistribute connected
+   !
+   vrf ADFS
+      local-as 65183
+      router-id 172.16.99.82
+      neighbor 172.16.160.113 peer group ADFS-DC04
+      neighbor 172.16.160.116 peer group ADFS-DC05
+      neighbor 172.16.160.118 peer group ADFS-DC06
+      redistribute connected
+   !
+   vrf CEPH-INTERNAL
+      local-as 65116
+      router-id 172.16.99.82
+      neighbor 172.16.102.40 peer group CEPH-MLAG
+      neighbor 172.16.102.40 next-hop-self
+      neighbor 172.16.102.40 send-community
+      neighbor 172.16.127.3 peer group CEPH-DCI-DC05
+      neighbor 172.16.127.3 send-community
+      neighbor 172.16.127.7 peer group CEPH-DCI-DC06
+      neighbor 172.16.127.7 send-community
+      network 172.16.124.0/24
+   !
+   vrf CEPH-PUBLIC
+      local-as 65195
+      router-id 172.16.99.82
+      neighbor 172.16.160.177 peer group CEPH-PUBLIC-DC04
+      neighbor 172.16.160.177 send-community
+      neighbor 172.16.160.180 peer group CEPH-PUBLIC-DC05
+      neighbor 172.16.160.180 send-community
+      neighbor 172.16.160.182 peer group CEPH-PUBLIC-DC06
+      neighbor 172.16.160.182 send-community
+      redistribute connected
+   !
+   vrf DEV-GOT
+      local-as 65192
+      router-id 172.16.99.82
+      neighbor 172.16.160.161 peer group DEV-GOT-DC04
+      neighbor 172.16.160.164 peer group DEV-GOT-DC05
+      neighbor 172.16.160.166 peer group DEV-GOT-DC06
+      redistribute connected
+   !
+   vrf ESXI-MGMT
+      local-as 65180
+      router-id 172.16.99.82
+      neighbor 172.16.160.97 peer group ESXI-MGMT-DC04
+      neighbor 172.16.160.100 peer group ESXI-MGMT-DC05
+      neighbor 172.16.160.102 peer group ESXI-MGMT-DC06
+      redistribute connected
+   !
+   vrf FACILITY
+      local-as 65186
+      router-id 172.16.99.82
+      neighbor 172.16.160.129 peer group FACILITY-DC04
+      neighbor 172.16.160.132 peer group FACILITY-DC05
+      neighbor 172.16.160.134 peer group FACILITY-DC06
+      redistribute connected
+   !
+   vrf GUEST-GOT
+      local-as 65179
+      router-id 172.16.99.82
+      neighbor 172.16.98.241 peer group GUEST-GOT-DC04
+      neighbor 172.16.98.241 send-community
+      neighbor 172.16.98.244 peer group GUEST-GOT-DC05
+      neighbor 172.16.98.244 send-community
+      neighbor 172.16.98.246 peer group GUEST-GOT-DC06
+      neighbor 172.16.98.246 send-community
+      redistribute connected
+   !
+   vrf IOT
+      local-as 65189
+      router-id 172.16.99.82
+      neighbor 172.16.160.145 peer group IOT-DC04
+      neighbor 172.16.160.148 peer group IOT-DC05
+      neighbor 172.16.160.150 peer group IOT-DC06
+      redistribute connected
+   !
+   vrf ISP-DC04-Tele2
+      local-as 64554
+      router-id 172.16.99.82
+      neighbor 172.16.130.10 peer group ISP-DC04-Tele2
+      neighbor 172.16.130.10 send-community
+      neighbor 172.16.130.12 peer group ISP-DC05-IPOnly
+      neighbor 172.16.130.12 send-community
+      neighbor 172.16.130.13 peer group ISP-DC05-IPOnly
+      neighbor 172.16.130.13 send-community
+      neighbor 172.16.130.14 peer group ISP-DC06-Bahnhof
+      neighbor 172.16.130.14 send-community
+      neighbor 172.16.130.15 peer group ISP-DC06-Bahnhof
+      neighbor 172.16.130.15 send-community
+      network 212.214.155.64/26
+   !
+   vrf MGMT-GOT
+      local-as 65176
+      router-id 172.16.99.82
+      neighbor 172.16.98.209 peer group MGMT-GOT-DC04
+      neighbor 172.16.98.209 send-community
+      neighbor 172.16.98.210 peer group MGMT-GOT-DC06
+      neighbor 172.16.98.210 send-community
+      neighbor 172.16.98.213 peer group MGMT-GOT-DC05
+      neighbor 172.16.98.213 send-community
+   !
+   vrf Management
+      local-as 65110
+      router-id 172.16.99.82
+   !
+   vrf OTA-FW-IC
+      local-as 64553
+      router-id 172.16.99.82
+      neighbor 172.16.120.160 peer group OTA-FW-IC
+      neighbor 172.16.120.160 send-community
+      neighbor 172.16.120.165 peer group OTA-FW-IC
+      neighbor 172.16.120.165 send-community
+   !
+   vrf OTA-MGMT
+      local-as 65519
+      router-id 172.16.99.82
+      bgp listen range 172.16.160.16/29 peer-group LB0x10-DNS-DC04 remote-as 64521
+      neighbor 172.16.98.100 peer group OTA-MGMT-DC05
+      neighbor 172.16.98.100 send-community
+      neighbor 172.16.98.102 peer group OTA-MGMT-DC06
+      neighbor 172.16.98.102 send-community
+      neighbor 172.16.98.103 peer group OTA-MGMT-DC04
+      neighbor 172.16.98.103 send-community
+      redistribute connected
+   !
+   vrf OTA-PROD
+      local-as 65516
+      router-id 172.16.99.82
+      bgp listen range 172.16.160.0/29 peer-group LB0x10-DNS-DC04 remote-as 64521
+      bgp listen range 10.179.6.0/24 peer-group OTA-PROD-DSR-PROD01 remote-as 65132
+      bgp listen range 10.179.0.0/24 peer-group OTA-PROD-K8S-03 remote-as 65126
+      neighbor 172.16.98.68 peer group OTA-PROD-DC05
+      neighbor 172.16.98.68 send-community
+      neighbor 172.16.98.70 peer group OTA-PROD-DC06
+      neighbor 172.16.98.70 send-community
+      neighbor 172.16.98.71 peer group OTA-PROD-DC04
+      neighbor 172.16.98.71 send-community
+      redistribute connected
+   !
+   vrf OTA-TEST
+      local-as 65513
+      router-id 172.16.99.82
+      bgp listen range 172.16.160.8/29 peer-group LB0x10-DNS-DC04 remote-as 64521
+      bgp listen range 10.171.9.0/24 peer-group OTA-TEST-DSR-TEST01 remote-as 65129
+      bgp listen range 10.171.0.0/24 peer-group OTA-TEST-K8S-05 remote-as 65125
+      bgp listen range 10.171.6.0/24 peer-group OTA-TEST-K8S-DEVSTAGE01 remote-as 65128
+      neighbor 10.72.0.58 peer group OTA-TEST-K8S-01
+      neighbor 10.72.0.58 send-community
+      neighbor 10.72.0.62 peer group OTA-TEST-K8S-01
+      neighbor 10.72.0.62 send-community
+      neighbor 10.72.0.105 peer group OTA-TEST-K8S-01
+      neighbor 10.72.0.105 send-community
+      neighbor 10.72.2.43 peer group OTA-TEST-K8S-03
+      neighbor 10.72.2.43 send-community
+      neighbor 10.72.2.189 peer group OTA-TEST-K8S-03
+      neighbor 10.72.2.189 send-community
+      neighbor 10.72.2.247 peer group OTA-TEST-K8S-03
+      neighbor 10.72.2.247 send-community
+      neighbor 172.16.98.84 peer group OTA-TEST-DC05
+      neighbor 172.16.98.84 send-community
+      neighbor 172.16.98.86 peer group OTA-TEST-DC06
+      neighbor 172.16.98.86 send-community
+      neighbor 172.16.98.87 peer group OTA-TEST-DC04
+      neighbor 172.16.98.87 send-community
+      redistribute connected
+   !
+   vrf OfficeDMZ
+      local-as 65506
+      router-id 172.16.99.82
+      neighbor 172.21.0.33 peer group OFFICEDMZ-MLAG
+      neighbor 172.21.0.33 send-community
+      neighbor 172.21.0.36 peer group OFFICEDMZ-DC05
+      neighbor 172.21.0.36 send-community
+      neighbor 172.21.0.38 peer group OFFICEDMZ-DC06
+      neighbor 172.21.0.38 send-community
+      redistribute connected
+   !
+   vrf OfficeServer
+      local-as 65527
+      router-id 172.16.99.82
+      bgp listen range 10.187.0.0/24 peer-group OFFICESERVER-K8S-INTERNAL01 remote-as 65127
+      neighbor 172.21.0.1 peer group OFFICESERVER-MLAG
+      neighbor 172.21.0.1 send-community
+      neighbor 172.21.0.4 peer group OFFICESERVER-DC05
+      neighbor 172.21.0.4 send-community
+      neighbor 172.21.0.6 peer group OFFICESERVER-DC06
+      neighbor 172.21.0.6 send-community
+      redistribute connected
+   !
+   vrf SERVER-GOT
+      local-as 65177
+      router-id 172.16.99.82
+      neighbor 172.16.98.225 peer group SERVER-GOT-DC04
+      neighbor 172.16.98.225 bfd
+      neighbor 172.16.98.225 send-community
+      neighbor 172.16.98.226 peer group SERVER-GOT-DC06
+      neighbor 172.16.98.226 bfd
+      neighbor 172.16.98.226 send-community
+      neighbor 172.16.98.234 peer group SERVER-GOT-DC05
+      neighbor 172.16.98.234 bfd
+      neighbor 172.16.98.234 send-community
+   !
+   vrf TEST-EBBMAR
+      local-as 65513
+      router-id 172.16.99.82
+      neighbor 172.16.98.53 remote-as 65511
+      neighbor 172.16.98.53 maximum-routes 12000
+      neighbor 172.16.98.55 remote-as 65512
+      neighbor 172.16.98.55 maximum-routes 12000
+      neighbor 172.16.98.56 remote-as 65513
+      neighbor 172.16.98.56 maximum-routes 12000
+      redistribute connected
+!
+queue-monitor streaming
+   no shutdown
+!
+management api http-commands
+   protocol http
+   protocol unix-socket
+   cors allowed-origin all
+   no shutdown
+   !
+   vrf Management
+      no shutdown
+!
+management cvx
+   no shutdown
+   server host 172.16.102.254
+   server host 172.16.102.246
+   server host 172.16.102.238
+   source-interface Loopback3
+   heartbeat-interval 30
+   heartbeat-timeout 90
+!
+aaa authorization exec default local
+!
+management ssh
+   ip access-group mgmtssh vrf OTA-PROD in
+   ip access-group mgmtssh vrf OTA-TEST in
+!
+end

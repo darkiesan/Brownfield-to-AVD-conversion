@@ -1,0 +1,47 @@
+!
+vrf instance ADFS
+!
+vrf instance CEPH-INTERNAL
+!
+vrf instance CEPH-PUBLIC
+!
+vrf instance DARKFIBER-TEST
+!
+vrf instance DEV-GOT
+!
+vrf instance ESXI-MGMT
+!
+vrf instance FACILITY
+!
+vrf instance GUEST-GOT
+!
+vrf instance IOT
+!
+vrf instance ISP0501
+!
+vrf instance MGMT-GOT
+!
+vrf instance MILOS
+!
+vrf instance Management
+!
+vrf instance OTA-FW-IC
+!
+vrf instance OTA-MGMT
+!
+vrf instance OTA-PROD
+!
+vrf instance OTA-TEST
+!
+vrf instance OfficeDMZ
+!
+vrf instance OfficeServer
+!
+vrf instance SERVER-GOT
+!
+vrf instance STORAGE
+!
+vrf instance TEST-EBBMAR
+!
+vrf instance WAN-TEST
+!
