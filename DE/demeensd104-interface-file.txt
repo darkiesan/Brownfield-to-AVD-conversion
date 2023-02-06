@@ -1,0 +1,665 @@
+interface Port-Channel1
+   description DEMEESDB0248-1
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 1
+!
+interface Port-Channel2
+   description DEMEESDB0248-1
+   switchport access vlan 1543
+   mlag 2
+!
+interface Port-Channel5
+   description DEMEESDB0218-1 PowerEdge R840 SN: G6VP2T2
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 5
+!
+interface Port-Channel6
+   description DEMEESDB0218-1 PowerEdge R840 SN: G6VP2T2
+   mtu 9214
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 6
+!
+interface Port-Channel7
+   description DEMEESDB0218-3 PowerEdge R840 SN: 2WSHFV2
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 7
+!
+interface Port-Channel8
+   description DEMEESDB0218-3 PowerEdge R840 SN: 2WSHFV2
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 8
+!
+interface Port-Channel9
+   description demeesdb0057
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 9
+!
+interface Port-Channel10
+   description demeesdb0057
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 10
+!
+interface Port-Channel110
+   description DEMEESDB2230-1 Windows Server
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 110
+!
+interface Port-Channel112
+   description DEMEESDB2230-1 Windows Server
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 112
+!
+interface Port-Channel120
+   description Physical_servers1
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 120
+!
+interface Port-Channel121
+   description IBM_iSeries
+   switchport trunk allowed vlan 1706-1707
+   switchport mode trunk
+   switchport trunk group IBM_iSeries_Prod
+   switchport trunk group IBM_iSeries_Test
+!
+interface Port-Channel122
+   description Physical_servers1
+   switchport access vlan 1543
+   mlag 122
+!
+interface Port-Channel130
+   description DEDUSSDB2230-2 Windows Server
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 130
+!
+interface Port-Channel140
+   description DEDUSSDB2230-2 Windows Server
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 140
+!
+interface Port-Channel150
+   description DEMEESPHV2011 (GRT6WC3) Windows
+   shutdown
+   switchport access vlan 1561
+   mlag 150
+!
+interface Port-Channel160
+   description DEMEESPHV2012 (1ST6WC3) Windows Server
+   shutdown
+   switchport access vlan 1561
+   mlag 160
+!
+interface Port-Channel170
+   description Windows Server DEMEESDB2228
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 170
+!
+interface Port-Channel171
+   description DEMEESPHXL1ID02
+   switchport access vlan 1560
+   switchport mode trunk
+   switchport trunk group PHYSICAL_SERVER
+   ip access-group isolated_1540 in
+   mlag 171
+!
+interface Port-Channel180
+   description Windows Server DEMEESDB2228
+   mtu 9214
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 180
+!
+interface Port-Channel181
+   description DEMEESPHXL1ID02
+   switchport mode trunk
+   switchport trunk group BACKUP_Mgmt
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   ip access-group isolated_1540 in
+   mlag 181
+!
+interface Port-Channel230
+   description MDC Location - Windows Spare 1(D9MTB73) interface | et23
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 230
+!
+interface Port-Channel240
+   description MDC Location - Windows Spare 1(D9MTB73)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 240
+!
+interface Port-Channel250
+   description MDC Location -Windows Spare 2(F9MTB73)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 250
+!
+interface Port-Channel260
+   description MDC Location -Windows Spare 2(F9MTB73)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 260
+!
+interface Port-Channel270
+   description MDC Location - Windows Spare 3(79MTB73)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 270
+!
+interface Port-Channel280
+   description MDC Location - Windows Spare 3(79MTB73)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 280
+!
+interface Port-Channel290
+   description MDC Location - Windows Spare 4(G9MTB73)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 290
+!
+interface Port-Channel300
+   description MDC Location - Windows Spare 4(G9MTB73)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 300
+!
+interface Port-Channel310
+   description MDC Location - Windows Spare 5(89MTB73)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 310
+!
+interface Port-Channel320
+   description MDC Location - Windows Spare 5(89MTB73)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 320
+!
+interface Port-Channel330
+   description MDC Location - Windows Spare 6(C9MTB73)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 330
+!
+interface Port-Channel335
+   description P2V_DEMEESEXCHXI06_1541
+   shutdown
+   switchport access vlan 1541
+   ip access-group isolated_1540 in
+   mlag 335
+!
+interface Port-Channel340
+   description MDC Location - Windows Spare 6(C9MTB73)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 340
+!
+interface Port-Channel350
+   description MDC Location - Windows Spare 7(B9MTB73)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 350
+!
+interface Port-Channel360
+   description MDC Location - Windows Spare 7(B9MTB73)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 360
+!
+interface Port-Channel370
+   description Windows Spare 8(99MTB73)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 370
+!
+interface Port-Channel380
+   description Windows Spare 8(99MTB73)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 380
+!
+interface Port-Channel1140
+   description DEMEESPHV2001_CITRIX
+   switchport access vlan 1560
+   mlag 1140
+!
+interface Port-Channel1141
+   description DEMEESPHV2002_citrix
+   switchport access vlan 1560
+   mlag 1141
+!
+interface Port-Channel1142
+   description DEMEESPHV2003_citrix
+   switchport access vlan 1560
+   mlag 1142
+!
+interface Port-Channel1143
+   description DEMEESPHV2001_CITRIX
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   mlag 1143
+!
+interface Port-Channel1144
+   description DEMEESPHV2002_citrix
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   mlag 1144
+!
+interface Port-Channel1145
+   description DEMEESPHV2003_citrix
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   mlag 1145
+!
+interface Ethernet1
+   description DEMEESDB0248-1
+   mtu 9214
+   switchport access vlan 1540
+   channel-group 1 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet2
+   description DEMEESPHV2002 PowerEdge R740 SN: FKQXD43
+   mtu 9214
+   switchport access vlan 1541
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet3
+   description OneMKSprodHIDmee#TASK0173351
+   mtu 9214
+   switchport access vlan 1582
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet4
+   description DEMEESDB0248-1
+   mtu 9214
+   channel-group 2 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet5
+   description DEMEESDB0218-1 PowerEdge R840 SN: G6VP2T2
+   mtu 9214
+   channel-group 6 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet6
+   description DEMEESDB0218-1 PowerEdge R840 SN: G6VP2T2
+   mtu 9214
+   channel-group 5 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet7
+   description DEMEESDB0218-3 PowerEdge R840 SN: 2WSHFV2
+   mtu 9214
+   channel-group 8 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet8
+   description DEMEESDB0218-3 PowerEdge R840 SN: 2WSHFV2
+   mtu 9214
+   channel-group 7 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet9
+   description demeesdb0057
+   mtu 9214
+   channel-group 9 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet10
+   description demeesdb0057
+   mtu 9214
+   channel-group 10 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet11
+   description 2020-Spare Server 17
+   mtu 9214
+   channel-group 110 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet12
+   description 2020-Spare Server 17 PowerEdge R840 SN: CCPTB73
+   mtu 9214
+   channel-group 112 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet13
+   description DEDUSSDB2230-2 Windows Server
+   mtu 9214
+   channel-group 130 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet14
+   description DEDUSSDB2230-2 Windows Server
+   mtu 9214
+   channel-group 140 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet15
+   description DEMEESPHV2011 (GRT6WC3) Single
+   shutdown
+   mtu 9214
+   switchport access vlan 1561
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet16
+   description DEMEESPHV2012 (1ST6WC3) Single
+   shutdown
+   mtu 9214
+   switchport access vlan 1561
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet17
+   description Windows Server DEMEESDB2228
+   mtu 9214
+   channel-group 170 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet18
+   description DEMEECLUTEST001_NIC_4
+   mtu 9214
+   channel-group 180 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet19
+   description DEMEESPHXL1ID02_NIC_3
+   mtu 9214
+   switchport access vlan 1560
+   channel-group 171 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet20
+   description DEMEESPHXL1ID02_NIC_4
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   channel-group 181 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet21
+   description DEMEESDB2228 MDC-PHXL1-3 SN: 6W30HZ2
+   mtu 9214
+   channel-group 120 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet22
+   description DEMEESDB2228 MDC-PHXL1-3 SN: 6W30HZ2
+   mtu 9214
+   channel-group 122 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet23
+   description MDC Location - Windows Spare 1(D9MTB73)
+   mtu 9214
+   channel-group 230 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet24
+   description MDC Location - Windows Spare 1(D9MTB73)
+   mtu 9214
+   channel-group 240 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet25
+   description MDC Location -Windows Spare 2(F9MTB73)
+   mtu 9214
+   channel-group 250 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet26
+   description MDC Location -Windows Spare 2(F9MTB73)
+   mtu 9214
+   channel-group 260 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet27
+   description demeesex2000 windows server
+   mtu 9214
+   channel-group 270 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet28
+   description MDC Location - Windows Spare 3(79MTB73)
+   mtu 9214
+   channel-group 280 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet29
+   description MDC Location - Windows Spare 4(G9MTB73)
+   mtu 9214
+   channel-group 290 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet30
+   description MDC Location - Windows Spare 4(G9MTB73)
+   mtu 9214
+   channel-group 300 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet31
+   description MDC Location - Windows Spare 5(89MTB73)
+   mtu 9214
+   channel-group 310 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet32
+   description MDC Location - Windows Spare 5(89MTB73)
+   mtu 9214
+   channel-group 320 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet33
+   description MDC Location - Windows Spare 6(C9MTB73)
+   mtu 9214
+   channel-group 330 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet34
+   description MDC Location - Windows Spare 6(C9MTB73)
+   mtu 9214
+   channel-group 340 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet35
+   description MDC Location - Windows Spare 7(B9MTB73)
+   mtu 9214
+   channel-group 350 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet36
+   description MDC Location - Windows Spare 7(B9MTB73)
+   mtu 9214
+   channel-group 360 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet37
+   description Windows Spare 8(99MTB73)
+   mtu 9214
+   channel-group 370 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet38
+   description Windows Spare 8(99MTB73)
+   mtu 9214
+   channel-group 380 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet39
+   description DEMEESPHV2003(CKQXD43)
+   mtu 9214
+   switchport access vlan 1541
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet40
+   description DEDUSSPHV2001
+   mtu 9214
+   channel-group 1143 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet41
+   description DEDUSSPHV2002
+   mtu 9214
+   channel-group 1144 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet42
+   description DEDUSSPHV2003
+   mtu 9214
+   channel-group 1145 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet43
+   description DEDUSSPHV2001_CITRIX
+   mtu 9214
+   channel-group 1140 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet44
+   description DEMEESPHV2002(FKQXD43)
+   mtu 9214
+   channel-group 1141 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet45
+   description DEMEESPHV2003(CKQXD43)
+   mtu 9214
+   channel-group 1142 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet46
+   description IBM_iSeries
+   mtu 9214
+   switchport trunk allowed vlan 1706-1707
+   switchport mode trunk
+   switchport trunk group IBM_iSeries_Prod
+   switchport trunk group IBM_iSeries_Test
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet47
+   description IBM_iSeries
+   mtu 9214
+   switchport trunk allowed vlan 1706-1707
+   switchport mode trunk
+   switchport trunk group IBM_iSeries_Prod
+   switchport trunk group IBM_iSeries_Test
+   channel-group 121 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet48
+   description IBM_iSeries
+   mtu 9214
+   switchport trunk allowed vlan 1706-1707
+   switchport mode trunk
+   switchport trunk group IBM_iSeries_Prod
+   switchport trunk group IBM_iSeries_Test
+   channel-group 121 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!

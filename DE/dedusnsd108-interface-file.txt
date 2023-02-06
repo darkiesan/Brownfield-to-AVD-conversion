@@ -1,0 +1,334 @@
+interface Port-Channel10
+   description DEDUSSPHV2001_CITRIX
+   switchport trunk allowed vlan 2561-2563
+   switchport mode trunk
+   mlag 10
+!
+interface Port-Channel20
+   description DEDUSSPHV2001_CITRIX
+   switchport access vlan 2560
+   mlag 20
+!
+interface Port-Channel30
+   description DEDUSSPHV2002_CITRIX
+   switchport trunk allowed vlan 2561-2563
+   switchport mode trunk
+   mlag 30
+!
+interface Port-Channel40
+   description DEDUSSPHV2002_CITRIX
+   switchport access vlan 2560
+   mlag 40
+!
+interface Port-Channel50
+   description DEDUSSPHV2003_CITRIX
+   switchport trunk allowed vlan 2561-2563
+   switchport mode trunk
+   mlag 50
+!
+interface Port-Channel60
+   description DEDUSSPHV2003_CITRIX
+   switchport access vlan 2560
+   mlag 60
+!
+interface Port-Channel70
+   description DEDUSSPHV2011#TASK0116252
+   switchport access vlan 2560
+   mlag 70
+!
+interface Port-Channel80
+   description DEDUSSPHV2011#TASK0116252
+   switchport trunk allowed vlan 2561-2562
+   switchport mode trunk
+   mlag 80
+!
+interface Port-Channel90
+   description DEDUSSPHV2012#TASK0116252
+   switchport access vlan 2560
+   mlag 90
+!
+interface Port-Channel100
+   description DEDUSSPHV2012#TASK0116252
+   switchport trunk allowed vlan 2561-2562
+   switchport mode trunk
+   mlag 100
+!
+interface Port-Channel110
+   description DEDUSSPHV2013#TASK0116252
+   switchport access vlan 2560
+   mlag 110
+!
+interface Port-Channel120
+   description DEDUSSPHV2013#TASK0116252
+   switchport trunk allowed vlan 2561-2562
+   switchport mode trunk
+   mlag 120
+!
+interface Port-Channel130
+   description DEDUSSPHV2014#TASK0116252
+   switchport access vlan 2560
+   mlag 130
+!
+interface Port-Channel140
+   description DEDUSSPHV2014#TASK0116252
+   switchport trunk allowed vlan 2561-2562
+   switchport mode trunk
+   mlag 140
+!
+interface Port-Channel150
+   description DEDUSSPHV2015#TASK0116252
+   switchport access vlan 2560
+   mlag 150
+!
+interface Port-Channel160
+   description DEDUSSPHV2015#TASK0116252
+   switchport trunk allowed vlan 2561-2562
+   switchport mode trunk
+   mlag 160
+!
+interface Port-Channel170
+   description DEDUSSPHV2016#TASK0121035
+   mtu 9214
+   switchport access vlan 2560
+   mlag 170
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Port-Channel180
+   description DEDUSSPHV2016#TASK0121035
+   mtu 9214
+   switchport trunk allowed vlan 2561-2562
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Port-Channel190
+   description DEDUSSPHV2017#TASK0114899
+   switchport access vlan 2560
+   mlag 190
+!
+interface Port-Channel200
+   description DEDUSSPHV2017-BACKUP#TASK0114899
+   switchport trunk allowed vlan 2561-2562
+   switchport mode trunk
+   mlag 200
+!
+interface Port-Channel210
+   description DEDUSSPHV2018#TASK0114899
+   switchport access vlan 2560
+   mlag 210
+!
+interface Port-Channel220
+   description DEDUSSPHV2018-BACKUP#TASK0114899
+   mtu 9214
+   switchport trunk allowed vlan 2565-2566
+   switchport mode trunk
+   mlag 220
+!
+interface Port-Channel700
+   description ***TEST TO PROD TRANSIT***
+   switchport trunk allowed vlan 700,2700
+   switchport mode trunk
+   switchport trunk group ARISTA_To_TEST-F5Ext
+   switchport trunk group PROD_TO_TEST_TRANSIT
+   mlag 700
+!
+interface Ethernet1
+   description DEDUSSPHV2001_CITRIX
+   mtu 9214
+   channel-group 10 mode active
+   spanning-tree portfast
+!
+interface Ethernet2
+   description DEDUSSPHV2001_CITRIX(HBDNC43)
+   mtu 9214
+   channel-group 20 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet3
+   description DEDUSSPHV2002_CITRIX
+   mtu 9214
+   channel-group 30 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet4
+   description DEDUSSPHV2002_CITRIX(1CDNC43)
+   mtu 9214
+   channel-group 40 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet5
+   description DEDUSSPHV2003_CITRIX
+   mtu 9214
+   channel-group 50 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet6
+   description DEDUSSPHV2003_CITRIX(JBDNC43)
+   mtu 9214
+   channel-group 60 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet7
+   description DEDUSSPHV2011#TASK0116252
+   mtu 9214
+   channel-group 70 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet8
+   description DEDUSSPHV2011#TASK0116252
+   mtu 9214
+   channel-group 80 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet9
+   description DEDUSSPHV2012#TASK0116252
+   mtu 9214
+   channel-group 90 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet10
+   description DEDUSSPHV2012#TASK0116252
+   mtu 9214
+   channel-group 100 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet11
+   description DEDUSSPHV2013#TASK0116252
+   mtu 9214
+   channel-group 110 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet12
+   description DEDUSSPHV2013#TASK0116252
+   mtu 9214
+   channel-group 120 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet13
+   description DEDUSSPHV2014#TASK0116252
+   mtu 9214
+   channel-group 130 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet14
+   description DEDUSSPHV2014#TASK0116252
+   mtu 9214
+   channel-group 140 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet15
+   description DEDUSSPHV2015#TASK0116252
+   mtu 9214
+   channel-group 150 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet16
+   description DEDUSSPHV2015#TASK0116252
+   mtu 9124
+   channel-group 160 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet17
+   description DEDUSSPHV2016#TASK0121035
+   mtu 9214
+   channel-group 170 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet18
+   description DEDUSSPHV2016#TASK0121035
+   mtu 9214
+   channel-group 180 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet19
+   description DEDUSSPHV2017#TASK0114899
+   mtu 9214
+   channel-group 190 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet20
+   description DEDUSSPHV2017#TASK0114899
+   mtu 9214
+   channel-group 200 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet21
+   description DEDUSSPHV2018#TASK0114899
+   mtu 9214
+   channel-group 210 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet22
+   description DEDUSSPHV2018#TASK0114899
+   mtu 9214
+   channel-group 220 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet23
+   description OneMKSprodHIDdus#TASK0173365
+   mtu 9214
+   switchport access vlan 1582
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet24
+   description DEDUSXMS001 #TASK0189561
+   shutdown
+!
+interface Ethernet25
+   description DEDUSXMS001 #TASK0189561
+   shutdown
+!
+interface Ethernet44
+   description DEDUSTEST101_ETH48
+   channel-group 700 mode active
+!
+interface Ethernet45
+   description DEDUSSPHV2003(JBDNC43)
+   mtu 9214
+   switchport access vlan 1541
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet46
+   description Eudcsdns02b-Infoblox_TASK0117266
+   switchport access vlan 3386
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet47
+   description Eudcsdns02b-Infoblox_TASK0117266
+   switchport access vlan 3386
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet48
+   description DEDUSSPHV2018|TASK0147490|backup port
+   mtu 9214
+   switchport access vlan 1541
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+

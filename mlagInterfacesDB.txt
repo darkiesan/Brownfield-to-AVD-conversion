@@ -1,0 +1,2747 @@
+[
+    {
+        "description": "2020_Spare_Server_15", 
+        "deviceList": [
+            "DEMEENSD101", 
+            "DEMEENSD102"
+        ], 
+        "interfaceName": "Port-Channel200", 
+        "mlagId": "200", 
+        "mlagMemberList": [], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "182"
+    }, 
+    {
+        "description": "2020_Spare_Server_16", 
+        "deviceList": [
+            "DEMEENSD101", 
+            "DEMEENSD102"
+        ], 
+        "interfaceName": "Port-Channel210", 
+        "mlagId": "210", 
+        "mlagMemberList": [], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "182"
+    }, 
+    {
+        "description": "2020_Spare_Server_17", 
+        "deviceList": [
+            "DEMEENSD101", 
+            "DEMEENSD102"
+        ], 
+        "interfaceName": "Port-Channel220", 
+        "mlagId": "220", 
+        "mlagMemberList": [], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "182"
+    }, 
+    {
+        "description": "DEMEESDB0248-1", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel1", 
+        "mlagId": "1", 
+        "mlagMemberList": [
+            "Ethernet1", 
+            "Ethernet1"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESDB0248-1", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel2", 
+        "mlagId": "2", 
+        "mlagMemberList": [
+            "Ethernet2", 
+            "Ethernet4"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESDB0218-1 PowerEdge R840 SN: G6VP2T2", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel5", 
+        "mlagId": "5", 
+        "mlagMemberList": [
+            "Ethernet5", 
+            "Ethernet6"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESDB0218-1 PowerEdge R840 SN: G6VP2T2", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel6", 
+        "mlagId": "6", 
+        "mlagMemberList": [
+            "Ethernet6", 
+            "Ethernet5"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESDB0218-3 PowerEdge R840 SN: 2WSHFV2", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel7", 
+        "mlagId": "7", 
+        "mlagMemberList": [
+            "Ethernet7", 
+            "Ethernet8"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESDB0218-3 PowerEdge R840 SN: 2WSHFV2", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel8", 
+        "mlagId": "8", 
+        "mlagMemberList": [
+            "Ethernet8", 
+            "Ethernet7"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "demeesdb0057", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel9", 
+        "mlagId": "9", 
+        "mlagMemberList": [
+            "Ethernet9", 
+            "Ethernet9"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "demeesdb0057", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel10", 
+        "mlagId": "10", 
+        "mlagMemberList": [
+            "Ethernet10", 
+            "Ethernet10"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESDB2230-1 Windows Server", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel110", 
+        "mlagId": "110", 
+        "mlagMemberList": [
+            "Ethernet11", 
+            "Ethernet11"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESDB2230-1 Windows Server", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel112", 
+        "mlagId": "112", 
+        "mlagMemberList": [
+            "Ethernet12", 
+            "Ethernet12"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "Physical_servers1", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel120", 
+        "mlagId": "120", 
+        "mlagMemberList": [
+            "Ethernet21", 
+            "Ethernet21"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "Physical_servers1", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel122", 
+        "mlagId": "122", 
+        "mlagMemberList": [
+            "Ethernet22", 
+            "Ethernet22"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEDUSSDB2230-2 Windows Server", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel130", 
+        "mlagId": "130", 
+        "mlagMemberList": [
+            "Ethernet13", 
+            "Ethernet13"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEDUSSDB2230-2 Windows Server", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel140", 
+        "mlagId": "140", 
+        "mlagMemberList": [
+            "Ethernet14", 
+            "Ethernet14"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESPHV2011(GRT6WC3) Windows Server", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel150", 
+        "mlagId": "150", 
+        "mlagMemberList": [], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1561"
+    }, 
+    {
+        "description": "DEMEESPHV2012 (1ST6WC3) Windows Server", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel160", 
+        "mlagId": "160", 
+        "mlagMemberList": [], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1561"
+    }, 
+    {
+        "description": "Windows Server DEMEESDB2228", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel170", 
+        "mlagId": "170", 
+        "mlagMemberList": [
+            "Ethernet17", 
+            "Ethernet17"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESPHXL1ID02", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel171", 
+        "mlagId": "171", 
+        "mlagMemberList": [
+            "Ethernet19", 
+            "Ethernet19"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1540"
+        ]
+    }, 
+    {
+        "description": "Windows Server DEMEESDB2228", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel180", 
+        "mlagId": "180", 
+        "mlagMemberList": [
+            "Ethernet18", 
+            "Ethernet18"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESPHXL1ID02", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel181", 
+        "mlagId": "181", 
+        "mlagMemberList": [
+            "Ethernet20", 
+            "Ethernet20"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1543", 
+            " 1561", 
+            " 1562", 
+            " 1565", 
+            " 1566", 
+            " 1571", 
+            " 1563"
+        ]
+    }, 
+    {
+        "description": "MDC Location - Windows Spare 1(D9MTB73)", 
+        "deviceList": [
+            "DEMEENSD103"
+        ], 
+        "interfaceName": "Port-Channel230", 
+        "mlagId": "230", 
+        "mlagMemberList": [
+            "Ethernet23"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "MDC Location - Windows Spare 1(D9MTB73)", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel240", 
+        "mlagId": "240", 
+        "mlagMemberList": [
+            "Ethernet24", 
+            "Ethernet24"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "MDC Location -Windows Spare 2(F9MTB73)", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel250", 
+        "mlagId": "250", 
+        "mlagMemberList": [
+            "Ethernet25", 
+            "Ethernet25"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "MDC Location -Windows Spare 2(F9MTB73)", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel260", 
+        "mlagId": "260", 
+        "mlagMemberList": [
+            "Ethernet26", 
+            "Ethernet26"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "MDC Location - Windows Spare 3(79MTB73)", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel270", 
+        "mlagId": "270", 
+        "mlagMemberList": [
+            "Ethernet27", 
+            "Ethernet27"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "MDC Location - Windows Spare 3(79MTB73)", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel280", 
+        "mlagId": "280", 
+        "mlagMemberList": [
+            "Ethernet28", 
+            "Ethernet28"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "MDC Location - Windows Spare 4(G9MTB73)", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel290", 
+        "mlagId": "290", 
+        "mlagMemberList": [
+            "Ethernet29", 
+            "Ethernet29"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "MDC Location - Windows Spare 4(G9MTB73)", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel300", 
+        "mlagId": "300", 
+        "mlagMemberList": [
+            "Ethernet30", 
+            "Ethernet30"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "MDC Location - Windows Spare 5(89MTB73)", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel310", 
+        "mlagId": "310", 
+        "mlagMemberList": [
+            "Ethernet31", 
+            "Ethernet31"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "MDC Location - Windows Spare 5(89MTB73)", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel320", 
+        "mlagId": "320", 
+        "mlagMemberList": [
+            "Ethernet32", 
+            "Ethernet32"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "MDC Location - Windows Spare 6(C9MTB73)", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel330", 
+        "mlagId": "330", 
+        "mlagMemberList": [
+            "Ethernet33", 
+            "Ethernet33"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "MDC Location - Windows Spare 6(C9MTB73)", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel340", 
+        "mlagId": "340", 
+        "mlagMemberList": [
+            "Ethernet34", 
+            "Ethernet34"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "MDC Location - Windows Spare 7(B9MTB73)", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel350", 
+        "mlagId": "350", 
+        "mlagMemberList": [
+            "Ethernet35", 
+            "Ethernet35"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "MDC Location - Windows Spare 7(B9MTB73)", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel360", 
+        "mlagId": "360", 
+        "mlagMemberList": [
+            "Ethernet36", 
+            "Ethernet36"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "Windows Spare 8(99MTB73)", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel370", 
+        "mlagId": "370", 
+        "mlagMemberList": [
+            "Ethernet37", 
+            "Ethernet37"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "Windows Spare 8(99MTB73)", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel380", 
+        "mlagId": "380", 
+        "mlagMemberList": [
+            "Ethernet38", 
+            "Ethernet38"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESPHV2001_CITRIX", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel1140", 
+        "mlagId": "1140", 
+        "mlagMemberList": [
+            "Ethernet40", 
+            "Ethernet43"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1560"
+    }, 
+    {
+        "description": "DEMEESPHV2002_citrix", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel1141", 
+        "mlagId": "1141", 
+        "mlagMemberList": [
+            "Ethernet41", 
+            "Ethernet44"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1560"
+    }, 
+    {
+        "description": "DEMEESPHV2003_citrix", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel1142", 
+        "mlagId": "1142", 
+        "mlagMemberList": [
+            "Ethernet42", 
+            "Ethernet45"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1560"
+    }, 
+    {
+        "description": "DEMEESPHV2001_CITRIX", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel1143", 
+        "mlagId": "1143", 
+        "mlagMemberList": [
+            "Ethernet43", 
+            "Ethernet40"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1561", 
+            " 1562", 
+            " 1565", 
+            " 1566", 
+            " 1571", 
+            " 1563"
+        ]
+    }, 
+    {
+        "description": "DEMEESPHV2002_citrix", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel1144", 
+        "mlagId": "1144", 
+        "mlagMemberList": [
+            "Ethernet44", 
+            "Ethernet41"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1561", 
+            " 1562", 
+            " 1565", 
+            " 1566", 
+            " 1571", 
+            " 1563"
+        ]
+    }, 
+    {
+        "description": "DEMEESPHV2003_citrix", 
+        "deviceList": [
+            "DEMEENSD103", 
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel1145", 
+        "mlagId": "1145", 
+        "mlagMemberList": [
+            "Ethernet45", 
+            "Ethernet42"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1561", 
+            " 1562", 
+            " 1565", 
+            " 1566", 
+            " 1571", 
+            " 1563"
+        ]
+    }, 
+    {
+        "description": "P2V_DEMEESEXCHXI06_1541", 
+        "deviceList": [
+            "DEMEENSD104"
+        ], 
+        "interfaceName": "Port-Channel335", 
+        "mlagId": "335", 
+        "mlagMemberList": [], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1541"
+    }, 
+    {
+        "description": "DEMEESPHV2011#GRT6WC3#TASK0105789", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel10", 
+        "mlagId": "10", 
+        "mlagMemberList": [
+            "Ethernet1", 
+            "Ethernet1"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1560"
+    }, 
+    {
+        "description": "DEMEESPHV2011#GRT6WC3#TASK0105789", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel20", 
+        "mlagId": "20", 
+        "mlagMemberList": [
+            "Ethernet2", 
+            "Ethernet2"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1561", 
+            " 1562", 
+            " 1565", 
+            " 1566", 
+            " 1571"
+        ]
+    }, 
+    {
+        "description": "DEMEESPHV2012#1ST6WC3#TASK0105789", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel30", 
+        "mlagId": "30", 
+        "mlagMemberList": [
+            "Ethernet3", 
+            "Ethernet3"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1560"
+    }, 
+    {
+        "description": "DEMEESPHV2012#1ST6WC3#TASK0105789", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel40", 
+        "mlagId": "40", 
+        "mlagMemberList": [
+            "Ethernet4", 
+            "Ethernet4"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1561", 
+            " 1562", 
+            " 1565", 
+            " 1566", 
+            " 1571"
+        ]
+    }, 
+    {
+        "description": "### UNUSED ###", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel50", 
+        "mlagId": "50", 
+        "mlagMemberList": [
+            "Ethernet5", 
+            "Ethernet5"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1542", 
+            " 1709", 
+            " 1710"
+        ]
+    }, 
+    {
+        "description": "### UNUSED ###", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel60", 
+        "mlagId": "60", 
+        "mlagMemberList": [
+            "Ethernet6", 
+            "Ethernet6"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1542", 
+            " 1709", 
+            " 1710"
+        ]
+    }, 
+    {
+        "description": "### UNUSED ###", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel70", 
+        "mlagId": "70", 
+        "mlagMemberList": [
+            "Ethernet7", 
+            "Ethernet7"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1542", 
+            " 1709", 
+            " 1710"
+        ]
+    }, 
+    {
+        "description": "### UNUSED ###", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel80", 
+        "mlagId": "80", 
+        "mlagMemberList": [
+            "Ethernet8", 
+            "Ethernet8"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1542", 
+            " 1709", 
+            " 1710"
+        ]
+    }, 
+    {
+        "description": "### UNUSED ###", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel90", 
+        "mlagId": "90", 
+        "mlagMemberList": [
+            "Ethernet9", 
+            "Ethernet9"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1542", 
+            " 1709", 
+            " 1710"
+        ]
+    }, 
+    {
+        "description": "### UNUSED ###", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel100", 
+        "mlagId": "100", 
+        "mlagMemberList": [
+            "Ethernet10", 
+            "Ethernet10"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1542", 
+            " 1709", 
+            " 1710"
+        ]
+    }, 
+    {
+        "description": "### UNUSED ###", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel110", 
+        "mlagId": "110", 
+        "mlagMemberList": [
+            "Ethernet11", 
+            "Ethernet11"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1542", 
+            " 1709", 
+            " 1710"
+        ]
+    }, 
+    {
+        "description": "### UNUSED ###", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel120", 
+        "mlagId": "120", 
+        "mlagMemberList": [
+            "Ethernet12", 
+            "Ethernet12"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1542", 
+            " 1709", 
+            " 1710"
+        ]
+    }, 
+    {
+        "description": "DEMEESDB2235-1", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel130", 
+        "mlagId": "130", 
+        "mlagMemberList": [
+            "Ethernet13", 
+            "Ethernet13"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESDB2235-1", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel140", 
+        "mlagId": "140", 
+        "mlagMemberList": [
+            "Ethernet14", 
+            "Ethernet14"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "Windows Spare 25#J3XB1D3#RITM0413807", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel150", 
+        "mlagId": "150", 
+        "mlagMemberList": [
+            "Ethernet15", 
+            "Ethernet15"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "Windows Spare 25#J3XB1D3#RITM0413807", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel160", 
+        "mlagId": "160", 
+        "mlagMemberList": [
+            "Ethernet16", 
+            "Ethernet16"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESAP2234", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel170", 
+        "mlagId": "170", 
+        "mlagMemberList": [
+            "Ethernet17", 
+            "Ethernet17"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESAP2234", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel180", 
+        "mlagId": "180", 
+        "mlagMemberList": [
+            "Ethernet18", 
+            "Ethernet18"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESAP2235#14XB1D3", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel190", 
+        "mlagId": "190", 
+        "mlagMemberList": [
+            "Ethernet19", 
+            "Ethernet19"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESAP2235#14XB1D3", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel200", 
+        "mlagId": "200", 
+        "mlagMemberList": [
+            "Ethernet20", 
+            "Ethernet20"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESPHV2013", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel210", 
+        "mlagId": "210", 
+        "mlagMemberList": [
+            "Ethernet21", 
+            "Ethernet21"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1560"
+    }, 
+    {
+        "description": "DEMEESPHV2013", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel220", 
+        "mlagId": "220", 
+        "mlagMemberList": [
+            "Ethernet22", 
+            "Ethernet22"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1561", 
+            " 1562", 
+            " 1565", 
+            " 1566", 
+            " 1571"
+        ]
+    }, 
+    {
+        "description": "DEMEESPHV2014", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel230", 
+        "mlagId": "230", 
+        "mlagMemberList": [
+            "Ethernet23", 
+            "Ethernet23"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1560"
+    }, 
+    {
+        "description": "### UNUSED ###", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel240", 
+        "mlagId": "240", 
+        "mlagMemberList": [
+            "Ethernet24", 
+            "Ethernet24"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1561", 
+            " 1562", 
+            " 1565", 
+            " 1566", 
+            " 1571"
+        ]
+    }, 
+    {
+        "description": "DEMEESPHV2015", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel250", 
+        "mlagId": "250", 
+        "mlagMemberList": [
+            "Ethernet25", 
+            "Ethernet25"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1560"
+    }, 
+    {
+        "description": "DEMEESPHV2015", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel260", 
+        "mlagId": "260", 
+        "mlagMemberList": [
+            "Ethernet26", 
+            "Ethernet26"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1561", 
+            " 1562", 
+            " 1565", 
+            " 1566", 
+            " 1571"
+        ]
+    }, 
+    {
+        "description": "DEMEESPHV2016", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel270", 
+        "mlagId": "270", 
+        "mlagMemberList": [
+            "Ethernet27", 
+            "Ethernet27"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1560"
+    }, 
+    {
+        "description": "DEMEESPHV2016", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel280", 
+        "mlagId": "280", 
+        "mlagMemberList": [
+            "Ethernet28", 
+            "Ethernet28"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1561", 
+            " 1562", 
+            " 1565", 
+            " 1566", 
+            " 1571"
+        ]
+    }, 
+    {
+        "description": "F9MTB73 (RITM0422098/DEMEESEX2001)", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel320", 
+        "mlagId": "320", 
+        "mlagMemberList": [
+            "Ethernet32", 
+            "Ethernet32"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "182"
+    }, 
+    {
+        "description": "79MTB73 (RITM0422098/DEMEESEX2000)", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel330", 
+        "mlagId": "330", 
+        "mlagMemberList": [
+            "Ethernet33", 
+            "Ethernet33"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "182"
+    }, 
+    {
+        "description": "G9MTB73 (RITM0422098/DEMEESEX2002)", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel340", 
+        "mlagId": "340", 
+        "mlagMemberList": [
+            "Ethernet34", 
+            "Ethernet34"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "182"
+    }, 
+    {
+        "description": "DEMEESDB0224 - TASK0113016", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel350", 
+        "mlagId": "350", 
+        "mlagMemberList": [
+            "Ethernet35", 
+            "Ethernet35"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESDB0224 - TASK0113016", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel360", 
+        "mlagId": "360", 
+        "mlagMemberList": [
+            "Ethernet36", 
+            "Ethernet36"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESDB2237-1", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel370", 
+        "mlagId": "370", 
+        "mlagMemberList": [
+            "Ethernet37", 
+            "Ethernet37"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESDB2237-1", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel380", 
+        "mlagId": "380", 
+        "mlagMemberList": [
+            "Ethernet38", 
+            "Ethernet38"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESDB2237-1#TASK0137240", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel390", 
+        "mlagId": "390", 
+        "mlagMemberList": [
+            "Ethernet39", 
+            "Ethernet39"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1884"
+    }, 
+    {
+        "description": "DEMEESDB2237-1#TASK0137240", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel400", 
+        "mlagId": "400", 
+        "mlagMemberList": [
+            "Ethernet40", 
+            "Ethernet40"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESDB2229-1", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel440", 
+        "mlagId": "440", 
+        "mlagMemberList": [
+            "Ethernet44", 
+            "Ethernet44"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESDB2229-2", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel450", 
+        "mlagId": "450", 
+        "mlagMemberList": [
+            "Ethernet45", 
+            "Ethernet45"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESDB2229-1", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel460", 
+        "mlagId": "460", 
+        "mlagMemberList": [
+            "Ethernet46", 
+            "Ethernet46"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESDB2229-2", 
+        "deviceList": [
+            "DEMEENSD105", 
+            "DEMEENSD106"
+        ], 
+        "interfaceName": "Port-Channel470", 
+        "mlagId": "470", 
+        "mlagMemberList": [
+            "Ethernet47", 
+            "Ethernet47"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "PH_Medium_3QPYVB3#TASK0179537#DEMEESDB2257_RITM0541239", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel2", 
+        "mlagId": "2", 
+        "mlagMemberList": [
+            "Ethernet2", 
+            "Ethernet2"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "PH_Medium_3QPYVB3#TASK0179537#DEMEESDB2257_RITM0541239", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel3", 
+        "mlagId": "3", 
+        "mlagMemberList": [
+            "Ethernet3", 
+            "Ethernet3"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESDB0217-1#TASK0162043", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel37", 
+        "mlagId": "37", 
+        "mlagMemberList": [
+            "Ethernet37", 
+            "Ethernet37"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1885"
+    }, 
+    {
+        "description": "DDEMEESDB0217-1#TASK0162043", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel38", 
+        "mlagId": "38", 
+        "mlagMemberList": [
+            "Ethernet38", 
+            "Ethernet38"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESDB2233-1 #RITM0448550", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel70", 
+        "mlagId": "70", 
+        "mlagMemberList": [
+            "Ethernet7", 
+            "Ethernet7"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESDB2233-1 #RITM0448550", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel80", 
+        "mlagId": "80", 
+        "mlagMemberList": [
+            "Ethernet8", 
+            "Ethernet8"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESAP2218 #RITM0448550", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel90", 
+        "mlagId": "90", 
+        "mlagMemberList": [
+            "Ethernet9", 
+            "Ethernet9"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESAP2218 #RITM0448550", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel100", 
+        "mlagId": "100", 
+        "mlagMemberList": [
+            "Ethernet10", 
+            "Ethernet10"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESAP2219 #RITM0448550", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel110", 
+        "mlagId": "110", 
+        "mlagMemberList": [
+            "Ethernet11", 
+            "Ethernet11"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESAP2219 #RITM0448550", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel120", 
+        "mlagId": "120", 
+        "mlagMemberList": [
+            "Ethernet12", 
+            "Ethernet12"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESAP2220 #RITM0448550", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel130", 
+        "mlagId": "130", 
+        "mlagMemberList": [
+            "Ethernet13", 
+            "Ethernet13"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESAP2220 #RITM0448550", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel140", 
+        "mlagId": "140", 
+        "mlagMemberList": [
+            "Ethernet14", 
+            "Ethernet14"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESDB2234 #RITM0448550", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel150", 
+        "mlagId": "150", 
+        "mlagMemberList": [
+            "Ethernet15", 
+            "Ethernet15"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESDB2234 #RITM0448550", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel160", 
+        "mlagId": "160", 
+        "mlagMemberList": [
+            "Ethernet16", 
+            "Ethernet16"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESDB0250 #RITM0448550", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel170", 
+        "mlagId": "170", 
+        "mlagMemberList": [
+            "Ethernet17", 
+            "Ethernet17"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESDB0250 #RITM0448550", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel180", 
+        "mlagId": "180", 
+        "mlagMemberList": [
+            "Ethernet18", 
+            "Ethernet18"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESPHV2019-TASK0143001", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel190", 
+        "mlagId": "190", 
+        "mlagMemberList": [
+            "Ethernet19", 
+            "Ethernet19"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1560"
+    }, 
+    {
+        "description": "DEMEESPHV2019-TASK0143001", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel200", 
+        "mlagId": "200", 
+        "mlagMemberList": [
+            "Ethernet20", 
+            "Ethernet20"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": []
+    }, 
+    {
+        "description": "DEMEESPHV2020-TASK0143001", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel210", 
+        "mlagId": "210", 
+        "mlagMemberList": [
+            "Ethernet21", 
+            "Ethernet21"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1560"
+    }, 
+    {
+        "description": "DEMEESPHV2020-TASK0143001", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel220", 
+        "mlagId": "220", 
+        "mlagMemberList": [
+            "Ethernet22", 
+            "Ethernet22"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": []
+    }, 
+    {
+        "description": "PH_XL_91WFH73#RITM0454048", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel250", 
+        "mlagId": "250", 
+        "mlagMemberList": [
+            "Ethernet25", 
+            "Ethernet25"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "PH_XL_91WFH73#RITM0454048", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel260", 
+        "mlagId": "260", 
+        "mlagMemberList": [
+            "Ethernet26", 
+            "Ethernet26"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "PH_XL_B1WFH73#RITM0454048", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel270", 
+        "mlagId": "270", 
+        "mlagMemberList": [
+            "Ethernet27", 
+            "Ethernet27"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "PH_XL_B1WFH73#RITM0454048", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel280", 
+        "mlagId": "280", 
+        "mlagMemberList": [
+            "Ethernet28", 
+            "Ethernet28"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "PH_XL_81WFH73#RITM0454048", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel290", 
+        "mlagId": "290", 
+        "mlagMemberList": [
+            "Ethernet29", 
+            "Ethernet29"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1882"
+    }, 
+    {
+        "description": "PH_XL_81WFH73#RITM0454048", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel300", 
+        "mlagId": "300", 
+        "mlagMemberList": [
+            "Ethernet30", 
+            "Ethernet30"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "PH_XL_C1WFH73#RITM0454048", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel310", 
+        "mlagId": "310", 
+        "mlagMemberList": [
+            "Ethernet31", 
+            "Ethernet31"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "PH_XL_C1WFH73#RITM0454048", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel320", 
+        "mlagId": "320", 
+        "mlagMemberList": [], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "PH_XL_D1WFH73#RITM0454048", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel330", 
+        "mlagId": "330", 
+        "mlagMemberList": [
+            "Ethernet33", 
+            "Ethernet33"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "PH_XL_D1WFH73#RITM0454048", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel340", 
+        "mlagId": "340", 
+        "mlagMemberList": [
+            "Ethernet34", 
+            "Ethernet34"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "PH_Medium_GPPYVB3 # RITM0454255", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel350", 
+        "mlagId": "350", 
+        "mlagMemberList": [
+            "Ethernet35", 
+            "Ethernet35"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "PH_Medium_GPPYVB3 # RITM0454255", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel360", 
+        "mlagId": "360", 
+        "mlagMemberList": [
+            "Ethernet36", 
+            "Ethernet36"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "2WT8FV2 # TASK0166322", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel390", 
+        "mlagId": "390", 
+        "mlagMemberList": [
+            "Ethernet39", 
+            "Ethernet39"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1886"
+    }, 
+    {
+        "description": "2WT8FV2 # TASK0166322", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel400", 
+        "mlagId": "400", 
+        "mlagMemberList": [
+            "Ethernet40", 
+            "Ethernet40"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "FK6RNR2 # TASK0166322", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel410", 
+        "mlagId": "410", 
+        "mlagMemberList": [
+            "Ethernet41", 
+            "Ethernet41"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1886"
+    }, 
+    {
+        "description": "FK6RNR2 # TASK0166322", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel420", 
+        "mlagId": "420", 
+        "mlagMemberList": [
+            "Ethernet42", 
+            "Ethernet42"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESDB0229-1_TASK0170226", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel430", 
+        "mlagId": "430", 
+        "mlagMemberList": [
+            "Ethernet43", 
+            "Ethernet43"
+        ], 
+        "spanningTree": true, 
+        "switchportMode": "access", 
+        "vlanList": "1885"
+    }, 
+    {
+        "description": "DEMEESDB0229-1_TASK0170226", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel440", 
+        "mlagId": "440", 
+        "mlagMemberList": [
+            "Ethernet44", 
+            "Ethernet44"
+        ], 
+        "spanningTree": true, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESDB2255 #TASK0157309", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel450", 
+        "mlagId": "450", 
+        "mlagMemberList": [
+            "Ethernet45", 
+            "Ethernet45"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESDB2255 #TASK0157309", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel460", 
+        "mlagId": "460", 
+        "mlagMemberList": [
+            "Ethernet46", 
+            "Ethernet46"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "PH_Medium_6QPYVB3 # RITM0454255", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel470", 
+        "mlagId": "470", 
+        "mlagMemberList": [
+            "Ethernet47", 
+            "Ethernet47"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "PH_Medium_6QPYVB3 # RITM0454255", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel480", 
+        "mlagId": "480", 
+        "mlagMemberList": [
+            "Ethernet48", 
+            "Ethernet48"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESDB0221-1", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel490", 
+        "mlagId": "490", 
+        "mlagMemberList": [
+            "Ethernet23", 
+            "Ethernet23"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "DEMEESDB0221-1", 
+        "deviceList": [
+            "DEMEENSD107", 
+            "DEMEENSD108"
+        ], 
+        "interfaceName": "Port-Channel500", 
+        "mlagId": "500", 
+        "mlagMemberList": [
+            "Ethernet24", 
+            "Ethernet24"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "DEMEESPHV2017#TASK0180740", 
+        "deviceList": [
+            "DEMEENSD111", 
+            "DEMEENSD112"
+        ], 
+        "interfaceName": "Port-Channel450", 
+        "mlagId": "450", 
+        "mlagMemberList": [
+            "Ethernet45", 
+            "Ethernet45"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1560"
+    }, 
+    {
+        "description": "DEMEESPHV2017#TASK0180740", 
+        "deviceList": [
+            "DEMEENSD111", 
+            "DEMEENSD112"
+        ], 
+        "interfaceName": "Port-Channel460", 
+        "mlagId": "460", 
+        "mlagMemberList": [
+            "Ethernet46", 
+            "Ethernet46"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": []
+    }, 
+    {
+        "description": "DEMEESPHV2018#TASK0180740", 
+        "deviceList": [
+            "DEMEENSD111", 
+            "DEMEENSD112"
+        ], 
+        "interfaceName": "Port-Channel470", 
+        "mlagId": "470", 
+        "mlagMemberList": [
+            "Ethernet47", 
+            "Ethernet47"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1560"
+    }, 
+    {
+        "description": "DEMEESPHV2018#TASK0180740", 
+        "deviceList": [
+            "DEMEENSD111", 
+            "DEMEENSD112"
+        ], 
+        "interfaceName": "Port-Channel480", 
+        "mlagId": "480", 
+        "mlagMemberList": [
+            "Ethernet48", 
+            "Ethernet48"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": []
+    }, 
+    {
+        "description": "PA-FW-1", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel51", 
+        "mlagId": "51", 
+        "mlagMemberList": [
+            "Ethernet1", 
+            "Ethernet2", 
+            "Ethernet1", 
+            "Ethernet2"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1657", 
+            " 1726", 
+            " 1553", 
+            " 1560", 
+            " 1561", 
+            " 1562", 
+            " 1565", 
+            " 1566", 
+            " 1571", 
+            " 1728", 
+            " 3320", 
+            " 3322", 
+            " 1545", 
+            " 3518", 
+            " 3519", 
+            " 3318", 
+            " 3312", 
+            " 3316", 
+            " 710", 
+            " 1613", 
+            " 1724", 
+            " 1722", 
+            " 3326", 
+            " 3071", 
+            " 3070", 
+            " 3314", 
+            " 1626", 
+            " 1720", 
+            " 1625", 
+            " 1810", 
+            " 1820", 
+            " 1830", 
+            " 1840", 
+            " 1629", 
+            " 1644", 
+            " 1563", 
+            " 3324", 
+            " 3424"
+        ]
+    }, 
+    {
+        "description": "PA-FW-2", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel52", 
+        "mlagId": "52", 
+        "mlagMemberList": [
+            "Ethernet3", 
+            "Ethernet4", 
+            "Ethernet3", 
+            "Ethernet4"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1657", 
+            " 1726", 
+            " 1553", 
+            " 1560", 
+            " 1561", 
+            " 1562", 
+            " 1565", 
+            " 1566", 
+            " 1571", 
+            " 1728", 
+            " 3320", 
+            " 3322", 
+            " 1545", 
+            " 3518", 
+            " 3519", 
+            " 3318", 
+            " 3312", 
+            " 3316", 
+            " 710", 
+            " 1613", 
+            " 1724", 
+            " 1722", 
+            " 3326", 
+            " 3071", 
+            " 3070", 
+            " 3314", 
+            " 1626", 
+            " 1720", 
+            " 1625", 
+            " 1810", 
+            " 1820", 
+            " 1830", 
+            " 1840", 
+            " 1629", 
+            " 1644", 
+            " 1563", 
+            " 3324", 
+            " 3424"
+        ]
+    }, 
+    {
+        "description": "PA-FW-LOG", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel53", 
+        "mlagId": "53", 
+        "mlagMemberList": [
+            "Ethernet6", 
+            "Ethernet7", 
+            "Ethernet8", 
+            "Ethernet6", 
+            "Ethernet7", 
+            "Ethernet8"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1550"
+        ]
+    }, 
+    {
+        "description": "F5-iSeries-1", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel61", 
+        "mlagId": "61", 
+        "mlagMemberList": [
+            "Ethernet9", 
+            "Ethernet9"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1656", 
+            " 1559", 
+            " 1652", 
+            " 3524", 
+            " 3525", 
+            " 3513", 
+            " 3514", 
+            " 3515", 
+            " 3516", 
+            " 3518", 
+            " 1554"
+        ]
+    }, 
+    {
+        "description": "F5-iSeries-2", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel62", 
+        "mlagId": "62", 
+        "mlagMemberList": [
+            "Ethernet10", 
+            "Ethernet10"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1656", 
+            " 1559", 
+            " 1652", 
+            " 3524", 
+            " 3525", 
+            " 3513", 
+            " 3514", 
+            " 3515", 
+            " 3516", 
+            " 3518", 
+            " 1554"
+        ]
+    }, 
+    {
+        "description": "F5-iSeries-1", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel63", 
+        "mlagId": "63", 
+        "mlagMemberList": [
+            "Ethernet29", 
+            "Ethernet29"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1655", 
+            " 3518"
+        ]
+    }, 
+    {
+        "description": "F5-iSeries-2", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel64", 
+        "mlagId": "64", 
+        "mlagMemberList": [
+            "Ethernet30", 
+            "Ethernet30"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1655", 
+            " 3518"
+        ]
+    }, 
+    {
+        "description": "Citrix_NetScaler_GSLB", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel66", 
+        "mlagId": "66", 
+        "mlagMemberList": [
+            "Ethernet45", 
+            "Ethernet45", 
+            "Ethernet45"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1553"
+        ]
+    }, 
+    {
+        "description": "DEMEEISI001", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel111", 
+        "mlagId": "111", 
+        "mlagMemberList": [], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1542", 
+            " 1709", 
+            " 1710"
+        ]
+    }, 
+    {
+        "description": "DEMEEISI001", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel112", 
+        "mlagId": "112", 
+        "mlagMemberList": [], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1542", 
+            " 1709", 
+            " 1710"
+        ]
+    }, 
+    {
+        "description": "DEMEEISI001", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel113", 
+        "mlagId": "113", 
+        "mlagMemberList": [], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1542", 
+            " 1709", 
+            " 1710"
+        ]
+    }, 
+    {
+        "description": "DEMEEISI001", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel114", 
+        "mlagId": "114", 
+        "mlagMemberList": [], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1542", 
+            " 1709", 
+            " 1710"
+        ]
+    }, 
+    {
+        "description": "DEMEEISI001", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel115", 
+        "mlagId": "115", 
+        "mlagMemberList": [], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1542", 
+            " 1709", 
+            " 1710"
+        ]
+    }, 
+    {
+        "description": "DEMEEISI001", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel116", 
+        "mlagId": "116", 
+        "mlagMemberList": [], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1542", 
+            " 1709", 
+            " 1710"
+        ]
+    }, 
+    {
+        "description": "DEMEEISI001", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel117", 
+        "mlagId": "117", 
+        "mlagMemberList": [], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1542", 
+            " 1709", 
+            " 1710"
+        ]
+    }, 
+    {
+        "description": "DEMEEISI001", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel118", 
+        "mlagId": "118", 
+        "mlagMemberList": [], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1542", 
+            " 1709", 
+            " 1710"
+        ]
+    }, 
+    {
+        "description": "WLC1", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel145", 
+        "mlagId": "145", 
+        "mlagMemberList": [
+            "Ethernet15", 
+            "Ethernet15"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1802", 
+            " 1800", 
+            " 1810", 
+            " 1820", 
+            " 1830", 
+            " 1840", 
+            " 1629", 
+            " 1644"
+        ]
+    }, 
+    {
+        "description": "WLC2", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel146", 
+        "mlagId": "146", 
+        "mlagMemberList": [
+            "Ethernet16", 
+            "Ethernet16"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1802", 
+            " 1800", 
+            " 1810", 
+            " 1820", 
+            " 1830", 
+            " 1840", 
+            " 1629", 
+            " 1644"
+        ]
+    }, 
+    {
+        "description": "DCAS03-DUS01 e104/1/18|iSeries|Po410", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel400", 
+        "mlagId": "400", 
+        "mlagMemberList": [
+            "Ethernet40", 
+            "Ethernet40"
+        ], 
+        "spanningTree": true, 
+        "switchportMode": "access", 
+        "vlanList": "1545"
+    }, 
+    {
+        "description": "DEMEENNSL002", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel410", 
+        "mlagId": "410", 
+        "mlagMemberList": [
+            "Ethernet41", 
+            "Ethernet41"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1553"
+        ]
+    }, 
+    {
+        "description": "DEMEENNSL001", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel420", 
+        "mlagId": "420", 
+        "mlagMemberList": [
+            "Ethernet42", 
+            "Ethernet42"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1553"
+        ]
+    }, 
+    {
+        "description": "DCI_CHANNEL", 
+        "deviceList": [
+            "DEMEENSE101", 
+            "DEMEENSE102"
+        ], 
+        "interfaceName": "Port-Channel1020", 
+        "mlagId": "1020", 
+        "mlagMemberList": [
+            "Ethernet14", 
+            "Ethernet14"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1550", 
+            " 710", 
+            " 182", 
+            " 130", 
+            " 334", 
+            " 101"
+        ]
+    }
+]

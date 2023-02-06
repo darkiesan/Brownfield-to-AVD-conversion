@@ -1,0 +1,474 @@
+interface Port-Channel51
+   description PA-FW-1
+   mtu 10178
+   switchport trunk allowed vlan 1553,1560-1563,1600-1614,1625,1629,1650,1657,1704,1709-1710,1720,1722,1724,1726,1728,2629,2644,3301,3312,3314,3316,3320,3322,3702
+   switchport mode trunk
+   switchport trunk group ARISTA_To_PAN
+   switchport trunk group CITRIX1_TRANSIT_FW
+   switchport trunk group CITRIX_TRANSIT_FW
+   switchport trunk group Citrix_NetScaler_GSLB
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group DCI_FW_INT
+   switchport trunk group DMZ_INFRA_NSX_FW
+   switchport trunk group DMZ_TRANSIT_FW
+   switchport trunk group INFOBLOX_TRANSIT_FW
+   switchport trunk group INFRA_NSX_FW
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+   switchport trunk group ISILON_TRANSIT_FW
+   switchport trunk group JUMP_TRANSIT_FW
+   switchport trunk group MCAFEE_TRANSIT_FW
+   switchport trunk group PHYSICAL_SERVER_FW
+   switchport trunk group SNOW_TRANSIT_FW
+   switchport trunk group ServiceNow_Discovery
+   switchport trunk group WLC_Mgmt_Transit_FW
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   switchport trunk group Wipro_Jump_Server
+   switchport trunk group Wipro_VDI_WLD
+   switchport trunk group XMS_CVP_TRANSIT_FW
+   mlag 51
+!
+interface Port-Channel52
+   description PA-FW-2
+   mtu 10178
+   switchport trunk allowed vlan 1553,1560-1563,1600-1614,1625,1629,1650,1657,1704,1709-1710,1720,1722,1724,1726,1728,2629,2644,3301,3312,3314,3316,3320,3322,3702
+   switchport mode trunk
+   switchport trunk group ARISTA_To_PAN
+   switchport trunk group CITRIX1_TRANSIT_FW
+   switchport trunk group CITRIX_TRANSIT_FW
+   switchport trunk group Citrix_NetScaler_GSLB
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group DCI_FW_INT
+   switchport trunk group DMZ_INFRA_NSX_FW
+   switchport trunk group DMZ_TRANSIT_FW
+   switchport trunk group INFOBLOX_TRANSIT_FW
+   switchport trunk group INFRA_NSX_FW
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+   switchport trunk group ISILON_TRANSIT_FW
+   switchport trunk group JUMP_TRANSIT_FW
+   switchport trunk group MCAFEE_TRANSIT_FW
+   switchport trunk group PHYSICAL_SERVER_FW
+   switchport trunk group SNOW_TRANSIT_FW
+   switchport trunk group ServiceNow_Discovery
+   switchport trunk group WLC_Mgmt_Transit_FW
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   switchport trunk group Wipro_Jump_Server
+   switchport trunk group Wipro_VDI_WLD
+   switchport trunk group XMS_CVP_TRANSIT_FW
+   mlag 52
+!
+interface Port-Channel61
+   description F5-iSeries-1
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group Arista_F5_MPLS_TRANSIT
+   switchport trunk group F5Int_To_ARISTA
+   switchport trunk group F5_VIPs
+   switchport trunk group F5_VLAN_1
+   switchport trunk group F5_VLAN_2
+   switchport trunk group F5_VLAN_3
+   switchport trunk group F5_VLAN_4
+   switchport trunk group SPLU_LOG_Mgmt
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   mlag 61
+!
+interface Port-Channel62
+   description F5-iSeries-2
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group Arista_F5_MPLS_TRANSIT
+   switchport trunk group F5Int_To_ARISTA
+   switchport trunk group F5_VIPs
+   switchport trunk group F5_VLAN_1
+   switchport trunk group F5_VLAN_2
+   switchport trunk group F5_VLAN_3
+   switchport trunk group F5_VLAN_4
+   switchport trunk group SPLU_LOG_Mgmt
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   mlag 62
+!
+interface Port-Channel63
+   description F5-iSeries-1
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group ARISTA_To_F5Ext
+   mlag 63
+!
+interface Port-Channel64
+   description F5-iSeries-2
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group ARISTA_To_F5Ext
+   mlag 64
+!
+interface Port-Channel111
+   description ISILON1_NIC1
+   switchport access vlan 1542
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+!
+interface Port-Channel112
+   description ISILON1_NIC1
+   switchport access vlan 1542
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+!
+interface Port-Channel113
+   description ISILON3_NIC1
+   switchport access vlan 1542
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+!
+interface Port-Channel114
+   description ISILON4_NIC1
+   switchport access vlan 1542
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+!
+interface Port-Channel115
+   description ISILON5_NIC1
+   switchport access vlan 1542
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+!
+interface Port-Channel116
+   description ISILON6_NIC1
+   switchport access vlan 1542
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+!
+interface Port-Channel145
+   description WLC1
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group WLC_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   mlag 145
+!
+interface Port-Channel146
+   description WLC2
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group WLC_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   mlag 146
+!
+interface Ethernet1
+   description USDC1PAFW001_NPC1-Eth3
+   mtu 10178
+   channel-group 51 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet2
+   description USDC1PAFW001_NPC1-Eth4
+   mtu 10178
+   channel-group 51 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet3
+   description USDC1PAFW002_NPC1-Eth3
+   mtu 10178
+   channel-group 52 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet4
+   description USDC1PAFW002_NPC1-Eth4
+   mtu 10178
+   channel-group 52 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet9
+   description USDC1F5LB001_Eth2.1
+   mtu 10178
+   channel-group 61 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet10
+   description USDC1F5LB002_Eth2.1
+   mtu 10178
+   channel-group 62 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet11
+   description AT&T MPLS Circuit
+   switchport mode trunk
+   switchport trunk group MPLS-CKT-2
+   switchport trunk group SDWAN-AVPN2
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet12
+   description INTERNET_CKT_ID-442618199
+   mtu 10178
+   no switchport
+   vrf INTERNET
+   ip address 4.71.102.86/30
+   bfd interval 500 min-rx 500 multiplier 5
+!
+interface Ethernet13
+   description USDC1WLC001
+   mtu 10178
+   channel-group 145 mode on
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet14
+   description USDC1WLC002
+   mtu 10178
+   channel-group 146 mode on
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet21
+   description USDC1SMGMTXI01_NIC_3
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group CITRIX1_File_Server
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Cloudvision
+   switchport trunk group DC_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_vMotion
+   switchport trunk group MGMT_TNT_ESXi_vSAN
+   switchport trunk group N&S_Mgmt
+   switchport trunk group SPLU_LOG_Mgmt
+   switchport trunk group VRA_Mgmt
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WITNESS_VSAN
+   switchport trunk group Wipro_Jump_Server
+   switchport trunk group iDRAC_Mgmt
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet23
+   description USDC1SMGMTXI02_NIC_3
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group CITRIX1_File_Server
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Cloudvision
+   switchport trunk group DC_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_vMotion
+   switchport trunk group MGMT_TNT_ESXi_vSAN
+   switchport trunk group N&S_Mgmt
+   switchport trunk group SPLU_LOG_Mgmt
+   switchport trunk group VRA_Mgmt
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WITNESS_VSAN
+   switchport trunk group Wipro_Jump_Server
+   switchport trunk group iDRAC_Mgmt
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet25
+   description USDC1SMGMTXI03_NIC_3
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group CITRIX1_File_Server
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Cloudvision
+   switchport trunk group DC_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_vMotion
+   switchport trunk group MGMT_TNT_ESXi_vSAN
+   switchport trunk group N&S_Mgmt
+   switchport trunk group SPLU_LOG_Mgmt
+   switchport trunk group VRA_Mgmt
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WITNESS_VSAN
+   switchport trunk group Wipro_Jump_Server
+   switchport trunk group iDRAC_Mgmt
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet27
+   description USDC1SMGMTXI04_NIC_3
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group CITRIX1_File_Server
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Cloudvision
+   switchport trunk group DC_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_vMotion
+   switchport trunk group MGMT_TNT_ESXi_vSAN
+   switchport trunk group N&S_Mgmt
+   switchport trunk group SPLU_LOG_Mgmt
+   switchport trunk group VRA_Mgmt
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WITNESS_VSAN
+   switchport trunk group Wipro_Jump_Server
+   switchport trunk group iDRAC_Mgmt
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet29
+   description SDWAN-VCE1-AVPN1
+   mtu 10178
+   switchport access vlan 1850
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet30
+   description SDWAN-VCE1-AVPN2
+   mtu 10178
+   switchport access vlan 1851
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet31
+   description SDWAN-VCE1-INTERNET
+   mtu 10178
+   switchport access vlan 1654
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet32
+   description USDC1XPDD001_Eth4a
+   mtu 10178
+   switchport access vlan 1541
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet33
+   description USDC1XPDD001_Eth4b
+   mtu 10178
+   switchport access vlan 1541
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet34
+   description USDC1XPDD001_Eth4c
+   mtu 10178
+   switchport access vlan 1541
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet35
+   description USDC1XPDD001_Eth4d
+   mtu 10178
+   switchport access vlan 1542
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet36
+   description SDWAN-VCE2-LAN
+   no switchport
+   vrf MPLS-AA
+   ip address 10.23.70.37/30
+!
+interface Ethernet37
+   shutdown
+   mtu 10178
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet38
+   description ISILON1_NIC1
+   mtu 10178
+   channel-group 111 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet39
+   description ISILON1_NIC1
+   mtu 10178
+   channel-group 112 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet40
+   description ISILON3_NIC1
+   mtu 10178
+   channel-group 113 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet41
+   description ISILON4_NIC1
+   mtu 10178
+   channel-group 114 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet42
+   description ISILON5_NIC1
+   mtu 10178
+   channel-group 115 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet43
+   description ISILON4_NIC1
+   mtu 10178
+   channel-group 116 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet44
+   description USDC1F5LB001_Eth2.2
+   mtu 10178
+   channel-group 63 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet45
+   description USDC1SPNM2001
+   mtu 10178
+   switchport access vlan 1553
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet46
+   description USDC1F5LB002_Eth2.2
+   mtu 10178
+   channel-group 64 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet47
+   description USDC1IPAM001 LAN1
+   mtu 10178
+   switchport access vlan 1550
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet48
+   description USDC1IPAM001 HA
+   mtu 10178
+   switchport access vlan 1550
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!

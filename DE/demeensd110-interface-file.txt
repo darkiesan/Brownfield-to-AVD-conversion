@@ -1,0 +1,384 @@
+interface Ethernet1
+   description demeesslvrxi17 | RITM0484763
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet2
+   description demeesslvrxi17 | RITM0484763
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet3
+   description demeesslvrxi18 | RITM0484763
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet4
+   description demeesslvrxi18 | RITM0484763
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet5
+   description demeesslvrxi19 | | RITM0484763
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet6
+   description demeesslvrxi19 | | RITM0484763
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet7
+   description demeesslvrxi20 | RITM0484763
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet8
+   description demeesslvrxi20 | RITM0484763
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet9
+   description demeesgoldxi10 | RITM0484763
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1504,1515,1517-1518,1541,1544,1546,1548,1550,1675,1677-1680,1683-1684,1690,1810,1820,1830,1840,2677-2678,3377-3378,3477-3478,3517,3520
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet10
+   description demeesgoldxi10 | RITM0484763
+   mtu 9214
+   switchport trunk allowed vlan 1504,1675,1690,1704,1882,1884-1887,3375
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet11
+   description demeesslvrxi28|TASK0155281
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet12
+   description demeesslvrxi28|TASK0155281
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet13
+   description demeesslvrxi29|TASK0155281
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet14
+   description demeesslvrxi29|TASK0155281
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet15
+   description demeesslvrxi21|RITM0476616|VDS
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet16
+   description demeesslvrxi21|RITM0476616|NVDS
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet17
+   description demeesslvrxi22|RITM0476616|VDS
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet18
+   description demeesslvrxi22|RITM0476616|NVDS
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet19
+   description demeesslvrxi23|RITM0476616|VDS
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet20
+   description demeesslvrxi23|RITM0476616|NVDS
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet21
+   description demeesslvrxi24|RITM0476616|VDS
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet22
+   description demeesslvrxi24|RITM0476616|NVDS
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet23
+   description PH_XD_CK0C4K3-RITM0476616|demeesslvrxi25-TASK0153291
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet24
+   description PH_XD_CK0C4K3-RITM0476616|demeesslvrxi25-TASK0153291
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet25
+   description demeesslvrxi26|TASK0155281
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet26
+   description demeesslvrxi26|TASK0155281
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet27
+   description demeesslvrxi27|TASK0155281
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet28
+   description demeesslvrxi27|TASK0155281
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet29
+   description PH_XD_1HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet30
+   description PH_XD_1HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet31
+   description PH_XD_2HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet32
+   description PH_XD_2HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet33
+   description PH_XD_3HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet34
+   description PH_XD_3HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet35
+   description PH_XD_4HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet36
+   description PH_XD_4HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet37
+   description PH_XD_5HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet38
+   description PH_XD_5HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet39
+   description PH_XD_6HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet40
+   description PH_XD_6HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet41
+   description PH_XD_7HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet42
+   description PH_XD_7HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet43
+   description PH_XD_8HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet44
+   description PH_XD_8HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet45
+   description PH_XD_9HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet46
+   description PH_XD_9HXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet47
+   description PH_XD_BHXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1525,1527-1528,1541,1544,1546,1548,1681-1682,1685,1690,1801,1810,1820,1830,1840,3381-3382,3481-3482,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet48
+   description PH_XD_BHXXQK3|TASK0157401
+   mtu 9214
+   switchport trunk allowed vlan 1504,1676,1690,1704,1882,1884-1887,2704,3376,3476
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!

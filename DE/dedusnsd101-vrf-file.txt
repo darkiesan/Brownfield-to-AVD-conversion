@@ -1,0 +1,9 @@
+!
+vrf instance GOLD_TNT
+!
+vrf instance SILV_TNT
+!
+vrf instance TEST-DIRECTFLOW
+!
+vrf instance mgmt
+!

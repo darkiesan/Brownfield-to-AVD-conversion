@@ -1,0 +1,60 @@
+!
+vlan 700
+   name PROD_TO_TEST_TRANSIT
+   trunk group PROD_TO_TEST_TRANSIT
+!
+vlan 1540
+   name VLAN1540
+!
+vlan 1541
+   name BACKUP_Infra
+!
+vlan 1544
+   name BACK_Infra_2
+!
+vlan 1546
+   name EXCHANGE_PHY_SERVER
+!
+vlan 1550
+   name DC_Mgmt
+!
+vlan 1581
+   name OneMKS_UAT_TEST_1581
+!
+vlan 1582
+   name OneMKS_PROD_1582
+!
+vlan 1882
+   name NSX-Physical-Server
+!
+vlan 1884
+   name NSX-Physical-iSAC_Server
+!
+vlan 2560
+   name Citrix_VDI_Mgmt
+!
+vlan 2561
+   name Citrix_XenApp_Mgmt
+!
+vlan 2562
+   name Customer_VDI_WLD
+!
+vlan 2563
+   name Wipro_VDI_WLD
+!
+vlan 2565
+   name Citrix_VDI_France_Prod
+!
+vlan 2566
+   name Citrix_VDI_France_Test
+!
+vlan 2567
+   name Customer_VDI_WLD_Two
+!
+vlan 2700
+   name ARISTA_To_TEST-F5Ext
+   trunk group ARISTA_To_TEST-F5Ext
+!
+vlan 3386
+   name DMZ
+!

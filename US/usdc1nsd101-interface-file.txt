@@ -1,0 +1,852 @@
+interface Port-Channel140
+   description USDC1SPHV2001
+   switchport mode trunk
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   ip access-group isolated_1540 in
+   mlag 140
+!
+interface Port-Channel141
+   description USDC1SPHV2002
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   ip access-group isolated_1540 in
+   mlag 141
+!
+interface Port-Channel142
+   description USDC1SPHV2003
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   ip access-group isolated_1540 in
+   mlag 142
+!
+interface Port-Channel143
+   description USDC1SPHV2001
+   mtu 9214
+   switchport access vlan 1560
+   ip access-group isolated_1540 in
+   mlag 143
+!
+interface Port-Channel144
+   description USDC1SPHV2002
+   mtu 9214
+   switchport access vlan 1560
+   ip access-group isolated_1540 in
+   mlag 144
+!
+interface Port-Channel145
+   description USDC1SPHV2003
+   mtu 9214
+   switchport access vlan 1560
+   ip access-group isolated_1540 in
+   mlag 145
+!
+interface Port-Channel180
+   description USDC1SDB2184
+   mtu 9214
+   switchport access vlan 1543
+   mlag 180
+!
+interface Port-Channel200
+   description USDC1SDB2185
+   switchport access vlan 1543
+   mlag 200
+!
+interface Port-Channel217
+   description USDC1SDB2184
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 217
+!
+interface Port-Channel218
+   description USDC1SDB2184
+   shutdown
+   mtu 9214
+   switchport access vlan 1543
+!
+interface Port-Channel219
+   description USDC1SDB2185
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 219
+!
+interface Port-Channel220
+   description USDC1SDB2186
+   switchport access vlan 1543
+   mlag 220
+!
+interface Port-Channel221
+   description USDC1SDB2186
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 221
+!
+interface Port-Channel223
+   description PH_Medium_H2h3g73
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 223
+!
+interface Port-Channel224
+   description PH_Medium_H2h3g73
+   switchport access vlan 1543
+   mlag 224
+!
+interface Port-Channel225
+   description PH_Medium_H2h5773
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 225
+!
+interface Port-Channel226
+   description PH_Medium_H2h5773
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 226
+!
+interface Port-Channel227
+   description PH_Medium_H2h4773
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 227
+!
+interface Port-Channel228
+   description PH_Medium_H2h4773
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 228
+!
+interface Port-Channel290
+   description USDC1SDB2196 (BZDVM83)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 290
+!
+interface Port-Channel300
+   description USDC1SDB2196 (BZDVM83)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 300
+!
+interface Port-Channel310
+   description USDC1SDB2197
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 310
+!
+interface Port-Channel320
+   description USDC1SDB2197
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 320
+!
+interface Port-Channel330
+   description PH_XL_BZDWM83
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 330
+!
+interface Port-Channel340
+   description PH_XL_BZDWM83
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 340
+!
+interface Ethernet1
+   description USDC1SGOLDXI01_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet2
+   description USDC1SGOLDXI01_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet3
+   description USDC1SGOLDXI02_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet4
+   description USDC1SGOLDXI02_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet5
+   description USDC1SGOLDXI03_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet6
+   description USDC1SGOLDXI03_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet7
+   description USDC1SGOLDXI04_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet8
+   description USDC1SGOLDXI04_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet9
+   description USDC1SSILVXI01_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   ip access-group isolated_1540 in
+!
+interface Ethernet10
+   description USDC1SSILVXI01_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   ip access-group isolated_1540 in
+!
+interface Ethernet11
+   description USDC1SSILVXI02_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   ip access-group isolated_1540 in
+!
+interface Ethernet12
+   description USDC1SSILVXI02_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   ip access-group isolated_1540 in
+!
+interface Ethernet13
+   description USDC1SSILVXI03_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   ip access-group isolated_1540 in
+!
+interface Ethernet14
+   description USDC1SSILVXI03_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   ip access-group isolated_1540 in
+!
+interface Ethernet15
+   description USDC1SSILVXI04_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   ip access-group isolated_1540 in
+!
+interface Ethernet16
+   description USDC1SSILVXI04_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   ip access-group isolated_1540 in
+!
+interface Ethernet17
+   description USDC1SDB2184
+   mtu 9214
+   channel-group 217 mode active
+!
+interface Ethernet18
+   description USDC1SDB2184
+   mtu 9214
+   channel-group 180 mode active
+!
+interface Ethernet19
+   description USDC1SDB2185
+   channel-group 219 mode active
+!
+interface Ethernet20
+   description USDC1SDB2185
+   channel-group 200 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet21
+   description USDC1SDB2186
+   channel-group 221 mode active
+!
+interface Ethernet22
+   description USDC1SDB2186
+   channel-group 220 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet23
+   description PH_Medium_H2h3g73
+   channel-group 223 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet24
+   description PH_Medium_H2h3g73
+   channel-group 224 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet25
+   description PH_Medium_H2h5773
+   channel-group 225 mode active
+!
+interface Ethernet26
+   description PH_Medium_H2h5773
+   channel-group 226 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet27
+   description PH_Medium_H2h4773
+   channel-group 227 mode active
+!
+interface Ethernet28
+   description PH_Medium_H2h4773
+   channel-group 228 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet29
+   description PH_XL_BZDVM83 -M05.02.01/Ru23-24/OnBoard P1
+   channel-group 290 mode active
+!
+interface Ethernet30
+   description PH_XL_BZDVM83 -M05.02.01/Ru23-24/PCI2 P1
+   channel-group 300 mode active
+!
+interface Ethernet31
+   description PH_XL_BZDXM83 -M05.02.01/Ru26-27/OnBoard 1
+   channel-group 310 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet32
+   description PH_XL_BZDXM83 -M05.02.01/Ru26-27/PCI2 P1
+   channel-group 320 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet33
+   description PH_XL_BZDWM83
+   channel-group 330 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet34
+   description PH_XL_BZDWM83
+   channel-group 340 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet35
+   description USDC1SGOLDXI05_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet36
+   description USDC1SGOLDXI06_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet37
+   description USDC1SGOLDXI05_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet38
+   description USDC1SGOLDXI06_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet39
+   description usdc1sslvrxi06
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   ip access-group isolated_1540 in
+!
+interface Ethernet40
+   description USDC1SPHV2001
+   channel-group 140 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet41
+   description USDC1SPHV2002
+   channel-group 141 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet42
+   description USDC1SPHV2003
+   channel-group 142 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet43
+   description USDC1SPHV2001
+   mtu 9214
+   channel-group 143 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet44
+   description USDC1SPHV2002
+   channel-group 144 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet45
+   description USDC1SPHV2003
+   channel-group 145 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet46
+   description usdc1sslvrxi06
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   ip access-group isolated_1540 in
+!
+interface Ethernet47
+   description usdc1sslvrxi05
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   ip access-group isolated_1540 in
+!
+interface Ethernet48
+   description usdc1sslvrxi05
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   ip access-group isolated_1540 in
+!

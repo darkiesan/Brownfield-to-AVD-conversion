@@ -1,0 +1,406 @@
+[
+    {
+        "trunkName": "MGMT_TNT_ESXi_Mgmt", 
+        "vlanId": [
+            " 1505"
+        ]
+    }, 
+    {
+        "trunkName": "MGMT_VXLAN_VTEP", 
+        "vlanId": [
+            " 1506"
+        ]
+    }, 
+    {
+        "trunkName": "MGMT_vMotion", 
+        "vlanId": [
+            " 1507"
+        ]
+    }, 
+    {
+        "trunkName": "MGMT_vSAN", 
+        "vlanId": [
+            " 1508"
+        ]
+    }, 
+    {
+        "trunkName": "VRA_Mgmt", 
+        "vlanId": [
+            " 1510"
+        ]
+    }, 
+    {
+        "trunkName": "SILV_ESXi_Mgmt", 
+        "vlanId": [
+            " 1525"
+        ]
+    }, 
+    {
+        "trunkName": "SILV_TNT_ESXi_VXLAN_VTEP", 
+        "vlanId": [
+            " 1526"
+        ]
+    }, 
+    {
+        "trunkName": "SILV_ESXi_vMotion", 
+        "vlanId": [
+            " 1527"
+        ]
+    }, 
+    {
+        "trunkName": "SILV_ESXi_vSAN", 
+        "vlanId": [
+            " 1528"
+        ]
+    }, 
+    {
+        "trunkName": "PHYSICAL_SERVER", 
+        "vlanId": [
+            " 1540"
+        ]
+    }, 
+    {
+        "trunkName": "BACKUP_Infra", 
+        "vlanId": [
+            " 1541"
+        ]
+    }, 
+    {
+        "trunkName": "BACKUP_Mgmt", 
+        "vlanId": [
+            " 1543"
+        ]
+    }, 
+    {
+        "trunkName": "PAFW_VM300", 
+        "vlanId": [
+            " 1548"
+        ]
+    }, 
+    {
+        "trunkName": "INFOBLOX", 
+        "vlanId": [
+            " 1550"
+        ]
+    }, 
+    {
+        "trunkName": "SPLU_LOG_Mgmt", 
+        "vlanId": [
+            " 1554"
+        ]
+    }, 
+    {
+        "trunkName": "F5_VIPs", 
+        "vlanId": [
+            " 1559", 
+            " 3524"
+        ]
+    }, 
+    {
+        "trunkName": "BKP_WLD_Silver", 
+        "vlanId": [
+            " 1564"
+        ]
+    }, 
+    {
+        "trunkName": "EPO_TRANSIT_FW", 
+        "vlanId": [
+            " 1608"
+        ]
+    }, 
+    {
+        "trunkName": "INFRA_APP_TRANSIT_FW", 
+        "vlanId": [
+            " 1609"
+        ]
+    }, 
+    {
+        "trunkName": "PULSE_SECURE_TRANSIT_FW", 
+        "vlanId": [
+            " 1619"
+        ]
+    }, 
+    {
+        "trunkName": "PULSE_SECURE_INSIDE_TRANSIT_FW", 
+        "vlanId": [
+            " 1620"
+        ]
+    }, 
+    {
+        "trunkName": "PULSE_SECURE_OUTSIDE_TRANSIT_FW", 
+        "vlanId": [
+            " 1621"
+        ]
+    }, 
+    {
+        "trunkName": "AATech_Wireless_transit", 
+        "vlanId": [
+            " 1632"
+        ]
+    }, 
+    {
+        "trunkName": "Plant_Wireless_transit", 
+        "vlanId": [
+            " 1634"
+        ]
+    }, 
+    {
+        "trunkName": "MPLS_DC_iBGP", 
+        "vlanId": [
+            " 1637"
+        ]
+    }, 
+    {
+        "trunkName": "Arista_F5_MPLS_TRANSIT", 
+        "vlanId": [
+            " 1652"
+        ]
+    }, 
+    {
+        "trunkName": "INTERNET", 
+        "vlanId": [
+            " 1653"
+        ]
+    }, 
+    {
+        "trunkName": "ARISTA_To_F5Ext", 
+        "vlanId": [
+            " 1655"
+        ]
+    }, 
+    {
+        "trunkName": "F5Int_To_ARISTA", 
+        "vlanId": [
+            " 1656"
+        ]
+    }, 
+    {
+        "trunkName": "ARISTA_To_PAN", 
+        "vlanId": [
+            " 1657"
+        ]
+    }, 
+    {
+        "trunkName": "SILV_TEP_Pool", 
+        "vlanId": [
+            " 1676"
+        ]
+    }, 
+    {
+        "trunkName": "SILV_EDGE1_BGP", 
+        "vlanId": [
+            " 1681"
+        ]
+    }, 
+    {
+        "trunkName": "SILV_EDGE2_BGP", 
+        "vlanId": [
+            " 1682"
+        ]
+    }, 
+    {
+        "trunkName": "SILV_EDGE_TEP_Pool", 
+        "vlanId": [
+            " 1685"
+        ]
+    }, 
+    {
+        "trunkName": "SNOW_DISCOVERY", 
+        "vlanId": [
+            " 1704"
+        ]
+    }, 
+    {
+        "trunkName": "Cloudvision", 
+        "vlanId": [
+            " 1712"
+        ]
+    }, 
+    {
+        "trunkName": "SNOW_DISCOVERY_TRANSIT_FW", 
+        "vlanId": [
+            " 1720"
+        ]
+    }, 
+    {
+        "trunkName": "BIG_IQ", 
+        "vlanId": [
+            " 1801"
+        ]
+    }, 
+    {
+        "trunkName": "PANORAMA", 
+        "vlanId": [
+            " 1802"
+        ]
+    }, 
+    {
+        "trunkName": "PULSE_SECURE", 
+        "vlanId": [
+            " 1803"
+        ]
+    }, 
+    {
+        "trunkName": "EPO", 
+        "vlanId": [
+            " 1804"
+        ]
+    }, 
+    {
+        "trunkName": "PULSE_SECURE_MGMT", 
+        "vlanId": [
+            " 1805"
+        ]
+    }, 
+    {
+        "trunkName": "PULSE_SECURE_OUTSIDE", 
+        "vlanId": [
+            " 1806"
+        ]
+    }, 
+    {
+        "trunkName": "AATech_Wireless", 
+        "vlanId": [
+            " 1814"
+        ]
+    }, 
+    {
+        "trunkName": "Plant_Wireless", 
+        "vlanId": [
+            " 1815"
+        ]
+    }, 
+    {
+        "trunkName": "WiFi_GUEST_PROD_IOT", 
+        "vlanId": [
+            " 1820", 
+            " 1830", 
+            " 1840"
+        ]
+    }, 
+    {
+        "trunkName": "WiFi_GUEST_PROD_IOT", 
+        "vlanId": [
+            " 1820", 
+            " 1830", 
+            " 1840"
+        ]
+    }, 
+    {
+        "trunkName": "WiFi_GUEST_PROD_IOT", 
+        "vlanId": [
+            " 1820", 
+            " 1830", 
+            " 1840"
+        ]
+    }, 
+    {
+        "trunkName": "Jump_Server", 
+        "vlanId": [
+            " 3301"
+        ]
+    }, 
+    {
+        "trunkName": "INFOBLOX_TRANSIT_FW", 
+        "vlanId": [
+            " 3312"
+        ]
+    }, 
+    {
+        "trunkName": "INFRA_NSX_FW", 
+        "vlanId": [
+            " 3316"
+        ]
+    }, 
+    {
+        "trunkName": "DMZ_INFRA_NSX_FW", 
+        "vlanId": [
+            " 3320"
+        ]
+    }, 
+    {
+        "trunkName": "DMZ_INFRA_NSX_DCI", 
+        "vlanId": [
+            " 3321"
+        ]
+    }, 
+    {
+        "trunkName": "DMZ_TRANSIT_FW", 
+        "vlanId": [
+            " 3322"
+        ]
+    }, 
+    {
+        "trunkName": "DMZ_SILV_TEP_Pool", 
+        "vlanId": [
+            " 3376"
+        ]
+    }, 
+    {
+        "trunkName": "DMZ_SILV_EDGE1_BGP", 
+        "vlanId": [
+            " 3381"
+        ]
+    }, 
+    {
+        "trunkName": "DMZ_SILV_EDGE2_BGP", 
+        "vlanId": [
+            " 3382"
+        ]
+    }, 
+    {
+        "trunkName": "DMZ_SILV_EDGE_TEP_Pool", 
+        "vlanId": [
+            " 3385"
+        ]
+    }, 
+    {
+        "trunkName": "DMZ", 
+        "vlanId": [
+            " 3386"
+        ]
+    }, 
+    {
+        "trunkName": "F5_VLAN_1", 
+        "vlanId": [
+            " 3513"
+        ]
+    }, 
+    {
+        "trunkName": "F5_VLAN_2", 
+        "vlanId": [
+            " 3514"
+        ]
+    }, 
+    {
+        "trunkName": "F5_VLAN_3", 
+        "vlanId": [
+            " 3515"
+        ]
+    }, 
+    {
+        "trunkName": "F5_VLAN_4", 
+        "vlanId": [
+            " 3516"
+        ]
+    }, 
+    {
+        "trunkName": "F5_VLAN_6", 
+        "vlanId": [
+            " 3518"
+        ]
+    }, 
+    {
+        "trunkName": "VIRT_F5_VLAN_1", 
+        "vlanId": [
+            " 3520"
+        ]
+    }, 
+    {
+        "trunkName": "F5_VIPs", 
+        "vlanId": [
+            " 1559", 
+            " 3524"
+        ]
+    }
+]

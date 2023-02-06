@@ -1,0 +1,120 @@
+interface Port-Channel450
+   description DEMEESPHV2017#TASK0180740
+   switchport access vlan 1560
+   mlag 450
+!
+interface Port-Channel460
+   description DEMEESPHV2017#TASK0180740
+   switchport trunk allowed vlan 1561-1562
+   switchport mode trunk
+   mlag 460
+!
+interface Port-Channel470
+   description DEMEESPHV2018#TASK0180740
+   switchport access vlan 1560
+   mlag 470
+!
+interface Port-Channel480
+   description DEMEESPHV2018#TASK0180740
+   switchport trunk allowed vlan 1561-1562
+   switchport mode trunk
+   mlag 480
+!
+interface Ethernet1
+   description PH_XD_1JXXQK3 #TASK0180856
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1504,1515,1517-1518,1541,1544,1546,1548,1550,1675,1677-1680,1683-1684,1690,1810,1820,1830,1840,2677-2678,3377-3378,3477-3478,3517,3520
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet2
+   description PH_XD_1JXXQK3 #TASK0180856
+   mtu 9214
+   switchport trunk allowed vlan 1504,1675,1690,1704,1882,1884-1887,3375
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet3
+   description PH_XD_2JXXQK3 #TASK0180856
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1504,1515,1517-1518,1541,1544,1546,1548,1550,1675,1677-1680,1683-1684,1690,1810,1820,1830,1840,2677-2678,3377-3378,3477-3478,3517,3520
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet4
+   description PH_XD_2JXXQK3 #TASK0180856
+   mtu 9214
+   switchport trunk allowed vlan 1504,1675,1690,1704,1882,1884-1887,3375
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet5
+   description PH_XD_3JXXQK3 #TASK0180856
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1504,1515,1517-1518,1541,1544,1546,1548,1550,1675,1677-1680,1683-1684,1690,1810,1820,1830,1840,2677-2678,3377-3378,3477-3478,3517,3520
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet6
+   description PH_XD_3JXXQK3 #TASK0180856
+   mtu 9214
+   switchport trunk allowed vlan 1504,1675,1690,1704,1882,1884-1887,3375
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet7
+   description PH_XD_4JXXQK3 #TASK0180856
+   mtu 9214
+   switchport trunk allowed vlan 101,182,1504,1515,1517-1518,1541,1544,1546,1548,1550,1675,1677-1680,1683-1684,1690,1810,1820,1830,1840,2677-2678,3377-3378,3477-3478,3517,3520
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet8
+   description PH_XD_4JXXQK3 #TASK0180856
+   mtu 9214
+   switchport trunk allowed vlan 1504,1675,1690,1704,1882,1884-1887,3375
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet9
+   description PH_XD_JHXXQK3 #TASK0180856
+!
+interface Ethernet10
+   description PH_XD_JHXXQK3 #TASK0180856
+!
+interface Ethernet45
+   description DEMEESPHV2017#TASK0180740
+   mtu 9214
+   channel-group 450 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet46
+   description DEMEESPHV2017#TASK0180740
+   mtu 9214
+   channel-group 460 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet47
+   description DEMEESPHV2018#TASK0180740
+   mtu 9214
+   channel-group 470 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet48
+   description DEMEESPHV2018#TASK0180740
+   mtu 9214
+   channel-group 480 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!

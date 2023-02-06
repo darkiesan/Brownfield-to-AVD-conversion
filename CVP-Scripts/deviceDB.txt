@@ -1,0 +1,114 @@
+[
+    {
+        "deviceMacAddress": "fc:bd:67:41:57:b1", 
+        "deviceName": "DEMEENSD101"
+    }, 
+    {
+        "deviceMacAddress": "94:8e:d3:43:5d:de", 
+        "deviceName": "DEMEENSD106"
+    }, 
+    {
+        "deviceMacAddress": "fc:bd:67:15:a8:e9", 
+        "deviceName": "DEMEENSE102"
+    }, 
+    {
+        "deviceMacAddress": "c4:ca:2b:b1:91:a5", 
+        "deviceName": "DEDUSNSD107"
+    }, 
+    {
+        "deviceMacAddress": "c4:ca:2b:78:3b:51", 
+        "deviceName": "DEMEENSD112"
+    }, 
+    {
+        "deviceMacAddress": "2c:dd:e9:62:f8:93", 
+        "deviceName": "DEMEENSD110"
+    }, 
+    {
+        "deviceMacAddress": "c4:ca:2b:b1:7d:77", 
+        "deviceName": "DEMEENSD111"
+    }, 
+    {
+        "deviceMacAddress": "94:8e:d3:43:12:ea", 
+        "deviceName": "DEDUSNSD105"
+    }, 
+    {
+        "deviceMacAddress": "fc:bd:67:15:a7:2d", 
+        "deviceName": "DEDUSNSE102"
+    }, 
+    {
+        "deviceMacAddress": "fc:bd:67:32:c4:73", 
+        "deviceName": "DEDUSNSD102"
+    }, 
+    {
+        "deviceMacAddress": "fc:bd:67:33:3c:e3", 
+        "deviceName": "DEDUSNSD104"
+    }, 
+    {
+        "deviceMacAddress": "fc:bd:67:15:a6:05", 
+        "deviceName": "DEDUSNSE101"
+    }, 
+    {
+        "deviceMacAddress": "c4:ca:2b:b1:90:0b", 
+        "deviceName": "DEDUSNSD108"
+    }, 
+    {
+        "deviceMacAddress": "2c:dd:e9:12:d9:91", 
+        "deviceName": "DEMEENSD109"
+    }, 
+    {
+        "deviceMacAddress": "98:5d:82:d6:ea:d5", 
+        "deviceName": "DEMEENSC101"
+    }, 
+    {
+        "deviceMacAddress": "fc:bd:67:41:32:37", 
+        "deviceName": "DEMEENSD103"
+    }, 
+    {
+        "deviceMacAddress": "fc:bd:67:40:28:5b", 
+        "deviceName": "DEDUSNSD103"
+    }, 
+    {
+        "deviceMacAddress": "d4:af:f7:43:a0:a5", 
+        "deviceName": "DEMEENSD107"
+    }, 
+    {
+        "deviceMacAddress": "94:8e:d3:43:75:92", 
+        "deviceName": "DEMEENSD105"
+    }, 
+    {
+        "deviceMacAddress": "2c:dd:e9:62:dc:b5", 
+        "deviceName": "DEMEENSD108"
+    }, 
+    {
+        "deviceMacAddress": "fc:bd:67:33:03:8d", 
+        "deviceName": "DEDUSNSD101"
+    }, 
+    {
+        "deviceMacAddress": "fc:bd:67:21:a4:a5", 
+        "deviceName": "DEMEENSD104"
+    }, 
+    {
+        "deviceMacAddress": "98:5d:82:d7:10:fd", 
+        "deviceName": "DEDUSNSC102"
+    }, 
+    {
+        "deviceMacAddress": "98:5d:82:d7:12:89", 
+        "deviceName": "DEMEENSC102"
+    }, 
+    {
+        "deviceMacAddress": "94:8e:d3:43:6f:ce", 
+        "deviceName": "DEDUSNSD106"
+    }, 
+    {
+        "deviceMacAddress": "fc:bd:67:15:8d:29", 
+        "deviceName": "DEMEENSE101"
+    }, 
+    {
+        "deviceMacAddress": "fc:bd:67:41:1e:ff", 
+        "deviceName": "DEMEENSD102"
+    }, 
+    {
+        "deviceMacAddress": "98:5d:82:d7:17:2d", 
+        "deviceName": "DEDUSNSC101"
+    }
+]

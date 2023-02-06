@@ -1,0 +1,64 @@
+interface Ethernet1
+   description usdc1sgoldxi07
+   mtu 9214
+   switchport trunk allowed vlan 1515,1517-1518,1541,1548,1675,1677-1680,1683-1684,1830,2629,2644,3375,3377-3378,3383-3384,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet2
+   description usdc1sgoldxi07
+   mtu 9214
+   switchport trunk allowed vlan 1516,1541,1675,1677-1680,1683-1684,1810,1820,1830,2629,2644,3375,3377-3378,3383-3384
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet3
+   description usdc1sgoldxi08
+   mtu 9214
+   switchport trunk allowed vlan 1515,1517-1518,1541,1548,1675,1677-1680,1683-1684,1830,2629,2644,3375,3377-3378,3383-3384,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet4
+   description usdc1sgoldxi08
+   mtu 9214
+   switchport trunk allowed vlan 1516,1541,1675,1677-1680,1683-1684,1810,1820,1830,2629,2644,3375,3377-3378,3383-3384
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet5
+   description usdc1sgoldxi09
+   mtu 9214
+   switchport trunk allowed vlan 1515,1517-1518,1541,1548,1675,1677-1680,1683-1684,1830,2629,2644,3375,3377-3378,3383-3384,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet6
+   description usdc1sgoldxi09
+   mtu 9214
+   switchport trunk allowed vlan 1516,1541,1675,1677-1680,1683-1684,1810,1820,1830,2629,2644,3375,3377-3378,3383-3384
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet7
+   description usdc1sgoldxi10
+   mtu 9214
+   switchport trunk allowed vlan 1515,1517-1518,1541,1548,1675,1677-1680,1683-1684,1830,2629,2644,3375,3377-3378,3383-3384,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet8
+   description usdc1sgoldxi10
+   mtu 9214
+   switchport trunk allowed vlan 1516,1541,1675,1677-1680,1683-1684,1810,1820,1830,2629,2644,3375,3377-3378,3383-3384
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!

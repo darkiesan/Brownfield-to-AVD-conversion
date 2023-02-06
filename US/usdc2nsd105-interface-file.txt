@@ -1,0 +1,32 @@
+interface Ethernet1
+   description USDC2SSLVRXI05 #RITM0439325
+   mtu 9214
+   switchport trunk allowed vlan 1505,1511,1541,1548,2525,2527-2528,2676,2681-2682,2685,2704,3476,3481-3482,3485,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet2
+   description USDC2SSLVRXI05 #RITM0439325
+   mtu 9214
+   switchport trunk allowed vlan 1541,1548,2526,2681-2682,2685,2704,3476,3481-3482,3485
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet3
+   description USDC2SSLVRXI06 #RITM0439325
+   mtu 9214
+   switchport trunk allowed vlan 1505,1511,1541,1548,2525,2527-2528,2676,2681-2682,2685,2704,3476,3481-3482,3485,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet4
+   description USDC2SSLVRXI06 #RITM0439325
+   mtu 9214
+   switchport trunk allowed vlan 1541,1548,2526,2681-2682,2685,2704,3476,3481-3482,3485
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!

@@ -1,0 +1,213 @@
+!
+vlan 130
+   name P2V_MIGRATION_LINK_130
+   trunk group P2V_MIGRATION_LINK_130
+!
+vlan 334
+   name P2V_MIGRATION_LINK_334
+   trunk group P2V_MIGRATION_LINK_334
+!
+vlan 1505
+   name MGMT_TNT_ESXi_Mgmt
+   trunk group MGMT_TNT_ESXi_Mgmt
+!
+vlan 1506
+   name MGMT_TNT_ESXi_VXLAN_VTEP
+   trunk group MGMT_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1510
+   name VRA_Mgmt
+   trunk group VRA_Mgmt
+!
+vlan 1535
+   name EXCH_TNT_ESXi_Mgmt
+   trunk group EXCH_TNT_ESXi_Mgmt
+!
+vlan 1536
+   name EXCH_TNT_VXLAN_VTEP
+   trunk group EXCH_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1537
+   name EXCH_TNT_ESXi_vMotion
+   trunk group EXCH_TNT_ESXi_vMotion
+!
+vlan 1540
+   name PHYSICAL_SERVER
+   trunk group PHYSICAL_SERVER
+!
+vlan 1541
+   name Backup-Infra
+   trunk group BACKUP_Infra
+!
+vlan 1543
+   name BACKUP_Mgmt
+   trunk group BACKUP_Mgmt
+!
+vlan 1544
+   name BACK_Infra_2
+!
+vlan 1546
+   name EXCHANGE_PHY_SERVER
+!
+vlan 1550
+   name VLAN1550
+!
+vlan 1552
+   name SERVER_Heartbeat
+   trunk group SERVER_Heartbeat
+!
+vlan 1560
+   name Citrix_VDI_Mgmt
+   trunk group Citrix_VDI_Mgmt
+!
+vlan 1561
+   name Citrix_XenApp_Mgmt
+   trunk group Citrix_XenApp_Mgmt
+!
+vlan 1562
+   name Customer_VDI_WLD
+   trunk group Customer_VDI_WLD
+!
+vlan 1563
+   name Wipro_VDI_WLD
+   trunk group Wipro_VDI_WLD
+!
+vlan 1565
+   name Citrix_VDI_France_Prod
+   trunk group Customer_VDI_WLD
+!
+vlan 1566
+   name Citrix_VDI_France_Test
+   trunk group Customer_VDI_WLD
+!
+vlan 1567
+   name Customer_VDI_WLD_Two
+!
+vlan 1571
+   name Customer_VDI_WLD_Security
+!
+vlan 1581
+   name OneMKS_UAT_TEST_1581
+!
+vlan 1582
+   name OneMKS_PROD_1582
+!
+vlan 1675
+   name GOLD_TEP_Pool
+   trunk group GOLD_TEP_Pool
+!
+vlan 1676
+   name SILV_TEP_Pool
+   trunk group SILV_TEP_Pool
+!
+vlan 1677
+   name GOLD_EDGE1_BGP
+   trunk group GOLD_EDGE1_BGP
+!
+vlan 1678
+   name GOLD_EDGE2_BGP
+   trunk group GOLD_EDGE2_BGP
+!
+vlan 1679
+   name GOLD_EDGE3_BGP
+   trunk group GOLD_EDGE3_BGP
+!
+vlan 1680
+   name GOLD_EDGE4_BGP
+   trunk group GOLD_EDGE4_BGP
+!
+vlan 1681
+   name SILV_EDGE1_BGP
+   trunk group SILV_EDGE1_BGP
+!
+vlan 1682
+   name SILV_EDGE2_BGP
+   trunk group SILV_EDGE2_BGP
+!
+vlan 1683
+   name GOLD_EDGE1_TEP_Pool
+   trunk group GOLD_EDGE1_TEP_Pool
+!
+vlan 1684
+   name GOLD_EDGE2_TEP_Pool
+   trunk group GOLD_EDGE2_TEP_Pool
+!
+vlan 1685
+   name SILV_EDGE_TEP_Pool
+   trunk group SILV_EDGE_TEP_Pool
+!
+vlan 1690
+   name COLL_EDGE_TEP_Pool
+   trunk group COLL_EDGE_TEP_Pool
+!
+vlan 1700
+   name AD_SERVER
+   trunk group AD_SERVER
+!
+vlan 1701
+   name DMZ_SERVER
+   trunk group DMZ_SERVER
+!
+vlan 1702
+   name SKYPE_SERVER
+   trunk group SKYPE_SERVER
+!
+vlan 1703
+   name EXCHANGE_SERVER
+   trunk group EXCHANGE_SERVER
+!
+vlan 1704
+   name Splunk
+   trunk group SPLUNK
+!
+vlan 1706
+   name IBM_iSeries_Test
+   trunk group IBM_iSeries_Test
+!
+vlan 1707
+   name IBM_iSeries_Prod
+   trunk group IBM_iSeries_Prod
+!
+vlan 1711
+   name VLAN1711
+   trunk group VLAN1711
+!
+vlan 1802
+   name Cisco_DNA
+   trunk group Cisco_DNA
+!
+vlan 1882
+   name NSX-Physical-Server
+!
+vlan 1884
+   name NSX-Physical-iSAC_Server
+!
+vlan 1885
+   name Prod_EMEIA-AX-2009
+!
+vlan 1886
+   name ProdEMEIA-AX-2012
+!
+vlan 1887
+   name EMEIA-AX-2009-Test
+!
+vlan 3386
+   name DMZ
+   trunk group DMZ
+!
+vlan 3387
+   name XMS
+   trunk group XMS
+!
+vlan 3388
+   name CVP
+   trunk group CVP
+!
+vlan 3389
+   name MCAFEE
+   trunk group MCAFEE
+!
+vlan 3390
+   name Log_Forwarding
+   trunk group Log_Forwarding
+!

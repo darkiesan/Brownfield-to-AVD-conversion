@@ -1,0 +1,14 @@
+!
+vrf instance GOLD_TNT
+   description vrf gold
+!
+vrf instance INFRA_Mgmt
+!
+vrf instance INTERNAL
+!
+vrf instance SILV_TNT
+   description vrf silv
+!
+vrf instance mgmt
+   description vrf mgmt
+!

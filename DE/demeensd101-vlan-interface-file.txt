@@ -1,0 +1,12 @@
+interface Vlan1516
+   description ESXi VXLAN VTEP for Tenant GOLD
+   vrf GOLD_TNT
+   ip address 10.71.16.2/24
+   ip virtual-router address 10.71.16.1
+!
+interface Vlan1526
+   description ESXi VXLAN VTEP for Tenant SILV
+   vrf SILV_TNT
+   ip address 10.71.26.2/24
+   ip virtual-router address 10.71.26.1
+!

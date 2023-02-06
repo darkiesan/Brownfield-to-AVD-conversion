@@ -1,0 +1,698 @@
+! Startup-config last modified at Wed Jul 27 15:15:25 2022 by sac-tremar
+! device: DEDUSNSD107 (DCS-7050SX3-48YC8, EOS-4.26.5M)
+!
+! boot system flash:/EOS-4.26.5M.swi
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$90NRULsNqhRE4BBn$PPm6boYsSn8F/ZG9f.HbEzlIBiBRcrGiOTJXbxbew/TFlLfofiKbWhGH7puK.KOk8/iGMe8jkKJys0lyHY0JG0
+username cvpadmin privilege 15 role network-admin secret sha512 $6$k88sbaMzsNaOz8cc$MRxrZiMwFTvaXAItB2avn7Y1PzyPjwnQrdQi29vzwECnFbQRREeoCLscYkZx34xZOEDzwBATvgrTBMfgeD5fR.
+username netadmin privilege 15 role network-admin secret sha512 $6$QnPJJStSvu1D0Yw/$V59VWk8VyxlQUjC7nEq4jr145XcvZx7aHMaXTy8iKRhHUZl0exIU1P0LmfPeh/63dCk3w67HjkebOEclWsa8n.
+!
+daemon SplunkForwarder
+   exec /usr/bin/SplunkAgent 
+   option eapi_protocol value socket
+   option index-data value gssc_emea_ops_network-switch
+   option index-interface-counters value on
+   option index-inventory value on
+   option index-lanz value on
+   option index-sflow value on
+   option index-syslog value on
+   option index-topology value on
+   option shutdown value disabled
+   option splunk-server value 10.71.54.15:9998
+   option vrf value mgmt
+   no shutdown
+!
+daemon TerminAttr
+   exec /usr/bin/TerminAttr -ingestgrpcurl=10.71.30.22:9910 -cvcompression=gzip -ingestauth=token,/tmp/token -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -ingestvrf=mgmt -taillogs
+   no shutdown
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+queue-monitor length
+!
+logging buffered 10000
+logging trap notifications
+logging vrf mgmt host 10.71.20.11 514 protocol tcp
+logging facility local7
+logging vrf mgmt source-interface Management1
+!
+hostname DEDUSNSD107
+ip domain lookup vrf mgmt source-interface Management1
+ip name-server vrf mgmt 10.23.50.53
+ip name-server vrf mgmt 10.71.50.53
+dns domain ad.global
+!
+sflow polling-interval 10
+sflow vrf mgmt destination 10.71.114.67 2055
+sflow vrf mgmt source-interface Management1
+sflow run
+!
+snmp-server vrf mgmt local-interface Management1
+snmp-server community GSSC-SnmpV2Read ro
+snmp-server host 10.71.114.60 vrf mgmt informs version 2c GSSC-SnmpV2Read
+snmp-server enable traps
+no snmp-server vrf default
+snmp-server vrf mgmt
+!
+spanning-tree mode mstp
+no spanning-tree vlan-id 2000
+!
+vlan 700
+   name PROD_TO_TEST_TRANSIT
+   trunk group PROD_TO_TEST_TRANSIT
+!
+vlan 1540
+!
+vlan 1541
+   name BACKUP_Infra
+!
+vlan 1544
+   name BACK_Infra_2
+!
+vlan 1546
+   name EXCHANGE_PHY_SERVER
+!
+vlan 1550
+   name DC_Mgmt
+!
+vlan 1581
+   name OneMKS_UAT_TEST_1581
+!
+vlan 1582
+   name OneMKS_PROD_1582
+!
+vlan 1882
+   name NSX-Physical-Server
+!
+vlan 1884
+   name NSX-Physical-iSAC_Server
+!
+vlan 2000
+   name MLAG
+   trunk group MLAG_PEER
+!
+vlan 2560
+   name Citrix_VDI_Mgmt
+!
+vlan 2561
+   name Citrix_XenApp_Mgmt
+!
+vlan 2562
+   name Customer_VDI_WLD
+!
+vlan 2563
+   name Wipro_VDI_WLD
+!
+vlan 2565
+   name Citrix_VDI_France_Prod
+!
+vlan 2566
+   name Citrix_VDI_France_Test
+!
+vlan 2567
+   name Customer_VDI_WLD_Two
+!
+vlan 2700
+   name ARISTA_To_TEST-F5Ext
+   trunk group ARISTA_To_TEST-F5Ext
+!
+vlan 3386
+   name DMZ
+!
+vrf instance mgmt
+!
+management api http-commands
+   protocol unix-socket
+   protocol https ssl profile SW_SSL_PROFILE
+   no shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+management security
+   ssl profile SW_SSL_PROFILE
+      tls versions 1.2
+      cipher-list ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:!aNULL:!eNULL:!DES:!RC4:!3DES:!MD5:!PSK
+      certificate DEDUSNSD107.crt key DEDUSNSD107.key
+      trust certificate RootCA.crt
+!
+interface Port-Channel10
+   description DEDUSSPHV2001_CITRIX
+   switchport trunk allowed vlan 2561-2563
+   switchport mode trunk
+   mlag 10
+!
+interface Port-Channel20
+   description DEDUSSPHV2001_CITRIX
+   switchport access vlan 2560
+   mlag 20
+!
+interface Port-Channel30
+   description DEDUSSPHV2002_CITRIX
+   switchport trunk allowed vlan 2561-2563
+   switchport mode trunk
+   mlag 30
+!
+interface Port-Channel40
+   description DEDUSSPHV2002_CITRIX
+   switchport access vlan 2560
+   mlag 40
+!
+interface Port-Channel50
+   description DEDUSSPHV2003_CITRIX
+   switchport trunk allowed vlan 2561-2563
+   switchport mode trunk
+   mlag 50
+!
+interface Port-Channel60
+   description DEDUSSPHV2003_CITRIX
+   switchport access vlan 2560
+   mlag 60
+!
+interface Port-Channel70
+   description DEDUSSPHV2011#TASK0116252
+   switchport access vlan 2560
+   mlag 70
+!
+interface Port-Channel80
+   description DEDUSSPHV2011#TASK0116252
+   switchport trunk allowed vlan 2561-2562
+   switchport mode trunk
+   mlag 80
+!
+interface Port-Channel90
+   description DEDUSSPHV2012#TASK0116252
+   switchport access vlan 2560
+   mlag 90
+!
+interface Port-Channel100
+   description DEDUSSPHV2012#TASK0116252
+   switchport trunk allowed vlan 2561-2562
+   switchport mode trunk
+   mlag 100
+!
+interface Port-Channel110
+   description DEDUSSPHV2013#TASK0116252
+   switchport access vlan 2560
+   mlag 110
+!
+interface Port-Channel120
+   description DEDUSSPHV2013#TASK0116252
+   switchport trunk allowed vlan 2561-2562
+   switchport mode trunk
+   mlag 120
+!
+interface Port-Channel130
+   description DEDUSSPHV2014#TASK0116252
+   switchport access vlan 2560
+   mlag 130
+!
+interface Port-Channel140
+   description DEDUSSPHV2014#TASK0116252
+   switchport trunk allowed vlan 2561-2562
+   switchport mode trunk
+   mlag 140
+!
+interface Port-Channel150
+   description DEDUSSPHV2015#TASK0116252
+   switchport access vlan 2560
+   mlag 150
+!
+interface Port-Channel160
+   description DEDUSSPHV2015#TASK0116252
+   switchport trunk allowed vlan 2561-2562
+   switchport mode trunk
+   mlag 160
+!
+interface Port-Channel170
+   description DEDUSSPHV2016#TASK0121035
+   mtu 9214
+   switchport access vlan 2560
+   mlag 170
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Port-Channel180
+   description DEDUSSPHV2016#TASK0121035
+   mtu 9214
+   switchport trunk allowed vlan 2561-2562
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Port-Channel190
+   description DEDUSSPHV2017#TASK0114899
+   switchport access vlan 2560
+   mlag 190
+!
+interface Port-Channel200
+   description DEDUSSPHV2017-BACKUP#TASK0114899
+   switchport trunk allowed vlan 2561-2562
+   switchport mode trunk
+   mlag 200
+!
+interface Port-Channel210
+   description DEDUSSPHV2018#TASK0114899
+   switchport access vlan 2560
+   mlag 210
+!
+interface Port-Channel220
+   description DEDUSSPHV2018-BACKUP#TASK0114899
+   mtu 9214
+   switchport trunk allowed vlan 2565-2566
+   switchport mode trunk
+   mlag 220
+!
+interface Port-Channel700
+   description ***TEST TO PROD TRANSIT***
+   switchport trunk allowed vlan 700,2700
+   switchport mode trunk
+   switchport trunk group ARISTA_To_TEST-F5Ext
+   switchport trunk group PROD_TO_TEST_TRANSIT
+   mlag 700
+!
+interface Port-Channel2000
+   description MLAG_CHANNEL
+   switchport mode trunk
+   switchport trunk group ARISTA_To_TEST-F5Ext
+   switchport trunk group MLAG_PEER
+   switchport trunk group PROD_TO_TEST_TRANSIT
+!
+interface Ethernet1
+   description DEDUSSPHV2001_CITRIX
+   mtu 9214
+   channel-group 10 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet2
+   description DEDUSSPHV2001_CITRIX(HBDNC43)
+   mtu 9214
+   channel-group 20 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet3
+   description DEDUSSPHV2002_CITRIX
+   mtu 9214
+   channel-group 30 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet4
+   description DEDUSSPHV2002_CITRIX(1CDNC43)
+   mtu 9214
+   channel-group 40 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet5
+   description DEDUSSPHV2003_CITRIX
+   mtu 9214
+   channel-group 50 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet6
+   description DEDUSSPHV2003_CITRIX(JBDNC43)
+   mtu 9214
+   channel-group 60 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet7
+   description DEDUSSPHV2011#TASK0116252
+   mtu 9214
+   channel-group 70 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet8
+   description DEDUSSPHV2011#TASK0116252
+   mtu 9124
+   channel-group 80 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet9
+   description DEDUSSPHV2012#TASK0116252
+   mtu 9214
+   channel-group 90 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet10
+   description DEDUSSPHV2012#TASK0116252
+   mtu 9124
+   channel-group 100 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet11
+   description DEDUSSPHV2013#TASK0116252
+   mtu 9214
+   channel-group 110 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet12
+   description DEDUSSPHV2013#TASK0116252
+   mtu 9214
+   channel-group 120 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet13
+   description DEDUSSPHV2014#TASK0116252
+   mtu 9214
+   channel-group 130 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet14
+   description DEDUSSPHV2014#TASK0116252
+   mtu 9124
+   channel-group 140 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet15
+   description DEDUSSPHV2015#TASK0116252
+   mtu 9214
+   channel-group 150 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet16
+   description DEDUSSPHV2015#TASK0116252
+   mtu 9124
+   channel-group 160 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet17
+   description DEDUSSPHV2016#TASK0121035
+   mtu 9214
+   channel-group 170 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet18
+   description DEDUSSPHV2016#TASK0121035
+   mtu 9214
+   channel-group 180 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet19
+   description DEDUSSPHV2017#TASK0114899
+   mtu 9214
+   channel-group 190 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet20
+   description DEDUSSPHV2017#TASK0114899
+   mtu 9214
+   channel-group 200 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet21
+   description DEDUSSPHV2018#TASK0114899
+   mtu 9214
+   channel-group 210 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet22
+   description DEDUSSPHV2018#TASK0114899
+   mtu 9214
+   channel-group 220 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet23
+   description OneMKSintHIDdus #TASK0172870
+   mtu 9214
+   switchport access vlan 1581
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet24
+   description DEDUSXMS001 #TASK0189561
+   shutdown
+!
+interface Ethernet25
+   description DEDUSXMS001 #TASK0189561
+   shutdown
+!
+interface Ethernet26
+   shutdown
+!
+interface Ethernet27
+   shutdown
+!
+interface Ethernet28
+   shutdown
+!
+interface Ethernet29
+   shutdown
+!
+interface Ethernet30
+   shutdown
+!
+interface Ethernet31
+   shutdown
+!
+interface Ethernet32
+   shutdown
+!
+interface Ethernet33
+   shutdown
+!
+interface Ethernet34
+   shutdown
+!
+interface Ethernet35
+   shutdown
+!
+interface Ethernet36
+   shutdown
+!
+interface Ethernet37
+   shutdown
+!
+interface Ethernet38
+   shutdown
+!
+interface Ethernet39
+   shutdown
+!
+interface Ethernet40
+   shutdown
+!
+interface Ethernet41
+   shutdown
+!
+interface Ethernet42
+   shutdown
+!
+interface Ethernet43
+   shutdown
+!
+interface Ethernet44
+   description DEDUSTEST101_ETH47
+   channel-group 700 mode active
+!
+interface Ethernet45
+   description DEDUSSPHV2001(HBDNC43)
+   mtu 9214
+   switchport access vlan 1541
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet46
+   description DEDUSSPHV2002(1CDNC43)
+   mtu 9214
+   switchport access vlan 1541
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet47
+   description Eudcsdns02b-Infoblox_TASK0117266
+   switchport access vlan 1550
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet48
+   description DEDUSSPHV2011 TASK0132683
+   switchport access vlan 1541
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet49/1
+   description to DEDUSNSD108 Eth49/1
+   mtu 9214
+   channel-group 2000 mode active
+!
+interface Ethernet50/1
+   description to DEDUSNSD108 Eth50/1
+   mtu 9214
+   channel-group 2000 mode active
+!
+interface Ethernet51/1
+   description to DEDUSNSC101 Eth9
+   mtu 9214
+   no switchport
+   ip address 10.72.3.47/31
+!
+interface Ethernet52/1
+   description to DEDUSNSC102 Eth9
+   mtu 9214
+   no switchport
+   ip address 10.72.3.77/31
+!
+interface Ethernet53/1
+   shutdown
+   mtu 9214
+!
+interface Ethernet54/1
+   shutdown
+   mtu 9214
+!
+interface Ethernet55/1
+   shutdown
+   mtu 9214
+!
+interface Ethernet56/1
+   shutdown
+   mtu 9214
+!
+interface Loopback0
+   description BGP_ROUTER_ID
+   ip address 10.72.3.21/32
+!
+interface Loopback1
+   description VTEP
+   ip address 10.72.3.209/32
+!
+interface Management1
+   description to DEDUSNST104, Eth1
+   vrf mgmt
+   ip address 10.72.0.22/24
+!
+interface Vlan2000
+   mtu 9214
+   no autostate
+   ip address 10.72.2.18/31
+!
+interface Vxlan1
+   vxlan source-interface Loopback1
+   vxlan udp-port 4789
+   vxlan vlan 700 vni 10700
+   vxlan vlan 1541 vni 11541
+   vxlan vlan 1544 vni 11544
+   vxlan vlan 1546 vni 11546
+   vxlan vlan 1550 vni 11550
+   vxlan vlan 1581 vni 11581
+   vxlan vlan 1582 vni 11582
+   vxlan vlan 1882 vni 11882
+   vxlan vlan 1884 vni 11884
+   vxlan vlan 2560 vni 12560
+   vxlan vlan 2561 vni 12561
+   vxlan vlan 2562 vni 12562
+   vxlan vlan 2563 vni 12563
+   vxlan vlan 2565 vni 12565
+   vxlan vlan 2566 vni 12566
+   vxlan vlan 2567 vni 12567
+   vxlan vlan 2700 vni 12700
+   vxlan vlan 3386 vni 13386
+   vxlan flood vtep 10.71.3.202 10.71.3.204 10.71.3.206 10.71.3.207 10.71.3.208 10.71.3.209 10.71.3.210 10.71.3.211 10.72.3.202 10.72.3.204 10.72.3.206 10.72.3.208 10.72.3.209
+!
+ip access-list standard ALLOW_SSH_ACL
+   10 permit 10.230.0.0/16
+   20 permit 10.71.0.0/16
+   30 permit 10.72.0.0/16
+   40 permit 10.23.0.0/16
+   50 permit 10.24.0.0/16
+   60 permit 10.52.0.0/16
+   999 deny any
+!
+ip routing
+ip routing vrf mgmt
+!
+mlag configuration
+   domain-id mlag1
+   local-interface Vlan2000
+   peer-address 10.72.2.19
+   peer-link Port-Channel2000
+!
+ip route vrf mgmt 0.0.0.0/0 10.72.0.1
+!
+ntp server vrf mgmt 10.23.50.53 local-interface Management1
+ntp server vrf mgmt 10.71.50.53 prefer local-interface Management1
+!
+route-map underlay permit 10
+   match source-protocol connected
+   match interface Loopback0
+!
+route-map underlay permit 20
+   match source-protocol connected
+   match interface Loopback1
+!
+route-map underlay deny 99
+!
+router bgp 65104
+   router-id 10.72.3.21
+   update wait-for-convergence
+   update wait-install
+   maximum-paths 4 ecmp 4
+   neighbor MLAG-iBGP peer group
+   neighbor MLAG-iBGP remote-as 65104
+   neighbor MLAG-iBGP next-hop-self
+   neighbor MLAG-iBGP update-source Vlan2000
+   neighbor MLAG-iBGP send-community standard extended
+   neighbor MLAG-iBGP maximum-routes 12000
+   neighbor SPINE peer group
+   neighbor SPINE remote-as 65331
+   neighbor SPINE send-community standard extended
+   neighbor SPINE maximum-routes 12000
+   neighbor 10.72.2.19 peer group MLAG-iBGP
+   neighbor 10.72.3.46 peer group SPINE
+   neighbor 10.72.3.76 peer group SPINE
+   redistribute connected route-map underlay
+!
+tacacs-server timeout 15
+tacacs-server policy unknown-mandatory-attribute ignore
+tacacs-server host 10.71.112.215 vrf mgmt key 7 132A052B465E02110C626C172904155101262071
+tacacs-server host 10.23.112.144 vrf mgmt key 7 07203375035B1F3E30544F28180C2D723F161405
+!
+ip tacacs vrf mgmt source-interface Management1
+!
+aaa group server tacacs+ ISE_test_TACACS
+   server 10.71.112.215 vrf mgmt
+   server 10.23.112.144 vrf mgmt
+!
+aaa authentication login default group ISE_test_TACACS local
+aaa authentication login console local
+aaa authorization exec default group ISE_test_TACACS local
+aaa authorization commands 0 default local
+aaa authorization commands 1-15 default group ISE_test_TACACS local
+aaa accounting system default start-stop group ISE_test_TACACS
+!
+management ssh
+   ip access-group ALLOW_SSH_ACL vrf mgmt in
+   idle-timeout 30
+   authentication mode password
+   mac hmac-sha2-512-etm@openssh.com hmac-sha2-256-etm@openssh.com hmac-sha2-512 hmac-sha2-256
+   shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+end

@@ -1,0 +1,578 @@
+interface Port-Channel10
+   description DEMEESPHV2011#GRT6WC3#TASK0105789
+   switchport access vlan 1560
+   mlag 10
+!
+interface Port-Channel20
+   description DEMEESPHV2011#GRT6WC3#TASK0105789
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   mlag 20
+!
+interface Port-Channel30
+   description DEMEESPHV2012#1ST6WC3#TASK0105789
+   switchport access vlan 1560
+   mlag 30
+!
+interface Port-Channel40
+   description DEMEESPHV2012#1ST6WC3#TASK0105789
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   mlag 40
+!
+interface Port-Channel50
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+   mlag 50
+!
+interface Port-Channel60
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+   mlag 60
+!
+interface Port-Channel70
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+   mlag 70
+!
+interface Port-Channel80
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+   mlag 80
+!
+interface Port-Channel90
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+   mlag 90
+!
+interface Port-Channel100
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+   mlag 100
+!
+interface Port-Channel110
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+   mlag 110
+!
+interface Port-Channel120
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+   mlag 120
+!
+interface Port-Channel130
+   description DEMEESDB2235-1
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 130
+!
+interface Port-Channel140
+   description DEMEESDB2235-1
+   switchport access vlan 1543
+   mlag 140
+!
+interface Port-Channel150
+   description Windows Spare 25#J3XB1D3#RITM0413807
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 150
+!
+interface Port-Channel160
+   description Windows Spare 25#J3XB1D3#RITM0413807
+   switchport access vlan 1543
+   mlag 160
+!
+interface Port-Channel170
+   description DEMEESAP2234
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 170
+!
+interface Port-Channel180
+   description DEMEESAP2234
+   switchport access vlan 1543
+   mlag 180
+!
+interface Port-Channel190
+   description DEMEESAP2235#14XB1D3
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 190
+!
+interface Port-Channel200
+   description DEMEESAP2235#14XB1D3
+   switchport access vlan 1543
+   mlag 200
+!
+interface Port-Channel210
+   description DEMEESPHV2013
+   switchport access vlan 1560
+   mlag 210
+!
+interface Port-Channel220
+   description DEMEESPHV2013
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   mlag 220
+!
+interface Port-Channel230
+   description DEMEESPHV2014
+   switchport access vlan 1560
+   mlag 230
+!
+interface Port-Channel240
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   mlag 240
+!
+interface Port-Channel250
+   description DEMEESPHV2015
+   switchport access vlan 1560
+   mlag 250
+!
+interface Port-Channel260
+   description DEMEESPHV2015
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   mlag 260
+!
+interface Port-Channel270
+   switchport access vlan 1560
+   mlag 270
+!
+interface Port-Channel280
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   mlag 280
+!
+interface Port-Channel320
+   description F9MTB73 (RITM0422098/DEMEESEX2001)
+   switchport access vlan 182
+   mlag 320
+!
+interface Port-Channel330
+   description 79MTB73 (RITM0422098/DEMEESEX2000)
+   switchport access vlan 182
+   mlag 330
+!
+interface Port-Channel340
+   description G9MTB73 (RITM0422098/DEMEESEX2002)
+   switchport access vlan 182
+   mlag 340
+!
+interface Port-Channel350
+   description DEMEESDB0224 - TASK0113016
+   shutdown
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 350
+!
+interface Port-Channel360
+   description DEMEESDB0224 - TASK0113016
+   shutdown
+   switchport access vlan 1543
+   mlag 360
+!
+interface Port-Channel370
+   description DEMEESDB2237-1
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 370
+!
+interface Port-Channel380
+   description DEMEESDB2237-1
+   switchport access vlan 1543
+   mlag 380
+!
+interface Port-Channel390
+   description DEMEESDB2237-1#TASK0137240
+   switchport access vlan 1884
+   ip access-group isolated_1540 in
+   mlag 390
+!
+interface Port-Channel400
+   description DEMEESDB2237-1#TASK0137240
+   switchport access vlan 1543
+   mlag 400
+!
+interface Port-Channel440
+   description DEMEESDB2229-1
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 440
+!
+interface Port-Channel450
+   description DEMEESDB2229-2
+   switchport access vlan 1543
+   mlag 450
+!
+interface Port-Channel460
+   description DEMEESDB2229-1
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 460
+!
+interface Port-Channel470
+   description DEMEESDB2229-2
+   switchport access vlan 1543
+   mlag 470
+!
+interface Ethernet1
+   description DEMEESPHV2011#GRT6WC3#TASK0105789
+   mtu 9214
+   channel-group 10 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet2
+   description DEMEESPHV2011#GRT6WC3#TASK0105789
+   mtu 9214
+   channel-group 20 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet3
+   description DEMEESPHV2012#1ST6WC3#TASK0105789
+   mtu 9214
+   channel-group 30 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet4
+   description DEMEESPHV2012#1ST6WC3#TASK0105789
+   mtu 9214
+   channel-group 40 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet5
+   description DMEElsln001-1 Node 1 ext-3#TASK0106024
+   mtu 9214
+   channel-group 50 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet6
+   description DMEElsln001-2 Node 2 ext-3#TASK0106024
+   mtu 9214
+   channel-group 60 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet7
+   description DMEElsln001-3 Node 3 ext-3#TASK0106024
+   mtu 9214
+   channel-group 70 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet8
+   description DMEElsln001-4 Node 64 ext3#TASK0106024
+   mtu 9214
+   channel-group 80 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet9
+   description DMEElsln001-5 Node 5 ext-3#TASK0106024
+   mtu 9214
+   channel-group 90 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet10
+   description DMEElsln001-6 Node 6 ext-3#TASK0106024
+   mtu 9214
+   channel-group 100 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet11
+   description DMEElsln001-7 Node 7 ext-3#TASK0106024
+   mtu 9214
+   channel-group 110 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet12
+   description DMEElsln001-8 Node 8 ext-4#TASK0106024
+   mtu 9214
+   channel-group 120 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet13
+   description DEMEESDB2235-1
+   mtu 9214
+   channel-group 130 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet14
+   description DEMEESDB2235-1
+   mtu 9214
+   channel-group 140 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet15
+   description Windows Spare 25#J3XB1D3#RITM0413807
+   mtu 9214
+   channel-group 150 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet16
+   description Windows Spare 25#J3XB1D3#RITM0413807
+   mtu 9214
+   channel-group 160 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet17
+   description DEMEESAP2234
+   mtu 9214
+   channel-group 170 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet18
+   description DEMEESAP2234
+   mtu 9214
+   channel-group 180 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet19
+   description DEMEESAP2235#14XB1D3
+   mtu 9214
+   channel-group 190 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet20
+   description DEMEESAP2235#14XB1D3
+   mtu 9214
+   channel-group 200 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet21
+   description DEMEESPHV2013
+   mtu 9214
+   channel-group 210 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet22
+   description MDC Location - DEMEESPHV2013 (FRT6WC3) #TASK0105848
+   mtu 9214
+   channel-group 220 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet23
+   description MDC Location - DEMEESPHV2014 (JRT6WC3) #TASK0105848
+   mtu 9214
+   channel-group 230 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet24
+   description MDC Location - DEMEESPHV2014 (JRT6WC3) #TASK0105848
+   mtu 9214
+   channel-group 240 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet25
+   description MDC Location - DEMEESPHV2015 (CRT6WC3) #TASK0105848
+   mtu 9214
+   channel-group 250 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet26
+   description MDC Location - DEMEESPHV2015 (CRT6WC3) #TASK0105848
+   mtu 9214
+   channel-group 260 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet27
+   description MDC Location - DEMEESPHV2016 (DRT6WC3) #TASK0105848
+   mtu 9214
+   channel-group 270 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet28
+   description MDC Location - DEMEESPHV2016 (DRT6WC3) #TASK0105848
+   mtu 9214
+   channel-group 280 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet29
+   description DEMEESPHV2012#1ST6WC3#TASK0105789
+   mtu 9214
+   switchport access vlan 1541
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet30
+   description MDC Location - DEMEESPHV2014 (JRT6WC3) #TASK0105848
+   mtu 9214
+   switchport access vlan 1541
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet31
+   description DEMEESDB0195#TASK0147082
+   mtu 9214
+   switchport access vlan 1540
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet32
+   description F9MTB73 (RITM0422098/DEMEESEX2001)
+   mtu 9214
+   switchport access vlan 182
+   channel-group 320 mode active
+!
+interface Ethernet33
+   description 79MTB73 (RITM0422098/DEMEESEX2000)
+   mtu 9214
+   switchport access vlan 182
+   channel-group 330 mode active
+!
+interface Ethernet34
+   description G9MTB73 (RITM0422098/DEMEESEX2002)
+   mtu 9214
+   switchport access vlan 182
+   channel-group 340 mode active
+!
+interface Ethernet35
+   description DEMEESDB0224 - TASK0113016
+   shutdown
+   mtu 9214
+   channel-group 350 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet36
+   description DEMEESDB0224 - TASK0113016
+   mtu 9214
+   channel-group 360 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet37
+   description DEMEESDB2237-1
+   mtu 9214
+   channel-group 370 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet38
+   description DEMEESDB2237-1
+   mtu 9214
+   channel-group 380 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet39
+   description DEMEESDB2237-1#TASK0137240
+   mtu 9214
+   channel-group 390 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet40
+   description DEMEESDB2237-1#TASK0137240
+   mtu 9214
+   channel-group 400 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet41
+   description Infoblox_TASK0117264
+   mtu 9214
+   switchport access vlan 3386
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet42
+   description DNAC01_EMEA_CIMC
+   mtu 9214
+   switchport access vlan 1802
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet43
+   description Infoblox_TASK0117264
+   mtu 9214
+   switchport access vlan 3386
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet44
+   description DEMEESDB2229-1
+   mtu 9214
+   channel-group 440 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet45
+   description DEMEESDB2229-2
+   mtu 9214
+   channel-group 450 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet46
+   description DEMEESDB2229-1
+   mtu 9214
+   channel-group 460 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet47
+   description DEMEESDB2229-2
+   mtu 9214
+   channel-group 470 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet48
+   description DEMEESDB0195#TASK0147082
+   mtu 9214
+   switchport access vlan 1543
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!

@@ -1,0 +1,3866 @@
+[
+    {
+        "description": "ESXi Mgmt for Tenant Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.5.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.5.3/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.5.4/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.5.5/24"
+            }
+        ], 
+        "virtualIp": "10.23.5.1", 
+        "vlanId": "1505", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "ESXi VXLAN for Tenant Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.6.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.6.3/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.6.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.6.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.6.1", 
+        "vlanId": "1506", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vMotion for Tenant Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.7.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.7.3/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.7.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.7.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.7.1", 
+        "vlanId": "1507", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vSAN for Tenant Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.8.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.8.3/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.8.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.8.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.8.1", 
+        "vlanId": "1508", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "VRA", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.10.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.10.4/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.10.4/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.10.5/24"
+            }
+        ], 
+        "virtualIp": "10.23.10.1", 
+        "vlanId": "1510", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "WITNESS", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.11.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.11.3/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.11.4/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.11.5/24"
+            }
+        ], 
+        "virtualIp": "10.23.11.1", 
+        "vlanId": "1511", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "WITNESS VSA", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.12.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.12.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.12.1", 
+        "vlanId": "1512", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi Mgmt for Tenant GOLD", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.15.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.15.3/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.15.4/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.15.5/24"
+            }
+        ], 
+        "virtualIp": "10.23.15.1", 
+        "vlanId": "1515", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "ESXi VXLAN VTEP for Tenant GOLD", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.16.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.16.3/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.16.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.16.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.16.1", 
+        "vlanId": "1516", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vMotion for Tenant GOLD", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.17.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.17.3/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.17.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.17.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.17.1", 
+        "vlanId": "1517", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vSAN for Tenant GOLD", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.18.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.18.3/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.18.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.18.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.18.1", 
+        "vlanId": "1518", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi Mgmt for Tenant SILV", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.25.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.25.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.25.1", 
+        "vlanId": "1525", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi VXLAN VTEP for Tenant SILV", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.26.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.26.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.26.1", 
+        "vlanId": "1526", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vMotion for Tenant SILV", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.27.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.27.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.27.1", 
+        "vlanId": "1527", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vSAN for Tenant SILV", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.28.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.28.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.28.1", 
+        "vlanId": "1528", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi Mgmt for Tenant EXCH", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.35.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.35.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.35.1", 
+        "vlanId": "1535", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi VXLAN VTEP for Tenant EXCH", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.36.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.36.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.36.1", 
+        "vlanId": "1536", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vMotion for Tenant EXCH", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.37.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.37.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.37.1", 
+        "vlanId": "1537", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "PHYSICAL_SERVER", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.40.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.40.3/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.40.4/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.40.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.40.1", 
+        "vlanId": "1540", 
+        "vrfName": "PHYSICAL_SERVER"
+    }, 
+    {
+        "description": "Backup_Infra", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.41.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.41.3/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.41.4/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.41.5/24"
+            }
+        ], 
+        "virtualIp": "10.23.41.1", 
+        "vlanId": "1541", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "Backup-Replication", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.42.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.42.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.42.1", 
+        "vlanId": "1542", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "Backup_Management", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.43.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.43.3/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.43.4/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.43.5/24"
+            }
+        ], 
+        "virtualIp": "10.23.43.1", 
+        "vlanId": "1543", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "PAFW_VM300", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.48.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.48.3/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.48.4/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.48.5/24"
+            }
+        ], 
+        "virtualIp": "10.23.48.1", 
+        "vlanId": "1548", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "DC_Management", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.50.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.50.3/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.50.4/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.50.5/24"
+            }
+        ], 
+        "virtualIp": "10.23.50.1", 
+        "vlanId": "1550", 
+        "vrfName": "INFOBLOX"
+    }, 
+    {
+        "description": "Citrix_NetScaler_GSLB", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.53.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.53.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.53.1", 
+        "vlanId": "1553", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "VxRail_SPLUNK_LOG_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.54.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.54.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.54.1", 
+        "vlanId": "1554", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "Splunk ESXi Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.55.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.55.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.55.1", 
+        "vlanId": "1555", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "Splunk ESXi vMotion", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.57.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.57.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.57.1", 
+        "vlanId": "1557", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "Splunk ESXi vSAN", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.58.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.58.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.58.1", 
+        "vlanId": "1558", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "F5_VIPS", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.59.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.59.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.59.1", 
+        "vlanId": "1559", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "Citrix_VDI_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.60.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.60.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.60.1", 
+        "vlanId": "1560", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "Citrix_XenApp_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.61.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.61.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.61.1", 
+        "vlanId": "1561", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "Customer_VDI_WLD", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.62.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.62.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.62.1", 
+        "vlanId": "1562", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "Wipro_VDI_WLD", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.63.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.63.3/24"
+            }
+        ], 
+        "virtualIp": "10.23.63.1", 
+        "vlanId": "1563", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "Backup Workload for Gold", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.64.2/22"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.64.4/22"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.64.4/22"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.64.5/22"
+            }
+        ], 
+        "virtualIp": "10.23.64.1", 
+        "vlanId": "1564", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "Backup Workload for Silver", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.68.2/23"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.68.3/23"
+            }
+        ], 
+        "virtualIp": "10.23.68.1", 
+        "vlanId": "1568", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "INTERNAL_STD_TRANSIT", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.67/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.68/29"
+            }
+        ], 
+        "virtualIp": "10.23.2.66", 
+        "vlanId": "1608", 
+        "vrfName": "INTERNAL_Std"
+    }, 
+    {
+        "description": "INFRA_STD_TRANSIT", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.75/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.76/29"
+            }
+        ], 
+        "virtualIp": "10.23.2.74", 
+        "vlanId": "1609", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "INTERNAL_TRANSIT", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.83/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.84/29"
+            }
+        ], 
+        "virtualIp": "10.23.2.82", 
+        "vlanId": "1610", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "INFRA_TRANSIT", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.91/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.92/29"
+            }
+        ], 
+        "virtualIp": "10.23.2.90", 
+        "vlanId": "1611", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "MPLS_TRANSIT", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.99/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.100/29"
+            }
+        ], 
+        "virtualIp": "10.23.2.98", 
+        "vlanId": "1612", 
+        "vrfName": "MPLS-AA"
+    }, 
+    {
+        "description": "OOB_TRANSIT", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.115/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.116/29"
+            }
+        ], 
+        "virtualIp": "10.23.2.114", 
+        "vlanId": "1614", 
+        "vrfName": "OOB_Mgmt"
+    }, 
+    {
+        "description": "INTERNAL_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.121/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.122/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.2.123/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.2.124/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1615", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "INFRA_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.129/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.130/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.2.131/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.2.132/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1616", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "OOB_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.137/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.138/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.2.139/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.2.140/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1617", 
+        "vrfName": "OOB_Mgmt"
+    }, 
+    {
+        "description": "MPLS_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.145/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.146/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.2.147/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.2.148/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1618", 
+        "vrfName": "MPLS-AA"
+    }, 
+    {
+        "description": "INTERNAL_STD_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.153/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.154/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.2.155/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.2.156/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1619", 
+        "vrfName": "INTERNAL_Std"
+    }, 
+    {
+        "description": "DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.161/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.162/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.2.163/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.2.164/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1620", 
+        "vrfName": ""
+    }, 
+    {
+        "description": "INFRA_STD_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.169/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.170/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.2.171/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.2.172/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1621", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "REPLICATION_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.185/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.186/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.2.187/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.2.188/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1623", 
+        "vrfName": "REPLICATION"
+    }, 
+    {
+        "description": "WLC_Mgmt_Transit_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.44.3/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.44.4/29"
+            }
+        ], 
+        "virtualIp": "10.23.44.2", 
+        "vlanId": "1625", 
+        "vrfName": "WLC_Mgmt"
+    }, 
+    {
+        "description": "REPLICATION_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.211/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.212/29"
+            }
+        ], 
+        "virtualIp": "10.23.2.210", 
+        "vlanId": "1626", 
+        "vrfName": "REPLICATION"
+    }, 
+    {
+        "description": "WLC_WiFi_Guest_Transit_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": ""
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": ""
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1629", 
+        "vrfName": ""
+    }, 
+    {
+        "description": "", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.241/30"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1635", 
+        "vrfName": "MPLS-AA"
+    }, 
+    {
+        "description": "MPLS-DC-iBGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.248/31"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.249/31"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1637", 
+        "vrfName": "MPLS-AA"
+    }, 
+    {
+        "description": "Arista_F5_MPLS_TRANSIT", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.30.50/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.30.51/29"
+            }
+        ], 
+        "virtualIp": "10.23.30.49", 
+        "vlanId": "1652", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "INTERNET-iBGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "141.81.180.193/30"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "141.81.180.194/30"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1653", 
+        "vrfName": "INTERNET"
+    }, 
+    {
+        "description": "SDWAN-INTERNET", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "141.81.180.202/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "141.81.180.203/29"
+            }
+        ], 
+        "virtualIp": "141.81.180.201", 
+        "vlanId": "1654", 
+        "vrfName": "INTERNET"
+    }, 
+    {
+        "description": "ARISTA_To_F5Ext", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "141.81.180.210/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "141.81.180.211/29"
+            }
+        ], 
+        "virtualIp": "141.81.180.209", 
+        "vlanId": "1655", 
+        "vrfName": "INTERNET"
+    }, 
+    {
+        "description": "F5Int_To_ARISTA", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "141.81.180.221/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "141.81.180.222/29"
+            }
+        ], 
+        "virtualIp": "141.81.180.220", 
+        "vlanId": "1656", 
+        "vrfName": "F5_TRANSIT"
+    }, 
+    {
+        "description": "ARISTA_To_PAN", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "141.81.180.226/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "141.81.180.227/29"
+            }
+        ], 
+        "virtualIp": "141.81.180.225", 
+        "vlanId": "1657", 
+        "vrfName": "F5_TRANSIT"
+    }, 
+    {
+        "description": "Gold Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.4.2/26"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.4.3/26"
+            }
+        ], 
+        "virtualIp": "10.23.4.1", 
+        "vlanId": "1675", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Silver Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.4.66/26"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.4.67/26"
+            }
+        ], 
+        "virtualIp": "10.23.4.65", 
+        "vlanId": "1676", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-1 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.4.130/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.4.131/29"
+            }
+        ], 
+        "virtualIp": "10.23.4.129", 
+        "vlanId": "1677", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-2 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.4.138/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.4.139/29"
+            }
+        ], 
+        "virtualIp": "10.23.4.137", 
+        "vlanId": "1678", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-3 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.4.146/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.4.147/29"
+            }
+        ], 
+        "virtualIp": "10.23.4.145", 
+        "vlanId": "1679", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-4 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.4.154/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.4.155/29"
+            }
+        ], 
+        "virtualIp": "10.23.4.153", 
+        "vlanId": "1680", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Silver Edge Cluster-1 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.4.161/28"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.4.162/28"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1681", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Silver Edge Cluster-2 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.4.178/28"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.4.177/28"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1682", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-1 TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.4.194/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.4.195/29"
+            }
+        ], 
+        "virtualIp": "10.23.4.193", 
+        "vlanId": "1683", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-2 TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.4.202/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.4.203/29"
+            }
+        ], 
+        "virtualIp": "10.23.4.201", 
+        "vlanId": "1684", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Silver Edge Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.4.210/28"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.4.211/28"
+            }
+        ], 
+        "virtualIp": "10.23.4.209", 
+        "vlanId": "1685", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Collaboration Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.14.2/26"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.14.3/26"
+            }
+        ], 
+        "virtualIp": "10.23.14.1", 
+        "vlanId": "1690", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "AD_SERVERS", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.100.2/27"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.100.3/27"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.100.2/27"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.100.3/27"
+            }
+        ], 
+        "virtualIp": "10.23.100.1", 
+        "vlanId": "1700", 
+        "vrfName": "INTERNAL_Std"
+    }, 
+    {
+        "description": "DMZ_SERVERS", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.100.34/27"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.100.35/27"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.100.34/27"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.100.35/27"
+            }
+        ], 
+        "virtualIp": "10.23.100.33", 
+        "vlanId": "1701", 
+        "vrfName": "INTERNAL_Std"
+    }, 
+    {
+        "description": "SKYPE_SERVERS", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.100.66/26"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.100.67/26"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.100.66/26"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.100.67/26"
+            }
+        ], 
+        "virtualIp": "10.23.100.65", 
+        "vlanId": "1702", 
+        "vrfName": "INTERNAL_Std"
+    }, 
+    {
+        "description": "EXCHANGE_SERVERS", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.100.130/25"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.100.131/25"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.100.130/25"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.100.131/25"
+            }
+        ], 
+        "virtualIp": "10.23.100.129", 
+        "vlanId": "1703", 
+        "vrfName": "INTERNAL_Std"
+    }, 
+    {
+        "description": "ServiceNow_Discovery", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.101.2/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.101.3/29"
+            }
+        ], 
+        "virtualIp": "10.23.101.1", 
+        "vlanId": "1704", 
+        "vrfName": "Service_Now"
+    }, 
+    {
+        "description": "ISILON_DATA", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.101.66/26"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.101.67/26"
+            }
+        ], 
+        "virtualIp": "10.23.101.65", 
+        "vlanId": "1709", 
+        "vrfName": "ISILON"
+    }, 
+    {
+        "description": "ISILON_DMZ", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.101.130/26"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.101.131/26"
+            }
+        ], 
+        "virtualIp": "10.23.101.129", 
+        "vlanId": "1710", 
+        "vrfName": "ISILON"
+    }, 
+    {
+        "description": "VLAN1711", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.101.194/27"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.101.195/27"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.101.196/27"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.101.197/27"
+            }
+        ], 
+        "virtualIp": "10.23.101.193", 
+        "vlanId": "1711", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "Cloudvision", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.30.18/28"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.30.19/28"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.30.20/28"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.30.21/28"
+            }
+        ], 
+        "virtualIp": "10.23.30.17", 
+        "vlanId": "1712", 
+        "vrfName": "INFOBLOX"
+    }, 
+    {
+        "description": "SNOW_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.22.27/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.22.28/29"
+            }
+        ], 
+        "virtualIp": "10.23.22.26", 
+        "vlanId": "1720", 
+        "vrfName": "Service_Now"
+    }, 
+    {
+        "description": "SNOW_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.22.33/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.22.34/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.22.35/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.22.36/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1721", 
+        "vrfName": "Service_Now"
+    }, 
+    {
+        "description": "JUMP_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.22.43/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.22.44/29"
+            }
+        ], 
+        "virtualIp": "10.23.22.42", 
+        "vlanId": "1722", 
+        "vrfName": "Jump_Server"
+    }, 
+    {
+        "description": "JUMP_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.22.49/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.22.50/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.22.51/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.22.52/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1723", 
+        "vrfName": "Jump_Server"
+    }, 
+    {
+        "description": "ISILON_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.22.59/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.22.60/29"
+            }
+        ], 
+        "virtualIp": "10.23.22.58", 
+        "vlanId": "1724", 
+        "vrfName": "ISILON"
+    }, 
+    {
+        "description": "ISILON_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.22.65/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.22.66/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.22.67/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.22.68/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1725", 
+        "vrfName": "ISILON"
+    }, 
+    {
+        "description": "CITRIX_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.22.75/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.22.76/29"
+            }
+        ], 
+        "virtualIp": "10.23.22.74", 
+        "vlanId": "1726", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "CITRIX_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.22.81/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.22.82/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.22.83/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.22.84/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1727", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "WLC_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.30.2/28"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.30.3/28"
+            }
+        ], 
+        "virtualIp": "10.23.30.1", 
+        "vlanId": "1800", 
+        "vrfName": "WLC_Mgmt"
+    }, 
+    {
+        "description": "WLC_WiFi_Guest", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.208.2/20"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.208.3/20"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.208.4/20"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.208.5/20"
+            }
+        ], 
+        "virtualIp": "10.23.208.1", 
+        "vlanId": "1810", 
+        "vrfName": "WLC_GUEST"
+    }, 
+    {
+        "description": "Global WiFi VC_Production", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.46.2/23"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.46.3/23"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.46.4/23"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.46.5/23"
+            }
+        ], 
+        "virtualIp": "10.23.46.1", 
+        "vlanId": "1820", 
+        "vrfName": "WLC_PROD_IOT"
+    }, 
+    {
+        "description": "Global_WiFi_VC_IoT", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.128.2/20"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.128.3/20"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.128.4/20"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.128.5/20"
+            }
+        ], 
+        "virtualIp": "10.23.128.1", 
+        "vlanId": "1830", 
+        "vrfName": "WLC_PROD_IOT"
+    }, 
+    {
+        "description": "", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.2.14/31"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.15/31"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.2.14/31"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.2.15/31"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "2000", 
+        "vrfName": ""
+    }, 
+    {
+        "description": "WLC_WiFi_Guest_Transit_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.44.27/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.44.28/29"
+            }
+        ], 
+        "virtualIp": "10.23.44.26", 
+        "vlanId": "2629", 
+        "vrfName": "WLC_GUEST"
+    }, 
+    {
+        "description": "Gobal_WiFi_VC_Prod_IoT_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.44.19/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.44.20/29"
+            }
+        ], 
+        "virtualIp": "10.23.44.18", 
+        "vlanId": "2644", 
+        "vrfName": "WLC_PROD_IOT"
+    }, 
+    {
+        "description": "Jump_Server", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.20.2/28"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.20.3/28"
+            }
+        ], 
+        "virtualIp": "10.23.20.1", 
+        "vlanId": "3301", 
+        "vrfName": "Jump_Server"
+    }, 
+    {
+        "description": "INFOBLOX_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.19.11/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.19.12/29"
+            }
+        ], 
+        "virtualIp": "10.23.19.10", 
+        "vlanId": "3312", 
+        "vrfName": "INFOBLOX"
+    }, 
+    {
+        "description": "INFOBLOX_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.19.17/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.19.18/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.19.19/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.19.20/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3313", 
+        "vrfName": "INFOBLOX"
+    }, 
+    {
+        "description": "PHYSICAL_SERVER_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.19.27/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.19.28/29"
+            }
+        ], 
+        "virtualIp": "10.23.19.26", 
+        "vlanId": "3314", 
+        "vrfName": "PHYSICAL_SERVER"
+    }, 
+    {
+        "description": "PHYSICAL_SERVER_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.19.33/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.19.34/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.19.35/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.19.36/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3315", 
+        "vrfName": "PHYSICAL_SERVER"
+    }, 
+    {
+        "description": "INFRA_NSX_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.19.43/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.19.44/29"
+            }
+        ], 
+        "virtualIp": "10.23.19.42", 
+        "vlanId": "3316", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "INFRA_NSX_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.19.49/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.19.50/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.19.51/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.19.52/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3317", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ_INFRA_NSX_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.19.75/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.19.76/29"
+            }
+        ], 
+        "virtualIp": "10.23.19.74", 
+        "vlanId": "3320", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ_INFRA_NSX_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.19.81/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.19.82/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.19.83/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.19.84/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3321", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.19.91/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.19.92/29"
+            }
+        ], 
+        "virtualIp": "10.23.19.90", 
+        "vlanId": "3322", 
+        "vrfName": "DMZ"
+    }, 
+    {
+        "description": "DMZ_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.19.97/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.19.98/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.19.99/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.19.100/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3323", 
+        "vrfName": "DMZ"
+    }, 
+    {
+        "description": "XMS_CVP_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.19.107/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.19.108/29"
+            }
+        ], 
+        "virtualIp": "10.23.19.106", 
+        "vlanId": "3324", 
+        "vrfName": "XMS_CVP"
+    }, 
+    {
+        "description": "XMS_CVP_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.19.113/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.19.114/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.19.115/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.19.116/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3325", 
+        "vrfName": "XMS_CVP"
+    }, 
+    {
+        "description": "MCAFEE_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.19.123/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.19.124/29"
+            }
+        ], 
+        "virtualIp": "10.23.19.122", 
+        "vlanId": "3326", 
+        "vrfName": "MCAFEE"
+    }, 
+    {
+        "description": "MCAFEE_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.19.129/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.19.130/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.19.131/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.19.132/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3327", 
+        "vrfName": "MCAFEE"
+    }, 
+    {
+        "description": "DMZ Gold Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.9.2/26"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.9.3/26"
+            }
+        ], 
+        "virtualIp": "10.23.9.1", 
+        "vlanId": "3375", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Silver Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.9.66/26"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.9.67/26"
+            }
+        ], 
+        "virtualIp": "10.23.9.65", 
+        "vlanId": "3376", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Gold Edge Cluster-1 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.9.130/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.9.131/29"
+            }
+        ], 
+        "virtualIp": "10.23.9.129", 
+        "vlanId": "3377", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Gold Edge Cluster-2 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.9.138/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.9.139/29"
+            }
+        ], 
+        "virtualIp": "10.23.9.137", 
+        "vlanId": "3378", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Silver Edge Cluster-1 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.9.161/28"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.9.162/28"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3381", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Silver Edge Cluster-2 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.9.177/28"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.9.178/28"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3382", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Gold Edge Cluster-1 TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.9.194/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.9.195/29"
+            }
+        ], 
+        "virtualIp": "10.23.9.193", 
+        "vlanId": "3383", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Gold Edge Cluster-2 TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.9.202/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.9.203/29"
+            }
+        ], 
+        "virtualIp": "10.23.9.201", 
+        "vlanId": "3384", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Silver Edge Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.9.210/28"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.9.211/28"
+            }
+        ], 
+        "virtualIp": "10.23.9.209", 
+        "vlanId": "3385", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.124.2/24"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.124.3/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.124.4/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.124.5/24"
+            }
+        ], 
+        "virtualIp": "10.23.124.1", 
+        "vlanId": "3386", 
+        "vrfName": "DMZ"
+    }, 
+    {
+        "description": "XMS", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.20.18/28"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.20.19/28"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.20.20/28"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.20.21/28"
+            }
+        ], 
+        "virtualIp": "10.23.20.17", 
+        "vlanId": "3387", 
+        "vrfName": "XMS_CVP"
+    }, 
+    {
+        "description": "CVP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.20.34/28"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.20.35/28"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.20.36/28"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.20.37/28"
+            }
+        ], 
+        "virtualIp": "10.23.20.33", 
+        "vlanId": "3388", 
+        "vrfName": "XMS_CVP"
+    }, 
+    {
+        "description": "MCAFEE", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.20.66/27"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.20.67/27"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.20.68/27"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.20.69/27"
+            }
+        ], 
+        "virtualIp": "10.23.20.65", 
+        "vlanId": "3389", 
+        "vrfName": "MCAFEE"
+    }, 
+    {
+        "description": "Log_Forwarding", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.20.50/28"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.20.51/28"
+            }
+        ], 
+        "virtualIp": "10.23.20.49", 
+        "vlanId": "3390", 
+        "vrfName": "Jump_Server"
+    }, 
+    {
+        "description": "F5_VLAN_1", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.13.2/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.13.3/29"
+            }
+        ], 
+        "virtualIp": "10.23.13.1", 
+        "vlanId": "3513", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "F5_VLAN_1", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.13.10/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.13.11/29"
+            }
+        ], 
+        "virtualIp": "10.23.13.9", 
+        "vlanId": "3514", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "F5_VLAN_1", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.13.18/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.13.19/29"
+            }
+        ], 
+        "virtualIp": "10.23.13.17", 
+        "vlanId": "3515", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "F5_VLAN_1", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.13.26/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.13.27/29"
+            }
+        ], 
+        "virtualIp": "10.23.13.25", 
+        "vlanId": "3516", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "F5_iQuery_Mesh", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.34.4/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.34.5/29"
+            }
+        ], 
+        "virtualIp": "10.23.34.6", 
+        "vlanId": "3524", 
+        "vrfName": "F5_TRANSIT"
+    }, 
+    {
+        "description": "CITRIX1_File_Server", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.29.18/28"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.29.19/28"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.29.20/28"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.29.21/28"
+            }
+        ], 
+        "virtualIp": "10.23.29.17", 
+        "vlanId": "3701", 
+        "vrfName": "CITRIX1"
+    }, 
+    {
+        "description": "CITRIX1_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.29.3/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.29.4/29"
+            }
+        ], 
+        "virtualIp": "10.23.29.2", 
+        "vlanId": "3702", 
+        "vrfName": "CITRIX1"
+    }, 
+    {
+        "description": "CITRIX1_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE101", 
+                "ipAddress": "10.23.29.9/29"
+            }, 
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.29.10/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.23.29.11/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.23.29.12/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3703", 
+        "vrfName": "CITRIX1"
+    }, 
+    {
+        "description": "", 
+        "nodeList": [
+            {
+                "deviceName": "USDC1NSE102", 
+                "ipAddress": "10.23.2.245/30"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1636", 
+        "vrfName": "MPLS-AA"
+    }, 
+    {
+        "description": "ESXi Mgmt for Tenant SILV", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.25.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.25.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.25.1", 
+        "vlanId": "2525", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi VXLAN VTEP for Tenant SILV", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.26.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.26.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.26.1", 
+        "vlanId": "2526", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vMotion for Tenant SILV", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.27.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.27.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.27.1", 
+        "vlanId": "2527", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vSAN for Tenant SILV", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.28.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.28.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.28.1", 
+        "vlanId": "2528", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi Mgmt for Tenant EXCH", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.35.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.35.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.35.1", 
+        "vlanId": "2535", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi VXLAN VTEP for Tenant EXCH", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.36.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.36.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.36.1", 
+        "vlanId": "2536", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vMotion for Tenant EXCH", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.37.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.37.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.37.1", 
+        "vlanId": "2537", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "Backup_Replication", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.42.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.42.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.42.1", 
+        "vlanId": "2542", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "Citrix_NetScaler_GSLB", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.53.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.53.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.53.1", 
+        "vlanId": "2553", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "VxRail_SPLUNK_LOG_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.54.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.54.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.54.1", 
+        "vlanId": "2554", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "Splunk ESXi Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.55.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.55.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.55.1", 
+        "vlanId": "2555", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "Splunk ESXi vMotion", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.57.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.57.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.57.1", 
+        "vlanId": "2557", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "Splunk ESXi vSAN", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.58.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.58.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.58.1", 
+        "vlanId": "2558", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "F5_VIPs", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.59.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.59.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.59.1", 
+        "vlanId": "2559", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "Citrix_VDI_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.60.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.60.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.60.1", 
+        "vlanId": "2560", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "Citrix_XenApp_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.61.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.61.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.61.1", 
+        "vlanId": "2561", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "Customer_VDI_WLD", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.62.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.62.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.62.1", 
+        "vlanId": "2562", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "Wipro_VDI_WLD", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.63.2/24"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.63.3/24"
+            }
+        ], 
+        "virtualIp": "10.24.63.1", 
+        "vlanId": "2563", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "Backup Workload for Silver", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.68.2/23"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.68.3/23"
+            }
+        ], 
+        "virtualIp": "10.24.68.1", 
+        "vlanId": "2568", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "INTERNAL_STD_TRANSIT", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.2.67/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.2.68/29"
+            }
+        ], 
+        "virtualIp": "10.24.2.66", 
+        "vlanId": "2608", 
+        "vrfName": "INTERNAL_Std"
+    }, 
+    {
+        "description": "INFRA_STD_TRANSIT", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.2.75/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.2.76/29"
+            }
+        ], 
+        "virtualIp": "10.24.2.74", 
+        "vlanId": "2609", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "INTERNAL_TRANSIT", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.2.83/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.2.84/29"
+            }
+        ], 
+        "virtualIp": "10.24.2.82", 
+        "vlanId": "2610", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "INFRA_TRANSIT", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.2.91/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.2.92/29"
+            }
+        ], 
+        "virtualIp": "10.24.2.90", 
+        "vlanId": "2611", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "MPLS_TRANSIT to PA-FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.2.99/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.2.100/29"
+            }
+        ], 
+        "virtualIp": "10.24.2.98", 
+        "vlanId": "2612", 
+        "vrfName": "MPLS-AA"
+    }, 
+    {
+        "description": "", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.2.115/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.2.116/29"
+            }
+        ], 
+        "virtualIp": "10.24.2.114", 
+        "vlanId": "2614", 
+        "vrfName": "OOB_Mgmt"
+    }, 
+    {
+        "description": "REPLICATION_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.2.211/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.2.212/29"
+            }
+        ], 
+        "virtualIp": "10.24.2.210", 
+        "vlanId": "2626", 
+        "vrfName": "REPLICATION"
+    }, 
+    {
+        "description": "", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.2.241/30"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "2635", 
+        "vrfName": "MPLS-AA"
+    }, 
+    {
+        "description": "MPLS-DC-iBGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.2.248/31"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.2.249/31"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "2637", 
+        "vrfName": "MPLS-AA"
+    }, 
+    {
+        "description": "Arista_F5_MPLS_TRANSIT", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.30.50/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.30.51/29"
+            }
+        ], 
+        "virtualIp": "10.24.30.49", 
+        "vlanId": "2652", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "INTERNET-iBGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "141.81.181.193/30"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "141.81.181.194/30"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "2653", 
+        "vrfName": "INTERNET"
+    }, 
+    {
+        "description": "SDWAN-INTERNET", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "141.81.181.202/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "141.81.181.203/29"
+            }
+        ], 
+        "virtualIp": "141.81.181.201", 
+        "vlanId": "2654", 
+        "vrfName": "INTERNET"
+    }, 
+    {
+        "description": "ARISTA_To_F5Ext", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "141.81.181.210/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "141.81.181.211/29"
+            }
+        ], 
+        "virtualIp": "141.81.181.209", 
+        "vlanId": "2655", 
+        "vrfName": "INTERNET"
+    }, 
+    {
+        "description": "F5Int_To_ARISTA", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "141.81.181.221/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "141.81.181.222/29"
+            }
+        ], 
+        "virtualIp": "141.81.181.220", 
+        "vlanId": "2656", 
+        "vrfName": "F5_TRANSIT"
+    }, 
+    {
+        "description": "ARISTA_To_PAN", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "141.81.181.226/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "141.81.181.227/29"
+            }
+        ], 
+        "virtualIp": "141.81.181.225", 
+        "vlanId": "2657", 
+        "vrfName": "F5_TRANSIT"
+    }, 
+    {
+        "description": "INTERNET_TRANSIT_CHICAGO_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "141.81.181.234/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "141.81.181.235/29"
+            }
+        ], 
+        "virtualIp": "141.81.181.233", 
+        "vlanId": "2658", 
+        "vrfName": "INTERNET"
+    }, 
+    {
+        "description": "Gold Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.4.2/26"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.4.3/26"
+            }
+        ], 
+        "virtualIp": "10.24.4.1", 
+        "vlanId": "2675", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Silver Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.4.66/26"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.4.67/26"
+            }
+        ], 
+        "virtualIp": "10.24.4.65", 
+        "vlanId": "2676", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-1 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.4.130/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.4.131/29"
+            }
+        ], 
+        "virtualIp": "10.24.4.129", 
+        "vlanId": "2677", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-2 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.4.138/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.4.139/29"
+            }
+        ], 
+        "virtualIp": "10.24.4.137", 
+        "vlanId": "2678", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-3 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.4.146/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.4.147/29"
+            }
+        ], 
+        "virtualIp": "10.24.4.145", 
+        "vlanId": "2679", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-4 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.4.154/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.4.155/29"
+            }
+        ], 
+        "virtualIp": "10.24.4.153", 
+        "vlanId": "2680", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Silver Edge Cluster-1 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.4.161/28"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.4.162/28"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "2681", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Silver Edge Cluster-2 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.4.177/28"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.4.178/28"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "2682", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-1 TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.4.194/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.4.195/29"
+            }
+        ], 
+        "virtualIp": "10.24.4.193", 
+        "vlanId": "2683", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-2 TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.4.202/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.4.203/29"
+            }
+        ], 
+        "virtualIp": "10.24.4.201", 
+        "vlanId": "2684", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Silver Edge Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.4.210/28"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.4.211/28"
+            }
+        ], 
+        "virtualIp": "10.24.4.209", 
+        "vlanId": "2685", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Collaboration Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.14.2/26"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.14.3/26"
+            }
+        ], 
+        "virtualIp": "10.24.14.1", 
+        "vlanId": "2690", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "ServiceNow_Discovery", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.101.2/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.101.3/29"
+            }
+        ], 
+        "virtualIp": "10.24.101.1", 
+        "vlanId": "2704", 
+        "vrfName": "Service_Now"
+    }, 
+    {
+        "description": "ISILON_DATA", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.101.66/26"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.101.67/26"
+            }
+        ], 
+        "virtualIp": "10.24.101.65", 
+        "vlanId": "2709", 
+        "vrfName": "ISILON"
+    }, 
+    {
+        "description": "ISILON_DMZ", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.101.130/26"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.101.131/26"
+            }
+        ], 
+        "virtualIp": "10.24.101.129", 
+        "vlanId": "2710", 
+        "vrfName": "ISILON"
+    }, 
+    {
+        "description": "SNOW_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.22.27/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.22.28/29"
+            }
+        ], 
+        "virtualIp": "10.24.22.26", 
+        "vlanId": "2720", 
+        "vrfName": "Service_Now"
+    }, 
+    {
+        "description": "JUMP_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.22.43/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.22.44/29"
+            }
+        ], 
+        "virtualIp": "10.24.22.42", 
+        "vlanId": "2722", 
+        "vrfName": "Jump_Server"
+    }, 
+    {
+        "description": "ISILON_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.22.59/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.22.60/29"
+            }
+        ], 
+        "virtualIp": "10.24.22.58", 
+        "vlanId": "2724", 
+        "vrfName": "ISILON"
+    }, 
+    {
+        "description": "CITRIX_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.22.75/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.22.76/29"
+            }
+        ], 
+        "virtualIp": "10.24.22.74", 
+        "vlanId": "2726", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "MPLS_TRANSIT_CHICAGO_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.64.2/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.64.3/29"
+            }
+        ], 
+        "virtualIp": "10.24.64.1", 
+        "vlanId": "2840", 
+        "vrfName": "MPLS-AA"
+    }, 
+    {
+        "description": "Jump_Server", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.20.2/28"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.20.3/28"
+            }
+        ], 
+        "virtualIp": "10.24.20.1", 
+        "vlanId": "3401", 
+        "vrfName": "Jump_Server"
+    }, 
+    {
+        "description": "INFOBLOX_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.19.11/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.19.12/29"
+            }
+        ], 
+        "virtualIp": "10.24.19.10", 
+        "vlanId": "3412", 
+        "vrfName": "INFOBLOX"
+    }, 
+    {
+        "description": "PHYSICAL_SERVER_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.19.27/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.19.28/29"
+            }
+        ], 
+        "virtualIp": "10.24.19.26", 
+        "vlanId": "3414", 
+        "vrfName": "PHYSICAL_SERVER"
+    }, 
+    {
+        "description": "INFRA_NSX_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.19.43/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.19.44/29"
+            }
+        ], 
+        "virtualIp": "10.24.19.42", 
+        "vlanId": "3416", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ_INFRA_NSX_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.19.75/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.19.76/29"
+            }
+        ], 
+        "virtualIp": "10.24.19.74", 
+        "vlanId": "3420", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.19.91/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.19.92/29"
+            }
+        ], 
+        "virtualIp": "10.24.19.90", 
+        "vlanId": "3422", 
+        "vrfName": "DMZ"
+    }, 
+    {
+        "description": "XMS_CVP_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.19.107/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.19.108/29"
+            }
+        ], 
+        "virtualIp": "10.24.19.106", 
+        "vlanId": "3424", 
+        "vrfName": "XMS_CVP"
+    }, 
+    {
+        "description": "MCAFEE_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.19.123/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.19.124/29"
+            }
+        ], 
+        "virtualIp": "10.24.19.122", 
+        "vlanId": "3426", 
+        "vrfName": "MCAFEE"
+    }, 
+    {
+        "description": "DMZ Gold Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.9.2/26"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.9.3/26"
+            }
+        ], 
+        "virtualIp": "10.24.9.1", 
+        "vlanId": "3475", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Silver Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.9.66/26"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.9.67/26"
+            }
+        ], 
+        "virtualIp": "10.24.9.65", 
+        "vlanId": "3476", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Gold Edge Cluster-1 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.9.130/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.9.131/29"
+            }
+        ], 
+        "virtualIp": "10.24.9.129", 
+        "vlanId": "3477", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Gold Edge Cluster-2 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.9.138/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.9.139/29"
+            }
+        ], 
+        "virtualIp": "10.24.9.137", 
+        "vlanId": "3478", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Silver Edge Cluster-1 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.9.161/28"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.9.162/28"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3481", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Silver Edge Cluster-2 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.9.177/28"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.9.178/28"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3482", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Gold Edge Cluster-1 TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.9.194/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.9.195/29"
+            }
+        ], 
+        "virtualIp": "10.24.9.193", 
+        "vlanId": "3483", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Gold Edge Cluster-2 TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.9.202/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.9.203/29"
+            }
+        ], 
+        "virtualIp": "10.24.9.201", 
+        "vlanId": "3484", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Silver Edge Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.9.210/28"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.9.211/28"
+            }
+        ], 
+        "virtualIp": "10.24.9.209", 
+        "vlanId": "3485", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "Log_Forwarding", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.20.50/28"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.20.51/28"
+            }
+        ], 
+        "virtualIp": "10.24.20.49", 
+        "vlanId": "3490", 
+        "vrfName": "Jump_Server"
+    }, 
+    {
+        "description": "F5_VLAN_1", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.13.2/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.13.3/29"
+            }
+        ], 
+        "virtualIp": "10.24.13.1", 
+        "vlanId": "3613", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "F5_VLAN_1", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.13.10/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.13.11/29"
+            }
+        ], 
+        "virtualIp": "10.24.13.9", 
+        "vlanId": "3614", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "F5_VLAN_1", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.13.18/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.13.19/29"
+            }
+        ], 
+        "virtualIp": "10.24.13.17", 
+        "vlanId": "3615", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "F5_VLAN_1", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.13.26/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.13.27/29"
+            }
+        ], 
+        "virtualIp": "10.24.13.25", 
+        "vlanId": "3616", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "F5_iQuery_Mesh", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.34.4/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.34.5/29"
+            }
+        ], 
+        "virtualIp": "10.24.34.6", 
+        "vlanId": "3624", 
+        "vrfName": "F5_TRANSIT"
+    }, 
+    {
+        "description": "WLC_WiFi_Guest_Transit_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.44.27/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.44.28/29"
+            }
+        ], 
+        "virtualIp": "10.24.44.26", 
+        "vlanId": "3629", 
+        "vrfName": "WLC_GUEST"
+    }, 
+    {
+        "description": "Gobal WiFi VC_Prod_IoT_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.44.19/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.44.20/29"
+            }
+        ], 
+        "virtualIp": "10.24.44.18", 
+        "vlanId": "3644", 
+        "vrfName": "WLC_PROD_IOT"
+    }, 
+    {
+        "description": "CITRIX1_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE101", 
+                "ipAddress": "10.24.29.3/29"
+            }, 
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.29.4/29"
+            }
+        ], 
+        "virtualIp": "10.24.29.2", 
+        "vlanId": "3802", 
+        "vrfName": "CITRIX1"
+    }, 
+    {
+        "description": "", 
+        "nodeList": [
+            {
+                "deviceName": "USDC2NSE102", 
+                "ipAddress": "10.24.2.245/30"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "2636", 
+        "vrfName": "MPLS-AA"
+    }
+]

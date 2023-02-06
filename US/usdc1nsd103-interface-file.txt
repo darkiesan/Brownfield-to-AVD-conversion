@@ -1,0 +1,142 @@
+interface Port-Channel129
+   description Physical_servers1
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 129
+!
+interface Port-Channel130
+   description Physical_servers1
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 130
+!
+interface Port-Channel210
+   description reserved_for_USDC1SDB2199-1
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 210
+!
+interface Port-Channel220
+   description reserved_for_USDC1SDB2199-1
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 220
+!
+interface Port-Channel250
+   description USDC1SDB2202
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 250
+!
+interface Port-Channel260
+   description USDC1SDB2202
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 260
+!
+interface Port-Channel450
+   description PH_XL_B0GZJ93
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 450
+!
+interface Port-Channel460
+   description PH_XL_B0GZJ93
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 460
+!
+interface Ethernet17
+   description USDC1SDB2190-1
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet19
+   description USDC1SDB2190-2
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet21
+   description reserved_for_USDC1SDB2199-1
+   mtu 9214
+   channel-group 210 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet22
+   description reserved_for_USDC1SDB2199-1
+   mtu 9214
+   channel-group 220 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet25
+   description USDC1SDB2202
+   mtu 9214
+   channel-group 250 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet26
+   description USDC1SDB2202
+   mtu 9214
+   channel-group 260 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet28
+   mtu 9214
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet29
+   description USDC1SPHXL2ID01 -M05.02.02/Ru2/OnBoard P1
+   mtu 9214
+   channel-group 129 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet30
+   description USDC1SPHXL2ID01 -M05.02.02/Ru2/OnBoard P2
+   mtu 9214
+   channel-group 130 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet40
+   description USDC1SPHV2012 #TASK0121381
+   mtu 9214
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet41
+   description USDC1SPHV2012 #TASK0121381
+   mtu 9214
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet45
+   description Reserved for PH_XL_B0GZJ93
+   mtu 9214
+   channel-group 450 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet46
+   description Reserved for PH_XL_B0GZJ93
+   mtu 9214
+   channel-group 460 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!

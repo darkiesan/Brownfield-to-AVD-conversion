@@ -1,0 +1,1512 @@
+[
+    {
+        "description": "USDC1SPHV2001", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel140", 
+        "mlagId": "140", 
+        "mlagMemberList": [
+            "Ethernet40", 
+            "Ethernet40"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1560", 
+            " 2560", 
+            " 1561", 
+            " 2561", 
+            " 1562", 
+            " 2562", 
+            " 1563", 
+            " 2563"
+        ]
+    }, 
+    {
+        "description": "USDC1SPHV2002", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel141", 
+        "mlagId": "141", 
+        "mlagMemberList": [
+            "Ethernet41", 
+            "Ethernet41"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1561", 
+            " 2561", 
+            " 1562", 
+            " 2562", 
+            " 1563", 
+            " 2563"
+        ]
+    }, 
+    {
+        "description": "USDC1SPHV2003", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel142", 
+        "mlagId": "142", 
+        "mlagMemberList": [
+            "Ethernet42", 
+            "Ethernet42"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1561", 
+            " 2561", 
+            " 1562", 
+            " 2562", 
+            " 1563", 
+            " 2563"
+        ]
+    }, 
+    {
+        "description": "USDC1SPHV2001", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel143", 
+        "mlagId": "143", 
+        "mlagMemberList": [
+            "Ethernet43", 
+            "Ethernet43"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1560"
+    }, 
+    {
+        "description": "USDC1SPHV2002", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel144", 
+        "mlagId": "144", 
+        "mlagMemberList": [
+            "Ethernet44", 
+            "Ethernet44"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1560"
+    }, 
+    {
+        "description": "USDC1SPHV2003", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel145", 
+        "mlagId": "145", 
+        "mlagMemberList": [
+            "Ethernet45", 
+            "Ethernet45"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1560"
+    }, 
+    {
+        "description": "USDC1SDB2184", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel180", 
+        "mlagId": "180", 
+        "mlagMemberList": [
+            "Ethernet18", 
+            "Ethernet18"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "USDC1SDB2185", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel200", 
+        "mlagId": "200", 
+        "mlagMemberList": [
+            "Ethernet20", 
+            "Ethernet20"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "USDC1SDB2184", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel217", 
+        "mlagId": "217", 
+        "mlagMemberList": [
+            "Ethernet17", 
+            "Ethernet17"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "USDC1SDB2185", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel219", 
+        "mlagId": "219", 
+        "mlagMemberList": [
+            "Ethernet19", 
+            "Ethernet19"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "USDC1SDB2186", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel220", 
+        "mlagId": "220", 
+        "mlagMemberList": [
+            "Ethernet22", 
+            "Ethernet22"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "USDC1SDB2186", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel221", 
+        "mlagId": "221", 
+        "mlagMemberList": [
+            "Ethernet21", 
+            "Ethernet21"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "PH_Medium_H2h3g73", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel223", 
+        "mlagId": "223", 
+        "mlagMemberList": [
+            "Ethernet23", 
+            "Ethernet23"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "PH_Medium_H2h3g73", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel224", 
+        "mlagId": "224", 
+        "mlagMemberList": [
+            "Ethernet24", 
+            "Ethernet24"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "PH_Medium_H2h5773", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel225", 
+        "mlagId": "225", 
+        "mlagMemberList": [
+            "Ethernet25", 
+            "Ethernet25"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "PH_Medium_H2h5773", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel226", 
+        "mlagId": "226", 
+        "mlagMemberList": [
+            "Ethernet26", 
+            "Ethernet26"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "PH_Medium_H2h4773", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel227", 
+        "mlagId": "227", 
+        "mlagMemberList": [
+            "Ethernet27", 
+            "Ethernet27"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "PH_Medium_H2h4773", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel228", 
+        "mlagId": "228", 
+        "mlagMemberList": [
+            "Ethernet28", 
+            "Ethernet28"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "USDC1SDB2196 (BZDVM83)", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel290", 
+        "mlagId": "290", 
+        "mlagMemberList": [
+            "Ethernet29", 
+            "Ethernet29"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "USDC1SDB2196 (BZDVM83)", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel300", 
+        "mlagId": "300", 
+        "mlagMemberList": [
+            "Ethernet30", 
+            "Ethernet30"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "USDC1SDB2197", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel310", 
+        "mlagId": "310", 
+        "mlagMemberList": [
+            "Ethernet31", 
+            "Ethernet31"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "USDC1SDB2197", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel320", 
+        "mlagId": "320", 
+        "mlagMemberList": [
+            "Ethernet32", 
+            "Ethernet32"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "PH_XL_BZDWM83", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel330", 
+        "mlagId": "330", 
+        "mlagMemberList": [
+            "Ethernet33", 
+            "Ethernet33"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "PH_XL_BZDWM83", 
+        "deviceList": [
+            "USDC1NSD101", 
+            "USDC1NSD102"
+        ], 
+        "interfaceName": "Port-Channel340", 
+        "mlagId": "340", 
+        "mlagMemberList": [
+            "Ethernet34", 
+            "Ethernet34"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "Physical_servers1", 
+        "deviceList": [
+            "USDC1NSD103", 
+            "USDC1NSD104"
+        ], 
+        "interfaceName": "Port-Channel129", 
+        "mlagId": "129", 
+        "mlagMemberList": [
+            "Ethernet29", 
+            "Ethernet29"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "Physical_servers1", 
+        "deviceList": [
+            "USDC1NSD103", 
+            "USDC1NSD104"
+        ], 
+        "interfaceName": "Port-Channel130", 
+        "mlagId": "130", 
+        "mlagMemberList": [
+            "Ethernet30", 
+            "Ethernet30", 
+            "Ethernet30", 
+            "Ethernet30", 
+            "Ethernet30", 
+            "Ethernet30", 
+            "Ethernet30"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "reserved_for_USDC1SDB2199-1", 
+        "deviceList": [
+            "USDC1NSD103", 
+            "USDC1NSD104"
+        ], 
+        "interfaceName": "Port-Channel210", 
+        "mlagId": "210", 
+        "mlagMemberList": [
+            "Ethernet21", 
+            "Ethernet21"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "reserved_for_USDC1SDB2199-1", 
+        "deviceList": [
+            "USDC1NSD103", 
+            "USDC1NSD104"
+        ], 
+        "interfaceName": "Port-Channel220", 
+        "mlagId": "220", 
+        "mlagMemberList": [
+            "Ethernet22", 
+            "Ethernet22", 
+            "Ethernet22"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "USDC1SDB2202", 
+        "deviceList": [
+            "USDC1NSD103", 
+            "USDC1NSD104"
+        ], 
+        "interfaceName": "Port-Channel250", 
+        "mlagId": "250", 
+        "mlagMemberList": [
+            "Ethernet25", 
+            "Ethernet25"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "USDC1SDB2202", 
+        "deviceList": [
+            "USDC1NSD103", 
+            "USDC1NSD104"
+        ], 
+        "interfaceName": "Port-Channel260", 
+        "mlagId": "260", 
+        "mlagMemberList": [
+            "Ethernet26", 
+            "Ethernet26", 
+            "Ethernet26", 
+            "Ethernet26"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "PH_XL_B0GZJ93", 
+        "deviceList": [
+            "USDC1NSD103", 
+            "USDC1NSD104"
+        ], 
+        "interfaceName": "Port-Channel450", 
+        "mlagId": "450", 
+        "mlagMemberList": [
+            "Ethernet45"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "PH_XL_B0GZJ93", 
+        "deviceList": [
+            "USDC1NSD103", 
+            "USDC1NSD104"
+        ], 
+        "interfaceName": "Port-Channel460", 
+        "mlagId": "460", 
+        "mlagMemberList": [
+            "Ethernet46"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "PA-FW-1", 
+        "deviceList": [
+            "USDC1NSE101", 
+            "USDC1NSE102"
+        ], 
+        "interfaceName": "Port-Channel51", 
+        "mlagId": "51", 
+        "mlagMemberList": [
+            "Ethernet1", 
+            "Ethernet2", 
+            "Ethernet1", 
+            "Ethernet2"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1657", 
+            " 2657", 
+            " 3702", 
+            " 3802", 
+            " 1726", 
+            " 1726,2726", 
+            " 1553", 
+            " 2553", 
+            " 1560", 
+            " 2560", 
+            " 1561", 
+            " 2561", 
+            " 1562", 
+            " 2562", 
+            " 1728", 
+            " 3320", 
+            " 3420", 
+            " 3322", 
+            " 3422", 
+            " 3312", 
+            " 3412", 
+            " 3316", 
+            " 3416", 
+            " 1709", 
+            " 2709", 
+            " 1710", 
+            " 2710", 
+            " 1724", 
+            " 1724,2724", 
+            " 1722", 
+            " 1722,2722", 
+            " 3326", 
+            " 3426", 
+            " 3314", 
+            " 3414", 
+            " 1720", 
+            " 1720,2720", 
+            " 1625", 
+            " 1810", 
+            " 1820", 
+            " 1830", 
+            " 1840", 
+            " 2629", 
+            " 2644", 
+            " 3629", 
+            " 3644", 
+            " 3301", 
+            " 3401", 
+            " 1563", 
+            " 2563", 
+            " 3324", 
+            " 3424"
+        ]
+    }, 
+    {
+        "description": "PA-FW-2", 
+        "deviceList": [
+            "USDC1NSE101", 
+            "USDC1NSE102"
+        ], 
+        "interfaceName": "Port-Channel52", 
+        "mlagId": "52", 
+        "mlagMemberList": [
+            "Ethernet3", 
+            "Ethernet4", 
+            "Ethernet3", 
+            "Ethernet4"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1657", 
+            " 2657", 
+            " 3702", 
+            " 3802", 
+            " 1726", 
+            " 1726,2726", 
+            " 1553", 
+            " 2553", 
+            " 1560", 
+            " 2560", 
+            " 1561", 
+            " 2561", 
+            " 1562", 
+            " 2562", 
+            " 1728", 
+            " 3320", 
+            " 3420", 
+            " 3322", 
+            " 3422", 
+            " 3312", 
+            " 3412", 
+            " 3316", 
+            " 3416", 
+            " 1709", 
+            " 2709", 
+            " 1710", 
+            " 2710", 
+            " 1724", 
+            " 1724,2724", 
+            " 1722", 
+            " 1722,2722", 
+            " 3326", 
+            " 3426", 
+            " 3314", 
+            " 3414", 
+            " 1720", 
+            " 1720,2720", 
+            " 1625", 
+            " 1810", 
+            " 1820", 
+            " 1830", 
+            " 1840", 
+            " 2629", 
+            " 2644", 
+            " 3629", 
+            " 3644", 
+            " 3301", 
+            " 3401", 
+            " 1563", 
+            " 2563", 
+            " 3324", 
+            " 3424"
+        ]
+    }, 
+    {
+        "description": "F5-iSeries-1", 
+        "deviceList": [
+            "USDC1NSE101", 
+            "USDC1NSE102"
+        ], 
+        "interfaceName": "Port-Channel61", 
+        "mlagId": "61", 
+        "mlagMemberList": [
+            "Ethernet9", 
+            "Ethernet9"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1652", 
+            " 2652", 
+            " 1656", 
+            " 2656", 
+            " 1559", 
+            " 3524", 
+            " 2559", 
+            " 3624", 
+            " 3513", 
+            " 3613", 
+            " 3514", 
+            " 3614", 
+            " 3515", 
+            " 3615", 
+            " 3516", 
+            " 3616", 
+            " 3517", 
+            " 3518", 
+            " 3519", 
+            " 3518", 
+            " 1554", 
+            " 2554", 
+            " 3520", 
+            " 3521", 
+            " 3522"
+        ]
+    }, 
+    {
+        "description": "F5-iSeries-2", 
+        "deviceList": [
+            "USDC1NSE101", 
+            "USDC1NSE102"
+        ], 
+        "interfaceName": "Port-Channel62", 
+        "mlagId": "62", 
+        "mlagMemberList": [
+            "Ethernet10", 
+            "Ethernet10"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1652", 
+            " 2652", 
+            " 1656", 
+            " 2656", 
+            " 1559", 
+            " 3524", 
+            " 2559", 
+            " 3624", 
+            " 3513", 
+            " 3613", 
+            " 3514", 
+            " 3614", 
+            " 3515", 
+            " 3615", 
+            " 3516", 
+            " 3616", 
+            " 3517", 
+            " 3518", 
+            " 3519", 
+            " 3518", 
+            " 1554", 
+            " 2554", 
+            " 3520", 
+            " 3521", 
+            " 3522"
+        ]
+    }, 
+    {
+        "description": "F5-iSeries-1", 
+        "deviceList": [
+            "USDC1NSE101", 
+            "USDC1NSE102"
+        ], 
+        "interfaceName": "Port-Channel63", 
+        "mlagId": "63", 
+        "mlagMemberList": [
+            "Ethernet44", 
+            "Ethernet44"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1655", 
+            " 2655"
+        ]
+    }, 
+    {
+        "description": "F5-iSeries-2", 
+        "deviceList": [
+            "USDC1NSE101", 
+            "USDC1NSE102"
+        ], 
+        "interfaceName": "Port-Channel64", 
+        "mlagId": "64", 
+        "mlagMemberList": [
+            "Ethernet46", 
+            "Ethernet46"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1655", 
+            " 2655"
+        ]
+    }, 
+    {
+        "description": "WLC1", 
+        "deviceList": [
+            "USDC1NSE101", 
+            "USDC1NSE102"
+        ], 
+        "interfaceName": "Port-Channel145", 
+        "mlagId": "145", 
+        "mlagMemberList": [
+            "Ethernet13", 
+            "Ethernet13"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1800", 
+            " 1810", 
+            " 1820", 
+            " 1830", 
+            " 1840", 
+            " 2629", 
+            " 2644", 
+            " 3629", 
+            " 3644"
+        ]
+    }, 
+    {
+        "description": "WLC2", 
+        "deviceList": [
+            "USDC1NSE101", 
+            "USDC1NSE102"
+        ], 
+        "interfaceName": "Port-Channel146", 
+        "mlagId": "146", 
+        "mlagMemberList": [
+            "Ethernet14", 
+            "Ethernet14"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1800", 
+            " 1810", 
+            " 1820", 
+            " 1830", 
+            " 1840", 
+            " 2629", 
+            " 2644", 
+            " 3629", 
+            " 3644"
+        ]
+    }, 
+    {
+        "description": "USDC1SPHV2001", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel140", 
+        "mlagId": "140", 
+        "mlagMemberList": [
+            "Ethernet40", 
+            "Ethernet40"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1561", 
+            " 2561", 
+            " 1562", 
+            " 2562", 
+            " 1563", 
+            " 2563"
+        ]
+    }, 
+    {
+        "description": "USDC1SPHV2002", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel141", 
+        "mlagId": "141", 
+        "mlagMemberList": [
+            "Ethernet41", 
+            "Ethernet41"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1561", 
+            " 2561", 
+            " 1562", 
+            " 2562", 
+            " 1563", 
+            " 2563"
+        ]
+    }, 
+    {
+        "description": "USDC1SPHV2003", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel142", 
+        "mlagId": "142", 
+        "mlagMemberList": [
+            "Ethernet42", 
+            "Ethernet42"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1561", 
+            " 2561", 
+            " 1562", 
+            " 2562", 
+            " 1563", 
+            " 2563"
+        ]
+    }, 
+    {
+        "description": "USDC1SPHV2001", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel143", 
+        "mlagId": "143", 
+        "mlagMemberList": [
+            "Ethernet43", 
+            "Ethernet43"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "2560"
+    }, 
+    {
+        "description": "USDC1SPHV2002", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel144", 
+        "mlagId": "144", 
+        "mlagMemberList": [
+            "Ethernet44", 
+            "Ethernet44"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "2560"
+    }, 
+    {
+        "description": "USDC1SPHV2003", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel145", 
+        "mlagId": "145", 
+        "mlagMemberList": [
+            "Ethernet45", 
+            "Ethernet45"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "2560"
+    }, 
+    {
+        "description": "Windows Server", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel170", 
+        "mlagId": "170", 
+        "mlagMemberList": [
+            "Ethernet17", 
+            "Ethernet17"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "Windows Server", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel180", 
+        "mlagId": "180", 
+        "mlagMemberList": [
+            "Ethernet18", 
+            "Ethernet18"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "Windows Server", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel220", 
+        "mlagId": "220", 
+        "mlagMemberList": [
+            "Ethernet22", 
+            "Ethernet22"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "Windows Server", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel230", 
+        "mlagId": "230", 
+        "mlagMemberList": [
+            "Ethernet23", 
+            "Ethernet23"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "Windows Server", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel240", 
+        "mlagId": "240", 
+        "mlagMemberList": [
+            "Ethernet24", 
+            "Ethernet24"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "USDC2SDB2193-2", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel280", 
+        "mlagId": "280", 
+        "mlagMemberList": [
+            "Ethernet28", 
+            "Ethernet28"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "USDC2SDB2193-2", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel290", 
+        "mlagId": "290", 
+        "mlagMemberList": [
+            "Ethernet29", 
+            "Ethernet29"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "USDC2SDB2188(BZDYM83)", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel300", 
+        "mlagId": "300", 
+        "mlagMemberList": [
+            "Ethernet30", 
+            "Ethernet30"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "USDC2SDB2188(BZDYM83)", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel310", 
+        "mlagId": "310", 
+        "mlagMemberList": [
+            "Ethernet31", 
+            "Ethernet31"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "USDC2SDB2190", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel320", 
+        "mlagId": "320", 
+        "mlagMemberList": [
+            "Ethernet32", 
+            "Ethernet32"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "USDC2SDB2190", 
+        "deviceList": [
+            "USDC2NSD101", 
+            "USDC2NSD102"
+        ], 
+        "interfaceName": "Port-Channel340", 
+        "mlagId": "340", 
+        "mlagMemberList": [
+            "Ethernet34", 
+            "Ethernet34"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "**reserved for USDC2SDB2199-2**", 
+        "deviceList": [
+            "USDC2NSD103", 
+            "USDC2NSD104"
+        ], 
+        "interfaceName": "Port-Channel210", 
+        "mlagId": "210", 
+        "mlagMemberList": [
+            "Ethernet21", 
+            "Ethernet21"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "**reserved for USDC2SDB2199-2**", 
+        "deviceList": [
+            "USDC2NSD103", 
+            "USDC2NSD104"
+        ], 
+        "interfaceName": "Port-Channel220", 
+        "mlagId": "220", 
+        "mlagMemberList": [
+            "Ethernet22", 
+            "Ethernet22"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "PH_XL_9QSSK93", 
+        "deviceList": [
+            "USDC2NSD103", 
+            "USDC2NSD104"
+        ], 
+        "interfaceName": "Port-Channel330", 
+        "mlagId": "330", 
+        "mlagMemberList": [
+            "Ethernet33", 
+            "Ethernet33"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "PH_XL_9QSSK93", 
+        "deviceList": [
+            "USDC2NSD103", 
+            "USDC2NSD104"
+        ], 
+        "interfaceName": "Port-Channel340", 
+        "mlagId": "340", 
+        "mlagMemberList": [
+            "Ethernet34", 
+            "Ethernet34", 
+            "Ethernet34", 
+            "Ethernet34", 
+            "Ethernet34", 
+            "Ethernet34", 
+            "Ethernet34", 
+            "Ethernet34", 
+            "Ethernet34", 
+            "Ethernet34", 
+            "Ethernet34", 
+            "Ethernet34", 
+            "Ethernet34", 
+            "Ethernet34", 
+            "Ethernet34", 
+            "Ethernet34", 
+            "Ethernet34", 
+            "Ethernet34"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "PH_XL_9QSQK93", 
+        "deviceList": [
+            "USDC2NSD103", 
+            "USDC2NSD104"
+        ], 
+        "interfaceName": "Port-Channel430", 
+        "mlagId": "430", 
+        "mlagMemberList": [
+            "Ethernet43", 
+            "Ethernet43"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1540"
+    }, 
+    {
+        "description": "PH_XL_9QSQK93", 
+        "deviceList": [
+            "USDC2NSD103", 
+            "USDC2NSD104"
+        ], 
+        "interfaceName": "Port-Channel440", 
+        "mlagId": "440", 
+        "mlagMemberList": [
+            "Ethernet44", 
+            "Ethernet44"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "access", 
+        "vlanList": "1543"
+    }, 
+    {
+        "description": "PA-FW-1", 
+        "deviceList": [
+            "USDC2NSE101", 
+            "USDC2NSE102"
+        ], 
+        "interfaceName": "Port-Channel51", 
+        "mlagId": "51", 
+        "mlagMemberList": [
+            "Ethernet1", 
+            "Ethernet2", 
+            "Ethernet1", 
+            "Ethernet2"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1657", 
+            " 2657", 
+            " 3702", 
+            " 3802", 
+            " 1726", 
+            " 1726,2726", 
+            " 1553", 
+            " 2553", 
+            " 1560", 
+            " 2560", 
+            " 1561", 
+            " 2561", 
+            " 1562", 
+            " 2562", 
+            " 1728", 
+            " 3320", 
+            " 3420", 
+            " 3322", 
+            " 3422", 
+            " 3312", 
+            " 3412", 
+            " 3316", 
+            " 3416", 
+            " 1709", 
+            " 2709", 
+            " 1710", 
+            " 2710", 
+            " 1724", 
+            " 1724,2724", 
+            " 1722", 
+            " 1722,2722", 
+            " 3326", 
+            " 3426", 
+            " 3314", 
+            " 3414", 
+            " 1720", 
+            " 1720,2720", 
+            " 1810", 
+            " 1820", 
+            " 1830", 
+            " 1840", 
+            " 2629", 
+            " 2644", 
+            " 3629", 
+            " 3644", 
+            " 3301", 
+            " 3401", 
+            " 1563", 
+            " 2563", 
+            " 3324", 
+            " 3424"
+        ]
+    }, 
+    {
+        "description": "PA-FW-2", 
+        "deviceList": [
+            "USDC2NSE101", 
+            "USDC2NSE102"
+        ], 
+        "interfaceName": "Port-Channel52", 
+        "mlagId": "52", 
+        "mlagMemberList": [
+            "Ethernet3", 
+            "Ethernet4", 
+            "Ethernet3", 
+            "Ethernet4"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1657", 
+            " 2657", 
+            " 3702", 
+            " 3802", 
+            " 1726", 
+            " 1726,2726", 
+            " 1553", 
+            " 2553", 
+            " 1560", 
+            " 2560", 
+            " 1561", 
+            " 2561", 
+            " 1562", 
+            " 2562", 
+            " 1728", 
+            " 3320", 
+            " 3420", 
+            " 3322", 
+            " 3422", 
+            " 3312", 
+            " 3412", 
+            " 3316", 
+            " 3416", 
+            " 1709", 
+            " 2709", 
+            " 1710", 
+            " 2710", 
+            " 1724", 
+            " 1724,2724", 
+            " 1722", 
+            " 1722,2722", 
+            " 3326", 
+            " 3426", 
+            " 3314", 
+            " 3414", 
+            " 1720", 
+            " 1720,2720", 
+            " 1810", 
+            " 1820", 
+            " 1830", 
+            " 1840", 
+            " 2629", 
+            " 2644", 
+            " 3629", 
+            " 3644", 
+            " 3301", 
+            " 3401", 
+            " 1563", 
+            " 2563", 
+            " 3324", 
+            " 3424"
+        ]
+    }, 
+    {
+        "description": "F5-iSeries-1", 
+        "deviceList": [
+            "USDC2NSE101", 
+            "USDC2NSE102"
+        ], 
+        "interfaceName": "Port-Channel61", 
+        "mlagId": "61", 
+        "mlagMemberList": [
+            "Ethernet9", 
+            "Ethernet9"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1652", 
+            " 2652", 
+            " 1656", 
+            " 2656", 
+            " 1559", 
+            " 3524", 
+            " 2559", 
+            " 3624", 
+            " 3513", 
+            " 3613", 
+            " 3514", 
+            " 3614", 
+            " 3515", 
+            " 3615", 
+            " 3516", 
+            " 3616", 
+            " 1554", 
+            " 2554"
+        ]
+    }, 
+    {
+        "description": "F5-iSeries-2", 
+        "deviceList": [
+            "USDC2NSE101", 
+            "USDC2NSE102"
+        ], 
+        "interfaceName": "Port-Channel62", 
+        "mlagId": "62", 
+        "mlagMemberList": [
+            "Ethernet10", 
+            "Ethernet10"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1652", 
+            " 2652", 
+            " 1656", 
+            " 2656", 
+            " 1559", 
+            " 3524", 
+            " 2559", 
+            " 3624", 
+            " 3513", 
+            " 3613", 
+            " 3514", 
+            " 3614", 
+            " 3515", 
+            " 3615", 
+            " 3516", 
+            " 3616", 
+            " 1554", 
+            " 2554"
+        ]
+    }, 
+    {
+        "description": "F5-iSeries-1", 
+        "deviceList": [
+            "USDC2NSE101", 
+            "USDC2NSE102"
+        ], 
+        "interfaceName": "Port-Channel63", 
+        "mlagId": "63", 
+        "mlagMemberList": [
+            "Ethernet44", 
+            "Ethernet44"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1655", 
+            " 2655"
+        ]
+    }, 
+    {
+        "description": "F5-iSeries-2", 
+        "deviceList": [
+            "USDC2NSE101", 
+            "USDC2NSE102"
+        ], 
+        "interfaceName": "Port-Channel64", 
+        "mlagId": "64", 
+        "mlagMemberList": [
+            "Ethernet46", 
+            "Ethernet46"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1655", 
+            " 2655"
+        ]
+    }
+]

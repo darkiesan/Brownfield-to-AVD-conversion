@@ -1,0 +1,142 @@
+interface Ethernet1
+   description PH_XD_46P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet2
+   description PH_XD_46P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet3
+   description PH_XD_56P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet4
+   description PH_XD_56P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet5
+   description PH_XD_66P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet6
+   description PH_XD_66P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet7
+   description PH_XD_76P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet8
+   description PH_XD_76P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet9
+   description PH_XD_86P44K3#TASK0167719
+!
+interface Ethernet10
+   description PH_XD_86P44K3#TASK0167719
+!
+interface Ethernet11
+   description PH_XD_96P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet12
+   description PH_XD_96P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet13
+   description PH_XD_B6P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet14
+   description PH_XD_B6P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet15
+   description PH_XD_C6P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet16
+   description PH_XD_C6P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet17
+   description PH_XD_HHXXQK3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet18
+   description PH_XD_HHXXQK3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet19
+   description PH_XD_GHXXQK3#TASK0167719
+!
+interface Ethernet20
+   description PH_XD_GHXXQK3#TASK0167719
+!
+interface Ethernet21
+   description PH_XD_FHXXQK3#TASK0167719
+!
+interface Ethernet22
+   description PH_XD_FHXXQK3#TASK0167719
+!
+interface Ethernet23
+   description PH_XD_DHXXQK3#TASK0167719
+!
+interface Ethernet24
+   description PH_XD_DHXXQK3#TASK0167719
+!
+interface Ethernet25
+   description PH_XD_CHXXQK3#TASK0167719
+!
+interface Ethernet26
+   description PH_XD_CHXXQK3#TASK0167719
+!

@@ -1,0 +1,1815 @@
+daemon SplunkForwarder
+   exec /usr/bin/SplunkAgent 
+   option eapi_protocol value socket
+   option index-data value gssc_usdc_ops_network-switch
+   option index-interface-counters value on
+   option index-inventory value on
+   option index-lanz value on
+   option index-sflow value on
+   option index-syslog value on
+   option index-topology value on
+   option shutdown value disabled
+   option splunk-server value 10.23.54.13:9998
+   option vrf value mgmt
+   no shutdown
+!
+daemon TerminAttr
+   exec /usr/bin/TerminAttr -ingestgrpcurl=10.23.50.20:9910 -cvcompression=gzip -ingestauth=key,AAbm@130 -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -ingestvrf=mgmt -taillogs
+   no shutdown
+!
+transceiver qsfp default-mode 4x10G
+!
+queue-monitor length
+!
+logging trap notifications
+logging vrf mgmt host 10.23.20.11 514 protocol tcp
+logging facility local7
+logging vrf mgmt source-interface Management1
+!
+hostname USDC1NSD101
+ip domain lookup vrf mgmt source-interface Management1
+ip name-server vrf mgmt 10.230.134.16
+ip name-server vrf mgmt 10.230.134.17
+!
+ntp server vrf mgmt 10.23.50.53 prefer local-interface Management1
+ntp server vrf mgmt 10.71.50.53 local-interface Management1
+!
+sflow polling-interval 10
+sflow vrf mgmt destination 10.230.48.135 2055
+sflow vrf mgmt source-interface Management1
+sflow run
+!
+snmp-server community GSSC-SnmpV2Read ro
+snmp-server host DEMEESAP0616.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0729.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0730.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0732.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0762.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0763.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0764.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0768.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host demees-insight.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server enable traps
+no snmp-server vrf default
+snmp-server vrf mgmt
+!
+spanning-tree mode mstp
+no spanning-tree vlan-id 2000
+!
+tacacs-server timeout 15
+tacacs-server policy unknown-mandatory-attribute ignore
+tacacs-server host 10.90.8.87 vrf mgmt key 7 0474193F42734A752E5F41330E2D0A523D0E050F
+tacacs-server host 10.230.129.82 vrf mgmt key 7 153D193549782D1F0F7571060F2110551673787F
+!
+aaa group server tacacs+ ISE_test_TACACS
+   server 10.90.8.87 vrf mgmt
+   server 10.230.129.82 vrf mgmt
+!
+aaa authentication login default group ISE_test_TACACS local
+aaa authentication login console local
+aaa authentication policy on-success log
+aaa authentication policy on-failure log
+aaa authorization exec default group ISE_test_TACACS local
+aaa authorization commands 0 default local
+aaa authorization commands 1-15 default group ISE_test_TACACS local
+aaa accounting system default start-stop group ISE_test_TACACS
+!
+no aaa root
+!
+username System1 privilege 0 role network-operator secret sha512 $6$GBlHKcSi7TXXit2w$WhfVRqDF33eBnS7/AQ027YTxXz6S8.j9Tzm.Y8OxSYi/VAFHCMvFO09Fhl02waStdTN/SZS7Sl.U6VnmtWkfb.
+username admin privilege 15 role network-admin secret sha512 $6$Y07vdskiil4FxSYG$YuWMeJolelRtFG8i2Uya9hPX5wvqRJG3bUKR5CeBpat2cZXzGmehZLQzPHRuMgFLFv0gGixQHjrRZHe62fVST.
+username cvpadmin privilege 15 role network-admin secret sha512 $6$wwvzUH7slyWusw9u$ry0Ws14bGeKBnD0E3WdL3mSlYprlX2jnlammgnZjjo7DcNFTK0/OAy9dGdTRaT5X.zKiMYdVcxS8OiRHMs4zG/
+username netadmin privilege 15 role network-admin secret sha512 $6$LkL2Vx64mv2vEN98$LeAS7qnRyrj3d6LJcSJaqBuwL/Yj/FtZJpN79CtWr.7cs3iAnYim4Jgi.dm2OgC3Jitnk7i3eoveDckKYAOUZ/
+username netsec privilege 0 role network-operator secret sha512 $6$3oJlQHM7E46RJAd/$Y9xpD3.fSEv8RMG4iOfAOqrI5WxDRyadbMHq4ofVgk0PkAClqgT2pMl8kk./rdOJ0GnunAzIORznysq9u.S971
+username s-wipro-nw-vrni privilege 0 role network-operator secret sha512 $6$ZIA7WPoAVN3TRB4/$yZLBwlk9GmzV2DeES0sfIi/YvjT4AZ00oqKX8TE7Hkl7GYDKCd.MKZ5Gqtojf13UzanwxWJy5feraGZdScuQ20
+username sa-divymc privilege 15 role network-admin secret sha512 $6$mQ6EOyB1i.UIQvfu$YhopQvAubivbU3FG5mrN0uS0.WUZhWnzXvtaQMQU/pCQVlqWt4V9PXKA6WjFbl/.9npAmjE4hT8whxvqbi4dI0
+username sa-michum privilege 0 role network-operator secret sha512 $6$N26mk3VcPadQ57fr$lObBIVvs1tCmWvUhNinKsfbzynPc1.iIr//TfYC5HvGFbmJvsOMZD/diExcN8zLVoDwm1O0Zu5Wo3oELOKHBj0
+username sa-parbar privilege 15 role network-admin secret sha512 $6$kT3xvJjHQIB259Xl$tF2skLpkVwE5sQgJOGDW6JP5WfWb8K0PyBj01Ax8AytnQrdte1vkhb.agU5LE9PTL2ufUDXoaR7iWNNWOfDDC0
+username sac-azaraj privilege 15 role network-admin secret sha512 $6$AvSapbHTy6wGv8Ia$3qLufG8Q0lapOAkXUEw0pez4hM21Q.BhPUfNRixvRJ/yxNSVNYZtUYhDaDXbSOlkZKm8gxU.M6Xq8ntJgRyIG1
+username sac-gaukum privilege 15 role network-admin secret sha512 $6$1l4RHr5ZFb.yACpb$ykduo.S40IY2TW3ReWX420TARhpwhPrdvkq1EwO9Qn76CifWknuV.PDYDrtI2iO66/qlEtWgQdHqVDf0qHuZm0
+username sac-jespau privilege 15 role network-admin secret sha512 $6$HLckmYAhr9rOrIUk$o6aOXZXMcumuzYMPQobGs8hSlronFHcdZTnY06ztEtBBs/3qqFtfQTy.OQlJfNo6KHYxNFQq7yHUUP9vI6ttC.
+username sac-mausin privilege 15 role network-admin secret sha512 $6$y2QdJtVOiXaRu/z5$psDSk6VYdKm7WiIlHY1v0ePCZABI/Uex3F9uNJDwHR39OEiKxg2ARgt5oo2m2H4keFY0qQ4FVSKTLhje0Osny.
+username sac-paolss privilege 15 role network-admin secret sha512 $6$XF6x2Nbiy0iIpGw6$3bQuRq6T89AR82GvC.3waO8Ql7xBERJx5apktZcRHNICsQXeVSZRmma37Sr0iMU7TkHKRe/YjKJJ2H5wgW6H80
+username sac-pradsi privilege 15 role network-admin secret sha512 $6$tuaO5xYmZVvMkFIk$XRRwoz/dy1mwJYiT3bnKogDCBv6l0vEaxMND1hysWb.SlfLeAhtSV5kw03d4xsg.b3wy461aGRc.DGxaprSbg/
+username sac-rajmak role network-operator secret sha512 $6$b2gf4ELeH0ZuDJGJ$7FhEij1fNEj5Vxs1nvLfj8xxD5MKAHQ3PdccAa09bZhVu105q7EbVZkUFzjr5OAqooCcXPUb.l2PbQsVJF6Zm.
+username sac-ransin privilege 15 role network-admin secret sha512 $6$ShqjlzepYhv7vRO/$0gBgv6TDdfJCJME1LwSu97C7Ii7Yxr4qzGZT1dXDeboLDcX7NXlGX4543AcvjYklxFuScIeG/UJ8L0hHRdoU81
+username sac-sampra privilege 15 role network-admin secret sha512 $6$U22b7cWuzph/24k/$9T5cUXlc/U0137tj8e5x1NMB/buCVv/iYLqNtPR.z8otgfGgkrEoDr5aAYeKPF.2W2dtXLIAmK3fO/UZOb6si.
+username sac-shrpra privilege 15 role network-admin secret sha512 $6$wdYflLqSr//wgIfw$QeUCGIM7nJONH/OyKQZ6sgCxZE.xS0qLuPROu.nzWNn0.8PETfNugCnhO2Pm7vleGJnGF0opnQSuRNCh/rotn.
+username sac-silaro privilege 15 role network-admin secret sha512 $6$t0.z1/qWX31Wap4v$tA84ZFxVLIk5B6XUrNKIFhYYRFh7kMi8n2wE.UjeZWQ3BpE283EqR2eDEIqHFW0UJxeCXS7Q4UUWCuc78cddg.
+username sac-suman1 privilege 15 role network-admin secret sha512 $6$cNTsd9yWSZneVR/P$.7ZKfhXnLxO1unh.8BIzzg/qiU/CvOVEF8WpSyMxse6p/ZvEax0Z4aSHYCqGOBg7.J.5Kao7IoOtoWdEaPS4I1
+username sac-tahabd privilege 15 role network-admin secret sha512 $6$lrMQMToaa5PgSpCA$fl9iW4jDq2u8o84ZzUwUwIPz/F.tDft5NppS6PTVQBr2kFfB6/aWcJ1PCqFeosxNwUrw0Vuk0ixV2agJK7ivE0
+username sac-tremar privilege 15 role network-admin secret sha512 $6$NomIwFxKTMNBLSYL$6tXsZfYX3bautpd4QvePdW45BQX0eGJAQQPHTGg1upVcS0mTwtpPRv8/EUHnvSerqMNQT.37OEDpe8W/l5lvL1
+!
+vlan 1505
+   name MGMT_TNT_ESXi_Mgmt
+   trunk group MGMT_TNT_ESXi_Mgmt
+!
+vlan 1511
+   name WITNESS_Mgmt
+   trunk group WITNESS_Mgmt
+!
+vlan 1515
+   name GOLD_TNT_ESXi_Mgmt
+   trunk group GOLD_TNT_ESXi_Mgmt
+!
+vlan 1516
+   name GOLD_TNT_VXLAN_VTEP
+   trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1517
+   name GOLD_TNT_ESXi_vMotion
+   trunk group GOLD_TNT_ESXi_vMotion
+!
+vlan 1518
+   name GOLD_TNT_ESXi_vSAN
+   trunk group GOLD_TNT_ESXi_vSAN
+!
+vlan 1525
+   name SILV_TNT_ESXi_Mgmt
+   trunk group SILV_TNT_ESXi_Mgmt
+!
+vlan 1526
+   name SILV_TNT_ESXi_VXLAN_VTEP
+   trunk group SILV_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1527
+   name SILV_TNT_ESXi_vMotion
+   trunk group SILV_TNT_ESXi_vMotion
+!
+vlan 1528
+   name SILV_TNT_ESXi_vSAN
+   trunk group SILV_TNT_ESXi_vSAN
+!
+vlan 1540
+   name PHYSICAL_SERVER
+   trunk group PHYSICAL_SERVER
+!
+vlan 1541
+   name Backup_Infra
+   trunk group BACKUP_Infra
+!
+vlan 1543
+   name BACKUP_Mgmt
+   trunk group BACKUP_Mgmt
+!
+vlan 1548
+   name PAFW_VM300
+   trunk group PAFW_VM300
+!
+vlan 1550
+   name DC_Mgmt
+   trunk group DC_Mgmt
+!
+vlan 1560
+   name Citrix_VDI_Mgmt
+   trunk group Citrix_VDI_Mgmt
+!
+vlan 1561
+   name Citrix_XenApp_Mgmt
+   trunk group Citrix_XenApp_Mgmt
+!
+vlan 1562
+   name Customer_VDI_WLD
+   trunk group Customer_VDI_WLD
+!
+vlan 1563
+   name Wipro_VDI_WLD
+   trunk group Wipro_VDI_WLD
+!
+vlan 1675
+   name GOLD_TEP_Pool
+   trunk group GOLD_TEP_Pool
+!
+vlan 1676
+   name SILV_TEP_Pool
+   trunk group SILV_TEP_Pool
+!
+vlan 1677
+   name GOLD_EDGE1_BGP
+   trunk group GOLD_EDGE1_BGP
+!
+vlan 1678
+   name GOLD_EDGE2_BGP
+   trunk group GOLD_EDGE2_BGP
+!
+vlan 1679
+   name GOLD_EDGE3_BGP
+   trunk group GOLD_EDGE3_BGP
+!
+vlan 1680
+   name GOLD_EDGE4_BGP
+   trunk group GOLD_EDGE4_BGP
+!
+vlan 1681
+   name SILV_EDGE1_BGP
+   trunk group SILV_EDGE1_BGP
+!
+vlan 1682
+   name SILV_EDGE2_BGP
+   trunk group SILV_EDGE2_BGP
+!
+vlan 1683
+   name GOLD_EDGE1_TEP_Pool
+   trunk group GOLD_EDGE1_TEP_Pool
+!
+vlan 1684
+   name GOLD_EDGE2_TEP_Pool
+   trunk group GOLD_EDGE2_TEP_Pool
+!
+vlan 1685
+   name SILV_EDGE_TEP_Pool
+   trunk group SILV_EDGE_TEP_Pool
+!
+vlan 1690
+   name COLL_EDGE_TEP_Pool
+   trunk group COLL_EDGE_TEP_Pool
+!
+vlan 1704
+   name Splunk
+   trunk group SPLUNK
+!
+vlan 1810
+   name WLC_WiFi_Guest
+   trunk group WiFi_GUEST_PROD_IOT
+!
+vlan 1820
+   name Global_WiFi_VC_Production
+   trunk group WiFi_GUEST_PROD_IOT
+!
+vlan 1830
+   name Global_WiFi_VC_IoT
+   trunk group WiFi_GUEST_PROD_IOT
+!
+vlan 1840
+   name WLC_HA_L2_VLAN
+   trunk group WiFi_GUEST_PROD_IOT
+!
+vlan 2000
+   name MLAG
+   trunk group MLAG_PEER
+!
+vlan 2704
+   name SPLUNK_SERVER
+   trunk group SPLUNK_SERVER
+!
+vlan 3320
+   name DMZ_INFRA_NSX_FW
+   trunk group DMZ_INFRA_NSX_FW
+!
+vlan 3321
+   name DMZ_INFRA_NSX_DCI
+   trunk group DMZ_INFRA_NSX_DCI
+!
+vlan 3375
+   name DMZ_GOLD_TEP_Pool
+   trunk group DMZ_GOLD_TEP_Pool
+!
+vlan 3376
+   name DMZ_SILV_TEP_Pool
+   trunk group DMZ_SILV_TEP_Pool
+!
+vlan 3377
+   name DMZ_GOLD_EDGE1_BGP
+   trunk group DMZ_GOLD_EDGE1_BGP
+!
+vlan 3378
+   name DMZ_GOLD_EDGE2_BGP
+   trunk group DMZ_GOLD_EDGE2_BGP
+!
+vlan 3381
+   name DMZ_SILV_EDGE1_BGP
+   trunk group DMZ_SILV_EDGE1_BGP
+!
+vlan 3382
+   name DMZ_SILV_EDGE2_BGP
+   trunk group DMZ_SILV_EDGE2_BGP
+!
+vlan 3383
+   name DMZ_GOLD_EDGE1_TEP_Pool
+   trunk group DMZ_GOLD_EDGE1_TEP_Pool
+!
+vlan 3384
+   name DMZ_GOLD_EDGE2_TEP_Pool
+   trunk group DMZ_GOLD_EDGE2_TEP_Pool
+!
+vlan 3385
+   name DMZ_SILV_EDGE_TEP_Pool
+   trunk group DMZ_SILV_EDGE_TEP_Pool
+!
+vlan 3386
+   name DMZ
+   trunk group DMZ
+!
+vlan 3387
+   name XMS
+   trunk group XMS
+!
+vlan 3388
+   name CVP
+   trunk group CVP
+!
+vlan 3389
+   name MCAFEE
+   trunk group MCAFEE
+!
+vlan 3390
+   name Log_Forwarding
+   trunk group Log_Forwarding
+!
+vlan 3517
+   name F5_VLAN_5
+   trunk group F5_VLAN_5
+!
+vlan 3518
+   name F5_VLAN_6
+   trunk group F5_VLAN_6
+!
+vlan 3519
+   name F5_VLAN_7
+   trunk group F5_VLAN_7
+!
+vlan 3520
+   name VIRT_F5_VLAN_1
+   trunk group VIRT_F5_VLAN_1
+!
+vlan 3521
+   name VIRT_F5_VLAN_2
+   trunk group VIRT_F5_VLAN_2
+!
+vlan 3522
+   name VIRT_F5_VLAN_3
+   trunk group VIRT_F5_VLAN_3
+!
+vrf instance GOLD_TNT
+   description vrf gold
+!
+vrf instance INFRA_Mgmt
+!
+vrf instance INTERNAL
+!
+vrf instance SILV_TNT
+   description vrf silv
+!
+vrf instance mgmt
+   description vrf mgmt
+!
+interface Port-Channel140
+   description USDC1SPHV2001
+   switchport mode trunk
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   ip access-group isolated_1540 in
+   mlag 140
+!
+interface Port-Channel141
+   description USDC1SPHV2002
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   ip access-group isolated_1540 in
+   mlag 141
+!
+interface Port-Channel142
+   description USDC1SPHV2003
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   ip access-group isolated_1540 in
+   mlag 142
+!
+interface Port-Channel143
+   description USDC1SPHV2001
+   mtu 9214
+   switchport access vlan 1560
+   ip access-group isolated_1540 in
+   mlag 143
+!
+interface Port-Channel144
+   description USDC1SPHV2002
+   mtu 9214
+   switchport access vlan 1560
+   ip access-group isolated_1540 in
+   mlag 144
+!
+interface Port-Channel145
+   description USDC1SPHV2003
+   mtu 9214
+   switchport access vlan 1560
+   ip access-group isolated_1540 in
+   mlag 145
+!
+interface Port-Channel180
+   description USDC1SDB2184
+   mtu 9214
+   switchport access vlan 1543
+   mlag 180
+!
+interface Port-Channel200
+   description USDC1SDB2185
+   switchport access vlan 1543
+   mlag 200
+!
+interface Port-Channel217
+   description USDC1SDB2184
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 217
+!
+interface Port-Channel218
+   description USDC1SDB2184
+   shutdown
+   mtu 9214
+   switchport access vlan 1543
+!
+interface Port-Channel219
+   description USDC1SDB2185
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 219
+!
+interface Port-Channel220
+   description USDC1SDB2186
+   switchport access vlan 1543
+   mlag 220
+!
+interface Port-Channel221
+   description USDC1SDB2186
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 221
+!
+interface Port-Channel223
+   description PH_Medium_H2h3g73
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 223
+!
+interface Port-Channel224
+   description PH_Medium_H2h3g73
+   switchport access vlan 1543
+   mlag 224
+!
+interface Port-Channel225
+   description PH_Medium_H2h5773
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 225
+!
+interface Port-Channel226
+   description PH_Medium_H2h5773
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 226
+!
+interface Port-Channel227
+   description PH_Medium_H2h4773
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 227
+!
+interface Port-Channel228
+   description PH_Medium_H2h4773
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 228
+!
+interface Port-Channel290
+   description USDC1SDB2196 (BZDVM83)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 290
+!
+interface Port-Channel300
+   description USDC1SDB2196 (BZDVM83)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 300
+!
+interface Port-Channel310
+   description USDC1SDB2197
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 310
+!
+interface Port-Channel320
+   description USDC1SDB2197
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 320
+!
+interface Port-Channel330
+   description PH_XL_BZDWM83
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 330
+!
+interface Port-Channel340
+   description PH_XL_BZDWM83
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 340
+!
+interface Port-Channel2000
+   description MLAG_CHANNEL
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group COLL_EDGE_TEP_Pool
+   switchport trunk group CVP
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group DMZ
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group Log_Forwarding
+   switchport trunk group MCAFEE
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group MLAG_PEER
+   switchport trunk group PAFW_VM300
+   switchport trunk group PHYSICAL_SERVER
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group SPLUNK
+   switchport trunk group SPLUNK_SERVER
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   switchport trunk group Wipro_VDI_WLD
+   switchport trunk group XMS
+!
+interface Ethernet1
+   description USDC1SGOLDXI01_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet2
+   description USDC1SGOLDXI01_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet3
+   description USDC1SGOLDXI02_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet4
+   description USDC1SGOLDXI02_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet5
+   description USDC1SGOLDXI03_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet6
+   description USDC1SGOLDXI03_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet7
+   description USDC1SGOLDXI04_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet8
+   description USDC1SGOLDXI04_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet9
+   description USDC1SSILVXI01_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   ip access-group isolated_1540 in
+!
+interface Ethernet10
+   description USDC1SSILVXI01_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   ip access-group isolated_1540 in
+!
+interface Ethernet11
+   description USDC1SSILVXI02_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   ip access-group isolated_1540 in
+!
+interface Ethernet12
+   description USDC1SSILVXI02_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   ip access-group isolated_1540 in
+!
+interface Ethernet13
+   description USDC1SSILVXI03_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   ip access-group isolated_1540 in
+!
+interface Ethernet14
+   description USDC1SSILVXI03_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   ip access-group isolated_1540 in
+!
+interface Ethernet15
+   description USDC1SSILVXI04_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   ip access-group isolated_1540 in
+!
+interface Ethernet16
+   description USDC1SSILVXI04_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   ip access-group isolated_1540 in
+!
+interface Ethernet17
+   description USDC1SDB2184
+   mtu 9214
+   channel-group 217 mode active
+!
+interface Ethernet18
+   description USDC1SDB2184
+   mtu 9214
+   channel-group 180 mode active
+!
+interface Ethernet19
+   description USDC1SDB2185
+   channel-group 219 mode active
+!
+interface Ethernet20
+   description USDC1SDB2185
+   channel-group 200 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet21
+   description USDC1SDB2186
+   channel-group 221 mode active
+!
+interface Ethernet22
+   description USDC1SDB2186
+   channel-group 220 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet23
+   description PH_Medium_H2h3g73
+   channel-group 223 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet24
+   description PH_Medium_H2h3g73
+   channel-group 224 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet25
+   description PH_Medium_H2h5773
+   channel-group 225 mode active
+!
+interface Ethernet26
+   description PH_Medium_H2h5773
+   channel-group 226 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet27
+   description PH_Medium_H2h4773
+   channel-group 227 mode active
+!
+interface Ethernet28
+   description PH_Medium_H2h4773
+   channel-group 228 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet29
+   description PH_XL_BZDVM83 -M05.02.01/Ru23-24/OnBoard P1
+   channel-group 290 mode active
+!
+interface Ethernet30
+   description PH_XL_BZDVM83 -M05.02.01/Ru23-24/PCI2 P1
+   channel-group 300 mode active
+!
+interface Ethernet31
+   description PH_XL_BZDXM83 -M05.02.01/Ru26-27/OnBoard 1
+   channel-group 310 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet32
+   description PH_XL_BZDXM83 -M05.02.01/Ru26-27/PCI2 P1
+   channel-group 320 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet33
+   description PH_XL_BZDWM83
+   channel-group 330 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet34
+   description PH_XL_BZDWM83
+   channel-group 340 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet35
+   description USDC1SGOLDXI05_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet36
+   description USDC1SGOLDXI06_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet37
+   description USDC1SGOLDXI05_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet38
+   description USDC1SGOLDXI06_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   ip access-group isolated_1540 in
+!
+interface Ethernet39
+   description usdc1sslvrxi06
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   ip access-group isolated_1540 in
+!
+interface Ethernet40
+   description USDC1SPHV2001
+   channel-group 140 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet41
+   description USDC1SPHV2002
+   channel-group 141 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet42
+   description USDC1SPHV2003
+   channel-group 142 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet43
+   description USDC1SPHV2001
+   mtu 9214
+   channel-group 143 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet44
+   description USDC1SPHV2002
+   channel-group 144 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet45
+   description USDC1SPHV2003
+   channel-group 145 mode active
+   ip access-group isolated_1540 in
+!
+interface Ethernet46
+   description usdc1sslvrxi06
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   ip access-group isolated_1540 in
+!
+interface Ethernet47
+   description usdc1sslvrxi05
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   ip access-group isolated_1540 in
+!
+interface Ethernet48
+   description usdc1sslvrxi05
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   ip access-group isolated_1540 in
+!
+interface Ethernet49/1
+   description to USDC1NSD002 Eth49/1
+   mtu 9214
+   channel-group 2000 mode active
+!
+interface Ethernet50/1
+   description to USDC1NSD002 Eth50/1
+   mtu 9214
+   channel-group 2000 mode active
+!
+interface Ethernet51/1
+   description to USDC1NSC001 Eth1
+   mtu 9214
+   no switchport
+   ip address 10.23.3.31/31
+!
+interface Ethernet52/1
+   description to USDC1NSC002 Eth1
+   mtu 9214
+   no switchport
+   ip address 10.23.3.61/31
+!
+interface Ethernet53/1
+   shutdown
+!
+interface Ethernet54/1
+   shutdown
+!
+interface Ethernet55/1
+   shutdown
+!
+interface Ethernet56/1
+   shutdown
+!
+interface Loopback0
+   description BGP_ROUTER_ID
+   ip address 10.23.3.13/32
+!
+interface Loopback1
+   description VTEP
+   ip address 10.23.3.202/32
+!
+interface Management1
+   description to USCD1NST001 Eth2
+   vrf mgmt
+   ip address 10.23.0.13/24
+!
+interface Vlan1516
+   description ESXi VXLAN VTEP for Tenant GOLD
+   vrf GOLD_TNT
+   ip address 10.23.16.2/24
+   ip virtual-router address 10.23.16.1
+!
+interface Vlan1526
+   description ESXi VXLAN VTEP for Tenant SILV
+   vrf SILV_TNT
+   ip address 10.23.26.2/24
+   ip virtual-router address 10.23.26.1
+!
+interface Vlan2000
+   mtu 9214
+   no autostate
+   ip address 10.23.2.10/31
+!
+interface Vxlan1
+   vxlan source-interface Loopback1
+   vxlan udp-port 4789
+   vxlan vlan 1505 vni 11505
+   vxlan vlan 1511 vni 11511
+   vxlan vlan 1515 vni 11515
+   vxlan vlan 1516 vni 11516
+   vxlan vlan 1517 vni 11517
+   vxlan vlan 1518 vni 11518
+   vxlan vlan 1525 vni 11525
+   vxlan vlan 1526 vni 11526
+   vxlan vlan 1527 vni 11527
+   vxlan vlan 1528 vni 11528
+   vxlan vlan 1540 vni 11540
+   vxlan vlan 1541 vni 11541
+   vxlan vlan 1543 vni 11543
+   vxlan vlan 1548 vni 11548
+   vxlan vlan 1550 vni 11550
+   vxlan vlan 1560 vni 11560
+   vxlan vlan 1561 vni 11561
+   vxlan vlan 1562 vni 11562
+   vxlan vlan 1563 vni 11563
+   vxlan vlan 1675 vni 11675
+   vxlan vlan 1676 vni 11676
+   vxlan vlan 1677 vni 11677
+   vxlan vlan 1678 vni 11678
+   vxlan vlan 1679 vni 11679
+   vxlan vlan 1680 vni 11680
+   vxlan vlan 1681 vni 11681
+   vxlan vlan 1682 vni 11682
+   vxlan vlan 1683 vni 11683
+   vxlan vlan 1684 vni 11684
+   vxlan vlan 1685 vni 11685
+   vxlan vlan 1690 vni 11690
+   vxlan vlan 1704 vni 11704
+   vxlan vlan 1810 vni 11810
+   vxlan vlan 1820 vni 11820
+   vxlan vlan 1830 vni 11830
+   vxlan vlan 1840 vni 11840
+   vxlan vlan 3375 vni 13375
+   vxlan vlan 3376 vni 13376
+   vxlan vlan 3377 vni 13377
+   vxlan vlan 3378 vni 13378
+   vxlan vlan 3381 vni 13381
+   vxlan vlan 3382 vni 13382
+   vxlan vlan 3383 vni 13383
+   vxlan vlan 3384 vni 13384
+   vxlan vlan 3385 vni 13385
+   vxlan vlan 3386 vni 13386
+   vxlan vlan 3387 vni 13387
+   vxlan vlan 3388 vni 13388
+   vxlan vlan 3389 vni 13389
+   vxlan vlan 3390 vni 13390
+   vxlan vlan 3517 vni 13517
+   vxlan vlan 3518 vni 13518
+   vxlan vlan 3520 vni 13520
+   vxlan vlan 3521 vni 13521
+   vxlan vlan 3522 vni 13522
+   vxlan flood vtep 10.23.3.204 10.23.3.206 10.23.3.207 10.23.3.208 10.24.3.202 10.24.3.204 10.24.3.206 10.24.3.208
+!
+ip access-list isolated_1540
+   10 permit ip host 10.23.40.86 host 10.23.40.81
+   20 permit ip host 10.23.40.86 host 10.23.40.87
+   30 permit ip host 10.23.40.87 host 10.23.40.86
+   40 permit ip host 10.23.40.62 host 10.23.40.87
+   50 permit ip host 10.23.40.61 host 10.23.40.86
+   60 permit ip host 10.23.40.87 host 10.23.40.62
+   70 permit ip host 10.23.40.86 host 10.23.40.61
+   80 permit ip host 10.23.40.87 host 10.23.40.81
+   90 permit ip host 10.23.40.82 host 10.23.40.81
+   100 permit ip host 10.23.40.27 host 10.23.40.81
+   110 permit ip host 10.23.40.85 host 10.23.40.81
+   120 permit ip host 10.23.40.83 host 10.23.40.81
+   130 permit ip host 10.23.40.28 host 10.23.40.81
+   140 permit ip host 10.23.40.71 host 10.23.40.81
+   150 permit ip host 10.23.40.86 host 10.23.40.63
+   160 permit ip host 10.23.40.87 host 10.23.40.63
+   170 permit ip host 10.23.40.82 host 10.23.40.63
+   180 permit ip host 10.23.40.27 host 10.23.40.63
+   190 permit ip host 10.23.40.85 host 10.23.40.63
+   200 permit ip host 10.23.40.83 host 10.23.40.63
+   210 permit ip host 10.23.40.28 host 10.23.40.63
+   220 permit ip host 10.23.40.71 host 10.23.40.63
+   230 permit ip host 10.23.40.86 host 10.23.40.48
+   240 permit ip host 10.23.40.87 host 10.23.40.48
+   250 permit ip host 10.23.40.82 host 10.23.40.48
+   260 permit ip host 10.23.40.27 host 10.23.40.48
+   270 permit ip host 10.23.40.85 host 10.23.40.48
+   280 permit ip host 10.23.40.83 host 10.23.40.48
+   290 permit ip host 10.23.40.28 host 10.23.40.48
+   300 permit ip host 10.23.40.71 host 10.23.40.48
+   310 permit ip host 10.23.40.81 host 10.23.40.86
+   320 permit ip host 10.23.40.81 host 10.23.40.87
+   330 permit ip host 10.23.40.81 host 10.23.40.82
+   340 permit ip host 10.23.40.81 host 10.23.40.27
+   350 permit ip host 10.23.40.81 host 10.23.40.85
+   360 permit ip host 10.23.40.81 host 10.23.40.83
+   370 permit ip host 10.23.40.81 host 10.23.40.28
+   380 permit ip host 10.23.40.81 host 10.23.40.71
+   390 permit ip host 10.23.40.63 host 10.23.40.86
+   400 permit ip host 10.23.40.63 host 10.23.40.87
+   410 permit ip host 10.23.40.63 host 10.23.40.82
+   420 permit ip host 10.23.40.63 host 10.23.40.27
+   430 permit ip host 10.23.40.63 host 10.23.40.85
+   440 permit ip host 10.23.40.63 host 10.23.40.83
+   450 permit ip host 10.23.40.63 host 10.23.40.28
+   460 permit ip host 10.23.40.63 host 10.23.40.71
+   470 permit ip host 10.23.40.48 host 10.23.40.86
+   480 permit ip host 10.23.40.48 host 10.23.40.87
+   490 permit ip host 10.23.40.48 host 10.23.40.82
+   500 permit ip host 10.23.40.48 host 10.23.40.27
+   510 permit ip host 10.23.40.48 host 10.23.40.85
+   520 permit ip host 10.23.40.48 host 10.23.40.83
+   530 permit ip host 10.23.40.48 host 10.23.40.28
+   540 permit ip host 10.23.40.48 host 10.23.40.71
+   550 permit ip host 10.23.40.51 10.23.40.52/31
+   560 permit ip host 10.23.40.51 10.23.40.68/31
+   570 permit ip 10.23.40.52/31 host 10.23.40.51
+   580 permit ip 10.23.40.52/31 10.23.40.68/31
+   590 permit ip 10.23.40.68/31 host 10.23.40.51
+   600 permit ip 10.23.40.68/31 10.23.40.52/31
+   610 permit ip host 10.23.40.52 host 10.23.40.53
+   620 permit ip host 10.23.40.53 host 10.23.40.52
+   630 permit ip host 10.23.40.68 host 10.23.40.69
+   640 permit ip host 10.23.40.69 host 10.23.40.68
+   650 permit ip 10.23.40.32/28 10.23.40.32/28
+   660 permit ip host 10.23.40.102 host 10.23.40.101
+   670 permit ip host 10.23.40.101 host 10.23.40.102
+   680 permit ip host 10.23.40.83 host 10.23.40.28
+   690 permit ip host 10.23.40.83 host 10.23.40.71
+   700 permit ip host 10.23.40.28 host 10.23.40.83
+   710 permit ip host 10.23.40.71 host 10.23.40.83
+   720 permit ip host 10.23.40.82 host 10.23.40.27
+   730 permit ip host 10.23.40.82 host 10.23.40.85
+   740 permit ip host 10.23.40.27 host 10.23.40.82
+   750 permit ip host 10.23.40.85 host 10.23.40.82
+   760 permit ip any 10.23.40.0/30
+   770 permit ip 10.23.40.0/30 any
+   780 permit ip any 10.23.40.4/31
+   790 permit ip 10.23.40.4/31 any
+   800 permit ip 10.23.40.60/30 10.23.40.60/30
+   810 permit ip host 10.23.40.47 host 10.23.40.86
+   820 permit ip host 10.23.40.86 host 10.23.40.47
+   830 permit ip host 10.23.40.71 host 10.23.40.27
+   840 permit ip host 10.23.40.71 host 10.23.40.85
+   850 permit ip host 10.23.40.71 host 10.23.40.28
+   860 permit ip host 10.23.40.27 host 10.23.40.71
+   870 permit ip host 10.23.40.27 host 10.23.40.85
+   880 permit ip host 10.23.40.27 host 10.23.40.28
+   890 permit ip host 10.23.40.85 host 10.23.40.28
+   900 permit ip host 10.23.40.85 host 10.23.40.71
+   910 permit ip host 10.23.40.85 host 10.23.40.27
+   920 permit ip host 10.23.40.28 host 10.23.40.71
+   930 permit ip host 10.23.40.28 host 10.23.40.27
+   940 permit ip host 10.23.40.28 host 10.23.40.85
+   950 permit ip host 10.23.40.48 host 10.23.40.81
+   960 permit ip host 10.23.40.81 host 10.23.40.48
+   970 permit ip host 10.23.40.81 host 10.23.40.81
+   980 permit ip host 10.23.40.47 host 10.23.40.81
+   990 permit ip host 10.23.40.81 host 10.23.40.47
+   1000 permit ip host 10.23.40.61 host 10.23.40.81
+   1010 permit ip host 10.23.40.63 host 10.23.40.81
+   1020 permit ip host 10.23.40.64 host 10.23.40.81
+   1030 permit ip host 10.23.40.65 host 10.23.40.81
+   1040 permit ip host 10.23.40.81 host 10.23.40.61
+   1050 permit ip host 10.23.40.81 host 10.23.40.63
+   1060 permit ip host 10.23.40.65 host 10.23.40.84
+   1070 permit ip host 10.23.40.81 host 10.23.40.64
+   1080 permit ip host 10.23.40.81 host 10.23.40.65
+   1090 permit ip host 10.23.40.81 host 10.23.40.62
+   1100 permit ip host 10.23.40.62 host 10.23.40.81
+   1110 permit ip host 10.23.40.81 10.23.40.56/29
+   1120 permit ip 10.23.40.56/29 host 10.23.40.81
+   1130 permit ip 10.23.40.64/30 10.23.40.64/30
+   1140 permit ip 10.23.40.60/30 10.23.40.64/30
+   1150 permit ip 10.23.40.64/30 10.23.40.60/30
+   1160 permit ip host 10.23.40.47 host 10.23.40.48
+   1170 permit ip host 10.23.40.48 host 10.23.40.47
+   1180 permit ip 10.23.40.60/30 host 10.23.40.47
+   1190 permit ip 10.23.40.64/30 host 10.23.40.47
+   1200 permit ip 10.23.40.60/30 host 10.23.40.48
+   1210 permit ip 10.23.40.64/30 host 10.23.40.48
+   1220 permit ip host 10.23.40.47 10.23.40.60/30
+   1230 permit ip host 10.23.40.47 10.23.40.64/30
+   1240 permit ip host 10.23.40.48 10.23.40.60/30
+   1250 permit ip host 10.23.40.48 10.23.40.64/30
+   1260 permit ip host 10.23.40.74 host 10.23.40.75
+   1270 permit ip host 10.23.40.74 host 10.23.40.76
+   1280 permit ip host 10.23.40.74 host 10.23.40.77
+   1290 permit ip host 10.23.40.75 host 10.23.40.74
+   1300 permit ip host 10.23.40.75 host 10.23.40.76
+   1310 permit ip host 10.23.40.75 host 10.23.40.77
+   1320 permit ip host 10.23.40.76 host 10.23.40.74
+   1330 permit ip host 10.23.40.76 host 10.23.40.75
+   1340 permit ip host 10.23.40.76 host 10.23.40.77
+   1350 permit ip host 10.23.40.77 host 10.23.40.74
+   1360 permit ip host 10.23.40.77 host 10.23.40.75
+   1370 permit ip host 10.23.40.77 host 10.23.40.76
+   1380 permit ip host 10.23.40.50 host 10.23.40.60
+   1390 permit ip host 10.23.40.60 host 10.23.40.50
+   1400 permit ip host 10.23.40.70 host 10.23.40.49
+   1410 permit ip host 10.23.40.94 host 10.23.40.50
+   1420 permit ip host 10.23.40.94 host 10.23.40.60
+   1430 permit ip host 10.23.40.49 host 10.23.40.70
+   1440 permit ip host 10.23.40.94 host 10.23.40.27
+   1450 permit ip host 10.23.40.94 host 10.23.40.85
+   1460 permit ip host 10.23.40.94 host 10.23.40.82
+   1470 permit ip host 10.23.40.94 host 10.23.40.83
+   1480 permit ip host 10.23.40.94 host 10.23.40.28
+   1490 permit ip host 10.23.40.94 host 10.23.40.71
+   1500 permit ip host 10.23.40.94 host 10.23.40.87
+   1510 permit ip host 10.23.40.94 host 10.23.40.61
+   1520 permit ip host 10.23.40.94 host 10.23.43.64
+   1530 permit ip host 10.23.40.94 host 10.23.40.47
+   1540 permit ip host 10.23.40.94 host 10.23.40.62
+   1550 permit ip host 10.23.40.94 host 10.23.40.86
+   1560 permit ip host 10.23.40.94 host 10.23.40.63
+   1570 permit ip host 10.23.40.94 host 10.23.40.48
+   1580 permit ip host 10.23.40.94 host 10.23.40.81
+   1590 permit ip host 10.23.40.94 host 10.23.40.93
+   1600 permit ip host 10.23.40.94 host 10.23.40.70
+   1610 permit ip host 10.23.40.94 host 10.23.40.49
+   1620 permit ip host 10.23.40.50 host 10.23.40.94
+   1630 permit ip host 10.23.40.60 host 10.23.40.94
+   1640 permit ip host 10.23.40.27 host 10.23.40.94
+   1650 permit ip host 10.23.40.85 host 10.23.40.94
+   1660 permit ip host 10.23.40.82 host 10.23.40.94
+   1670 permit ip host 10.23.40.83 host 10.23.40.94
+   1680 permit ip host 10.23.40.28 host 10.23.40.94
+   1690 permit ip host 10.23.40.71 host 10.23.40.94
+   1700 permit ip host 10.23.40.87 host 10.23.40.94
+   1710 permit ip host 10.23.40.61 host 10.23.40.94
+   1720 permit ip host 10.23.43.64 host 10.23.40.94
+   1730 permit ip host 10.23.40.47 host 10.23.40.94
+   1740 permit ip host 10.23.40.62 host 10.23.40.94
+   1750 permit ip host 10.23.40.86 host 10.23.40.94
+   1760 permit ip host 10.23.40.63 host 10.23.40.94
+   1770 permit ip host 10.23.40.48 host 10.23.40.94
+   1780 permit ip host 10.23.40.81 host 10.23.40.94
+   1790 permit ip host 10.23.40.93 host 10.23.40.94
+   1800 permit ip host 10.23.40.70 host 10.23.40.94
+   1810 permit ip host 10.23.40.49 host 10.23.40.94
+   1820 permit ip host 10.23.40.93 host 10.23.40.50
+   1830 permit ip host 10.23.40.93 host 10.23.40.60
+   1840 permit ip host 10.23.40.93 host 10.23.40.27
+   1850 permit ip host 10.23.40.93 host 10.23.40.85
+   1860 permit ip host 10.23.40.93 host 10.23.40.82
+   1870 permit ip host 10.23.40.93 host 10.23.40.83
+   1880 permit ip host 10.23.40.93 host 10.23.40.28
+   1890 permit ip host 10.23.40.93 host 10.23.40.71
+   1900 permit ip host 10.23.40.93 host 10.23.40.87
+   1910 permit ip host 10.23.40.93 host 10.23.40.61
+   1920 permit ip host 10.23.40.93 host 10.23.43.64
+   1930 permit ip host 10.23.40.93 host 10.23.40.47
+   1940 permit ip host 10.23.40.93 host 10.23.40.62
+   1950 permit ip host 10.23.40.93 host 10.23.40.86
+   1960 permit ip host 10.23.40.93 host 10.23.40.63
+   1970 permit ip host 10.23.40.93 host 10.23.40.48
+   1980 permit ip host 10.23.40.93 host 10.23.40.81
+   1990 permit ip host 10.23.40.93 host 10.23.40.70
+   2000 permit ip host 10.23.40.93 host 10.23.40.49
+   2010 permit ip host 10.23.40.50 host 10.23.40.93
+   2020 permit ip host 10.23.40.60 host 10.23.40.93
+   2030 permit ip host 10.23.40.27 host 10.23.40.93
+   2040 permit ip host 10.23.40.85 host 10.23.40.93
+   2050 permit ip host 10.23.40.82 host 10.23.40.93
+   2060 permit ip host 10.23.40.83 host 10.23.40.93
+   2070 permit ip host 10.23.40.28 host 10.23.40.93
+   2080 permit ip host 10.23.40.71 host 10.23.40.93
+   2090 permit ip host 10.23.40.87 host 10.23.40.93
+   2100 permit ip host 10.23.40.61 host 10.23.40.93
+   2110 permit ip host 10.23.43.64 host 10.23.40.93
+   2120 permit ip host 10.23.40.47 host 10.23.40.93
+   2130 permit ip host 10.23.40.62 host 10.23.40.93
+   2140 permit ip host 10.23.40.86 host 10.23.40.93
+   2150 permit ip host 10.23.40.63 host 10.23.40.93
+   2160 permit ip host 10.23.40.48 host 10.23.40.93
+   2170 permit ip host 10.23.40.81 host 10.23.40.93
+   2180 permit ip host 10.23.40.70 host 10.23.40.93
+   2190 permit ip host 10.23.40.49 host 10.23.40.93
+   2200 permit ip host 10.23.40.60 host 10.23.40.27
+   2210 permit ip host 10.23.40.60 host 10.23.40.85
+   2220 permit ip host 10.23.40.60 host 10.23.40.82
+   2230 permit ip host 10.23.40.60 host 10.23.40.83
+   2240 permit ip host 10.23.40.60 host 10.23.40.28
+   2250 permit ip host 10.23.40.60 host 10.23.40.71
+   2260 permit ip host 10.23.40.60 host 10.23.40.87
+   2270 permit ip host 10.23.40.60 host 10.23.40.61
+   2280 permit ip host 10.23.40.60 host 10.23.43.64
+   2290 permit ip host 10.23.40.60 host 10.23.40.47
+   2300 permit ip host 10.23.40.60 host 10.23.40.62
+   2310 permit ip host 10.23.40.60 host 10.23.40.86
+   2320 permit ip host 10.23.40.60 host 10.23.40.63
+   2330 permit ip host 10.23.40.60 host 10.23.40.48
+   2340 permit ip host 10.23.40.60 host 10.23.40.81
+   2350 permit ip host 10.23.40.60 host 10.23.40.70
+   2360 permit ip host 10.23.40.60 host 10.23.40.49
+   2370 permit ip host 10.23.40.27 host 10.23.40.60
+   2380 permit ip host 10.23.40.85 host 10.23.40.60
+   2390 permit ip host 10.23.40.82 host 10.23.40.60
+   2400 permit ip host 10.23.40.83 host 10.23.40.60
+   2410 permit ip host 10.23.40.28 host 10.23.40.60
+   2420 permit ip host 10.23.40.71 host 10.23.40.60
+   2430 permit ip host 10.23.40.87 host 10.23.40.60
+   2440 permit ip host 10.23.40.61 host 10.23.40.60
+   2450 permit ip host 10.23.43.64 host 10.23.40.60
+   2460 permit ip host 10.23.40.47 host 10.23.40.60
+   2470 permit ip host 10.23.40.62 host 10.23.40.60
+   2480 permit ip host 10.23.40.86 host 10.23.40.60
+   2490 permit ip host 10.23.40.63 host 10.23.40.60
+   2500 permit ip host 10.23.40.48 host 10.23.40.60
+   2510 permit ip host 10.23.40.81 host 10.23.40.60
+   2520 permit ip host 10.23.40.70 host 10.23.40.60
+   2530 permit ip host 10.23.40.49 host 10.23.40.60
+   2540 permit ip host 10.23.40.50 host 10.23.40.27
+   2550 permit ip host 10.23.40.50 host 10.23.40.85
+   2560 permit ip host 10.23.40.50 host 10.23.40.82
+   2570 permit ip host 10.23.40.50 host 10.23.40.83
+   2580 permit ip host 10.23.40.50 host 10.23.40.28
+   2590 permit ip host 10.23.40.50 host 10.23.40.71
+   2600 permit ip host 10.23.40.50 host 10.23.40.87
+   2610 permit ip host 10.23.40.50 host 10.23.40.61
+   2620 permit ip host 10.23.40.50 host 10.23.43.64
+   2630 permit ip host 10.23.40.50 host 10.23.40.47
+   2640 permit ip host 10.23.40.50 host 10.23.40.62
+   2650 permit ip host 10.23.40.50 host 10.23.40.86
+   2660 permit ip host 10.23.40.50 host 10.23.40.63
+   2670 permit ip host 10.23.40.50 host 10.23.40.48
+   2680 permit ip host 10.23.40.50 host 10.23.40.81
+   2690 permit ip host 10.23.40.50 host 10.23.40.70
+   2700 permit ip host 10.23.40.50 host 10.23.40.49
+   2710 permit ip host 10.23.40.27 host 10.23.40.50
+   2720 permit ip host 10.23.40.85 host 10.23.40.50
+   2730 permit ip host 10.23.40.82 host 10.23.40.50
+   2740 permit ip host 10.23.40.83 host 10.23.40.50
+   2750 permit ip host 10.23.40.28 host 10.23.40.50
+   2760 permit ip host 10.23.40.71 host 10.23.40.50
+   2770 permit ip host 10.23.40.87 host 10.23.40.50
+   2780 permit ip host 10.23.40.61 host 10.23.40.50
+   2790 permit ip host 10.23.43.64 host 10.23.40.50
+   2800 permit ip host 10.23.40.47 host 10.23.40.50
+   2810 permit ip host 10.23.40.62 host 10.23.40.50
+   2820 permit ip host 10.23.40.86 host 10.23.40.50
+   2830 permit ip host 10.23.40.63 host 10.23.40.50
+   2840 permit ip host 10.23.40.48 host 10.23.40.50
+   2850 permit ip host 10.23.40.81 host 10.23.40.50
+   2860 permit ip host 10.23.40.70 host 10.23.40.50
+   2870 permit ip host 10.23.40.49 host 10.23.40.50
+   2880 permit ip host 10.23.40.70 host 10.23.40.27
+   2890 permit ip host 10.23.40.70 host 10.23.40.85
+   2900 permit ip host 10.23.40.70 host 10.23.40.82
+   2910 permit ip host 10.23.40.70 host 10.23.40.83
+   2920 permit ip host 10.23.40.70 host 10.23.40.28
+   2930 permit ip host 10.23.40.70 host 10.23.40.71
+   2940 permit ip host 10.23.40.70 host 10.23.40.87
+   2950 permit ip host 10.23.40.70 host 10.23.40.61
+   2960 permit ip host 10.23.40.70 host 10.23.43.64
+   2970 permit ip host 10.23.40.70 host 10.23.40.47
+   2980 permit ip host 10.23.40.70 host 10.23.40.62
+   2990 permit ip host 10.23.40.70 host 10.23.40.86
+   3000 permit ip host 10.23.40.70 host 10.23.40.63
+   3010 permit ip host 10.23.40.70 host 10.23.40.48
+   3020 permit ip host 10.23.40.70 host 10.23.40.81
+   3030 permit ip host 10.23.40.27 host 10.23.40.70
+   3040 permit ip host 10.23.40.85 host 10.23.40.70
+   3050 permit ip host 10.23.40.82 host 10.23.40.70
+   3060 permit ip host 10.23.40.83 host 10.23.40.70
+   3070 permit ip host 10.23.40.28 host 10.23.40.70
+   3080 permit ip host 10.23.40.71 host 10.23.40.70
+   3090 permit ip host 10.23.40.87 host 10.23.40.70
+   3100 permit ip host 10.23.40.61 host 10.23.40.70
+   3110 permit ip host 10.23.43.64 host 10.23.40.70
+   3120 permit ip host 10.23.40.47 host 10.23.40.70
+   3130 permit ip host 10.23.40.62 host 10.23.40.70
+   3140 permit ip host 10.23.40.86 host 10.23.40.70
+   3150 permit ip host 10.23.40.63 host 10.23.40.70
+   3160 permit ip host 10.23.40.48 host 10.23.40.70
+   3170 permit ip host 10.23.40.81 host 10.23.40.70
+   3180 permit ip host 10.23.40.49 host 10.23.40.27
+   3190 permit ip host 10.23.40.49 host 10.23.40.85
+   3200 permit ip host 10.23.40.49 host 10.23.40.82
+   3210 permit ip host 10.23.40.49 host 10.23.40.83
+   3220 permit ip host 10.23.40.49 host 10.23.40.28
+   3230 permit ip host 10.23.40.49 host 10.23.40.71
+   3240 permit ip host 10.23.40.49 host 10.23.40.87
+   3250 permit ip host 10.23.40.49 host 10.23.40.61
+   3260 permit ip host 10.23.40.49 host 10.23.43.64
+   3270 permit ip host 10.23.40.49 host 10.23.40.47
+   3280 permit ip host 10.23.40.49 host 10.23.40.62
+   3290 permit ip host 10.23.40.49 host 10.23.40.86
+   3300 permit ip host 10.23.40.49 host 10.23.40.63
+   3310 permit ip host 10.23.40.49 host 10.23.40.48
+   3320 permit ip host 10.23.40.49 host 10.23.40.81
+   3330 permit ip host 10.23.40.27 host 10.23.40.49
+   3340 permit ip host 10.23.40.85 host 10.23.40.49
+   3350 permit ip host 10.23.40.82 host 10.23.40.49
+   3360 permit ip host 10.23.40.83 host 10.23.40.49
+   3370 permit ip host 10.23.40.28 host 10.23.40.49
+   3380 permit ip host 10.23.40.71 host 10.23.40.49
+   3390 permit ip host 10.23.40.87 host 10.23.40.49
+   3400 permit ip host 10.23.40.61 host 10.23.40.49
+   3410 permit ip host 10.23.43.64 host 10.23.40.49
+   3420 permit ip host 10.23.40.47 host 10.23.40.49
+   3430 permit ip host 10.23.40.62 host 10.23.40.49
+   3440 permit ip host 10.23.40.86 host 10.23.40.49
+   3450 permit ip host 10.23.40.63 host 10.23.40.49
+   3460 permit ip host 10.23.40.48 host 10.23.40.49
+   3470 permit ip host 10.23.40.81 host 10.23.40.49
+   3480 permit ip host 10.23.40.86 host 10.23.40.64
+   3490 permit ip host 10.23.40.87 host 10.23.40.47
+   3500 deny ip 10.23.40.0/24 10.23.40.0/24
+   3510 permit ip any any
+!
+ip access-list standard ALLOW_SSH_ACL
+   10 permit 10.230.0.0/16
+   20 permit 10.71.0.0/16
+   30 permit 10.72.0.0/16
+   40 permit 10.23.0.0/16
+   50 permit 10.24.0.0/16
+   60 permit 10.52.0.0/16
+   999 deny any
+!
+ip routing
+ip routing vrf GOLD_TNT
+no ip routing vrf INFRA_Mgmt
+ip routing vrf INTERNAL
+ip routing vrf SILV_TNT
+ip routing vrf mgmt
+!
+mlag configuration
+   domain-id mlag1
+   local-interface Vlan2000
+   peer-address 10.23.2.11
+   peer-link Port-Channel2000
+!
+ip route vrf mgmt 0.0.0.0/0 10.23.0.1
+!
+route-map local permit 6
+   match source-protocol connected
+   match interface Loopback1
+!
+route-map underlay permit 10
+   match source-protocol connected
+   match interface Loopback0
+!
+route-map underlay permit 20
+   match source-protocol connected
+   match interface Loopback1
+!
+router bgp 65302
+   router-id 10.23.3.13
+   update wait-for-convergence
+   update wait-install
+   maximum-paths 4 ecmp 4
+   neighbor MLAG-iBGP peer group
+   neighbor MLAG-iBGP remote-as 65302
+   neighbor MLAG-iBGP next-hop-self
+   neighbor MLAG-iBGP update-source Vlan2000
+   neighbor MLAG-iBGP send-community standard extended
+   neighbor MLAG-iBGP maximum-routes 12000
+   neighbor SPINE peer group
+   neighbor SPINE remote-as 65301
+   neighbor SPINE send-community standard extended
+   neighbor SPINE maximum-routes 12000
+   neighbor 10.23.2.11 peer group MLAG-iBGP
+   neighbor 10.23.3.30 peer group SPINE
+   neighbor 10.23.3.60 peer group SPINE
+   redistribute connected route-map underlay
+!
+ip tacacs vrf mgmt source-interface Management1
+!
+management api http-commands
+   protocol unix-socket
+   no shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+management ssh
+   ip access-group ALLOW_SSH_ACL vrf mgmt in
+   idle-timeout 10
+   authentication mode password
+   shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+end

@@ -1,0 +1,156 @@
+interface Port-Channel210
+   description **reserved USDC2SDB2199-2**
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 210
+!
+interface Port-Channel220
+   description **reserved USDC2SDB2199-2*
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 220
+!
+interface Port-Channel330
+   description PH_XL_9QSSK93
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 330
+!
+interface Port-Channel340
+   description PH_XL_9QSSK93
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 340
+!
+interface Port-Channel430
+   description PH_XL_9QSQK93
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 430
+!
+interface Port-Channel440
+   description PH_XL_9QSQK93
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 440
+!
+interface Ethernet21
+   description **reserved USDC2SDB2199-2**
+   mtu 9214
+   channel-group 210 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet22
+   description **reserved USDC2SDB2199-2*
+   mtu 9214
+   channel-group 220 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet29
+   description USDC2SPHXL2ID01_NIC_3
+   mtu 9214
+   switchport access vlan 2560
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet30
+   description USDC2SPHXL2ID01_NIC_4
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet33
+   description PH_XL_9QSSK93
+   mtu 9214
+   channel-group 330 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet34
+   description PH_XL_9QSSK93
+   mtu 9214
+   channel-group 340 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet35
+   description PH_XL_9QSRK93
+   mtu 9214
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet36
+   description PH_XL_9QSRK93
+   mtu 9214
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet37
+   description PH_XL_9QSPK93
+   mtu 9214
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet38
+   description PH_XL_9QSPK93
+   mtu 9214
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet39
+   description PH_Medium_9QT8K93
+   mtu 9214
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet40
+   description PH_Medium_9QT8K93
+   mtu 9214
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet41
+   description PH_Medium_9QT7K93
+   mtu 9214
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet42
+   description PH_Medium_9QT7K93
+   mtu 9214
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet43
+   description PH_XL_9QSQK93
+   mtu 9214
+   channel-group 430 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet44
+   description PH_XL_9QSQK93
+   mtu 9214
+   channel-group 440 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!

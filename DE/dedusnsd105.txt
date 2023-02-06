@@ -1,0 +1,697 @@
+! Startup-config last modified at Wed Jul 27 15:15:04 2022 by sac-tremar
+! device: DEDUSNSD105 (DCS-7050SX3-48YC8, EOS-4.26.5M)
+!
+! boot system flash:/EOS-4.26.5M.swi
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$90NRULsNqhRE4BBn$PPm6boYsSn8F/ZG9f.HbEzlIBiBRcrGiOTJXbxbew/TFlLfofiKbWhGH7puK.KOk8/iGMe8jkKJys0lyHY0JG0
+username cvpadmin privilege 15 role network-admin secret sha512 $6$k88sbaMzsNaOz8cc$MRxrZiMwFTvaXAItB2avn7Y1PzyPjwnQrdQi29vzwECnFbQRREeoCLscYkZx34xZOEDzwBATvgrTBMfgeD5fR.
+username netadmin privilege 15 role network-admin secret sha512 $6$QnPJJStSvu1D0Yw/$V59VWk8VyxlQUjC7nEq4jr145XcvZx7aHMaXTy8iKRhHUZl0exIU1P0LmfPeh/63dCk3w67HjkebOEclWsa8n.
+!
+terminal length 0
+!
+daemon SplunkForwarder
+   exec /usr/bin/SplunkAgent 
+   option eapi_protocol value socket
+   option index-data value gssc_emea_ops_network-switch
+   option index-interface-counters value on
+   option index-inventory value on
+   option index-lanz value on
+   option index-sflow value on
+   option index-syslog value on
+   option index-topology value on
+   option shutdown value disabled
+   option splunk-server value 10.71.54.15:9998
+   option vrf value mgmt
+   no shutdown
+!
+daemon TerminAttr
+   exec /usr/bin/TerminAttr -ingestgrpcurl=10.71.30.22:9910 -cvcompression=gzip -ingestauth=key,AAbm@130 -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -ingestvrf=mgmt -taillogs
+   no shutdown
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+queue-monitor length
+!
+logging buffered 10000
+logging trap notifications
+logging vrf mgmt host 10.71.20.11 514 protocol tcp
+logging facility local7
+logging vrf mgmt source-interface Management1
+!
+hostname DEDUSNSD105
+ip domain lookup vrf mgmt source-interface Management1
+ip name-server vrf mgmt 10.23.50.53
+ip name-server vrf mgmt 10.71.50.53
+dns domain ad.global
+!
+sflow polling-interval 10
+sflow vrf mgmt destination 10.71.114.67 2055
+sflow vrf mgmt source-interface Management1
+sflow run
+!
+snmp-server vrf mgmt local-interface Management1
+snmp-server community GSSC-SnmpV2Read ro
+snmp-server host 10.71.114.60 vrf mgmt informs version 2c GSSC-SnmpV2Read
+snmp-server enable traps
+no snmp-server vrf default
+snmp-server vrf mgmt
+!
+spanning-tree mode mstp
+no spanning-tree vlan-id 2000
+!
+vlan 101
+   name V2V_MIGRATION_LINK
+!
+vlan 182
+   name MIGRATION_LINK_REPLICATION_182
+!
+vlan 1515
+   name GOLD_TNT_ESXi_Mgmt
+!
+vlan 1517
+   name GOLD_TNT_ESXi_vMotion
+!
+vlan 1518
+   name GOLD_TNT_ESXi_vSAN
+!
+vlan 1540
+!
+vlan 1541
+   name BACKUP_Infra
+!
+vlan 1544
+   name BACK_Infra_2
+!
+vlan 1546
+   name EXCHANGE_PHY_SERVER
+!
+vlan 1548
+   name PAFW_VM300
+!
+vlan 1550
+   name DC_Mgmt
+!
+vlan 1700
+   name AD_SERVER
+!
+vlan 1701
+   name DMZ_SERVER
+!
+vlan 1702
+   name SKYPE_SERVER
+!
+vlan 1703
+   name EXCHANGE_SERVER
+!
+vlan 1810
+   name WLC_WiFi_Guest
+!
+vlan 1820
+   name Global_WiFi_VC_Production
+!
+vlan 1830
+   name Global_WiFi_VC_IoT
+!
+vlan 1840
+   name WLC_HA_L2_VLAN
+!
+vlan 1882
+   name NSX-Physical-Server
+!
+vlan 1884
+   name NSX-Physical-iSAC_Server
+!
+vlan 1885
+   name Prod_EMEIA-AX-2009
+!
+vlan 1886
+   name ProdEMEIA-AX-2012
+!
+vlan 1887
+   name EMEIA-AX-2009-Test
+!
+vlan 2000
+   name MLAG
+   trunk group MLAG_PEER
+!
+vlan 2525
+   name SILV_TNT_ESXi_Mgmt
+!
+vlan 2527
+   name SILV_TNT_ESXi_vMotion
+!
+vlan 2528
+   name SILV_TNT_ESXi_vSAN
+!
+vlan 2560
+   name Citrix_VDI_Mgmt
+!
+vlan 2561
+   name Citrix_XenApp_Mgmt
+!
+vlan 2562
+   name Customer_VDI_WLD
+!
+vlan 2565
+   name Citrix_VDI_France_Prod
+!
+vlan 2566
+   name Citrix_VDI_France_Test
+!
+vlan 2675
+   name GOLD_TEP_Pool
+!
+vlan 2676
+   name SILV_TEP_Pool
+!
+vlan 2677
+   name GOLD_EDGE1_BGP
+!
+vlan 2678
+   name GOLD_EDGE2_BGP
+!
+vlan 2681
+   name SILV_EDGE1_BGP
+!
+vlan 2682
+   name SILV_EDGE2_BGP
+!
+vlan 2683
+   name GOLD_EDGE1_TEP_Pool
+!
+vlan 2684
+   name GOLD_EDGE2_TEP_Pool
+!
+vlan 2704
+   name SPLUNK_SERVER
+!
+vlan 3386
+   name DMZ
+!
+vlan 3477
+   name DMZ_GOLD_EDGE1_BGP
+!
+vlan 3478
+   name DMZ_GOLD_EDGE2_BGP
+!
+vlan 3481
+   name DMZ_SILV_EDGE1_BGP
+!
+vlan 3482
+   name DMZ_SILV_EDGE2_BGP
+!
+vlan 3517
+   name F5_VLAN_5
+!
+vlan 3519
+   name F5_VLAN_7
+!
+vlan 3520
+   name VIRT_F5_VLAN_1
+!
+vlan 3522
+   name VIRT_F5_VLAN_3
+!
+vrf instance mgmt
+!
+management api http-commands
+   protocol unix-socket
+   protocol https ssl profile SW_SSL_PROFILE
+   no shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+management security
+   ssl profile SW_SSL_PROFILE
+      tls versions 1.2
+      cipher-list ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:!aNULL:!eNULL:!DES:!RC4:!3DES:!MD5:!PSK
+      certificate DEDUSNSD105.crt key DEDUSNSD105.key
+      trust certificate RootCA.crt
+      chain certificate intermediateCA.crt
+!
+interface Port-Channel2000
+   description MLAG_CHANNEL
+   switchport mode trunk
+   switchport trunk group MLAG_PEER
+!
+interface Ethernet1
+   description PH_XD_46P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet2
+   description PH_XD_46P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet3
+   description PH_XD_56P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet4
+   description PH_XD_56P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet5
+   description PH_XD_66P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet6
+   description PH_XD_66P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet7
+   description PH_XD_76P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet8
+   description PH_XD_76P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet9
+   description PH_XD_86P44K3#TASK0167719
+   shutdown
+!
+interface Ethernet10
+   description PH_XD_86P44K3#TASK0167719
+!
+interface Ethernet11
+   description PH_XD_96P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet12
+   description PH_XD_96P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet13
+   description PH_XD_B6P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet14
+   description PH_XD_B6P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet15
+   description PH_XD_C6P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet16
+   description PH_XD_C6P44K3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet17
+   description PH_XD_HHXXQK3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet18
+   description PH_XD_HHXXQK3#TASK0167719
+   mtu 9214
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet19
+   description PH_XD_GHXXQK3#TASK0167719
+!
+interface Ethernet20
+   description PH_XD_GHXXQK3#TASK0167719
+!
+interface Ethernet21
+   description PH_XD_FHXXQK3#TASK0167719
+!
+interface Ethernet22
+   description PH_XD_FHXXQK3#TASK0167719
+!
+interface Ethernet23
+   description PH_XD_DHXXQK3#TASK0167719
+!
+interface Ethernet24
+   description PH_XD_DHXXQK3#TASK0167719
+!
+interface Ethernet25
+   description PH_XD_CHXXQK3#TASK0167719
+!
+interface Ethernet26
+   description PH_XD_CHXXQK3#TASK0167719
+!
+interface Ethernet27
+   shutdown
+!
+interface Ethernet28
+   shutdown
+!
+interface Ethernet29
+   shutdown
+!
+interface Ethernet30
+   shutdown
+!
+interface Ethernet31
+   shutdown
+!
+interface Ethernet32
+   shutdown
+!
+interface Ethernet33
+   shutdown
+!
+interface Ethernet34
+   shutdown
+!
+interface Ethernet35
+   shutdown
+!
+interface Ethernet36
+   shutdown
+!
+interface Ethernet37
+   shutdown
+!
+interface Ethernet38
+   shutdown
+!
+interface Ethernet39
+   shutdown
+!
+interface Ethernet40
+   shutdown
+!
+interface Ethernet41
+   shutdown
+!
+interface Ethernet42
+   shutdown
+!
+interface Ethernet43
+   shutdown
+!
+interface Ethernet44
+   shutdown
+!
+interface Ethernet45
+   shutdown
+!
+interface Ethernet46
+   shutdown
+!
+interface Ethernet47
+   shutdown
+!
+interface Ethernet48
+   shutdown
+!
+interface Ethernet49/1
+   description to DEDUSNSD006 Eth49/1
+   mtu 9214
+   channel-group 2000 mode active
+!
+interface Ethernet50/1
+   description to DEDUSNSD006 Eth50/1
+   mtu 9214
+   channel-group 2000 mode active
+!
+interface Ethernet51/1
+   description to DEDUSNSC001 Eth7
+   mtu 9214
+   no switchport
+   ip address 10.72.3.43/31
+!
+interface Ethernet52/1
+   description to DEDUSNSC002 Eth7
+   mtu 9214
+   no switchport
+   ip address 10.72.3.73/31
+!
+interface Ethernet53/1
+   shutdown
+   mtu 9214
+!
+interface Ethernet54/1
+   shutdown
+   mtu 9214
+!
+interface Ethernet55/1
+   shutdown
+   mtu 9214
+!
+interface Ethernet56/1
+   shutdown
+   mtu 9214
+!
+interface Loopback0
+   description BGP_ROUTER_ID
+   ip address 10.72.3.19/32
+!
+interface Loopback1
+   description VTEP
+   ip address 10.72.3.208/32
+!
+interface Management1
+   description to DEDUSNST103, Eth1
+   vrf mgmt
+   ip address 10.72.0.19/24
+!
+interface Vlan2000
+   mtu 9214
+   no autostate
+   ip address 10.72.2.16/31
+!
+interface Vxlan1
+   vxlan source-interface Loopback1
+   vxlan udp-port 4789
+   vxlan vlan 101 vni 10101
+   vxlan vlan 182 vni 10182
+   vxlan vlan 1515 vni 11515
+   vxlan vlan 1517 vni 11517
+   vxlan vlan 1518 vni 11518
+   vxlan vlan 1541 vni 11541
+   vxlan vlan 1544 vni 11544
+   vxlan vlan 1546 vni 11546
+   vxlan vlan 1548 vni 11548
+   vxlan vlan 1550 vni 11550
+   vxlan vlan 1700 vni 11700
+   vxlan vlan 1701 vni 11701
+   vxlan vlan 1702 vni 11702
+   vxlan vlan 1703 vni 11703
+   vxlan vlan 1810 vni 11810
+   vxlan vlan 1820 vni 11820
+   vxlan vlan 1830 vni 11830
+   vxlan vlan 1840 vni 11840
+   vxlan vlan 1882 vni 11882
+   vxlan vlan 1884 vni 11884
+   vxlan vlan 1885 vni 11885
+   vxlan vlan 1886 vni 11886
+   vxlan vlan 1887 vni 11887
+   vxlan vlan 2525 vni 12525
+   vxlan vlan 2527 vni 12527
+   vxlan vlan 2528 vni 12528
+   vxlan vlan 2560 vni 12560
+   vxlan vlan 2561 vni 12561
+   vxlan vlan 2562 vni 12562
+   vxlan vlan 2565 vni 12565
+   vxlan vlan 2566 vni 12566
+   vxlan vlan 2675 vni 12675
+   vxlan vlan 2676 vni 12676
+   vxlan vlan 2677 vni 12677
+   vxlan vlan 2678 vni 12678
+   vxlan vlan 2681 vni 12681
+   vxlan vlan 2682 vni 12682
+   vxlan vlan 2683 vni 12683
+   vxlan vlan 2684 vni 12684
+   vxlan vlan 2685 vni 12685
+   vxlan vlan 2704 vni 12704
+   vxlan vlan 3386 vni 13386
+   vxlan vlan 3477 vni 13477
+   vxlan vlan 3481 vni 13481
+   vxlan vlan 3482 vni 13482
+   vxlan vlan 3517 vni 13517
+   vxlan vlan 3519 vni 13519
+   vxlan vlan 3520 vni 13520
+   vxlan vlan 3522 vni 13522
+   vxlan flood vtep 10.71.3.202 10.71.3.204 10.71.3.206 10.71.3.207 10.71.3.208 10.71.3.209 10.71.3.210 10.71.3.211 10.72.3.202 10.72.3.204 10.72.3.206 10.72.3.208 10.72.3.209
+!
+event-handler TCP-TIMESTAMP
+   trigger on-boot
+   action bash sudo sysctl -w net.ipv4.tcp_timestamps=0
+!
+ip access-list custom-control-plane-acl
+   counters per-entry
+   5 deny icmp any any timestamp-request
+   7 deny icmp any any timestamp-reply
+   10 permit icmp any any
+   20 permit ip any any tracked
+   30 permit udp any any eq bfd ttl eq 255
+   40 permit udp any any eq bfd-echo ttl eq 254
+   50 permit udp any any eq multihop-bfd micro-bfd sbfd
+   60 permit udp any eq sbfd any eq sbfd-initiator
+   70 permit ospf any any
+   80 permit tcp any any eq ssh telnet www snmp bgp https msdp ldp netconf-ssh gnmi
+   90 permit udp any any eq bootps bootpc ntp snmp rip ldp
+   100 permit tcp any any eq mlag ttl eq 255
+   110 permit udp any any eq mlag ttl eq 255
+   120 permit vrrp any any
+   130 permit ahp any any
+   140 permit pim any any
+   150 permit igmp any any
+   160 permit tcp any any range 5900 5910
+   170 permit tcp any any range 50000 50100
+   180 permit udp any any range 51000 51100
+   190 permit tcp any any eq 3333
+   200 permit tcp any any eq nat ttl eq 255
+   210 permit tcp any eq bgp any
+   220 permit rsvp any any
+   230 permit tcp any any eq 6040
+   240 permit tcp any any eq 5541 ttl eq 255
+   250 permit tcp any any eq 5542 ttl eq 255
+!
+ip access-list isolated_1540
+   10 permit ip host 10.71.40.72 host 10.71.40.22
+   20 permit ip host 10.71.40.30 host 10.71.40.31
+   30 permit ip host 10.71.40.31 host 10.71.40.30
+   40 permit ip host 10.71.40.80 host 10.71.40.74
+   50 permit ip host 10.71.40.74 host 10.71.40.80
+   60 permit ip host 10.71.40.74 host 10.71.40.103
+   70 permit ip host 10.71.40.103 host 10.71.40.74
+   80 permit ip host 10.71.40.22 host 10.71.40.72
+   90 permit ip host 10.71.40.72 host 10.71.40.73
+   100 permit ip host 10.71.40.73 host 10.71.40.72
+   110 deny ip 10.71.40.0/24 10.71.40.0/24
+   120 permit ip any any
+!
+ip access-list standard ALLOW_SSH_ACL
+   10 permit 10.230.0.0/16
+   20 permit 10.71.0.0/16
+   30 permit 10.72.0.0/16
+   40 permit 10.23.0.0/16
+   50 permit 10.24.0.0/16
+   60 permit 10.52.0.0/16
+   70 deny any
+!
+ip routing
+ip routing vrf mgmt
+!
+system control-plane
+   ip access-group custom-control-plane-acl in
+   ip access-group custom-control-plane-acl vrf mgmt in
+!
+mlag configuration
+   domain-id mlag1
+   local-interface Vlan2000
+   peer-address 10.72.2.17
+   peer-link Port-Channel2000
+!
+ip route vrf mgmt 0.0.0.0/0 10.72.0.1
+!
+ntp server vrf mgmt 10.23.50.53 local-interface Management1
+ntp server vrf mgmt 10.71.50.53 prefer local-interface Management1
+!
+route-map local permit 6
+   match source-protocol connected
+   match interface Loopback1
+!
+route-map underlay permit 10
+   match source-protocol connected
+   match interface Loopback0
+!
+route-map underlay permit 20
+   match source-protocol connected
+   match interface Loopback1
+!
+route-map underlay deny 99
+!
+router bgp 65335
+   router-id 10.72.3.19
+   update wait-for-convergence
+   update wait-install
+   maximum-paths 4 ecmp 4
+   neighbor MLAG-iBGP peer group
+   neighbor MLAG-iBGP remote-as 65335
+   neighbor MLAG-iBGP next-hop-self
+   neighbor MLAG-iBGP update-source Vlan2000
+   neighbor MLAG-iBGP send-community standard extended
+   neighbor MLAG-iBGP maximum-routes 12000
+   neighbor SPINE peer group
+   neighbor SPINE remote-as 65331
+   neighbor SPINE send-community standard extended
+   neighbor SPINE maximum-routes 12000
+   neighbor 10.72.2.17 peer group MLAG-iBGP
+   neighbor 10.72.3.42 peer group SPINE
+   neighbor 10.72.3.72 peer group SPINE
+   redistribute connected route-map underlay
+!
+tacacs-server timeout 15
+tacacs-server policy unknown-mandatory-attribute ignore
+tacacs-server host 10.71.112.215 vrf mgmt key 7 132A052B465E02110C626C172904155101262071
+tacacs-server host 10.23.112.144 vrf mgmt key 7 07203375035B1F3E30544F28180C2D723F161405
+!
+ip tacacs vrf mgmt source-interface Management1
+!
+aaa group server tacacs+ ISE_test_TACACS
+   server 10.71.112.215 vrf mgmt
+   server 10.23.112.144 vrf mgmt
+!
+aaa authentication login default group ISE_test_TACACS local
+aaa authentication login console local
+aaa authorization exec default group ISE_test_TACACS local
+aaa authorization commands 0 default local
+aaa authorization commands 1-15 default group ISE_test_TACACS local
+aaa accounting system default start-stop group ISE_test_TACACS
+!
+management ssh
+   ip access-group ALLOW_SSH_ACL vrf mgmt in
+   idle-timeout 30
+   authentication mode password
+   shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+end

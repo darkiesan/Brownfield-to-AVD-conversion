@@ -1,0 +1,27 @@
+interface Vlan50
+   description TEST_DF_Server_1
+   mtu 10178
+   vrf TEST-DIRECTFLOW
+   arp aging timeout 300
+   ip address virtual 10.71.224.1/28
+!
+interface Vlan51
+   description TEST_DF_Server_2
+   mtu 10178
+   vrf TEST-DIRECTFLOW
+   arp aging timeout 300
+   ip address virtual 10.71.224.17/28
+!
+interface Vlan53
+   description TEST_DF_TRANSIT_DCI
+   mtu 10178
+   vrf TEST-DIRECTFLOW
+   arp aging timeout 300
+   ip address virtual 10.71.224.43/29
+!
+interface Vlan152
+   description TEST_DF_TRANSIT_FW
+   vrf TEST-DIRECTFLOW
+   arp aging timeout 300
+   ip address virtual 10.72.224.34/29
+!

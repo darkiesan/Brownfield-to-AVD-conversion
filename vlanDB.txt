@@ -1,0 +1,838 @@
+[
+    {
+        "vlanId": "50", 
+        "vlanName": " TEST_DF_Server_1\n"
+    }, 
+    {
+        "vlanId": "51", 
+        "vlanName": " TEST_DF_Server_2\n"
+    }, 
+    {
+        "vlanId": "101", 
+        "vlanName": " V2V_MIGRATION_LINK\n"
+    }, 
+    {
+        "vlanId": "182", 
+        "vlanName": " MIGRATION_LINK_REPLICATION_182\n"
+    }, 
+    {
+        "vlanId": "1504", 
+        "vlanName": " VLAN1504\n"
+    }, 
+    {
+        "vlanId": "1505", 
+        "vlanName": " MGMT_TNT_ESXi_Mgmt\n"
+    }, 
+    {
+        "vlanId": "1511", 
+        "vlanName": " WITNESS_Mgmt\n"
+    }, 
+    {
+        "vlanId": "1515", 
+        "vlanName": " GOLD_TNT_ESXi_Mgmt\n"
+    }, 
+    {
+        "vlanId": "1516", 
+        "vlanName": " GOLD_TNT_VXLAN_VTEP\n"
+    }, 
+    {
+        "vlanId": "1517", 
+        "vlanName": " GOLD_TNT_ESXi_vMotion\n"
+    }, 
+    {
+        "vlanId": "1518", 
+        "vlanName": " GOLD_TNT_ESXi_vSAN\n"
+    }, 
+    {
+        "vlanId": "1525", 
+        "vlanName": " SILV_TNT_ESXi_Mgmt\n"
+    }, 
+    {
+        "vlanId": "1526", 
+        "vlanName": " SILV_TNT_ESXi_VXLAN_VTEP\n"
+    }, 
+    {
+        "vlanId": "1527", 
+        "vlanName": " SILV_TNT_ESXi_vMotion\n"
+    }, 
+    {
+        "vlanId": "1528", 
+        "vlanName": " SILV_TNT_ESXi_vSAN\n"
+    }, 
+    {
+        "vlanId": "1540", 
+        "vlanName": " PHYSICAL_SERVER\n"
+    }, 
+    {
+        "vlanId": "1541", 
+        "vlanName": " Backup-Infra\n"
+    }, 
+    {
+        "vlanId": "1543", 
+        "vlanName": " BACKUP_Mgmt\n"
+    }, 
+    {
+        "vlanId": "1544", 
+        "vlanName": " BACK_Infra_2\n"
+    }, 
+    {
+        "vlanId": "1546", 
+        "vlanName": " EXCHANGE_PHY_SERVER\n"
+    }, 
+    {
+        "vlanId": "1548", 
+        "vlanName": " PAFW_VM300\n"
+    }, 
+    {
+        "vlanId": "1550", 
+        "vlanName": " DC_Mgmt\n"
+    }, 
+    {
+        "vlanId": "1675", 
+        "vlanName": " GOLD_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "1676", 
+        "vlanName": " SILV_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "1677", 
+        "vlanName": " GOLD_EDGE1_BGP\n"
+    }, 
+    {
+        "vlanId": "1678", 
+        "vlanName": " GOLD_EDGE2_BGP\n"
+    }, 
+    {
+        "vlanId": "1679", 
+        "vlanName": " GOLD_EDGE3_BGP\n"
+    }, 
+    {
+        "vlanId": "1680", 
+        "vlanName": " GOLD_EDGE4_BGP\n"
+    }, 
+    {
+        "vlanId": "1681", 
+        "vlanName": " SILV_EDGE1_BGP\n"
+    }, 
+    {
+        "vlanId": "1682", 
+        "vlanName": " SILV_EDGE2_BGP\n"
+    }, 
+    {
+        "vlanId": "1683", 
+        "vlanName": " GOLD_EDGE1_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "1684", 
+        "vlanName": " GOLD_EDGE2_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "1685", 
+        "vlanName": " SILV_EDGE_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "1700", 
+        "vlanName": " AD_SERVER\n"
+    }, 
+    {
+        "vlanId": "1701", 
+        "vlanName": " DMZ_SERVER\n"
+    }, 
+    {
+        "vlanId": "1702", 
+        "vlanName": " SKYPE_SERVER\n"
+    }, 
+    {
+        "vlanId": "1703", 
+        "vlanName": " EXCHANGE_SERVER\n"
+    }, 
+    {
+        "vlanId": "1704", 
+        "vlanName": " Splunk\n"
+    }, 
+    {
+        "vlanId": "1802", 
+        "vlanName": " Cisco_DNA\n"
+    }, 
+    {
+        "vlanId": "1810", 
+        "vlanName": " WLC_WiFi_Guest\n"
+    }, 
+    {
+        "vlanId": "1820", 
+        "vlanName": " Global_WiFi_VC_Production\n"
+    }, 
+    {
+        "vlanId": "1830", 
+        "vlanName": " Global_WiFi_VC_IoT\n"
+    }, 
+    {
+        "vlanId": "1840", 
+        "vlanName": " WLC_HA_L2_VLAN\n"
+    }, 
+    {
+        "vlanId": "1882", 
+        "vlanName": " NSX-Physical-Server\n"
+    }, 
+    {
+        "vlanId": "1884", 
+        "vlanName": " NSX-Physical-iSAC_Server\n"
+    }, 
+    {
+        "vlanId": "1885", 
+        "vlanName": " Prod_EMEIA-AX-2009\n"
+    }, 
+    {
+        "vlanId": "1886", 
+        "vlanName": " ProdEMEIA-AX-2012\n"
+    }, 
+    {
+        "vlanId": "1887", 
+        "vlanName": " EMEIA-AX-2009-Test\n"
+    }, 
+    {
+        "vlanId": "2704", 
+        "vlanName": " SPLUNK_SERVER\n"
+    }, 
+    {
+        "vlanId": "3375", 
+        "vlanName": " DMZ_GOLD_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "3475", 
+        "vlanName": " DMZ_GOLD_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "3376", 
+        "vlanName": " DMZ_SILV_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "3476", 
+        "vlanName": " DMZ_SILV_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "3377", 
+        "vlanName": " DMZ_GOLD_EDGE1_BGP\n"
+    }, 
+    {
+        "vlanId": "3477", 
+        "vlanName": " DMZ_GOLD_EDGE1_BGP\n"
+    }, 
+    {
+        "vlanId": "3378", 
+        "vlanName": " DMZ_GOLD_EDGE2_BGP\n"
+    }, 
+    {
+        "vlanId": "3478", 
+        "vlanName": " DMZ_GOLD_EDGE2_BGP\n"
+    }, 
+    {
+        "vlanId": "3381", 
+        "vlanName": " DMZ_SILV_EDGE1_BGP\n"
+    }, 
+    {
+        "vlanId": "3481", 
+        "vlanName": " DMZ_SILV_EDGE1_BGP\n"
+    }, 
+    {
+        "vlanId": "3382", 
+        "vlanName": " DMZ_SILV_EDGE2_BGP\n"
+    }, 
+    {
+        "vlanId": "3482", 
+        "vlanName": " DMZ_SILV_EDGE2_BGP\n"
+    }, 
+    {
+        "vlanId": "3383", 
+        "vlanName": " DMZ_GOLD_EDGE1_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "3483", 
+        "vlanName": " DMZ_GOLD_EDGE1_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "3384", 
+        "vlanName": " DMZ_GOLD_EDGE2_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "3484", 
+        "vlanName": " DMZ_GOLD_EDGE2_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "3385", 
+        "vlanName": " DMZ_SILV_EDGE_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "3485", 
+        "vlanName": " DMZ_SILV_EDGE_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "3386", 
+        "vlanName": " DMZ\n"
+    }, 
+    {
+        "vlanId": "3387", 
+        "vlanName": " XMS\n"
+    }, 
+    {
+        "vlanId": "3388", 
+        "vlanName": " CVP\n"
+    }, 
+    {
+        "vlanId": "3389", 
+        "vlanName": " MCAFEE\n"
+    }, 
+    {
+        "vlanId": "3390", 
+        "vlanName": " Log_Forwarding\n"
+    }, 
+    {
+        "vlanId": "3517", 
+        "vlanName": " F5_VLAN_5\n"
+    }, 
+    {
+        "vlanId": "3518", 
+        "vlanName": " F5_VLAN_6\n"
+    }, 
+    {
+        "vlanId": "3519", 
+        "vlanName": " F5_VLAN_7\n"
+    }, 
+    {
+        "vlanId": "3520", 
+        "vlanName": " VIRT_F5_VLAN_1\n"
+    }, 
+    {
+        "vlanId": "3521", 
+        "vlanName": " VIRT_F5_VLAN_2\n"
+    }, 
+    {
+        "vlanId": "3522", 
+        "vlanName": " VIRT_F5_VLAN_3\n"
+    }, 
+    {
+        "vlanId": "3375,3475", 
+        "vlanName": " DMZ_GOLD_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "130", 
+        "vlanName": " P2V_MIGRATION_LINK_130\n"
+    }, 
+    {
+        "vlanId": "334", 
+        "vlanName": " P2V_MIGRATION_LINK_334\n"
+    }, 
+    {
+        "vlanId": "1506", 
+        "vlanName": " MGMT_TNT_ESXi_VXLAN_VTEP\n"
+    }, 
+    {
+        "vlanId": "1510", 
+        "vlanName": " VRA_Mgmt\n"
+    }, 
+    {
+        "vlanId": "1535", 
+        "vlanName": " EXCH_TNT_ESXi_Mgmt\n"
+    }, 
+    {
+        "vlanId": "1536", 
+        "vlanName": " EXCH_TNT_VXLAN_VTEP\n"
+    }, 
+    {
+        "vlanId": "1537", 
+        "vlanName": " EXCH_TNT_ESXi_vMotion\n"
+    }, 
+    {
+        "vlanId": "1552", 
+        "vlanName": " SERVER_Heartbeat\n"
+    }, 
+    {
+        "vlanId": "1560", 
+        "vlanName": " Citrix_VDI_Mgmt\n"
+    }, 
+    {
+        "vlanId": "1561", 
+        "vlanName": " Citrix_XenApp_Mgmt\n"
+    }, 
+    {
+        "vlanId": "1562", 
+        "vlanName": " Customer_VDI_WLD\n"
+    }, 
+    {
+        "vlanId": "1563", 
+        "vlanName": " Wipro_VDI_WLD\n"
+    }, 
+    {
+        "vlanId": "1565", 
+        "vlanName": " Citrix_VDI_France_Prod\n"
+    }, 
+    {
+        "vlanId": "1566", 
+        "vlanName": " Citrix_VDI_France_Test\n"
+    }, 
+    {
+        "vlanId": "1567", 
+        "vlanName": " Customer_VDI_WLD_Two\n"
+    }, 
+    {
+        "vlanId": "1571", 
+        "vlanName": " Customer_VDI_WLD_Security\n"
+    }, 
+    {
+        "vlanId": "1581", 
+        "vlanName": " OneMKS_UAT_TEST_1581\n"
+    }, 
+    {
+        "vlanId": "1582", 
+        "vlanName": " OneMKS_PROD_1582\n"
+    }, 
+    {
+        "vlanId": "1690", 
+        "vlanName": " COLL_EDGE_TEP_Pool\n"
+    }, 
+    {
+        "vlanId": "1706", 
+        "vlanName": " IBM_iSeries_Test\n"
+    }, 
+    {
+        "vlanId": "1707", 
+        "vlanName": " IBM_iSeries_Prod\n"
+    }, 
+    {
+        "vlanId": "1711", 
+        "vlanName": " VLAN1711\n"
+    }, 
+    {
+        "vlanId": "1551", 
+        "vlanName": " VLAN1551\n"
+    }, 
+    {
+        "vlanId": "1542", 
+        "vlanName": " Backup_Replication\n"
+    }, 
+    {
+        "vlanId": "1545", 
+        "vlanName": " iSeries-AA-MDC\n"
+    }, 
+    {
+        "vlanId": "1709", 
+        "vlanName": " ISILON_DATA\n"
+    }, 
+    {
+        "vlanId": "1710", 
+        "vlanName": " ISILON_DMZ\n"
+    }, 
+    {
+        "vlanId": "1801", 
+        "vlanName": " BIG_IQ\n"
+    }, 
+    {
+        "vlanId": "2", 
+        "vlanName": " VLAN2\n"
+    }, 
+    {
+        "vlanId": "52", 
+        "vlanName": " TEST_DF_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "53", 
+        "vlanName": " TEST_DF_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "134", 
+        "vlanName": " DC2-DC1_Transit_for_Migration\n"
+    }, 
+    {
+        "vlanId": "710", 
+        "vlanName": " INTERCONNECT\n"
+    }, 
+    {
+        "vlanId": "1507", 
+        "vlanName": " MGMT_TNT_ESXi_vMotion\n"
+    }, 
+    {
+        "vlanId": "1508", 
+        "vlanName": " MGMT_TNT_ESXi_vSAN\n"
+    }, 
+    {
+        "vlanId": "1512", 
+        "vlanName": " WITNESS_vSAN\n"
+    }, 
+    {
+        "vlanId": "1553", 
+        "vlanName": " Citrix_NetScaler_GSLB\n"
+    }, 
+    {
+        "vlanId": "1554", 
+        "vlanName": " SPLU_LOG_Mgmt\n"
+    }, 
+    {
+        "vlanId": "1555", 
+        "vlanName": " SPLU_ESXi_Mgmt\n"
+    }, 
+    {
+        "vlanId": "1557", 
+        "vlanName": " SPLU_ESXi_vMotion\n"
+    }, 
+    {
+        "vlanId": "1558", 
+        "vlanName": " SPLU_ESXi_vSAN\n"
+    }, 
+    {
+        "vlanId": "1559", 
+        "vlanName": " F5_VIPs\n"
+    }, 
+    {
+        "vlanId": "1564", 
+        "vlanName": " BACK_WLD_GOLD\n"
+    }, 
+    {
+        "vlanId": "1568", 
+        "vlanName": " Backup_WLD_Silv\n"
+    }, 
+    {
+        "vlanId": "1600", 
+        "vlanName": " Un-Trust_Zone\n"
+    }, 
+    {
+        "vlanId": "1601", 
+        "vlanName": " F5_Trust_Zone\n"
+    }, 
+    {
+        "vlanId": "1602", 
+        "vlanName": " Firewall_Trust_Zone\n"
+    }, 
+    {
+        "vlanId": "1603", 
+        "vlanName": " F5_HA\n"
+    }, 
+    {
+        "vlanId": "1608", 
+        "vlanName": " INTERNAL_STD_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "1609", 
+        "vlanName": " INFRA_STD_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "1610", 
+        "vlanName": " INTERNAL_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "1611", 
+        "vlanName": " INFRA_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "1612", 
+        "vlanName": " MPLS_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "1613", 
+        "vlanName": " INTERNAL_Com_FW\n"
+    }, 
+    {
+        "vlanId": "1614", 
+        "vlanName": " OOB_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "1615", 
+        "vlanName": " INTERNAL_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "1616", 
+        "vlanName": " INFRA_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "1617", 
+        "vlanName": " OOB_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "1618", 
+        "vlanName": " MPLS_DCI_eBGP\n"
+    }, 
+    {
+        "vlanId": "1619", 
+        "vlanName": " INTERNAL_STD_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "1620", 
+        "vlanName": " DCI\n"
+    }, 
+    {
+        "vlanId": "1621", 
+        "vlanName": " INFRA_STD_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "1622", 
+        "vlanName": " INTERNAL_Com_DCI\n"
+    }, 
+    {
+        "vlanId": "1623", 
+        "vlanName": " REPLICATION_DCI\n"
+    }, 
+    {
+        "vlanId": "1625", 
+        "vlanName": " WLC_Mgmt_Transit_FW\n"
+    }, 
+    {
+        "vlanId": "1626", 
+        "vlanName": " REPLICATION_FW\n"
+    }, 
+    {
+        "vlanId": "1629", 
+        "vlanName": " WLC_WiFi_Guest_Transit_FW\n"
+    }, 
+    {
+        "vlanId": "1630", 
+        "vlanName": " Netscaler_GSLB\n"
+    }, 
+    {
+        "vlanId": "1635", 
+        "vlanName": " MPLS_CKT_1\n"
+    }, 
+    {
+        "vlanId": "1637", 
+        "vlanName": " MPLS_DC_iBGP\n"
+    }, 
+    {
+        "vlanId": "1644", 
+        "vlanName": " Gobal_WiFi_VC_Production_TRANSIT\n"
+    }, 
+    {
+        "vlanId": "1650", 
+        "vlanName": " INET\n"
+    }, 
+    {
+        "vlanId": "1652", 
+        "vlanName": " Arista_F5_MPLS_TRANSIT\n"
+    }, 
+    {
+        "vlanId": "1653", 
+        "vlanName": " INTERNET\n"
+    }, 
+    {
+        "vlanId": "1654", 
+        "vlanName": " SDWAN-INTERNET\n"
+    }, 
+    {
+        "vlanId": "1655", 
+        "vlanName": " ARISTA_To_F5Ext\n"
+    }, 
+    {
+        "vlanId": "1656", 
+        "vlanName": " F5Int_To_ARISTA\n"
+    }, 
+    {
+        "vlanId": "1657", 
+        "vlanName": " ARISTA_To_PAN\n"
+    }, 
+    {
+        "vlanId": "1660", 
+        "vlanName": " NSX-Physical-iSAC_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "1661", 
+        "vlanName": " NSX-Physical-iSAC_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "1662", 
+        "vlanName": " OneMKS_UAT_TEST_Transit_FW\n"
+    }, 
+    {
+        "vlanId": "1663", 
+        "vlanName": " OneMKS_PROD_Transit_FW\n"
+    }, 
+    {
+        "vlanId": "1664", 
+        "vlanName": " OneMKS_UAT_TEST_DCI_BGP\n"
+    }, 
+    {
+        "vlanId": "1665", 
+        "vlanName": " OneMKS_PROD_DCI_BGP\n"
+    }, 
+    {
+        "vlanId": "1712", 
+        "vlanName": " Cloudvision\n"
+    }, 
+    {
+        "vlanId": "1720", 
+        "vlanName": " SNOW_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "1721", 
+        "vlanName": " SNOW_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "1722", 
+        "vlanName": " JUMP_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "1723", 
+        "vlanName": " JUMP_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "1724", 
+        "vlanName": " ISILON_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "1725", 
+        "vlanName": " ISILON_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "1726", 
+        "vlanName": " CITRIX_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "1727", 
+        "vlanName": " CITRIX_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "1728", 
+        "vlanName": " DCI_FW_INT\n"
+    }, 
+    {
+        "vlanId": "1800", 
+        "vlanName": " WLC_Mgmt\n"
+    }, 
+    {
+        "vlanId": "1850", 
+        "vlanName": " SDWAN-AVPN1\n"
+    }, 
+    {
+        "vlanId": "1851", 
+        "vlanName": " SDWAN-AVPN2\n"
+    }, 
+    {
+        "vlanId": "1888", 
+        "vlanName": " TestEMEIA-AX-2012\n"
+    }, 
+    {
+        "vlanId": "3070", 
+        "vlanName": " Orange_GRE_WAN_MDC\n"
+    }, 
+    {
+        "vlanId": "3071", 
+        "vlanName": " Orange_GRE_LAN_MDC\n"
+    }, 
+    {
+        "vlanId": "3301", 
+        "vlanName": " Wipro_Jump_Server\n"
+    }, 
+    {
+        "vlanId": "3312", 
+        "vlanName": " INFOBLOX_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "3313", 
+        "vlanName": " INFOBLOX_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "3314", 
+        "vlanName": " PHYSICAL_SERVER_FW\n"
+    }, 
+    {
+        "vlanId": "3315", 
+        "vlanName": " PHYSICAL_SERVER_DCI\n"
+    }, 
+    {
+        "vlanId": "3316", 
+        "vlanName": " INFRA_NSX_FW\n"
+    }, 
+    {
+        "vlanId": "3317", 
+        "vlanName": " INFRA_NSX_DCI\n"
+    }, 
+    {
+        "vlanId": "3318", 
+        "vlanName": " IBM_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "3319", 
+        "vlanName": " IBM_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "3320", 
+        "vlanName": " DMZ_INFRA_NSX_FW\n"
+    }, 
+    {
+        "vlanId": "3321", 
+        "vlanName": " DMZ_INFRA_NSX_DCI\n"
+    }, 
+    {
+        "vlanId": "3322", 
+        "vlanName": " DMZ_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "3323", 
+        "vlanName": " DMZ_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "3324", 
+        "vlanName": " XMS_CVP_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "3424", 
+        "vlanName": " XMS_CVP_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "3325", 
+        "vlanName": " XMS_CVP_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "3326", 
+        "vlanName": " MCAFEE_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "3327", 
+        "vlanName": " MCAFEE_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "3513", 
+        "vlanName": " F5_VLAN_1\n"
+    }, 
+    {
+        "vlanId": "3514", 
+        "vlanName": " F5_VLAN_2\n"
+    }, 
+    {
+        "vlanId": "3515", 
+        "vlanName": " F5_VLAN_3\n"
+    }, 
+    {
+        "vlanId": "3516", 
+        "vlanName": " F5_VLAN_4\n"
+    }, 
+    {
+        "vlanId": "3524", 
+        "vlanName": " F5_iQuery_Mesh\n"
+    }, 
+    {
+        "vlanId": "3525", 
+        "vlanName": " F5_MPLS_SNAT\n"
+    }, 
+    {
+        "vlanId": "3701", 
+        "vlanName": " CITRIX1_File_Server\n"
+    }, 
+    {
+        "vlanId": "3702", 
+        "vlanName": " CITRIX1_TRANSIT_FW\n"
+    }, 
+    {
+        "vlanId": "3703", 
+        "vlanName": " CITRIX1_TRANSIT_DCI\n"
+    }, 
+    {
+        "vlanId": "3704", 
+        "vlanName": " F5_iQuery_Mesh\n"
+    }, 
+    {
+        "vlanId": "3", 
+        "vlanName": " VLAN3\n"
+    }, 
+    {
+        "vlanId": "1636", 
+        "vlanName": " MPLS_CKT_2\n"
+    }
+]

@@ -1,0 +1,217 @@
+!
+vlan 50
+   name TEST_DF_Server_1
+!
+vlan 51
+   name TEST_DF_Server_2
+!
+vlan 101
+   name V2V_MIGRATION_LINK
+!
+vlan 1505
+   name MGMT_ESXi_Mgmt
+!
+vlan 1511
+   name WITNESS_Mgmt
+!
+vlan 1515
+   name GOLD_TNT_ESXi_Mgmt
+!
+vlan 1516
+   name GOLD_TNT_VXLAN_VTEP
+!
+vlan 1517
+   name GOLD_TNT_ESXi_vMotion
+!
+vlan 1518
+   name GOLD_TNT_ESXi_vSAN
+!
+vlan 1525
+   name SILV_TNT_ESXi_Mgmt
+!
+vlan 1526
+   name SILV_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1527
+   name SILV_TNT_ESXi_vMotion
+!
+vlan 1528
+   name SILV_TNT_ESXi_vSAN
+!
+vlan 1540
+   name PHYSICAL_SERVER
+!
+vlan 1541
+   name Backup-Infra
+!
+vlan 1543
+   name BACK_Mgmt
+!
+vlan 1544
+   name BACK_Infra_2
+!
+vlan 1546
+   name EXCHANGE_PHY_SERVER
+!
+vlan 1548
+   name PAFW_VM300
+!
+vlan 1550
+   name DC_Mgmt!
+!
+vlan 1560
+   name Citrix_VDI_Mgmt
+!
+vlan 1561
+   name Citrix_XenApp_Mgmt
+!
+vlan 1562
+   name Customer_VDI_WLD
+!
+vlan 1565
+   name Citrix_VDI_France_Prod
+!
+vlan 1566
+   name Citrix_VDI_France_Test
+!
+vlan 1567
+   name Customer_VDI_WLD_Two
+!
+vlan 1675
+   name GOLD_TEP_Pool
+!
+vlan 1676
+   name SILV_TEP_Pool
+!
+vlan 1677
+   name GOLD_EDGE1_BGP
+!
+vlan 1678
+   name GOLD_EDGE2_BGP
+!
+vlan 1679
+   name GOLD_EDGE3_BGP
+!
+vlan 1680
+   name GOLD_EDGE4_BGP
+!
+vlan 1681
+   name SILV_EDGE1_BGP
+!
+vlan 1682
+   name SILV_EDGE2_BGP
+!
+vlan 1683
+   name GOLD_EDGE1_TEP_Pool
+!
+vlan 1684
+   name GOLD_EDGE2_TEP_Pool
+!
+vlan 1685
+   name SILV_EDGE_TEP_Pool
+!
+vlan 1700
+   name AD_SERVER
+!
+vlan 1701
+   name DMZ_SERVER
+!
+vlan 1702
+   name SKYPE_SERVER
+!
+vlan 1703
+   name EXCHANGE_SERVER
+!
+vlan 1704
+   name Splunk
+!
+vlan 1801
+   name BIG_IQ
+!
+vlan 1810
+   name WLC_WiFi_Guest
+!
+vlan 1820
+   name Global_WiFi_VC_Production
+!
+vlan 1830
+   name Global_WiFi_VC_IoT
+!
+vlan 1840
+   name WLC_HA_L2_VLAN
+!
+vlan 1882
+   name NSX-Physical-Server
+!
+vlan 1884
+   name NSX-Physical-iSAC_Server
+!
+vlan 1885
+   name Prod_EMEIA-AX-2009
+!
+vlan 1886
+   name ProdEMEIA-AX-2012
+!
+vlan 1887
+   name EMEIA-AX-2009-Test
+!
+vlan 3375
+   name DMZ_GOLD_TEP_Pool
+!
+vlan 3475
+   name DMZ_GOLD_TEP_Pool
+!
+vlan 3376
+   name DMZ_SILV_TEP_Pool
+!
+vlan 3377
+   name DMZ_GOLD_EDGE1_BGP
+!
+vlan 3477
+   name DMZ_GOLD_EDGE1_BGP
+!
+vlan 3378
+   name DMZ_GOLD_EDGE2_BGP
+!
+vlan 3478
+   name DMZ_GOLD_EDGE2_BGP
+!
+vlan 3381
+   name DMZ_SILV_EDGE1_BGP
+!
+vlan 3382
+   name DMZ_SILV_EDGE2_BGP
+!
+vlan 3383
+   name DMZ_GOLD_EDGE1_TEP_Pool
+!
+vlan 3483
+   name DMZ_GOLD_EDGE1_TEP_Pool
+!
+vlan 3384
+   name DMZ_GOLD_EDGE2_TEP_Pool
+!
+vlan 3484
+   name DMZ_GOLD_EDGE2_TEP_Pool
+!
+vlan 3385
+   name DMZ_SILV_EDGE_TEP_Pool
+!
+vlan 3517
+   name F5_VLAN_5
+!
+vlan 3518
+   name F5_VLAN_6
+!
+vlan 3519
+   name F5_VLAN_7
+!
+vlan 3520
+   name VIRT_F5_VLAN_1
+!
+vlan 3521
+   name VIRT_F5_VLAN_2
+!
+vlan 3522
+   name VIRT_F5_VLAN_3
+!

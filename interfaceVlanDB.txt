@@ -1,0 +1,2678 @@
+[
+    {
+        "description": "ESXi VXLAN VTEP for Tenant GOLD", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSD101", 
+                "ipAddress": "10.71.16.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSD102", 
+                "ipAddress": "10.71.16.3/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.16.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.16.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.16.1", 
+        "vlanId": "1516", 
+        "vrfName": "GOLD_TNT"
+    }, 
+    {
+        "description": "ESXi VXLAN VTEP for Tenant SILV", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSD101", 
+                "ipAddress": "10.71.26.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSD102", 
+                "ipAddress": "10.71.26.3/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.26.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.26.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.26.1", 
+        "vlanId": "1526", 
+        "vrfName": "SILV_TNT"
+    }, 
+    {
+        "description": "TEST_DF_Server_1", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.224.2/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.224.3/28"
+            }
+        ], 
+        "virtualIp": "10.71.224.1", 
+        "vlanId": "50", 
+        "vrfName": "TEST-DIRECTFLOW"
+    }, 
+    {
+        "description": "TEST_DF_Server_2", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.224.18/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.224.19/28"
+            }
+        ], 
+        "virtualIp": "10.71.224.17", 
+        "vlanId": "51", 
+        "vrfName": "TEST-DIRECTFLOW"
+    }, 
+    {
+        "description": "TEST_DF_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.224.35/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.224.36/29"
+            }
+        ], 
+        "virtualIp": "10.71.224.34", 
+        "vlanId": "52", 
+        "vrfName": "TEST-DIRECTFLOW"
+    }, 
+    {
+        "description": "TEST_DF_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.224.41/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.224.42/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "53", 
+        "vrfName": "TEST-DIRECTFLOW"
+    }, 
+    {
+        "description": "", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.230.141.222/24"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "130", 
+        "vrfName": ""
+    }, 
+    {
+        "description": "DC2-DC1 Transit DCI for EMEA Migration", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.230.70.5/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.230.70.6/29"
+            }
+        ], 
+        "virtualIp": "10.230.70.4", 
+        "vlanId": "134", 
+        "vrfName": "PHY-VIR-iSAC"
+    }, 
+    {
+        "description": "MGMT_ESXi_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.5.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.5.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.5.1", 
+        "vlanId": "1505", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "ESXi VXLAN for Tenant Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.6.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.6.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.6.1", 
+        "vlanId": "1506", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vMotion for Tenant Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.7.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.7.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.7.1", 
+        "vlanId": "1507", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vSAN for Tenant Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.8.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.8.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.8.1", 
+        "vlanId": "1508", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "vRA_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.10.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.10.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.10.1", 
+        "vlanId": "1510", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "WITNESS_Management", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.11.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.11.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.11.1", 
+        "vlanId": "1511", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "WITNESS_vSAN", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.12.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.12.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.12.1", 
+        "vlanId": "1512", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "GOLD_ESXi_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.15.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.15.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.15.1", 
+        "vlanId": "1515", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "ESXi vMotion for Tenant GOLD", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.17.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.17.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.17.1", 
+        "vlanId": "1517", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vSAN for Tenant GOLD", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.18.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.18.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.18.1", 
+        "vlanId": "1518", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi Mgmt for Tenant SILV", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.25.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.25.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.25.1", 
+        "vlanId": "1525", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vMotion for Tenant SILV", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.27.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.27.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.27.1", 
+        "vlanId": "1527", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vSAN for Tenant SILV", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.28.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.28.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.28.1", 
+        "vlanId": "1528", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi Mgmt for Tenant EXCH", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.35.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.35.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.35.1", 
+        "vlanId": "1535", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi VXLAN VTEP for Tenant EXCH", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.36.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.36.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.36.1", 
+        "vlanId": "1536", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vMotion for Tenant EXCH", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.37.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.37.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.37.1", 
+        "vlanId": "1537", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "PHYSICAL_SERVER", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.40.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.40.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.40.1", 
+        "vlanId": "1540", 
+        "vrfName": "PHYSICAL_SERVER"
+    }, 
+    {
+        "description": "BACK_Infra", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.41.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.41.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.41.1", 
+        "vlanId": "1541", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "Backup_Replication", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.42.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.42.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.42.1", 
+        "vlanId": "1542", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "BACK_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.43.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.43.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.43.1", 
+        "vlanId": "1543", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "BACK_Infra_2", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.38.2/23"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.38.3/23"
+            }
+        ], 
+        "virtualIp": "10.71.38.1", 
+        "vlanId": "1544", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "EXCHANGE_PHY_SERVER", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.51.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.51.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.51.1", 
+        "vlanId": "1546", 
+        "vrfName": "PHYSICAL_SERVER"
+    }, 
+    {
+        "description": "PAFW_VM300", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.48.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.48.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.48.1", 
+        "vlanId": "1548", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "DC_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.50.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.50.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.50.1", 
+        "vlanId": "1550", 
+        "vrfName": "INFOBLOX"
+    }, 
+    {
+        "description": "Citrix_NetScaler_GSLB", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.53.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.53.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.53.1", 
+        "vlanId": "1553", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "VxRail_SPLUNK_LOG_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.54.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.54.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.54.1", 
+        "vlanId": "1554", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "Splunk_ESXi_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.55.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.55.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.55.1", 
+        "vlanId": "1555", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "Splunk_ESXi_vMotion", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.57.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.57.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.57.1", 
+        "vlanId": "1557", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "Splunk_ESXi_vSAN", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.58.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.58.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.58.1", 
+        "vlanId": "1558", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "F5 VIPs", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.59.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.59.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.59.1", 
+        "vlanId": "1559", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "Citrix_VDI_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.60.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.60.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.60.1", 
+        "vlanId": "1560", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "Citrix_XenApp_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.61.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.61.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.61.1", 
+        "vlanId": "1561", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "Customer_VDI_WLD", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.62.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.62.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.62.1", 
+        "vlanId": "1562", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "Wipro_VDI_WLD", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.63.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.63.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.63.1", 
+        "vlanId": "1563", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "BACK_WLD_GOLD", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.64.2/22"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.64.3/22"
+            }
+        ], 
+        "virtualIp": "10.71.64.1", 
+        "vlanId": "1564", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "Citrix_VDI_France_Prod", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.76.2/22"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.76.3/22"
+            }
+        ], 
+        "virtualIp": "10.71.76.1", 
+        "vlanId": "1565", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "Citrix_VDI_France_Test", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.80.2/26"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.80.3/26"
+            }
+        ], 
+        "virtualIp": "10.71.80.1", 
+        "vlanId": "1566", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "Customer_VDI_WLD_Two", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.81.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.81.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.81.1", 
+        "vlanId": "1567", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "Backup Workload for Silver", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.68.2/23"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.68.3/23"
+            }
+        ], 
+        "virtualIp": "10.71.68.1", 
+        "vlanId": "1568", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "Customer_VDI_WLD_Security", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.21.2/25"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.21.3/25"
+            }
+        ], 
+        "virtualIp": "10.71.21.1", 
+        "vlanId": "1571", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "OneMKS_UAT_TEST_1581", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.96.2/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.96.3/28"
+            }
+        ], 
+        "virtualIp": "10.71.96.1", 
+        "vlanId": "1581", 
+        "vrfName": "OneMKS_UAT_TEST"
+    }, 
+    {
+        "description": "OneMKS_PROD_1582", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.96.18/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.96.19/28"
+            }
+        ], 
+        "virtualIp": "10.71.96.17", 
+        "vlanId": "1582", 
+        "vrfName": "OneMKS_PROD"
+    }, 
+    {
+        "description": "INTERNAL_STD_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.67/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.68/29"
+            }
+        ], 
+        "virtualIp": "10.71.2.66", 
+        "vlanId": "1608", 
+        "vrfName": "INTERNAL_Std"
+    }, 
+    {
+        "description": "INFRA_STD_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.75/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.76/29"
+            }
+        ], 
+        "virtualIp": "10.71.2.74", 
+        "vlanId": "1609", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "INTERNAL_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.83/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.84/29"
+            }
+        ], 
+        "virtualIp": "10.71.2.82", 
+        "vlanId": "1610", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "INFRA_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.91/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.92/29"
+            }
+        ], 
+        "virtualIp": "10.71.2.90", 
+        "vlanId": "1611", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "MPLS_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.99/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.100/29"
+            }
+        ], 
+        "virtualIp": "10.71.2.98", 
+        "vlanId": "1612", 
+        "vrfName": "MPLS_AA"
+    }, 
+    {
+        "description": "INTERNAL_Com_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.107/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.108/29"
+            }
+        ], 
+        "virtualIp": "10.71.2.106", 
+        "vlanId": "1613", 
+        "vrfName": "INTERNAL_Com"
+    }, 
+    {
+        "description": "OOB_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.115/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.116/29"
+            }
+        ], 
+        "virtualIp": "10.71.2.114", 
+        "vlanId": "1614", 
+        "vrfName": "OOB_Mgmt"
+    }, 
+    {
+        "description": "INTERNAL_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.121/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.122/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1615", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "INFRA_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.129/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.130/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1616", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "OOB_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.137/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.138/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1617", 
+        "vrfName": "OOB_Mgmt"
+    }, 
+    {
+        "description": "MPLS_DCI_eBGP", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.145/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.146/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1618", 
+        "vrfName": "MPLS_AA"
+    }, 
+    {
+        "description": "INTERNAL_STD_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.153/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.154/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1619", 
+        "vrfName": "INTERNAL_Std"
+    }, 
+    {
+        "description": "DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.161/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.162/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1620", 
+        "vrfName": ""
+    }, 
+    {
+        "description": "INFRA_STD_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.169/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.170/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1621", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "INTERNAL_Com_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.177/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.178/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1622", 
+        "vrfName": "INTERNAL_Com"
+    }, 
+    {
+        "description": "REPLICATION_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.185/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.186/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1623", 
+        "vrfName": "REPLICATION"
+    }, 
+    {
+        "description": "WLC_Mgmt_Transit_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.44.3/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.44.4/29"
+            }
+        ], 
+        "virtualIp": "10.71.44.2", 
+        "vlanId": "1625", 
+        "vrfName": "WLC_Mgmt"
+    }, 
+    {
+        "description": "REPLICATION_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.211/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.212/29"
+            }
+        ], 
+        "virtualIp": "10.71.2.210", 
+        "vlanId": "1626", 
+        "vrfName": "REPLICATION"
+    }, 
+    {
+        "description": "WLC_WiFi_Guest_Transit_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.44.27/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.44.28/29"
+            }
+        ], 
+        "virtualIp": "10.71.44.26", 
+        "vlanId": "1629", 
+        "vrfName": "WLC_GUEST"
+    }, 
+    {
+        "description": "MPLS_CKT_1", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.241/30"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1635", 
+        "vrfName": "MPLS_AA"
+    }, 
+    {
+        "description": "MPLS_DC_iBGP", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.248/31"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.249/31"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1637", 
+        "vrfName": "MPLS_AA"
+    }, 
+    {
+        "description": "Gobal WiFi VC_Prod_IoT_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.44.19/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.44.20/29"
+            }
+        ], 
+        "virtualIp": "10.71.44.18", 
+        "vlanId": "1644", 
+        "vrfName": "WLC_PROD_IOT"
+    }, 
+    {
+        "description": "Arista_F5_MPLS_TRANSIT", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.30.50/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.30.51/29"
+            }
+        ], 
+        "virtualIp": "10.71.30.49", 
+        "vlanId": "1652", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "INTERNET", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "141.81.167.197/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "141.81.167.198/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1653", 
+        "vrfName": "INTERNET"
+    }, 
+    {
+        "description": "SDWAN-INTERNET", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "141.81.167.202/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "141.81.167.203/29"
+            }
+        ], 
+        "virtualIp": "141.81.167.201", 
+        "vlanId": "1654", 
+        "vrfName": "INTERNET"
+    }, 
+    {
+        "description": "ARISTA_To_F5Ext", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "141.81.167.210/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "141.81.167.211/29"
+            }
+        ], 
+        "virtualIp": "141.81.167.209", 
+        "vlanId": "1655", 
+        "vrfName": "INTERNET"
+    }, 
+    {
+        "description": "F5Int_To_ARISTA", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "141.81.167.221/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "141.81.167.222/29"
+            }
+        ], 
+        "virtualIp": "141.81.167.220", 
+        "vlanId": "1656", 
+        "vrfName": "F5_TRANSIT"
+    }, 
+    {
+        "description": "ARISTA_To_PAN", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "141.81.167.226/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "141.81.167.227/29"
+            }
+        ], 
+        "virtualIp": "141.81.167.225", 
+        "vlanId": "1657", 
+        "vrfName": "F5_TRANSIT"
+    }, 
+    {
+        "description": "NSX-Physical-iSAC_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.201/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.202/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1660", 
+        "vrfName": "PHY-VIR-iSAC"
+    }, 
+    {
+        "description": "NSX-Physical-iSAC_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.2.195/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.196/29"
+            }
+        ], 
+        "virtualIp": "10.71.2.194", 
+        "vlanId": "1661", 
+        "vrfName": "PHY-VIR-iSAC"
+    }, 
+    {
+        "description": "OneMKS_UAT_TEST_Transit_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.70.99/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.70.100/29"
+            }
+        ], 
+        "virtualIp": "10.71.70.98", 
+        "vlanId": "1662", 
+        "vrfName": "OneMKS_UAT_TEST"
+    }, 
+    {
+        "description": "OneMKS_PROD_Transit_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.70.107/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.70.108/29"
+            }
+        ], 
+        "virtualIp": "10.71.70.106", 
+        "vlanId": "1663", 
+        "vrfName": "OneMKS_PROD"
+    }, 
+    {
+        "description": "OneMKS_UAT_TEST_DCI_BGP", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.70.113/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.70.114/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1664", 
+        "vrfName": "OneMKS_UAT_TEST"
+    }, 
+    {
+        "description": "OneMKS_PROD_DCI_BGP", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.70.121/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.70.122/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1665", 
+        "vrfName": "OneMKS_PROD"
+    }, 
+    {
+        "description": "Gold Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.4.2/26"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.4.3/26"
+            }
+        ], 
+        "virtualIp": "10.71.4.1", 
+        "vlanId": "1675", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "MDC-Silver01 Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.4.66/26"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.4.67/26"
+            }
+        ], 
+        "virtualIp": "10.71.4.65", 
+        "vlanId": "1676", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-1 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.4.130/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.4.131/29"
+            }
+        ], 
+        "virtualIp": "10.71.4.129", 
+        "vlanId": "1677", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-2 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.4.138/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.4.139/29"
+            }
+        ], 
+        "virtualIp": "10.71.4.137", 
+        "vlanId": "1678", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-3 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.4.146/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.4.147/29"
+            }
+        ], 
+        "virtualIp": "10.71.4.145", 
+        "vlanId": "1679", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-4 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.4.154/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.4.155/29"
+            }
+        ], 
+        "virtualIp": "10.71.4.153", 
+        "vlanId": "1680", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Silver Edge Cluster-1 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.4.161/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.4.162/28"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1681", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Silver Edge Cluster-2 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.4.177/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.4.178/28"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1682", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-1 TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.4.194/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.4.195/29"
+            }
+        ], 
+        "virtualIp": "10.71.4.193", 
+        "vlanId": "1683", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Gold Edge Cluster-2 TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.4.202/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.4.203/29"
+            }
+        ], 
+        "virtualIp": "10.71.4.201", 
+        "vlanId": "1684", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Silver Edge Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.4.210/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.4.211/28"
+            }
+        ], 
+        "virtualIp": "10.71.4.209", 
+        "vlanId": "1685", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "MDC-Silver02 Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.14.2/26"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.14.3/26"
+            }
+        ], 
+        "virtualIp": "10.71.14.1", 
+        "vlanId": "1690", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "AD_SERVERS", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.100.2/27"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.100.3/27"
+            }
+        ], 
+        "virtualIp": "10.71.100.1", 
+        "vlanId": "1700", 
+        "vrfName": "INTERNAL_Std"
+    }, 
+    {
+        "description": "DMZ_SERVERS", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.100.34/27"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.100.35/27"
+            }
+        ], 
+        "virtualIp": "10.71.100.33", 
+        "vlanId": "1701", 
+        "vrfName": "INTERNAL_Std"
+    }, 
+    {
+        "description": "SKYPE_SERVERS", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.100.66/26"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.100.67/26"
+            }
+        ], 
+        "virtualIp": "10.71.100.65", 
+        "vlanId": "1702", 
+        "vrfName": "INTERNAL_Std"
+    }, 
+    {
+        "description": "EXCHANGE_SERVERS", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.100.130/25"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.100.131/25"
+            }
+        ], 
+        "virtualIp": "10.71.100.129", 
+        "vlanId": "1703", 
+        "vrfName": "INTERNAL_Std"
+    }, 
+    {
+        "description": "ServiceNow_Discovery", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.101.2/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.101.3/29"
+            }
+        ], 
+        "virtualIp": "10.71.101.1", 
+        "vlanId": "1704", 
+        "vrfName": "Service_Now"
+    }, 
+    {
+        "description": "IBM_iSeries_Test", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.101.18/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.101.19/28"
+            }
+        ], 
+        "virtualIp": "10.71.101.17", 
+        "vlanId": "1706", 
+        "vrfName": "IBM_iSeries"
+    }, 
+    {
+        "description": "IBM_iSeries_Prod", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.101.34/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.101.35/28"
+            }
+        ], 
+        "virtualIp": "10.71.101.33", 
+        "vlanId": "1707", 
+        "vrfName": "IBM_iSeries"
+    }, 
+    {
+        "description": "ISILON_DATA", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.101.66/26"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.101.67/26"
+            }
+        ], 
+        "virtualIp": "10.71.101.65", 
+        "vlanId": "1709", 
+        "vrfName": "ISILON"
+    }, 
+    {
+        "description": "ISILON_DMZ", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.101.130/26"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.101.131/26"
+            }
+        ], 
+        "virtualIp": "10.71.101.129", 
+        "vlanId": "1710", 
+        "vrfName": "ISILON"
+    }, 
+    {
+        "description": "VLAN1711", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.101.194/27"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.101.195/27"
+            }
+        ], 
+        "virtualIp": "10.71.101.193", 
+        "vlanId": "1711", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "Cloudvision", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.30.18/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.30.19/28"
+            }
+        ], 
+        "virtualIp": "10.71.30.17", 
+        "vlanId": "1712", 
+        "vrfName": "INFRA_Std"
+    }, 
+    {
+        "description": "SNOW_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.22.27/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.22.28/29"
+            }
+        ], 
+        "virtualIp": "10.71.22.26", 
+        "vlanId": "1720", 
+        "vrfName": "Service_Now"
+    }, 
+    {
+        "description": "SNOW_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.22.33/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.22.34/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1721", 
+        "vrfName": "Service_Now"
+    }, 
+    {
+        "description": "JUMP_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.22.43/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.22.44/29"
+            }
+        ], 
+        "virtualIp": "10.71.22.42", 
+        "vlanId": "1722", 
+        "vrfName": "Jump_Server"
+    }, 
+    {
+        "description": "JUMP_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.22.49/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.22.50/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1723", 
+        "vrfName": "Jump_Server"
+    }, 
+    {
+        "description": "ISILON_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.22.59/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.22.60/29"
+            }
+        ], 
+        "virtualIp": "10.71.22.58", 
+        "vlanId": "1724", 
+        "vrfName": "ISILON"
+    }, 
+    {
+        "description": "ISILON_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.22.65/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.22.66/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1725", 
+        "vrfName": "ISILON"
+    }, 
+    {
+        "description": "CITRIX_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.22.75/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.22.76/29"
+            }
+        ], 
+        "virtualIp": "10.71.22.74", 
+        "vlanId": "1726", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "CITRIX_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.22.81/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.22.82/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1727", 
+        "vrfName": "CITRIX"
+    }, 
+    {
+        "description": "WLC_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.30.2/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.30.3/28"
+            }
+        ], 
+        "virtualIp": "10.71.30.1", 
+        "vlanId": "1800", 
+        "vrfName": "WLC_Mgmt"
+    }, 
+    {
+        "description": "BIG_IQ", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.30.82/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.30.83/28"
+            }
+        ], 
+        "virtualIp": "10.71.30.81", 
+        "vlanId": "1801", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "Cisco_DNA", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.30.34/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.30.35/28"
+            }
+        ], 
+        "virtualIp": "10.71.30.33", 
+        "vlanId": "1802", 
+        "vrfName": "WLC_Mgmt"
+    }, 
+    {
+        "description": "WLC_WiFi_Guest", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.208.2/20"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.208.3/20"
+            }
+        ], 
+        "virtualIp": "10.71.208.1", 
+        "vlanId": "1810", 
+        "vrfName": "WLC_GUEST"
+    }, 
+    {
+        "description": "Global WiFi VC_Production", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.46.2/23"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.46.3/23"
+            }
+        ], 
+        "virtualIp": "10.71.46.1", 
+        "vlanId": "1820", 
+        "vrfName": "WLC_PROD_IOT"
+    }, 
+    {
+        "description": "Global_WiFi_VC_IoT", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.128.2/20"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.128.3/20"
+            }
+        ], 
+        "virtualIp": "10.71.128.1", 
+        "vlanId": "1830", 
+        "vrfName": "WLC_PROD_IOT"
+    }, 
+    {
+        "description": "NSX-Physical-Server", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.82.2/23"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.82.3/23"
+            }
+        ], 
+        "virtualIp": "10.71.82.1", 
+        "vlanId": "1882", 
+        "vrfName": "PHYSICAL_SERVER"
+    }, 
+    {
+        "description": "NSX-Physical-iSAC_Server", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.84.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.84.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.84.1", 
+        "vlanId": "1884", 
+        "vrfName": "PHY-VIR-iSAC"
+    }, 
+    {
+        "description": "ProdEMEIA-AX-2009", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.85.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.85.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.85.1", 
+        "vlanId": "1885", 
+        "vrfName": "PHY-VIR-iSAC"
+    }, 
+    {
+        "description": "ProdEMEIA-AX-2012", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.86.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.86.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.86.1", 
+        "vlanId": "1886", 
+        "vrfName": "PHY-VIR-iSAC"
+    }, 
+    {
+        "description": "EMEIA-AX-2009-Test", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.87.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.87.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.87.1", 
+        "vlanId": "1887", 
+        "vrfName": "PHY-VIR-iSAC"
+    }, 
+    {
+        "description": "TestEMEIA-AX-2012", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.88.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.88.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.88.1", 
+        "vlanId": "1888", 
+        "vrfName": "PHY-VIR-iSAC"
+    }, 
+    {
+        "description": "Jump_Server", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.20.2/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.20.3/28"
+            }
+        ], 
+        "virtualIp": "10.71.20.1", 
+        "vlanId": "3301", 
+        "vrfName": "Jump_Server"
+    }, 
+    {
+        "description": "INFOBLOX_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.19.11/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.19.12/29"
+            }
+        ], 
+        "virtualIp": "10.71.19.10", 
+        "vlanId": "3312", 
+        "vrfName": "INFOBLOX"
+    }, 
+    {
+        "description": "INFOBLOX_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.19.17/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.19.18/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3313", 
+        "vrfName": "INFOBLOX"
+    }, 
+    {
+        "description": "PHYSICAL_SERVER_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.19.27/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.19.28/29"
+            }
+        ], 
+        "virtualIp": "10.71.19.26", 
+        "vlanId": "3314", 
+        "vrfName": "PHYSICAL_SERVER"
+    }, 
+    {
+        "description": "PHYSICAL_SERVER_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.19.33/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.19.34/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3315", 
+        "vrfName": "PHYSICAL_SERVER"
+    }, 
+    {
+        "description": "INFRA_NSX_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.19.43/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.19.44/29"
+            }
+        ], 
+        "virtualIp": "10.71.19.42", 
+        "vlanId": "3316", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "INFRA_NSX_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.19.49/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.19.50/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3317", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "IBM_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.19.59/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.19.60/29"
+            }
+        ], 
+        "virtualIp": "10.71.19.58", 
+        "vlanId": "3318", 
+        "vrfName": "IBM_iSeries"
+    }, 
+    {
+        "description": "IBM_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.19.65/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.19.66/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3319", 
+        "vrfName": "IBM_iSeries"
+    }, 
+    {
+        "description": "DMZ_INFRA_NSX_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.19.75/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.19.76/29"
+            }
+        ], 
+        "virtualIp": "10.71.19.74", 
+        "vlanId": "3320", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ_INFRA_NSX_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.19.81/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.19.82/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3321", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.19.91/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.19.92/29"
+            }
+        ], 
+        "virtualIp": "10.71.19.90", 
+        "vlanId": "3322", 
+        "vrfName": "DMZ"
+    }, 
+    {
+        "description": "DMZ_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.19.97/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.19.98/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3323", 
+        "vrfName": "DMZ"
+    }, 
+    {
+        "description": "XMS_CVP_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.19.107/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.19.108/29"
+            }
+        ], 
+        "virtualIp": "10.71.19.106", 
+        "vlanId": "3324", 
+        "vrfName": "XMS_CVP"
+    }, 
+    {
+        "description": "XMS_CVP_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.19.113/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.19.114/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3325", 
+        "vrfName": "XMS_CVP"
+    }, 
+    {
+        "description": "MCAFEE_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.19.123/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.19.124/29"
+            }
+        ], 
+        "virtualIp": "10.71.19.122", 
+        "vlanId": "3326", 
+        "vrfName": "MCAFEE"
+    }, 
+    {
+        "description": "MCAFEE_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.19.129/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.19.130/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3327", 
+        "vrfName": "MCAFEE"
+    }, 
+    {
+        "description": "DMZ Gold Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.9.2/26"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.9.3/26"
+            }
+        ], 
+        "virtualIp": "10.71.9.1", 
+        "vlanId": "3375", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Silver Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.9.66/26"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.9.67/26"
+            }
+        ], 
+        "virtualIp": "10.71.9.65", 
+        "vlanId": "3376", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Gold Edge Cluster-1 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.9.130/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.9.131/29"
+            }
+        ], 
+        "virtualIp": "10.71.9.129", 
+        "vlanId": "3377", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Gold Edge Cluster-2 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.9.138/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.9.139/29"
+            }
+        ], 
+        "virtualIp": "10.71.9.137", 
+        "vlanId": "3378", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Silver Edge Cluster-1 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.9.161/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.9.162/28"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3381", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Silver Edge Cluster-2 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.9.177/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.9.178/28"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3382", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Gold Edge Cluster-1 TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.9.194/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.9.195/29"
+            }
+        ], 
+        "virtualIp": "10.71.9.193", 
+        "vlanId": "3383", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Gold Edge Cluster-2 TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.9.202/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.9.203/29"
+            }
+        ], 
+        "virtualIp": "10.71.9.201", 
+        "vlanId": "3384", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Silver Edge Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.9.210/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.9.211/28"
+            }
+        ], 
+        "virtualIp": "10.71.9.209", 
+        "vlanId": "3385", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.124.2/24"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.124.3/24"
+            }
+        ], 
+        "virtualIp": "10.71.124.1", 
+        "vlanId": "3386", 
+        "vrfName": "DMZ"
+    }, 
+    {
+        "description": "XMS", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.20.18/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.20.19/28"
+            }
+        ], 
+        "virtualIp": "10.71.20.17", 
+        "vlanId": "3387", 
+        "vrfName": "XMS_CVP"
+    }, 
+    {
+        "description": "CVP", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.20.34/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.20.35/28"
+            }
+        ], 
+        "virtualIp": "10.71.20.33", 
+        "vlanId": "3388", 
+        "vrfName": "XMS_CVP"
+    }, 
+    {
+        "description": "MCAFEE", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.20.66/27"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.20.67/27"
+            }
+        ], 
+        "virtualIp": "10.71.20.65", 
+        "vlanId": "3389", 
+        "vrfName": "MCAFEE"
+    }, 
+    {
+        "description": "Log_Forwarding", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.20.50/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.20.51/28"
+            }
+        ], 
+        "virtualIp": "10.71.20.49", 
+        "vlanId": "3390", 
+        "vrfName": "Jump_Server"
+    }, 
+    {
+        "description": "F5_VLAN_1", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.13.2/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.13.3/29"
+            }
+        ], 
+        "virtualIp": "10.71.13.1", 
+        "vlanId": "3513", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "F5_VLAN_1", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.13.10/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.13.11/29"
+            }
+        ], 
+        "virtualIp": "10.71.13.9", 
+        "vlanId": "3514", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "F5_VLAN_1", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.13.18/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.13.19/29"
+            }
+        ], 
+        "virtualIp": "10.71.13.17", 
+        "vlanId": "3515", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "F5_VLAN_1", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.13.26/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.13.27/29"
+            }
+        ], 
+        "virtualIp": "10.71.13.25", 
+        "vlanId": "3516", 
+        "vrfName": "INTERNAL"
+    }, 
+    {
+        "description": "F5_iQuery_Mesh", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.34.4/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.34.5/29"
+            }
+        ], 
+        "virtualIp": "10.71.34.6", 
+        "vlanId": "3524", 
+        "vrfName": "F5_TRANSIT"
+    }, 
+    {
+        "description": "CITRIX1_File_Server", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.29.18/28"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.29.19/28"
+            }
+        ], 
+        "virtualIp": "10.71.29.17", 
+        "vlanId": "3701", 
+        "vrfName": "CITRIX1"
+    }, 
+    {
+        "description": "CITRIX1_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.29.3/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.29.4/29"
+            }
+        ], 
+        "virtualIp": "10.71.29.2", 
+        "vlanId": "3702", 
+        "vrfName": "CITRIX1"
+    }, 
+    {
+        "description": "CITRIX1_TRANSIT_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE101", 
+                "ipAddress": "10.71.29.9/29"
+            }, 
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.29.10/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3703", 
+        "vrfName": "CITRIX1"
+    }, 
+    {
+        "description": "MPLS_CKT_2", 
+        "nodeList": [
+            {
+                "deviceName": "DEMEENSE102", 
+                "ipAddress": "10.71.2.245/30"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1636", 
+        "vrfName": "MPLS_AA"
+    }
+]

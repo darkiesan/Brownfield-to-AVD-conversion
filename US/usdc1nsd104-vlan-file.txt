@@ -1,0 +1,141 @@
+!
+vlan 1505
+   name MGMT_TNT_ESXi_Mgmt
+   trunk group MGMT_TNT_ESXi_Mgmt
+!
+vlan 1506
+   name MGMT_TNT_ESXi_VXLAN_VTEP
+   trunk group MGMT_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1510
+   name VRA_Mgmt
+   trunk group VRA_Mgmt
+!
+vlan 1535
+   name EXCH_TNT_ESXi_Mgmt
+   trunk group EXCH_TNT_ESXi_Mgmt
+!
+vlan 1536
+   name EXCH_TNT_VXLAN_VTEP
+   trunk group EXCH_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1537
+   name EXCH_TNT_ESXi_vMotion
+   trunk group EXCH_TNT_ESXi_vMotion
+!
+vlan 1540
+   name PHYSICAL_SERVER
+   trunk group PHYSICAL_SERVER
+!
+vlan 1541
+   name BACKUP_Infra
+   trunk group BACKUP_Infra
+!
+vlan 1543
+   name Backup_Management
+   trunk group BACKUP_Mgmt
+!
+vlan 1550
+   name DC_Mgmt
+   trunk group DC_Mgmt
+!
+vlan 1560
+   name Citrix_VDI_Mgmt
+   trunk group Citrix_VDI_Mgmt
+!
+vlan 1561
+   name Citrix_XenApp_Mgmt
+   trunk group Citrix_XenApp_Mgmt
+!
+vlan 1562
+   name Customer_VDI_WLD
+   trunk group Customer_VDI_WLD
+!
+vlan 1563
+   name Wipro_VDI_WLD
+   trunk group Wipro_VDI_WLD
+!
+vlan 1711
+   name VLAN1711
+   trunk group VLAN1711
+!
+vlan 2000
+   name MLAG
+   trunk group MLAG_PEER
+!
+vlan 3320
+   name DMZ_INFRA_NSX_FW
+   trunk group DMZ_INFRA_NSX_FW
+!
+vlan 3321
+   name DMZ_INFRA_NSX_DCI
+   trunk group DMZ_INFRA_NSX_DCI
+!
+vlan 3375
+   name DMZ_GOLD_TEP_Pool
+   trunk group DMZ_GOLD_TEP_Pool
+!
+vlan 3376
+   name DMZ_SILV_TEP_Pool
+   trunk group DMZ_SILV_TEP_Pool
+!
+vlan 3377
+   name DMZ_GOLD_EDGE1_BGP
+   trunk group DMZ_GOLD_EDGE1_BGP
+!
+vlan 3378
+   name DMZ_GOLD_EDGE2_BGP
+   trunk group DMZ_GOLD_EDGE2_BGP
+!
+vlan 3381
+   name DMZ_SILV_EDGE1_BGP
+   trunk group DMZ_SILV_EDGE1_BGP
+!
+vlan 3382
+   name DMZ_SILV_EDGE2_BGP
+   trunk group DMZ_SILV_EDGE2_BGP
+!
+vlan 3383
+   name DMZ_GOLD_EDGE1_TEP_Pool
+   trunk group DMZ_GOLD_EDGE1_TEP_Pool
+!
+vlan 3384
+   name DMZ_GOLD_EDGE2_TEP_Pool
+   trunk group DMZ_GOLD_EDGE2_TEP_Pool
+!
+vlan 3385
+   name DMZ_SILV_EDGE_TEP_Pool
+   trunk group DMZ_SILV_EDGE_TEP_Pool
+!
+vlan 3386
+   name DMZ
+   trunk group DMZ
+!
+vlan 3387
+   name XMS
+   trunk group XMS
+!
+vlan 3388
+   name CVP
+   trunk group CVP
+!
+vlan 3389
+   name MCAFEE
+   trunk group MCAFEE
+!
+vlan 3390
+   name Log_Forwarding
+   trunk group Log_Forwarding
+!
+vlan 3520
+   name VIRT_F5_VLAN_1
+   trunk group VIRT_F5_VLAN_1
+!
+vlan 3521
+   name VIRT_F5_VLAN_2
+   trunk group VIRT_F5_VLAN_2
+!
+vlan 3522
+   name VIRT_F5_VLAN_3
+   trunk group VIRT_F5_VLAN_3
+!

@@ -1,0 +1,1451 @@
+! Startup-config last modified at Mon Aug  1 08:22:19 2022 by sac-tremar
+! device: DEMEENSD103 (DCS-7050SX3-48YC8, EOS-4.25.5.1M)
+!
+! boot system flash:/EOS-4.25.5.1M.swi
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$YQ4jlleEvhGJwUcE$bhQYFDoLQnlQ5HyGW.7T3ikTvi4nqgZWEfEIV1WjkkZxOXJNhqxJZHOFaQ0DdrS89Vj/ReGwaIQGZV3B28jqT0
+username cvpadmin privilege 15 role network-admin secret sha512 $6$NIFxb4EKxM/1bXhq$fa3UjZQbnS1FJh.OyJZmn2mMDEoQqlHJhDccI0lt6NCVmy90PeVLZiKybsVtWqQ2m3qp6IRkEt4skLL8J4YJJ/
+username netadmin privilege 15 role network-admin secret sha512 $6$rmlKgd9.xvMJicWA$g1m6wI30Mn0Ud6hoMGnnfIBy7rFmw.LQ4PyhaaU7Lg8zfXjqiPR42qWywUPs2XT4lpseVuhMuAzxQWxwT6oVv/
+!
+terminal length 50
+terminal width 500
+!
+daemon SplunkForwarder
+   exec /usr/bin/SplunkAgent 
+   option eapi_protocol value socket
+   option index-data value gssc_emea_ops_network-switch
+   option index-interface-counters value on
+   option index-inventory value on
+   option index-lanz value on
+   option index-sflow value on
+   option index-syslog value on
+   option index-topology value on
+   option shutdown value disabled
+   option splunk-server value 10.71.54.15:9998
+   option vrf value mgmt
+   no shutdown
+!
+daemon TerminAttr
+   exec /usr/bin/TerminAttr -ingestgrpcurl=10.71.30.22:9910 -cvcompression=gzip -ingestauth=key,AAbm@130 -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -ingestvrf=mgmt -taillogs
+   no shutdown
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+queue-monitor length
+!
+logging buffered 10000
+logging trap notifications
+logging vrf mgmt host 10.71.20.11 514 protocol tcp
+logging facility local7
+logging vrf mgmt source-interface Management1
+!
+hostname DEMEENSD103
+ip domain lookup vrf mgmt source-interface Management1
+ip name-server vrf mgmt 10.23.50.53
+ip name-server vrf mgmt 10.71.50.53
+dns domain ad.global
+!
+ntp server vrf mgmt 10.23.50.53 local-interface Management1
+ntp server vrf mgmt 10.71.50.53 prefer local-interface Management1
+!
+sflow polling-interval 10
+sflow vrf mgmt destination 10.71.114.67 2055
+sflow vrf mgmt source-interface Management1
+sflow run
+!
+snmp-server vrf mgmt local-interface Management1
+snmp-server community GSSC-SnmpV2Read ro
+snmp-server host 10.71.114.60 vrf mgmt informs version 2c GSSC-SnmpV2Read
+snmp-server enable traps
+no snmp-server vrf default
+snmp-server vrf mgmt
+!
+spanning-tree mode mstp
+no spanning-tree vlan-id 2000
+!
+vlan 130
+   name P2V_MIGRATION_LINK_130
+   trunk group P2V_MIGRATION_LINK_130
+!
+vlan 334
+   name P2V_MIGRATION_LINK_334
+   trunk group P2V_MIGRATION_LINK_334
+!
+vlan 1505
+   name MGMT_TNT_ESXi_Mgmt
+   trunk group MGMT_TNT_ESXi_Mgmt
+!
+vlan 1506
+   name MGMT_TNT_ESXi_VXLAN_VTEP
+   trunk group MGMT_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1510
+   name VRA_Mgmt
+   trunk group VRA_Mgmt
+!
+vlan 1535
+   name EXCH_TNT_ESXi_Mgmt
+   trunk group EXCH_TNT_ESXi_Mgmt
+!
+vlan 1536
+   name EXCH_TNT_VXLAN_VTEP
+   trunk group EXCH_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1537
+   name EXCH_TNT_ESXi_vMotion
+   trunk group EXCH_TNT_ESXi_vMotion
+!
+vlan 1540
+   name PHYSICAL_SERVER
+   trunk group PHYSICAL_SERVER
+!
+vlan 1541
+   name Backup-Infra
+   trunk group BACKUP_Infra
+!
+vlan 1543
+   name BACKUP_Mgmt
+   trunk group BACKUP_Mgmt
+!
+vlan 1544
+   name BACK_Infra_2
+!
+vlan 1546
+   name EXCHANGE_PHY_SERVER
+!
+vlan 1550
+!
+vlan 1552
+   name SERVER_Heartbeat
+   trunk group SERVER_Heartbeat
+!
+vlan 1560
+   name Citrix_VDI_Mgmt
+   trunk group Citrix_VDI_Mgmt
+!
+vlan 1561
+   name Citrix_XenApp_Mgmt
+   trunk group Citrix_XenApp_Mgmt
+!
+vlan 1562
+   name Customer_VDI_WLD
+   trunk group Customer_VDI_WLD
+!
+vlan 1563
+   name Wipro_VDI_WLD
+   trunk group Wipro_VDI_WLD
+!
+vlan 1565
+   name Citrix_VDI_France_Prod
+   trunk group Customer_VDI_WLD
+!
+vlan 1566
+   name Citrix_VDI_France_Test
+   trunk group Customer_VDI_WLD
+!
+vlan 1567
+   name Customer_VDI_WLD_Two
+!
+vlan 1571
+   name Customer_VDI_WLD_Security
+!
+vlan 1581
+   name OneMKS_UAT_TEST_1581
+!
+vlan 1582
+   name OneMKS_PROD_1582
+!
+vlan 1675
+   name GOLD_TEP_Pool
+   trunk group GOLD_TEP_Pool
+!
+vlan 1676
+   name SILV_TEP_Pool
+   trunk group SILV_TEP_Pool
+!
+vlan 1677
+   name GOLD_EDGE1_BGP
+   trunk group GOLD_EDGE1_BGP
+!
+vlan 1678
+   name GOLD_EDGE2_BGP
+   trunk group GOLD_EDGE2_BGP
+!
+vlan 1679
+   name GOLD_EDGE3_BGP
+   trunk group GOLD_EDGE3_BGP
+!
+vlan 1680
+   name GOLD_EDGE4_BGP
+   trunk group GOLD_EDGE4_BGP
+!
+vlan 1681
+   name SILV_EDGE1_BGP
+   trunk group SILV_EDGE1_BGP
+!
+vlan 1682
+   name SILV_EDGE2_BGP
+   trunk group SILV_EDGE2_BGP
+!
+vlan 1683
+   name GOLD_EDGE1_TEP_Pool
+   trunk group GOLD_EDGE1_TEP_Pool
+!
+vlan 1684
+   name GOLD_EDGE2_TEP_Pool
+   trunk group GOLD_EDGE2_TEP_Pool
+!
+vlan 1685
+   name SILV_EDGE_TEP_Pool
+   trunk group SILV_EDGE_TEP_Pool
+!
+vlan 1690
+   name COLL_EDGE_TEP_Pool
+   trunk group COLL_EDGE_TEP_Pool
+!
+vlan 1700
+   name AD_SERVER
+   trunk group AD_SERVER
+!
+vlan 1701
+   name DMZ_SERVER
+   trunk group DMZ_SERVER
+!
+vlan 1702
+   name SKYPE_SERVER
+   trunk group SKYPE_SERVER
+!
+vlan 1703
+   name EXCHANGE_SERVER
+   trunk group EXCHANGE_SERVER
+!
+vlan 1704
+   name Splunk
+   trunk group SPLUNK
+!
+vlan 1706
+   name IBM_iSeries_Test
+   trunk group IBM_iSeries_Test
+!
+vlan 1707
+   name IBM_iSeries_Prod
+   trunk group IBM_iSeries_Prod
+!
+vlan 1711
+   trunk group VLAN1711
+!
+vlan 1802
+   name Cisco_DNA
+   trunk group Cisco_DNA
+!
+vlan 1882
+   name NSX-Physical-Server
+!
+vlan 1884
+   name NSX-Physical-iSAC_Server
+!
+vlan 1885
+   name Prod_EMEIA-AX-2009
+!
+vlan 1886
+   name ProdEMEIA-AX-2012
+!
+vlan 1887
+   name EMEIA-AX-2009-Test
+!
+vlan 2000
+   name MLAG
+   trunk group MLAG_PEER
+!
+vlan 3386
+   name DMZ
+   trunk group DMZ
+!
+vlan 3387
+   name XMS
+   trunk group XMS
+!
+vlan 3388
+   name CVP
+   trunk group CVP
+!
+vlan 3389
+   name MCAFEE
+   trunk group MCAFEE
+!
+vlan 3390
+   name Log_Forwarding
+   trunk group Log_Forwarding
+!
+vrf instance INFRA_Mgmt
+!
+vrf instance mgmt
+!
+interface Port-Channel1
+   description DEMEESDB0248-1
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 1
+!
+interface Port-Channel2
+   description DEMEESDB0248-1
+   switchport access vlan 1543
+   mlag 2
+!
+interface Port-Channel5
+   description DEMEESDB0218-1 PowerEdge R840 SN: G6VP2T2
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 5
+!
+interface Port-Channel6
+   description DEMEESDB0218-1 PowerEdge R840 SN: G6VP2T2
+   mtu 9214
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 6
+!
+interface Port-Channel7
+   description DEMEESDB0218-3 PowerEdge R840 SN: 2WSHFV2
+   mtu 9214
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 7
+!
+interface Port-Channel8
+   description DEMEESDB0218-3 PowerEdge R840 SN: 2WSHFV2
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 8
+!
+interface Port-Channel9
+   description demeesdb0057
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 9
+!
+interface Port-Channel10
+   description demeesdb0057
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 10
+!
+interface Port-Channel110
+   description DEMEESDB2230-1 Windows Server
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 110
+!
+interface Port-Channel112
+   description DEMEESDB2230-1 Windows Server
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 112
+!
+interface Port-Channel120
+   description Physical_servers1
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 120
+!
+interface Port-Channel122
+   description Physical_servers1
+   switchport access vlan 1543
+   mlag 122
+!
+interface Port-Channel123
+   description IBM_iSeries
+   switchport trunk allowed vlan 1706-1707
+   switchport mode trunk
+   switchport trunk group IBM_iSeries_Prod
+   switchport trunk group IBM_iSeries_Test
+!
+interface Port-Channel130
+   description DEDUSSDB2230-2 Windows Server
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 130
+!
+interface Port-Channel140
+   description DEDUSSDB2230-2 Windows Server
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 140
+!
+interface Port-Channel150
+   description DEMEESPHV2011(GRT6WC3) Windows Server
+   shutdown
+   switchport access vlan 1561
+   mlag 150
+!
+interface Port-Channel160
+   description DEMEESPHV2012 (1ST6WC3) Windows Server
+   shutdown
+   switchport access vlan 1561
+   mlag 160
+!
+interface Port-Channel170
+   description Windows Server DEMEESDB2228
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 170
+!
+interface Port-Channel171
+   description DEMEESPHXL1ID02
+   switchport access vlan 1560
+   switchport mode trunk
+   switchport trunk group PHYSICAL_SERVER
+   ip access-group isolated_1540 in
+   mlag 171
+!
+interface Port-Channel180
+   description Windows Server DEMEESDB2228
+   mtu 9214
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 180
+!
+interface Port-Channel181
+   description DEMEESPHXL1ID02
+   switchport mode trunk
+   switchport trunk group BACKUP_Mgmt
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   ip access-group isolated_1540 in
+   mlag 181
+!
+interface Port-Channel230
+   description MDC Location - Windows Spare 1(D9MTB73)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 230
+!
+interface Port-Channel240
+   description MDC Location - Windows Spare 1(D9MTB73)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 240
+!
+interface Port-Channel250
+   description MDC Location -Windows Spare 2(F9MTB73)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 250
+!
+interface Port-Channel260
+   description MDC Location -Windows Spare 2(F9MTB73)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 260
+!
+interface Port-Channel270
+   description MDC Location - Windows Spare 3(79MTB73)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 270
+!
+interface Port-Channel280
+   description MDC Location - Windows Spare 3(79MTB73)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 280
+!
+interface Port-Channel290
+   description MDC Location - Windows Spare 4(G9MTB73)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 290
+!
+interface Port-Channel300
+   description MDC Location - Windows Spare 4(G9MTB73)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 300
+!
+interface Port-Channel310
+   description MDC Location - Windows Spare 5(89MTB73)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 310
+!
+interface Port-Channel320
+   description MDC Location - Windows Spare 5(89MTB73)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 320
+!
+interface Port-Channel330
+   description MDC Location - Windows Spare 6(C9MTB73)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 330
+!
+interface Port-Channel340
+   description MDC Location - Windows Spare 6(C9MTB73)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 340
+!
+interface Port-Channel350
+   description MDC Location - Windows Spare 7(B9MTB73)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 350
+!
+interface Port-Channel360
+   description MDC Location - Windows Spare 7(B9MTB73)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 360
+!
+interface Port-Channel370
+   description Windows Spare 8(99MTB73)
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 370
+!
+interface Port-Channel380
+   description Windows Spare 8(99MTB73)
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 380
+!
+interface Port-Channel1140
+   description DEMEESPHV2001_CITRIX
+   switchport access vlan 1560
+   mlag 1140
+!
+interface Port-Channel1141
+   description DEMEESPHV2002_citrix
+   switchport access vlan 1560
+   mlag 1141
+!
+interface Port-Channel1142
+   description DEMEESPHV2003_citrix
+   switchport access vlan 1560
+   mlag 1142
+!
+interface Port-Channel1143
+   description DEMEESPHV2001_CITRIX
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   mlag 1143
+!
+interface Port-Channel1144
+   description DEMEESPHV2002_citrix
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   mlag 1144
+!
+interface Port-Channel1145
+   description DEMEESPHV2003_citrix
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   mlag 1145
+!
+interface Port-Channel2000
+   description MLAG_CHANNEL
+   switchport mode trunk
+   switchport trunk group AD_SERVER
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BACKUP_Mgmt
+   switchport trunk group COLL_EDGE_TEP_Pool
+   switchport trunk group CVP
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group DMZ
+   switchport trunk group DMZ_SERVER
+   switchport trunk group EXCHANGE_SERVER
+   switchport trunk group EXCH_TNT_ESXi_Mgmt
+   switchport trunk group EXCH_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group EXCH_TNT_ESXi_vMotion
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group IBM_iSeries_Prod
+   switchport trunk group IBM_iSeries_Test
+   switchport trunk group Log_Forwarding
+   switchport trunk group MCAFEE
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group MLAG_PEER
+   switchport trunk group P2V_MIGRATION_LINK_130
+   switchport trunk group P2V_MIGRATION_LINK_334
+   switchport trunk group PHYSICAL_SERVER
+   switchport trunk group SERVER_Heartbeat
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SKYPE_SERVER
+   switchport trunk group SPLUNK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group VLAN1711
+   switchport trunk group VRA_Mgmt
+   switchport trunk group Wipro_VDI_WLD
+   switchport trunk group XMS
+!
+interface Ethernet1
+   description DEMEESDB0248-1
+   mtu 9214
+   channel-group 1 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet2
+   description DEMEESDB0248-1
+   mtu 9214
+   channel-group 2 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet3
+   description OneMKSintHIDmee#TASK0170881
+   mtu 9214
+   switchport access vlan 1581
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet4
+   description CISCO Switch-DEMEENST003-NTP
+   switchport access vlan 1550
+   spanning-tree portfast
+   spanning-tree bpdufilter enable
+!
+interface Ethernet5
+   description DEMEESDB0218-1 PowerEdge R840 SN: G6VP2T2
+   mtu 9214
+   channel-group 5 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet6
+   description DEMEESDB0218-1 PowerEdge R840 SN: G6VP2T2
+   mtu 9214
+   channel-group 6 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet7
+   description DEMEESDB0218-3 PowerEdge R840 SN: 2WSHFV2
+   mtu 9214
+   channel-group 7 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet8
+   description DEMEESDB0218-3 PowerEdge R840 SN: 2WSHFV2
+   mtu 9214
+   channel-group 8 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet9
+   description demeesdb0057
+   mtu 9214
+   channel-group 9 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet10
+   description demeesdb0057
+   mtu 9214
+   channel-group 10 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet11
+   description DEMEESDB2230-1 Windows Server
+   mtu 9214
+   channel-group 110 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet12
+   description DEMEESDB2230-1 Windows Server
+   mtu 9214
+   channel-group 112 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet13
+   description DEDUSSDB2230-2 Windows Server
+   mtu 9214
+   channel-group 130 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet14
+   description DEDUSSDB2230-2 Windows Server
+   mtu 9214
+   channel-group 140 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet15
+   description DEMEESPHV2011 (GRT6WC3)Single
+   shutdown
+   mtu 9214
+   switchport access vlan 1560
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet16
+   description DEMEESPHV2012 ( 1ST6WC3) single
+   shutdown
+   mtu 9214
+   switchport access vlan 1560
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet17
+   description Windows Server DEMEESDB2228
+   mtu 9214
+   channel-group 170 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet18
+   description Windows Server DEMEESDB2228
+   mtu 9214
+   channel-group 180 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet19
+   description DEMEESPHXL1ID02_NIC_1
+   mtu 9214
+   switchport access vlan 1560
+   channel-group 171 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet20
+   description DEMEESPHXL1ID02_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   channel-group 181 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet21
+   description DEMEESDB2228 MDC-PHXL1-3 SN: 6W30HZ2
+   mtu 9214
+   channel-group 120 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet22
+   description DEMEESDB2228 MDC-PHXL1-3 SN: 6W30HZ2
+   mtu 9214
+   channel-group 122 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet23
+   description MDC Location - Windows Spare 1(D9MTB73)
+   mtu 9214
+   channel-group 230 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet24
+   description MDC Location - Windows Spare 1(D9MTB73)
+   mtu 9214
+   channel-group 240 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet25
+   description MDC Location -Windows Spare 2(F9MTB73)
+   mtu 9214
+   channel-group 250 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet26
+   description MDC Location -Windows Spare 2(F9MTB73)
+   mtu 9214
+   channel-group 260 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet27
+   description MDC Location - Windows Spare 3(79MTB73)
+   mtu 9214
+   channel-group 270 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet28
+   description 2020-Spare Server 3 PowerEdge R740 SN: 79MTB73
+   mtu 9214
+   channel-group 280 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet29
+   description MDC Location - Windows Spare 4(G9MTB73)
+   mtu 9214
+   channel-group 290 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet30
+   description MDC Location - Windows Spare 4(G9MTB73)
+   mtu 9214
+   channel-group 300 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet31
+   description MDC Location - Windows Spare 5(89MTB73)
+   mtu 9214
+   channel-group 310 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet32
+   description MDC Location - Windows Spare 5(89MTB73)
+   mtu 9214
+   channel-group 320 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet33
+   description MDC Location - Windows Spare 6(C9MTB73)
+   mtu 9214
+   channel-group 330 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet34
+   description MDC Location - Windows Spare 6(C9MTB73)
+   mtu 9214
+   channel-group 340 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet35
+   description MDC Location - Windows Spare 7(B9MTB73)
+   mtu 9214
+   channel-group 350 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet36
+   description MDC Location - Windows Spare 7(B9MTB73)
+   mtu 9214
+   channel-group 360 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet37
+   description Windows Spare 8(99MTB73)
+   mtu 9214
+   channel-group 370 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet38
+   description Windows Spare 8(99MTB73)
+   mtu 9214
+   channel-group 380 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet39
+   description DEMEESPHV2001(DKQXD43)
+   mtu 9214
+   switchport access vlan 1541
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet40
+   description DEDUSSPHV2001_CITRIX
+   mtu 9214
+   channel-group 1140 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet41
+   description DEDUSSPHV2002
+   mtu 9214
+   channel-group 1141 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet42
+   description DEDUSSPHV2003
+   mtu 9214
+   channel-group 1142 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet43
+   description DEMEESPHV2001(DKQXD43)
+   mtu 9214
+   channel-group 1143 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet44
+   description DEMEESPHV2002(FKQXD43)
+   mtu 9214
+   channel-group 1144 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet45
+   description DEMEESPHV2003(CKQXD43)
+   mtu 9214
+   channel-group 1145 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet46
+   description IBM_iSeries
+   mtu 9214
+   switchport trunk allowed vlan 1706-1707
+   switchport mode trunk
+   switchport trunk group IBM_iSeries_Prod
+   switchport trunk group IBM_iSeries_Test
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet47
+   description IBM_iSeries
+   mtu 9214
+   switchport trunk allowed vlan 1706-1707
+   switchport mode trunk
+   switchport trunk group IBM_iSeries_Prod
+   switchport trunk group IBM_iSeries_Test
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet48
+   description IBM_iSeries
+   mtu 9214
+   switchport trunk allowed vlan 1706-1707
+   switchport mode trunk
+   switchport trunk group IBM_iSeries_Prod
+   switchport trunk group IBM_iSeries_Test
+   channel-group 123 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet49/1
+   description to DEMEENSD004 Eth49/1
+   mtu 9214
+   channel-group 2000 mode active
+!
+interface Ethernet50/1
+   description to DEMEENSD004 Eth50/1
+   mtu 9214
+   channel-group 2000 mode active
+!
+interface Ethernet51/1
+   description to DEMEENSC001 Eth3
+   mtu 9214
+   no switchport
+   ip address 10.71.3.35/31
+!
+interface Ethernet52/1
+   description to DEMEENSC002 Eth3
+   mtu 9214
+   no switchport
+   ip address 10.71.3.65/31
+!
+interface Ethernet53/1
+   shutdown
+   mtu 9214
+!
+interface Ethernet54/1
+   shutdown
+   mtu 9214
+!
+interface Ethernet55/1
+   shutdown
+   mtu 9214
+!
+interface Ethernet56/1
+   shutdown
+   mtu 9214
+!
+interface Loopback0
+   description BGP_ROUTER_ID
+   ip address 10.71.3.15/32
+!
+interface Loopback1
+   description VTEP
+   ip address 10.71.3.204/32
+!
+interface Management1
+   description to DEMEENST001 eth3
+   vrf mgmt
+   ip address 10.71.0.15/24
+!
+interface Vlan2000
+   mtu 9214
+   no autostate
+   ip address 10.71.2.12/31
+!
+interface Vxlan1
+   vxlan source-interface Loopback1
+   vxlan udp-port 4789
+   vxlan vlan 101 vni 10101
+   vxlan vlan 130 vni 10130
+   vxlan vlan 182 vni 10182
+   vxlan vlan 334 vni 10334
+   vxlan vlan 1505 vni 11505
+   vxlan vlan 1506 vni 11506
+   vxlan vlan 1510 vni 11510
+   vxlan vlan 1515 vni 11515
+   vxlan vlan 1517 vni 11517
+   vxlan vlan 1518 vni 11518
+   vxlan vlan 1525 vni 11525
+   vxlan vlan 1527 vni 11527
+   vxlan vlan 1528 vni 11528
+   vxlan vlan 1535 vni 11535
+   vxlan vlan 1536 vni 11536
+   vxlan vlan 1537 vni 11537
+   vxlan vlan 1540 vni 11540
+   vxlan vlan 1541 vni 11541
+   vxlan vlan 1543 vni 11543
+   vxlan vlan 1544 vni 11544
+   vxlan vlan 1546 vni 11546
+   vxlan vlan 1548 vni 11548
+   vxlan vlan 1550 vni 11550
+   vxlan vlan 1552 vni 11552
+   vxlan vlan 1560 vni 11560
+   vxlan vlan 1561 vni 11561
+   vxlan vlan 1562 vni 11562
+   vxlan vlan 1563 vni 11563
+   vxlan vlan 1565 vni 11565
+   vxlan vlan 1566 vni 11566
+   vxlan vlan 1567 vni 11567
+   vxlan vlan 1571 vni 11571
+   vxlan vlan 1581 vni 11581
+   vxlan vlan 1582 vni 11582
+   vxlan vlan 1675 vni 11675
+   vxlan vlan 1676 vni 11676
+   vxlan vlan 1677 vni 11677
+   vxlan vlan 1678 vni 11678
+   vxlan vlan 1679 vni 11679
+   vxlan vlan 1680 vni 11680
+   vxlan vlan 1681 vni 11681
+   vxlan vlan 1682 vni 11682
+   vxlan vlan 1683 vni 11683
+   vxlan vlan 1684 vni 11684
+   vxlan vlan 1685 vni 11685
+   vxlan vlan 1690 vni 11690
+   vxlan vlan 1700 vni 11700
+   vxlan vlan 1701 vni 11701
+   vxlan vlan 1702 vni 11702
+   vxlan vlan 1703 vni 11703
+   vxlan vlan 1704 vni 11704
+   vxlan vlan 1706 vni 11706
+   vxlan vlan 1707 vni 11707
+   vxlan vlan 1711 vni 11711
+   vxlan vlan 1802 vni 11802
+   vxlan vlan 1810 vni 11810
+   vxlan vlan 1820 vni 11820
+   vxlan vlan 1830 vni 11830
+   vxlan vlan 1840 vni 11840
+   vxlan vlan 1882 vni 11882
+   vxlan vlan 1884 vni 11884
+   vxlan vlan 1885 vni 11885
+   vxlan vlan 1886 vni 11886
+   vxlan vlan 1887 vni 11887
+   vxlan vlan 3375 vni 13375
+   vxlan vlan 3376 vni 13376
+   vxlan vlan 3377 vni 13377
+   vxlan vlan 3378 vni 13378
+   vxlan vlan 3381 vni 13381
+   vxlan vlan 3382 vni 13382
+   vxlan vlan 3386 vni 13386
+   vxlan vlan 3387 vni 13387
+   vxlan vlan 3388 vni 13388
+   vxlan vlan 3389 vni 13389
+   vxlan vlan 3390 vni 13390
+   vxlan vlan 3475 vni 13475
+   vxlan vlan 3476 vni 13476
+   vxlan vlan 3517 vni 13517
+   vxlan vlan 3518 vni 13518
+   vxlan vlan 3519 vni 13519
+   vxlan vlan 3520 vni 13520
+   vxlan vlan 3521 vni 13521
+   vxlan vlan 3522 vni 13522
+   vxlan flood vtep 10.71.3.202 10.71.3.204 10.71.3.206 10.71.3.207 10.71.3.208 10.71.3.209 10.71.3.210 10.71.3.211 10.72.3.202 10.72.3.204 10.72.3.206 10.72.3.208 10.72.3.209
+!
+event-handler TCP-TIMESTAMP
+   trigger on-boot
+   action bash sudo sysctl -w net.ipv4.tcp_timestamps=0
+!
+ip access-list custom-control-plane-acl
+   counters per-entry
+   5 deny icmp any any timestamp-request
+   7 deny icmp any any timestamp-reply
+   10 permit icmp any any
+   20 permit ip any any tracked
+   30 permit udp any any eq bfd ttl eq 255
+   40 permit udp any any eq bfd-echo ttl eq 254
+   50 permit udp any any eq multihop-bfd micro-bfd sbfd
+   60 permit udp any eq sbfd any eq sbfd-initiator
+   70 permit ospf any any
+   80 permit tcp any any eq ssh telnet www snmp bgp https msdp ldp netconf-ssh gnmi
+   90 permit udp any any eq bootps bootpc ntp snmp rip ldp
+   100 permit tcp any any eq mlag ttl eq 255
+   110 permit udp any any eq mlag ttl eq 255
+   120 permit vrrp any any
+   130 permit ahp any any
+   140 permit pim any any
+   150 permit igmp any any
+   160 permit tcp any any range 5900 5910
+   170 permit tcp any any range 50000 50100
+   180 permit udp any any range 51000 51100
+   190 permit tcp any any eq 3333
+   200 permit tcp any any eq nat ttl eq 255
+   210 permit tcp any eq bgp any
+   220 permit rsvp any any
+   230 permit tcp any any eq 6040
+   240 permit tcp any any eq 5541 ttl eq 255
+   250 permit tcp any any eq 5542 ttl eq 255
+!
+ip access-list isolated_1540
+   10 permit ip any 10.71.40.0/30
+   20 permit ip host 10.71.40.30 host 10.71.40.31
+   30 permit ip host 10.71.40.31 host 10.71.40.30
+   40 permit ip host 10.71.40.80 host 10.71.40.74
+   50 permit ip host 10.71.40.74 host 10.71.40.80
+   60 permit ip host 10.71.40.74 host 10.71.40.103
+   70 permit ip host 10.71.40.103 host 10.71.40.74
+   80 permit ip 10.71.40.0/30 any
+   90 permit ip any 10.71.40.4/31
+   100 permit ip 10.71.40.4/31 any
+   110 permit tcp host 10.71.40.58 host 10.71.40.48 eq ms-sql-s
+   120 permit tcp host 10.71.40.57 host 10.71.40.48 eq ms-sql-s
+   130 permit tcp host 10.71.40.84 host 10.71.40.48 eq ms-sql-s
+   140 permit tcp host 10.71.40.56 host 10.71.40.41 eq ms-sql-s
+   150 permit tcp host 10.71.40.48 eq ms-sql-s host 10.71.40.58
+   160 permit tcp host 10.71.40.48 eq ms-sql-s host 10.71.40.57
+   170 permit tcp host 10.71.40.48 eq ms-sql-s host 10.71.40.84
+   180 permit tcp host 10.71.40.41 eq ms-sql-s host 10.71.40.56
+   190 permit ip host 10.71.40.149 host 10.71.40.47
+   200 permit ip host 10.71.40.47 host 10.71.40.149
+   210 permit ip 10.71.40.38/31 host 10.71.40.68
+   220 permit ip host 10.71.40.68 10.71.40.38/31
+   230 permit ip host 10.71.40.68 host 10.71.40.37
+   240 permit ip host 10.71.40.68 host 10.71.40.75
+   250 permit ip host 10.71.40.37 host 10.71.40.68
+   260 permit ip host 10.71.40.75 host 10.71.40.68
+   270 permit ip host 10.71.40.73 host 10.71.40.72
+   280 permit ip host 10.71.40.72 host 10.71.40.73
+   290 permit ip host 10.71.40.103 host 10.71.40.80
+   300 permit ip host 10.71.40.80 host 10.71.40.103
+   310 permit ip host 10.71.40.69 host 10.71.40.39
+   320 permit ip host 10.71.40.39 host 10.71.40.69
+   330 permit ip host 10.71.40.75 host 10.71.40.69
+   340 permit ip host 10.71.40.69 host 10.71.40.75
+   350 permit ip host 10.71.40.69 host 10.71.40.37
+   360 permit ip host 10.71.40.37 host 10.71.40.69
+   370 permit ip host 10.71.40.69 host 10.71.40.38
+   380 permit ip host 10.71.40.38 host 10.71.40.69
+   390 permit ip 10.71.40.32/28 10.71.40.32/28
+   400 permit ip host 10.71.40.149 10.71.40.48/31
+   410 permit ip host 10.71.40.72 host 10.71.40.22
+   420 permit ip host 10.71.40.22 host 10.71.40.72
+   430 permit ip host 10.71.40.47 10.71.40.48/31
+   440 permit ip 10.71.40.48/31 host 10.71.40.149
+   450 permit ip 10.71.40.48/31 host 10.71.40.47
+   460 permit ip 10.71.40.96/28 10.71.40.96/28
+   470 permit ip 10.71.40.16/28 10.71.40.16/28
+   480 permit ip 10.71.40.80/28 10.71.40.80/28
+   490 permit ip host 10.71.40.22 host 10.71.40.73
+   500 permit ip host 10.71.40.73 host 10.71.40.22
+   510 permit ip host 10.71.40.51 host 10.71.40.40
+   520 permit ip host 10.71.40.51 host 10.71.40.41
+   530 permit ip host 10.71.40.52 host 10.71.40.40
+   540 permit ip host 10.71.40.52 host 10.71.40.41
+   550 permit ip host 10.71.40.40 host 10.71.40.51
+   560 permit ip host 10.71.40.41 host 10.71.40.51
+   570 permit ip host 10.71.40.40 host 10.71.40.52
+   580 permit ip host 10.71.40.41 host 10.71.40.52
+   590 permit ip host 10.71.40.51 host 10.71.40.52
+   600 permit ip host 10.71.40.52 host 10.71.40.51
+   610 permit ip host 10.71.40.76 host 10.71.40.92
+   620 permit ip host 10.71.40.92 host 10.71.40.76
+   630 permit ip host 10.71.40.104 host 10.71.40.105
+   640 permit ip host 10.71.40.104 host 10.71.40.106
+   650 permit ip host 10.71.40.104 host 10.71.40.107
+   660 permit ip host 10.71.40.105 host 10.71.40.104
+   670 permit ip host 10.71.40.105 host 10.71.40.106
+   680 permit ip host 10.71.40.105 host 10.71.40.107
+   690 permit ip host 10.71.40.106 host 10.71.40.104
+   700 permit ip host 10.71.40.106 host 10.71.40.105
+   710 permit ip host 10.71.40.106 host 10.71.40.107
+   720 permit ip host 10.71.40.59 host 10.71.40.54
+   730 permit ip host 10.71.40.107 host 10.71.40.104
+   740 permit ip host 10.71.40.107 host 10.71.40.105
+   750 permit ip host 10.71.40.107 host 10.71.40.106
+   760 permit ip host 10.71.40.59 host 10.71.40.61
+   770 permit ip host 10.71.40.59 host 10.71.40.55
+   780 permit ip host 10.71.40.59 host 10.71.40.63
+   790 permit ip host 10.71.40.54 host 10.71.40.59
+   800 permit ip host 10.71.40.54 host 10.71.40.61
+   810 permit ip host 10.71.40.54 host 10.71.40.55
+   820 permit ip host 10.71.40.54 host 10.71.40.63
+   830 permit ip host 10.71.40.61 host 10.71.40.59
+   840 permit ip host 10.71.40.61 host 10.71.40.54
+   850 permit ip host 10.71.40.61 host 10.71.40.55
+   860 permit ip host 10.71.40.61 host 10.71.40.63
+   870 permit ip host 10.71.40.55 host 10.71.40.59
+   880 permit ip host 10.71.40.55 host 10.71.40.54
+   890 permit ip host 10.71.40.55 host 10.71.40.61
+   900 permit ip host 10.71.40.55 host 10.71.40.63
+   910 permit ip host 10.71.40.63 host 10.71.40.59
+   920 permit ip host 10.71.40.63 host 10.71.40.54
+   930 permit ip host 10.71.40.63 host 10.71.40.61
+   940 permit ip host 10.71.40.63 host 10.71.40.55
+   950 permit ip host 10.71.40.31 host 10.71.40.98
+   960 permit ip host 10.71.40.98 host 10.71.40.31
+   970 permit ip host 10.71.40.60 host 10.71.40.62
+   980 permit ip host 10.71.40.60 host 10.71.40.77
+   990 permit ip host 10.71.40.60 host 10.71.40.78
+   1000 permit ip host 10.71.40.62 host 10.71.40.60
+   1010 permit ip host 10.71.40.62 host 10.71.40.77
+   1020 permit ip host 10.71.40.62 host 10.71.40.78
+   1030 permit ip host 10.71.40.77 host 10.71.40.60
+   1040 permit ip host 10.71.40.77 host 10.71.40.62
+   1050 permit ip host 10.71.40.77 host 10.71.40.78
+   1060 permit ip host 10.71.40.78 host 10.71.40.60
+   1070 permit ip host 10.71.40.78 host 10.71.40.62
+   1080 permit ip host 10.71.40.78 host 10.71.40.77
+   1090 permit ip 10.71.40.30/31 host 10.71.40.65
+   1100 permit ip host 10.71.40.65 10.71.40.30/31
+   1110 permit ip 10.71.40.92/30 10.71.40.92/30
+   1120 permit ip 10.71.40.92/30 host 10.71.40.96
+   1130 permit ip host 10.71.40.96 10.71.40.92/30
+   1140 permit ip 10.71.40.48/28 10.71.40.48/28
+   1150 permit ip host 10.71.40.77 host 10.71.40.74
+   1160 permit ip host 10.71.40.74 host 10.71.40.77
+   1170 permit ip host 10.71.40.78 host 10.71.40.74
+   1180 permit ip host 10.71.40.74 host 10.71.40.78
+   1190 permit ip host 10.71.40.60 host 10.71.40.74
+   1200 permit ip host 10.71.40.74 host 10.71.40.60
+   1210 permit ip host 10.71.40.62 host 10.71.40.74
+   1220 permit ip host 10.71.40.74 host 10.71.40.62
+   1230 permit ip 10.71.40.36/30 host 10.71.40.75
+   1240 permit ip host 10.71.40.75 10.71.40.36/30
+   1250 permit ip 10.71.40.140/30 10.71.40.140/30
+   1260 permit ip 10.71.40.144/30 10.71.40.144/30
+   1270 permit ip 10.71.40.140/30 10.71.40.144/30
+   1280 permit ip 10.71.40.144/30 10.71.40.140/30
+   1290 permit ip 10.71.40.96/29 10.71.40.96/29
+   1300 permit ip host 10.71.40.58 host 10.71.40.15
+   1310 permit ip host 10.71.40.15 host 10.71.40.58
+   1320 permit ip host 10.71.40.73 host 10.71.40.36
+   1330 permit ip host 10.71.40.36 host 10.71.40.73
+   1340 permit ip host 10.71.40.73 host 10.71.40.103
+   1350 permit ip host 10.71.40.103 host 10.71.40.73
+   1360 permit ip host 10.71.40.73 host 10.71.40.80
+   1370 permit ip host 10.71.40.80 host 10.71.40.73
+   1380 permit ip host 10.71.40.72 host 10.71.40.80
+   1390 permit ip host 10.71.40.80 host 10.71.40.72
+   1400 permit ip host 10.71.40.57 host 10.71.40.15
+   1410 permit ip host 10.71.40.84 host 10.71.40.15
+   1420 permit ip host 10.71.40.15 host 10.71.40.57
+   1430 permit ip host 10.71.40.15 host 10.71.40.58
+   1440 permit ip host 10.71.40.15 host 10.71.40.84
+   1451 permit ip 10.71.40.156/30 10.71.40.160/30
+   1452 permit ip 10.71.40.160/30 10.71.40.156/30
+   1470 permit ip host 10.71.40.35 host 10.71.40.20
+   1480 permit ip host 10.71.40.36 host 10.71.40.20
+   1490 permit ip host 10.71.40.56 host 10.71.40.20
+   1500 permit ip host 10.71.40.20 host 10.71.40.35
+   1510 permit ip host 10.71.40.20 host 10.71.40.36
+   1520 permit ip host 10.71.40.20 host 10.71.40.56
+   1530 permit ip host 10.71.40.22 host 10.71.40.17
+   1540 permit ip host 10.71.40.22 host 10.71.40.18
+   1550 permit ip host 10.71.40.22 host 10.71.40.20
+   1560 permit ip host 10.71.40.17 host 10.71.40.22
+   1570 permit ip host 10.71.40.18 host 10.71.40.22
+   1580 permit ip host 10.71.40.20 host 10.71.40.22
+   1590 permit ip host 10.71.40.18 host 10.71.40.56
+   1600 permit ip host 10.71.40.56 host 10.71.40.18
+   1610 permit ip host 10.71.40.18 host 10.71.40.35
+   1620 permit ip host 10.71.40.35 host 10.71.40.18
+   1630 permit ip host 10.71.40.18 host 10.71.40.36
+   1640 permit ip host 10.71.40.36 host 10.71.40.18
+   1650 permit ip host 10.71.40.73 host 10.71.40.82
+   1660 permit ip host 10.71.40.22 host 10.71.40.82
+   1670 permit ip host 10.71.40.82 host 10.71.40.73
+   1680 permit ip host 10.71.40.82 host 10.71.40.22
+   1690 permit ip host 10.71.40.31 host 10.71.40.96
+   1700 permit ip host 10.71.40.96 host 10.71.40.31
+   1710 permit ip host 10.71.40.31 host 10.71.40.101
+   1720 permit ip host 10.71.40.101 host 10.71.40.31
+   9998 deny ip 10.71.40.0/24 10.71.40.0/24
+   9999 permit ip any any
+!
+ip access-list standard ALLOW_SSH_ACL
+   10 permit 10.230.0.0/16
+   20 permit 10.71.0.0/16
+   30 permit 10.72.0.0/16
+   40 permit 10.23.0.0/16
+   50 permit 10.24.0.0/16
+   60 permit 10.52.0.0/16
+   999 deny any
+!
+ip routing
+no ip routing vrf INFRA_Mgmt
+ip routing vrf mgmt
+!
+system control-plane
+   ip access-group custom-control-plane-acl in
+   ip access-group custom-control-plane-acl vrf mgmt in
+!
+mlag configuration
+   domain-id mlag1
+   local-interface Vlan2000
+   peer-address 10.71.2.13
+   peer-link Port-Channel2000
+!
+ip route vrf mgmt 0.0.0.0/0 10.71.0.1
+!
+route-map local permit 6
+   match source-protocol connected
+   match interface Loopback1
+!
+route-map underlay permit 10
+   match source-protocol connected
+   match interface Loopback0
+!
+route-map underlay permit 20
+   match source-protocol connected
+   match interface Loopback1
+!
+router bgp 65323
+   router-id 10.71.3.15
+   update wait-for-convergence
+   update wait-install
+   maximum-paths 4 ecmp 4
+   neighbor MLAG-iBGP peer group
+   neighbor MLAG-iBGP remote-as 65323
+   neighbor MLAG-iBGP next-hop-self
+   neighbor MLAG-iBGP update-source Vlan2000
+   neighbor MLAG-iBGP send-community standard extended
+   neighbor MLAG-iBGP maximum-routes 12000
+   neighbor SPINE peer group
+   neighbor SPINE remote-as 65321
+   neighbor SPINE send-community standard extended
+   neighbor SPINE maximum-routes 12000
+   neighbor 10.71.2.13 peer group MLAG-iBGP
+   neighbor 10.71.3.34 peer group SPINE
+   neighbor 10.71.3.64 peer group SPINE
+   redistribute connected route-map underlay
+!
+ip tacacs vrf mgmt source-interface Management1
+!
+management api http-commands
+   protocol unix-socket
+   protocol https ssl profile SW_SSL_PROFILE
+   no shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+management security
+   ssl profile SW_SSL_PROFILE
+      tls versions 1.2
+      cipher-list ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:!aNULL:!eNULL:!DES:!RC4:!3DES:!MD5:!PSK
+      certificate DEMEENSD103.crt key DEMEENSD103.key
+      trust certificate RootCA.crt
+      chain certificate intermediateCA.crt
+!
+tacacs-server timeout 15
+tacacs-server policy unknown-mandatory-attribute ignore
+tacacs-server host 10.71.112.215 vrf mgmt key 7 132A052B465E02110C626C172904155101262071
+tacacs-server host 10.23.112.144 vrf mgmt key 7 07203375035B1F3E30544F28180C2D723F161405
+!
+aaa group server tacacs+ ISE_test_TACACS
+   server 10.71.112.215 vrf mgmt
+   server 10.23.112.144 vrf mgmt
+!
+aaa authentication login default group ISE_test_TACACS local
+aaa authentication login console local
+aaa authorization exec default group ISE_test_TACACS local
+aaa authorization commands 0 default local
+aaa authorization commands 1-15 default group ISE_test_TACACS local
+aaa accounting system default start-stop group ISE_test_TACACS
+!
+role TestAdmin
+   10 permit mode exec command ping
+   20 deny command .*
+!
+management ssh
+   ip access-group ALLOW_SSH_ACL vrf mgmt in
+   idle-timeout 30
+   authentication mode password
+   mac hmac-sha2-512-etm@openssh.com hmac-sha2-256-etm@openssh.com hmac-sha2-512 hmac-sha2-256
+   shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+end

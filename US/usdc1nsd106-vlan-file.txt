@@ -1,0 +1,95 @@
+!
+vlan 1515
+   name GOLD_TNT_ESXi_Mgmt
+!
+vlan 1516
+   name GOLD_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1517
+   name GOLD_TNT_ESXi_vMotion
+!
+vlan 1518
+   name GOLD_TNT_ESXi_vSAN
+!
+vlan 1541
+   name Backup_Infra
+!
+vlan 1548
+   name PAFW_VM300
+!
+vlan 1550
+   name DC_Mgmt
+!
+vlan 1675
+   name GOLD_TEP_Pool
+!
+vlan 1677
+   name GOLD_EDGE1_BGP
+!
+vlan 1678
+   name GOLD_EDGE2_BGP
+!
+vlan 1679
+   name GOLD_EDGE3_BGP
+!
+vlan 1680
+   name GOLD_EDGE4_BGP
+!
+vlan 1683
+   name GOLD_EDGE1_TEP_Pool
+!
+vlan 1684
+   name GOLD_EDGE2_TEP_Pool
+!
+vlan 1810
+   name WLC_WiFi_Guest
+!
+vlan 1820
+   name Global_WiFi_VC_Production
+!
+vlan 1830
+   name Global_WiFi_VC_IoT
+!
+vlan 2000
+   name MLAG
+   trunk group MLAG_PEER
+!
+vlan 2629
+   name WLC_WiFi_Guest_Transit_FW
+!
+vlan 2644
+   name Gobal_WiFi_VC_Prod_IoT_TRANSIT_F
+!
+vlan 3375
+   name DMZ_GOLD_TEP_Pool
+!
+vlan 3377
+   name DMZ_GOLD_EDGE1_BGP
+!
+vlan 3378
+   name DMZ_GOLD_EDGE2_BGP
+!
+vlan 3383
+   name DMZ_GOLD_EDGE1_TEP_Pool
+!
+vlan 3384
+   name DMZ_GOLD_EDGE2_TEP_Pool
+!
+vlan 3517
+   name F5_VLAN_5
+!
+vlan 3518
+   name F5_VLAN_6
+!
+vlan 3519
+   name F5_VLAN_7
+!
+vlan 3520
+   name VIRT_F5_VLAN_1
+!
+vlan 3521
+   name VIRT_F5_VLAN_2
+!
+vlan 3522
+   name VIRT_F5_VLAN_3
+!

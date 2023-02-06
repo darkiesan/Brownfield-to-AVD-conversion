@@ -1,0 +1,541 @@
+no aaa root
+!
+username System1 privilege 0 role network-operator secret sha512 $6$GBlHKcSi7TXXit2w$WhfVRqDF33eBnS7/AQ027YTxXz6S8.j9Tzm.Y8OxSYi/VAFHCMvFO09Fhl02waStdTN/SZS7Sl.U6VnmtWkfb.
+username admin privilege 15 role network-admin secret sha512 $6$DQ30Ubydpq2psKAD$FKTxWG8o9hyNMCx2pXPunHD2porask/aFZMuiTgTx7eA.5B7.5Ng6Sgv7SSyVbS/VCSftfbXrqM.vF5kafHWg.
+username cvpadmin privilege 15 role network-admin secret sha512 $6$E0Wh9sRjNUg5USnd$qRNNCNNVsWTPVdZzEfTUpCe8hW/CGHGLdZylERo0Uon4pqr.R1SwZO1EsiOhmIw82Xd02aK1WCFexSnVLq1zj0
+username netadmin privilege 15 role network-admin secret sha512 $6$R2exBcXs5RkE6W.k$qZfap.WtKmC9I0cG7o//7FdLqlJajWDSyIJbVTvIPttjHOk3G5RQ6EG/NrPkbgarcBeqokI0VosXTRkLJajlY1
+username netsec privilege 0 role network-operator secret sha512 $6$mUtrTfkT3JCwsEyB$uyavekSktWqM5UWs8xNQvbCVpusL7.Mr6kxZ1ey.ZAg9NfhGwkZ9G6JTpwB89c.LGEBkEMW.9gW2J9ePemw7l1
+username s-wipro-nw-vrni privilege 0 role network-operator secret sha512 $6$ZIA7WPoAVN3TRB4/$yZLBwlk9GmzV2DeES0sfIi/YvjT4AZ00oqKX8TE7Hkl7GYDKCd.MKZ5Gqtojf13UzanwxWJy5feraGZdScuQ20
+username sa-divymc privilege 15 role network-admin secret sha512 $6$L2r.yRkfk0PNtzRq$pjPaaIbuTlWH7ONgTKj0hhhxkhY5H4YFoD3X1wMd2t8NWYOuIMCLsZv.O5Ltp.umNTfTMxtB/vJtqlsI1TB5l1
+username sa-michum privilege 0 role network-operator secret sha512 $6$N26mk3VcPadQ57fr$lObBIVvs1tCmWvUhNinKsfbzynPc1.iIr//TfYC5HvGFbmJvsOMZD/diExcN8zLVoDwm1O0Zu5Wo3oELOKHBj0
+username sa-parbar privilege 15 role network-admin secret sha512 $6$94OLeNO0kyklIE9e$PINRUjykUdnyoIrtqw3KPkBq5QL0S4LMilUPDEneiG7SRG/xSpNvWt1lqMo6J6kJQVPYoGoeQTYjwBWsxECms.
+username sac-azaraj privilege 15 role network-admin secret sha512 $6$4U5VKGCDBNHa8ez5$9k0CuIA3PO6WDTS8vH/Kv0SJVl2qUVyh4ykOIt4JmP0OpUJVyap.kHpTjKCsD9.CQOcSWEY/99.2f7NXu1DLT0
+username sac-gaukum privilege 15 role network-admin secret sha512 $6$X3qkU.WrcddHnBI/$NXzTqTT/2kNPxU2Gee0nRZDvZmi0JQ9bCaSLblDVSfmzBYjeYTVncvLtsmJEVu4DSYsw6JQ8gKtWIO9fb7G3R0
+username sac-jespau privilege 15 role network-admin secret sha512 $6$qlqV3N7V6gAbp.IG$n5hj5HNVywOaeX0SgnQnXhbmqTtsygWEmssTO03NUoOzzquPi2QCDUZseg9rn7wcm0fpn3FvzasmiHx4Mj.Kn1
+username sac-mausin privilege 15 role network-admin secret sha512 $6$BNUav.4m05lzsltm$pbyQhJVTq2Le4ft5Q4AIQ4zQYUefL.UjaV8ZaQf/sv9jkGPFLlmfCB9zGp3F8zA4zoadhmaAADREoDyUle4U60
+username sac-paolss privilege 15 role network-admin secret sha512 $6$BQWhDHnW0yBwkWCO$nZGUV2.pCNCMPrV6WgQNXI0H7WQi7m5Q1rx.HpnZtAyHg5uGW2jB58WaRXXwXpg2k2MoqttUP6SMkz9ML5L621
+username sac-pradsi privilege 15 role network-admin secret sha512 $6$zunbVgm9kWgPw6tx$APATQRHN98Le/6gXpl/CygOUIj2ST8mNeHCX1f.o7rNRImxhJjANtYqwR3w10dUAKVLIoGIv/8jLGNYEHvyAD/
+username sac-rajmak role network-operator secret sha512 $6$ou.a6ijXPX/2EOdx$aBZB9Q5toZ9/C1oH28FnXpbWMCytCfzFqvFYkf/V50cQ0HE7Xk7uWjNY4d5dNX0Cowd.SqEQDycvQLbA0Ady6.
+username sac-ransin privilege 15 role network-admin secret sha512 $6$pf3..KEq.AmGeVv6$jzdg5sMIrH9igH5R838OEb8hnEP0yTRl7dJL03X4gJ15iT68FyC.Z2hvCT6MHMcoCODCWlVu9NO.hXPEVdZCn.
+username sac-sampra privilege 15 role network-admin secret sha512 $6$1UvyoArBZYuxRiW2$X7TU/.CbNn1AduAt7b/MWoRFaYbYY678u0Z/1mnRxUJvp8kOVg0LYQrSeCNT2VD3yETD4li/1.s/scPlwoIZF/
+username sac-shrpra privilege 15 role network-admin secret sha512 $6$Ps7s7Q2Te/sAiNnr$Siv4wfpDCL3OOc6yYQGN5GqCnFg5YECRHftm8v98Gqsk3NddwNT8nBm6k5cCPNpM4gZ2p1sPcCcLnERL9fYfG/
+username sac-silaro privilege 15 role network-admin secret sha512 $6$.mQ3OqwVV8ekWxAg$ebM6TcLQUcxg90Ua05B1SGkoXHI6vkOsrgbCfm9a28BIQ10Xo1/49KXLVQe4eWkMPaEkg7osY860GjsAALhj7.
+username sac-suman1 privilege 15 role network-admin secret sha512 $6$oOKJnom4ANuvbT4k$x.gKYkLyUl0SBLHo6EvFqsxd3t5M9LSUTqnkTf.tUoos1a5nwE3jmVra8rScShkoJEc849Pz08yNHZIlEEPzj1
+username sac-tahabd privilege 15 role network-admin secret sha512 $6$ipEYIKJXGm1KLX7o$15mYaUWMpBhYD2g6DNAfKYs/t2ImPOfRSvuKMM3x13b0ye6KZESW2wboyAPgDc3ZuOFJf.3qOdowEqvzhrPrf.
+username sac-tremar privilege 15 role network-admin secret sha512 $6$jA7NTAlLyYHeQXye$4WgFi.vMDTbz4ogY0u3Uu.bs9hu0UljP8Y8AWeRc9/OW3iyYoZZuusY9Fc5puRHIExRrRy7cGFHsONy6yL.R0.
+!
+daemon SplunkForwarder
+   exec /usr/bin/SplunkAgent 
+   option eapi_protocol value socket
+   option index-data value gssc_usdc_ops_network-switch
+   option index-interface-counters value on
+   option index-inventory value on
+   option index-lanz value on
+   option index-sflow value on
+   option index-syslog value on
+   option index-topology value on
+   option shutdown value disabled
+   option splunk-server value 10.24.54.13:9998
+   option vrf value mgmt
+   no shutdown
+!
+daemon TerminAttr
+   exec /usr/bin/TerminAttr -ingestgrpcurl=10.23.50.20:9910 -cvcompression=gzip -ingestauth=key,AAbm@130 -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -ingestvrf=mgmt -taillogs
+   no shutdown
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+queue-monitor length
+!
+logging trap notifications
+logging vrf mgmt host 10.23.20.11 514 protocol tcp
+logging facility local7
+logging vrf mgmt source-interface Management1
+!
+hostname USDC2NSD106
+ip domain lookup vrf mgmt source-interface Management1
+ip name-server vrf mgmt 10.230.134.16
+ip name-server vrf mgmt 10.230.134.17
+!
+ntp server vrf mgmt 10.23.50.53 prefer local-interface Management1
+ntp server vrf mgmt 10.71.50.53 local-interface Management1
+!
+sflow polling-interval 10
+sflow vrf mgmt destination 10.230.48.135 2055
+sflow vrf mgmt source-interface Management1
+sflow run
+!
+snmp-server community GSSC-SnmpV2Read ro
+snmp-server host DEMEESAP0616.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0729.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0730.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0732.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0762.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0763.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0764.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0768.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host demees-insight.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server enable traps
+no snmp-server vrf default
+snmp-server vrf mgmt
+!
+spanning-tree mode mstp
+no spanning-tree vlan-id 2000
+!
+vlan 1505
+   name MGMT_TNT_ESXi_Mgmt
+!
+vlan 1511
+   name WITNESS_Mgmt
+!
+vlan 1541
+   name Backup_Infra
+!
+vlan 1548
+   name PAFW_VM300
+!
+vlan 2000
+   name MLAG
+   trunk group MLAG_PEER
+!
+vlan 2525
+   name SILV_TNT_ESXi_Mgmt
+!
+vlan 2526
+   name SILV_TNT_ESXi_VXLAN_VTEP
+!
+vlan 2527
+   name SILV_TNT_ESXi_vMotion
+!
+vlan 2528
+   name SILV_TNT_ESXi_vSAN
+!
+vlan 2676
+   name SILV_TEP_Pool
+!
+vlan 2681
+   name SILV_EDGE1_BGP
+!
+vlan 2682
+   name SILV_EDGE2_BGP
+!
+vlan 2685
+   name SILV_EDGE_TEP_Pool
+!
+vlan 2704
+   name SPLUNK_SERVER
+!
+vlan 3476
+   name DMZ_SILV_TEP_Pool
+!
+vlan 3481
+   name DMZ_SILV_EDGE1_BGP
+!
+vlan 3482
+   name DMZ_SILV_EDGE2_BGP
+!
+vlan 3485
+   name DMZ_SILV_EDGE_TEP_Pool
+!
+vlan 3517
+   name F5_VLAN_5
+!
+vlan 3518
+   name F5_VLAN_6
+!
+vlan 3519
+   name F5_VLAN_7
+!
+vlan 3520
+   name VIRT_F5_VLAN_1
+!
+vlan 3521
+   name VIRT_F5_VLAN_2
+!
+vlan 3522
+   name VIRT_F5_VLAN_3
+!
+vrf instance mgmt
+   description mgmt vrf
+!
+interface Port-Channel2000
+   description MLAG_CHANNEL
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group MLAG_PEER
+!
+interface Ethernet1
+   description USDC2SSLVRXI05 #RITM0439325
+   mtu 9214
+   switchport trunk allowed vlan 1505,1511,1541,1548,2525,2527-2528,2676,2681-2682,2685,2704,3476,3481-3482,3485,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet2
+   description USDC2SSLVRXI05 #RITM0439325
+   mtu 9214
+   switchport trunk allowed vlan 1541,1548,2526,2681-2682,2685,2704,3476,3481-3482,3485
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet3
+   description USDC2SSLVRXI06 #RITM0439325
+   mtu 9214
+   switchport trunk allowed vlan 1505,1511,1541,1548,2525,2527-2528,2676,2681-2682,2685,2704,3476,3481-3482,3485,3517-3522
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet4
+   description USDC2SSLVRXI06 #RITM0439325
+   mtu 9214
+   switchport trunk allowed vlan 1541,1548,2526,2681-2682,2685,2704,3476,3481-3482,3485
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet5
+   description USDC2SPHV2011 #TASK0121381
+   mtu 9214
+!
+interface Ethernet6
+   description USDC2SPHV2011 #TASK0121381
+   mtu 9214
+!
+interface Ethernet7
+   description USDC2SPHV2012 #TASK0121381
+   mtu 9214
+!
+interface Ethernet8
+   description USDC2SPHV2012 #TASK0121381
+   mtu 9214
+!
+interface Ethernet9
+   description USDC2SPHV2013 #TASK0121381
+!
+interface Ethernet10
+   description USDC2SPHV2013 #TASK0121381
+!
+interface Ethernet11
+   description PH_XXL_HCQYTD3#RITM0454353
+   shutdown
+!
+interface Ethernet12
+   description PH_XXL_HCQYTD3#RITM0454353
+   shutdown
+!
+interface Ethernet13
+   description PH_XXL_HCQXTD3#RITM0454353
+   shutdown
+!
+interface Ethernet14
+   description PH_XXL_HCQXTD3#RITM0454353
+   shutdown
+!
+interface Ethernet15
+   description PH_XXL_HCQWTD3#RITM0454353
+   shutdown
+!
+interface Ethernet16
+   description PH_XXL_HCQWTD3#RITM0454353
+   shutdown
+!
+interface Ethernet17
+   shutdown
+!
+interface Ethernet18
+   shutdown
+!
+interface Ethernet19
+   shutdown
+!
+interface Ethernet20
+   shutdown
+!
+interface Ethernet21
+   shutdown
+!
+interface Ethernet22
+   shutdown
+!
+interface Ethernet23
+   shutdown
+!
+interface Ethernet24
+   shutdown
+!
+interface Ethernet25
+   shutdown
+!
+interface Ethernet26
+   shutdown
+!
+interface Ethernet27
+   shutdown
+!
+interface Ethernet28
+   shutdown
+!
+interface Ethernet29
+   shutdown
+!
+interface Ethernet30
+   shutdown
+!
+interface Ethernet31
+   shutdown
+!
+interface Ethernet32
+   shutdown
+!
+interface Ethernet33
+   shutdown
+!
+interface Ethernet34
+   shutdown
+!
+interface Ethernet35
+   shutdown
+!
+interface Ethernet36
+   shutdown
+!
+interface Ethernet37
+   shutdown
+!
+interface Ethernet38
+   shutdown
+!
+interface Ethernet39
+   shutdown
+!
+interface Ethernet40
+   shutdown
+!
+interface Ethernet41
+   shutdown
+!
+interface Ethernet42
+   shutdown
+!
+interface Ethernet43
+   shutdown
+!
+interface Ethernet44
+   shutdown
+!
+interface Ethernet45
+   shutdown
+!
+interface Ethernet46
+   shutdown
+!
+interface Ethernet47
+   shutdown
+!
+interface Ethernet48
+   shutdown
+!
+interface Ethernet49/1
+   description MLAG USDC2NSD105 Eth49/1
+   mtu 9214
+   channel-group 2000 mode active
+!
+interface Ethernet50/1
+   description MLAG USDC2NSD105 Eth50/1
+   mtu 9214
+   channel-group 2000 mode active
+!
+interface Ethernet51/1
+   description SPINE USDC2NSC001 Eth8
+   mtu 9214
+   no switchport
+   ip address 10.24.3.45/31
+!
+interface Ethernet52/1
+   description SPINE USDC2NSC002 Eth8
+   mtu 9214
+   no switchport
+   ip address 10.24.3.75/31
+!
+interface Ethernet53/1
+   shutdown
+!
+interface Ethernet54/1
+   shutdown
+!
+interface Ethernet55/1
+   shutdown
+!
+interface Ethernet56/1
+   shutdown
+!
+interface Loopback0
+   description BGP_ROUTER_ID
+   ip address 10.24.3.20/32
+!
+interface Loopback1
+   description VTEP
+   ip address 10.24.3.208/32
+!
+interface Management1
+   description USDC2NST103 Eth2
+   vrf mgmt
+   ip address 10.24.0.20/24
+!
+interface Vlan2000
+   mtu 9214
+   no autostate
+   ip address 10.24.2.17/31
+!
+interface Vxlan1
+   vxlan source-interface Loopback1
+   vxlan udp-port 4789
+   vxlan vlan 1505 vni 11505
+   vxlan vlan 1511 vni 11511
+   vxlan vlan 1515 vni 11515
+   vxlan vlan 1516 vni 11516
+   vxlan vlan 1517 vni 11517
+   vxlan vlan 1518 vni 11518
+   vxlan vlan 1540 vni 11540
+   vxlan vlan 1541 vni 11541
+   vxlan vlan 1543 vni 11543
+   vxlan vlan 1548 vni 11548
+   vxlan vlan 1810 vni 11810
+   vxlan vlan 1820 vni 11820
+   vxlan vlan 1830 vni 11830
+   vxlan vlan 1840 vni 11840
+   vxlan vlan 2525 vni 12525
+   vxlan vlan 2526 vni 12526
+   vxlan vlan 2527 vni 12527
+   vxlan vlan 2528 vni 12528
+   vxlan vlan 2560 vni 12560
+   vxlan vlan 2561 vni 12561
+   vxlan vlan 2562 vni 12562
+   vxlan vlan 2563 vni 12563
+   vxlan vlan 2675 vni 12675
+   vxlan vlan 2676 vni 12676
+   vxlan vlan 2677 vni 12677
+   vxlan vlan 2678 vni 12678
+   vxlan vlan 2679 vni 12679
+   vxlan vlan 2680 vni 12680
+   vxlan vlan 2681 vni 12681
+   vxlan vlan 2682 vni 12682
+   vxlan vlan 2683 vni 12683
+   vxlan vlan 2684 vni 12684
+   vxlan vlan 2685 vni 12685
+   vxlan vlan 2704 vni 12704
+   vxlan vlan 3386 vni 13386
+   vxlan vlan 3387 vni 13387
+   vxlan vlan 3388 vni 13388
+   vxlan vlan 3389 vni 13389
+   vxlan vlan 3475 vni 13475
+   vxlan vlan 3476 vni 13476
+   vxlan vlan 3477 vni 13477
+   vxlan vlan 3478 vni 13478
+   vxlan vlan 3481 vni 13481
+   vxlan vlan 3482 vni 13482
+   vxlan vlan 3483 vni 13483
+   vxlan vlan 3484 vni 13484
+   vxlan vlan 3485 vni 13485
+   vxlan vlan 3490 vni 13490
+   vxlan vlan 3517 vni 13517
+   vxlan vlan 3519 vni 13519
+   vxlan vlan 3520 vni 13520
+   vxlan vlan 3521 vni 13521
+   vxlan vlan 3522 vni 13522
+   vxlan flood vtep 10.23.3.202 10.23.3.204 10.23.3.206 10.23.3.208 10.24.3.202 10.24.3.204 10.24.3.206
+!
+event-handler TCP-TIMESTAMP
+   trigger on-boot
+   action bash sudo sysctl -w net.ipv4.tcp_timestamps=0
+!
+ip access-list standard ALLOW_SSH_ACL
+   10 permit 10.230.0.0/16
+   20 permit 10.71.0.0/16
+   30 permit 10.72.0.0/16
+   40 permit 10.23.0.0/16
+   50 permit 10.24.0.0/16
+   60 permit 10.52.0.0/16
+   999 deny any
+!
+ip routing
+ip routing vrf mgmt
+!
+mlag configuration
+   domain-id mlag1
+   local-interface Vlan2000
+   peer-address 10.24.2.16
+   peer-link Port-Channel2000
+!
+ip route vrf mgmt 0.0.0.0/0 10.24.0.1
+!
+route-map underlay permit 10
+   match source-protocol connected
+   match interface Loopback0
+!
+route-map underlay permit 20
+   match source-protocol connected
+   match interface Loopback1
+!
+router bgp 65315
+   router-id 10.24.3.20
+   update wait-for-convergence
+   update wait-install
+   maximum-paths 4 ecmp 4
+   neighbor MLAG-iBGP peer group
+   neighbor MLAG-iBGP remote-as 65315
+   neighbor MLAG-iBGP next-hop-self
+   neighbor MLAG-iBGP update-source Vlan2000
+   neighbor MLAG-iBGP send-community standard extended
+   neighbor MLAG-iBGP maximum-routes 12000
+   neighbor SPINE peer group
+   neighbor SPINE remote-as 65311
+   neighbor SPINE send-community standard extended
+   neighbor SPINE maximum-routes 12000
+   neighbor 10.24.2.16 peer group MLAG-iBGP
+   neighbor 10.24.3.44 peer group SPINE
+   neighbor 10.24.3.74 peer group SPINE
+   redistribute connected route-map underlay
+!
+ip tacacs vrf mgmt source-interface Management1
+!
+management api http-commands
+   protocol unix-socket
+   no shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+tacacs-server timeout 15
+tacacs-server policy unknown-mandatory-attribute ignore
+tacacs-server host 10.90.8.87 vrf mgmt key 7 032B49324B5D2777694F5D210B340D5A130F0A032B3C3B245313
+tacacs-server host 10.230.129.82 vrf mgmt key 7 132A052B465E02110C626C172904155101262071
+!
+aaa group server tacacs+ ISE_test_TACACS
+   server 10.90.8.87 vrf mgmt
+   server 10.230.129.82 vrf mgmt
+!
+aaa authentication login default group ISE_test_TACACS local
+aaa authentication login console local
+aaa authentication policy on-success log
+aaa authentication policy on-failure log
+aaa authorization exec default group ISE_test_TACACS local
+aaa authorization commands 0 default local
+aaa authorization commands 1-15 default group ISE_test_TACACS local
+aaa accounting system default start-stop group ISE_test_TACACS
+!
+management ssh
+   ip access-group ALLOW_SSH_ACL vrf mgmt in
+   idle-timeout 10
+   authentication mode password
+   shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+end

@@ -1,0 +1,319 @@
+!
+no aaa root
+!
+username System1 privilege 0 role network-operator secret sha512 $6$GBlHKcSi7TXXit2w$WhfVRqDF33eBnS7/AQ027YTxXz6S8.j9Tzm.Y8OxSYi/VAFHCMvFO09Fhl02waStdTN/SZS7Sl.U6VnmtWkfb.
+username admin privilege 15 role network-admin secret sha512 $6$gi8rIHMcgJsySPGm$hXn8iSsOZUAWTwsYLBqtICUnCViDY.PTEnrJxe/40ixlgXsyRqYwG.ZuOYcLO0cw2tjdP7OAoVLgf46Vu5MBu1
+username cvpadmin privilege 15 role network-admin secret sha512 $6$QNp/OdJSM6zgAb0D$n1wrEDKopdGvIdgu6.wD/M7BpxHCE3EVj/ZravVP0Y5nJl8QuNnRRvbPfyeS2Xe.DHmEPwSqEFd0kFL0kiA4Y0
+username netadmin privilege 15 role network-admin secret sha512 $6$uXMxhCQ2N7wVzBwt$Bjj9LnB12attpf02qpE0iWuR9dI7zlX7lAzQMXvg5YYw6./i1Q019EFOxJ/dhnGNJvS0Fqc.i.lksFTsR0GUd.
+username netsec privilege 0 role network-operator secret sha512 $6$KrfSr6.RrelfbJBi$ZAqqnRtoBDZM4IT6tceoir.NzhfWxpL2UNKriEOBxJi6eChSN6Hw3G6ul5Aq.3GTNZbB7CdsbLwC61G2lBXDH0
+username s-wipro-nw-vrni privilege 0 role network-operator secret sha512 $6$ZIA7WPoAVN3TRB4/$yZLBwlk9GmzV2DeES0sfIi/YvjT4AZ00oqKX8TE7Hkl7GYDKCd.MKZ5Gqtojf13UzanwxWJy5feraGZdScuQ20
+username sa-divymc privilege 15 role network-admin secret sha512 $6$EFiZ.zi0aRvLhWgK$ojsTxd8acIxEMTcidVDS.CLEY2VXcBcGm3oGVG4D42EEaqbo6U5RNh4KD5kczCbVo3q1D3IO1F71EELSVM.cD/
+username sa-michum privilege 0 role network-operator secret sha512 $6$N26mk3VcPadQ57fr$lObBIVvs1tCmWvUhNinKsfbzynPc1.iIr//TfYC5HvGFbmJvsOMZD/diExcN8zLVoDwm1O0Zu5Wo3oELOKHBj0
+username sa-parbar privilege 15 role network-admin secret sha512 $6$xWlhOUjYyB3/8vzS$MRFvRW46a1EzMBvhuNwadWQQqzrVWzNDnIT78fZnyKIeGFwntjJI6F6NhWcPeWeS2c3SXNOfoNwMfWYln87dN0
+username sac-azaraj privilege 15 role network-admin secret sha512 $6$gFdQwlxvPw.d84Ha$vK5C9DUEsGDpoK8XpaXqnLH3O2cnrRxjzmYvaWbP.Z/71gFqr59nOePvCROSIlpqgXwPLZc9uoi5lwpeHNihB1
+username sac-gaukum privilege 15 role network-admin secret sha512 $6$niYP2mqbQoO/LyyU$eqIIIGKUfQRx35RrdA5sCLheKrJLFOEd5h8nARKYkJumgPiteqQjoOxzsSSCM.8oDoNy9D24V91PKwFFj96Hv.
+username sac-jespau privilege 15 role network-admin secret sha512 $6$gJl73NkbGMlJVaXm$J2yKe8nd9nFugNq6poj0MhOsYts3bUxYuxAdoZyG1lzoW69y.pg.2KdtQQFuKJcd/AuKDKTC31arMsAKdFZZu.
+username sac-mausin privilege 15 role network-admin secret sha512 $6$jJLmxJXcEqu9KTvW$95.Pp9iV3TGiK5d9UdHXwfDkFkVL3J5bmZBnSUp6M84vtIUfL3g9Whaf6gznSZQrPlZqvAyriElhfH1MIwVxX0
+username sac-paolss privilege 15 role network-admin secret sha512 $6$Wa/2oAa42RWA6YXW$81gmit17Feu/RAA4CZvbtN8QrYb3o/RH9LG6DSUGIdFUtOndEbP0M3formobeDh1SIfBgiiedf63LA57L.pbU0
+username sac-pradsi privilege 15 role network-admin secret sha512 $6$J87OwQcAIf2G2I6P$jvRpYvk3owalBTmiWwP6ezOm7IrPRIpMFGS3UWvfrEEk4dEbWmKS77x8DKhwkBFC4L1NwGBy/HMwSQRM9TvpW0
+username sac-rajmak role network-operator secret sha512 $6$SzXOK49AJ.goI3Fh$LnT7c/amtmFZGGy1fMmM9JT1UJTcJ/iIHSx9IF3VMApGwWxdLyVdAMPSCi1ImTB1pDjrwsKL5Yf0rkGMZgVWF.
+username sac-ransin privilege 15 role network-admin secret sha512 $6$yG9ZB7.Lol98FVz3$lKXvrhakXY26UagokJzTyXv.9u5xWgQERfUiAJOz7wsV5LxNwdpU4kp5isudg8ugL2HHgbFSvtv7ZjLvB2RwF0
+username sac-sampra privilege 15 role network-admin secret sha512 $6$r0TXZh.S5LD7sDh8$yuios5swRkMxOj9tGZYzOpenI4qbfAwcX7Lgm5MYvm5VgZX0cuO7pa1GQvHhpCqXBBAbRrzGGaPpizqVJbCnf0
+username sac-shrpra privilege 15 role network-admin secret sha512 $6$29dK79JPqGRxxXsp$Dbk0iqvD6jxwcIrO5BQeX0sDZw4uhW...niHOp8hpuoHugJWo8SPjH4P4hUP/rGCz3ENB50q9eEVaemhrXirv0
+username sac-silaro privilege 15 role network-admin secret sha512 $6$6jtIBOeNn06jeBDi$Nmgg6UxTNLo.go.rCliieYylMTp/3AZoMoJGR2z1DhUdOdhs76Casce7QrO.kJWC1pj.nWdVfYU9MFtlB0w9k0
+username sac-suman1 privilege 15 role network-admin secret sha512 $6$pVysxDK5D5Okiy3K$k8CehHA.hy5t4lhGTObc/qDZMuxzvmaKaWO2X6Q11bVJh0gVTRbI.CjC/0pKHx5W5y0g5t4ENDvtPJMUn0fxO/
+username sac-tahabd privilege 15 role network-admin secret sha512 $6$1gy33HmPXAWh6RuV$uEJj1gP7IX4M73Efl2hT.0u3bYUC/he2TKYxreXhDE0uZV.rDBmEG.WfvFbQsZXWCOQa4QFBV7P1sVyjPJaa40
+username sac-tremar privilege 15 role network-admin secret sha512 $6$NEdWzblucB1mRaiM$Y8u1AEO4ry2Ik11qWRG18gEfGDypbTIIHgb9IxXaMZgehItq.oiqEsYe7q6n6wFzFGPh6O79wVtj4Tg7C5EZV1
+!
+daemon SplunkForwarder
+   exec /usr/bin/SplunkAgent 
+   option eapi_protocol value socket
+   option index-data value gssc_usdc_ops_network-switch
+   option index-interface-counters value on
+   option index-inventory value on
+   option index-lanz value on
+   option index-sflow value on
+   option index-syslog value on
+   option index-topology value on
+   option shutdown value disabled
+   option splunk-server value 10.23.54.13:9998
+   option vrf value mgmt
+   no shutdown
+!
+daemon TerminAttr
+   exec /usr/bin/TerminAttr -ingestgrpcurl=10.23.50.20:9910 -cvcompression=gzip -ingestauth=key,AAbm@130 -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -ingestvrf=mgmt -taillogs
+   no shutdown
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+queue-monitor length
+!
+logging trap notifications
+logging host 10.23.20.11 514
+logging vrf mgmt host 10.23.20.11 514 protocol tcp
+logging facility local7
+logging vrf mgmt source-interface Management1
+!
+hostname USDC1NSC101
+ip domain lookup vrf mgmt source-interface Management1
+ip name-server vrf mgmt 10.230.134.16
+ip name-server vrf mgmt 10.230.134.17
+!
+ntp server vrf mgmt 10.23.50.53 prefer local-interface Management1
+ntp server vrf mgmt 10.71.50.53 local-interface Management1
+!
+sflow polling-interval 10
+sflow vrf mgmt destination 10.230.48.135 2055
+sflow vrf mgmt source-interface Management1
+sflow run
+!
+snmp-server community GSSC-SnmpV2Read ro
+snmp-server host DEMEESAP0616.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0729.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0730.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0732.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0762.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0763.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0764.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0768.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host demees-insight.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server enable traps
+no snmp-server vrf default
+snmp-server vrf mgmt
+!
+spanning-tree mode mstp
+!
+vrf instance mgmt
+   description mgmt vrf
+!
+interface Ethernet1/1
+   description to USDC1SD001 Eth51/1
+   mtu 9214
+   no switchport
+   ip address 10.23.3.30/31
+!
+interface Ethernet2/1
+   description to USDC1SD002 Eth51/1
+   mtu 9214
+   no switchport
+   ip address 10.23.3.32/31
+!
+interface Ethernet3/1
+   description to USDC1SD003 Eth51/1
+   mtu 9214
+   no switchport
+   ip address 10.23.3.34/31
+!
+interface Ethernet4/1
+   description to USDC1SD004 Eth51/1
+   mtu 9214
+   no switchport
+   ip address 10.23.3.36/31
+!
+interface Ethernet5/1
+   description to USDC1SE001 Eth51/1
+   mtu 9214
+   no switchport
+   ip address 10.23.3.38/31
+!
+interface Ethernet6/1
+   description to USDC1SE002 Eth51/1
+   mtu 9214
+   no switchport
+   ip address 10.23.3.40/31
+!
+interface Ethernet7/1
+   description to USDC1NSD105 Eth51/1
+   mtu 9214
+   no switchport
+   ip address 10.23.3.42/31
+!
+interface Ethernet8/1
+   description to USDC1NSD106 Eth51/1
+   mtu 9214
+   no switchport
+   ip address 10.23.3.44/31
+!
+interface Ethernet9/1
+   shutdown
+!
+interface Ethernet10/1
+   shutdown
+!
+interface Ethernet11/1
+   shutdown
+!
+interface Ethernet12/1
+   shutdown
+!
+interface Ethernet13/1
+   shutdown
+!
+interface Ethernet14/1
+   shutdown
+!
+interface Ethernet15/1
+   shutdown
+!
+interface Ethernet16/1
+   shutdown
+!
+interface Ethernet17/1
+   shutdown
+!
+interface Ethernet18/1
+   shutdown
+!
+interface Ethernet19/1
+   shutdown
+!
+interface Ethernet20/1
+   shutdown
+!
+interface Ethernet21/1
+   shutdown
+!
+interface Ethernet22/1
+   shutdown
+!
+interface Ethernet23/1
+   shutdown
+!
+interface Ethernet24/1
+   shutdown
+!
+interface Ethernet25/1
+   shutdown
+!
+interface Ethernet26/1
+   shutdown
+!
+interface Ethernet27/1
+   shutdown
+!
+interface Ethernet28/1
+   shutdown
+!
+interface Ethernet29/1
+   shutdown
+!
+interface Ethernet30/1
+   shutdown
+!
+interface Ethernet31/1
+   shutdown
+!
+interface Ethernet32/1
+   shutdown
+!
+interface Ethernet33
+   shutdown
+!
+interface Ethernet34
+   shutdown
+!
+interface Loopback0
+   description BGP_ROUTER_ID
+   ip address 10.23.3.11/32
+!
+interface Management1
+   description to USDC1NST001 eth1
+   vrf mgmt
+   ip address 10.23.0.11/24
+!
+event-handler TCP-TIMESTAMP
+   trigger on-boot
+   action bash sudo sysctl -w net.ipv4.tcp_timestamps=0
+!
+ip access-list standard ALLOW_SSH_ACL
+   10 permit 10.230.0.0/16
+   20 permit 10.71.0.0/16
+   30 permit 10.72.0.0/16
+   40 permit 10.23.0.0/16
+   50 permit 10.24.0.0/16
+   60 permit 10.52.0.0/16
+   999 deny any
+!
+ip routing
+ip routing vrf mgmt
+!
+ip route vrf mgmt 0.0.0.0/0 10.23.0.1
+!
+route-map underlay permit 10
+   match source-protocol connected
+   match interface Loopback0
+!
+route-map underlay permit 20
+   match source-protocol connected
+   match interface Loopback1
+!
+router bgp 65301
+   router-id 10.23.3.11
+   update wait-for-convergence
+   update wait-install
+   maximum-paths 4 ecmp 4
+   neighbor LEAF peer group
+   neighbor LEAF send-community standard extended
+   neighbor LEAF maximum-routes 12000
+   neighbor 10.23.3.31 peer group LEAF
+   neighbor 10.23.3.31 remote-as 65302
+   neighbor 10.23.3.33 peer group LEAF
+   neighbor 10.23.3.33 remote-as 65302
+   neighbor 10.23.3.35 peer group LEAF
+   neighbor 10.23.3.35 remote-as 65303
+   neighbor 10.23.3.37 peer group LEAF
+   neighbor 10.23.3.37 remote-as 65303
+   neighbor 10.23.3.39 peer group LEAF
+   neighbor 10.23.3.39 remote-as 65304
+   neighbor 10.23.3.41 peer group LEAF
+   neighbor 10.23.3.41 remote-as 65304
+   neighbor 10.23.3.43 peer group LEAF
+   neighbor 10.23.3.43 remote-as 65305
+   neighbor 10.23.3.45 peer group LEAF
+   neighbor 10.23.3.45 remote-as 65305
+   redistribute connected route-map underlay
+!
+ip tacacs vrf mgmt source-interface Management1
+!
+management api http-commands
+   protocol unix-socket
+   no shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+management security
+   ssl profile test
+      tls versions 1.2
+      certificate test key test
+!
+tacacs-server timeout 15
+tacacs-server policy unknown-mandatory-attribute ignore
+tacacs-server host 10.90.8.87 vrf mgmt key 7 032B49324B5D2777694F5D210B340D5A130F0A03
+tacacs-server host 10.230.129.82 vrf mgmt key 7 022916624654091A6B084D3D1931145D1B210B0C
+!
+aaa group server tacacs+ ISE_test_TACACS
+   server 10.90.8.87 vrf mgmt
+   server 10.230.129.82 vrf mgmt
+!
+aaa authentication login default group ISE_test_TACACS local
+aaa authentication login console local
+aaa authentication policy on-success log
+aaa authentication policy on-failure log
+aaa authorization exec default group ISE_test_TACACS local
+aaa authorization commands 0 default local
+aaa authorization commands 1-15 default group ISE_test_TACACS local
+aaa accounting system default start-stop group ISE_test_TACACS
+!
+management ssh
+   ip access-group ALLOW_SSH_ACL vrf mgmt in
+   idle-timeout 30
+   authentication mode password
+   shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+end

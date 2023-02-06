@@ -1,0 +1,63 @@
+!
+vrf instance CITRIX
+!
+vrf instance CITRIX1
+!
+vrf instance DMZ
+!
+vrf instance DMZ_INFRA_NSX
+!
+vrf instance F5_TRANSIT
+!
+vrf instance IBM_iSeries
+!
+vrf instance INFOBLOX
+!
+vrf instance INFRA_Mgmt
+!
+vrf instance INFRA_NSX
+!
+vrf instance INFRA_Std
+!
+vrf instance INTERNAL
+!
+vrf instance INTERNAL_Com
+!
+vrf instance INTERNAL_Std
+!
+vrf instance INTERNET
+!
+vrf instance ISILON
+!
+vrf instance Jump_Server
+!
+vrf instance MCAFEE
+!
+vrf instance MPLS_AA
+!
+vrf instance OOB_Mgmt
+!
+vrf instance OneMKS_PROD
+!
+vrf instance OneMKS_UAT_TEST
+!
+vrf instance PHY-VIR-iSAC
+!
+vrf instance PHYSICAL_SERVER
+!
+vrf instance REPLICATION
+!
+vrf instance Service_Now
+!
+vrf instance TEST-DIRECTFLOW
+!
+vrf instance WLC_GUEST
+!
+vrf instance WLC_Mgmt
+!
+vrf instance WLC_PROD_IOT
+!
+vrf instance XMS_CVP
+!
+vrf instance mgmt
+!

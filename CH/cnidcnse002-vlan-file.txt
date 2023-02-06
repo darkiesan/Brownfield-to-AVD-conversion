@@ -1,0 +1,325 @@
+!
+vlan 1505
+   name MGMT_ESXi_Mgmt
+   trunk group MGMT_TNT_ESXi_Mgmt
+!
+vlan 1506
+   name MGMT_VXLAN_VTEP
+   trunk group MGMT_VXLAN_VTEP
+!
+vlan 1507
+   name MGMT_vMotion
+   trunk group MGMT_vMotion
+!
+vlan 1508
+   name MGMT_vSAN
+   trunk group MGMT_vSAN
+!
+vlan 1510
+   name vRA_Mgmt
+   trunk group VRA_Mgmt
+!
+vlan 1525
+   name SILV_ESXi_Mgmt
+   trunk group SILV_ESXi_Mgmt
+!
+vlan 1526
+   name SILV_TNT_ESXi_VXLAN_VTEP
+   trunk group SILV_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1527
+   name SILV_ESXi_vMotion
+   trunk group SILV_ESXi_vMotion
+!
+vlan 1528
+   name SILV_ESXi_vSAN
+   trunk group SILV_ESXi_vSAN
+!
+vlan 1540
+   name PHYSICAL_SERVER
+   trunk group PHYSICAL_SERVER
+!
+vlan 1541
+   name BACK_Infra
+   trunk group BACKUP_Infra
+!
+vlan 1543
+   name BACK_Mgmt
+   trunk group BACKUP_Mgmt
+!
+vlan 1548
+   name PAFW_VM300
+   trunk group PAFW_VM300
+!
+vlan 1550
+   name INFOBLOX
+   trunk group INFOBLOX
+!
+vlan 1554
+   name SPLU_LOG_Mgmt
+   trunk group SPLU_LOG_Mgmt
+!
+vlan 1559
+   name F5_VIPs
+   trunk group F5_VIPs
+!
+vlan 1564
+   name BKP_WLD_Silver
+   trunk group BKP_WLD_Silver
+!
+vlan 1600
+   name Un-Trust_Zone
+!
+vlan 1603
+   name F5_HA
+!
+vlan 1608
+   name EPO_TRANSIT_FW
+   trunk group EPO_TRANSIT_FW
+!
+vlan 1609
+   name INFRA_APP_TRANSIT_FW
+   trunk group INFRA_APP_TRANSIT_FW
+!
+vlan 1610
+   name INTERNAL_TRANSIT_FW
+!
+vlan 1611
+   name INFRA_TRANSIT_FW
+!
+vlan 1612
+   name MPLS_TRANSIT_FW
+!
+vlan 1615
+   name WLC_Transit_FW
+!
+vlan 1616
+   name JUMP_SERVER_TRANSIT_FW_MW
+!
+vlan 1619
+   name PULSE_SECURE_TRANSIT_FW
+   trunk group PULSE_SECURE_TRANSIT_FW
+!
+vlan 1620
+   name PULSE_SECURE_INSIDE_TRANSIT_FW
+   trunk group PULSE_SECURE_INSIDE_TRANSIT_FW
+!
+vlan 1621
+   name PULSE_SECURE_OUTSIDE_TRANSIT_FW
+   trunk group PULSE_SECURE_OUTSIDE_TRANSIT_FW
+!
+vlan 1625
+   name WLC-WIFI_Guest_transit_Fw
+!
+vlan 1630
+   name AX_Wireless_transit_vlan
+!
+vlan 1631
+   name Secure_Wireless_transit_vlan
+!
+vlan 1632
+   name AATech_Wireless_transit
+   trunk group AATech_Wireless_transit
+!
+vlan 1633
+   name Andon_Wireless_Transit_FW
+!
+vlan 1634
+   name Plant_Wireless_transit
+   trunk group Plant_Wireless_transit
+!
+vlan 1635
+   name MPLS_CKT_1
+!
+vlan 1636
+   name MPLS_CKT_2
+!
+vlan 1637
+   name MPLS_DC_iBGP
+   trunk group MPLS_DC_iBGP
+!
+vlan 1650
+   name INET
+!
+vlan 1652
+   name Arista_F5_MPLS_TRANSIT
+   trunk group Arista_F5_MPLS_TRANSIT
+!
+vlan 1653
+   name INTERNET
+   trunk group INTERNET
+!
+vlan 1655
+   name ARISTA_To_F5Ext
+   trunk group ARISTA_To_F5Ext
+!
+vlan 1656
+   name F5Int_To_ARISTA
+   trunk group F5Int_To_ARISTA
+!
+vlan 1657
+   name ARISTA_To_PAN
+   trunk group ARISTA_To_PAN
+!
+vlan 1659
+   name CNIDC-PZEN
+!
+vlan 1676
+   name SILV_TEP_Pool
+   trunk group SILV_TEP_Pool
+!
+vlan 1681
+   name SILV_EDGE1_BGP
+   trunk group SILV_EDGE1_BGP
+!
+vlan 1682
+   name SILV_EDGE2_BGP
+   trunk group SILV_EDGE2_BGP
+!
+vlan 1685
+   name SILV_EDGE_TEP_Pool
+   trunk group SILV_EDGE_TEP_Pool
+!
+vlan 1704
+   name SNOW_DISCOVERY
+   trunk group SNOW_DISCOVERY
+!
+vlan 1712
+   name Cloudvision
+   trunk group Cloudvision
+!
+vlan 1720
+   name SNOW_DISCOVERY_TRANSIT_FW
+   trunk group SNOW_DISCOVERY_TRANSIT_FW
+!
+vlan 1800
+   name WLC
+!
+vlan 1801
+   name BIG_IQ
+   trunk group BIG_IQ
+!
+vlan 1802
+   name PANORAMA
+   trunk group PANORAMA
+!
+vlan 1803
+   name PULSE_SECURE
+   trunk group PULSE_SECURE
+!
+vlan 1804
+   name EPO
+   trunk group EPO
+!
+vlan 1805
+   name PULSE_SECURE_MGMT
+   trunk group PULSE_SECURE_MGMT
+!
+vlan 1806
+   name PULSE_SECURE_OUTSIDE
+   trunk group PULSE_SECURE_OUTSIDE
+!
+vlan 1810
+   name WLC_WIFI_Guest
+!
+vlan 1811
+   name AX_Wireless
+!
+vlan 1812
+   name Secure_Wireless
+!
+vlan 1813
+   name Andon_Wireless
+!
+vlan 1814
+   name AATech_Wireless
+   trunk group AATech_Wireless
+!
+vlan 1815
+   name Plant_Wireless
+   trunk group Plant_Wireless
+!
+vlan 1820
+   name Global_WiFi_VC_Production
+   trunk group WiFi_GUEST_PROD_IOT
+!
+vlan 1830
+   name Global_WiFi_VC_IoT
+   trunk group WiFi_GUEST_PROD_IOT
+!
+vlan 1840
+   name WLC_HA_L2_VLAN
+   trunk group WiFi_GUEST_PROD_IOT
+!
+vlan 3301
+   name Jump_Server
+   trunk group Jump_Server
+!
+vlan 3312
+   name INFOBLOX_TRANSIT_FW
+   trunk group INFOBLOX_TRANSIT_FW
+!
+vlan 3316
+   name INFRA_NSX_FW
+   trunk group INFRA_NSX_FW
+!
+vlan 3320
+   name DMZ_INFRA_NSX_FW
+   trunk group DMZ_INFRA_NSX_FW
+!
+vlan 3321
+   name DMZ_INFRA_NSX_DCI
+   trunk group DMZ_INFRA_NSX_DCI
+!
+vlan 3322
+   name DMZ_TRANSIT_FW
+   trunk group DMZ_TRANSIT_FW
+!
+vlan 3376
+   name DMZ_SILV_TEP_Pool
+   trunk group DMZ_SILV_TEP_Pool
+!
+vlan 3381
+   name DMZ_SILV_EDGE1_BGP
+   trunk group DMZ_SILV_EDGE1_BGP
+!
+vlan 3382
+   name DMZ_SILV_EDGE2_BGP
+   trunk group DMZ_SILV_EDGE2_BGP
+!
+vlan 3385
+   name DMZ_SILV_EDGE_TEP_Pool
+   trunk group DMZ_SILV_EDGE_TEP_Pool
+!
+vlan 3386
+   name DMZ
+   trunk group DMZ
+!
+vlan 3513
+   name F5_VLAN_1
+   trunk group F5_VLAN_1
+!
+vlan 3514
+   name F5_VLAN_2
+   trunk group F5_VLAN_2
+!
+vlan 3515
+   name F5_VLAN_3
+   trunk group F5_VLAN_3
+!
+vlan 3516
+   name F5_VLAN_4
+   trunk group F5_VLAN_4
+!
+vlan 3518
+   name F5_VLAN_6
+   trunk group F5_VLAN_6
+!
+vlan 3520
+   name VIRT_F5_VLAN_1
+   trunk group VIRT_F5_VLAN_1
+!
+vlan 3524
+   name F5_iQuery_Mesh
+   trunk group F5_VIPs
+!

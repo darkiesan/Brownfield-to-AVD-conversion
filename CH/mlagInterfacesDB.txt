@@ -1,0 +1,241 @@
+[
+    {
+        "description": "PA-FW-1", 
+        "deviceList": [
+            "CNIDCNSE001", 
+            "CNIDCNSE002"
+        ], 
+        "interfaceName": "Port-Channel51", 
+        "mlagId": "51", 
+        "mlagMemberList": [
+            "Ethernet31", 
+            "Ethernet32", 
+            "Ethernet31", 
+            "Ethernet32"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1632", 
+            " 1657", 
+            " 1541", 
+            " 1543", 
+            " 1564", 
+            " 3321", 
+            " 3320", 
+            " 3381", 
+            " 3382", 
+            " 3385", 
+            " 3376", 
+            " 3322", 
+            " 1804", 
+            " 1608", 
+            " 1550", 
+            " 3312", 
+            " 1609", 
+            " 3316", 
+            " 3301", 
+            " 1505", 
+            " 1548", 
+            " 1803", 
+            " 1620", 
+            " 1806", 
+            " 1621", 
+            " 1619", 
+            " 1634", 
+            " 1704", 
+            " 1720", 
+            " 1554", 
+            " 1510"
+        ]
+    }, 
+    {
+        "description": "PA-FW-2", 
+        "deviceList": [
+            "CNIDCNSE001", 
+            "CNIDCNSE002"
+        ], 
+        "interfaceName": "Port-Channel52", 
+        "mlagId": "52", 
+        "mlagMemberList": [
+            "Ethernet33", 
+            "Ethernet34", 
+            "Ethernet33", 
+            "Ethernet34"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1632", 
+            " 1657", 
+            " 1541", 
+            " 1543", 
+            " 1564", 
+            " 3321", 
+            " 3320", 
+            " 3381", 
+            " 3382", 
+            " 3385", 
+            " 3376", 
+            " 3322", 
+            " 1804", 
+            " 1608", 
+            " 1550", 
+            " 3312", 
+            " 1609", 
+            " 3316", 
+            " 3301", 
+            " 1505", 
+            " 1548", 
+            " 1803", 
+            " 1620", 
+            " 1806", 
+            " 1621", 
+            " 1619", 
+            " 1634", 
+            " 1704", 
+            " 1720", 
+            " 1554", 
+            " 1510"
+        ]
+    }, 
+    {
+        "description": "F5-iSeries-1", 
+        "deviceList": [
+            "CNIDCNSE001", 
+            "CNIDCNSE002"
+        ], 
+        "interfaceName": "Port-Channel61", 
+        "mlagId": "61", 
+        "mlagMemberList": [
+            "Ethernet35", 
+            "Ethernet35"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1652", 
+            " 1656", 
+            " 1559", 
+            " 3524", 
+            " 3513", 
+            " 3514", 
+            " 3515", 
+            " 3516", 
+            " 1554"
+        ]
+    }, 
+    {
+        "description": "F5-iSeries-2", 
+        "deviceList": [
+            "CNIDCNSE001", 
+            "CNIDCNSE002"
+        ], 
+        "interfaceName": "Port-Channel62", 
+        "mlagId": "62", 
+        "mlagMemberList": [
+            "Ethernet36", 
+            "Ethernet36"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1652", 
+            " 1656", 
+            " 1559", 
+            " 3524", 
+            " 3513", 
+            " 3514", 
+            " 3515", 
+            " 3516", 
+            " 1554"
+        ]
+    }, 
+    {
+        "description": "F5-iSeries-1", 
+        "deviceList": [
+            "CNIDCNSE001", 
+            "CNIDCNSE002"
+        ], 
+        "interfaceName": "Port-Channel63", 
+        "mlagId": "63", 
+        "mlagMemberList": [
+            "Ethernet3", 
+            "Ethernet3"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1655"
+        ]
+    }, 
+    {
+        "description": "F5-iSeries-2", 
+        "deviceList": [
+            "CNIDCNSE001", 
+            "CNIDCNSE002"
+        ], 
+        "interfaceName": "Port-Channel64", 
+        "mlagId": "64", 
+        "mlagMemberList": [
+            "Ethernet4", 
+            "Ethernet4"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1655"
+        ]
+    }, 
+    {
+        "description": "WLC1", 
+        "deviceList": [
+            "CNIDCNSE001", 
+            "CNIDCNSE002"
+        ], 
+        "interfaceName": "Port-Channel144", 
+        "mlagId": "144", 
+        "mlagMemberList": [], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": []
+    }, 
+    {
+        "description": "WLC2", 
+        "deviceList": [
+            "CNIDCNSE001", 
+            "CNIDCNSE002"
+        ], 
+        "interfaceName": "Port-Channel145", 
+        "mlagId": "145", 
+        "mlagMemberList": [
+            "Ethernet45", 
+            "Ethernet45"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1814", 
+            " 1815"
+        ]
+    }, 
+    {
+        "description": "WLC2", 
+        "deviceList": [
+            "CNIDCNSE001", 
+            "CNIDCNSE002"
+        ], 
+        "interfaceName": "Port-Channel146", 
+        "mlagId": "146", 
+        "mlagMemberList": [
+            "Ethernet46", 
+            "Ethernet46"
+        ], 
+        "spanningTree": false, 
+        "switchportMode": "trunk", 
+        "vlanList": [
+            " 1814", 
+            " 1815"
+        ]
+    }
+]

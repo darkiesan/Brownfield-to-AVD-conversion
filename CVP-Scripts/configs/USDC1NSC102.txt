@@ -1,0 +1,290 @@
+!
+terminal length 0
+!
+daemon TerminAttr
+   exec /usr/bin/TerminAttr -cvaddr=10.23.30.22:9910 -cvauth=key,AAbm@130 -cvvrf=mgmt -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -taillogs
+   no shutdown
+!
+vlan internal order ascending range 3700 3900
+!
+transceiver qsfp default-mode 4x10G
+!
+queue-monitor length
+!
+snmp-server community GSSC-SnmpV2Read ro
+snmp-server host 10.230.128.19 informs version 2c GSSC-SnmpV2Read
+snmp-server host 10.230.129.112 informs version 2c GSSC-SnmpV2Read
+snmp-server host 10.230.129.113 informs version 2c GSSC-SnmpV2Read
+snmp-server host 10.230.129.48 informs version 2c GSSC-SnmpV2Read
+snmp-server host 10.230.54.11 informs version 2c GSSC-SnmpV2Read
+snmp-server host 10.230.54.14 informs version 2c GSSC-SnmpV2Read
+snmp-server host 10.230.54.15 informs version 2c GSSC-SnmpV2Read
+snmp-server host 10.230.54.16 informs version 2c GSSC-SnmpV2Read
+snmp-server host 10.71.114.60 vrf mgmt informs version 2c GSSC-SnmpV2Read
+snmp-server enable traps
+no snmp-server vrf default
+snmp-server vrf mgmt
+!
+daemon SplunkForwarder
+   exec /usr/bin/SplunkAgent 
+   option eapi_protocol value socket
+   option index-data value gssc_usdc_ops_network-switch
+   option index-interface-counters value on
+   option index-inventory value on
+   option index-lanz value on
+   option index-sflow value on
+   option index-syslog value on
+   option index-topology value on
+   option shutdown value disabled
+   option splunk-server value 10.23.54.13:9998
+   option vrf value mgmt
+   no shutdown
+!
+event-handler TCP-TIMESTAMP
+   trigger on-boot
+   action bash sudo sysctl -w net.ipv4.tcp_timestamps=0
+!
+!
+logging trap notifications
+logging host 10.23.20.11 514
+logging vrf mgmt host 10.23.20.11 514 protocol tcp
+logging facility local7
+logging vrf mgmt source-interface Management1
+logging buffered 10000
+!
+errdisable detect cause acl
+errdisable detect cause arp-inspection
+errdisable detect cause link-change
+errdisable detect cause xcvr-misconfigured
+errdisable detect cause xcvr-overheat
+errdisable detect cause xcvr-power-unsupported
+errdisable recovery cause arp-inspection
+errdisable recovery cause bpduguard
+errdisable recovery cause hitless-reload-down
+errdisable recovery cause lacp-rate-limit
+errdisable recovery cause link-flap
+errdisable recovery cause no-internal-vlan
+errdisable recovery cause portchannelguard
+errdisable recovery cause portsec
+errdisable recovery cause speed-misconfigured
+errdisable recovery cause uplink-failure-detection
+errdisable recovery cause xcvr-misconfigured
+errdisable recovery cause xcvr-overheat
+errdisable recovery cause xcvr-power-unsupported
+errdisable recovery cause xcvr-unsupported
+errdisable recovery interval 30
+!
+service routing protocols model multi-agent
+!
+hostname USDC1NSC102
+!
+ip name-server vrf mgmt 10.230.134.16
+ip name-server vrf mgmt 10.230.134.17
+!
+dns domain ad.global
+!
+ntp server vrf mgmt ntp.ad.global prefer version 4 local-interface Management1
+!
+sflow sample 1000
+sflow vrf mgmt destination 10.71.114.67 2055
+sflow vrf mgmt destination 10.230.48.135 2055
+sflow vrf mgmt source-interface Management1
+sflow destination 127.0.0.1
+sflow source-interface Loopback0
+sflow run
+!
+system control-plane
+   ip access-group custom-control-plane-acl in
+   ip access-group custom-control-plane-acl vrf mgmt in
+!
+spanning-tree mode none
+!
+no aaa root
+no enable password
+!
+username admin privilege 15 role network-admin secret sha512 $6$gi8rIHMcgJsySPGm$hXn8iSsOZUAWTwsYLBqtICUnCViDY.PTEnrJxe/40ixlgXsyRqYwG.ZuOYcLO0cw2tjdP7OAoVLgf46Vu5MBu1
+username cvpadmin privilege 15 role network-admin secret sha512 $6$QNp/OdJSM6zgAb0D$n1wrEDKopdGvIdgu6.wD/M7BpxHCE3EVj/ZravVP0Y5nJl8QuNnRRvbPfyeS2Xe.DHmEPwSqEFd0kFL0kiA4Y0
+username netadmin privilege 15 role network-admin secret sha512 $6$uXMxhCQ2N7wVzBwt$Bjj9LnB12attpf02qpE0iWuR9dI7zlX7lAzQMXvg5YYw6./i1Q019EFOxJ/dhnGNJvS0Fqc.i.lksFTsR0GUd.
+!
+clock timezone CET
+!
+vrf instance mgmt
+!
+interface Ethernet1/1
+   description P2P_LINK_TO_USDC1NSD101_Ethernet52/1
+   no shutdown
+   mtu 9100
+   no switchport
+   ip address 10.23.91.2/31
+!
+interface Ethernet2/1
+   description P2P_LINK_TO_USDC1NSD102_Ethernet52/1
+   no shutdown
+   mtu 9100
+   no switchport
+   ip address 10.23.91.6/31
+!
+interface Ethernet3/1
+   description P2P_LINK_TO_USDC1NSD103_Ethernet52/1
+   no shutdown
+   mtu 9100
+   no switchport
+   ip address 10.23.91.10/31
+!
+interface Ethernet4/1
+   description P2P_LINK_TO_USDC1NSD104_Ethernet52/1
+   no shutdown
+   mtu 9100
+   no switchport
+   ip address 10.23.91.14/31
+!
+interface Ethernet5/1
+   description P2P_LINK_TO_USDC1NSE101_Ethernet52/1
+   no shutdown
+   mtu 9100
+   no switchport
+   ip address 10.23.91.26/31
+!
+interface Ethernet6/1
+   description P2P_LINK_TO_USDC1NSE102_Ethernet52/1
+   no shutdown
+   mtu 9100
+   no switchport
+   ip address 10.23.91.30/31
+!
+interface Ethernet7/1
+   description P2P_LINK_TO_USDC1NSD105_Ethernet52/1
+   no shutdown
+   mtu 9100
+   no switchport
+   ip address 10.23.91.18/31
+!
+interface Ethernet8/1
+   description P2P_LINK_TO_USDC1NSD106_Ethernet52/1
+   no shutdown
+   mtu 9100
+   no switchport
+   ip address 10.23.91.22/31
+!
+interface Loopback0
+   description EVPN_Overlay_Peering
+   no shutdown
+   ip address 10.23.92.2/32
+!
+interface Management1
+   description oob_management
+   no shutdown
+   vrf mgmt
+   ip address 10.23.0.12/24
+!
+mac address-table aging-time 901
+!
+ip access-list standard ALLOW_SSH_ACL
+   10 permit 10.230.0.0/16
+   20 permit 10.71.0.0/16
+   30 permit 10.72.0.0/16
+   40 permit 10.23.0.0/16
+   50 permit 10.24.0.0/16
+   60 permit 10.52.0.0/16
+   999 deny any
+!
+ip routing
+ip routing vrf mgmt
+!
+ip prefix-list PL-LOOPBACKS-EVPN-OVERLAY
+   seq 10 permit 10.23.92.0/24 eq 32
+!
+ip route vrf mgmt 0.0.0.0/0 10.23.0.1
+!
+route-map RM-CONN-2-BGP permit 10
+   match ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY
+!
+router bgp 65301
+   router-id 10.23.92.2
+   distance bgp 150 200 200
+   graceful-restart restart-time 300
+   graceful-restart
+   maximum-paths 2 ecmp 2
+   neighbor IPv4-UNDERLAY-PEERS peer group
+   neighbor IPv4-UNDERLAY-PEERS password 7 $1c$U4tL2vQP9QwZlxIV1K3/pw==
+   neighbor IPv4-UNDERLAY-PEERS send-community
+   neighbor IPv4-UNDERLAY-PEERS maximum-routes 12000
+   neighbor 10.23.91.3 peer group IPv4-UNDERLAY-PEERS
+   neighbor 10.23.91.3 remote-as 65302
+   neighbor 10.23.91.3 description USDC1NSD101_Ethernet52/1
+   neighbor 10.23.91.7 peer group IPv4-UNDERLAY-PEERS
+   neighbor 10.23.91.7 remote-as 65302
+   neighbor 10.23.91.7 description USDC1NSD102_Ethernet52/1
+   neighbor 10.23.91.11 peer group IPv4-UNDERLAY-PEERS
+   neighbor 10.23.91.11 remote-as 65303
+   neighbor 10.23.91.11 description USDC1NSD103_Ethernet52/1
+   neighbor 10.23.91.15 peer group IPv4-UNDERLAY-PEERS
+   neighbor 10.23.91.15 remote-as 65303
+   neighbor 10.23.91.15 description USDC1NSD104_Ethernet52/1
+   neighbor 10.23.91.19 peer group IPv4-UNDERLAY-PEERS
+   neighbor 10.23.91.19 remote-as 65305
+   neighbor 10.23.91.19 description USDC1NSD105_Ethernet52/1
+   neighbor 10.23.91.23 peer group IPv4-UNDERLAY-PEERS
+   neighbor 10.23.91.23 remote-as 65305
+   neighbor 10.23.91.23 description USDC1NSD106_Ethernet52/1
+   neighbor 10.23.91.27 peer group IPv4-UNDERLAY-PEERS
+   neighbor 10.23.91.27 remote-as 65304
+   neighbor 10.23.91.27 description USDC1NSE101_Ethernet52/1
+   neighbor 10.23.91.31 peer group IPv4-UNDERLAY-PEERS
+   neighbor 10.23.91.31 remote-as 65304
+   neighbor 10.23.91.31 description USDC1NSE102_Ethernet52/1
+   redistribute connected route-map RM-CONN-2-BGP
+   !
+   address-family ipv4
+      neighbor IPv4-UNDERLAY-PEERS activate
+!
+ip tacacs vrf mgmt source-interface Management1
+!
+tacacs-server timeout 15
+tacacs-server policy unknown-mandatory-attribute ignore
+tacacs-server host 10.90.8.87 vrf mgmt key 7 032B49324B5D2777694F5D210B340D5A130F0A03
+tacacs-server host 10.230.129.82 vrf mgmt key 7 022916624654091A6B084D3D1931145D1B210B0C
+!
+aaa group server tacacs+ ISE_test_TACACS
+   server 10.90.8.87 vrf mgmt
+   server 10.230.129.82 vrf mgmt
+!
+aaa authentication login console local
+aaa authentication login default group ISE_test_TACACS local
+!
+aaa authorization commands 0 default local
+aaa authorization exec default group ISE_test_TACACS local
+aaa authorization commands 1-15 default group ISE_test_TACACS local
+!
+aaa accounting system default start-stop group ISE_test_TACACS
+
+management api http-commands
+   protocol https ssl profile SW_SSL_PROFILE
+   protocol unix-socket
+   no shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+management ssh
+   ip access-group ALLOW_SSH_ACL vrf mgmt in
+   idle-timeout 30
+   mac hmac-sha2-512-etm@openssh.com hmac-sha2-256-etm@openssh.com hmac-sha2-512 hmac-sha2-256
+   shutdown
+   vrf mgmt
+      no shutdown
+!
+management security
+   password encryption-key common
+   ssl profile SW_SSL_PROFILE
+      tls versions 1.2
+      cipher-list ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:!aNULL:!eNULL:!DES:!RC4:!3DES:!MD5:!PSK
+      certificate USDC1NSC102.crt key USDC1NSC102.key
+      trust certificate RootCA.crt
+      chain certificate intermediateCA.crt
+   !  
+   ssl profile test
+      tls versions 1.2
+      certificate test key test
+!
+end

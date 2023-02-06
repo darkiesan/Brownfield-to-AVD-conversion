@@ -1,0 +1,3682 @@
+!
+aaa group server tacacs+ ISE_test_TACACS
+   server 10.90.8.87 vrf mgmt
+   server 10.230.129.82 vrf mgmt
+!
+aaa authentication login console local
+aaa authentication login default group ISE_test_TACACS local
+!aaa authentication policy on-failure log
+!aaa authentication policy on-success log
+!
+aaa authorization commands 0 default local
+aaa authorization exec default group ISE_test_TACACS local
+aaa authorization commands 1-15 default group ISE_test_TACACS local
+!
+aaa accounting system default start-stop group ISE_test_TACACS
+!
+no aaa root
+no enable password
+!queue-monitor length!
+management api http-commands
+   protocol unix-socket
+!snmp-server community GSSC-SnmpV2Read ro
+snmp-server host 10.230.128.19 informs version 2c GSSC-SnmpV2Read
+snmp-server host 10.230.129.112 informs version 2c GSSC-SnmpV2Read
+snmp-server host 10.230.129.113 informs version 2c GSSC-SnmpV2Read
+snmp-server host 10.230.129.48 informs version 2c GSSC-SnmpV2Read
+snmp-server host 10.230.54.11 informs version 2c GSSC-SnmpV2Read
+snmp-server host 10.230.54.14 informs version 2c GSSC-SnmpV2Read
+snmp-server host 10.230.54.15 informs version 2c GSSC-SnmpV2Read
+snmp-server host 10.230.54.16 informs version 2c GSSC-SnmpV2Read
+snmp-server host 10.71.114.60 vrf mgmt informs version 2c GSSC-SnmpV2Read
+snmp-server enable traps
+no snmp-server vrf default
+snmp-server vrf mgmt!
+ip tacacs vrf mgmt source-interface Management1
+!
+tacacs-server timeout 15
+tacacs-server policy unknown-mandatory-attribute ignore
+tacacs-server host 10.90.8.87 vrf mgmt key 7 032B49324B5D2777694F5D210B340D5A130F0A03
+tacacs-server host 10.230.129.82 vrf mgmt key 7 022916624654091A6B084D3D1931145D1B210B0C
+!!
+daemon SplunkForwarder
+   exec /usr/bin/SplunkAgent 
+   option eapi_protocol value socket
+   option index-data value gssc_usdc_ops_network-switch
+   option index-interface-counters value on
+   option index-inventory value on
+   option index-lanz value on
+   option index-sflow value on
+   option index-syslog value on
+   option index-topology value on
+   option shutdown value disabled
+   option splunk-server value 10.23.54.13:9998
+   option vrf value mgmt
+   no shutdown
+!service routing protocols model multi-agentevent-handler TCP-TIMESTAMP
+   trigger on-boot
+   action bash sudo sysctl -w net.ipv4.tcp_timestamps=0
+!
+management security
+   ssl profile SW_SSL_PROFILE
+      tls versions 1.2
+      cipher-list ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:!aNULL:!eNULL:!DES:!RC4:!3DES:!MD5:!PSK
+      trust certificate RootCA.crt
+      chain certificate intermediateCA.crt
+   !  
+   ssl profile test
+      tls versions 1.2
+      certificate test key test
+!
+management api http-commands
+   protocol https ssl profile SW_SSL_PROFILE
+!logging trap notifications
+logging host 10.23.20.11 514
+logging vrf mgmt host 10.23.20.11 514 protocol tcp
+logging facility local7
+logging vrf mgmt source-interface Management1
+logging buffered 10000!
+ip access-list custom-control-plane-acl
+   counters per-entry
+   5 deny icmp any any timestamp-request
+   7 deny icmp any any timestamp-reply
+   10 permit icmp any any
+   20 permit ip any any tracked
+   30 permit udp any any eq bfd ttl eq 255
+   40 permit udp any any eq bfd-echo ttl eq 254
+   50 permit udp any any eq multihop-bfd micro-bfd sbfd
+   60 permit udp any eq sbfd any eq sbfd-initiator
+   70 permit ospf any any
+   80 permit tcp any any eq ssh telnet www snmp bgp https msdp ldp netconf-ssh gnmi
+   90 permit udp any any eq bootps bootpc ntp snmp rip ldp
+   100 permit tcp any any eq mlag ttl eq 255
+   110 permit udp any any eq mlag ttl eq 255
+   120 permit vrrp any any
+   130 permit ahp any any
+   140 permit pim any any
+   150 permit igmp any any
+   160 permit tcp any any range 5900 5910
+   170 permit tcp any any range 50000 50100
+   180 permit udp any any range 51000 51100
+   190 permit tcp any any eq 3333
+   200 permit tcp any any eq nat ttl eq 255
+   210 permit tcp any eq bgp any
+   220 permit rsvp any any
+   230 permit tcp any any eq 6040
+   240 permit tcp any any eq 5541 ttl eq 255
+   250 permit tcp any any eq 5542 ttl eq 255
+!
+
+!
+system control-plane
+   ip access-group custom-control-plane-acl in
+   ip access-group custom-control-plane-acl vrf mgmt in
+!
+!
+ip prefix-list INTERNET-IN
+   seq 10 permit 0.0.0.0/0
+!
+ip prefix-list INTERNET-OUT
+   seq 10 permit 141.81.181.0/24
+   seq 20 permit 141.81.182.0/24
+   seq 30 permit 141.81.183.0/24
+!
+ip prefix-list ISILON_PREFIXS_USDC1
+   seq 10 permit 10.23.101.0/24
+!
+ip prefix-list NSXT
+   seq 10 deny 0.0.0.0/0 le 32
+!
+ip prefix-list NSXT-GOLD-CL01-OUT
+   seq 10 permit 0.0.0.0/0
+!
+ip prefix-list NSXT-GOLD-CL02-OUT
+   seq 10 permit 0.0.0.0/0
+!
+ip prefix-list NSXT-SILV-OUT
+   seq 10 permit 0.0.0.0/0
+!
+
+!
+route-map INTERNET-IN permit 10
+   match ip address prefix-list INTERNET-IN
+!
+route-map INTERNET-OUT permit 10
+   match ip address prefix-list INTERNET-OUT
+   set as-path prepend 10753 10753 10753
+!
+route-map ISILON_USDC1_OUT deny 10
+   match ip address prefix-list ISILON_PREFIXS_USDC1
+!
+route-map ISILON_USDC1_OUT permit 1000
+!
+route-map NSXT permit 10
+   match ip address prefix-list NSXT
+!
+route-map NSXT-GOLD-CL01-OUT permit 10
+   match ip address prefix-list NSXT-GOLD-CL01-OUT
+!
+route-map NSXT-GOLD-CL02-OUT permit 10
+   match ip address prefix-list NSXT-GOLD-CL02-OUT
+!
+route-map NSXT-SILV-OUT permit 10
+   match ip address prefix-list NSXT-SILV-OUT
+!ip dhcp relay information option!
+ip access-list isolated_1540
+   10 permit ip host 10.23.40.51 10.23.40.52/31
+   20 permit ip host 10.23.40.51 10.23.40.68/31
+   30 permit ip 10.23.40.52/31 host 10.23.40.51
+   40 permit ip 10.23.40.52/31 10.23.40.68/31
+   50 permit ip 10.23.40.68/31 host 10.23.40.51
+   60 permit ip 10.23.40.68/31 10.23.40.52/31
+   70 permit ip host 10.23.40.62 host 10.23.40.87
+   80 permit ip host 10.23.40.61 host 10.23.40.86
+   90 permit ip host 10.23.40.87 host 10.23.40.62
+   100 permit ip host 10.23.40.86 host 10.23.40.61
+   110 permit ip host 10.23.40.52 host 10.23.40.53
+   120 permit ip host 10.23.40.53 host 10.23.40.52
+   130 permit ip host 10.23.40.68 host 10.23.40.69
+   140 permit ip host 10.23.40.69 host 10.23.40.68
+   150 permit ip 10.23.40.32/28 10.23.40.32/28
+   160 permit ip host 10.23.40.102 host 10.23.40.101
+   170 permit ip host 10.23.40.101 host 10.23.40.102
+   180 permit ip any 10.23.40.0/30
+   190 permit ip 10.23.40.0/30 any
+   200 permit ip any 10.23.40.4/31
+   210 permit ip 10.23.40.4/31 any
+   220 permit ip host 10.23.40.102 host 10.23.40.103
+   230 permit ip host 10.23.40.71 host 10.23.40.27
+   240 permit ip host 10.23.40.71 host 10.23.40.85
+   250 permit ip host 10.23.40.71 host 10.23.40.28
+   260 permit ip host 10.23.40.27 host 10.23.40.71
+   270 permit ip host 10.23.40.27 host 10.23.40.85
+   280 permit ip host 10.23.40.27 host 10.23.40.28
+   290 permit ip host 10.23.40.85 host 10.23.40.28
+   300 permit ip host 10.23.40.85 host 10.23.40.71
+   310 permit ip host 10.23.40.85 host 10.23.40.27
+   320 permit ip host 10.23.40.28 host 10.23.40.71
+   330 permit ip host 10.23.40.28 host 10.23.40.27
+   340 permit ip host 10.23.40.28 host 10.23.40.85
+   350 permit ip host 10.23.40.48 host 10.23.40.81
+   360 permit ip host 10.23.40.81 host 10.23.40.48
+   370 permit ip host 10.23.40.81 host 10.23.40.81
+   380 permit ip host 10.23.40.47 host 10.23.40.81
+   390 permit ip host 10.23.40.81 host 10.23.40.47
+   400 permit ip host 10.23.40.61 host 10.23.40.81
+   410 permit ip host 10.23.40.63 host 10.23.40.81
+   420 permit ip host 10.23.40.64 host 10.23.40.81
+   430 permit ip host 10.23.40.65 host 10.23.40.81
+   440 permit ip host 10.23.40.81 host 10.23.40.61
+   450 permit ip host 10.23.40.81 host 10.23.40.63
+   460 permit ip host 10.23.40.81 host 10.23.40.64
+   470 permit ip host 10.23.40.81 host 10.23.40.65
+   480 permit ip host 10.23.40.81 host 10.23.40.62
+   490 permit ip host 10.23.40.62 host 10.23.40.81
+   500 permit ip host 10.23.40.47 host 10.23.40.86
+   510 permit ip host 10.23.40.86 host 10.23.40.47
+   520 permit ip host 10.23.40.102 host 10.23.40.104
+   530 permit ip host 10.23.40.102 host 10.23.40.105
+   540 permit ip host 10.23.40.102 host 10.23.40.106
+   550 permit ip host 10.23.40.102 host 10.23.40.107
+   560 permit ip host 10.23.40.101 host 10.23.40.103
+   570 permit ip host 10.23.40.101 host 10.23.40.104
+   580 permit ip host 10.23.40.101 host 10.23.40.105
+   590 permit ip host 10.23.40.101 host 10.23.40.106
+   600 permit ip host 10.23.40.101 host 10.23.40.107
+   610 permit ip host 10.23.40.103 host 10.23.40.101
+   620 permit ip host 10.23.40.103 host 10.23.40.102
+   630 permit ip host 10.23.40.103 host 10.23.40.104
+   640 permit ip host 10.23.40.103 host 10.23.40.105
+   650 permit ip host 10.23.40.103 host 10.23.40.106
+   660 permit ip host 10.23.40.103 host 10.23.40.107
+   670 permit ip host 10.23.40.104 host 10.23.40.101
+   680 permit ip host 10.23.40.104 host 10.23.40.102
+   690 permit ip host 10.23.40.104 host 10.23.40.103
+   700 permit ip host 10.23.40.104 host 10.23.40.105
+   710 permit ip host 10.23.40.104 host 10.23.40.106
+   720 permit ip host 10.23.40.104 host 10.23.40.107
+   730 permit ip host 10.23.40.105 host 10.23.40.101
+   740 permit ip host 10.23.40.105 host 10.23.40.102
+   750 permit ip host 10.23.40.105 host 10.23.40.103
+   760 permit ip host 10.23.40.105 host 10.23.40.104
+   770 permit ip host 10.23.40.105 host 10.23.40.106
+   780 permit ip host 10.23.40.105 host 10.23.40.107
+   790 permit ip host 10.23.40.106 host 10.23.40.101
+   800 permit ip host 10.23.40.106 host 10.23.40.102
+   810 permit ip host 10.23.40.106 host 10.23.40.103
+   820 permit ip host 10.23.40.106 host 10.23.40.104
+   830 permit ip host 10.23.40.106 host 10.23.40.105
+   840 permit ip host 10.23.40.106 host 10.23.40.107
+   850 permit ip host 10.23.40.107 host 10.23.40.101
+   860 permit ip host 10.23.40.107 host 10.23.40.102
+   870 permit ip host 10.23.40.107 host 10.23.40.103
+   880 permit ip host 10.23.40.107 host 10.23.40.104
+   890 permit ip host 10.23.40.107 host 10.23.40.105
+   900 permit ip host 10.23.40.107 host 10.23.40.106
+   910 permit ip 10.23.40.60/30 10.23.40.60/30
+   920 permit ip 10.23.40.64/30 10.23.40.64/30
+   930 permit ip 10.23.40.60/30 10.23.40.64/30
+   940 permit ip 10.23.40.64/30 10.23.40.60/30
+   950 permit ip host 10.23.40.47 host 10.23.40.48
+   960 permit ip host 10.23.40.48 host 10.23.40.47
+   970 permit ip host 10.23.40.47 10.23.40.60/30
+   980 permit ip host 10.23.40.47 10.23.40.64/30
+   990 permit ip host 10.23.40.48 10.23.40.60/30
+   1000 permit ip host 10.23.40.48 10.23.40.64/30
+   1010 permit ip 10.23.40.60/30 host 10.23.40.47
+   1020 permit ip 10.23.40.64/30 host 10.23.40.47
+   1030 permit ip 10.23.40.60/30 host 10.23.40.48
+   1040 permit ip host 10.23.40.65 host 10.23.40.84
+   1050 permit ip host 10.23.40.84 host 10.23.40.65
+   1060 permit ip 10.23.40.64/30 host 10.23.40.48
+   1070 permit ip host 10.23.40.74 host 10.23.40.75
+   1080 permit ip host 10.23.40.74 host 10.23.40.76
+   1090 permit ip host 10.23.40.74 host 10.23.40.77
+   1100 permit ip host 10.23.40.75 host 10.23.40.74
+   1110 permit ip host 10.23.40.75 host 10.23.40.76
+   1120 permit ip host 10.23.40.75 host 10.23.40.77
+   1130 permit ip host 10.23.40.76 host 10.23.40.74
+   1140 permit ip host 10.23.40.76 host 10.23.40.75
+   1150 permit ip host 10.23.40.76 host 10.23.40.77
+   1160 permit ip host 10.23.40.77 host 10.23.40.74
+   1170 permit ip host 10.23.40.77 host 10.23.40.75
+   1180 permit ip host 10.23.40.77 host 10.23.40.76
+   1190 permit ip host 10.23.40.86 host 10.23.40.81
+   1200 permit ip host 10.23.40.87 host 10.23.40.81
+   1210 permit ip host 10.23.40.82 host 10.23.40.81
+   1220 permit ip host 10.23.40.27 host 10.23.40.81
+   1230 permit ip host 10.23.40.85 host 10.23.40.81
+   1240 permit ip host 10.23.40.83 host 10.23.40.81
+   1250 permit ip host 10.23.40.28 host 10.23.40.81
+   1260 permit ip host 10.23.40.71 host 10.23.40.81
+   1270 permit ip host 10.23.40.86 host 10.23.40.63
+   1280 permit ip host 10.23.40.87 host 10.23.40.63
+   1290 permit ip host 10.23.40.82 host 10.23.40.63
+   1300 permit ip host 10.23.40.27 host 10.23.40.63
+   1310 permit ip host 10.23.40.85 host 10.23.40.63
+   1320 permit ip host 10.23.40.83 host 10.23.40.63
+   1330 permit ip host 10.23.40.28 host 10.23.40.63
+   1340 permit ip host 10.23.40.71 host 10.23.40.63
+   1350 permit ip host 10.23.40.86 host 10.23.40.48
+   1360 permit ip host 10.23.40.87 host 10.23.40.48
+   1370 permit ip host 10.23.40.82 host 10.23.40.48
+   1380 permit ip host 10.23.40.27 host 10.23.40.48
+   1390 permit ip host 10.23.40.85 host 10.23.40.48
+   1400 permit ip host 10.23.40.83 host 10.23.40.48
+   1410 permit ip host 10.23.40.28 host 10.23.40.48
+   1420 permit ip host 10.23.40.71 host 10.23.40.48
+   1430 permit ip host 10.23.40.81 host 10.23.40.86
+   1440 permit ip host 10.23.40.81 host 10.23.40.87
+   1450 permit ip host 10.23.40.81 host 10.23.40.82
+   1460 permit ip host 10.23.40.81 host 10.23.40.27
+   1470 permit ip host 10.23.40.81 host 10.23.40.85
+   1480 permit ip host 10.23.40.81 host 10.23.40.83
+   1490 permit ip host 10.23.40.81 host 10.23.40.28
+   1500 permit ip host 10.23.40.81 host 10.23.40.71
+   1510 permit ip host 10.23.40.63 host 10.23.40.86
+   1520 permit ip host 10.23.40.63 host 10.23.40.87
+   1530 permit ip host 10.23.40.63 host 10.23.40.82
+   1540 permit ip host 10.23.40.63 host 10.23.40.27
+   1550 permit ip host 10.23.40.63 host 10.23.40.85
+   1560 permit ip host 10.23.40.63 host 10.23.40.83
+   1570 permit ip host 10.23.40.63 host 10.23.40.28
+   1580 permit ip host 10.23.40.63 host 10.23.40.71
+   1590 permit ip host 10.23.40.48 host 10.23.40.86
+   1600 permit ip host 10.23.40.48 host 10.23.40.87
+   1610 permit ip host 10.23.40.48 host 10.23.40.82
+   1620 permit ip host 10.23.40.48 host 10.23.40.27
+   1630 permit ip host 10.23.40.48 host 10.23.40.85
+   1640 permit ip host 10.23.40.48 host 10.23.40.83
+   1650 permit ip host 10.23.40.48 host 10.23.40.28
+   1660 permit ip host 10.23.40.48 host 10.23.40.71
+   1670 permit ip host 10.23.40.83 host 10.23.40.28
+   1680 permit ip host 10.23.40.83 host 10.23.40.71
+   1690 permit ip host 10.23.40.28 host 10.23.40.83
+   1700 permit ip host 10.23.40.71 host 10.23.40.83
+   1710 permit ip host 10.23.40.82 host 10.23.40.27
+   1720 permit ip host 10.23.40.82 host 10.23.40.85
+   1730 permit ip host 10.23.40.27 host 10.23.40.82
+   1740 permit ip host 10.23.40.85 host 10.23.40.82
+   1750 permit ip host 10.23.40.50 host 10.23.40.60
+   1760 permit ip host 10.23.40.60 host 10.23.40.50
+   1770 permit ip host 10.23.40.70 host 10.23.40.49
+   1780 permit ip host 10.23.40.49 host 10.23.40.70
+   1790 permit ip host 10.23.40.94 host 10.23.40.50
+   1800 permit ip host 10.23.40.94 host 10.23.40.60
+   1810 permit ip host 10.23.40.94 host 10.23.40.27
+   1820 permit ip host 10.23.40.94 host 10.23.40.85
+   1830 permit ip host 10.23.40.94 host 10.23.40.82
+   1840 permit ip host 10.23.40.94 host 10.23.40.83
+   1850 permit ip host 10.23.40.94 host 10.23.40.28
+   1860 permit ip host 10.23.40.94 host 10.23.40.71
+   1870 permit ip host 10.23.40.94 host 10.23.40.87
+   1880 permit ip host 10.23.40.94 host 10.23.40.61
+   1890 permit ip host 10.23.40.94 host 10.23.43.64
+   1900 permit ip host 10.23.40.94 host 10.23.40.47
+   1910 permit ip host 10.23.40.94 host 10.23.40.62
+   1920 permit ip host 10.23.40.94 host 10.23.40.86
+   1930 permit ip host 10.23.40.94 host 10.23.40.63
+   1940 permit ip host 10.23.40.94 host 10.23.40.48
+   1950 permit ip host 10.23.40.94 host 10.23.40.81
+   1960 permit ip host 10.23.40.94 host 10.23.40.93
+   1970 permit ip host 10.23.40.94 host 10.23.40.70
+   1980 permit ip host 10.23.40.94 host 10.23.40.49
+   1990 permit ip host 10.23.40.50 host 10.23.40.94
+   2000 permit ip host 10.23.40.60 host 10.23.40.94
+   2010 permit ip host 10.23.40.27 host 10.23.40.94
+   2020 permit ip host 10.23.40.85 host 10.23.40.94
+   2030 permit ip host 10.23.40.82 host 10.23.40.94
+   2040 permit ip host 10.23.40.83 host 10.23.40.94
+   2050 permit ip host 10.23.40.28 host 10.23.40.94
+   2060 permit ip host 10.23.40.71 host 10.23.40.94
+   2070 permit ip host 10.23.40.87 host 10.23.40.94
+   2080 permit ip host 10.23.40.61 host 10.23.40.94
+   2090 permit ip host 10.23.43.64 host 10.23.40.94
+   2100 permit ip host 10.23.40.47 host 10.23.40.94
+   2110 permit ip host 10.23.40.62 host 10.23.40.94
+   2120 permit ip host 10.23.40.86 host 10.23.40.94
+   2130 permit ip host 10.23.40.63 host 10.23.40.94
+   2140 permit ip host 10.23.40.48 host 10.23.40.94
+   2150 permit ip host 10.23.40.81 host 10.23.40.94
+   2160 permit ip host 10.23.40.93 host 10.23.40.94
+   2170 permit ip host 10.23.40.70 host 10.23.40.94
+   2180 permit ip host 10.23.40.49 host 10.23.40.94
+   2190 permit ip host 10.23.40.93 host 10.23.40.50
+   2200 permit ip host 10.23.40.93 host 10.23.40.60
+   2210 permit ip host 10.23.40.93 host 10.23.40.27
+   2220 permit ip host 10.23.40.93 host 10.23.40.85
+   2230 permit ip host 10.23.40.93 host 10.23.40.82
+   2240 permit ip host 10.23.40.93 host 10.23.40.83
+   2250 permit ip host 10.23.40.93 host 10.23.40.28
+   2260 permit ip host 10.23.40.93 host 10.23.40.71
+   2270 permit ip host 10.23.40.93 host 10.23.40.87
+   2280 permit ip host 10.23.40.93 host 10.23.40.61
+   2290 permit ip host 10.23.40.93 host 10.23.43.64
+   2300 permit ip host 10.23.40.93 host 10.23.40.47
+   2310 permit ip host 10.23.40.93 host 10.23.40.62
+   2320 permit ip host 10.23.40.93 host 10.23.40.86
+   2330 permit ip host 10.23.40.93 host 10.23.40.63
+   2340 permit ip host 10.23.40.93 host 10.23.40.48
+   2350 permit ip host 10.23.40.93 host 10.23.40.81
+   2360 permit ip host 10.23.40.93 host 10.23.40.70
+   2370 permit ip host 10.23.40.93 host 10.23.40.49
+   2380 permit ip host 10.23.40.50 host 10.23.40.93
+   2390 permit ip host 10.23.40.60 host 10.23.40.93
+   2400 permit ip host 10.23.40.27 host 10.23.40.93
+   2410 permit ip host 10.23.40.85 host 10.23.40.93
+   2420 permit ip host 10.23.40.82 host 10.23.40.93
+   2430 permit ip host 10.23.40.83 host 10.23.40.93
+   2440 permit ip host 10.23.40.28 host 10.23.40.93
+   2450 permit ip host 10.23.40.71 host 10.23.40.93
+   2460 permit ip host 10.23.40.87 host 10.23.40.93
+   2470 permit ip host 10.23.40.61 host 10.23.40.93
+   2480 permit ip host 10.23.43.64 host 10.23.40.93
+   2490 permit ip host 10.23.40.47 host 10.23.40.93
+   2500 permit ip host 10.23.40.62 host 10.23.40.93
+   2510 permit ip host 10.23.40.86 host 10.23.40.93
+   2520 permit ip host 10.23.40.63 host 10.23.40.93
+   2530 permit ip host 10.23.40.48 host 10.23.40.93
+   2540 permit ip host 10.23.40.81 host 10.23.40.93
+   2550 permit ip host 10.23.40.70 host 10.23.40.93
+   2560 permit ip host 10.23.40.49 host 10.23.40.93
+   2570 permit ip host 10.23.40.60 host 10.23.40.27
+   2580 permit ip host 10.23.40.60 host 10.23.40.85
+   2590 permit ip host 10.23.40.60 host 10.23.40.82
+   2600 permit ip host 10.23.40.60 host 10.23.40.83
+   2610 permit ip host 10.23.40.60 host 10.23.40.28
+   2620 permit ip host 10.23.40.60 host 10.23.40.71
+   2630 permit ip host 10.23.40.60 host 10.23.40.87
+   2640 permit ip host 10.23.40.60 host 10.23.40.61
+   2650 permit ip host 10.23.40.60 host 10.23.43.64
+   2660 permit ip host 10.23.40.60 host 10.23.40.47
+   2670 permit ip host 10.23.40.60 host 10.23.40.62
+   2680 permit ip host 10.23.40.60 host 10.23.40.86
+   2690 permit ip host 10.23.40.60 host 10.23.40.63
+   2700 permit ip host 10.23.40.60 host 10.23.40.48
+   2710 permit ip host 10.23.40.60 host 10.23.40.81
+   2720 permit ip host 10.23.40.60 host 10.23.40.70
+   2730 permit ip host 10.23.40.60 host 10.23.40.49
+   2740 permit ip host 10.23.40.27 host 10.23.40.60
+   2750 permit ip host 10.23.40.85 host 10.23.40.60
+   2760 permit ip host 10.23.40.82 host 10.23.40.60
+   2770 permit ip host 10.23.40.83 host 10.23.40.60
+   2780 permit ip host 10.23.40.28 host 10.23.40.60
+   2790 permit ip host 10.23.40.71 host 10.23.40.60
+   2800 permit ip host 10.23.40.87 host 10.23.40.60
+   2810 permit ip host 10.23.40.61 host 10.23.40.60
+   2820 permit ip host 10.23.43.64 host 10.23.40.60
+   2830 permit ip host 10.23.40.47 host 10.23.40.60
+   2840 permit ip host 10.23.40.62 host 10.23.40.60
+   2850 permit ip host 10.23.40.86 host 10.23.40.60
+   2860 permit ip host 10.23.40.63 host 10.23.40.60
+   2870 permit ip host 10.23.40.48 host 10.23.40.60
+   2880 permit ip host 10.23.40.81 host 10.23.40.60
+   2890 permit ip host 10.23.40.70 host 10.23.40.60
+   2900 permit ip host 10.23.40.49 host 10.23.40.60
+   2910 permit ip host 10.23.40.50 host 10.23.40.27
+   2920 permit ip host 10.23.40.50 host 10.23.40.85
+   2930 permit ip host 10.23.40.50 host 10.23.40.82
+   2940 permit ip host 10.23.40.50 host 10.23.40.83
+   2950 permit ip host 10.23.40.50 host 10.23.40.28
+   2960 permit ip host 10.23.40.50 host 10.23.40.71
+   2970 permit ip host 10.23.40.50 host 10.23.40.87
+   2980 permit ip host 10.23.40.50 host 10.23.40.61
+   2990 permit ip host 10.23.40.50 host 10.23.43.64
+   3000 permit ip host 10.23.40.50 host 10.23.40.47
+   3010 permit ip host 10.23.40.50 host 10.23.40.62
+   3020 permit ip host 10.23.40.50 host 10.23.40.86
+   3030 permit ip host 10.23.40.50 host 10.23.40.63
+   3040 permit ip host 10.23.40.50 host 10.23.40.48
+   3050 permit ip host 10.23.40.50 host 10.23.40.81
+   3060 permit ip host 10.23.40.50 host 10.23.40.70
+   3070 permit ip host 10.23.40.50 host 10.23.40.49
+   3080 permit ip host 10.23.40.27 host 10.23.40.50
+   3090 permit ip host 10.23.40.85 host 10.23.40.50
+   3100 permit ip host 10.23.40.82 host 10.23.40.50
+   3110 permit ip host 10.23.40.83 host 10.23.40.50
+   3120 permit ip host 10.23.40.28 host 10.23.40.50
+   3130 permit ip host 10.23.40.71 host 10.23.40.50
+   3140 permit ip host 10.23.40.87 host 10.23.40.50
+   3150 permit ip host 10.23.40.61 host 10.23.40.50
+   3160 permit ip host 10.23.43.64 host 10.23.40.50
+   3170 permit ip host 10.23.40.47 host 10.23.40.50
+   3180 permit ip host 10.23.40.62 host 10.23.40.50
+   3190 permit ip host 10.23.40.86 host 10.23.40.50
+   3200 permit ip host 10.23.40.63 host 10.23.40.50
+   3210 permit ip host 10.23.40.48 host 10.23.40.50
+   3220 permit ip host 10.23.40.81 host 10.23.40.50
+   3230 permit ip host 10.23.40.70 host 10.23.40.50
+   3240 permit ip host 10.23.40.49 host 10.23.40.50
+   3250 permit ip host 10.23.40.70 host 10.23.40.27
+   3260 permit ip host 10.23.40.70 host 10.23.40.85
+   3270 permit ip host 10.23.40.70 host 10.23.40.82
+   3280 permit ip host 10.23.40.70 host 10.23.40.83
+   3290 permit ip host 10.23.40.70 host 10.23.40.28
+   3300 permit ip host 10.23.40.70 host 10.23.40.71
+   3310 permit ip host 10.23.40.70 host 10.23.40.87
+   3320 permit ip host 10.23.40.70 host 10.23.40.61
+   3330 permit ip host 10.23.40.70 host 10.23.43.64
+   3340 permit ip host 10.23.40.70 host 10.23.40.47
+   3350 permit ip host 10.23.40.70 host 10.23.40.62
+   3360 permit ip host 10.23.40.70 host 10.23.40.86
+   3370 permit ip host 10.23.40.70 host 10.23.40.63
+   3380 permit ip host 10.23.40.70 host 10.23.40.48
+   3390 permit ip host 10.23.40.70 host 10.23.40.81
+   3400 permit ip host 10.23.40.27 host 10.23.40.70
+   3410 permit ip host 10.23.40.85 host 10.23.40.70
+   3420 permit ip host 10.23.40.82 host 10.23.40.70
+   3430 permit ip host 10.23.40.83 host 10.23.40.70
+   3440 permit ip host 10.23.40.28 host 10.23.40.70
+   3450 permit ip host 10.23.40.71 host 10.23.40.70
+   3460 permit ip host 10.23.40.87 host 10.23.40.70
+   3470 permit ip host 10.23.40.61 host 10.23.40.70
+   3480 permit ip host 10.23.43.64 host 10.23.40.70
+   3490 permit ip host 10.23.40.47 host 10.23.40.70
+   3500 permit ip host 10.23.40.62 host 10.23.40.70
+   3510 permit ip host 10.23.40.86 host 10.23.40.70
+   3520 permit ip host 10.23.40.63 host 10.23.40.70
+   3530 permit ip host 10.23.40.48 host 10.23.40.70
+   3540 permit ip host 10.23.40.81 host 10.23.40.70
+   3550 permit ip host 10.23.40.49 host 10.23.40.27
+   3560 permit ip host 10.23.40.49 host 10.23.40.85
+   3570 permit ip host 10.23.40.49 host 10.23.40.82
+   3580 permit ip host 10.23.40.49 host 10.23.40.83
+   3590 permit ip host 10.23.40.49 host 10.23.40.28
+   3600 permit ip host 10.23.40.49 host 10.23.40.71
+   3610 permit ip host 10.23.40.49 host 10.23.40.87
+   3620 permit ip host 10.23.40.49 host 10.23.40.61
+   3630 permit ip host 10.23.40.49 host 10.23.43.64
+   3640 permit ip host 10.23.40.49 host 10.23.40.47
+   3650 permit ip host 10.23.40.49 host 10.23.40.62
+   3660 permit ip host 10.23.40.49 host 10.23.40.86
+   3670 permit ip host 10.23.40.49 host 10.23.40.63
+   3680 permit ip host 10.23.40.49 host 10.23.40.48
+   3690 permit ip host 10.23.40.49 host 10.23.40.81
+   3700 permit ip host 10.23.40.27 host 10.23.40.49
+   3710 permit ip host 10.23.40.85 host 10.23.40.49
+   3720 permit ip host 10.23.40.82 host 10.23.40.49
+   3730 permit ip host 10.23.40.83 host 10.23.40.49
+   3740 permit ip host 10.23.40.28 host 10.23.40.49
+   3750 permit ip host 10.23.40.71 host 10.23.40.49
+   3760 permit ip host 10.23.40.87 host 10.23.40.49
+   3770 permit ip host 10.23.40.61 host 10.23.40.49
+   3780 permit ip host 10.23.43.64 host 10.23.40.49
+   3790 permit ip host 10.23.40.47 host 10.23.40.49
+   3800 permit ip host 10.23.40.62 host 10.23.40.49
+   3810 permit ip host 10.23.40.86 host 10.23.40.49
+   3820 permit ip 10.23.40.72/29 host 10.23.40.61
+   3830 permit ip host 10.23.40.61 10.23.40.72/29
+   3840 permit ip host 10.23.40.62 10.23.40.72/29
+   3850 permit ip 10.23.40.72/29 host 10.23.40.62
+   3860 permit ip host 10.23.40.63 host 10.23.40.49
+   3870 permit ip host 10.23.40.48 host 10.23.40.49
+   3880 permit ip host 10.23.40.81 host 10.23.40.49
+   3890 permit ip host 10.23.40.94 host 10.23.40.74
+   3900 permit ip host 10.23.40.74 host 10.23.40.94
+   3910 permit ip host 10.23.40.94 host 10.23.40.75
+   3920 permit ip host 10.23.40.75 host 10.23.40.94
+   3930 permit ip host 10.23.40.70 host 10.23.40.74
+   3940 permit ip host 10.23.40.74 host 10.23.40.70
+   3950 permit ip host 10.23.40.70 host 10.23.40.75
+   3960 permit ip host 10.23.40.75 host 10.23.40.70
+   3970 permit ip host 10.23.40.49 host 10.23.40.74
+   3980 permit ip host 10.23.40.74 host 10.23.40.49
+   3990 permit ip host 10.23.40.49 host 10.23.40.75
+   4000 permit ip host 10.23.40.75 host 10.23.40.49
+   4010 permit ip 10.23.40.72/29 host 10.23.40.27
+   4020 permit ip host 10.23.40.27 10.23.40.72/29
+   4030 permit ip 10.23.40.72/29 host 10.23.40.28
+   4040 permit ip host 10.23.40.28 10.23.40.72/29
+   4050 permit ip 10.23.40.72/29 host 10.23.40.47
+   4060 permit ip host 10.23.40.47 10.23.40.72/29
+   4070 permit ip 10.23.40.72/29 host 10.23.40.49
+   4080 permit ip host 10.23.40.49 10.23.40.72/29
+   4090 permit ip 10.23.40.72/29 host 10.23.40.50
+   4100 permit ip host 10.23.40.50 10.23.40.72/29
+   4110 permit ip 10.23.40.72/29 10.23.40.60/30
+   4120 permit ip 10.23.40.60/30 10.23.40.72/29
+   4130 permit ip 10.23.40.72/29 host 10.23.40.64
+   4140 permit ip host 10.23.40.64 10.23.40.72/29
+   4150 permit ip 10.23.40.72/29 10.23.40.70/31
+   4160 permit ip 10.23.40.70/31 10.23.40.72/29
+   4170 permit ip 10.23.40.72/29 10.23.40.82/31
+   4180 permit ip 10.23.40.82/31 10.23.40.72/29
+   4190 permit ip 10.23.40.72/29 10.23.40.84/30
+   4200 permit ip 10.23.40.84/30 10.23.40.72/29
+   4210 permit ip 10.23.40.72/29 host 10.23.40.93
+   4220 permit ip host 10.23.40.93 10.23.40.72/29
+   4230 permit ip 10.23.40.72/29 host 10.23.40.94
+   4240 permit ip host 10.23.40.94 10.23.40.72/29
+   4250 permit ip host 10.23.40.94 host 10.23.40.95
+   4260 permit ip host 10.23.40.94 host 10.23.40.65
+   4270 permit ip host 10.23.40.94 host 10.23.40.84
+   4280 permit ip host 10.23.40.70 host 10.23.40.95
+   4290 permit ip host 10.23.40.70 host 10.23.40.65
+   4300 permit ip host 10.23.40.70 host 10.23.40.84
+   99997 deny ip 10.23.40.0/24 10.23.40.0/24
+   99998 permit ip any any
+!!
+management security
+   ssl profile SW_SSL_PROFILE
+      certificate USDC1NSD104.crt key USDC1NSD104.key
+!!RANCID-CONTENT-TYPE: arista
+!
+terminal length 0
+!
+daemon TerminAttr
+   exec /usr/bin/TerminAttr -cvaddr=10.23.30.22:9910 -cvauth=key,AAbm@130 -cvvrf=mgmt -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -taillogs
+   no shutdown
+!
+vlan internal order ascending range 3700 3900
+!
+transceiver qsfp default-mode 4x10G
+!
+errdisable detect cause acl
+errdisable detect cause arp-inspection
+errdisable detect cause link-change
+errdisable detect cause xcvr-misconfigured
+errdisable detect cause xcvr-overheat
+errdisable detect cause xcvr-power-unsupported
+errdisable recovery cause arp-inspection
+errdisable recovery cause bpduguard
+errdisable recovery cause hitless-reload-down
+errdisable recovery cause lacp-rate-limit
+errdisable recovery cause link-flap
+errdisable recovery cause no-internal-vlan
+errdisable recovery cause portchannelguard
+errdisable recovery cause portsec
+errdisable recovery cause speed-misconfigured
+errdisable recovery cause uplink-failure-detection
+errdisable recovery cause xcvr-misconfigured
+errdisable recovery cause xcvr-overheat
+errdisable recovery cause xcvr-power-unsupported
+errdisable recovery cause xcvr-unsupported
+errdisable recovery interval 30
+!
+service routing protocols model multi-agent
+!
+hostname USDC1NSD104
+ip name-server vrf mgmt 10.230.134.16
+ip name-server vrf mgmt 10.230.134.17
+!
+dns domain ad.global
+!
+ntp server vrf mgmt ntp.ad.global prefer version 4 local-interface Management1
+!
+sflow sample 1000
+sflow vrf mgmt destination 10.71.114.67 2055
+sflow vrf mgmt destination 10.230.48.135 2055
+sflow vrf mgmt source-interface Management1
+sflow destination 127.0.0.1
+sflow source-interface Loopback0
+sflow run
+!
+spanning-tree mode mstp
+no spanning-tree vlan-id 4093-4094
+spanning-tree mst 0 priority 4096
+!
+no aaa root
+no enable password
+!
+username admin privilege 15 role network-admin secret sha512 $6$gi8rIHMcgJsySPGm$hXn8iSsOZUAWTwsYLBqtICUnCViDY.PTEnrJxe/40ixlgXsyRqYwG.ZuOYcLO0cw2tjdP7OAoVLgf46Vu5MBu1
+username cvpadmin privilege 15 role network-admin secret sha512 $6$QNp/OdJSM6zgAb0D$n1wrEDKopdGvIdgu6.wD/M7BpxHCE3EVj/ZravVP0Y5nJl8QuNnRRvbPfyeS2Xe.DHmEPwSqEFd0kFL0kiA4Y0
+username netadmin privilege 15 role network-admin secret sha512 $6$uXMxhCQ2N7wVzBwt$Bjj9LnB12attpf02qpE0iWuR9dI7zlX7lAzQMXvg5YYw6./i1Q019EFOxJ/dhnGNJvS0Fqc.i.lksFTsR0GUd.
+!
+clock timezone CET
+!
+vlan 330
+   name VLAN330
+!
+vlan 1500
+   name N&S_Mgmt
+!
+vlan 1504
+   name NSX_Mgmt
+!
+vlan 1505
+   name ESXi_Mgmt_for_Tenant_Mgmt
+!
+vlan 1506
+   name ESXi_VXLAN_for_Tenant_Mgmt
+!
+vlan 1507
+   name ESXi_vMotion_for_Tenant_Mgmt
+!
+vlan 1508
+   name ESXi_vSAN_for_Tenant_Mgmt
+!
+vlan 1510
+   name VRA
+!
+vlan 1511
+   name WITNESS
+!
+vlan 1512
+   name WITNESS_VSA
+!
+vlan 1515
+   name ESXi_Mgmt_for_Tenant_GOLD
+!
+vlan 1516
+   name ESXi_VXLAN_VTEP_for_Tenant_GOLD
+!
+vlan 1517
+   name ESXi_vMotion_for_Tenant_GOLD
+!
+vlan 1518
+   name ESXi_vSAN_for_Tenant_GOLD
+!
+vlan 1525
+   name ESXi_Mgmt_for_Tenant_SILV
+!
+vlan 1526
+   name ESXi_VXLAN_VTEP_for_Tenant_SILV
+!
+vlan 1527
+   name ESXi_vMotion_for_Tenant_SILV
+!
+vlan 1528
+   name ESXi_vSAN_for_Tenant_SILV
+!
+vlan 1535
+   name ESXi_Mgmt_for_Tenant_EXCH
+!
+vlan 1536
+   name ESXi_VXLAN_VTEP_for_Tenant_EXCH
+!
+vlan 1537
+   name ESXi_vMotion_for_Tenant_EXCH
+!
+vlan 1540
+   name PHYSICAL_SERVER
+!
+vlan 1541
+   name Backup_Infra
+!
+vlan 1542
+   name Backup-Replication
+!
+vlan 1543
+   name Backup_Management
+!
+vlan 1548
+   name PAFW_VM300
+!
+vlan 1550
+   name DC_Management
+!
+vlan 1552
+   name SERVER_Heartbeat
+!
+vlan 1553
+   name Citrix_NetScaler_GSLB
+!
+vlan 1554
+   name VxRail_SPLUNK_LOG_Mgmt
+!
+vlan 1555
+   name Splunk_ESXi_Mgmt
+!
+vlan 1557
+   name Splunk_ESXi_vMotion
+!
+vlan 1558
+   name Splunk_ESXi_vSAN
+!
+vlan 1559
+   name F5_VIPS
+!
+vlan 1560
+   name Citrix_VDI_Mgmt
+!
+vlan 1561
+   name Citrix_XenApp_Mgmt
+!
+vlan 1562
+   name Customer_VDI_WLD
+!
+vlan 1563
+   name Wipro_VDI_WLD
+!
+vlan 1564
+   name Backup_Workload_for_Gold
+!
+vlan 1568
+   name Backup_Workload_for_Silver
+!
+vlan 1600
+   name Un-Trust_Zone
+!
+vlan 1601
+   name F5_Trust_Zone
+!
+vlan 1602
+   name Firewall_Trust_Zone
+!
+vlan 1603
+   name F5_HA
+!
+vlan 1608
+   name INTERNAL_STD_TRANSIT
+!
+vlan 1609
+   name INFRA_STD_TRANSIT
+!
+vlan 1610
+   name INTERNAL_TRANSIT
+!
+vlan 1611
+   name INFRA_TRANSIT
+!
+vlan 1612
+   name MPLS_TRANSIT
+!
+vlan 1614
+   name OOB_TRANSIT
+!
+vlan 1625
+   name WLC_Mgmt_Transit_FW
+!
+vlan 1626
+   name REPLICATION_FW
+!
+vlan 1635
+   name VLAN1635
+!
+vlan 1636
+   name VLAN1636
+!
+vlan 1650
+   name INET
+!
+vlan 1652
+   name Arista_F5_MPLS_TRANSIT
+!
+vlan 1654
+   name SDWAN-INTERNET
+!
+vlan 1655
+   name ARISTA_To_F5Ext
+!
+vlan 1656
+   name F5Int_To_ARISTA
+!
+vlan 1657
+   name ARISTA_To_PAN
+!
+vlan 1675
+   name Gold_Cluster_TEP_Pool
+!
+vlan 1676
+   name Silver_Cluster_TEP_Pool
+!
+vlan 1677
+   name Gold_Edge_Cluster-1_for_BGP
+!
+vlan 1678
+   name Gold_Edge_Cluster-2_for_BGP
+!
+vlan 1679
+   name Gold_Edge_Cluster-3_for_BGP
+!
+vlan 1680
+   name Gold_Edge_Cluster-4_for_BGP
+!
+vlan 1681
+   name Silver_Edge_Cluster-1_for_BGP
+!
+vlan 1682
+   name Silver_Edge_Cluster-2_for_BGP
+!
+vlan 1683
+   name Gold_Edge_Cluster-1_TEP_Pool
+!
+vlan 1684
+   name Gold_Edge_Cluster-2_TEP_Pool
+!
+vlan 1685
+   name Silver_Edge_Cluster_TEP_Pool
+!
+vlan 1690
+   name Collaboration_Cluster_TEP_Pool
+!
+vlan 1700
+   name AD_SERVERS
+!
+vlan 1701
+   name DMZ_SERVERS
+!
+vlan 1702
+   name SKYPE_SERVERS
+!
+vlan 1703
+   name EXCHANGE_SERVERS
+!
+vlan 1704
+   name ServiceNow_Discovery
+!
+vlan 1709
+   name ISILON_DATA
+!
+vlan 1710
+   name ISILON_DMZ
+!
+vlan 1711
+   name VLAN1711
+!
+vlan 1712
+   name Cloudvision
+!
+vlan 1720
+   name SNOW_TRANSIT_FW
+!
+vlan 1722
+   name JUMP_TRANSIT_FW
+!
+vlan 1724
+   name ISILON_TRANSIT_FW
+!
+vlan 1726
+   name CITRIX_TRANSIT_FW
+!
+vlan 1728
+   name DCI_FW_INT
+!
+vlan 1800
+   name WLC_Mgmt
+!
+vlan 1810
+   name WLC_WiFi_Guest
+!
+vlan 1820
+   name Global_WiFi_VC_Production
+!
+vlan 1830
+   name Global_WiFi_VC_IoT
+!
+vlan 1840
+   name WLC_HA_L2_VLAN
+!
+vlan 1850
+   name SDWAN-AVPN1
+!
+vlan 1851
+   name SDWAN-AVPN2
+!
+vlan 2500
+   name N&S_Mgmt
+!
+vlan 2600
+   name Un-Trust_Zone
+!
+vlan 2601
+   name F5_Trust_Zone
+!
+vlan 2602
+   name Firewall_Trust_Zone
+!
+vlan 2603
+   name F5_HA
+!
+vlan 2629
+   name WLC_WiFi_Guest_Transit_FW
+!
+vlan 2644
+   name Gobal_WiFi_VC_Prod_IoT_TRANSIT_FW
+!
+vlan 2650
+   name INET
+!
+vlan 2720
+   name SNOW_TRANSIT_FW
+!
+vlan 2722
+   name JUMP_TRANSIT_FW
+!
+vlan 2724
+   name ISILON_TRANSIT_FW
+!
+vlan 2726
+   name CITRIX_TRANSIT_FW
+!
+vlan 2850
+   name SDWAN-AVPN1
+!
+vlan 2851
+   name SDWAN-AVPN2
+!
+vlan 3000
+   name MLAG_iBGP_INFRA_Mgmt
+   trunk group LEAF_PEER_L3
+!
+vlan 3001
+   name MLAG_iBGP_INTERNAL
+   trunk group LEAF_PEER_L3
+!
+vlan 3004
+   name MLAG_iBGP_CITRIX
+   trunk group LEAF_PEER_L3
+!
+vlan 3005
+   name MLAG_iBGP_CITRIX1
+   trunk group LEAF_PEER_L3
+!
+vlan 3006
+   name MLAG_iBGP_DMZ
+   trunk group LEAF_PEER_L3
+!
+vlan 3007
+   name MLAG_iBGP_DMZ_INFRA_NSX
+   trunk group LEAF_PEER_L3
+!
+vlan 3008
+   name MLAG_iBGP_F5_TRANSIT
+   trunk group LEAF_PEER_L3
+!
+vlan 3009
+   name MLAG_iBGP_INFOBLOX
+   trunk group LEAF_PEER_L3
+!
+vlan 3010
+   name MLAG_iBGP_INFRA_NSX
+   trunk group LEAF_PEER_L3
+!
+vlan 3011
+   name MLAG_iBGP_INFRA_Std
+   trunk group LEAF_PEER_L3
+!
+vlan 3012
+   name MLAG_iBGP_INTERNAL_Std
+   trunk group LEAF_PEER_L3
+!
+vlan 3013
+   name MLAG_iBGP_INTERNET
+   trunk group LEAF_PEER_L3
+!
+vlan 3014
+   name MLAG_iBGP_ISILON
+   trunk group LEAF_PEER_L3
+!
+vlan 3015
+   name MLAG_iBGP_Jump_Server
+   trunk group LEAF_PEER_L3
+!
+vlan 3016
+   name MLAG_iBGP_MCAFEE
+   trunk group LEAF_PEER_L3
+!
+vlan 3017
+   name MLAG_iBGP_MPLS-AA
+   trunk group LEAF_PEER_L3
+!
+vlan 3018
+   name MLAG_iBGP_OOB_Mgmt
+   trunk group LEAF_PEER_L3
+!
+vlan 3019
+   name MLAG_iBGP_PHYSICAL_SERVER
+   trunk group LEAF_PEER_L3
+!
+vlan 3020
+   name MLAG_iBGP_REPLICATION
+   trunk group LEAF_PEER_L3
+!
+vlan 3021
+   name MLAG_iBGP_Service_Now
+   trunk group LEAF_PEER_L3
+!
+vlan 3022
+   name MLAG_iBGP_WLC_GUEST
+   trunk group LEAF_PEER_L3
+!
+vlan 3023
+   name MLAG_iBGP_WLC_Mgmt
+   trunk group LEAF_PEER_L3
+!
+vlan 3024
+   name MLAG_iBGP_WLC_PROD_IOT
+   trunk group LEAF_PEER_L3
+!
+vlan 3025
+   name MLAG_iBGP_XMS_CVP
+   trunk group LEAF_PEER_L3
+!
+vlan 3301
+   name Jump_Server
+!
+vlan 3312
+   name INFOBLOX_TRANSIT_FW
+!
+vlan 3314
+   name PHYSICAL_SERVER_FW
+!
+vlan 3316
+   name INFRA_NSX_FW
+!
+vlan 3320
+   name DMZ_INFRA_NSX_FW
+!
+vlan 3322
+   name DMZ_TRANSIT_FW
+!
+vlan 3324
+   name XMS_CVP_TRANSIT_FW
+!
+vlan 3326
+   name MCAFEE_TRANSIT_FW
+!
+vlan 3375
+   name DMZ_Gold_Cluster_TEP_Pool
+!
+vlan 3376
+   name DMZ_Silver_Cluster_TEP_Pool
+!
+vlan 3377
+   name DMZ_Gold_Edge_Cluster-1_for_BGP
+!
+vlan 3378
+   name DMZ_Gold_Edge_Cluster-2_for_BGP
+!
+vlan 3381
+   name DMZ_Silver_Edge_Cluster-1_for_BGP
+!
+vlan 3382
+   name DMZ_Silver_Edge_Cluster-2_for_BGP
+!
+vlan 3383
+   name DMZ_Gold_Edge_Cluster-1_TEP_Pool
+!
+vlan 3384
+   name DMZ_Gold_Edge_Cluster-2_TEP_Pool
+!
+vlan 3385
+   name DMZ_Silver_Edge_Cluster_TEP_Pool
+!
+vlan 3386
+   name DMZ_Mgmt
+!
+vlan 3387
+   name XMS
+!
+vlan 3388
+   name CVP
+!
+vlan 3389
+   name MCAFEE
+!
+vlan 3390
+   name Log_Forwarding
+!
+vlan 3513
+   name F5_VLAN_1
+!
+vlan 3514
+   name F5_VLAN_1
+!
+vlan 3515
+   name F5_VLAN_1
+!
+vlan 3516
+   name F5_VLAN_1
+!
+vlan 3517
+   name F5_VLAN_5
+!
+vlan 3518
+   name F5_VLAN_6
+!
+vlan 3519
+   name F5_VLAN_7
+!
+vlan 3520
+   name VIRT_F5_VLAN_1
+!
+vlan 3521
+   name VIRT_F5_VLAN_2
+!
+vlan 3522
+   name VIRT_F5_VLAN_3
+!
+vlan 3524
+   name F5_iQuery_Mesh
+!
+vlan 3701
+   name CITRIX1_File_Server
+!
+vlan 3702
+   name CITRIX1_TRANSIT_FW
+!
+vlan 4093
+   name LEAF_PEER_L3
+   trunk group LEAF_PEER_L3
+!
+vlan 4094
+   name MLAG_PEER
+   trunk group MLAG
+!
+vrf instance CITRIX
+!
+vrf instance CITRIX1
+!
+vrf instance DMZ
+!
+vrf instance DMZ_INFRA_NSX
+!
+vrf instance F5_TRANSIT
+!
+vrf instance INFOBLOX
+!
+vrf instance INFRA_Mgmt
+!
+vrf instance INFRA_NSX
+!
+vrf instance INFRA_Std
+!
+vrf instance INTERNAL
+!
+vrf instance INTERNAL_Std
+!
+vrf instance INTERNET
+!
+vrf instance ISILON
+!
+vrf instance Jump_Server
+!
+vrf instance MCAFEE
+!
+vrf instance mgmt
+!
+vrf instance MPLS-AA
+!
+vrf instance OOB_Mgmt
+!
+vrf instance PHYSICAL_SERVER
+!
+vrf instance REPLICATION
+!
+vrf instance Service_Now
+!
+vrf instance WLC_GUEST
+!
+vrf instance WLC_Mgmt
+!
+vrf instance WLC_PROD_IOT
+!
+vrf instance XMS_CVP
+!
+interface Port-Channel21
+   description reserved_for_USDC1SDB2199-1-USDC1NSD103_USDC1NSD104-Port-Channel210_reserved_for_USDC1SDB2199-1
+   no shutdown
+   switchport
+   switchport access vlan 1540
+   mlag 21
+   ip access-group isolated_1540 in
+
+!
+interface Port-Channel22
+   description reserved_for_USDC1SDB2199-1-USDC1NSD103_USDC1NSD104-Port-Channel220_reserved_for_USDC1SDB2199-1
+   no shutdown
+   switchport
+   switchport access vlan 1543
+   mlag 22
+   ip access-group isolated_1540 in
+
+!
+interface Port-Channel25
+   description USDC1SDB2202-USDC1NSD103_USDC1NSD104-Port-Channel250_USDC1SDB2202
+   no shutdown
+   switchport
+   switchport access vlan 1540
+   mlag 25
+   ip access-group isolated_1540 in
+
+!
+interface Port-Channel26
+   description USDC1SDB2202-USDC1NSD103_USDC1NSD104-Port-Channel260_USDC1SDB2202
+   no shutdown
+   switchport
+   switchport access vlan 1543
+   mlag 26
+   ip access-group isolated_1540 in
+
+!
+interface Port-Channel29
+   description Physical_servers1-USDC1NSD103_USDC1NSD104-Port-Channel129_Physical_servers1
+   no shutdown
+   switchport
+   switchport access vlan 1540
+   mlag 29
+   ip access-group isolated_1540 in
+
+!
+interface Port-Channel30
+   description Physical_servers1-USDC1NSD103_USDC1NSD104-Port-Channel130_Physical_servers1
+   no shutdown
+   switchport
+   switchport access vlan 1543
+   mlag 30
+   ip access-group isolated_1540 in
+
+!
+interface Port-Channel31
+   description USDC1SPHV2011-USDC1NSD103_USDC1NSD104-Port-Channel310_USDC1SPHV2011
+   no shutdown
+   switchport
+   switchport access vlan 1560
+   mlag 31
+!
+interface Port-Channel32
+   description USDC1SPHV2011-USDC1NSD103_USDC1NSD104-Port-Channel320_USDC1SPHV2011
+   no shutdown
+   switchport
+   switchport trunk allowed vlan 1561,1562
+   switchport mode trunk
+   mlag 32
+!
+interface Port-Channel41
+   description SDC1SPHV2012-USDC1NSD103_USDC1NSD104-Port-Channel410_USDC1SPHV2012
+   no shutdown
+   switchport
+   switchport trunk allowed vlan 1561,1562
+   switchport mode trunk
+   mlag 41
+!
+interface Port-Channel45
+   description PH_XL_B0GZJ93-USDC1NSD103_USDC1NSD104-Port-Channel450_PH_XL_B0GZJ93
+   no shutdown
+   switchport
+   switchport access vlan 1540
+   mlag 45
+   ip access-group isolated_1540 in
+
+!
+interface Port-Channel46
+   description PH_XL_B0GZJ93-USDC1NSD103_USDC1NSD104-Port-Channel460_PH_XL_B0GZJ93
+   no shutdown
+   switchport
+   switchport access vlan 1543
+   mlag 46
+   ip access-group isolated_1540 in
+
+!
+interface Port-Channel491
+   description MLAG_PEER_USDC1NSD103_Po491
+   no shutdown
+   switchport
+   switchport trunk allowed vlan 2-4094
+   switchport mode trunk
+   switchport trunk group LEAF_PEER_L3
+   switchport trunk group MLAG
+!
+interface Ethernet17
+   description USDC1SDB2190-1-USDC1NSD104-Ethernet17_ETH0
+   no shutdown
+   switchport
+   switchport access vlan 1540
+   switchport mode access
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+   ip access-group isolated_1540 in
+
+!
+interface Ethernet19
+   description USDC1SDB2190-2-USDC1NSD104-Ethernet19_ETH0
+   no shutdown
+   switchport
+   switchport access vlan 1540
+   switchport mode access
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+   ip access-group isolated_1540 in
+
+!
+interface Ethernet21
+   description reserved_for_USDC1SDB2199-1-USDC1NSD103_USDC1NSD104-Port-Channel210_Ethernet21
+   no shutdown
+   channel-group 21 mode active
+!
+interface Ethernet22
+   description reserved_for_USDC1SDB2199-1-USDC1NSD103_USDC1NSD104-Port-Channel220_Ethernet22
+   no shutdown
+   channel-group 22 mode active
+!
+interface Ethernet25
+   description USDC1SDB2202-USDC1NSD103_USDC1NSD104-Port-Channel250_Ethernet25
+   no shutdown
+   channel-group 25 mode active
+!
+interface Ethernet26
+   description USDC1SDB2202-USDC1NSD103_USDC1NSD104-Port-Channel260_Ethernet26
+   no shutdown
+   channel-group 26 mode active
+!
+interface Ethernet29
+   description Physical_servers1-USDC1NSD103_USDC1NSD104-Port-Channel129_Ethernet29
+   no shutdown
+   channel-group 29 mode active
+!
+interface Ethernet30
+   description Physical_servers1-USDC1NSD103_USDC1NSD104-Port-Channel130_Ethernet30
+   no shutdown
+   channel-group 30 mode active
+!
+interface Ethernet31
+   description USDC1SPHV2011-USDC1NSD103_USDC1NSD104-Port-Channel310_Ethernet31
+   no shutdown
+   channel-group 31 mode active
+!
+interface Ethernet32
+   description USDC1SPHV2011-USDC1NSD103_USDC1NSD104-Port-Channel320_Ethernet32
+   no shutdown
+   channel-group 32 mode active
+!
+interface Ethernet41
+   description SDC1SPHV2012-USDC1NSD103_USDC1NSD104-Port-Channel410_Ethernet41
+   no shutdown
+   channel-group 41 mode active
+!
+interface Ethernet45
+   description PH_XL_B0GZJ93-USDC1NSD103_USDC1NSD104-Port-Channel450_Ethernet45
+   no shutdown
+   channel-group 45 mode active
+!
+interface Ethernet46
+   description PH_XL_B0GZJ93-USDC1NSD103_USDC1NSD104-Port-Channel460_Ethernet46
+   no shutdown
+   channel-group 46 mode active
+!
+interface Ethernet49/1
+   description MLAG_PEER_USDC1NSD103_Ethernet49/1
+   no shutdown
+   channel-group 491 mode active
+!
+interface Ethernet50/1
+   description MLAG_PEER_USDC1NSD103_Ethernet50/1
+   no shutdown
+   channel-group 491 mode active
+!
+interface Ethernet51/1
+   description P2P_LINK_TO_USDC1NSC101_Ethernet4/1
+   no shutdown
+   mtu 9100
+   no switchport
+   ip address 10.23.91.13/31
+!
+interface Ethernet52/1
+   description P2P_LINK_TO_USDC1NSC102_Ethernet4/1
+   no shutdown
+   mtu 9100
+   no switchport
+   ip address 10.23.91.15/31
+!
+interface Loopback0
+   description EVPN_Overlay_Peering
+   no shutdown
+   ip address 10.23.92.6/32
+!
+interface Loopback1
+   description VTEP_VXLAN_Tunnel_Source
+   no shutdown
+   ip address 10.23.93.5/32
+!
+interface Management1
+   description oob_management
+   no shutdown
+   vrf mgmt
+   ip address 10.23.0.16/24
+!
+interface Vlan1505
+   description ESXi_Mgmt_for_Tenant_Mgmt
+   no shutdown
+   mtu 9000
+   vrf INFRA_Std
+   ip address virtual 10.23.5.1/24
+   ip helper-address 10.23.5.143
+!
+interface Vlan1506
+   description ESXi_VXLAN_for_Tenant_Mgmt
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.6.1/24
+!
+interface Vlan1507
+   description ESXi_vMotion_for_Tenant_Mgmt
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.7.1/24
+!
+interface Vlan1508
+   description ESXi_vSAN_for_Tenant_Mgmt
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.8.1/24
+!
+interface Vlan1510
+   description VRA
+   no shutdown
+   mtu 9000
+   vrf INFRA_Std
+   ip address virtual 10.23.10.1/24
+!
+interface Vlan1511
+   description WITNESS
+   no shutdown
+   mtu 9000
+   vrf INFRA_Std
+   ip address virtual 10.23.11.1/24
+!
+interface Vlan1512
+   description WITNESS_VSA
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.12.1/24
+!
+interface Vlan1515
+   description ESXi_Mgmt_for_Tenant_GOLD
+   no shutdown
+   mtu 9000
+   vrf INFRA_Std
+   ip address virtual 10.23.15.1/24
+!
+interface Vlan1516
+   description ESXi_VXLAN_VTEP_for_Tenant_GOLD
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.16.1/24
+!
+interface Vlan1517
+   description ESXi_vMotion_for_Tenant_GOLD
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.17.1/24
+!
+interface Vlan1518
+   description ESXi_vSAN_for_Tenant_GOLD
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.18.1/24
+!
+interface Vlan1525
+   description ESXi_Mgmt_for_Tenant_SILV
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.25.1/24
+!
+interface Vlan1526
+   description ESXi_VXLAN_VTEP_for_Tenant_SILV
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.26.1/24
+!
+interface Vlan1527
+   description ESXi_vMotion_for_Tenant_SILV
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.27.1/24
+!
+interface Vlan1528
+   description ESXi_vSAN_for_Tenant_SILV
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.28.1/24
+!
+interface Vlan1535
+   description ESXi_Mgmt_for_Tenant_EXCH
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.35.1/24
+!
+interface Vlan1536
+   description ESXi_VXLAN_VTEP_for_Tenant_EXCH
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.36.1/24
+!
+interface Vlan1537
+   description ESXi_vMotion_for_Tenant_EXCH
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.37.1/24
+!
+interface Vlan1540
+   description PHYSICAL_SERVER
+   no shutdown
+   mtu 9000
+   vrf PHYSICAL_SERVER
+   ip address virtual 10.23.40.1/24
+!
+interface Vlan1541
+   description Backup_Infra
+   no shutdown
+   mtu 9000
+   vrf INFRA_Std
+   ip address virtual 10.23.41.1/24
+!
+interface Vlan1542
+   description Backup-Replication
+   no shutdown
+   mtu 9000
+   vrf INFRA_Std
+   ip address virtual 10.23.42.1/24
+!
+interface Vlan1543
+   description Backup_Management
+   no shutdown
+   mtu 9000
+   vrf INFRA_Std
+   ip address virtual 10.23.43.1/24
+!
+interface Vlan1548
+   description PAFW_VM300
+   no shutdown
+   mtu 9000
+   vrf INFRA_Std
+   ip address virtual 10.23.48.1/24
+!
+interface Vlan1550
+   description DC_Management
+   no shutdown
+   mtu 9000
+   vrf INFOBLOX
+   ip address virtual 10.23.50.1/24
+!
+interface Vlan1553
+   description Citrix_NetScaler_GSLB
+   no shutdown
+   mtu 9000
+   vrf CITRIX
+   ip address virtual 10.23.53.1/24
+!
+interface Vlan1554
+   description VxRail_SPLUNK_LOG_Mgmt
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.54.1/24
+!
+interface Vlan1555
+   description Splunk_ESXi_Mgmt
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.55.1/24
+!
+interface Vlan1557
+   description Splunk_ESXi_vMotion
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.57.1/24
+!
+interface Vlan1558
+   description Splunk_ESXi_vSAN
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.58.1/24
+!
+interface Vlan1559
+   description F5_VIPS
+   no shutdown
+   mtu 9000
+   vrf INTERNAL
+   ip address virtual 10.23.59.1/24
+!
+interface Vlan1560
+   description Citrix_VDI_Mgmt
+   no shutdown
+   mtu 9000
+   vrf CITRIX
+   ip address virtual 10.23.60.1/24
+!
+interface Vlan1561
+   description Citrix_XenApp_Mgmt
+   no shutdown
+   mtu 9000
+   vrf CITRIX
+   ip address virtual 10.23.61.1/24
+!
+interface Vlan1562
+   description Customer_VDI_WLD
+   no shutdown
+   mtu 9000
+   vrf CITRIX
+   ip address virtual 10.23.62.1/24
+   ip helper-address 10.23.60.49
+   ip helper-address 10.23.60.50
+!
+interface Vlan1563
+   description Wipro_VDI_WLD
+   no shutdown
+   mtu 9000
+   vrf CITRIX
+   ip address virtual 10.23.63.1/24
+   ip helper-address 10.23.60.49
+   ip helper-address 10.23.60.50
+!
+interface Vlan1564
+   description Backup_Workload_for_Gold
+   no shutdown
+   mtu 9000
+   vrf INFRA_Std
+   ip address virtual 10.23.64.1/22
+!
+interface Vlan1568
+   description Backup_Workload_for_Silver
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.68.1/23
+!
+interface Vlan1608
+   description INTERNAL_STD_TRANSIT
+   no shutdown
+   mtu 9000
+   vrf INTERNAL_Std
+   ip address virtual 10.23.2.66/29
+!
+interface Vlan1609
+   description INFRA_STD_TRANSIT
+   no shutdown
+   mtu 9000
+   vrf INFRA_Std
+   ip address virtual 10.23.2.74/29
+!
+interface Vlan1610
+   description INTERNAL_TRANSIT
+   no shutdown
+   mtu 9000
+   vrf INTERNAL
+   ip address virtual 10.23.2.82/29
+!
+interface Vlan1611
+   description INFRA_TRANSIT
+   no shutdown
+   mtu 9000
+   vrf INFRA_Mgmt
+   ip address virtual 10.23.2.90/29
+!
+interface Vlan1612
+   description MPLS_TRANSIT
+   no shutdown
+   mtu 9000
+   vrf MPLS-AA
+   ip address virtual 10.23.2.98/29
+!
+interface Vlan1614
+   description OOB_TRANSIT
+   no shutdown
+   mtu 9000
+   vrf OOB_Mgmt
+   ip address virtual 10.23.2.114/29
+!
+interface Vlan1625
+   description WLC_Mgmt_Transit_FW
+   no shutdown
+   mtu 9000
+   vrf WLC_Mgmt
+   ip address virtual 10.23.44.2/29
+!
+interface Vlan1626
+   description REPLICATION_FW
+   no shutdown
+   mtu 9000
+   vrf REPLICATION
+   ip address virtual 10.23.2.210/29
+!
+interface Vlan1635
+   description VLAN1635
+   no shutdown
+   mtu 9000
+   vrf MPLS-AA
+!
+interface Vlan1636
+   description VLAN1636
+   no shutdown
+   mtu 9000
+   vrf MPLS-AA
+!
+interface Vlan1652
+   description Arista_F5_MPLS_TRANSIT
+   no shutdown
+   mtu 9000
+   vrf INTERNAL
+   ip address virtual 10.23.30.49/29
+!
+interface Vlan1654
+   description SDWAN-INTERNET
+   no shutdown
+   mtu 9000
+   vrf INTERNET
+   ip address virtual 141.81.180.201/29
+!
+interface Vlan1655
+   description ARISTA_To_F5Ext
+   no shutdown
+   mtu 9000
+   vrf INTERNET
+   ip address virtual 141.81.180.209/29
+!
+interface Vlan1656
+   description F5Int_To_ARISTA
+   no shutdown
+   mtu 9000
+   vrf F5_TRANSIT
+   ip address virtual 141.81.180.220/29
+!
+interface Vlan1657
+   description ARISTA_To_PAN
+   no shutdown
+   mtu 9000
+   vrf F5_TRANSIT
+   ip address virtual 141.81.180.225/29
+!
+interface Vlan1675
+   description Gold_Cluster_TEP_Pool
+   no shutdown
+   mtu 9000
+   vrf INFRA_NSX
+   ip address virtual 10.23.4.1/26
+!
+interface Vlan1676
+   description Silver_Cluster_TEP_Pool
+   no shutdown
+   mtu 9000
+   vrf INFRA_NSX
+   ip address virtual 10.23.4.65/26
+!
+interface Vlan1677
+   description Gold_Edge_Cluster-1_for_BGP
+   no shutdown
+   mtu 9000
+   vrf INFRA_NSX
+!
+interface Vlan1678
+   description Gold_Edge_Cluster-2_for_BGP
+   no shutdown
+   mtu 9000
+   vrf INFRA_NSX
+!
+interface Vlan1679
+   description Gold_Edge_Cluster-3_for_BGP
+   no shutdown
+   mtu 9000
+   vrf INFRA_NSX
+!
+interface Vlan1680
+   description Gold_Edge_Cluster-4_for_BGP
+   no shutdown
+   mtu 9000
+   vrf INFRA_NSX
+!
+interface Vlan1681
+   description Silver_Edge_Cluster-1_for_BGP
+   no shutdown
+   mtu 9000
+   vrf INFRA_NSX
+!
+interface Vlan1682
+   description Silver_Edge_Cluster-2_for_BGP
+   no shutdown
+   mtu 9000
+   vrf INFRA_NSX
+!
+interface Vlan1683
+   description Gold_Edge_Cluster-1_TEP_Pool
+   no shutdown
+   mtu 9000
+   vrf INFRA_NSX
+   ip address virtual 10.23.4.193/29
+!
+interface Vlan1684
+   description Gold_Edge_Cluster-2_TEP_Pool
+   no shutdown
+   mtu 9000
+   vrf INFRA_NSX
+   ip address virtual 10.23.4.201/29
+!
+interface Vlan1685
+   description Silver_Edge_Cluster_TEP_Pool
+   no shutdown
+   mtu 9000
+   vrf INFRA_NSX
+   ip address virtual 10.23.4.209/28
+!
+interface Vlan1690
+   description Collaboration_Cluster_TEP_Pool
+   no shutdown
+   mtu 9000
+   vrf INFRA_NSX
+   ip address virtual 10.23.14.1/26
+!
+interface Vlan1700
+   description AD_SERVERS
+   no shutdown
+   mtu 9000
+   vrf INTERNAL_Std
+   ip address virtual 10.23.100.1/27
+!
+interface Vlan1701
+   description DMZ_SERVERS
+   no shutdown
+   mtu 9000
+   vrf INTERNAL_Std
+   ip address virtual 10.23.100.33/27
+!
+interface Vlan1702
+   description SKYPE_SERVERS
+   no shutdown
+   mtu 9000
+   vrf INTERNAL_Std
+   ip address virtual 10.23.100.65/26
+!
+interface Vlan1703
+   description EXCHANGE_SERVERS
+   no shutdown
+   mtu 9000
+   vrf INTERNAL_Std
+   ip address virtual 10.23.100.129/25
+!
+interface Vlan1704
+   description ServiceNow_Discovery
+   no shutdown
+   mtu 9000
+   vrf Service_Now
+   ip address virtual 10.23.101.1/29
+!
+interface Vlan1709
+   description ISILON_DATA
+   no shutdown
+   mtu 9000
+   vrf ISILON
+   ip address virtual 10.23.101.65/26
+!
+interface Vlan1710
+   description ISILON_DMZ
+   no shutdown
+   mtu 9000
+   vrf ISILON
+   ip address virtual 10.23.101.129/26
+!
+interface Vlan1711
+   description VLAN1711
+   no shutdown
+   mtu 9000
+   vrf INFRA_Std
+   ip address virtual 10.23.101.193/27
+   ip helper-address 10.23.5.143
+!
+interface Vlan1712
+   description Cloudvision
+   no shutdown
+   mtu 9000
+   vrf INFRA_Std
+   ip address virtual 10.23.30.17/28
+!
+interface Vlan1720
+   description SNOW_TRANSIT_FW
+   no shutdown
+   mtu 9000
+   vrf Service_Now
+   ip address virtual 10.23.22.26/29
+!
+interface Vlan1722
+   description JUMP_TRANSIT_FW
+   no shutdown
+   mtu 9000
+   vrf Jump_Server
+   ip address virtual 10.23.22.42/29
+!
+interface Vlan1724
+   description ISILON_TRANSIT_FW
+   no shutdown
+   mtu 9000
+   vrf ISILON
+   ip address virtual 10.23.22.58/29
+!
+interface Vlan1726
+   description CITRIX_TRANSIT_FW
+   no shutdown
+   mtu 9000
+   vrf CITRIX
+   ip address virtual 10.23.22.74/29
+!
+interface Vlan1800
+   description WLC_Mgmt
+   no shutdown
+   mtu 9000
+   vrf WLC_Mgmt
+   ip address virtual 10.23.30.1/29
+!
+interface Vlan1810
+   description WLC_WiFi_Guest
+   no shutdown
+   mtu 9000
+   vrf WLC_GUEST
+   ip address virtual 10.23.208.1/20
+!
+interface Vlan1820
+   description Global_WiFi_VC_Production
+   no shutdown
+   mtu 9000
+   vrf WLC_PROD_IOT
+   ip address virtual 10.23.46.1/23
+!
+interface Vlan1830
+   description Global_WiFi_VC_IoT
+   no shutdown
+   mtu 9000
+   vrf WLC_PROD_IOT
+   ip address virtual 10.23.128.1/20
+!
+interface Vlan2629
+   description WLC_WiFi_Guest_Transit_FW
+   no shutdown
+   mtu 9000
+   vrf WLC_GUEST
+   ip address virtual 10.23.44.26/29
+!
+interface Vlan2644
+   description Gobal_WiFi_VC_Prod_IoT_TRANSIT_FW
+   no shutdown
+   mtu 9000
+   vrf WLC_PROD_IOT
+   ip address virtual 10.23.44.18/29
+!
+interface Vlan3000
+   description MLAG_PEER_L3_iBGP: vrf INFRA_Mgmt
+   no shutdown
+   mtu 9100
+   vrf INFRA_Mgmt
+   ip address 10.23.94.5/31
+!
+interface Vlan3001
+   description MLAG_PEER_L3_iBGP: vrf INTERNAL
+   no shutdown
+   mtu 9100
+   vrf INTERNAL
+   ip address 10.23.94.5/31
+!
+interface Vlan3004
+   description MLAG_PEER_L3_iBGP: vrf CITRIX
+   no shutdown
+   mtu 9100
+   vrf CITRIX
+   ip address 10.23.94.5/31
+!
+interface Vlan3005
+   description MLAG_PEER_L3_iBGP: vrf CITRIX1
+   no shutdown
+   mtu 9100
+   vrf CITRIX1
+   ip address 10.23.94.5/31
+!
+interface Vlan3006
+   description MLAG_PEER_L3_iBGP: vrf DMZ
+   no shutdown
+   mtu 9100
+   vrf DMZ
+   ip address 10.23.94.5/31
+!
+interface Vlan3007
+   description MLAG_PEER_L3_iBGP: vrf DMZ_INFRA_NSX
+   no shutdown
+   mtu 9100
+   vrf DMZ_INFRA_NSX
+   ip address 10.23.94.5/31
+!
+interface Vlan3008
+   description MLAG_PEER_L3_iBGP: vrf F5_TRANSIT
+   no shutdown
+   mtu 9100
+   vrf F5_TRANSIT
+   ip address 10.23.94.5/31
+!
+interface Vlan3009
+   description MLAG_PEER_L3_iBGP: vrf INFOBLOX
+   no shutdown
+   mtu 9100
+   vrf INFOBLOX
+   ip address 10.23.94.5/31
+!
+interface Vlan3010
+   description MLAG_PEER_L3_iBGP: vrf INFRA_NSX
+   no shutdown
+   mtu 9100
+   vrf INFRA_NSX
+   ip address 10.23.94.5/31
+!
+interface Vlan3011
+   description MLAG_PEER_L3_iBGP: vrf INFRA_Std
+   no shutdown
+   mtu 9100
+   vrf INFRA_Std
+   ip address 10.23.94.5/31
+!
+interface Vlan3012
+   description MLAG_PEER_L3_iBGP: vrf INTERNAL_Std
+   no shutdown
+   mtu 9100
+   vrf INTERNAL_Std
+   ip address 10.23.94.5/31
+!
+interface Vlan3013
+   description MLAG_PEER_L3_iBGP: vrf INTERNET
+   no shutdown
+   mtu 9100
+   vrf INTERNET
+   ip address 10.23.94.5/31
+!
+interface Vlan3014
+   description MLAG_PEER_L3_iBGP: vrf ISILON
+   no shutdown
+   mtu 9100
+   vrf ISILON
+   ip address 10.23.94.5/31
+!
+interface Vlan3015
+   description MLAG_PEER_L3_iBGP: vrf Jump_Server
+   no shutdown
+   mtu 9100
+   vrf Jump_Server
+   ip address 10.23.94.5/31
+!
+interface Vlan3016
+   description MLAG_PEER_L3_iBGP: vrf MCAFEE
+   no shutdown
+   mtu 9100
+   vrf MCAFEE
+   ip address 10.23.94.5/31
+!
+interface Vlan3017
+   description MLAG_PEER_L3_iBGP: vrf MPLS-AA
+   no shutdown
+   mtu 9100
+   vrf MPLS-AA
+   ip address 10.23.94.5/31
+!
+interface Vlan3018
+   description MLAG_PEER_L3_iBGP: vrf OOB_Mgmt
+   no shutdown
+   mtu 9100
+   vrf OOB_Mgmt
+   ip address 10.23.94.5/31
+!
+interface Vlan3019
+   description MLAG_PEER_L3_iBGP: vrf PHYSICAL_SERVER
+   no shutdown
+   mtu 9100
+   vrf PHYSICAL_SERVER
+   ip address 10.23.94.5/31
+!
+interface Vlan3020
+   description MLAG_PEER_L3_iBGP: vrf REPLICATION
+   no shutdown
+   mtu 9100
+   vrf REPLICATION
+   ip address 10.23.94.5/31
+!
+interface Vlan3021
+   description MLAG_PEER_L3_iBGP: vrf Service_Now
+   no shutdown
+   mtu 9100
+   vrf Service_Now
+   ip address 10.23.94.5/31
+!
+interface Vlan3022
+   description MLAG_PEER_L3_iBGP: vrf WLC_GUEST
+   no shutdown
+   mtu 9100
+   vrf WLC_GUEST
+   ip address 10.23.94.5/31
+!
+interface Vlan3023
+   description MLAG_PEER_L3_iBGP: vrf WLC_Mgmt
+   no shutdown
+   mtu 9100
+   vrf WLC_Mgmt
+   ip address 10.23.94.5/31
+!
+interface Vlan3024
+   description MLAG_PEER_L3_iBGP: vrf WLC_PROD_IOT
+   no shutdown
+   mtu 9100
+   vrf WLC_PROD_IOT
+   ip address 10.23.94.5/31
+!
+interface Vlan3025
+   description MLAG_PEER_L3_iBGP: vrf XMS_CVP
+   no shutdown
+   mtu 9100
+   vrf XMS_CVP
+   ip address 10.23.94.5/31
+!
+interface Vlan3301
+   description Jump_Server
+   no shutdown
+   mtu 9000
+   vrf Jump_Server
+   ip address virtual 10.23.20.1/28
+!
+interface Vlan3312
+   description INFOBLOX_TRANSIT_FW
+   no shutdown
+   mtu 9000
+   vrf INFOBLOX
+   ip address virtual 10.23.19.10/29
+!
+interface Vlan3314
+   description PHYSICAL_SERVER_FW
+   no shutdown
+   mtu 9000
+   vrf PHYSICAL_SERVER
+   ip address virtual 10.23.19.26/29
+!
+interface Vlan3316
+   description INFRA_NSX_FW
+   no shutdown
+   mtu 9000
+   vrf INFRA_NSX
+   ip address virtual 10.23.19.42/29
+!
+interface Vlan3320
+   description DMZ_INFRA_NSX_FW
+   no shutdown
+   mtu 9000
+   vrf DMZ_INFRA_NSX
+!
+interface Vlan3322
+   description DMZ_TRANSIT_FW
+   no shutdown
+   mtu 9000
+   vrf DMZ
+   ip address virtual 10.23.19.90/29
+!
+interface Vlan3324
+   description XMS_CVP_TRANSIT_FW
+   no shutdown
+   mtu 9000
+   vrf XMS_CVP
+   ip address virtual 10.23.19.106/29
+!
+interface Vlan3326
+   description MCAFEE_TRANSIT_FW
+   no shutdown
+   mtu 9000
+   vrf MCAFEE
+   ip address virtual 10.23.19.122/29
+!
+interface Vlan3375
+   description DMZ_Gold_Cluster_TEP_Pool
+   no shutdown
+   mtu 9000
+   vrf DMZ_INFRA_NSX
+   ip address virtual 10.23.9.1/26
+!
+interface Vlan3376
+   description DMZ_Silver_Cluster_TEP_Pool
+   no shutdown
+   mtu 9000
+   vrf DMZ_INFRA_NSX
+   ip address virtual 10.23.9.65/26
+!
+interface Vlan3377
+   description DMZ_Gold_Edge_Cluster-1_for_BGP
+   no shutdown
+   mtu 9000
+   vrf DMZ_INFRA_NSX
+!
+interface Vlan3378
+   description DMZ_Gold_Edge_Cluster-2_for_BGP
+   no shutdown
+   mtu 9000
+   vrf DMZ_INFRA_NSX
+!
+interface Vlan3381
+   description DMZ_Silver_Edge_Cluster-1_for_BGP
+   no shutdown
+   mtu 9000
+   vrf DMZ_INFRA_NSX
+!
+interface Vlan3382
+   description DMZ_Silver_Edge_Cluster-2_for_BGP
+   no shutdown
+   mtu 9000
+   vrf DMZ_INFRA_NSX
+!
+interface Vlan3383
+   description DMZ_Gold_Edge_Cluster-1_TEP_Pool
+   no shutdown
+   mtu 9000
+   vrf DMZ_INFRA_NSX
+   ip address virtual 10.23.9.193/29
+!
+interface Vlan3384
+   description DMZ_Gold_Edge_Cluster-2_TEP_Pool
+   no shutdown
+   mtu 9000
+   vrf DMZ_INFRA_NSX
+   ip address virtual 10.23.9.201/29
+!
+interface Vlan3385
+   description DMZ_Silver_Edge_Cluster_TEP_Pool
+   no shutdown
+   mtu 9000
+   vrf DMZ_INFRA_NSX
+   ip address virtual 10.23.9.209/28
+!
+interface Vlan3386
+   description DMZ_Mgmt
+   no shutdown
+   mtu 9000
+   vrf DMZ
+   ip address virtual 10.23.124.1/24
+!
+interface Vlan3387
+   description XMS
+   no shutdown
+   mtu 9000
+   vrf XMS_CVP
+   ip address virtual 10.23.20.17/28
+!
+interface Vlan3388
+   description CVP
+   no shutdown
+   mtu 9000
+   vrf XMS_CVP
+   ip address virtual 10.23.20.33/28
+!
+interface Vlan3389
+   description MCAFEE
+   no shutdown
+   mtu 9000
+   vrf MCAFEE
+   ip address virtual 10.23.20.65/27
+!
+interface Vlan3390
+   description Log_Forwarding
+   no shutdown
+   mtu 9000
+   vrf Jump_Server
+   ip address virtual 10.23.20.49/28
+!
+interface Vlan3513
+   description F5_VLAN_1
+   no shutdown
+   mtu 9000
+   vrf INTERNAL
+   ip address virtual 10.23.13.1/29
+!
+interface Vlan3514
+   description F5_VLAN_1
+   no shutdown
+   mtu 9000
+   vrf INTERNAL
+   ip address virtual 10.23.13.9/29
+!
+interface Vlan3515
+   description F5_VLAN_1
+   no shutdown
+   mtu 9000
+   vrf INTERNAL
+   ip address virtual 10.23.13.17/29
+!
+interface Vlan3516
+   description F5_VLAN_1
+   no shutdown
+   mtu 9000
+   vrf INTERNAL
+   ip address virtual 10.23.13.25/29
+!
+interface Vlan3524
+   description F5_iQuery_Mesh
+   no shutdown
+   mtu 9000
+   vrf F5_TRANSIT
+   ip address virtual 10.23.34.6/29
+!
+interface Vlan3701
+   description CITRIX1_File_Server
+   no shutdown
+   mtu 9000
+   vrf CITRIX1
+   ip address virtual 10.23.29.17/28
+!
+interface Vlan3702
+   description CITRIX1_TRANSIT_FW
+   no shutdown
+   mtu 9000
+   vrf CITRIX1
+   ip address virtual 10.23.29.2/29
+!
+interface Vlan4093
+   description MLAG_PEER_L3_PEERING
+   no shutdown
+   mtu 9100
+   ip address 10.23.94.5/31
+!
+interface Vlan4094
+   description MLAG_PEER
+   no shutdown
+   mtu 9100
+   no autostate
+   ip address 10.23.95.5/31
+!
+interface Vxlan1
+   description USDC1NSD104_VTEP
+   vxlan source-interface Loopback1
+   vxlan virtual-router encapsulation mac-address mlag-system-id
+   vxlan udp-port 4789
+   vxlan vlan 330 vni 10330
+   vxlan vlan 1500 vni 11500
+   vxlan vlan 1504 vni 11504
+   vxlan vlan 1505 vni 11505
+   vxlan vlan 1506 vni 11506
+   vxlan vlan 1507 vni 11507
+   vxlan vlan 1508 vni 11508
+   vxlan vlan 1510 vni 11510
+   vxlan vlan 1511 vni 11511
+   vxlan vlan 1512 vni 11512
+   vxlan vlan 1515 vni 11515
+   vxlan vlan 1516 vni 11516
+   vxlan vlan 1517 vni 11517
+   vxlan vlan 1518 vni 11518
+   vxlan vlan 1525 vni 11525
+   vxlan vlan 1526 vni 11526
+   vxlan vlan 1527 vni 11527
+   vxlan vlan 1528 vni 11528
+   vxlan vlan 1535 vni 11535
+   vxlan vlan 1536 vni 11536
+   vxlan vlan 1537 vni 11537
+   vxlan vlan 1540 vni 11540
+   vxlan vlan 1541 vni 11541
+   vxlan vlan 1542 vni 11542
+   vxlan vlan 1543 vni 11543
+   vxlan vlan 1548 vni 11548
+   vxlan vlan 1550 vni 11550
+   vxlan vlan 1552 vni 11552
+   vxlan vlan 1553 vni 11553
+   vxlan vlan 1554 vni 11554
+   vxlan vlan 1555 vni 11555
+   vxlan vlan 1557 vni 11557
+   vxlan vlan 1558 vni 11558
+   vxlan vlan 1559 vni 11559
+   vxlan vlan 1560 vni 11560
+   vxlan vlan 1561 vni 11561
+   vxlan vlan 1562 vni 11562
+   vxlan vlan 1563 vni 11563
+   vxlan vlan 1564 vni 11564
+   vxlan vlan 1568 vni 11568
+   vxlan vlan 1600 vni 11600
+   vxlan vlan 1601 vni 11601
+   vxlan vlan 1602 vni 11602
+   vxlan vlan 1603 vni 11603
+   vxlan vlan 1608 vni 11608
+   vxlan vlan 1609 vni 11609
+   vxlan vlan 1610 vni 11610
+   vxlan vlan 1611 vni 11611
+   vxlan vlan 1612 vni 11612
+   vxlan vlan 1614 vni 11614
+   vxlan vlan 1625 vni 11625
+   vxlan vlan 1626 vni 11626
+   vxlan vlan 1635 vni 11635
+   vxlan vlan 1636 vni 11636
+   vxlan vlan 1650 vni 11650
+   vxlan vlan 1652 vni 11652
+   vxlan vlan 1654 vni 11654
+   vxlan vlan 1655 vni 11655
+   vxlan vlan 1656 vni 11656
+   vxlan vlan 1657 vni 11657
+   vxlan vlan 1675 vni 11675
+   vxlan vlan 1676 vni 11676
+   vxlan vlan 1677 vni 11677
+   vxlan vlan 1678 vni 11678
+   vxlan vlan 1679 vni 11679
+   vxlan vlan 1680 vni 11680
+   vxlan vlan 1681 vni 11681
+   vxlan vlan 1682 vni 11682
+   vxlan vlan 1683 vni 11683
+   vxlan vlan 1684 vni 11684
+   vxlan vlan 1685 vni 11685
+   vxlan vlan 1690 vni 11690
+   vxlan vlan 1700 vni 11700
+   vxlan vlan 1701 vni 11701
+   vxlan vlan 1702 vni 11702
+   vxlan vlan 1703 vni 11703
+   vxlan vlan 1704 vni 11704
+   vxlan vlan 1709 vni 11709
+   vxlan vlan 1710 vni 11710
+   vxlan vlan 1711 vni 11711
+   vxlan vlan 1712 vni 11712
+   vxlan vlan 1720 vni 11720
+   vxlan vlan 1722 vni 11722
+   vxlan vlan 1724 vni 11724
+   vxlan vlan 1726 vni 11726
+   vxlan vlan 1728 vni 11728
+   vxlan vlan 1800 vni 11800
+   vxlan vlan 1810 vni 11810
+   vxlan vlan 1820 vni 11820
+   vxlan vlan 1830 vni 11830
+   vxlan vlan 1840 vni 11840
+   vxlan vlan 1850 vni 11850
+   vxlan vlan 1851 vni 11851
+   vxlan vlan 2500 vni 12500
+   vxlan vlan 2600 vni 12600
+   vxlan vlan 2601 vni 12601
+   vxlan vlan 2602 vni 12602
+   vxlan vlan 2603 vni 12603
+   vxlan vlan 2629 vni 12629
+   vxlan vlan 2644 vni 12644
+   vxlan vlan 2650 vni 12650
+   vxlan vlan 2720 vni 12720
+   vxlan vlan 2722 vni 12722
+   vxlan vlan 2724 vni 12724
+   vxlan vlan 2726 vni 12726
+   vxlan vlan 2850 vni 12850
+   vxlan vlan 2851 vni 12851
+   vxlan vlan 3301 vni 13301
+   vxlan vlan 3312 vni 13312
+   vxlan vlan 3314 vni 13314
+   vxlan vlan 3316 vni 13316
+   vxlan vlan 3320 vni 13320
+   vxlan vlan 3322 vni 13322
+   vxlan vlan 3324 vni 13324
+   vxlan vlan 3326 vni 13326
+   vxlan vlan 3375 vni 13375
+   vxlan vlan 3376 vni 13376
+   vxlan vlan 3377 vni 13377
+   vxlan vlan 3378 vni 13378
+   vxlan vlan 3381 vni 13381
+   vxlan vlan 3382 vni 13382
+   vxlan vlan 3383 vni 13383
+   vxlan vlan 3384 vni 13384
+   vxlan vlan 3385 vni 13385
+   vxlan vlan 3386 vni 13386
+   vxlan vlan 3387 vni 13387
+   vxlan vlan 3388 vni 13388
+   vxlan vlan 3389 vni 13389
+   vxlan vlan 3390 vni 13390
+   vxlan vlan 3513 vni 13513
+   vxlan vlan 3514 vni 13514
+   vxlan vlan 3515 vni 13515
+   vxlan vlan 3516 vni 13516
+   vxlan vlan 3517 vni 13517
+   vxlan vlan 3518 vni 13518
+   vxlan vlan 3519 vni 13519
+   vxlan vlan 3520 vni 13520
+   vxlan vlan 3521 vni 13521
+   vxlan vlan 3522 vni 13522
+   vxlan vlan 3524 vni 13524
+   vxlan vlan 3701 vni 13701
+   vxlan vlan 3702 vni 13702
+   vxlan vrf CITRIX vni 5
+   vxlan vrf CITRIX1 vni 6
+   vxlan vrf DMZ vni 7
+   vxlan vrf DMZ_INFRA_NSX vni 8
+   vxlan vrf F5_TRANSIT vni 9
+   vxlan vrf INFOBLOX vni 10
+   vxlan vrf INFRA_Mgmt vni 1
+   vxlan vrf INFRA_NSX vni 11
+   vxlan vrf INFRA_Std vni 12
+   vxlan vrf INTERNAL vni 2
+   vxlan vrf INTERNAL_Std vni 13
+   vxlan vrf INTERNET vni 14
+   vxlan vrf ISILON vni 15
+   vxlan vrf Jump_Server vni 16
+   vxlan vrf MCAFEE vni 17
+   vxlan vrf MPLS-AA vni 18
+   vxlan vrf OOB_Mgmt vni 19
+   vxlan vrf PHYSICAL_SERVER vni 20
+   vxlan vrf REPLICATION vni 21
+   vxlan vrf Service_Now vni 22
+   vxlan vrf WLC_GUEST vni 23
+   vxlan vrf WLC_Mgmt vni 24
+   vxlan vrf WLC_PROD_IOT vni 25
+   vxlan vrf XMS_CVP vni 26
+!
+mac address-table aging-time 901
+!
+ip virtual-router mac-address 00:11:22:33:44:55
+!
+ip access-list standard ALLOW_SSH_ACL
+   10 permit 10.230.0.0/16
+   20 permit 10.71.0.0/16
+   30 permit 10.72.0.0/16
+   40 permit 10.23.0.0/16
+   50 permit 10.24.0.0/16
+   60 permit 10.52.0.0/16
+   999 deny any
+!
+ip routing
+ip routing vrf CITRIX
+ip routing vrf CITRIX1
+ip routing vrf DMZ
+ip routing vrf DMZ_INFRA_NSX
+ip routing vrf F5_TRANSIT
+ip routing vrf INFOBLOX
+ip routing vrf INFRA_Mgmt
+ip routing vrf INFRA_NSX
+ip routing vrf INFRA_Std
+ip routing vrf INTERNAL
+ip routing vrf INTERNAL_Std
+ip routing vrf INTERNET
+ip routing vrf ISILON
+ip routing vrf Jump_Server
+ip routing vrf MCAFEE
+ip routing vrf mgmt
+ip routing vrf MPLS-AA
+ip routing vrf OOB_Mgmt
+ip routing vrf PHYSICAL_SERVER
+ip routing vrf REPLICATION
+ip routing vrf Service_Now
+ip routing vrf WLC_GUEST
+ip routing vrf WLC_Mgmt
+ip routing vrf WLC_PROD_IOT
+ip routing vrf XMS_CVP
+!
+ip prefix-list PL-LOOPBACKS-EVPN-OVERLAY
+   seq 10 permit 10.23.92.0/24 eq 32
+   seq 20 permit 10.23.93.0/24 eq 32
+!
+mlag configuration
+   domain-id mlag-pair2
+   local-interface Vlan4094
+   peer-address 10.23.95.4
+   peer-link Port-Channel491
+   reload-delay mlag 300
+   reload-delay non-mlag 330
+!
+ip route vrf mgmt 0.0.0.0/0 10.23.0.1
+ip route vrf CITRIX 0.0.0.0/0 10.23.22.73
+ip route vrf CITRIX1 0.0.0.0/0 10.23.29.1
+ip route vrf DMZ 0.0.0.0/0 10.23.19.89
+ip route vrf F5_TRANSIT 0.0.0.0/0 141.81.180.217
+ip route vrf F5_TRANSIT 10.0.0.0/8 141.81.180.228
+ip route vrf F5_TRANSIT 141.81.180.0/25 141.81.180.228
+ip route vrf INFOBLOX 0.0.0.0/0 10.23.19.9
+ip route vrf INFRA_Mgmt 0.0.0.0/0 10.23.2.89
+ip route vrf INFRA_Std 0.0.0.0/0 10.23.2.73
+ip route vrf INTERNAL 0.0.0.0/0 10.23.2.81
+ip route vrf INTERNAL 10.23.31.0/24 10.23.30.52
+ip route vrf INTERNAL_Std 0.0.0.0/0 10.23.2.65
+ip route vrf INTERNET 141.81.180.0/24 141.81.180.212
+ip route vrf ISILON 0.0.0.0/0 10.23.22.57
+ip route vrf Jump_Server 0.0.0.0/0 10.23.22.41
+ip route vrf MCAFEE 0.0.0.0/0 10.23.19.121
+ip route vrf OOB_Mgmt 0.0.0.0/0 10.23.2.113
+ip route vrf OOB_Mgmt 10.23.0.0/24 10.23.2.113
+ip route vrf OOB_Mgmt 10.23.1.0/24 10.23.2.113
+ip route vrf OOB_Mgmt 10.24.0.0/24 10.23.2.139
+ip route vrf OOB_Mgmt 10.24.1.0/24 10.23.2.139
+ip route vrf OOB_Mgmt 10.24.2.112/29 10.23.2.139
+ip route vrf PHYSICAL_SERVER 0.0.0.0/0 10.23.19.25
+ip route vrf Service_Now 0.0.0.0/0 10.23.22.25
+ip route vrf WLC_GUEST 0.0.0.0/0 10.23.44.25
+ip route vrf WLC_Mgmt 0.0.0.0/0 10.23.44.1
+ip route vrf WLC_PROD_IOT 0.0.0.0/0 10.23.44.17
+ip route vrf XMS_CVP 0.0.0.0/0 10.23.19.105
+!
+route-map RM-CONN-2-BGP permit 10
+   match ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY
+!
+route-map RM-EVPN-FILTER-AS65304 deny 10
+   match as 65304
+!
+route-map RM-EVPN-FILTER-AS65304 permit 20
+!
+route-map RM-MLAG-PEER-IN permit 10
+   description Make routes learned over MLAG Peer-link less preferred on spines to ensure optimal routing
+   set origin incomplete
+!
+router bfd
+   multihop interval 5000 min-rx 5000 multiplier 3
+!
+router bgp 65303
+   router-id 10.23.92.6
+   distance bgp 150 200 200
+   graceful-restart restart-time 300
+   graceful-restart
+   maximum-paths 2 ecmp 2
+   neighbor EVPN-OVERLAY-PEERS peer group
+   neighbor EVPN-OVERLAY-PEERS update-source Loopback0
+   neighbor EVPN-OVERLAY-PEERS bfd
+   neighbor EVPN-OVERLAY-PEERS ebgp-multihop 4
+   neighbor EVPN-OVERLAY-PEERS password 7 $1c$U4tL2vQP9QwZlxIV1K3/pw==
+   neighbor EVPN-OVERLAY-PEERS send-community
+   neighbor EVPN-OVERLAY-PEERS maximum-routes 0
+   neighbor IPv4-UNDERLAY-PEERS peer group
+   neighbor IPv4-UNDERLAY-PEERS password 7 $1c$U4tL2vQP9QwZlxIV1K3/pw==
+   neighbor IPv4-UNDERLAY-PEERS send-community
+   neighbor IPv4-UNDERLAY-PEERS maximum-routes 12000
+   neighbor MLAG-IPv4-UNDERLAY-PEER peer group
+   neighbor MLAG-IPv4-UNDERLAY-PEER remote-as 65303
+   neighbor MLAG-IPv4-UNDERLAY-PEER next-hop-self
+   neighbor MLAG-IPv4-UNDERLAY-PEER password 7 $1c$U4tL2vQP9QwZlxIV1K3/pw==
+   neighbor MLAG-IPv4-UNDERLAY-PEER send-community
+   neighbor MLAG-IPv4-UNDERLAY-PEER maximum-routes 12000
+   neighbor MLAG-IPv4-UNDERLAY-PEER route-map RM-MLAG-PEER-IN in
+   neighbor 10.23.91.12 peer group IPv4-UNDERLAY-PEERS
+   neighbor 10.23.91.12 remote-as 65301
+   neighbor 10.23.91.12 description USDC1NSC101_Ethernet4/1
+   neighbor 10.23.91.14 peer group IPv4-UNDERLAY-PEERS
+   neighbor 10.23.91.14 remote-as 65301
+   neighbor 10.23.91.14 description USDC1NSC102_Ethernet4/1
+   neighbor 10.23.92.9 peer group EVPN-OVERLAY-PEERS
+   neighbor 10.23.92.9 remote-as 65304
+   neighbor 10.23.92.9 description USDC1NSE101
+   neighbor 10.23.92.9 route-map RM-EVPN-FILTER-AS65304 out
+   neighbor 10.23.92.10 peer group EVPN-OVERLAY-PEERS
+   neighbor 10.23.92.10 remote-as 65304
+   neighbor 10.23.92.10 description USDC1NSE102
+   neighbor 10.23.92.10 route-map RM-EVPN-FILTER-AS65304 out
+   neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+   neighbor 10.23.94.4 description USDC1NSD103
+   redistribute connected route-map RM-CONN-2-BGP
+   !
+   vlan 330
+      rd 10.23.92.6:10330
+      route-target both 65000:10330
+      redistribute learned
+   !
+   vlan 1500
+      rd 10.23.92.6:11500
+      route-target both 65000:11500
+      redistribute learned
+   !
+   vlan 1504
+      rd 10.23.92.6:11504
+      route-target both 65000:11504
+      redistribute learned
+   !
+   vlan 1505
+      rd 10.23.92.6:11505
+      route-target both 65000:11505
+      redistribute learned
+   !
+   vlan 1506
+      rd 10.23.92.6:11506
+      route-target both 65000:11506
+      redistribute learned
+   !
+   vlan 1507
+      rd 10.23.92.6:11507
+      route-target both 65000:11507
+      redistribute learned
+   !
+   vlan 1508
+      rd 10.23.92.6:11508
+      route-target both 65000:11508
+      redistribute learned
+   !
+   vlan 1510
+      rd 10.23.92.6:11510
+      route-target both 65000:11510
+      redistribute learned
+   !
+   vlan 1511
+      rd 10.23.92.6:11511
+      route-target both 65000:11511
+      redistribute learned
+   !
+   vlan 1512
+      rd 10.23.92.6:11512
+      route-target both 65000:11512
+      redistribute learned
+   !
+   vlan 1515
+      rd 10.23.92.6:11515
+      route-target both 65000:11515
+      redistribute learned
+   !
+   vlan 1516
+      rd 10.23.92.6:11516
+      route-target both 65000:11516
+      redistribute learned
+   !
+   vlan 1517
+      rd 10.23.92.6:11517
+      route-target both 65000:11517
+      redistribute learned
+   !
+   vlan 1518
+      rd 10.23.92.6:11518
+      route-target both 65000:11518
+      redistribute learned
+   !
+   vlan 1525
+      rd 10.23.92.6:11525
+      route-target both 65000:11525
+      redistribute learned
+   !
+   vlan 1526
+      rd 10.23.92.6:11526
+      route-target both 65000:11526
+      redistribute learned
+   !
+   vlan 1527
+      rd 10.23.92.6:11527
+      route-target both 65000:11527
+      redistribute learned
+   !
+   vlan 1528
+      rd 10.23.92.6:11528
+      route-target both 65000:11528
+      redistribute learned
+   !
+   vlan 1535
+      rd 10.23.92.6:11535
+      route-target both 65000:11535
+      redistribute learned
+   !
+   vlan 1536
+      rd 10.23.92.6:11536
+      route-target both 65000:11536
+      redistribute learned
+   !
+   vlan 1537
+      rd 10.23.92.6:11537
+      route-target both 65000:11537
+      redistribute learned
+   !
+   vlan 1540
+      rd 10.23.92.6:11540
+      route-target both 65000:11540
+      redistribute learned
+   !
+   vlan 1541
+      rd 10.23.92.6:11541
+      route-target both 65000:11541
+      redistribute learned
+   !
+   vlan 1542
+      rd 10.23.92.6:11542
+      route-target both 65000:11542
+      redistribute learned
+   !
+   vlan 1543
+      rd 10.23.92.6:11543
+      route-target both 65000:11543
+      redistribute learned
+   !
+   vlan 1548
+      rd 10.23.92.6:11548
+      route-target both 65000:11548
+      redistribute learned
+   !
+   vlan 1550
+      rd 10.23.92.6:11550
+      route-target both 65000:11550
+      redistribute learned
+   !
+   vlan 1552
+      rd 10.23.92.6:11552
+      route-target both 65000:11552
+      redistribute learned
+   !
+   vlan 1553
+      rd 10.23.92.6:11553
+      route-target both 65000:11553
+      redistribute learned
+   !
+   vlan 1554
+      rd 10.23.92.6:11554
+      route-target both 65000:11554
+      redistribute learned
+   !
+   vlan 1555
+      rd 10.23.92.6:11555
+      route-target both 65000:11555
+      redistribute learned
+   !
+   vlan 1557
+      rd 10.23.92.6:11557
+      route-target both 65000:11557
+      redistribute learned
+   !
+   vlan 1558
+      rd 10.23.92.6:11558
+      route-target both 65000:11558
+      redistribute learned
+   !
+   vlan 1559
+      rd 10.23.92.6:11559
+      route-target both 65000:11559
+      redistribute learned
+   !
+   vlan 1560
+      rd 10.23.92.6:11560
+      route-target both 65000:11560
+      redistribute learned
+   !
+   vlan 1561
+      rd 10.23.92.6:11561
+      route-target both 65000:11561
+      redistribute learned
+   !
+   vlan 1562
+      rd 10.23.92.6:11562
+      route-target both 65000:11562
+      redistribute learned
+   !
+   vlan 1563
+      rd 10.23.92.6:11563
+      route-target both 65000:11563
+      redistribute learned
+   !
+   vlan 1564
+      rd 10.23.92.6:11564
+      route-target both 65000:11564
+      redistribute learned
+   !
+   vlan 1568
+      rd 10.23.92.6:11568
+      route-target both 65000:11568
+      redistribute learned
+   !
+   vlan 1600
+      rd 10.23.92.6:11600
+      route-target both 65000:11600
+      redistribute learned
+   !
+   vlan 1601
+      rd 10.23.92.6:11601
+      route-target both 65000:11601
+      redistribute learned
+   !
+   vlan 1602
+      rd 10.23.92.6:11602
+      route-target both 65000:11602
+      redistribute learned
+   !
+   vlan 1603
+      rd 10.23.92.6:11603
+      route-target both 65000:11603
+      redistribute learned
+   !
+   vlan 1608
+      rd 10.23.92.6:11608
+      route-target both 65000:11608
+      redistribute learned
+   !
+   vlan 1609
+      rd 10.23.92.6:11609
+      route-target both 65000:11609
+      redistribute learned
+   !
+   vlan 1610
+      rd 10.23.92.6:11610
+      route-target both 65000:11610
+      redistribute learned
+   !
+   vlan 1611
+      rd 10.23.92.6:11611
+      route-target both 65000:11611
+      redistribute learned
+   !
+   vlan 1612
+      rd 10.23.92.6:11612
+      route-target both 65000:11612
+      redistribute learned
+   !
+   vlan 1614
+      rd 10.23.92.6:11614
+      route-target both 65000:11614
+      redistribute learned
+   !
+   vlan 1625
+      rd 10.23.92.6:11625
+      route-target both 65000:11625
+      redistribute learned
+   !
+   vlan 1626
+      rd 10.23.92.6:11626
+      route-target both 65000:11626
+      redistribute learned
+   !
+   vlan 1635
+      rd 10.23.92.6:11635
+      route-target both 65000:11635
+      redistribute learned
+   !
+   vlan 1636
+      rd 10.23.92.6:11636
+      route-target both 65000:11636
+      redistribute learned
+   !
+   vlan 1650
+      rd 10.23.92.6:11650
+      route-target both 65000:11650
+      redistribute learned
+   !
+   vlan 1652
+      rd 10.23.92.6:11652
+      route-target both 65000:11652
+      redistribute learned
+   !
+   vlan 1654
+      rd 10.23.92.6:11654
+      route-target both 65000:11654
+      redistribute learned
+   !
+   vlan 1655
+      rd 10.23.92.6:11655
+      route-target both 65000:11655
+      redistribute learned
+   !
+   vlan 1656
+      rd 10.23.92.6:11656
+      route-target both 65000:11656
+      redistribute learned
+   !
+   vlan 1657
+      rd 10.23.92.6:11657
+      route-target both 65000:11657
+      redistribute learned
+   !
+   vlan 1675
+      rd 10.23.92.6:11675
+      route-target both 65000:11675
+      redistribute learned
+   !
+   vlan 1676
+      rd 10.23.92.6:11676
+      route-target both 65000:11676
+      redistribute learned
+   !
+   vlan 1677
+      rd 10.23.92.6:11677
+      route-target both 65000:11677
+      redistribute learned
+   !
+   vlan 1678
+      rd 10.23.92.6:11678
+      route-target both 65000:11678
+      redistribute learned
+   !
+   vlan 1679
+      rd 10.23.92.6:11679
+      route-target both 65000:11679
+      redistribute learned
+   !
+   vlan 1680
+      rd 10.23.92.6:11680
+      route-target both 65000:11680
+      redistribute learned
+   !
+   vlan 1681
+      rd 10.23.92.6:11681
+      route-target both 65000:11681
+      redistribute learned
+   !
+   vlan 1682
+      rd 10.23.92.6:11682
+      route-target both 65000:11682
+      redistribute learned
+   !
+   vlan 1683
+      rd 10.23.92.6:11683
+      route-target both 65000:11683
+      redistribute learned
+   !
+   vlan 1684
+      rd 10.23.92.6:11684
+      route-target both 65000:11684
+      redistribute learned
+   !
+   vlan 1685
+      rd 10.23.92.6:11685
+      route-target both 65000:11685
+      redistribute learned
+   !
+   vlan 1690
+      rd 10.23.92.6:11690
+      route-target both 65000:11690
+      redistribute learned
+   !
+   vlan 1700
+      rd 10.23.92.6:11700
+      route-target both 65000:11700
+      redistribute learned
+   !
+   vlan 1701
+      rd 10.23.92.6:11701
+      route-target both 65000:11701
+      redistribute learned
+   !
+   vlan 1702
+      rd 10.23.92.6:11702
+      route-target both 65000:11702
+      redistribute learned
+   !
+   vlan 1703
+      rd 10.23.92.6:11703
+      route-target both 65000:11703
+      redistribute learned
+   !
+   vlan 1704
+      rd 10.23.92.6:11704
+      route-target both 65000:11704
+      redistribute learned
+   !
+   vlan 1709
+      rd 10.23.92.6:11709
+      route-target both 65000:11709
+      redistribute learned
+   !
+   vlan 1710
+      rd 10.23.92.6:11710
+      route-target both 65000:11710
+      redistribute learned
+   !
+   vlan 1711
+      rd 10.23.92.6:11711
+      route-target both 65000:11711
+      redistribute learned
+   !
+   vlan 1712
+      rd 10.23.92.6:11712
+      route-target both 65000:11712
+      redistribute learned
+   !
+   vlan 1720
+      rd 10.23.92.6:11720
+      route-target both 65000:11720
+      redistribute learned
+   !
+   vlan 1722
+      rd 10.23.92.6:11722
+      route-target both 65000:11722
+      redistribute learned
+   !
+   vlan 1724
+      rd 10.23.92.6:11724
+      route-target both 65000:11724
+      redistribute learned
+   !
+   vlan 1726
+      rd 10.23.92.6:11726
+      route-target both 65000:11726
+      redistribute learned
+   !
+   vlan 1728
+      rd 10.23.92.6:11728
+      route-target both 65000:11728
+      redistribute learned
+   !
+   vlan 1800
+      rd 10.23.92.6:11800
+      route-target both 65000:11800
+      redistribute learned
+   !
+   vlan 1810
+      rd 10.23.92.6:11810
+      route-target both 65000:11810
+      redistribute learned
+   !
+   vlan 1820
+      rd 10.23.92.6:11820
+      route-target both 65000:11820
+      redistribute learned
+   !
+   vlan 1830
+      rd 10.23.92.6:11830
+      route-target both 65000:11830
+      redistribute learned
+   !
+   vlan 1840
+      rd 10.23.92.6:11840
+      route-target both 65000:11840
+      redistribute learned
+   !
+   vlan 1850
+      rd 10.23.92.6:11850
+      route-target both 65000:11850
+      redistribute learned
+   !
+   vlan 1851
+      rd 10.23.92.6:11851
+      route-target both 65000:11851
+      redistribute learned
+   !
+   vlan 2500
+      rd 10.23.92.6:12500
+      route-target both 65000:12500
+      redistribute learned
+   !
+   vlan 2600
+      rd 10.23.92.6:12600
+      route-target both 65000:12600
+      redistribute learned
+   !
+   vlan 2601
+      rd 10.23.92.6:12601
+      route-target both 65000:12601
+      redistribute learned
+   !
+   vlan 2602
+      rd 10.23.92.6:12602
+      route-target both 65000:12602
+      redistribute learned
+   !
+   vlan 2603
+      rd 10.23.92.6:12603
+      route-target both 65000:12603
+      redistribute learned
+   !
+   vlan 2629
+      rd 10.23.92.6:12629
+      route-target both 65000:12629
+      redistribute learned
+   !
+   vlan 2644
+      rd 10.23.92.6:12644
+      route-target both 65000:12644
+      redistribute learned
+   !
+   vlan 2650
+      rd 10.23.92.6:12650
+      route-target both 65000:12650
+      redistribute learned
+   !
+   vlan 2720
+      rd 10.23.92.6:12720
+      route-target both 65000:12720
+      redistribute learned
+   !
+   vlan 2722
+      rd 10.23.92.6:12722
+      route-target both 65000:12722
+      redistribute learned
+   !
+   vlan 2724
+      rd 10.23.92.6:12724
+      route-target both 65000:12724
+      redistribute learned
+   !
+   vlan 2726
+      rd 10.23.92.6:12726
+      route-target both 65000:12726
+      redistribute learned
+   !
+   vlan 2850
+      rd 10.23.92.6:12850
+      route-target both 65000:12850
+      redistribute learned
+   !
+   vlan 2851
+      rd 10.23.92.6:12851
+      route-target both 65000:12851
+      redistribute learned
+   !
+   vlan 3301
+      rd 10.23.92.6:13301
+      route-target both 65000:13301
+      redistribute learned
+   !
+   vlan 3312
+      rd 10.23.92.6:13312
+      route-target both 65000:13312
+      redistribute learned
+   !
+   vlan 3314
+      rd 10.23.92.6:13314
+      route-target both 65000:13314
+      redistribute learned
+   !
+   vlan 3316
+      rd 10.23.92.6:13316
+      route-target both 65000:13316
+      redistribute learned
+   !
+   vlan 3320
+      rd 10.23.92.6:13320
+      route-target both 65000:13320
+      redistribute learned
+   !
+   vlan 3322
+      rd 10.23.92.6:13322
+      route-target both 65000:13322
+      redistribute learned
+   !
+   vlan 3324
+      rd 10.23.92.6:13324
+      route-target both 65000:13324
+      redistribute learned
+   !
+   vlan 3326
+      rd 10.23.92.6:13326
+      route-target both 65000:13326
+      redistribute learned
+   !
+   vlan 3375
+      rd 10.23.92.6:13375
+      route-target both 65000:13375
+      redistribute learned
+   !
+   vlan 3376
+      rd 10.23.92.6:13376
+      route-target both 65000:13376
+      redistribute learned
+   !
+   vlan 3377
+      rd 10.23.92.6:13377
+      route-target both 65000:13377
+      redistribute learned
+   !
+   vlan 3378
+      rd 10.23.92.6:13378
+      route-target both 65000:13378
+      redistribute learned
+   !
+   vlan 3381
+      rd 10.23.92.6:13381
+      route-target both 65000:13381
+      redistribute learned
+   !
+   vlan 3382
+      rd 10.23.92.6:13382
+      route-target both 65000:13382
+      redistribute learned
+   !
+   vlan 3383
+      rd 10.23.92.6:13383
+      route-target both 65000:13383
+      redistribute learned
+   !
+   vlan 3384
+      rd 10.23.92.6:13384
+      route-target both 65000:13384
+      redistribute learned
+   !
+   vlan 3385
+      rd 10.23.92.6:13385
+      route-target both 65000:13385
+      redistribute learned
+   !
+   vlan 3386
+      rd 10.23.92.6:13386
+      route-target both 65000:13386
+      redistribute learned
+   !
+   vlan 3387
+      rd 10.23.92.6:13387
+      route-target both 65000:13387
+      redistribute learned
+   !
+   vlan 3388
+      rd 10.23.92.6:13388
+      route-target both 65000:13388
+      redistribute learned
+   !
+   vlan 3389
+      rd 10.23.92.6:13389
+      route-target both 65000:13389
+      redistribute learned
+   !
+   vlan 3390
+      rd 10.23.92.6:13390
+      route-target both 65000:13390
+      redistribute learned
+   !
+   vlan 3513
+      rd 10.23.92.6:13513
+      route-target both 65000:13513
+      redistribute learned
+   !
+   vlan 3514
+      rd 10.23.92.6:13514
+      route-target both 65000:13514
+      redistribute learned
+   !
+   vlan 3515
+      rd 10.23.92.6:13515
+      route-target both 65000:13515
+      redistribute learned
+   !
+   vlan 3516
+      rd 10.23.92.6:13516
+      route-target both 65000:13516
+      redistribute learned
+   !
+   vlan 3517
+      rd 10.23.92.6:13517
+      route-target both 65000:13517
+      redistribute learned
+   !
+   vlan 3518
+      rd 10.23.92.6:13518
+      route-target both 65000:13518
+      redistribute learned
+   !
+   vlan 3519
+      rd 10.23.92.6:13519
+      route-target both 65000:13519
+      redistribute learned
+   !
+   vlan 3520
+      rd 10.23.92.6:13520
+      route-target both 65000:13520
+      redistribute learned
+   !
+   vlan 3521
+      rd 10.23.92.6:13521
+      route-target both 65000:13521
+      redistribute learned
+   !
+   vlan 3522
+      rd 10.23.92.6:13522
+      route-target both 65000:13522
+      redistribute learned
+   !
+   vlan 3524
+      rd 10.23.92.6:13524
+      route-target both 65000:13524
+      redistribute learned
+   !
+   vlan 3701
+      rd 10.23.92.6:13701
+      route-target both 65000:13701
+      redistribute learned
+   !
+   vlan 3702
+      rd 10.23.92.6:13702
+      route-target both 65000:13702
+      redistribute learned
+   !
+   address-family evpn
+      neighbor EVPN-OVERLAY-PEERS activate
+   !
+   address-family ipv4
+      no neighbor EVPN-OVERLAY-PEERS activate
+      neighbor IPv4-UNDERLAY-PEERS activate
+      neighbor MLAG-IPv4-UNDERLAY-PEER activate
+   !
+   vrf CITRIX
+      rd 10.23.92.6:5
+      route-target import evpn 65000:5
+      route-target export evpn 65000:5
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf CITRIX1
+      rd 10.23.92.6:6
+      route-target import evpn 65000:6
+      route-target export evpn 65000:6
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf DMZ
+      rd 10.23.92.6:7
+      route-target import evpn 65000:7
+      route-target export evpn 65000:7
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf DMZ_INFRA_NSX
+      rd 10.23.92.6:8
+      route-target import evpn 65000:8
+      route-target export evpn 65000:8
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf F5_TRANSIT
+      rd 10.23.92.6:9
+      route-target import evpn 65000:9
+      route-target export evpn 65000:9
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf INFOBLOX
+      rd 10.23.92.6:10
+      route-target import evpn 65000:10
+      route-target export evpn 65000:10
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf INFRA_Mgmt
+      rd 10.23.92.6:1
+      route-target import evpn 65000:1
+      route-target export evpn 65000:1
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf INFRA_NSX
+      rd 10.23.92.6:11
+      route-target import evpn 65000:11
+      route-target export evpn 65000:11
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf INFRA_Std
+      rd 10.23.92.6:12
+      route-target import evpn 65000:12
+      route-target export evpn 65000:12
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf INTERNAL
+      rd 10.23.92.6:2
+      route-target import evpn 65000:2
+      route-target export evpn 65000:2
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf INTERNAL_Std
+      rd 10.23.92.6:13
+      route-target import evpn 65000:13
+      route-target export evpn 65000:13
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf INTERNET
+      rd 10.23.92.6:14
+      route-target import evpn 65000:14
+      route-target export evpn 65000:14
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf ISILON
+      rd 10.23.92.6:15
+      route-target import evpn 65000:15
+      route-target export evpn 65000:15
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf Jump_Server
+      rd 10.23.92.6:16
+      route-target import evpn 65000:16
+      route-target export evpn 65000:16
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf MCAFEE
+      rd 10.23.92.6:17
+      route-target import evpn 65000:17
+      route-target export evpn 65000:17
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf MPLS-AA
+      rd 10.23.92.6:18
+      route-target import evpn 65000:18
+      route-target export evpn 65000:18
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf OOB_Mgmt
+      rd 10.23.92.6:19
+      route-target import evpn 65000:19
+      route-target export evpn 65000:19
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf PHYSICAL_SERVER
+      rd 10.23.92.6:20
+      route-target import evpn 65000:20
+      route-target export evpn 65000:20
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf REPLICATION
+      rd 10.23.92.6:21
+      route-target import evpn 65000:21
+      route-target export evpn 65000:21
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+   !
+   vrf Service_Now
+      rd 10.23.92.6:22
+      route-target import evpn 65000:22
+      route-target export evpn 65000:22
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf WLC_GUEST
+      rd 10.23.92.6:23
+      route-target import evpn 65000:23
+      route-target export evpn 65000:23
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf WLC_Mgmt
+      rd 10.23.92.6:24
+      route-target import evpn 65000:24
+      route-target export evpn 65000:24
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf WLC_PROD_IOT
+      rd 10.23.92.6:25
+      route-target import evpn 65000:25
+      route-target export evpn 65000:25
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+   !
+   vrf XMS_CVP
+      rd 10.23.92.6:26
+      route-target import evpn 65000:26
+      route-target export evpn 65000:26
+      router-id 10.23.92.6
+      neighbor 10.23.94.4 peer group MLAG-IPv4-UNDERLAY-PEER
+      redistribute connected
+      redistribute static
+!
+management api http-commands
+   protocol https
+   no shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+management ssh
+   ip access-group ALLOW_SSH_ACL vrf mgmt in
+   idle-timeout 30
+   mac hmac-sha2-512-etm@openssh.com hmac-sha2-256-etm@openssh.com hmac-sha2-512 hmac-sha2-256
+   shutdown
+   vrf mgmt
+      no shutdown
+!
+management security
+   password encryption-key common
+
+!
+end

@@ -1,0 +1,71 @@
+!
+vlan 182
+   name MIGRATION_LINK_REPLICATION_182
+   trunk group MIGRATION_LINK_REPLICATION_182
+!
+vlan 1540
+   name PHYSICAL_SERVER
+   trunk group PHYSICAL_SERVER
+!
+vlan 1541
+   name Backup-Infra
+   trunk group BACKUP_Infra
+!
+vlan 1542
+   name Backup_Replication
+   trunk group BACKUP_REP
+!
+vlan 1543
+   name BACKUP_Mgmt
+   trunk group BACKUP_Mgmt
+!
+vlan 1544
+   name BACK_Infra_2
+!
+vlan 1545
+   name iSeries-AA-MDC
+!
+vlan 1546
+   name EXCHANGE_PHY_SERVER
+!
+vlan 1550
+   name DC_Mgmt
+   trunk group DC_Mgmt
+!
+vlan 1560
+   name Citrix_VDI_Mgmt
+   trunk group Citrix_VDI_Mgmt
+!
+vlan 1561
+   name Citrix_XenApp_Mgmt
+   trunk group Citrix_XenApp_Mgmt
+!
+vlan 1562
+   name Customer_VDI_WLD
+   trunk group Customer_VDI_WLD
+!
+vlan 1567
+   name Customer_VDI_WLD_Two
+!
+vlan 1709
+   name ISILON_DATA
+   trunk group ISILON_DATA
+!
+vlan 1710
+   name ISILON_DMZ
+   trunk group ISILON_DMZ
+!
+vlan 1802
+   name Cisco_DNA
+   trunk group Cisco_DNA
+!
+vlan 1884
+   name NSX-Physical-iSAC_Server
+!
+vlan 1885
+   name Prod_EMEIA-AX-2009
+!
+vlan 3386
+   name DMZ
+   trunk group DMZ
+!

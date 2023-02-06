@@ -1,0 +1,176 @@
+interface Port-Channel129
+   description Physical_servers1
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 129
+!
+interface Port-Channel130
+   description Physical_servers1
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 130
+!
+interface Port-Channel210
+   description reserved_for_USDC1SDB2199-1
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 210
+!
+interface Port-Channel220
+   description reserved_for_USDC1SDB2199-1
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 220
+!
+interface Port-Channel250
+   description USDC1SDB2202
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 250
+!
+interface Port-Channel260
+   description USDC1SDB2202
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 260
+!
+interface Port-Channel450
+   description PH_XL_B0GZJ93
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 450
+!
+interface Port-Channel460
+   description PH_XL_B0GZJ93
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 460
+!
+interface Port-Channel2000
+   description MLAG_CHANNEL
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BACKUP_Mgmt
+   switchport trunk group BACKUP_PROD
+   switchport trunk group CVP
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group DC_Mgmt
+   switchport trunk group DMZ
+   switchport trunk group EXCH_TNT_ESXi_Mgmt
+   switchport trunk group EXCH_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group EXCH_TNT_ESXi_vMotion
+   switchport trunk group Log_Forwarding
+   switchport trunk group MCAFEE
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group MLAG_PEER
+   switchport trunk group PHYSICAL_SERVER
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group VLAN1711
+   switchport trunk group VRA_Mgmt
+   switchport trunk group Wipro_VDI_WLD
+   switchport trunk group XMS
+!
+interface Ethernet17
+   description USDC1SDB2190-1
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet18
+   shutdown
+   mtu 9214
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet19
+   description USDC1SDB2190-2
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet21
+   description reserved_for_USDC1SDB2199-1
+   mtu 9214
+   channel-group 210 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet22
+   description reserved_for_USDC1SDB2199-1
+   mtu 9214
+   channel-group 220 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet23
+   description PH_Medium_BNF7673 -M05.02.01/Ru14-15/OnBoard 2
+   shutdown
+   mtu 9214
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet25
+   description USDC1SDB2202
+   mtu 9214
+   channel-group 250 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet26
+   description USDC1SDB2202
+   mtu 9214
+   channel-group 260 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet27
+   mtu 9214
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet29
+   description USDC1SPHXL2ID01 -M05.02.02/Ru2/PCI3 P1
+   mtu 9214
+   channel-group 129 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet30
+   description USDC1SPHXL2ID01 -M05.02.02/Ru2/PCI3 P1
+   mtu 9214
+   channel-group 130 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet34
+   description PH_Medium_B0GWJ93
+   mtu 9214
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet40
+   description USDC1SPHV2012
+   mtu 9214
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet41
+   description USDC1SPHV2012
+   mtu 9214
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!

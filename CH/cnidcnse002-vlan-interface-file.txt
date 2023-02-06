@@ -1,0 +1,566 @@
+interface Vlan1505
+   description MGMT_TNT_ESXi_Mgmt
+   mtu 10178
+   vrf INFRA_APP
+   ip address 10.52.5.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.5.1
+!
+interface Vlan1506
+   description ESXi VXLAN for Tenant Mgmt
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.52.6.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.6.1
+!
+interface Vlan1507
+   description ESXi vMotion for Tenant Mgmt
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.52.7.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.7.1
+!
+interface Vlan1508
+   description ESXi vSAN for Tenant Mgmt
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.52.8.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.8.1
+!
+interface Vlan1510
+   description VRA_Mgmt
+   mtu 10178
+   vrf INFRA_APP
+   ip address 10.52.10.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.10.1
+!
+interface Vlan1525
+   description ESXi Mgmt for Tenant SILV
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.52.25.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.25.1
+!
+interface Vlan1526
+   description SILV_TNT_ESXi_VXLAN_VTEP
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.52.26.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.26.1
+!
+interface Vlan1527
+   description ESXi vMotion for Tenant SILV
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.52.27.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.27.1
+!
+interface Vlan1528
+   description ESXi vSAN for Tenant SILV
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.52.28.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.28.1
+!
+interface Vlan1541
+   description BACK_Infra
+   mtu 10178
+   vrf INFRA_APP
+   ip address 10.52.41.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.41.1
+!
+interface Vlan1543
+   description BACKUP_Mgmt
+   mtu 10178
+   vrf INFRA_APP
+   ip address 10.52.43.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.43.1
+!
+interface Vlan1548
+   description PAFW_VM300
+   mtu 10178
+   vrf INFRA_APP
+   ip address 10.52.48.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.48.1
+!
+interface Vlan1550
+   description INFOBLOX
+   mtu 10178
+   vrf INFOBLOX
+   ip address 10.52.50.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.50.1
+!
+interface Vlan1554
+   description VxRail_SPLUNK_LOG_Mgmt
+   mtu 10178
+   vrf INFRA_APP
+   ip address 10.52.54.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.54.1
+!
+interface Vlan1559
+   description F5 VIPs
+   mtu 10178
+   vrf INFRA_APP
+   ip address 10.52.59.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.59.1
+!
+interface Vlan1564
+   description BKP_WLD_Silver
+   mtu 10178
+   vrf INFRA_APP
+   ip address 10.52.64.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.64.1
+!
+interface Vlan1608
+   description EPO_TRANSIT_FW
+   mtu 10178
+   vrf EPO
+   ip address 10.52.2.68/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.2.66
+!
+interface Vlan1609
+   description INFRA_APP_TRANSIT_FW
+   mtu 10178
+   vrf INFRA_APP
+   ip address 10.52.2.76/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.2.74
+!
+interface Vlan1610
+   description F5_TRANSIT_FW
+   mtu 10178
+   vrf F5
+   ip address 10.52.2.84/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.2.82
+!
+interface Vlan1611
+   description INFRA_TRANSIT_FW
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.52.2.92/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.2.90
+!
+interface Vlan1612
+   description MPLS_TRANSIT_FW
+   mtu 10178
+   vrf MPLS_AA
+   ip address 10.52.2.100/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.2.98
+!
+interface Vlan1615
+   description WLC_Transit_FW
+   mtu 10178
+   vrf WLC
+   ip address 10.52.2.124/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.2.122
+!
+interface Vlan1616
+   description JUMP_SERVER_TRANSIT_FW_MW
+   mtu 10178
+   vrf JUMP_SERVER
+   ip address 10.52.2.132/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.2.130
+!
+interface Vlan1619
+   description PULSE_SECURE TRANSIT FW
+   mtu 10178
+   vrf PULSE_SECURE_Management
+   ip address 10.52.2.156/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.2.154
+!
+interface Vlan1620
+   description PULSE_SECURE INSIDE TRANSIT FW
+   mtu 10178
+   vrf PULSE_SECURE_INSIDE
+   ip address 10.52.2.108/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.2.106
+!
+interface Vlan1621
+   description PULSE_SECURE_OUTSIDE_TRANSIT_FW
+   mtu 10178
+   vrf PULSE_SECURE_OUTSIDE
+   ip address 10.52.2.188/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.2.186
+!
+interface Vlan1625
+   description WLC-WIFI_Guest_transit_Fw
+   mtu 10178
+   vrf WLC_WIFI_Guest
+   ip address 10.52.2.140/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.2.138
+!
+interface Vlan1630
+   description AX_Wireless_transit_vlan
+   mtu 10178
+   vrf AX_Wireless
+   ip address 10.52.2.116/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.2.114
+!
+interface Vlan1631
+   description Secure_Wireless_transit_vlan
+   mtu 10178
+   vrf Secure_Wireless
+   ip address 10.52.2.164/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.2.162
+!
+interface Vlan1632
+   description AATech_Wireless_transit
+   mtu 10178
+   vrf AATech_Wireless
+   ip address 10.52.2.172/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.2.170
+!
+interface Vlan1633
+   description Andon_Wireless_Transit_FW
+   mtu 10178
+   vrf Andon_Wireless
+   arp aging timeout 300
+   ip address virtual 10.52.2.194/30
+!
+interface Vlan1634
+   description Plant_Wireless_transit
+   mtu 10178
+   vrf Plant_Wireless
+   ip address 10.52.2.180/23
+   arp aging timeout 300
+   ip virtual-router address 10.52.2.178
+!
+interface Vlan1636
+   description MPLS_CKT_2
+   vrf MPLS_AA
+   ip address 10.52.2.245/30
+   arp aging timeout 300
+!
+interface Vlan1637
+   description MPLS_DC_iBGP
+   mtu 10178
+   vrf MPLS_AA
+   ip address 10.52.2.249/31
+!
+interface Vlan1652
+   description Arista_F5_MPLS_TRANSIT
+   mtu 10178
+   vrf F5
+   ip address 10.52.30.179/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.30.177
+!
+interface Vlan1653
+   description INTERNET
+   vrf INTERNET
+   ip address 116.214.40.198/29
+   arp aging timeout 300
+   ip virtual-router address 116.214.40.196
+!
+interface Vlan1655
+   description ARISTA_To_F5Ext
+   mtu 10178
+   vrf INTERNET
+   ip address 116.214.40.211/29
+   arp aging timeout 300
+   ip virtual-router address 116.214.40.209
+!
+interface Vlan1656
+   description F5Int_To_ARISTA
+   mtu 10178
+   vrf F5_TRANSIT
+   ip address 116.214.40.222/29
+   arp aging timeout 300
+   ip virtual-router address 116.214.40.220
+!
+interface Vlan1657
+   description ARISTA_To_PAN
+   mtu 10178
+   vrf F5_TRANSIT
+   ip address 116.214.40.227/29
+   arp aging timeout 300
+   ip virtual-router address 116.214.40.225
+!
+interface Vlan1676
+   description Silver Cluster TEP Pool
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.52.4.67/26
+   arp aging timeout 300
+   ip virtual-router address 10.52.4.65
+!
+interface Vlan1681
+   description Silver Edge Cluster-1 for BGP
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.52.4.162/28
+   arp aging timeout 300
+!
+interface Vlan1682
+   description Silver Edge Cluster-2 for BGP
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.52.4.178/28
+   arp aging timeout 300
+   bfd interval 1000 min-rx 1000 multiplier 3
+!
+interface Vlan1685
+   description Silver Edge Cluster TEP Pool
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.52.4.211/28
+   arp aging timeout 300
+   ip virtual-router address 10.52.4.209
+!
+interface Vlan1704
+   description SNOW_DISCOVERY
+   mtu 10178
+   vrf SNOW_DISCOVERY
+   ip address 10.52.101.3/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.101.1
+!
+interface Vlan1712
+   description Cloudvision
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.52.30.3/27
+   arp aging timeout 300
+   ip virtual-router address 10.52.30.1
+!
+interface Vlan1720
+   description SNOW DISCOVERY TRANSIT FW
+   mtu 10178
+   vrf SNOW_DISCOVERY
+   ip address 10.52.22.28/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.22.26
+!
+interface Vlan1800
+   description WLC
+   vrf WLC
+   ip address 10.52.30.67/28
+   arp aging timeout 300
+   ip virtual-router address 10.52.30.65
+!
+interface Vlan1801
+   description BIG_IQ
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.52.30.83/28
+   arp aging timeout 300
+   ip virtual-router address 10.52.30.81
+!
+interface Vlan1802
+   description PANORAMA
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.52.30.99/28
+   arp aging timeout 300
+   ip virtual-router address 10.52.30.97
+!
+interface Vlan1803
+   description PULSE_SECURE
+   mtu 10178
+   vrf PULSE_SECURE_INSIDE
+   ip address 10.52.30.115/28
+   arp aging timeout 300
+   ip virtual-router address 10.52.30.113
+!
+interface Vlan1804
+   description EPO
+   mtu 10178
+   vrf EPO
+   ip address 10.52.30.131/28
+   arp aging timeout 300
+   ip virtual-router address 10.52.30.129
+!
+interface Vlan1805
+   description PULSE_SECURE_MGMT
+   mtu 10178
+   vrf PULSE_SECURE_Management
+   ip address 10.52.30.147/28
+   arp aging timeout 300
+   ip virtual-router address 10.52.30.145
+!
+interface Vlan1806
+   description PULSE_SECURE_OUTSIDE
+   mtu 10178
+   vrf PULSE_SECURE_OUTSIDE
+   ip address 10.52.30.163/28
+   arp aging timeout 300
+   ip virtual-router address 10.52.30.161
+!
+interface Vlan1810
+   description WLC_WIFI_Guest
+   mtu 10178
+   vrf WLC_WIFI_Guest
+   ip address 10.52.208.3/20
+   arp aging timeout 300
+   ip virtual-router address 10.52.208.1
+!
+interface Vlan1811
+   description AX_Wireless
+   mtu 10178
+   vrf AX_Wireless
+   ip address 10.52.132.3/23
+   arp aging timeout 300
+   ip virtual-router address 10.52.132.1
+!
+interface Vlan1812
+   description Secure_Wireless
+   mtu 10178
+   vrf Secure_Wireless
+   ip address 10.52.128.3/22
+   arp aging timeout 300
+   ip virtual-router address 10.52.128.1
+!
+interface Vlan1813
+   description Andon_Wireless
+   mtu 10178
+   vrf Andon_Wireless
+   ip address 10.52.136.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.136.1/24
+!
+interface Vlan1814
+   description AATech_Wireless
+   mtu 10178
+   vrf AATech_Wireless
+   ip address 10.52.134.3/23
+   arp aging timeout 300
+   ip virtual-router address 10.52.134.1
+!
+interface Vlan1815
+   description Plant_Wireless
+   mtu 10178
+   vrf Plant_Wireless
+   ip address 10.52.138.3/23
+   arp aging timeout 300
+   ip virtual-router address 10.52.138.1
+!
+interface Vlan3301
+   description JUMP_SERVER
+   mtu 10178
+   vrf JUMP_SERVER
+   ip address 10.52.20.3/28
+   arp aging timeout 300
+   ip virtual-router address 10.52.20.1
+!
+interface Vlan3312
+   description INFOBLOX_TRANSIT_FW
+   mtu 10178
+   vrf INFOBLOX
+   ip address 10.52.19.12/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.19.10
+!
+interface Vlan3316
+   description INFRA_NSX_FW
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.52.19.44/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.19.42
+!
+interface Vlan3320
+   description DMZ_INFRA_NSX_FW
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.52.19.76/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.19.74
+!
+interface Vlan3321
+   description DMZ_INFRA_NSX_DCI
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.52.19.82/29
+   arp aging timeout 300
+!
+interface Vlan3322
+   description DMZ_TRANSIT_FW
+   mtu 10178
+   vrf DMZ
+   ip address 10.52.19.92/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.19.90
+!
+interface Vlan3376
+   description DMZ Silver Cluster TEP Pool
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.52.9.67/26
+   arp aging timeout 300
+   ip virtual-router address 10.52.9.65
+!
+interface Vlan3381
+   description DMZ Silver Edge Cluster-1 for BGP
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.52.9.162/28
+   arp aging timeout 300
+!
+interface Vlan3382
+   description DMZ Silver Edge Cluster-2 for BGP
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.52.9.178/28
+   arp aging timeout 300
+   bfd interval 1000 min-rx 1000 multiplier 3
+!
+interface Vlan3385
+   description DMZ Silver Edge Cluster TEP Pool
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.52.9.211/28
+   arp aging timeout 300
+   ip virtual-router address 10.52.9.209
+!
+interface Vlan3386
+   description DMZ_Mgmt
+   mtu 10178
+   vrf DMZ
+   ip address 10.52.124.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.124.1
+!
+interface Vlan3513
+   description F5_VLAN_1
+   mtu 10178
+   vrf F5
+   ip address 10.52.13.3/24
+   arp aging timeout 300
+   ip virtual-router address 10.52.13.1
+!
+interface Vlan3524
+   description F5_iQuery_Mesh
+   mtu 10178
+   vrf F5_TRANSIT
+   ip address 10.52.34.5/29
+   arp aging timeout 300
+   ip virtual-router address 10.52.34.6
+!

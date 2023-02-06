@@ -1,0 +1,74 @@
+!
+vlan 1505
+   name MGMT_TNT_ESXi_Mgmt
+!
+vlan 1511
+   name WITNESS_Mgmt
+!
+vlan 1541
+   name Backup_Infra
+!
+vlan 1548
+   name PAFW_VM300
+!
+vlan 2000
+   name MLAG
+   trunk group MLAG_PEER
+!
+vlan 2525
+   name SILV_TNT_ESXi_Mgmt
+!
+vlan 2526
+   name SILV_TNT_ESXi_VXLAN_VTEP
+!
+vlan 2527
+   name SILV_TNT_ESXi_vMotion
+!
+vlan 2528
+   name SILV_TNT_ESXi_vSAN
+!
+vlan 2676
+   name SILV_TEP_Pool
+!
+vlan 2681
+   name SILV_EDGE1_BGP
+!
+vlan 2682
+   name SILV_EDGE2_BGP
+!
+vlan 2685
+   name SILV_EDGE_TEP_Pool
+!
+vlan 2704
+   name SPLUNK_SERVER
+!
+vlan 3476
+   name DMZ_SILV_TEP_Pool
+!
+vlan 3481
+   name DMZ_SILV_EDGE1_BGP
+!
+vlan 3482
+   name DMZ_SILV_EDGE2_BGP
+!
+vlan 3485
+   name DMZ_SILV_EDGE_TEP_Pool
+!
+vlan 3517
+   name F5_VLAN_5
+!
+vlan 3518
+   name F5_VLAN_6
+!
+vlan 3519
+   name F5_VLAN_7
+!
+vlan 3520
+   name VIRT_F5_VLAN_1
+!
+vlan 3521
+   name VIRT_F5_VLAN_2
+!
+vlan 3522
+   name VIRT_F5_VLAN_3
+!

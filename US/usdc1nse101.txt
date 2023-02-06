@@ -1,0 +1,3280 @@
+daemon SplunkForwarder
+   exec /usr/bin/SplunkAgent 
+   option eapi_protocol value socket
+   option index-data value gssc_usdc_ops_network-switch
+   option index-interface-counters value on
+   option index-inventory value on
+   option index-lanz value on
+   option index-sflow value on
+   option index-syslog value on
+   option index-topology value on
+   option shutdown value disabled
+   option splunk-server value 10.23.54.13:9998
+   option vrf value mgmt
+   no shutdown
+!
+daemon TerminAttr
+   exec /usr/bin/TerminAttr -ingestgrpcurl=10.23.50.20:9910 -cvcompression=gzip -ingestauth=key,AAbm@130 -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -ingestvrf=mgmt -taillogs
+   no shutdown
+!
+ip dhcp relay information option
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+queue-monitor length
+!
+logging trap notifications
+logging vrf mgmt host 10.23.20.11 514 protocol tcp
+logging facility local7
+logging vrf mgmt source-interface Management1
+!
+hostname USDC1NSE101
+ip domain lookup vrf mgmt source-interface Management1
+ip name-server vrf mgmt 10.230.134.16
+ip name-server vrf mgmt 10.230.134.17
+!
+ntp server vrf mgmt 10.23.50.53 prefer local-interface Management1
+ntp server vrf mgmt 10.71.50.53 local-interface Management1
+!
+sflow polling-interval 10
+sflow vrf mgmt destination 10.230.48.135 2055
+sflow vrf mgmt source-interface Management1
+sflow run
+!
+snmp-server community GSSC-SnmpV2Read ro
+snmp-server host DEMEESAP0616.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0729.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0730.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0732.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0762.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0763.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0764.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host DEMEESAP0768.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server host demees-insight.ad.global informs version 2c GSSC-SnmpV2Read
+snmp-server enable traps
+no snmp-server vrf default
+snmp-server vrf mgmt
+!
+spanning-tree mode mstp
+no spanning-tree vlan-id 2000
+!
+tacacs-server timeout 15
+tacacs-server policy unknown-mandatory-attribute ignore
+tacacs-server host 10.90.8.87 vrf mgmt key 7 132A052B465E02110C626C172904155101262071
+tacacs-server host 10.230.129.82 vrf mgmt key 7 002B013F49090D3D2867086A153F0341052E2D23
+!
+aaa group server tacacs+ ISE_test_TACACS
+   server 10.90.8.87 vrf mgmt
+   server 10.230.129.82 vrf mgmt
+!
+aaa authentication login default group ISE_test_TACACS local
+aaa authentication login console local
+aaa authentication policy on-success log
+aaa authentication policy on-failure log
+aaa authorization exec default group ISE_test_TACACS local
+aaa authorization commands 0 default local
+aaa authorization commands 1-15 default group ISE_test_TACACS local
+aaa accounting system default start-stop group ISE_test_TACACS
+!
+no aaa root
+!
+username System1 privilege 0 role network-operator secret sha512 $6$GBlHKcSi7TXXit2w$WhfVRqDF33eBnS7/AQ027YTxXz6S8.j9Tzm.Y8OxSYi/VAFHCMvFO09Fhl02waStdTN/SZS7Sl.U6VnmtWkfb.
+username admin privilege 15 role network-admin secret sha512 $6$sGGc.6sjENF86WzD$23WjXCjcMxn4gNvlb38ZbOf8fQls46u1HUrVwWMtElGPg8auCQUAFASQxBaCYqKg0OZDrSVXzJfpYzcxgkyiE.
+username cvpadmin privilege 15 role network-admin secret sha512 $6$Q5qd34mQEeY0OGgE$hUY4FXmIWZdWnrbqtFKM0lhbyvHDbNg88AFRR8wqePsL4QljrVjvEfBvzMgBr0iuRuK4jrSefo8/3q.HOljxh/
+username netadmin privilege 15 role network-admin secret sha512 $6$oU8J/S4PPlJ/HoAp$4rYvqa6AyKsKb3NtV3zTUtiyi4jj.OHM4ORI7WiILP0O9hdV9RV5MH7VifRf/fnGcvxg2CAH00dwcr5e0JxN4.
+username netsec privilege 0 role network-operator secret sha512 $6$RdD4q8b9/BBrtgyQ$RNhPDZpsB1gQFjANiD.Wf6UreW22LuBw3RP7x9vRZGeFnptC7AT..Y0paNSIUkqPeWHd8/f.vbwUGP.9KFKxy/
+username s-wipro-nw-vrni privilege 0 role network-operator secret sha512 $6$ZIA7WPoAVN3TRB4/$yZLBwlk9GmzV2DeES0sfIi/YvjT4AZ00oqKX8TE7Hkl7GYDKCd.MKZ5Gqtojf13UzanwxWJy5feraGZdScuQ20
+username sa-divymc privilege 15 role network-admin secret sha512 $6$ObB9N1SVhEqzAmMN$8Rm6ljgv26IZ/0cjh8ACGbTqgtFyADf0zhAP5l6d4lPyrG4ucti01mtvtn3yA6CaFWFg/FK2HNVU/ECETbArv/
+username sa-michum privilege 0 role network-operator secret sha512 $6$N26mk3VcPadQ57fr$lObBIVvs1tCmWvUhNinKsfbzynPc1.iIr//TfYC5HvGFbmJvsOMZD/diExcN8zLVoDwm1O0Zu5Wo3oELOKHBj0
+username sa-parbar privilege 15 role network-admin secret sha512 $6$0sXEmy7t24riut4g$hJO5fYzxsRBT/w5BKougJ2WUjj52EG0Az3j66dD91B3osFfCbF1W4wZf0RbCgMtIcI.px6tB8GUVmLzzTmXcI1
+username sac-azaraj privilege 15 role network-admin secret sha512 $6$mPyxFjXxqLBXi4Lq$Eciit7Rq1rKFzWYp2HGo8E4DuP./VM36T65uPL4RmsqyAfMXLeNSDGssmlYUD0VXDpaH32wOcfACcKcye2pCH.
+username sac-gaukum privilege 15 role network-admin secret sha512 $6$HBjob6xT/jYCoV1d$7RRGOYCsMUvH4Jl0kn41tPP86SVyWCpa6OHy.hTbVxYLP8VDsr5Bqwz7rKHggqD.R8LHK2JlL9czC6EqTNhMk1
+username sac-jespau privilege 15 role network-admin secret sha512 $6$8Nm4pUJwPuPLy/k6$mOQWpMBB2kUcQekPGhvDoRTALfw3CFKo22dpLbFRwo0eZmiGKZqmdANlgbNOkem.njiVbYtmndRHZk78/q4se0
+username sac-mausin privilege 15 role network-admin secret sha512 $6$xbyv/ofzkiLw8Uqo$Fe4fpjxWVH1EgrfqNNMCw34hga0sXscQpjsddQCitzb56uHH5R0qYeXsCIkgpRV/V1NAeVl5J/3cT4IHrKB.h0
+username sac-paolss privilege 15 role network-admin secret sha512 $6$oN4WAdMmMHnBhv4t$Bnu9Kq3z6CoguiZqwqFQzSyGrjlOgs05jMg46ajGLrUmq47/HUTjB/1oYYeUqLWr12oEImyG2OSnw3/nHtYgh.
+username sac-pradsi privilege 15 role network-admin secret sha512 $6$cKw63cjS2uvqkRXh$szKBLro57XvlW7TzAArt.mViiJizXTpoM77sXy/MotcTZIYoD0fFOilxsKns84uHzlBqjEDdEjYcvNo6KJ6p31
+username sac-rajmak role network-operator secret sha512 $6$Epx7n22CidrMKYBw$buGJVcMBlU2zB.4r13hfzcSb5n71YHX3uQD9qeO3ZfgYzmaLFOHS06jw6v6x4ZlH/k1yaiF8kvBPwVvKmKO2a.
+username sac-ransin privilege 15 role network-admin secret sha512 $6$9dELBWSXOO69Rl73$GGnvF2rOHKuAoMXgI0p0DO0stMcqqXOmq/pvD1Aun/TPJFsfftNHAtO5KsQbESj2Imi01PhN8WD6SmdPf5ypx0
+username sac-sampra privilege 15 role network-admin secret sha512 $6$SJ0VCGOrixEtVwcw$TNChNyl0MHFuqs/yVFstfJ25.0dce6zt4st5w8P8qCBPpkFc8Yy0eW.DlYQlxgyjqq/4cR62YQJCTTHcK7t7u0
+username sac-shrpra privilege 15 role network-admin secret sha512 $6$UL0Z1KhqxNl8H8Hv$NoYpzepzMOF2.LvgRfxyWAGD7czr5CwFTes4sAytLxWKD8w2jCrrvL2COjpkmc7ULmynr6vOzJXVZCGTu2CFP/
+username sac-silaro privilege 15 role network-admin secret sha512 $6$h5RKlQiL9OTabty4$Rl7I3/PNeXDHL1KiquWK4O7ZAxGpBipvgMBUzbQPjr79cozpsjrnNyV0Scd64anUkfisT0WCtBSpCfnXhGWxz.
+username sac-suman1 privilege 15 role network-admin secret sha512 $6$KIBKV.LR28oClyR/$l3jGTDyhF.zf1AWR/0u.yedbXdwPy4skjWtn6x2TduFuu3RQVJvtDFeI2aXiI6DxFvN4OVtHClk5KGH.fZNrT/
+username sac-tahabd privilege 15 role network-admin secret sha512 $6$D6KRrSV0Wic2Gmjb$JobraWYgVXbk0/R4hPVHeixloGLg6gBdCsBPyHjMUYVtzTZl5F9iUTxDNWYCyUKxe3uWxXz6E6kWGkpbNnI9G/
+username sac-tremar privilege 15 role network-admin secret sha512 $6$SC2YOIJovenIU20p$T78LZPS1Y15KIOahL8DvLU0Yw.dP/5DB1mB6GfKzJKO70eHFN65UJ27eMnAoHLpKVOndiIQneMxo3Wt34FK9K/
+!
+vlan 1500
+   name N&S_Mgmt
+   trunk group N&S_Mgmt
+!
+vlan 1504
+   name NSX_Mgmt
+   trunk group NSX_Mgmt
+!
+vlan 1505
+   name MGMT_TNT_ESXi_Mgmt
+   trunk group MGMT_TNT_ESXi_Mgmt
+!
+vlan 1506
+   name MGMT_TNT_ESXi_VXLAN_VTEP
+   trunk group MGMT_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1507
+   name MGMT_TNT_ESXi_vMotion
+   trunk group MGMT_TNT_ESXi_vMotion
+!
+vlan 1508
+   name MGMT_TNT_ESXi_vSAN
+   trunk group MGMT_TNT_ESXi_vSAN
+!
+vlan 1510
+   name VRA_Mgmt
+   trunk group VRA_Mgmt
+!
+vlan 1511
+   name WITNESS_Mgmt
+   trunk group WITNESS_Mgmt
+!
+vlan 1512
+   name WITNESS_VSAN
+   trunk group WITNESS_VSAN
+!
+vlan 1515
+   name GOLD_TNT_ESXi_Mgmt
+   trunk group GOLD_TNT_ESXi_Mgmt
+!
+vlan 1516
+   name GOLD_TNT_ESXi_VXLAN_VTEP
+   trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1517
+   name GOLD_TNT_ESXi_vMotion
+   trunk group GOLD_TNT_ESXi_vMotion
+!
+vlan 1518
+   name GOLD_TNT_ESXi_vSAN
+   trunk group GOLD_TNT_ESXi_vSAN
+!
+vlan 1525
+   name SILV_TNT_ESXi_Mgmt
+   trunk group SILV_TNT_ESXi_Mgmt
+!
+vlan 1526
+   name SILV_TNT_ESXi_VXLAN_VTEP
+   trunk group SILV_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1527
+   name SILV_TNT_ESXi_vMotion
+   trunk group SILV_TNT_ESXi_vMotion
+!
+vlan 1528
+   name SILV_TNT_ESXi_vSAN
+   trunk group SILV_TNT_ESXi_vSAN
+!
+vlan 1535
+   name EXCH_TNT_ESXi_Mgmt
+   trunk group EXCH_TNT_ESXi_Mgmt
+!
+vlan 1536
+   name EXCH_TNT_ESXi_VXLAN_VTEP
+   trunk group EXCH_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1537
+   name EXCH_TNT_ESXi_vMotion
+   trunk group EXCH_TNT_ESXi_vMotion
+!
+vlan 1540
+   name PHYSICAL_SERVER
+   trunk group PHYSICAL_SERVER
+!
+vlan 1541
+   name Backup_Infra
+   trunk group BACKUP_Infra
+!
+vlan 1542
+   name Backup-Replication
+   trunk group BACKUP_REP
+!
+vlan 1543
+   name Backup_Management
+   trunk group BACKUP_Mgmt
+!
+vlan 1548
+   name PAFW_VM300
+   trunk group PAFW_VM300
+!
+vlan 1550
+   name DC_Mgmt
+   trunk group DC_Mgmt
+!
+vlan 1552
+   name SERVER_Heartbeat
+!
+vlan 1553
+   name Citrix_NetScaler_GSLB
+   trunk group Citrix_NetScaler_GSLB
+!
+vlan 1554
+   name SPLU_LOG_Mgmt
+   trunk group SPLU_LOG_Mgmt
+!
+vlan 1555
+   name SPLU_ESXi_Mgmt
+   trunk group SPLU_ESXi_Mgmt
+!
+vlan 1557
+   name SPLU_ESXi_vMotion
+   trunk group SPLU_ESXi_vMotion
+!
+vlan 1558
+   name SPLU_ESXi_vSAN
+   trunk group SPLU_ESXi_vSAN
+!
+vlan 1559
+   name F5_VIPs
+   trunk group F5_VIPs
+!
+vlan 1560
+   name Citrix_VDI_Mgmt
+   trunk group Citrix_VDI_Mgmt
+!
+vlan 1561
+   name Citrix_XenApp_Mgmt
+   trunk group Citrix_XenApp_Mgmt
+!
+vlan 1562
+   name Customer_VDI_WLD
+   trunk group Customer_VDI_WLD
+!
+vlan 1563
+   name Wipro_VDI_WLD
+   trunk group Wipro_VDI_WLD
+!
+vlan 1564
+   name Backup_WLD_Gold
+   trunk group Backup_WLD_Gold
+!
+vlan 1568
+   name Backup_WLD_Silv
+   trunk group Backup_WLD_Silv
+!
+vlan 1600
+   name Un-Trust_Zone
+!
+vlan 1601
+   name F5_Trust_Zone
+!
+vlan 1602
+   name Firewall_Trust_Zone
+!
+vlan 1603
+   name F5_HA
+!
+vlan 1608
+   name INTERNAL_STD_TRANSIT
+!
+vlan 1609
+   name INFRA_STD_TRANSIT
+!
+vlan 1610
+   name INTERNAL_TRANSIT
+!
+vlan 1611
+   name INFRA_TRANSIT
+!
+vlan 1612
+   name MPLS_TRANSIT
+!
+vlan 1614
+   name OOB_TRANSIT
+!
+vlan 1615
+   name INTERNAL_TRANSIT_DCI
+   trunk group INTERNAL_TRANSIT_DCI
+!
+vlan 1616
+   name INFRA_TRANSIT_DCI
+   trunk group INFRA_TRANSIT_DCI
+!
+vlan 1617
+   name OOB_TRANSIT_DCI
+   trunk group OOB_TRANSIT_DCI
+!
+vlan 1618
+   name MPLS_TRANSIT_DCI
+   trunk group MPLS_TRANSIT_DCI
+!
+vlan 1619
+   name INTERNAL_STD_TRANSIT_DCI
+   trunk group INTERNAL_STD_TRANSIT_DCI
+!
+vlan 1620
+   name DCI
+   trunk group DCI
+!
+vlan 1621
+   name INFRA_STD_TRANSIT_DCI
+   trunk group INFRA_STD_TRANSIT_DCI
+!
+vlan 1623
+   name REPLICATION_DCI
+   trunk group REPLICATION_DCI
+!
+vlan 1625
+   name WLC_Mgmt_Transit_FW
+   trunk group WLC_Mgmt_Transit_FW
+!
+vlan 1626
+   name REPLICATION_FW
+   trunk group REPLICATION_FW
+!
+vlan 1629
+   name WLC_WiFi_Guest_Transit_FW
+   trunk group WLC_WiFi_Guest_Transit_FW
+!
+vlan 1635
+   name MPLS-CKT-1
+   trunk group MPLS-CKT-1
+!
+vlan 1637
+   name MPLS-DC-iBGP
+   trunk group MPLS-DC-iBGP
+!
+vlan 1650
+   name INET
+!
+vlan 1652
+   name Arista_F5_MPLS_TRANSIT
+   trunk group Arista_F5_MPLS_TRANSIT
+!
+vlan 1653
+   name INTERNET-iBGP
+   trunk group INTERNET-iBGP
+!
+vlan 1654
+   name SDWAN-INTERNET
+   trunk group SDWAN-INTERNET
+!
+vlan 1655
+   name ARISTA_To_F5Ext
+   trunk group ARISTA_To_F5Ext
+!
+vlan 1656
+   name F5Int_To_ARISTA
+   trunk group F5Int_To_ARISTA
+!
+vlan 1657
+   name ARISTA_To_PAN
+   trunk group ARISTA_To_PAN
+!
+vlan 1675
+   name GOLD_TEP_Pool
+   trunk group GOLD_TEP_Pool
+!
+vlan 1676
+   name SILV_TEP_Pool
+   trunk group SILV_TEP_Pool
+!
+vlan 1677
+   name GOLD_EDGE1_BGP
+   trunk group GOLD_EDGE1_BGP
+!
+vlan 1678
+   name GOLD_EDGE2_BGP
+   trunk group GOLD_EDGE2_BGP
+!
+vlan 1679
+   name GOLD_EDGE3_BGP
+   trunk group GOLD_EDGE3_BGP
+!
+vlan 1680
+   name GOLD_EDGE4_BGP
+   trunk group GOLD_EDGE4_BGP
+!
+vlan 1681
+   name SILV_EDGE1_BGP
+   trunk group SILV_EDGE1_BGP
+!
+vlan 1682
+   name SILV_EDGE2_BGP
+   trunk group SILV_EDGE2_BGP
+!
+vlan 1683
+   name GOLD_EDGE1_TEP_Pool
+   trunk group GOLD_EDGE1_TEP_Pool
+!
+vlan 1684
+   name GOLD_EDGE2_TEP_Pool
+   trunk group GOLD_EDGE2_TEP_Pool
+!
+vlan 1685
+   name SILV_EDGE_TEP_Pool
+   trunk group SILV_EDGE_TEP_Pool
+!
+vlan 1690
+   name COLL_EDGE_TEP_Pool
+   trunk group COLL_EDGE_TEP_Pool
+!
+vlan 1700
+   name AD_SERVER
+   trunk group AD_SERVER
+!
+vlan 1701
+   name DMZ_SERVER
+   trunk group DMZ_SERVER
+!
+vlan 1702
+   name SKYPE_SERVER
+   trunk group SKYPE_SERVER
+!
+vlan 1703
+   name EXCHANGE_SERVER
+   trunk group EXCHANGE_SERVER
+!
+vlan 1704
+   name ServiceNow_Discovery
+   trunk group ServiceNow_Discovery
+!
+vlan 1709
+   name ISILON_DATA
+   trunk group ISILON_DATA
+!
+vlan 1710
+   name ISILON_DMZ
+   trunk group ISILON_DMZ
+!
+vlan 1711
+   trunk group VLAN1711
+!
+vlan 1712
+   name Cloudvision
+   trunk group Cloudvision
+!
+vlan 1720
+   name SNOW_TRANSIT_FW
+   trunk group SNOW_TRANSIT_FW
+!
+vlan 1721
+   name SNOW_TRANSIT_DCI
+   trunk group SNOW_TRANSIT_DCI
+!
+vlan 1722
+   name JUMP_TRANSIT_FW
+   trunk group JUMP_TRANSIT_FW
+!
+vlan 1723
+   name JUMP_TRANSIT_DCI
+   trunk group JUMP_TRANSIT_DCI
+!
+vlan 1724
+   name ISILON_TRANSIT_FW
+   trunk group ISILON_TRANSIT_FW
+!
+vlan 1725
+   name ISILON_TRANSIT_DCI
+   trunk group ISILON_TRANSIT_DCI
+!
+vlan 1726
+   name CITRIX_TRANSIT_FW
+   trunk group CITRIX_TRANSIT_FW
+!
+vlan 1727
+   name CITRIX_TRANSIT_DCI
+   trunk group CITRIX_TRANSIT_DCI
+!
+vlan 1728
+   name DCI_FW_INT
+   trunk group DCI_FW_INT
+!
+vlan 1800
+   name WLC_Mgmt
+   trunk group WLC_Mgmt
+!
+vlan 1810
+   name WLC_WiFi_Guest
+   trunk group WiFi_GUEST_PROD_IOT
+!
+vlan 1820
+   name Global_WiFi_VC_Production
+   trunk group WiFi_GUEST_PROD_IOT
+!
+vlan 1830
+   name Global_WiFi_VC_IoT
+   trunk group WiFi_GUEST_PROD_IOT
+!
+vlan 1850
+   name SDWAN-AVPN1
+   trunk group SDWAN-AVPN1
+!
+vlan 1851
+   name SDWAN-AVPN2
+   trunk group SDWAN-AVPN2
+!
+vlan 2000
+   name MLAG
+   trunk group MLAG_PEER
+!
+vlan 2629
+   name WLC_WiFi_Guest_Transit_FW
+   trunk group WiFi_GUEST_PROD_IOT
+!
+vlan 2644
+   name Gobal_WiFi_VC_Prod_IoT_TRANSIT_F
+   trunk group WiFi_GUEST_PROD_IOT
+!
+vlan 3301
+   name Wipro_Jump_Server
+   trunk group Wipro_Jump_Server
+!
+vlan 3312
+   name INFOBLOX_TRANSIT_FW
+   trunk group INFOBLOX_TRANSIT_FW
+!
+vlan 3313
+   name INFOBLOX_TRANSIT_DCI
+   trunk group INFOBLOX_TRANSIT_DCI
+!
+vlan 3314
+   name PHYSICAL_SERVER_FW
+   trunk group PHYSICAL_SERVER_FW
+!
+vlan 3315
+   name PHYSICAL_SERVER_DCI
+   trunk group PHYSICAL_SERVER_DCI
+!
+vlan 3316
+   name INFRA_NSX_FW
+   trunk group INFRA_NSX_FW
+!
+vlan 3317
+   name INFRA_NSX_DCI
+   trunk group INFRA_NSX_DCI
+!
+vlan 3320
+   name DMZ_INFRA_NSX_FW
+   trunk group DMZ_INFRA_NSX_FW
+!
+vlan 3321
+   name DMZ_INFRA_NSX_DCI
+   trunk group DMZ_INFRA_NSX_DCI
+!
+vlan 3322
+   name DMZ_TRANSIT_FW
+   trunk group DMZ_TRANSIT_FW
+!
+vlan 3323
+   name DMZ_TRANSIT_DCI
+   trunk group DMZ_TRANSIT_DCI
+!
+vlan 3324
+   name XMS_CVP_TRANSIT_FW
+   trunk group XMS_CVP_TRANSIT_FW
+!
+vlan 3325
+   name XMS_CVP_TRANSIT_DCI
+   trunk group XMS_CVP_TRANSIT_DCI
+!
+vlan 3326
+   name MCAFEE_TRANSIT_FW
+   trunk group MCAFEE_TRANSIT_FW
+!
+vlan 3327
+   name MCAFEE_TRANSIT_DCI
+   trunk group MCAFEE_TRANSIT_DCI
+!
+vlan 3375
+   name DMZ_GOLD_TEP_Pool
+   trunk group DMZ_GOLD_TEP_Pool
+!
+vlan 3376
+   name DMZ_SILV_TEP_Pool
+   trunk group DMZ_SILV_TEP_Pool
+!
+vlan 3377
+   name DMZ_GOLD_EDGE1_BGP
+   trunk group DMZ_GOLD_EDGE1_BGP
+!
+vlan 3378
+   name DMZ_GOLD_EDGE2_BGP
+   trunk group DMZ_GOLD_EDGE2_BGP
+!
+vlan 3381
+   name DMZ_SILV_EDGE1_BGP
+   trunk group DMZ_SILV_EDGE1_BGP
+!
+vlan 3382
+   name DMZ_SILV_EDGE2_BGP
+   trunk group DMZ_SILV_EDGE2_BGP
+!
+vlan 3383
+   name DMZ_GOLD_EDGE1_TEP_Pool
+   trunk group DMZ_GOLD_EDGE1_TEP_Pool
+!
+vlan 3384
+   name DMZ_GOLD_EDGE2_TEP_Pool
+   trunk group DMZ_GOLD_EDGE2_TEP_Pool
+!
+vlan 3385
+   name DMZ_SILV_EDGE_TEP_Pool
+   trunk group DMZ_SILV_EDGE_TEP_Pool
+!
+vlan 3386
+   name DMZ
+   trunk group DMZ
+!
+vlan 3387
+   name XMS
+   trunk group XMS
+!
+vlan 3388
+   name CVP
+   trunk group CVP
+!
+vlan 3389
+   name MCAFEE
+   trunk group MCAFEE
+!
+vlan 3390
+   name Log_Forwarding
+   trunk group Log_Forwarding
+!
+vlan 3513
+   name F5_VLAN_1
+   trunk group F5_VLAN_1
+!
+vlan 3514
+   name F5_VLAN_2
+   trunk group F5_VLAN_2
+!
+vlan 3515
+   name F5_VLAN_3
+   trunk group F5_VLAN_3
+!
+vlan 3516
+   name F5_VLAN_4
+   trunk group F5_VLAN_4
+!
+vlan 3517
+   name F5_VLAN_5
+   trunk group F5_VLAN_5
+!
+vlan 3518
+   name F5_VLAN_6
+   trunk group F5_VLAN_6
+   trunk group F5_VLAN_7
+!
+vlan 3519
+   name F5_VLAN_7
+   trunk group F5_VLAN_7
+!
+vlan 3520
+   name VIRT_F5_VLAN_1
+   trunk group VIRT_F5_VLAN_1
+!
+vlan 3521
+   name VIRT_F5_VLAN_2
+   trunk group VIRT_F5_VLAN_2
+!
+vlan 3522
+   name VIRT_F5_VLAN_3
+   trunk group VIRT_F5_VLAN_3
+!
+vlan 3524
+   name F5_iQuery_Mesh
+   trunk group F5_VIPs
+!
+vlan 3701
+   name CITRIX1_File_Server
+   trunk group CITRIX1_File_Server
+!
+vlan 3702
+   name CITRIX1_TRANSIT_FW
+   trunk group CITRIX1_TRANSIT_FW
+!
+vlan 3703
+   name CITRIX1_TRANSIT_DCI
+   trunk group CITRIX1_TRANSIT_DCI
+!
+vrf instance CITRIX
+!
+vrf instance CITRIX1
+!
+vrf instance DMZ
+!
+vrf instance DMZ_INFRA_NSX
+!
+vrf instance F5_TRANSIT
+!
+vrf instance INFOBLOX
+!
+vrf instance INFRA_Mgmt
+!
+vrf instance INFRA_NSX
+!
+vrf instance INFRA_Std
+!
+vrf instance INTERNAL
+!
+vrf instance INTERNAL_Std
+!
+vrf instance INTERNET
+!
+vrf instance ISILON
+!
+vrf instance Jump_Server
+!
+vrf instance MCAFEE
+!
+vrf instance MPLS-AA
+!
+vrf instance OOB_Mgmt
+!
+vrf instance PHYSICAL_SERVER
+!
+vrf instance REPLICATION
+!
+vrf instance Service_Now
+!
+vrf instance WLC_GUEST
+!
+vrf instance WLC_Mgmt
+!
+vrf instance WLC_PROD_IOT
+!
+vrf instance XMS_CVP
+!
+vrf instance mgmt
+   description mgmt vrf
+!
+interface Port-Channel51
+   description PA-FW-1
+   mtu 10178
+   switchport trunk allowed vlan 1553,1560-1563,1600-1614,1625,1629,1650,1657,1704,1709-1710,1720,1722,1724,1726,1728,2629,2644,3301,3312,3314,3316,3320,3322,3702
+   switchport mode trunk
+   switchport trunk group ARISTA_To_PAN
+   switchport trunk group CITRIX1_TRANSIT_FW
+   switchport trunk group CITRIX_TRANSIT_FW
+   switchport trunk group Citrix_NetScaler_GSLB
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group DCI_FW_INT
+   switchport trunk group DMZ_INFRA_NSX_FW
+   switchport trunk group DMZ_TRANSIT_FW
+   switchport trunk group INFOBLOX_TRANSIT_FW
+   switchport trunk group INFRA_NSX_FW
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+   switchport trunk group ISILON_TRANSIT_FW
+   switchport trunk group JUMP_TRANSIT_FW
+   switchport trunk group MCAFEE_TRANSIT_FW
+   switchport trunk group PHYSICAL_SERVER_FW
+   switchport trunk group SNOW_TRANSIT_FW
+   switchport trunk group ServiceNow_Discovery
+   switchport trunk group WLC_Mgmt_Transit_FW
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   switchport trunk group Wipro_Jump_Server
+   switchport trunk group Wipro_VDI_WLD
+   switchport trunk group XMS_CVP_TRANSIT_FW
+   mlag 51
+!
+interface Port-Channel52
+   description PA-FW-2
+   mtu 10178
+   switchport trunk allowed vlan 1553,1560-1563,1600-1614,1625,1629,1650,1657,1704,1709-1710,1720,1722,1724,1726,1728,2629,2644,3301,3312,3314,3316,3320,3322,3702
+   switchport mode trunk
+   switchport trunk group ARISTA_To_PAN
+   switchport trunk group CITRIX1_TRANSIT_FW
+   switchport trunk group CITRIX_TRANSIT_FW
+   switchport trunk group Citrix_NetScaler_GSLB
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group DCI_FW_INT
+   switchport trunk group DMZ_INFRA_NSX_FW
+   switchport trunk group DMZ_TRANSIT_FW
+   switchport trunk group INFOBLOX_TRANSIT_FW
+   switchport trunk group INFRA_NSX_FW
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+   switchport trunk group ISILON_TRANSIT_FW
+   switchport trunk group JUMP_TRANSIT_FW
+   switchport trunk group MCAFEE_TRANSIT_FW
+   switchport trunk group PHYSICAL_SERVER_FW
+   switchport trunk group SNOW_TRANSIT_FW
+   switchport trunk group ServiceNow_Discovery
+   switchport trunk group WLC_Mgmt_Transit_FW
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   switchport trunk group Wipro_Jump_Server
+   switchport trunk group Wipro_VDI_WLD
+   switchport trunk group XMS_CVP_TRANSIT_FW
+   mlag 52
+!
+interface Port-Channel61
+   description F5-iSeries-1
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group Arista_F5_MPLS_TRANSIT
+   switchport trunk group F5Int_To_ARISTA
+   switchport trunk group F5_VIPs
+   switchport trunk group F5_VLAN_1
+   switchport trunk group F5_VLAN_2
+   switchport trunk group F5_VLAN_3
+   switchport trunk group F5_VLAN_4
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group SPLU_LOG_Mgmt
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   mlag 61
+!
+interface Port-Channel62
+   description F5-iSeries-2
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group Arista_F5_MPLS_TRANSIT
+   switchport trunk group F5Int_To_ARISTA
+   switchport trunk group F5_VIPs
+   switchport trunk group F5_VLAN_1
+   switchport trunk group F5_VLAN_2
+   switchport trunk group F5_VLAN_3
+   switchport trunk group F5_VLAN_4
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group SPLU_LOG_Mgmt
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   mlag 62
+!
+interface Port-Channel63
+   description F5-iSeries-1
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group ARISTA_To_F5Ext
+   mlag 63
+!
+interface Port-Channel64
+   description F5-iSeries-2
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group ARISTA_To_F5Ext
+   mlag 64
+!
+interface Port-Channel111
+   description ISILON1_NIC1
+   switchport access vlan 1542
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+!
+interface Port-Channel112
+   description ISILON1_NIC1
+   switchport access vlan 1542
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+!
+interface Port-Channel113
+   description ISILON3_NIC1
+   switchport access vlan 1542
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+!
+interface Port-Channel114
+   description ISILON4_NIC1
+   switchport access vlan 1542
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+!
+interface Port-Channel115
+   description ISILON5_NIC1
+   switchport access vlan 1542
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+!
+interface Port-Channel116
+   description ISILON6_NIC1
+   switchport access vlan 1542
+   switchport mode trunk
+   switchport trunk group BACKUP_REP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+!
+interface Port-Channel145
+   description WLC1
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group WLC_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   mlag 145
+!
+interface Port-Channel146
+   description WLC2
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group WLC_Mgmt
+   switchport trunk group WLC_WiFi_Guest
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   mlag 146
+!
+interface Port-Channel1020
+   description DCI_CHANNEL
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group CITRIX1_TRANSIT_DCI
+   switchport trunk group CITRIX_TRANSIT_DCI
+   switchport trunk group DCI
+   switchport trunk group DCI_FW_INT
+   switchport trunk group DMZ_INFRA_NSX_DCI
+   switchport trunk group DMZ_TRANSIT_DCI
+   switchport trunk group INFOBLOX_TRANSIT_DCI
+   switchport trunk group INFRA_NSX_DCI
+   switchport trunk group INFRA_STD_TRANSIT_DCI
+   switchport trunk group INFRA_TRANSIT_DCI
+   switchport trunk group INTERNAL_STD_TRANSIT_DCI
+   switchport trunk group INTERNAL_TRANSIT_DCI
+   switchport trunk group ISILON_TRANSIT_DCI
+   switchport trunk group JUMP_TRANSIT_DCI
+   switchport trunk group MCAFEE_TRANSIT_DCI
+   switchport trunk group MPLS_TRANSIT_DCI
+   switchport trunk group OOB_TRANSIT_DCI
+   switchport trunk group PHYSICAL_SERVER_DCI
+   switchport trunk group REPLICATION_DCI
+   switchport trunk group SNOW_TRANSIT_DCI
+   switchport trunk group XMS_CVP_TRANSIT_DCI
+   mlag 1020
+!
+interface Port-Channel2000
+   description MLAG_CHANNEL
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group AD_SERVER
+   switchport trunk group ARISTA_To_F5Ext
+   switchport trunk group ARISTA_To_PAN
+   switchport trunk group Arista_F5_MPLS_TRANSIT
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BACKUP_Mgmt
+   switchport trunk group BACKUP_REP
+   switchport trunk group Backup_WLD_Gold
+   switchport trunk group Backup_WLD_Silv
+   switchport trunk group CITRIX1_File_Server
+   switchport trunk group CITRIX1_TRANSIT_DCI
+   switchport trunk group CITRIX1_TRANSIT_FW
+   switchport trunk group CITRIX_TRANSIT_DCI
+   switchport trunk group CITRIX_TRANSIT_FW
+   switchport trunk group COLL_EDGE_TEP_Pool
+   switchport trunk group CVP
+   switchport trunk group Citrix_NetScaler_GSLB
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Cloudvision
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group DCI
+   switchport trunk group DCI_FW_INT
+   switchport trunk group DC_Mgmt
+   switchport trunk group DMZ
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group DMZ_INFRA_NSX_DCI
+   switchport trunk group DMZ_INFRA_NSX_FW
+   switchport trunk group DMZ_SERVER
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group DMZ_TRANSIT_DCI
+   switchport trunk group DMZ_TRANSIT_FW
+   switchport trunk group EXCHANGE_SERVER
+   switchport trunk group EXCH_TNT_ESXi_Mgmt
+   switchport trunk group EXCH_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group EXCH_TNT_ESXi_vMotion
+   switchport trunk group F5Int_To_ARISTA
+   switchport trunk group F5_VIPs
+   switchport trunk group F5_VLAN_1
+   switchport trunk group F5_VLAN_2
+   switchport trunk group F5_VLAN_3
+   switchport trunk group F5_VLAN_4
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group INFOBLOX_TRANSIT_DCI
+   switchport trunk group INFOBLOX_TRANSIT_FW
+   switchport trunk group INFRA_NSX_DCI
+   switchport trunk group INFRA_NSX_FW
+   switchport trunk group INFRA_STD_TRANSIT_DCI
+   switchport trunk group INFRA_TRANSIT_DCI
+   switchport trunk group INTERNAL_STD_TRANSIT_DCI
+   switchport trunk group INTERNAL_TRANSIT_DCI
+   switchport trunk group INTERNET-iBGP
+   switchport trunk group ISILON_DATA
+   switchport trunk group ISILON_DMZ
+   switchport trunk group ISILON_TRANSIT_DCI
+   switchport trunk group ISILON_TRANSIT_FW
+   switchport trunk group JUMP_TRANSIT_DCI
+   switchport trunk group JUMP_TRANSIT_FW
+   switchport trunk group Log_Forwarding
+   switchport trunk group MCAFEE
+   switchport trunk group MCAFEE_TRANSIT_DCI
+   switchport trunk group MCAFEE_TRANSIT_FW
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group MGMT_TNT_ESXi_vMotion
+   switchport trunk group MGMT_TNT_ESXi_vSAN
+   switchport trunk group MLAG_PEER
+   switchport trunk group MPLS-DC-iBGP
+   switchport trunk group MPLS_TRANSIT_DCI
+   switchport trunk group N&S_Mgmt
+   switchport trunk group OOB_TRANSIT_DCI
+   switchport trunk group PAFW_VM300
+   switchport trunk group PHYSICAL_SERVER
+   switchport trunk group PHYSICAL_SERVER_DCI
+   switchport trunk group PHYSICAL_SERVER_FW
+   switchport trunk group REPLICATION_DCI
+   switchport trunk group REPLICATION_FW
+   switchport trunk group SDWAN-AVPN1
+   switchport trunk group SDWAN-AVPN2
+   switchport trunk group SDWAN-INTERNET
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group SKYPE_SERVER
+   switchport trunk group SNOW_TRANSIT_DCI
+   switchport trunk group SNOW_TRANSIT_FW
+   switchport trunk group SPLU_ESXi_Mgmt
+   switchport trunk group SPLU_ESXi_vMotion
+   switchport trunk group SPLU_ESXi_vSAN
+   switchport trunk group SPLU_LOG_Mgmt
+   switchport trunk group ServiceNow_Discovery
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group VLAN1711
+   switchport trunk group VRA_Mgmt
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WITNESS_VSAN
+   switchport trunk group WLC_Mgmt
+   switchport trunk group WLC_Mgmt_Transit_FW
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   switchport trunk group Wipro_Jump_Server
+   switchport trunk group Wipro_VDI_WLD
+   switchport trunk group XMS
+   switchport trunk group XMS_CVP_TRANSIT_DCI
+   switchport trunk group XMS_CVP_TRANSIT_FW
+!
+interface Ethernet1
+   description USDC1PAFW001_NPC1-Eth1
+   mtu 10178
+   channel-group 51 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet2
+   description USDC1PAFW001_NPC1-Eth2
+   mtu 10178
+   channel-group 51 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet3
+   description USDC1PAFW002_NPC1-Eth1
+   mtu 10178
+   channel-group 52 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet4
+   description USDC1PAFW002_NPC1-Eth2
+   mtu 10178
+   channel-group 52 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet5
+   description USDC1PAFW_LOG
+   shutdown
+   mtu 10178
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet6
+   description USDC1PAFW_LOG
+   shutdown
+   mtu 10178
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet7
+   description USDC1PAFW_LOG
+   shutdown
+   mtu 10178
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet8
+   description USDC1PAFW_LOG
+   shutdown
+   mtu 10178
+   switchport mode trunk
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet9
+   description USDC1F5LB001_Eth1.1
+   mtu 10178
+   channel-group 61 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet10
+   description USDC1F5LB002_Eth1.1
+   mtu 10178
+   channel-group 62 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet11
+   description AT&T MPLS Circuit
+   switchport mode trunk
+   switchport trunk group MPLS-CKT-1
+   switchport trunk group SDWAN-AVPN1
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet12
+   description INTERNET_CKT_ID-442618195
+   mtu 10178
+   no switchport
+   vrf INTERNET
+   ip address 4.71.102.22/30
+   bfd interval 500 min-rx 500 multiplier 5
+!
+interface Ethernet13
+   description USDC1WLC001
+   mtu 10178
+   channel-group 145 mode on
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet14
+   description USDC1WLC002
+   mtu 10178
+   channel-group 146 mode on
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet15
+   description USDC1SMGSPXI01_NIC_1
+   shutdown
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group SPLU_ESXi_Mgmt
+   switchport trunk group SPLU_ESXi_vMotion
+   switchport trunk group SPLU_ESXi_vSAN
+   switchport trunk group SPLU_LOG_Mgmt
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet16
+   description USDC1SMGSPXI01_NIC_3
+   shutdown
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group SPLU_ESXi_Mgmt
+   switchport trunk group SPLU_ESXi_vMotion
+   switchport trunk group SPLU_ESXi_vSAN
+   switchport trunk group SPLU_LOG_Mgmt
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet17
+   description USDC1SMGSPXI02_NIC_1
+   shutdown
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group SPLU_ESXi_Mgmt
+   switchport trunk group SPLU_ESXi_vMotion
+   switchport trunk group SPLU_ESXi_vSAN
+   switchport trunk group SPLU_LOG_Mgmt
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet18
+   description USDC1SMGSPXI02_NIC_3
+   shutdown
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group SPLU_ESXi_Mgmt
+   switchport trunk group SPLU_ESXi_vMotion
+   switchport trunk group SPLU_ESXi_vSAN
+   switchport trunk group SPLU_LOG_Mgmt
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet19
+   description USDC1SMGSPXI03_NIC_1
+   shutdown
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group SPLU_ESXi_Mgmt
+   switchport trunk group SPLU_ESXi_vMotion
+   switchport trunk group SPLU_ESXi_vSAN
+   switchport trunk group SPLU_LOG_Mgmt
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet20
+   description USDC1SMGSPXI03_NIC_3
+   shutdown
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group SPLU_ESXi_Mgmt
+   switchport trunk group SPLU_ESXi_vMotion
+   switchport trunk group SPLU_ESXi_vSAN
+   switchport trunk group SPLU_LOG_Mgmt
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet21
+   description USDC1SMGMTXI01_NIC_1
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group CITRIX1_File_Server
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Cloudvision
+   switchport trunk group DC_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_vMotion
+   switchport trunk group MGMT_TNT_ESXi_vSAN
+   switchport trunk group N&S_Mgmt
+   switchport trunk group SPLU_LOG_Mgmt
+   switchport trunk group VRA_Mgmt
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WITNESS_VSAN
+   switchport trunk group Wipro_Jump_Server
+   switchport trunk group iDRAC_Mgmt
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet22
+   description USDC1SMGMTXI01_NIC_2
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group CITRIX1_File_Server
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Cloudvision
+   switchport trunk group MGMT_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group Wipro_Jump_Server
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet23
+   description USDC1SMGMTXI02_NIC_1
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group CITRIX1_File_Server
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Cloudvision
+   switchport trunk group DC_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_vMotion
+   switchport trunk group MGMT_TNT_ESXi_vSAN
+   switchport trunk group N&S_Mgmt
+   switchport trunk group SPLU_LOG_Mgmt
+   switchport trunk group VRA_Mgmt
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WITNESS_VSAN
+   switchport trunk group Wipro_Jump_Server
+   switchport trunk group iDRAC_Mgmt
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet24
+   description USDC1SMGMTXI02_NIC_2
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group CITRIX1_File_Server
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Cloudvision
+   switchport trunk group MGMT_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group Wipro_Jump_Server
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet25
+   description USDC1SMGMTXI03_NIC_1
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group CITRIX1_File_Server
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Cloudvision
+   switchport trunk group DC_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_vMotion
+   switchport trunk group MGMT_TNT_ESXi_vSAN
+   switchport trunk group N&S_Mgmt
+   switchport trunk group SPLU_LOG_Mgmt
+   switchport trunk group VRA_Mgmt
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WITNESS_VSAN
+   switchport trunk group Wipro_Jump_Server
+   switchport trunk group iDRAC_Mgmt
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet26
+   description USDC1SMGMTXI03_NIC_2
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group CITRIX1_File_Server
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Cloudvision
+   switchport trunk group MGMT_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group Wipro_Jump_Server
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet27
+   description USDC1SMGMTXI04_NIC_1
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group CITRIX1_File_Server
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Cloudvision
+   switchport trunk group DC_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group MGMT_TNT_ESXi_vMotion
+   switchport trunk group MGMT_TNT_ESXi_vSAN
+   switchport trunk group N&S_Mgmt
+   switchport trunk group SPLU_LOG_Mgmt
+   switchport trunk group VRA_Mgmt
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WITNESS_VSAN
+   switchport trunk group Wipro_Jump_Server
+   switchport trunk group iDRAC_Mgmt
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet28
+   description USDC1SMGMTXI04_NIC_2
+   mtu 10178
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group CITRIX1_File_Server
+   switchport trunk group Citrix_VDI_Mgmt
+   switchport trunk group Cloudvision
+   switchport trunk group MGMT_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group Wipro_Jump_Server
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet29
+   description SDWAN-VCE1-AVPN1
+   switchport access vlan 1850
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet30
+   description SDWAN-VCE1-AVPN2
+   switchport access vlan 1851
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet31
+   description SDWAN-VCE1-INTERNET
+   switchport access vlan 1654
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet32
+   description USDC1XPDD001_Eth1a
+   mtu 10178
+   switchport access vlan 1541
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet33
+   description USDC1XPDD001_Eth1b
+   mtu 10178
+   switchport access vlan 1541
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet34
+   description USDC1XPDD001_Eth1c
+   mtu 10178
+   switchport access vlan 1541
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet35
+   description USDC1XPDD001_Eth1d
+   mtu 10178
+   switchport access vlan 1542
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet36
+   description SDWAN-VCE1-LAN
+   no switchport
+   vrf MPLS-AA
+   ip address 10.23.70.33/30
+!
+interface Ethernet37
+   description INFLOBOX_usdcsdns02a MGMT
+   mtu 10178
+   switchport access vlan 1550
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet38
+   description ISILON1_NIC1
+   mtu 10178
+   channel-group 111 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet39
+   description ISILON1_NIC1
+   mtu 10178
+   channel-group 112 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet40
+   description ISILON3_NIC1
+   mtu 10178
+   channel-group 113 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet41
+   description ISILON4_NIC1
+   mtu 10178
+   channel-group 114 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet42
+   description ISILON5_NIC1
+   mtu 10178
+   channel-group 115 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet43
+   description ISILON4_NIC1
+   mtu 10178
+   channel-group 116 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet44
+   description USDC1F5LB001_Eth1.2
+   mtu 10178
+   channel-group 63 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet45
+   description USDC1SPNM2001
+   mtu 10178
+   switchport access vlan 1553
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet46
+   description USDC1F5LB002_Eth1.2
+   mtu 10178
+   channel-group 64 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet47
+   description INFLOBOX_usdcsdns02a LAN1
+   mtu 10178
+   switchport access vlan 3386
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet48
+   description INFLOBOX_usdcsdns02a HA
+   mtu 10178
+   switchport access vlan 3386
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet49/1
+   description USDC1NST002 Eth49/1
+   mtu 10178
+   channel-group 2000 mode active
+!
+interface Ethernet50/1
+   description USDC1NST002 Eth50/1
+   mtu 10178
+   channel-group 2000 mode active
+!
+interface Ethernet51/1
+   description to USDC1NSC001 Eth5
+   mtu 10178
+   no switchport
+   ip address 10.23.3.39/31
+!
+interface Ethernet52/1
+   description to USDC1NSC002 Eth5
+   mtu 10178
+   no switchport
+   ip address 10.23.3.69/31
+!
+interface Ethernet53/1
+   description ***TO_USDC2_SWITCHES***
+   mtu 10178
+   channel-group 1020 mode active
+!
+interface Ethernet53/2
+   mtu 10178
+!
+interface Ethernet53/3
+   mtu 10178
+!
+interface Ethernet53/4
+   mtu 10178
+!
+interface Ethernet54/1
+   shutdown
+   mtu 10178
+!
+interface Loopback0
+   description BGP_ROUTER_ID
+   ip address 10.23.3.17/32
+!
+interface Loopback1
+   description VTEP
+   ip address 10.23.3.206/32
+   ip address 10.23.3.207/32 secondary
+!
+interface Management1
+   description to USCDANST001 Eth4
+   vrf mgmt
+   ip address 10.23.0.17/24
+!
+interface Vlan1505
+   description ESXi Mgmt for Tenant Mgmt
+   mtu 10178
+   vrf INFRA_Std
+   ip address 10.23.5.2/24
+   arp aging timeout 300
+   ip dhcp relay all-subnets
+   ip helper-address 10.23.5.143
+   ip virtual-router address 10.23.5.1
+!
+interface Vlan1506
+   description ESXi VXLAN for Tenant Mgmt
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.6.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.6.1
+!
+interface Vlan1507
+   description ESXi vMotion for Tenant Mgmt
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.7.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.7.1
+!
+interface Vlan1508
+   description ESXi vSAN for Tenant Mgmt
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.8.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.8.1
+!
+interface Vlan1510
+   description VRA
+   mtu 10178
+   vrf INFRA_Std
+   ip address 10.23.10.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.10.1
+!
+interface Vlan1511
+   description WITNESS
+   mtu 10178
+   vrf INFRA_Std
+   ip address 10.23.11.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.11.1
+!
+interface Vlan1512
+   description WITNESS VSA
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.12.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.12.1
+!
+interface Vlan1515
+   description ESXi Mgmt for Tenant GOLD
+   mtu 10178
+   vrf INFRA_Std
+   ip address 10.23.15.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.15.1
+!
+interface Vlan1516
+   description ESXi VXLAN VTEP for Tenant GOLD
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.16.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.16.1
+!
+interface Vlan1517
+   description ESXi vMotion for Tenant GOLD
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.17.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.17.1
+!
+interface Vlan1518
+   description ESXi vSAN for Tenant GOLD
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.18.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.18.1
+!
+interface Vlan1525
+   description ESXi Mgmt for Tenant SILV
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.25.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.25.1
+!
+interface Vlan1526
+   description ESXi VXLAN VTEP for Tenant SILV
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.26.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.26.1
+!
+interface Vlan1527
+   description ESXi vMotion for Tenant SILV
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.27.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.27.1
+!
+interface Vlan1528
+   description ESXi vSAN for Tenant SILV
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.28.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.28.1
+!
+interface Vlan1535
+   description ESXi Mgmt for Tenant EXCH
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.35.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.35.1
+!
+interface Vlan1536
+   description ESXi VXLAN VTEP for Tenant EXCH
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.36.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.36.1
+!
+interface Vlan1537
+   description ESXi vMotion for Tenant EXCH
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.37.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.37.1
+!
+interface Vlan1540
+   description PHYSICAL_SERVER
+   mtu 10178
+   vrf PHYSICAL_SERVER
+   ip address 10.23.40.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.40.1
+!
+interface Vlan1541
+   description Backup_Infra
+   mtu 10178
+   vrf INFRA_Std
+   ip address 10.23.41.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.41.1
+!
+interface Vlan1542
+   description Backup-Replication
+   mtu 10178
+   vrf INFRA_Std
+   ip address 10.23.42.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.42.1
+!
+interface Vlan1543
+   description Backup_Management
+   mtu 10178
+   vrf INFRA_Std
+   ip address 10.23.43.2/24
+   ip virtual-router address 10.23.43.1
+!
+interface Vlan1548
+   description PAFW_VM300
+   mtu 10178
+   vrf INFRA_Std
+   ip address 10.23.48.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.48.1
+!
+interface Vlan1550
+   description DC_Management
+   mtu 10178
+   vrf INFOBLOX
+   ip address 10.23.50.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.50.1
+!
+interface Vlan1553
+   description Citrix_NetScaler_GSLB
+   mtu 10178
+   vrf CITRIX
+   ip address 10.23.53.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.53.1
+!
+interface Vlan1554
+   description VxRail_SPLUNK_LOG_Mgmt
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.54.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.54.1
+!
+interface Vlan1555
+   description Splunk ESXi Mgmt
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.55.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.55.1
+!
+interface Vlan1557
+   description Splunk ESXi vMotion
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.57.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.57.1
+!
+interface Vlan1558
+   description Splunk ESXi vSAN
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.58.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.58.1
+!
+interface Vlan1559
+   description F5_VIPS
+   mtu 10178
+   vrf INTERNAL
+   ip address 10.23.59.2/24
+   ip virtual-router address 10.23.59.1
+!
+interface Vlan1560
+   description Citrix_VDI_Mgmt
+   mtu 10178
+   vrf CITRIX
+   ip address 10.23.60.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.60.1
+!
+interface Vlan1561
+   description Citrix_XenApp_Mgmt
+   mtu 10178
+   vrf CITRIX
+   ip address 10.23.61.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.61.1
+!
+interface Vlan1562
+   description Customer_VDI_WLD
+   mtu 10178
+   vrf CITRIX
+   ip address 10.23.62.2/24
+   arp aging timeout 300
+   ip dhcp relay all-subnets
+   ip helper-address 10.23.60.49
+   ip helper-address 10.23.60.50
+   ip virtual-router address 10.23.62.1
+!
+interface Vlan1563
+   description Wipro_VDI_WLD
+   mtu 10178
+   vrf CITRIX
+   ip address 10.23.63.2/24
+   arp aging timeout 300
+   ip dhcp relay all-subnets
+   ip helper-address 10.23.60.49
+   ip helper-address 10.23.60.50
+   ip virtual-router address 10.23.63.1
+!
+interface Vlan1564
+   description Backup Workload for Gold
+   mtu 10178
+   vrf INFRA_Std
+   ip address 10.23.64.2/22
+   arp aging timeout 300
+   ip virtual-router address 10.23.64.1
+!
+interface Vlan1568
+   description Backup Workload for Silver
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.68.2/23
+   arp aging timeout 300
+   ip virtual-router address 10.23.68.1
+!
+interface Vlan1608
+   description INTERNAL_STD_TRANSIT
+   mtu 10178
+   vrf INTERNAL_Std
+   ip address 10.23.2.67/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.2.66
+!
+interface Vlan1609
+   description INFRA_STD_TRANSIT
+   mtu 10178
+   vrf INFRA_Std
+   ip address 10.23.2.75/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.2.74
+!
+interface Vlan1610
+   description INTERNAL_TRANSIT
+   mtu 10178
+   vrf INTERNAL
+   ip address 10.23.2.83/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.2.82
+!
+interface Vlan1611
+   description INFRA_TRANSIT
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.2.91/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.2.90
+!
+interface Vlan1612
+   description MPLS_TRANSIT
+   mtu 10178
+   vrf MPLS-AA
+   ip address 10.23.2.99/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.2.98
+!
+interface Vlan1614
+   description OOB_TRANSIT
+   mtu 10178
+   vrf OOB_Mgmt
+   ip address 10.23.2.115/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.2.114
+!
+interface Vlan1615
+   description INTERNAL_TRANSIT_DCI
+   mtu 10178
+   vrf INTERNAL
+   ip address 10.23.2.121/29
+   arp aging timeout 300
+!
+interface Vlan1616
+   description INFRA_TRANSIT_DCI
+   mtu 10178
+   vrf INFRA_Mgmt
+   ip address 10.23.2.129/29
+   arp aging timeout 300
+!
+interface Vlan1617
+   description OOB_TRANSIT_DCI
+   mtu 10178
+   vrf OOB_Mgmt
+   ip address 10.23.2.137/29
+   arp aging timeout 300
+!
+interface Vlan1618
+   description MPLS_TRANSIT_DCI
+   mtu 10178
+   vrf MPLS-AA
+   ip address 10.23.2.145/29
+   arp aging timeout 300
+!
+interface Vlan1619
+   description INTERNAL_STD_TRANSIT_DCI
+   mtu 10178
+   vrf INTERNAL_Std
+   ip address 10.23.2.153/29
+   arp aging timeout 300
+!
+interface Vlan1620
+   description DCI
+   mtu 10178
+   ip address 10.23.2.161/29
+   arp aging timeout 300
+   bfd interval 300 min-rx 300 multiplier 3
+!
+interface Vlan1621
+   description INFRA_STD_TRANSIT_DCI
+   mtu 10178
+   vrf INFRA_Std
+   ip address 10.23.2.169/29
+   arp aging timeout 300
+!
+interface Vlan1623
+   description REPLICATION_DCI
+   mtu 10178
+   vrf REPLICATION
+   ip address 10.23.2.185/29
+   arp aging timeout 300
+!
+interface Vlan1625
+   description WLC_Mgmt_Transit_FW
+   mtu 10178
+   vrf WLC_Mgmt
+   ip address 10.23.44.3/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.44.2
+!
+interface Vlan1626
+   description REPLICATION_FW
+   mtu 10178
+   vrf REPLICATION
+   ip address 10.23.2.211/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.2.210
+!
+interface Vlan1629
+   description WLC_WiFi_Guest_Transit_FW
+   mtu 10178
+   arp aging timeout 300
+!
+interface Vlan1635
+   vrf MPLS-AA
+   ip address 10.23.2.241/30
+!
+interface Vlan1637
+   description MPLS-DC-iBGP
+   mtu 10178
+   vrf MPLS-AA
+   ip address 10.23.2.248/31
+!
+interface Vlan1652
+   description Arista_F5_MPLS_TRANSIT
+   mtu 10178
+   vrf INTERNAL
+   ip address 10.23.30.50/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.30.49
+!
+interface Vlan1653
+   description INTERNET-iBGP
+   mtu 10178
+   vrf INTERNET
+   ip address 141.81.180.193/30
+   arp aging timeout 300
+!
+interface Vlan1654
+   description SDWAN-INTERNET
+   mtu 10178
+   vrf INTERNET
+   ip address 141.81.180.202/29
+   ip virtual-router address 141.81.180.201
+!
+interface Vlan1655
+   description ARISTA_To_F5Ext
+   mtu 10178
+   vrf INTERNET
+   ip address 141.81.180.210/29
+   arp aging timeout 300
+   ip virtual-router address 141.81.180.209
+!
+interface Vlan1656
+   description F5Int_To_ARISTA
+   mtu 10178
+   vrf F5_TRANSIT
+   ip address 141.81.180.221/29
+   arp aging timeout 300
+   ip virtual-router address 141.81.180.220
+!
+interface Vlan1657
+   description ARISTA_To_PAN
+   mtu 10178
+   vrf F5_TRANSIT
+   ip address 141.81.180.226/29
+   arp aging timeout 300
+   ip virtual-router address 141.81.180.225
+!
+interface Vlan1675
+   description Gold Cluster TEP Pool
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.23.4.2/26
+   arp aging timeout 300
+   ip virtual-router address 10.23.4.1
+!
+interface Vlan1676
+   description Silver Cluster TEP Pool
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.23.4.66/26
+   arp aging timeout 300
+   ip virtual-router address 10.23.4.65
+!
+interface Vlan1677
+   description Gold Edge Cluster-1 for BGP
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.23.4.130/29
+   arp aging timeout 300
+   bfd interval 1000 min-rx 1000 multiplier 3
+   ip virtual-router address 10.23.4.129
+!
+interface Vlan1678
+   description Gold Edge Cluster-2 for BGP
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.23.4.138/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.4.137
+!
+interface Vlan1679
+   description Gold Edge Cluster-3 for BGP
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.23.4.146/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.4.145
+!
+interface Vlan1680
+   description Gold Edge Cluster-4 for BGP
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.23.4.154/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.4.153
+!
+interface Vlan1681
+   description Silver Edge Cluster-1 for BGP
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.23.4.161/28
+   arp aging timeout 300
+   bfd interval 1000 min-rx 1000 multiplier 3
+!
+interface Vlan1682
+   description Silver Edge Cluster-2 for BGP
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.23.4.178/28
+   arp aging timeout 300
+!
+interface Vlan1683
+   description Gold Edge Cluster-1 TEP Pool
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.23.4.194/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.4.193
+!
+interface Vlan1684
+   description Gold Edge Cluster-2 TEP Pool
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.23.4.202/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.4.201
+!
+interface Vlan1685
+   description Silver Edge Cluster TEP Pool
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.23.4.210/28
+   arp aging timeout 300
+   ip virtual-router address 10.23.4.209
+!
+interface Vlan1690
+   description Collaboration Cluster TEP Pool
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.23.14.2/26
+   arp aging timeout 300
+   ip virtual-router address 10.23.14.1
+!
+interface Vlan1700
+   description AD_SERVERS
+   mtu 10178
+   vrf INTERNAL_Std
+   ip address 10.23.100.2/27
+   arp aging timeout 300
+   ip virtual-router address 10.23.100.1
+!
+interface Vlan1701
+   description DMZ_SERVERS
+   mtu 10178
+   vrf INTERNAL_Std
+   ip address 10.23.100.34/27
+   arp aging timeout 300
+   ip virtual-router address 10.23.100.33
+!
+interface Vlan1702
+   description SKYPE_SERVERS
+   mtu 10178
+   vrf INTERNAL_Std
+   ip address 10.23.100.66/26
+   arp aging timeout 300
+   ip virtual-router address 10.23.100.65
+!
+interface Vlan1703
+   description EXCHANGE_SERVERS
+   mtu 10178
+   vrf INTERNAL_Std
+   ip address 10.23.100.130/25
+   arp aging timeout 300
+   ip virtual-router address 10.23.100.129
+!
+interface Vlan1704
+   description ServiceNow_Discovery
+   mtu 10178
+   vrf Service_Now
+   ip address 10.23.101.2/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.101.1
+!
+interface Vlan1709
+   description ISILON_DATA
+   mtu 10178
+   vrf ISILON
+   ip address 10.23.101.66/26
+   arp aging timeout 300
+   ip virtual-router address 10.23.101.65
+!
+interface Vlan1710
+   description ISILON_DMZ
+   mtu 10178
+   vrf ISILON
+   ip address 10.23.101.130/26
+   arp aging timeout 300
+   ip virtual-router address 10.23.101.129
+!
+interface Vlan1711
+   description VLAN1711
+   mtu 10178
+   vrf INFRA_Std
+   ip address 10.23.101.194/27
+   arp aging timeout 300
+   ip dhcp relay all-subnets
+   ip helper-address 10.23.5.143
+   ip virtual-router address 10.23.101.193
+!
+interface Vlan1712
+   description Cloudvision
+   mtu 10178
+   vrf INFOBLOX
+   ip address 10.23.30.18/28
+   arp aging timeout 300
+   ip virtual-router address 10.23.30.17
+!
+interface Vlan1720
+   description SNOW_TRANSIT_FW
+   mtu 10178
+   vrf Service_Now
+   ip address 10.23.22.27/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.22.26
+!
+interface Vlan1721
+   description SNOW_TRANSIT_FW
+   mtu 10178
+   vrf Service_Now
+   ip address 10.23.22.33/29
+   arp aging timeout 300
+!
+interface Vlan1722
+   description JUMP_TRANSIT_FW
+   mtu 10178
+   vrf Jump_Server
+   ip address 10.23.22.43/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.22.42
+!
+interface Vlan1723
+   description JUMP_TRANSIT_FW
+   mtu 10178
+   vrf Jump_Server
+   ip address 10.23.22.49/29
+   arp aging timeout 300
+!
+interface Vlan1724
+   description ISILON_TRANSIT_FW
+   mtu 10178
+   vrf ISILON
+   ip address 10.23.22.59/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.22.58
+!
+interface Vlan1725
+   description ISILON_TRANSIT_DCI
+   mtu 10178
+   vrf ISILON
+   ip address 10.23.22.65/29
+   arp aging timeout 300
+!
+interface Vlan1726
+   description CITRIX_TRANSIT_FW
+   mtu 10178
+   vrf CITRIX
+   ip address 10.23.22.75/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.22.74
+!
+interface Vlan1727
+   description CITRIX_TRANSIT_FW
+   mtu 10178
+   vrf CITRIX
+   ip address 10.23.22.81/29
+   arp aging timeout 300
+!
+interface Vlan1800
+   description WLC_Mgmt
+   vrf WLC_Mgmt
+   ip address 10.23.30.2/28
+   arp aging timeout 300
+   ip virtual-router address 10.23.30.1
+!
+interface Vlan1810
+   description WLC_WiFi_Guest
+   mtu 10178
+   vrf WLC_GUEST
+   ip address 10.23.208.2/20
+   arp aging timeout 300
+   ip virtual-router address 10.23.208.1
+!
+interface Vlan1820
+   description Global WiFi VC_Production
+   mtu 10178
+   vrf WLC_PROD_IOT
+   ip address 10.23.46.2/23
+   arp aging timeout 300
+   ip virtual-router address 10.23.46.1
+!
+interface Vlan1830
+   description Global_WiFi_VC_IoT
+   mtu 10178
+   vrf WLC_PROD_IOT
+   ip address 10.23.128.2/20
+   arp aging timeout 300
+   ip virtual-router address 10.23.128.1
+!
+interface Vlan2000
+   mtu 10178
+   no autostate
+   ip address 10.23.2.14/31
+   arp aging timeout 300
+!
+interface Vlan2629
+   description WLC_WiFi_Guest_Transit_FW
+   mtu 10178
+   vrf WLC_GUEST
+   ip address 10.23.44.27/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.44.26
+!
+interface Vlan2644
+   description Gobal_WiFi_VC_Prod_IoT_TRANSIT_FW
+   mtu 10178
+   vrf WLC_PROD_IOT
+   ip address 10.23.44.19/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.44.18
+!
+interface Vlan3301
+   description Jump_Server
+   mtu 10178
+   vrf Jump_Server
+   ip address 10.23.20.2/28
+   arp aging timeout 300
+   ip virtual-router address 10.23.20.1
+!
+interface Vlan3312
+   description INFOBLOX_TRANSIT_FW
+   mtu 10178
+   vrf INFOBLOX
+   ip address 10.23.19.11/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.19.10
+!
+interface Vlan3313
+   description INFOBLOX_TRANSIT_DCI
+   mtu 10178
+   vrf INFOBLOX
+   ip address 10.23.19.17/29
+   arp aging timeout 300
+!
+interface Vlan3314
+   description PHYSICAL_SERVER_FW
+   mtu 10178
+   vrf PHYSICAL_SERVER
+   ip address 10.23.19.27/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.19.26
+!
+interface Vlan3315
+   description PHYSICAL_SERVER_DCI
+   mtu 10178
+   vrf PHYSICAL_SERVER
+   ip address 10.23.19.33/29
+   arp aging timeout 300
+!
+interface Vlan3316
+   description INFRA_NSX_FW
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.23.19.43/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.19.42
+!
+interface Vlan3317
+   description INFRA_NSX_DCI
+   mtu 10178
+   vrf INFRA_NSX
+   ip address 10.23.19.49/29
+   arp aging timeout 300
+!
+interface Vlan3320
+   description DMZ_INFRA_NSX_FW
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.23.19.75/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.19.74
+!
+interface Vlan3321
+   description DMZ_INFRA_NSX_DCI
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.23.19.81/29
+   arp aging timeout 300
+!
+interface Vlan3322
+   description DMZ_TRANSIT_FW
+   mtu 10178
+   vrf DMZ
+   ip address 10.23.19.91/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.19.90
+!
+interface Vlan3323
+   description DMZ_TRANSIT_DCI
+   mtu 10178
+   vrf DMZ
+   ip address 10.23.19.97/29
+   arp aging timeout 300
+!
+interface Vlan3324
+   description XMS_CVP_TRANSIT_FW
+   mtu 10178
+   vrf XMS_CVP
+   ip address 10.23.19.107/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.19.106
+!
+interface Vlan3325
+   description XMS_CVP_TRANSIT_DCI
+   mtu 10178
+   vrf XMS_CVP
+   ip address 10.23.19.113/29
+   arp aging timeout 300
+!
+interface Vlan3326
+   description MCAFEE_TRANSIT_FW
+   mtu 10178
+   vrf MCAFEE
+   ip address 10.23.19.123/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.19.122
+!
+interface Vlan3327
+   description MCAFEE_TRANSIT_DCI
+   mtu 10178
+   vrf MCAFEE
+   ip address 10.23.19.129/29
+   arp aging timeout 300
+!
+interface Vlan3375
+   description DMZ Gold Cluster TEP Pool
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.23.9.2/26
+   arp aging timeout 300
+   ip virtual-router address 10.23.9.1
+!
+interface Vlan3376
+   description DMZ Silver Cluster TEP Pool
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.23.9.66/26
+   arp aging timeout 300
+   ip virtual-router address 10.23.9.65
+!
+interface Vlan3377
+   description DMZ Gold Edge Cluster-1 for BGP
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.23.9.130/29
+   arp aging timeout 300
+   bfd interval 1000 min-rx 1000 multiplier 3
+   ip virtual-router address 10.23.9.129
+!
+interface Vlan3378
+   description DMZ Gold Edge Cluster-2 for BGP
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.23.9.138/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.9.137
+!
+interface Vlan3381
+   description DMZ Silver Edge Cluster-1 for BGP
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.23.9.161/28
+   arp aging timeout 300
+   bfd interval 1000 min-rx 1000 multiplier 3
+!
+interface Vlan3382
+   description DMZ Silver Edge Cluster-2 for BGP
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.23.9.177/28
+   arp aging timeout 300
+!
+interface Vlan3383
+   description DMZ Gold Edge Cluster-1 TEP Pool
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.23.9.194/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.9.193
+!
+interface Vlan3384
+   description DMZ Gold Edge Cluster-2 TEP Pool
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.23.9.202/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.9.201
+!
+interface Vlan3385
+   description DMZ Silver Edge Cluster TEP Pool
+   mtu 10178
+   vrf DMZ_INFRA_NSX
+   ip address 10.23.9.210/28
+   arp aging timeout 300
+   ip virtual-router address 10.23.9.209
+!
+interface Vlan3386
+   description DMZ_Mgmt
+   mtu 10178
+   vrf DMZ
+   ip address 10.23.124.2/24
+   arp aging timeout 300
+   ip virtual-router address 10.23.124.1
+!
+interface Vlan3387
+   description XMS
+   mtu 10178
+   vrf XMS_CVP
+   ip address 10.23.20.18/28
+   arp aging timeout 300
+   ip virtual-router address 10.23.20.17
+!
+interface Vlan3388
+   description CVP
+   mtu 10178
+   vrf XMS_CVP
+   ip address 10.23.20.34/28
+   arp aging timeout 300
+   ip virtual-router address 10.23.20.33
+!
+interface Vlan3389
+   description MCAFEE
+   mtu 10178
+   vrf MCAFEE
+   ip address 10.23.20.66/27
+   arp aging timeout 300
+   ip virtual-router address 10.23.20.65
+!
+interface Vlan3390
+   description Log_Forwarding
+   mtu 10178
+   vrf Jump_Server
+   ip address 10.23.20.50/28
+   arp aging timeout 300
+   ip virtual-router address 10.23.20.49
+!
+interface Vlan3513
+   description F5_VLAN_1
+   mtu 10178
+   vrf INTERNAL
+   ip address 10.23.13.2/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.13.1
+!
+interface Vlan3514
+   description F5_VLAN_1
+   mtu 10178
+   vrf INTERNAL
+   ip address 10.23.13.10/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.13.9
+!
+interface Vlan3515
+   description F5_VLAN_1
+   mtu 10178
+   vrf INTERNAL
+   ip address 10.23.13.18/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.13.17
+!
+interface Vlan3516
+   description F5_VLAN_1
+   mtu 10178
+   vrf INTERNAL
+   ip address 10.23.13.26/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.13.25
+!
+interface Vlan3524
+   description F5_iQuery_Mesh
+   mtu 10178
+   vrf F5_TRANSIT
+   ip address 10.23.34.4/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.34.6
+!
+interface Vlan3701
+   description CITRIX1_File_Server
+   mtu 10178
+   vrf CITRIX1
+   ip address 10.23.29.18/28
+   arp aging timeout 300
+   ip virtual-router address 10.23.29.17
+!
+interface Vlan3702
+   description CITRIX1_TRANSIT_FW
+   mtu 10178
+   vrf CITRIX1
+   ip address 10.23.29.3/29
+   arp aging timeout 300
+   ip virtual-router address 10.23.29.2
+!
+interface Vlan3703
+   description CITRIX1_TRANSIT_DCI
+   mtu 10178
+   vrf CITRIX1
+   ip address 10.23.29.9/29
+   arp aging timeout 300
+!
+interface Vxlan1
+   vxlan source-interface Loopback1
+   vxlan udp-port 4789
+   vxlan vlan 1500 vni 11500
+   vxlan vlan 1505 vni 11505
+   vxlan vlan 1506 vni 11506
+   vxlan vlan 1507 vni 11507
+   vxlan vlan 1508 vni 11508
+   vxlan vlan 1510 vni 11510
+   vxlan vlan 1511 vni 11511
+   vxlan vlan 1512 vni 11512
+   vxlan vlan 1515 vni 11515
+   vxlan vlan 1516 vni 11516
+   vxlan vlan 1517 vni 11517
+   vxlan vlan 1518 vni 11518
+   vxlan vlan 1525 vni 11525
+   vxlan vlan 1526 vni 11526
+   vxlan vlan 1527 vni 11527
+   vxlan vlan 1528 vni 11528
+   vxlan vlan 1535 vni 11535
+   vxlan vlan 1536 vni 11536
+   vxlan vlan 1537 vni 11537
+   vxlan vlan 1540 vni 11540
+   vxlan vlan 1541 vni 11541
+   vxlan vlan 1542 vni 11542
+   vxlan vlan 1543 vni 11543
+   vxlan vlan 1548 vni 11548
+   vxlan vlan 1550 vni 11550
+   vxlan vlan 1552 vni 11552
+   vxlan vlan 1553 vni 11553
+   vxlan vlan 1554 vni 11554
+   vxlan vlan 1555 vni 11555
+   vxlan vlan 1557 vni 11557
+   vxlan vlan 1558 vni 11558
+   vxlan vlan 1559 vni 11559
+   vxlan vlan 1560 vni 11560
+   vxlan vlan 1561 vni 11561
+   vxlan vlan 1562 vni 11562
+   vxlan vlan 1563 vni 11563
+   vxlan vlan 1564 vni 11564
+   vxlan vlan 1568 vni 11568
+   vxlan vlan 1616 vni 11616
+   vxlan vlan 1617 vni 11617
+   vxlan vlan 1618 vni 11618
+   vxlan vlan 1619 vni 11619
+   vxlan vlan 1621 vni 11621
+   vxlan vlan 1630 vni 11630
+   vxlan vlan 1675 vni 11675
+   vxlan vlan 1676 vni 11676
+   vxlan vlan 1677 vni 11677
+   vxlan vlan 1678 vni 11678
+   vxlan vlan 1679 vni 11679
+   vxlan vlan 1680 vni 11680
+   vxlan vlan 1681 vni 11681
+   vxlan vlan 1682 vni 11682
+   vxlan vlan 1683 vni 11683
+   vxlan vlan 1684 vni 11684
+   vxlan vlan 1685 vni 11685
+   vxlan vlan 1690 vni 11690
+   vxlan vlan 1700 vni 11700
+   vxlan vlan 1701 vni 11701
+   vxlan vlan 1702 vni 11702
+   vxlan vlan 1703 vni 11703
+   vxlan vlan 1704 vni 11704
+   vxlan vlan 1709 vni 11709
+   vxlan vlan 1710 vni 11710
+   vxlan vlan 1711 vni 11711
+   vxlan vlan 1712 vni 11712
+   vxlan vlan 1810 vni 11810
+   vxlan vlan 1820 vni 11820
+   vxlan vlan 1830 vni 11830
+   vxlan vlan 3301 vni 13301
+   vxlan vlan 3375 vni 13375
+   vxlan vlan 3376 vni 13376
+   vxlan vlan 3377 vni 13377
+   vxlan vlan 3378 vni 13378
+   vxlan vlan 3381 vni 13381
+   vxlan vlan 3382 vni 13382
+   vxlan vlan 3383 vni 13383
+   vxlan vlan 3384 vni 13384
+   vxlan vlan 3385 vni 13385
+   vxlan vlan 3386 vni 13386
+   vxlan vlan 3387 vni 13387
+   vxlan vlan 3388 vni 13388
+   vxlan vlan 3389 vni 13389
+   vxlan vlan 3390 vni 13390
+   vxlan vlan 3520 vni 13520
+   vxlan vlan 3521 vni 13521
+   vxlan vlan 3522 vni 13522
+   vxlan vlan 3701 vni 13701
+   vxlan flood vtep 10.23.3.202 10.23.3.204 10.23.3.208 10.24.3.202 10.24.3.204 10.24.3.206 10.24.3.208
+!
+hardware tcam
+   system profile vxlan-routing
+!
+ip virtual-router mac-address c0:01:ba:ba:c0:01
+!
+ip access-list standard ALLOW_SSH_ACL
+   10 permit 10.230.0.0/16
+   20 permit 10.71.0.0/16
+   30 permit 10.72.0.0/16
+   40 permit 10.23.0.0/16
+   50 permit 10.24.0.0/16
+   60 permit 10.52.0.0/16
+   999 deny any
+!
+ip routing
+ip routing vrf CITRIX
+ip routing vrf CITRIX1
+ip routing vrf DMZ
+ip routing vrf DMZ_INFRA_NSX
+ip routing vrf F5_TRANSIT
+ip routing vrf INFOBLOX
+ip routing vrf INFRA_Mgmt
+ip routing vrf INFRA_NSX
+ip routing vrf INFRA_Std
+ip routing vrf INTERNAL
+ip routing vrf INTERNAL_Std
+ip routing vrf INTERNET
+ip routing vrf ISILON
+ip routing vrf Jump_Server
+ip routing vrf MCAFEE
+ip routing vrf MPLS-AA
+ip routing vrf OOB_Mgmt
+ip routing vrf PHYSICAL_SERVER
+ip routing vrf REPLICATION
+ip routing vrf Service_Now
+ip routing vrf WLC_GUEST
+ip routing vrf WLC_Mgmt
+ip routing vrf WLC_PROD_IOT
+ip routing vrf XMS_CVP
+ip routing vrf mgmt
+!
+ip prefix-list INTERNET-IN
+   seq 10 permit 0.0.0.0/0
+!
+ip prefix-list INTERNET-OUT
+   seq 10 permit 141.81.180.0/24
+   seq 20 permit 141.81.182.0/24
+!
+ip prefix-list NSXT-GOLD-CL01-OUT
+   seq 10 permit 0.0.0.0/0
+!
+ip prefix-list NSXT-GOLD-CL02-OUT
+   seq 10 permit 0.0.0.0/0
+!
+ip prefix-list NSXT-SILV-OUT
+   seq 10 permit 0.0.0.0/0
+!
+mlag configuration
+   domain-id mlag1
+   local-interface Vlan2000
+   peer-address 10.23.2.15
+   peer-link Port-Channel2000
+!
+ip route vrf CITRIX 0.0.0.0/0 10.23.22.73
+ip route vrf CITRIX1 0.0.0.0/0 10.23.29.1
+ip route vrf DMZ 0.0.0.0/0 10.23.19.89
+ip route vrf DMZ_INFRA_NSX 0.0.0.0/0 10.23.19.73
+ip route vrf F5_TRANSIT 0.0.0.0/0 141.81.180.217 name Towards_F5
+ip route vrf F5_TRANSIT 10.0.0.0/8 141.81.180.228 name Towards_FW
+ip route vrf F5_TRANSIT 141.81.180.0/25 141.81.180.228 name Towards_FW
+ip route vrf INFOBLOX 0.0.0.0/0 10.23.19.9
+ip route vrf INFRA_Mgmt 0.0.0.0/0 10.23.2.89
+ip route vrf INFRA_NSX 0.0.0.0/0 10.23.19.41
+ip route vrf INFRA_Std 0.0.0.0/0 10.23.2.73
+ip route vrf INTERNAL 0.0.0.0/0 10.23.2.81
+ip route vrf INTERNAL 10.23.31.0/24 10.23.30.52
+ip route vrf INTERNAL_Std 0.0.0.0/0 10.23.2.65
+ip route vrf INTERNET 141.81.180.0/24 141.81.180.212 name Towards_F5
+ip route vrf INTERNET 141.81.182.0/24 141.81.180.212 name Towards_F5
+ip route vrf ISILON 0.0.0.0/0 10.23.22.57
+ip route vrf Jump_Server 0.0.0.0/0 10.23.22.41
+ip route vrf MCAFEE 0.0.0.0/0 10.23.19.121
+ip route vrf MPLS-AA 10.23.0.0/16 10.23.2.97
+ip route vrf OOB_Mgmt 0.0.0.0/0 10.23.2.113
+ip route vrf OOB_Mgmt 10.23.0.0/24 10.23.2.113
+ip route vrf OOB_Mgmt 10.23.1.0/24 10.23.2.113
+ip route vrf OOB_Mgmt 10.24.0.0/24 10.23.2.139
+ip route vrf OOB_Mgmt 10.24.1.0/24 10.23.2.139
+ip route vrf OOB_Mgmt 10.24.2.112/29 10.23.2.139
+ip route vrf PHYSICAL_SERVER 0.0.0.0/0 10.23.19.25
+ip route vrf Service_Now 0.0.0.0/0 10.23.22.25
+ip route vrf WLC_GUEST 0.0.0.0/0 10.23.44.25
+ip route vrf WLC_Mgmt 0.0.0.0/0 10.23.44.1
+ip route vrf WLC_PROD_IOT 0.0.0.0/0 10.23.44.17
+ip route vrf XMS_CVP 0.0.0.0/0 10.23.19.105
+ip route vrf mgmt 0.0.0.0/0 10.23.0.1
+!
+mpls ip
+!
+route-map INTERNET-IN permit 10
+   match ip address prefix-list INTERNET-IN
+!
+route-map INTERNET-OUT permit 10
+   match ip address prefix-list INTERNET-OUT
+!
+route-map NSXT-GOLD-CL01-OUT permit 10
+   match ip address prefix-list NSXT-GOLD-CL01-OUT
+!
+route-map NSXT-GOLD-CL02-OUT permit 10
+   match ip address prefix-list NSXT-GOLD-CL02-OUT
+!
+route-map NSXT-SILV-OUT permit 10
+   match ip address prefix-list NSXT-SILV-OUT
+!
+route-map underlay permit 10
+   match source-protocol connected
+   match interface Loopback0
+!
+route-map underlay permit 20
+   match source-protocol connected
+   match interface Loopback1
+!
+route-map underlay deny 999
+!
+router bgp 65304
+   router-id 10.23.3.17
+   update wait-for-convergence
+   update wait-install
+   maximum-paths 4 ecmp 4
+   neighbor CITRIX-DCI-eBGP peer group
+   neighbor CITRIX-DCI-eBGP remote-as 65314
+   neighbor CITRIX-DCI-eBGP update-source Vlan1727
+   neighbor CITRIX-DCI-eBGP ebgp-multihop 2
+   neighbor CITRIX-DCI-eBGP maximum-routes 12000
+   neighbor CITRIX-DCI-iBGP peer group
+   neighbor CITRIX-DCI-iBGP remote-as 65304
+   neighbor CITRIX-DCI-iBGP update-source Vlan1727
+   neighbor CITRIX-DCI-iBGP ebgp-multihop 2
+   neighbor CITRIX-DCI-iBGP maximum-routes 12000
+   neighbor CITRIX1-DCI-eBGP peer group
+   neighbor CITRIX1-DCI-eBGP remote-as 65314
+   neighbor CITRIX1-DCI-eBGP update-source Vlan3703
+   neighbor CITRIX1-DCI-eBGP ebgp-multihop 2
+   neighbor CITRIX1-DCI-eBGP maximum-routes 12000
+   neighbor CITRIX1-DCI-iBGP peer group
+   neighbor CITRIX1-DCI-iBGP remote-as 65304
+   neighbor CITRIX1-DCI-iBGP update-source Vlan3703
+   neighbor CITRIX1-DCI-iBGP maximum-routes 12000
+   neighbor DCI peer group
+   neighbor DCI remote-as 65314
+   neighbor DCI bfd
+   neighbor DCI ebgp-multihop 2
+   neighbor DCI send-community standard extended
+   neighbor DCI maximum-routes 12000
+   neighbor DMZ-DCI-eBGP peer group
+   neighbor DMZ-DCI-eBGP remote-as 65314
+   neighbor DMZ-DCI-eBGP update-source Vlan3323
+   neighbor DMZ-DCI-eBGP ebgp-multihop 2
+   neighbor DMZ-DCI-eBGP maximum-routes 12000
+   neighbor DMZ-DCI-iBGP peer group
+   neighbor DMZ-DCI-iBGP remote-as 65304
+   neighbor DMZ-DCI-iBGP update-source Vlan3323
+   neighbor DMZ-DCI-iBGP ebgp-multihop 2
+   neighbor DMZ-DCI-iBGP maximum-routes 12000
+   neighbor DMZ_NSXT-GOLD-CL01 peer group
+   neighbor DMZ_NSXT-GOLD-CL01 remote-as 64700
+   neighbor DMZ_NSXT-GOLD-CL01 update-source Vlan3377
+   neighbor DMZ_NSXT-GOLD-CL01 bfd
+   neighbor DMZ_NSXT-GOLD-CL01 ebgp-multihop 2
+   neighbor DMZ_NSXT-GOLD-CL01 route-map NSXT-GOLD-CL01-OUT out
+   neighbor DMZ_NSXT-GOLD-CL01 maximum-routes 12000
+   neighbor DMZ_NSXT-GOLD-CL02 peer group
+   neighbor DMZ_NSXT-GOLD-CL02 remote-as 64707
+   neighbor DMZ_NSXT-GOLD-CL02 update-source Vlan3378
+   neighbor DMZ_NSXT-GOLD-CL02 ebgp-multihop 2
+   neighbor DMZ_NSXT-GOLD-CL02 route-map NSXT-GOLD-CL02-OUT out
+   neighbor DMZ_NSXT-GOLD-CL02 maximum-routes 12000
+   neighbor DMZ_NSXT-SILV peer group
+   neighbor DMZ_NSXT-SILV remote-as 64704
+   neighbor DMZ_NSXT-SILV update-source Vlan3381
+   neighbor DMZ_NSXT-SILV bfd
+   neighbor DMZ_NSXT-SILV ebgp-multihop 2
+   neighbor DMZ_NSXT-SILV route-map NSXT-SILV-OUT out
+   neighbor DMZ_NSXT-SILV maximum-routes 12000
+   neighbor DMZ_NSXT-STRETCHED-eBGP peer group
+   neighbor DMZ_NSXT-STRETCHED-eBGP remote-as 65314
+   neighbor DMZ_NSXT-STRETCHED-eBGP update-source Vlan3321
+   neighbor DMZ_NSXT-STRETCHED-eBGP ebgp-multihop 2
+   neighbor DMZ_NSXT-STRETCHED-eBGP maximum-routes 12000
+   neighbor DMZ_NSXT-STRETCHED-iBGP peer group
+   neighbor DMZ_NSXT-STRETCHED-iBGP remote-as 65304
+   neighbor DMZ_NSXT-STRETCHED-iBGP update-source Vlan3321
+   neighbor DMZ_NSXT-STRETCHED-iBGP ebgp-multihop 2
+   neighbor DMZ_NSXT-STRETCHED-iBGP maximum-routes 12000
+   neighbor INFOBLOX-DCI-eBGP peer group
+   neighbor INFOBLOX-DCI-eBGP remote-as 65314
+   neighbor INFOBLOX-DCI-eBGP update-source Vlan3313
+   neighbor INFOBLOX-DCI-eBGP ebgp-multihop 2
+   neighbor INFOBLOX-DCI-eBGP maximum-routes 12000
+   neighbor INFOBLOX-DCI-iBGP peer group
+   neighbor INFOBLOX-DCI-iBGP remote-as 65304
+   neighbor INFOBLOX-DCI-iBGP update-source Vlan3313
+   neighbor INFOBLOX-DCI-iBGP ebgp-multihop 2
+   neighbor INFOBLOX-DCI-iBGP maximum-routes 12000
+   neighbor INFRA-Std-DCI-eBGP peer group
+   neighbor INFRA-Std-DCI-eBGP remote-as 65314
+   neighbor INFRA-Std-DCI-eBGP update-source Vlan1621
+   neighbor INFRA-Std-DCI-eBGP ebgp-multihop 2
+   neighbor INFRA-Std-DCI-eBGP maximum-routes 12000
+   neighbor INFRA-Std-DCI-iBGP peer group
+   neighbor INFRA-Std-DCI-iBGP remote-as 65304
+   neighbor INFRA-Std-DCI-iBGP update-source Vlan1621
+   neighbor INFRA-Std-DCI-iBGP ebgp-multihop 2
+   neighbor INFRA-Std-DCI-iBGP maximum-routes 12000
+   neighbor INFRA_Mgmt-DCI-eBGP peer group
+   neighbor INFRA_Mgmt-DCI-eBGP remote-as 65314
+   neighbor INFRA_Mgmt-DCI-eBGP update-source Vlan1616
+   neighbor INFRA_Mgmt-DCI-eBGP ebgp-multihop 2
+   neighbor INFRA_Mgmt-DCI-eBGP maximum-routes 12000
+   neighbor INFRA_Mgmt-DCI-iBGP peer group
+   neighbor INFRA_Mgmt-DCI-iBGP remote-as 65304
+   neighbor INFRA_Mgmt-DCI-iBGP update-source Vlan1616
+   neighbor INFRA_Mgmt-DCI-iBGP ebgp-multihop 2
+   neighbor INFRA_Mgmt-DCI-iBGP maximum-routes 12000
+   neighbor INTERNAL-DCI-eBGP peer group
+   neighbor INTERNAL-DCI-eBGP remote-as 65314
+   neighbor INTERNAL-DCI-eBGP update-source Vlan1615
+   neighbor INTERNAL-DCI-eBGP ebgp-multihop 2
+   neighbor INTERNAL-DCI-eBGP maximum-routes 12000
+   neighbor INTERNAL-DCI-iBGP peer group
+   neighbor INTERNAL-DCI-iBGP remote-as 65304
+   neighbor INTERNAL-DCI-iBGP update-source Vlan1615
+   neighbor INTERNAL-DCI-iBGP ebgp-multihop 2
+   neighbor INTERNAL-DCI-iBGP maximum-routes 12000
+   neighbor INTERNAL-Std-DCI-eBGP peer group
+   neighbor INTERNAL-Std-DCI-eBGP remote-as 65314
+   neighbor INTERNAL-Std-DCI-eBGP update-source Vlan1619
+   neighbor INTERNAL-Std-DCI-eBGP ebgp-multihop 2
+   neighbor INTERNAL-Std-DCI-eBGP maximum-routes 12000
+   neighbor INTERNAL-Std-DCI-iBGP peer group
+   neighbor INTERNAL-Std-DCI-iBGP remote-as 65304
+   neighbor INTERNAL-Std-DCI-iBGP update-source Vlan1619
+   neighbor INTERNAL-Std-DCI-iBGP ebgp-multihop 2
+   neighbor INTERNAL-Std-DCI-iBGP maximum-routes 12000
+   neighbor INTERNAL_Std-DCI-eBGP peer group
+   neighbor INTERNAL_Std-DCI-eBGP maximum-routes 12000
+   neighbor INTERNET-eBGP peer group
+   neighbor INTERNET-eBGP remote-as 3356
+   neighbor INTERNET-eBGP bfd
+   neighbor INTERNET-eBGP route-map INTERNET-IN in
+   neighbor INTERNET-eBGP route-map INTERNET-OUT out
+   neighbor INTERNET-eBGP maximum-routes 12000 warning-only
+   neighbor INTERNET-iBGP peer group
+   neighbor INTERNET-iBGP remote-as 65304
+   neighbor INTERNET-iBGP update-source Vlan1653
+   neighbor INTERNET-iBGP maximum-routes 12000
+   neighbor ISILON-DCI-eBGP peer group
+   neighbor ISILON-DCI-eBGP remote-as 65314
+   neighbor ISILON-DCI-eBGP update-source Vlan1725
+   neighbor ISILON-DCI-eBGP ebgp-multihop 2
+   neighbor ISILON-DCI-eBGP maximum-routes 12000
+   neighbor ISILON-DCI-iBGP peer group
+   neighbor ISILON-DCI-iBGP remote-as 65304
+   neighbor ISILON-DCI-iBGP update-source Vlan1725
+   neighbor ISILON-DCI-iBGP ebgp-multihop 2
+   neighbor ISILON-DCI-iBGP maximum-routes 12000
+   neighbor JUMP-SERVER-DCI-eBGP peer group
+   neighbor JUMP-SERVER-DCI-eBGP remote-as 65314
+   neighbor JUMP-SERVER-DCI-eBGP update-source Vlan1723
+   neighbor JUMP-SERVER-DCI-eBGP ebgp-multihop 2
+   neighbor JUMP-SERVER-DCI-eBGP maximum-routes 12000
+   neighbor JUMP-SERVER-DCI-iBGP peer group
+   neighbor JUMP-SERVER-DCI-iBGP remote-as 65304
+   neighbor JUMP-SERVER-DCI-iBGP update-source Vlan1723
+   neighbor JUMP-SERVER-DCI-iBGP ebgp-multihop 2
+   neighbor JUMP-SERVER-DCI-iBGP maximum-routes 12000
+   neighbor MCAFEE-DCI-eBGP peer group
+   neighbor MCAFEE-DCI-eBGP remote-as 65314
+   neighbor MCAFEE-DCI-eBGP update-source Vlan3327
+   neighbor MCAFEE-DCI-eBGP ebgp-multihop 2
+   neighbor MCAFEE-DCI-eBGP maximum-routes 12000
+   neighbor MCAFEE-DCI-iBGP peer group
+   neighbor MCAFEE-DCI-iBGP remote-as 65304
+   neighbor MCAFEE-DCI-iBGP update-source Vlan3327
+   neighbor MCAFEE-DCI-iBGP ebgp-multihop 2
+   neighbor MCAFEE-DCI-iBGP maximum-routes 12000
+   neighbor MLAG-iBGP peer group
+   neighbor MLAG-iBGP remote-as 65304
+   neighbor MLAG-iBGP next-hop-self
+   neighbor MLAG-iBGP update-source Vlan2000
+   neighbor MLAG-iBGP send-community standard extended
+   neighbor MLAG-iBGP maximum-routes 12000
+   neighbor MPLS-DCI-eBGP peer group
+   neighbor MPLS-DCI-eBGP remote-as 65314
+   neighbor MPLS-DCI-eBGP update-source Vlan1618
+   neighbor MPLS-DCI-eBGP ebgp-multihop
+   neighbor MPLS-DCI-eBGP send-community standard extended
+   neighbor MPLS-DCI-eBGP maximum-routes 12000
+   neighbor MPLS-eBGP peer group
+   neighbor MPLS-eBGP remote-as 65000
+   neighbor MPLS-eBGP update-source Vlan1635
+   neighbor MPLS-eBGP ebgp-multihop
+   neighbor MPLS-eBGP send-community standard extended
+   neighbor MPLS-eBGP maximum-routes 12000
+   neighbor MPLS-iBGP peer group
+   neighbor MPLS-iBGP remote-as 65304
+   neighbor MPLS-iBGP next-hop-self
+   neighbor MPLS-iBGP update-source Vlan1637
+   neighbor MPLS-iBGP send-community standard extended
+   neighbor MPLS-iBGP maximum-routes 12000
+   neighbor NSXT-GOLD-CL01 peer group
+   neighbor NSXT-GOLD-CL01 remote-as 64700
+   neighbor NSXT-GOLD-CL01 update-source Vlan1677
+   neighbor NSXT-GOLD-CL01 bfd
+   neighbor NSXT-GOLD-CL01 ebgp-multihop 2
+   neighbor NSXT-GOLD-CL01 route-map NSXT-GOLD-CL01-OUT out
+   neighbor NSXT-GOLD-CL01 maximum-routes 12000
+   neighbor NSXT-GOLD-CL02 peer group
+   neighbor NSXT-GOLD-CL02 remote-as 64707
+   neighbor NSXT-GOLD-CL02 update-source Vlan1679
+   neighbor NSXT-GOLD-CL02 ebgp-multihop 2
+   neighbor NSXT-GOLD-CL02 route-map NSXT-GOLD-CL02-OUT out
+   neighbor NSXT-GOLD-CL02 maximum-routes 12000
+   neighbor NSXT-SILV peer group
+   neighbor NSXT-SILV remote-as 64704
+   neighbor NSXT-SILV update-source Vlan1681
+   neighbor NSXT-SILV bfd
+   neighbor NSXT-SILV ebgp-multihop 2
+   neighbor NSXT-SILV route-map NSXT-SILV-OUT out
+   neighbor NSXT-SILV maximum-routes 12000
+   neighbor NSXT-STRETCHED-eBGP peer group
+   neighbor NSXT-STRETCHED-eBGP remote-as 65314
+   neighbor NSXT-STRETCHED-eBGP update-source Vlan3317
+   neighbor NSXT-STRETCHED-eBGP ebgp-multihop 2
+   neighbor NSXT-STRETCHED-eBGP maximum-routes 12000
+   neighbor NSXT-STRETCHED-iBGP peer group
+   neighbor NSXT-STRETCHED-iBGP remote-as 65304
+   neighbor NSXT-STRETCHED-iBGP update-source Vlan3317
+   neighbor NSXT-STRETCHED-iBGP ebgp-multihop 2
+   neighbor NSXT-STRETCHED-iBGP maximum-routes 12000
+   neighbor PHYSICAL_SERVER-DCI-eBGP peer group
+   neighbor PHYSICAL_SERVER-DCI-eBGP remote-as 65314
+   neighbor PHYSICAL_SERVER-DCI-eBGP update-source Vlan3315
+   neighbor PHYSICAL_SERVER-DCI-eBGP ebgp-multihop 2
+   neighbor PHYSICAL_SERVER-DCI-eBGP maximum-routes 12000
+   neighbor PHYSICAL_SERVER-DCI-iBGP peer group
+   neighbor PHYSICAL_SERVER-DCI-iBGP remote-as 65304
+   neighbor PHYSICAL_SERVER-DCI-iBGP update-source Vlan3315
+   neighbor PHYSICAL_SERVER-DCI-iBGP ebgp-multihop 2
+   neighbor PHYSICAL_SERVER-DCI-iBGP maximum-routes 12000
+   neighbor REPLICATION_DCI_eBGP peer group
+   neighbor REPLICATION_DCI_eBGP remote-as 65314
+   neighbor REPLICATION_DCI_eBGP update-source Vlan1623
+   neighbor REPLICATION_DCI_eBGP ebgp-multihop
+   neighbor REPLICATION_DCI_eBGP maximum-routes 12000
+   neighbor REPLICATION_DC_iBGP peer group
+   neighbor REPLICATION_DC_iBGP remote-as 65304
+   neighbor REPLICATION_DC_iBGP next-hop-self
+   neighbor REPLICATION_DC_iBGP update-source Vlan1623
+   neighbor REPLICATION_DC_iBGP maximum-routes 12000
+   neighbor SDWAN-LAN-eBGP peer group
+   neighbor SDWAN-LAN-eBGP remote-as 64904
+   neighbor SDWAN-LAN-eBGP send-community standard extended
+   neighbor SDWAN-LAN-eBGP maximum-routes 12000
+   neighbor SNOW-DCI-eBGP peer group
+   neighbor SNOW-DCI-eBGP remote-as 65314
+   neighbor SNOW-DCI-eBGP update-source Vlan1721
+   neighbor SNOW-DCI-eBGP ebgp-multihop 2
+   neighbor SNOW-DCI-eBGP maximum-routes 12000
+   neighbor SNOW-DCI-iBGP peer group
+   neighbor SNOW-DCI-iBGP remote-as 65304
+   neighbor SNOW-DCI-iBGP update-source Vlan1721
+   neighbor SNOW-DCI-iBGP ebgp-multihop 2
+   neighbor SNOW-DCI-iBGP maximum-routes 12000
+   neighbor SPINE peer group
+   neighbor SPINE remote-as 65301
+   neighbor SPINE send-community standard extended
+   neighbor SPINE maximum-routes 12000
+   neighbor XMS_CVP-DCI-eBGP peer group
+   neighbor XMS_CVP-DCI-eBGP remote-as 65314
+   neighbor XMS_CVP-DCI-eBGP update-source Vlan3325
+   neighbor XMS_CVP-DCI-eBGP ebgp-multihop 2
+   neighbor XMS_CVP-DCI-eBGP maximum-routes 12000
+   neighbor XMS_CVP-DCI-iBGP peer group
+   neighbor XMS_CVP-DCI-iBGP remote-as 65304
+   neighbor XMS_CVP-DCI-iBGP update-source Vlan3325
+   neighbor XMS_CVP-DCI-iBGP ebgp-multihop 2
+   neighbor XMS_CVP-DCI-iBGP maximum-routes 12000
+   neighbor 10.23.2.15 peer group MLAG-iBGP
+   neighbor 10.23.2.163 peer group DCI
+   neighbor 10.23.3.38 peer group SPINE
+   neighbor 10.23.3.68 peer group SPINE
+   redistribute connected route-map underlay
+   !
+   vrf CITRIX
+      maximum-paths 4 ecmp 4
+      neighbor 10.23.22.83 peer group CITRIX-DCI-eBGP
+      neighbor 10.23.22.84 peer group CITRIX-DCI-eBGP
+      redistribute connected
+   !
+   vrf CITRIX1
+      neighbor 10.23.29.11 peer group CITRIX1-DCI-eBGP
+      neighbor 10.23.29.12 peer group CITRIX1-DCI-eBGP
+      redistribute connected
+      redistribute static
+   !
+   vrf DMZ
+      neighbor 10.23.19.99 peer group DMZ-DCI-eBGP
+      neighbor 10.23.19.100 peer group DMZ-DCI-eBGP
+      redistribute static
+   !
+   vrf DMZ_INFRA_NSX
+      maximum-paths 4 ecmp 4
+      neighbor 10.23.9.132 peer group DMZ_NSXT-GOLD-CL01
+      neighbor 10.23.9.133 peer group DMZ_NSXT-GOLD-CL01
+      neighbor 10.23.9.148 peer group DMZ_NSXT-GOLD-CL02
+      neighbor 10.23.9.149 peer group DMZ_NSXT-GOLD-CL02
+      neighbor 10.23.9.163 peer group DMZ_NSXT-SILV
+      neighbor 10.23.9.164 peer group DMZ_NSXT-SILV
+      neighbor 10.23.19.83 peer group DMZ_NSXT-STRETCHED-eBGP
+      neighbor 10.23.19.84 peer group DMZ_NSXT-STRETCHED-eBGP
+      redistribute connected
+      redistribute static
+   !
+   vrf INFOBLOX
+      neighbor 10.23.19.19 peer group INFOBLOX-DCI-eBGP
+      neighbor 10.23.19.20 peer group INFOBLOX-DCI-eBGP
+      redistribute static
+   !
+   vrf INFRA_Mgmt
+      neighbor 10.23.2.131 peer group INFRA_Mgmt-DCI-eBGP
+      neighbor 10.23.2.132 peer group INFRA_Mgmt-DCI-eBGP
+      redistribute connected
+      redistribute static
+   !
+   vrf INFRA_NSX
+      maximum-paths 4 ecmp 4
+      neighbor 10.23.4.132 peer group NSXT-GOLD-CL01
+      neighbor 10.23.4.133 peer group NSXT-GOLD-CL01
+      neighbor 10.23.4.148 peer group NSXT-GOLD-CL02
+      neighbor 10.23.4.149 peer group NSXT-GOLD-CL02
+      neighbor 10.23.4.163 peer group NSXT-SILV
+      neighbor 10.23.4.164 peer group NSXT-SILV
+      neighbor 10.23.19.51 peer group NSXT-STRETCHED-eBGP
+      neighbor 10.23.19.52 peer group NSXT-STRETCHED-eBGP
+      redistribute connected
+      redistribute static
+   !
+   vrf INFRA_Std
+      neighbor 10.23.2.171 peer group INFRA-Std-DCI-eBGP
+      neighbor 10.23.2.172 peer group INFRA-Std-DCI-eBGP
+      redistribute connected
+      redistribute static
+   !
+   vrf INTERNAL
+      maximum-paths 4 ecmp 4
+      neighbor 10.23.2.123 peer group INTERNAL-DCI-eBGP
+      neighbor 10.23.2.124 peer group INTERNAL-DCI-eBGP
+      redistribute connected
+   !
+   vrf INTERNAL_Std
+      neighbor 10.23.2.155 peer group INTERNAL-Std-DCI-eBGP
+      neighbor 10.23.2.156 peer group INTERNAL-Std-DCI-eBGP
+      redistribute static
+   !
+   vrf INTERNET
+      neighbor 4.71.102.21 peer group INTERNET-eBGP
+      neighbor 4.71.102.21 local-as 10753 no-prepend replace-as
+      neighbor 141.81.180.194 peer group INTERNET-iBGP
+      redistribute static
+   !
+   vrf ISILON
+      maximum-paths 4 ecmp 4
+      neighbor 10.23.22.66 peer group ISILON-DCI-iBGP
+      neighbor 10.23.22.67 peer group ISILON-DCI-eBGP
+      neighbor 10.23.22.68 peer group ISILON-DCI-eBGP
+      redistribute connected
+      redistribute static
+   !
+   vrf Jump_Server
+      maximum-paths 4 ecmp 4
+      neighbor 10.23.22.51 peer group JUMP-SERVER-DCI-eBGP
+      neighbor 10.23.22.52 peer group JUMP-SERVER-DCI-eBGP
+      redistribute connected
+   !
+   vrf MCAFEE
+      neighbor 10.23.19.131 peer group MCAFEE-DCI-eBGP
+      neighbor 10.23.19.132 peer group MCAFEE-DCI-eBGP
+      redistribute static
+   !
+   vrf MPLS-AA
+      neighbor 10.23.2.147 peer group MPLS-DCI-eBGP
+      neighbor 10.23.2.242 peer group MPLS-eBGP
+      neighbor 10.23.2.249 peer group MPLS-iBGP
+      neighbor 10.23.70.34 peer group SDWAN-LAN-eBGP
+      redistribute static
+   !
+   vrf PHYSICAL_SERVER
+      neighbor 10.23.19.35 peer group PHYSICAL_SERVER-DCI-eBGP
+      neighbor 10.23.19.36 peer group PHYSICAL_SERVER-DCI-eBGP
+      redistribute static
+   !
+   vrf REPLICATION
+      neighbor 10.23.2.186 peer group REPLICATION_DC_iBGP
+      neighbor 10.23.2.187 peer group REPLICATION_DCI_eBGP
+      redistribute connected
+   !
+   vrf Service_Now
+      maximum-paths 4 ecmp 4
+      neighbor 10.23.22.35 peer group SNOW-DCI-eBGP
+      neighbor 10.23.22.36 peer group SNOW-DCI-eBGP
+      redistribute connected
+   !
+   vrf XMS_CVP
+      neighbor 10.23.19.115 peer group XMS_CVP-DCI-eBGP
+      neighbor 10.23.19.116 peer group XMS_CVP-DCI-eBGP
+      redistribute static
+!
+ip tacacs vrf mgmt source-interface Management1
+!
+management api http-commands
+   protocol unix-socket
+   no shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+management ssh
+   ip access-group ALLOW_SSH_ACL vrf mgmt in
+   idle-timeout 10
+   authentication mode password
+   shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+end

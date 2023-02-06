@@ -1,0 +1,6326 @@
+servers:
+  DEMEESDB0248-1-DEMEENSD103_DEMEENSD104-Port-Channel1:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB0248-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet1
+      - Ethernet1
+      switch_ports:
+      - Ethernet1
+      - Ethernet1
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1540'
+  DEMEESDB0248-1-DEMEENSD103_DEMEENSD104-Port-Channel2:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB0248-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet2
+      - Ethernet4
+      switch_ports:
+      - Ethernet2
+      - Ethernet4
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543'
+  DEMEESDB0218-1 PowerEdge R840 SN: G6VP2T2-DEMEENSD103_DEMEENSD104-Port-Channel5:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB0218-1 PowerEdge R840 SN: G6VP2T2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet5
+      - Ethernet6
+      switch_ports:
+      - Ethernet5
+      - Ethernet6
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1540'
+  DEMEESDB0218-1 PowerEdge R840 SN: G6VP2T2-DEMEENSD103_DEMEENSD104-Port-Channel6:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB0218-1 PowerEdge R840 SN: G6VP2T2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet6
+      - Ethernet5
+      switch_ports:
+      - Ethernet6
+      - Ethernet5
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543'
+  DEMEESDB0218-3 PowerEdge R840 SN: 2WSHFV2-DEMEENSD103_DEMEENSD104-Port-Channel7:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB0218-3 PowerEdge R840 SN: 2WSHFV2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet7
+      - Ethernet8
+      switch_ports:
+      - Ethernet7
+      - Ethernet8
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543'
+  DEMEESDB0218-3 PowerEdge R840 SN: 2WSHFV2-DEMEENSD103_DEMEENSD104-Port-Channel8:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB0218-3 PowerEdge R840 SN: 2WSHFV2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet8
+      - Ethernet7
+      switch_ports:
+      - Ethernet8
+      - Ethernet7
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1540'
+  demeesdb0057-DEMEENSD103_DEMEENSD104-Port-Channel9:
+    adapters:
+    - mode: access
+      port_channel:
+        description: demeesdb0057
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet9
+      - Ethernet9
+      switch_ports:
+      - Ethernet9
+      - Ethernet9
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1540'
+  demeesdb0057-DEMEENSD103_DEMEENSD104-Port-Channel10:
+    adapters:
+    - mode: access
+      port_channel:
+        description: demeesdb0057
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet10
+      - Ethernet10
+      switch_ports:
+      - Ethernet10
+      - Ethernet10
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543'
+  DEMEESDB2230-1 Windows Server-DEMEENSD103_DEMEENSD104-Port-Channel110:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2230-1 Windows Server
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet11
+      - Ethernet11
+      switch_ports:
+      - Ethernet11
+      - Ethernet11
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1540'
+  DEMEESDB2230-1 Windows Server-DEMEENSD103_DEMEENSD104-Port-Channel112:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2230-1 Windows Server
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet12
+      - Ethernet12
+      switch_ports:
+      - Ethernet12
+      - Ethernet12
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543'
+  Physical_servers1-DEMEENSD103_DEMEENSD104-Port-Channel120:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Physical_servers1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet21
+      - Ethernet21
+      switch_ports:
+      - Ethernet21
+      - Ethernet21
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1540'
+  Physical_servers1-DEMEENSD103_DEMEENSD104-Port-Channel122:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Physical_servers1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet22
+      - Ethernet22
+      switch_ports:
+      - Ethernet22
+      - Ethernet22
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543'
+  DEDUSSDB2230-2 Windows Server-DEMEENSD103_DEMEENSD104-Port-Channel130:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEDUSSDB2230-2 Windows Server
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet13
+      - Ethernet13
+      switch_ports:
+      - Ethernet13
+      - Ethernet13
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1540'
+  DEDUSSDB2230-2 Windows Server-DEMEENSD103_DEMEENSD104-Port-Channel140:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEDUSSDB2230-2 Windows Server
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet14
+      - Ethernet14
+      switch_ports:
+      - Ethernet14
+      - Ethernet14
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543'
+  Windows Server DEMEESDB2228-DEMEENSD103_DEMEENSD104-Port-Channel170:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Windows Server DEMEESDB2228
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet17
+      - Ethernet17
+      switch_ports:
+      - Ethernet17
+      - Ethernet17
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1540'
+  DEMEESPHXL1ID02-DEMEENSD103_DEMEENSD104-Port-Channel171:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DEMEESPHXL1ID02
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet19
+      - Ethernet19
+      switch_ports:
+      - Ethernet19
+      - Ethernet19
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1540'
+  Windows Server DEMEESDB2228-DEMEENSD103_DEMEENSD104-Port-Channel180:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Windows Server DEMEESDB2228
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet18
+      - Ethernet18
+      switch_ports:
+      - Ethernet18
+      - Ethernet18
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543'
+  DEMEESPHXL1ID02-DEMEENSD103_DEMEENSD104-Port-Channel181:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DEMEESPHXL1ID02
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet20
+      - Ethernet20
+      switch_ports:
+      - Ethernet20
+      - Ethernet20
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543,1561,1562,1565,1566,1571,1563'
+  MDC Location - Windows Spare 1(D9MTB73)-DEMEENSD103-Port-Channel230:
+    adapters:
+    - mode: access
+      port_channel:
+        description: MDC Location - Windows Spare 1(D9MTB73)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet23
+      switch_ports:
+      - Ethernet23
+      switches:
+      - DEMEENSD103
+      vlans: '1540'
+  MDC Location - Windows Spare 1(D9MTB73)-DEMEENSD103_DEMEENSD104-Port-Channel240:
+    adapters:
+    - mode: access
+      port_channel:
+        description: MDC Location - Windows Spare 1(D9MTB73)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet24
+      - Ethernet24
+      switch_ports:
+      - Ethernet24
+      - Ethernet24
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543'
+  MDC Location -Windows Spare 2(F9MTB73)-DEMEENSD103_DEMEENSD104-Port-Channel250:
+    adapters:
+    - mode: access
+      port_channel:
+        description: MDC Location -Windows Spare 2(F9MTB73)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet25
+      - Ethernet25
+      switch_ports:
+      - Ethernet25
+      - Ethernet25
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1540'
+  MDC Location -Windows Spare 2(F9MTB73)-DEMEENSD103_DEMEENSD104-Port-Channel260:
+    adapters:
+    - mode: access
+      port_channel:
+        description: MDC Location -Windows Spare 2(F9MTB73)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet26
+      - Ethernet26
+      switch_ports:
+      - Ethernet26
+      - Ethernet26
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543'
+  MDC Location - Windows Spare 3(79MTB73)-DEMEENSD103_DEMEENSD104-Port-Channel270:
+    adapters:
+    - mode: access
+      port_channel:
+        description: MDC Location - Windows Spare 3(79MTB73)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet27
+      - Ethernet27
+      switch_ports:
+      - Ethernet27
+      - Ethernet27
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1540'
+  MDC Location - Windows Spare 3(79MTB73)-DEMEENSD103_DEMEENSD104-Port-Channel280:
+    adapters:
+    - mode: access
+      port_channel:
+        description: MDC Location - Windows Spare 3(79MTB73)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet28
+      - Ethernet28
+      switch_ports:
+      - Ethernet28
+      - Ethernet28
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543'
+  MDC Location - Windows Spare 4(G9MTB73)-DEMEENSD103_DEMEENSD104-Port-Channel290:
+    adapters:
+    - mode: access
+      port_channel:
+        description: MDC Location - Windows Spare 4(G9MTB73)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet29
+      - Ethernet29
+      switch_ports:
+      - Ethernet29
+      - Ethernet29
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1540'
+  MDC Location - Windows Spare 4(G9MTB73)-DEMEENSD103_DEMEENSD104-Port-Channel300:
+    adapters:
+    - mode: access
+      port_channel:
+        description: MDC Location - Windows Spare 4(G9MTB73)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet30
+      - Ethernet30
+      switch_ports:
+      - Ethernet30
+      - Ethernet30
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543'
+  MDC Location - Windows Spare 5(89MTB73)-DEMEENSD103_DEMEENSD104-Port-Channel310:
+    adapters:
+    - mode: access
+      port_channel:
+        description: MDC Location - Windows Spare 5(89MTB73)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet31
+      - Ethernet31
+      switch_ports:
+      - Ethernet31
+      - Ethernet31
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1540'
+  MDC Location - Windows Spare 5(89MTB73)-DEMEENSD103_DEMEENSD104-Port-Channel320:
+    adapters:
+    - mode: access
+      port_channel:
+        description: MDC Location - Windows Spare 5(89MTB73)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet32
+      - Ethernet32
+      switch_ports:
+      - Ethernet32
+      - Ethernet32
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543'
+  MDC Location - Windows Spare 6(C9MTB73)-DEMEENSD103_DEMEENSD104-Port-Channel330:
+    adapters:
+    - mode: access
+      port_channel:
+        description: MDC Location - Windows Spare 6(C9MTB73)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet33
+      - Ethernet33
+      switch_ports:
+      - Ethernet33
+      - Ethernet33
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1540'
+  MDC Location - Windows Spare 6(C9MTB73)-DEMEENSD103_DEMEENSD104-Port-Channel340:
+    adapters:
+    - mode: access
+      port_channel:
+        description: MDC Location - Windows Spare 6(C9MTB73)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet34
+      - Ethernet34
+      switch_ports:
+      - Ethernet34
+      - Ethernet34
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543'
+  MDC Location - Windows Spare 7(B9MTB73)-DEMEENSD103_DEMEENSD104-Port-Channel350:
+    adapters:
+    - mode: access
+      port_channel:
+        description: MDC Location - Windows Spare 7(B9MTB73)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet35
+      - Ethernet35
+      switch_ports:
+      - Ethernet35
+      - Ethernet35
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1540'
+  MDC Location - Windows Spare 7(B9MTB73)-DEMEENSD103_DEMEENSD104-Port-Channel360:
+    adapters:
+    - mode: access
+      port_channel:
+        description: MDC Location - Windows Spare 7(B9MTB73)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet36
+      - Ethernet36
+      switch_ports:
+      - Ethernet36
+      - Ethernet36
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543'
+  Windows Spare 8(99MTB73)-DEMEENSD103_DEMEENSD104-Port-Channel370:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Windows Spare 8(99MTB73)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet37
+      - Ethernet37
+      switch_ports:
+      - Ethernet37
+      - Ethernet37
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1540'
+  Windows Spare 8(99MTB73)-DEMEENSD103_DEMEENSD104-Port-Channel380:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Windows Spare 8(99MTB73)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet38
+      - Ethernet38
+      switch_ports:
+      - Ethernet38
+      - Ethernet38
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1543'
+  DEMEESPHV2001_CITRIX-DEMEENSD103_DEMEENSD104-Port-Channel1140:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESPHV2001_CITRIX
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet40
+      - Ethernet43
+      switch_ports:
+      - Ethernet40
+      - Ethernet43
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1560'
+  DEMEESPHV2002_citrix-DEMEENSD103_DEMEENSD104-Port-Channel1141:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESPHV2002_citrix
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet41
+      - Ethernet44
+      switch_ports:
+      - Ethernet41
+      - Ethernet44
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1560'
+  DEMEESPHV2003_citrix-DEMEENSD103_DEMEENSD104-Port-Channel1142:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESPHV2003_citrix
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet42
+      - Ethernet45
+      switch_ports:
+      - Ethernet42
+      - Ethernet45
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1560'
+  DEMEESPHV2001_CITRIX-DEMEENSD103_DEMEENSD104-Port-Channel1143:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DEMEESPHV2001_CITRIX
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet43
+      - Ethernet40
+      switch_ports:
+      - Ethernet43
+      - Ethernet40
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1561,1562,1565,1566,1571,1563'
+  DEMEESPHV2002_citrix-DEMEENSD103_DEMEENSD104-Port-Channel1144:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DEMEESPHV2002_citrix
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet44
+      - Ethernet41
+      switch_ports:
+      - Ethernet44
+      - Ethernet41
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1561,1562,1565,1566,1571,1563'
+  DEMEESPHV2003_citrix-DEMEENSD103_DEMEENSD104-Port-Channel1145:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DEMEESPHV2003_citrix
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet45
+      - Ethernet42
+      switch_ports:
+      - Ethernet45
+      - Ethernet42
+      switches:
+      - DEMEENSD103
+      - DEMEENSD104
+      vlans: '1561,1562,1565,1566,1571,1563'
+  DEMEESPHV2011#GRT6WC3#TASK0105789-DEMEENSD105_DEMEENSD106-Port-Channel10:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESPHV2011#GRT6WC3#TASK0105789
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet1
+      - Ethernet1
+      switch_ports:
+      - Ethernet1
+      - Ethernet1
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1560'
+  DEMEESPHV2011#GRT6WC3#TASK0105789-DEMEENSD105_DEMEENSD106-Port-Channel20:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DEMEESPHV2011#GRT6WC3#TASK0105789
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet2
+      - Ethernet2
+      switch_ports:
+      - Ethernet2
+      - Ethernet2
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1561,1562,1565,1566,1571'
+  DEMEESPHV2012#1ST6WC3#TASK0105789-DEMEENSD105_DEMEENSD106-Port-Channel30:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESPHV2012#1ST6WC3#TASK0105789
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet3
+      - Ethernet3
+      switch_ports:
+      - Ethernet3
+      - Ethernet3
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1560'
+  DEMEESPHV2012#1ST6WC3#TASK0105789-DEMEENSD105_DEMEENSD106-Port-Channel40:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DEMEESPHV2012#1ST6WC3#TASK0105789
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet4
+      - Ethernet4
+      switch_ports:
+      - Ethernet4
+      - Ethernet4
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1561,1562,1565,1566,1571'
+  ### UNUSED ###-DEMEENSD105_DEMEENSD106-Port-Channel50:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ### UNUSED ###
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet5
+      - Ethernet5
+      switch_ports:
+      - Ethernet5
+      - Ethernet5
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1542,1709,1710'
+  ### UNUSED ###-DEMEENSD105_DEMEENSD106-Port-Channel60:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ### UNUSED ###
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet6
+      - Ethernet6
+      switch_ports:
+      - Ethernet6
+      - Ethernet6
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1542,1709,1710'
+  ### UNUSED ###-DEMEENSD105_DEMEENSD106-Port-Channel70:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ### UNUSED ###
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet7
+      - Ethernet7
+      switch_ports:
+      - Ethernet7
+      - Ethernet7
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1542,1709,1710'
+  ### UNUSED ###-DEMEENSD105_DEMEENSD106-Port-Channel80:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ### UNUSED ###
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet8
+      - Ethernet8
+      switch_ports:
+      - Ethernet8
+      - Ethernet8
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1542,1709,1710'
+  ### UNUSED ###-DEMEENSD105_DEMEENSD106-Port-Channel90:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ### UNUSED ###
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet9
+      - Ethernet9
+      switch_ports:
+      - Ethernet9
+      - Ethernet9
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1542,1709,1710'
+  ### UNUSED ###-DEMEENSD105_DEMEENSD106-Port-Channel100:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ### UNUSED ###
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet10
+      - Ethernet10
+      switch_ports:
+      - Ethernet10
+      - Ethernet10
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1542,1709,1710'
+  ### UNUSED ###-DEMEENSD105_DEMEENSD106-Port-Channel110:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ### UNUSED ###
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet11
+      - Ethernet11
+      switch_ports:
+      - Ethernet11
+      - Ethernet11
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1542,1709,1710'
+  ### UNUSED ###-DEMEENSD105_DEMEENSD106-Port-Channel120:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ### UNUSED ###
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet12
+      - Ethernet12
+      switch_ports:
+      - Ethernet12
+      - Ethernet12
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1542,1709,1710'
+  DEMEESDB2235-1-DEMEENSD105_DEMEENSD106-Port-Channel130:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2235-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet13
+      - Ethernet13
+      switch_ports:
+      - Ethernet13
+      - Ethernet13
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1540'
+  DEMEESDB2235-1-DEMEENSD105_DEMEENSD106-Port-Channel140:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2235-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet14
+      - Ethernet14
+      switch_ports:
+      - Ethernet14
+      - Ethernet14
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1543'
+  Windows Spare 25#J3XB1D3#RITM0413807-DEMEENSD105_DEMEENSD106-Port-Channel150:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Windows Spare 25#J3XB1D3#RITM0413807
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet15
+      - Ethernet15
+      switch_ports:
+      - Ethernet15
+      - Ethernet15
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1540'
+  Windows Spare 25#J3XB1D3#RITM0413807-DEMEENSD105_DEMEENSD106-Port-Channel160:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Windows Spare 25#J3XB1D3#RITM0413807
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet16
+      - Ethernet16
+      switch_ports:
+      - Ethernet16
+      - Ethernet16
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1543'
+  DEMEESAP2234-DEMEENSD105_DEMEENSD106-Port-Channel170:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESAP2234
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet17
+      - Ethernet17
+      switch_ports:
+      - Ethernet17
+      - Ethernet17
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1540'
+  DEMEESAP2234-DEMEENSD105_DEMEENSD106-Port-Channel180:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESAP2234
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet18
+      - Ethernet18
+      switch_ports:
+      - Ethernet18
+      - Ethernet18
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1543'
+  DEMEESAP2235#14XB1D3-DEMEENSD105_DEMEENSD106-Port-Channel190:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESAP2235#14XB1D3
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet19
+      - Ethernet19
+      switch_ports:
+      - Ethernet19
+      - Ethernet19
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1540'
+  DEMEESAP2235#14XB1D3-DEMEENSD105_DEMEENSD106-Port-Channel200:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESAP2235#14XB1D3
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet20
+      - Ethernet20
+      switch_ports:
+      - Ethernet20
+      - Ethernet20
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1543'
+  DEMEESPHV2013-DEMEENSD105_DEMEENSD106-Port-Channel210:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESPHV2013
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet21
+      - Ethernet21
+      switch_ports:
+      - Ethernet21
+      - Ethernet21
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1560'
+  DEMEESPHV2013-DEMEENSD105_DEMEENSD106-Port-Channel220:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DEMEESPHV2013
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet22
+      - Ethernet22
+      switch_ports:
+      - Ethernet22
+      - Ethernet22
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1561,1562,1565,1566,1571'
+  DEMEESPHV2014-DEMEENSD105_DEMEENSD106-Port-Channel230:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESPHV2014
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet23
+      - Ethernet23
+      switch_ports:
+      - Ethernet23
+      - Ethernet23
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1560'
+  ### UNUSED ###-DEMEENSD105_DEMEENSD106-Port-Channel240:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ### UNUSED ###
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet24
+      - Ethernet24
+      switch_ports:
+      - Ethernet24
+      - Ethernet24
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1561,1562,1565,1566,1571'
+  DEMEESPHV2015-DEMEENSD105_DEMEENSD106-Port-Channel250:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESPHV2015
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet25
+      - Ethernet25
+      switch_ports:
+      - Ethernet25
+      - Ethernet25
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1560'
+  DEMEESPHV2015-DEMEENSD105_DEMEENSD106-Port-Channel260:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DEMEESPHV2015
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet26
+      - Ethernet26
+      switch_ports:
+      - Ethernet26
+      - Ethernet26
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1561,1562,1565,1566,1571'
+  DEMEESPHV2016-DEMEENSD105_DEMEENSD106-Port-Channel270:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESPHV2016
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet27
+      - Ethernet27
+      switch_ports:
+      - Ethernet27
+      - Ethernet27
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1560'
+  DEMEESPHV2016-DEMEENSD105_DEMEENSD106-Port-Channel280:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DEMEESPHV2016
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet28
+      - Ethernet28
+      switch_ports:
+      - Ethernet28
+      - Ethernet28
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1561,1562,1565,1566,1571'
+  F9MTB73 (RITM0422098/DEMEESEX2001)-DEMEENSD105_DEMEENSD106-Port-Channel320:
+    adapters:
+    - mode: access
+      port_channel:
+        description: F9MTB73 (RITM0422098/DEMEESEX2001)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet32
+      - Ethernet32
+      switch_ports:
+      - Ethernet32
+      - Ethernet32
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '182'
+  79MTB73 (RITM0422098/DEMEESEX2000)-DEMEENSD105_DEMEENSD106-Port-Channel330:
+    adapters:
+    - mode: access
+      port_channel:
+        description: 79MTB73 (RITM0422098/DEMEESEX2000)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet33
+      - Ethernet33
+      switch_ports:
+      - Ethernet33
+      - Ethernet33
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '182'
+  G9MTB73 (RITM0422098/DEMEESEX2002)-DEMEENSD105_DEMEENSD106-Port-Channel340:
+    adapters:
+    - mode: access
+      port_channel:
+        description: G9MTB73 (RITM0422098/DEMEESEX2002)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet34
+      - Ethernet34
+      switch_ports:
+      - Ethernet34
+      - Ethernet34
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '182'
+  DEMEESDB0224 - TASK0113016-DEMEENSD105_DEMEENSD106-Port-Channel350:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB0224 - TASK0113016
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet35
+      - Ethernet35
+      switch_ports:
+      - Ethernet35
+      - Ethernet35
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1540'
+  DEMEESDB0224 - TASK0113016-DEMEENSD105_DEMEENSD106-Port-Channel360:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB0224 - TASK0113016
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet36
+      - Ethernet36
+      switch_ports:
+      - Ethernet36
+      - Ethernet36
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1543'
+  DEMEESDB2237-1-DEMEENSD105_DEMEENSD106-Port-Channel370:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2237-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet37
+      - Ethernet37
+      switch_ports:
+      - Ethernet37
+      - Ethernet37
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1540'
+  DEMEESDB2237-1-DEMEENSD105_DEMEENSD106-Port-Channel380:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2237-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet38
+      - Ethernet38
+      switch_ports:
+      - Ethernet38
+      - Ethernet38
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1543'
+  DEMEESDB2237-1#TASK0137240-DEMEENSD105_DEMEENSD106-Port-Channel390:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2237-1#TASK0137240
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet39
+      - Ethernet39
+      switch_ports:
+      - Ethernet39
+      - Ethernet39
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1884'
+  DEMEESDB2237-1#TASK0137240-DEMEENSD105_DEMEENSD106-Port-Channel400:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2237-1#TASK0137240
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet40
+      - Ethernet40
+      switch_ports:
+      - Ethernet40
+      - Ethernet40
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1543'
+  DEMEESDB2229-1-DEMEENSD105_DEMEENSD106-Port-Channel440:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2229-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet44
+      - Ethernet44
+      switch_ports:
+      - Ethernet44
+      - Ethernet44
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1540'
+  DEMEESDB2229-2-DEMEENSD105_DEMEENSD106-Port-Channel450:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2229-2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet45
+      - Ethernet45
+      switch_ports:
+      - Ethernet45
+      - Ethernet45
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1543'
+  DEMEESDB2229-1-DEMEENSD105_DEMEENSD106-Port-Channel460:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2229-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet46
+      - Ethernet46
+      switch_ports:
+      - Ethernet46
+      - Ethernet46
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1540'
+  DEMEESDB2229-2-DEMEENSD105_DEMEENSD106-Port-Channel470:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2229-2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet47
+      - Ethernet47
+      switch_ports:
+      - Ethernet47
+      - Ethernet47
+      switches:
+      - DEMEENSD105
+      - DEMEENSD106
+      vlans: '1543'
+  PH_Medium_3QPYVB3#TASK0179537#DEMEESDB2257_RITM0541239-DEMEENSD107_DEMEENSD108-Port-Channel2:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_Medium_3QPYVB3#TASK0179537#DEMEESDB2257_RITM0541239
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet2
+      - Ethernet2
+      switch_ports:
+      - Ethernet2
+      - Ethernet2
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1540'
+  PH_Medium_3QPYVB3#TASK0179537#DEMEESDB2257_RITM0541239-DEMEENSD107_DEMEENSD108-Port-Channel3:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_Medium_3QPYVB3#TASK0179537#DEMEESDB2257_RITM0541239
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet3
+      - Ethernet3
+      switch_ports:
+      - Ethernet3
+      - Ethernet3
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  DEMEESDB0217-1#TASK0162043-DEMEENSD107_DEMEENSD108-Port-Channel37:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB0217-1#TASK0162043
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet37
+      - Ethernet37
+      switch_ports:
+      - Ethernet37
+      - Ethernet37
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1885'
+  DDEMEESDB0217-1#TASK0162043-DEMEENSD107_DEMEENSD108-Port-Channel38:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DDEMEESDB0217-1#TASK0162043
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet38
+      - Ethernet38
+      switch_ports:
+      - Ethernet38
+      - Ethernet38
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  DEMEESDB2233-1 #RITM0448550-DEMEENSD107_DEMEENSD108-Port-Channel70:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2233-1 #RITM0448550
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet7
+      - Ethernet7
+      switch_ports:
+      - Ethernet7
+      - Ethernet7
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1540'
+  DEMEESDB2233-1 #RITM0448550-DEMEENSD107_DEMEENSD108-Port-Channel80:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2233-1 #RITM0448550
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet8
+      - Ethernet8
+      switch_ports:
+      - Ethernet8
+      - Ethernet8
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  DEMEESAP2218 #RITM0448550-DEMEENSD107_DEMEENSD108-Port-Channel90:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESAP2218 #RITM0448550
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet9
+      - Ethernet9
+      switch_ports:
+      - Ethernet9
+      - Ethernet9
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1540'
+  DEMEESAP2218 #RITM0448550-DEMEENSD107_DEMEENSD108-Port-Channel100:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESAP2218 #RITM0448550
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet10
+      - Ethernet10
+      switch_ports:
+      - Ethernet10
+      - Ethernet10
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  DEMEESAP2219 #RITM0448550-DEMEENSD107_DEMEENSD108-Port-Channel110:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESAP2219 #RITM0448550
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet11
+      - Ethernet11
+      switch_ports:
+      - Ethernet11
+      - Ethernet11
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1540'
+  DEMEESAP2219 #RITM0448550-DEMEENSD107_DEMEENSD108-Port-Channel120:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESAP2219 #RITM0448550
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet12
+      - Ethernet12
+      switch_ports:
+      - Ethernet12
+      - Ethernet12
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  DEMEESAP2220 #RITM0448550-DEMEENSD107_DEMEENSD108-Port-Channel130:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESAP2220 #RITM0448550
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet13
+      - Ethernet13
+      switch_ports:
+      - Ethernet13
+      - Ethernet13
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1540'
+  DEMEESAP2220 #RITM0448550-DEMEENSD107_DEMEENSD108-Port-Channel140:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESAP2220 #RITM0448550
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet14
+      - Ethernet14
+      switch_ports:
+      - Ethernet14
+      - Ethernet14
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  DEMEESDB2234 #RITM0448550-DEMEENSD107_DEMEENSD108-Port-Channel150:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2234 #RITM0448550
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet15
+      - Ethernet15
+      switch_ports:
+      - Ethernet15
+      - Ethernet15
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1540'
+  DEMEESDB2234 #RITM0448550-DEMEENSD107_DEMEENSD108-Port-Channel160:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2234 #RITM0448550
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet16
+      - Ethernet16
+      switch_ports:
+      - Ethernet16
+      - Ethernet16
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  DEMEESDB0250 #RITM0448550-DEMEENSD107_DEMEENSD108-Port-Channel170:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB0250 #RITM0448550
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet17
+      - Ethernet17
+      switch_ports:
+      - Ethernet17
+      - Ethernet17
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1540'
+  DEMEESDB0250 #RITM0448550-DEMEENSD107_DEMEENSD108-Port-Channel180:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB0250 #RITM0448550
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet18
+      - Ethernet18
+      switch_ports:
+      - Ethernet18
+      - Ethernet18
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  DEMEESPHV2019-TASK0143001-DEMEENSD107_DEMEENSD108-Port-Channel190:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESPHV2019-TASK0143001
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet19
+      - Ethernet19
+      switch_ports:
+      - Ethernet19
+      - Ethernet19
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1560'
+  DEMEESPHV2019-TASK0143001-DEMEENSD107_DEMEENSD108-Port-Channel200:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DEMEESPHV2019-TASK0143001
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet20
+      - Ethernet20
+      switch_ports:
+      - Ethernet20
+      - Ethernet20
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+  DEMEESPHV2020-TASK0143001-DEMEENSD107_DEMEENSD108-Port-Channel210:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESPHV2020-TASK0143001
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet21
+      - Ethernet21
+      switch_ports:
+      - Ethernet21
+      - Ethernet21
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1560'
+  DEMEESPHV2020-TASK0143001-DEMEENSD107_DEMEENSD108-Port-Channel220:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DEMEESPHV2020-TASK0143001
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet22
+      - Ethernet22
+      switch_ports:
+      - Ethernet22
+      - Ethernet22
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+  PH_XL_91WFH73#RITM0454048-DEMEENSD107_DEMEENSD108-Port-Channel250:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_91WFH73#RITM0454048
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet25
+      - Ethernet25
+      switch_ports:
+      - Ethernet25
+      - Ethernet25
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1540'
+  PH_XL_91WFH73#RITM0454048-DEMEENSD107_DEMEENSD108-Port-Channel260:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_91WFH73#RITM0454048
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet26
+      - Ethernet26
+      switch_ports:
+      - Ethernet26
+      - Ethernet26
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  PH_XL_B1WFH73#RITM0454048-DEMEENSD107_DEMEENSD108-Port-Channel270:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_B1WFH73#RITM0454048
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet27
+      - Ethernet27
+      switch_ports:
+      - Ethernet27
+      - Ethernet27
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1540'
+  PH_XL_B1WFH73#RITM0454048-DEMEENSD107_DEMEENSD108-Port-Channel280:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_B1WFH73#RITM0454048
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet28
+      - Ethernet28
+      switch_ports:
+      - Ethernet28
+      - Ethernet28
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  PH_XL_81WFH73#RITM0454048-DEMEENSD107_DEMEENSD108-Port-Channel290:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_81WFH73#RITM0454048
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet29
+      - Ethernet29
+      switch_ports:
+      - Ethernet29
+      - Ethernet29
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1882'
+  PH_XL_81WFH73#RITM0454048-DEMEENSD107_DEMEENSD108-Port-Channel300:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_81WFH73#RITM0454048
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet30
+      - Ethernet30
+      switch_ports:
+      - Ethernet30
+      - Ethernet30
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  PH_XL_C1WFH73#RITM0454048-DEMEENSD107_DEMEENSD108-Port-Channel310:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_C1WFH73#RITM0454048
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet31
+      - Ethernet31
+      switch_ports:
+      - Ethernet31
+      - Ethernet31
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1540'
+  PH_XL_D1WFH73#RITM0454048-DEMEENSD107_DEMEENSD108-Port-Channel330:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_D1WFH73#RITM0454048
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet33
+      - Ethernet33
+      switch_ports:
+      - Ethernet33
+      - Ethernet33
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1540'
+  PH_XL_D1WFH73#RITM0454048-DEMEENSD107_DEMEENSD108-Port-Channel340:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_D1WFH73#RITM0454048
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet34
+      - Ethernet34
+      switch_ports:
+      - Ethernet34
+      - Ethernet34
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  PH_Medium_GPPYVB3 # RITM0454255-DEMEENSD107_DEMEENSD108-Port-Channel350:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_Medium_GPPYVB3 # RITM0454255
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet35
+      - Ethernet35
+      switch_ports:
+      - Ethernet35
+      - Ethernet35
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1540'
+  PH_Medium_GPPYVB3 # RITM0454255-DEMEENSD107_DEMEENSD108-Port-Channel360:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_Medium_GPPYVB3 # RITM0454255
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet36
+      - Ethernet36
+      switch_ports:
+      - Ethernet36
+      - Ethernet36
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  2WT8FV2 # TASK0166322-DEMEENSD107_DEMEENSD108-Port-Channel390:
+    adapters:
+    - mode: access
+      port_channel:
+        description: 2WT8FV2 # TASK0166322
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet39
+      - Ethernet39
+      switch_ports:
+      - Ethernet39
+      - Ethernet39
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1886'
+  2WT8FV2 # TASK0166322-DEMEENSD107_DEMEENSD108-Port-Channel400:
+    adapters:
+    - mode: access
+      port_channel:
+        description: 2WT8FV2 # TASK0166322
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet40
+      - Ethernet40
+      switch_ports:
+      - Ethernet40
+      - Ethernet40
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  FK6RNR2 # TASK0166322-DEMEENSD107_DEMEENSD108-Port-Channel410:
+    adapters:
+    - mode: access
+      port_channel:
+        description: FK6RNR2 # TASK0166322
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet41
+      - Ethernet41
+      switch_ports:
+      - Ethernet41
+      - Ethernet41
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1886'
+  FK6RNR2 # TASK0166322-DEMEENSD107_DEMEENSD108-Port-Channel420:
+    adapters:
+    - mode: access
+      port_channel:
+        description: FK6RNR2 # TASK0166322
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet42
+      - Ethernet42
+      switch_ports:
+      - Ethernet42
+      - Ethernet42
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  DEMEESDB0229-1_TASK0170226-DEMEENSD107_DEMEENSD108-Port-Channel430:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB0229-1_TASK0170226
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet43
+      - Ethernet43
+      switch_ports:
+      - Ethernet43
+      - Ethernet43
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1885'
+  DEMEESDB0229-1_TASK0170226-DEMEENSD107_DEMEENSD108-Port-Channel440:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB0229-1_TASK0170226
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet44
+      - Ethernet44
+      switch_ports:
+      - Ethernet44
+      - Ethernet44
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1543'
+  DEMEESDB2255 #TASK0157309-DEMEENSD107_DEMEENSD108-Port-Channel450:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2255 #TASK0157309
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet45
+      - Ethernet45
+      switch_ports:
+      - Ethernet45
+      - Ethernet45
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1540'
+  DEMEESDB2255 #TASK0157309-DEMEENSD107_DEMEENSD108-Port-Channel460:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB2255 #TASK0157309
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet46
+      - Ethernet46
+      switch_ports:
+      - Ethernet46
+      - Ethernet46
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  PH_Medium_6QPYVB3 # RITM0454255-DEMEENSD107_DEMEENSD108-Port-Channel470:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_Medium_6QPYVB3 # RITM0454255
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet47
+      - Ethernet47
+      switch_ports:
+      - Ethernet47
+      - Ethernet47
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1540'
+  PH_Medium_6QPYVB3 # RITM0454255-DEMEENSD107_DEMEENSD108-Port-Channel480:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_Medium_6QPYVB3 # RITM0454255
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet48
+      - Ethernet48
+      switch_ports:
+      - Ethernet48
+      - Ethernet48
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  DEMEESDB0221-1-DEMEENSD107_DEMEENSD108-Port-Channel490:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB0221-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet23
+      - Ethernet23
+      switch_ports:
+      - Ethernet23
+      - Ethernet23
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1540'
+  DEMEESDB0221-1-DEMEENSD107_DEMEENSD108-Port-Channel500:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESDB0221-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet24
+      - Ethernet24
+      switch_ports:
+      - Ethernet24
+      - Ethernet24
+      switches:
+      - DEMEENSD107
+      - DEMEENSD108
+      vlans: '1543'
+  DEMEESPHV2017#TASK0180740-DEMEENSD111_DEMEENSD112-Port-Channel450:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESPHV2017#TASK0180740
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet45
+      - Ethernet45
+      switch_ports:
+      - Ethernet45
+      - Ethernet45
+      switches:
+      - DEMEENSD111
+      - DEMEENSD112
+      vlans: '1560'
+  DEMEESPHV2017#TASK0180740-DEMEENSD111_DEMEENSD112-Port-Channel460:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DEMEESPHV2017#TASK0180740
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet46
+      - Ethernet46
+      switch_ports:
+      - Ethernet46
+      - Ethernet46
+      switches:
+      - DEMEENSD111
+      - DEMEENSD112
+  DEMEESPHV2018#TASK0180740-DEMEENSD111_DEMEENSD112-Port-Channel470:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DEMEESPHV2018#TASK0180740
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet47
+      - Ethernet47
+      switch_ports:
+      - Ethernet47
+      - Ethernet47
+      switches:
+      - DEMEENSD111
+      - DEMEENSD112
+      vlans: '1560'
+  DEMEESPHV2018#TASK0180740-DEMEENSD111_DEMEENSD112-Port-Channel480:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DEMEESPHV2018#TASK0180740
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet48
+      - Ethernet48
+      switch_ports:
+      - Ethernet48
+      - Ethernet48
+      switches:
+      - DEMEENSD111
+      - DEMEENSD112
+  PA-FW-1-DEMEENSE101_DEMEENSE102-Port-Channel51:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: PA-FW-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet1
+      - Ethernet2
+      - Ethernet1
+      - Ethernet2
+      switch_ports:
+      - Ethernet1
+      - Ethernet2
+      - Ethernet1
+      - Ethernet2
+      switches:
+      - DEMEENSE101
+      - DEMEENSE101
+      - DEMEENSE102
+      - DEMEENSE102
+      vlans: '1657,1726,1553,1560,1561,1562,1565,1566,1571,1728,3320,3322,1545,3518,3519,3318,3312,3316,710,1613,1724,1722,3326,3071,3070,3314,1626,1720,1625,1810,1820,1830,1840,1629,1644,1563,3324,3424'
+  PA-FW-2-DEMEENSE101_DEMEENSE102-Port-Channel52:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: PA-FW-2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet3
+      - Ethernet4
+      - Ethernet3
+      - Ethernet4
+      switch_ports:
+      - Ethernet3
+      - Ethernet4
+      - Ethernet3
+      - Ethernet4
+      switches:
+      - DEMEENSE101
+      - DEMEENSE101
+      - DEMEENSE102
+      - DEMEENSE102
+      vlans: '1657,1726,1553,1560,1561,1562,1565,1566,1571,1728,3320,3322,1545,3518,3519,3318,3312,3316,710,1613,1724,1722,3326,3071,3070,3314,1626,1720,1625,1810,1820,1830,1840,1629,1644,1563,3324,3424'
+  PA-FW-LOG-DEMEENSE101_DEMEENSE102-Port-Channel53:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: PA-FW-LOG
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet6
+      - Ethernet7
+      - Ethernet8
+      - Ethernet6
+      - Ethernet7
+      - Ethernet8
+      switch_ports:
+      - Ethernet6
+      - Ethernet7
+      - Ethernet8
+      - Ethernet6
+      - Ethernet7
+      - Ethernet8
+      switches:
+      - DEMEENSE101
+      - DEMEENSE101
+      - DEMEENSE102
+      - DEMEENSE102
+      vlans: '1550'
+  F5-iSeries-1-DEMEENSE101_DEMEENSE102-Port-Channel61:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: F5-iSeries-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet9
+      - Ethernet9
+      switch_ports:
+      - Ethernet9
+      - Ethernet9
+      switches:
+      - DEMEENSE101
+      - DEMEENSE102
+      vlans: '1656,1559,1652,3524,3525,3513,3514,3515,3516,3518,1554'
+  F5-iSeries-2-DEMEENSE101_DEMEENSE102-Port-Channel62:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: F5-iSeries-2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet10
+      - Ethernet10
+      switch_ports:
+      - Ethernet10
+      - Ethernet10
+      switches:
+      - DEMEENSE101
+      - DEMEENSE102
+      vlans: '1656,1559,1652,3524,3525,3513,3514,3515,3516,3518,1554'
+  F5-iSeries-1-DEMEENSE101_DEMEENSE102-Port-Channel63:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: F5-iSeries-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet29
+      - Ethernet29
+      switch_ports:
+      - Ethernet29
+      - Ethernet29
+      switches:
+      - DEMEENSE101
+      - DEMEENSE102
+      vlans: '1655,3518'
+  F5-iSeries-2-DEMEENSE101_DEMEENSE102-Port-Channel64:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: F5-iSeries-2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet30
+      - Ethernet30
+      switch_ports:
+      - Ethernet30
+      - Ethernet30
+      switches:
+      - DEMEENSE101
+      - DEMEENSE102
+      vlans: '1655,3518'
+  Citrix_NetScaler_GSLB-DEMEENSE101_DEMEENSE102-Port-Channel66:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: Citrix_NetScaler_GSLB
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet45
+      - Ethernet45
+      - Ethernet45
+      switch_ports:
+      - Ethernet45
+      - Ethernet45
+      - Ethernet45
+      switches:
+      - DEMEENSE101
+      - DEMEENSE101
+      - DEMEENSE102
+      - DEMEENSE102
+      vlans: '1553'
+  WLC1-DEMEENSE101_DEMEENSE102-Port-Channel145:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: WLC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet15
+      - Ethernet15
+      switch_ports:
+      - Ethernet15
+      - Ethernet15
+      switches:
+      - DEMEENSE101
+      - DEMEENSE102
+      vlans: '1802,1800,1810,1820,1830,1840,1629,1644'
+  WLC2-DEMEENSE101_DEMEENSE102-Port-Channel146:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: WLC2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet16
+      - Ethernet16
+      switch_ports:
+      - Ethernet16
+      - Ethernet16
+      switches:
+      - DEMEENSE101
+      - DEMEENSE102
+      vlans: '1802,1800,1810,1820,1830,1840,1629,1644'
+  DCAS03-DUS01 e104/1/18|iSeries|Po410-DEMEENSE101_DEMEENSE102-Port-Channel400:
+    adapters:
+    - mode: access
+      port_channel:
+        description: DCAS03-DUS01 e104/1/18|iSeries|Po410
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet40
+      - Ethernet40
+      switch_ports:
+      - Ethernet40
+      - Ethernet40
+      switches:
+      - DEMEENSE101
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1545'
+  DEMEENNSL002-DEMEENSE101_DEMEENSE102-Port-Channel410:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DEMEENNSL002
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet41
+      - Ethernet41
+      switch_ports:
+      - Ethernet41
+      - Ethernet41
+      switches:
+      - DEMEENSE101
+      - DEMEENSE102
+      vlans: '1553'
+  DEMEENNSL001-DEMEENSE101_DEMEENSE102-Port-Channel420:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DEMEENNSL001
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet42
+      - Ethernet42
+      switch_ports:
+      - Ethernet42
+      - Ethernet42
+      switches:
+      - DEMEENSE101
+      - DEMEENSE102
+      vlans: '1553'
+  DCI_CHANNEL-DEMEENSE101_DEMEENSE102-Port-Channel1020:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: DCI_CHANNEL
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet14
+      - Ethernet14
+      switch_ports:
+      - Ethernet14
+      - Ethernet14
+      switches:
+      - DEMEENSE101
+      - DEMEENSE102
+      vlans: '1550,710,182,130,334,101'
+  IBM_iSeries-DEMEENSD103-Port-Channel123:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: IBM_iSeries
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet48
+      switch_ports:
+      - Ethernet48
+      switches:
+      - DEMEENSD103
+      - DEMEENSD103
+      vlans: '1707,1706'
+  IBM_iSeries-DEMEENSD104-Port-Channel121:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: IBM_iSeries
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet47
+      - Ethernet48
+      switch_ports:
+      - Ethernet47
+      - Ethernet48
+      switches:
+      - DEMEENSD104
+      - DEMEENSD104
+      vlans: '1707,1706'
+  ### UNUSED ###-DEMEENSE102-Port-Channel200:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ### UNUSED ###
+        mode: active
+        state: present
+      server_ports:
+      switch_ports:
+      switches:
+      - DEMEENSE102
+      - DEMEENSE102
+      vlans: '1541,1555,1557,1558,1554'
+  DEMEESGOLDXI01_NIC_1-DEMEENSD101-Ethernet1:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI01_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet1
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,3517,3518,3519,1677,1683,1678,1684,1679,1680,1675,1515,1517,1518,1548,101,3520,3521,3522,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI01_NIC_2-DEMEENSD101-Ethernet2:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI01_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet2
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,1677,1683,1678,1684,1679,1680,1675,1516,1548,1704,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI02_NIC_1-DEMEENSD101-Ethernet3:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI02_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet3
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,3517,3518,3519,1677,1683,1678,1684,1679,1680,1675,1515,1517,1518,1548,101,3520,3521,3522,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI02_NIC_2-DEMEENSD101-Ethernet4:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI02_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,1677,1683,1678,1684,1679,1680,1675,1516,1548,1704,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI03_NIC_1_-DEMEENSD101-Ethernet5:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI03_NIC_1_
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,3517,3518,3519,1677,1683,1678,1684,1679,1680,1675,1515,1517,1518,1548,101,3520,3521,3522,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI03_NIC_2-DEMEENSD101-Ethernet6:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI03_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet6
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,1677,1683,1678,1684,1679,1680,1675,1516,1548,1704,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI04_NIC_1-DEMEENSD101-Ethernet7:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI04_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet7
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,3517,3518,3519,1677,1683,1678,1684,1679,1680,1675,1515,1517,1518,1548,101,3520,3521,3522,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI04_NIC_2-DEMEENSD101-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI04_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,1677,1683,1678,1684,1679,1680,1675,1516,1548,1704,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI01_NIC_1-DEMEENSD101-Ethernet9:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI01_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet9
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI01_NIC_2-DEMEENSD101-Ethernet10:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI01_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet10
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI02_NIC_1-DEMEENSD101-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI02_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI02_NIC_2-DEMEENSD101-Ethernet12:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI02_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet12
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI03_NIC_1-DEMEENSD101-Ethernet13:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI03_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet13
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI03_NIC_2-DEMEENSD101-Ethernet14:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI03_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet14
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI04_NIC_1-DEMEENSD101-Ethernet15:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI04_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet15
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI04_NIC_2-DEMEENSD101-Ethernet16:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI04_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet16
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI05_NIC_1-DEMEENSD101-Ethernet17:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI05_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet17
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI05_NIC_2-DEMEENSD101-Ethernet18:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI05_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet18
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704,2704'
+  DEMEESGOLDXI05_C2R0BB3_RITM0423306-DEMEENSD101-Ethernet19:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI05_C2R0BB3_RITM0423306
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet19
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,3517,3518,3519,1677,1683,1678,1684,1679,1680,1675,1515,1517,1518,1548,101,3520,3521,3522,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI05_C2R0BB3_RITM0423306-DEMEENSD101-Ethernet20:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI05_C2R0BB3_RITM0423306
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet20
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,1677,1683,1678,1684,1679,1680,1675,1516,1548,1704,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI06_F2R0BB3_RITM0423306-DEMEENSD101-Ethernet21:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI06_F2R0BB3_RITM0423306
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet21
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,3517,3518,3519,1677,1683,1678,1684,1679,1680,1675,1515,1517,1518,1548,101,3520,3521,3522,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI06_F2R0BB3_RITM0423306-DEMEENSD101-Ethernet22:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI06_F2R0BB3_RITM0423306
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet22
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,1677,1683,1678,1684,1679,1680,1675,1516,1548,1704,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI15-DEMEENSD101-Ethernet23:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI15
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet23
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI15-DEMEENSD101-Ethernet24:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI15
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet24
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI07#RITM0433119-DEMEENSD101-Ethernet25:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI07#RITM0433119
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet25
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI07#RITM0433119-DEMEENSD101-Ethernet26:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI07#RITM0433119
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet26
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI08#RITM0433119-DEMEENSD101-Ethernet27:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI08#RITM0433119
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet27
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1676,1525,1526,1527,1528,1704,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI08#RITM0433119-DEMEENSD101-Ethernet28:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI08#RITM0433119
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet28
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESGOLDXI08-DEMEENSD101-Ethernet29:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI08
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet29
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,3517,3518,3519,1677,1683,1678,1684,1679,1680,1675,1515,1517,1518,1548,101,3520,3521,3522,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI08-DEMEENSD101-Ethernet30:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI08
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet30
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,1677,1683,1678,1684,1679,1680,1675,1516,1548,1704,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI09-DEMEENSD101-Ethernet31:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI09
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet31
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,3517,3518,3519,1677,1683,1678,1684,1679,1680,1675,1515,1517,1518,1548,101,3520,3521,3522,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI09-DEMEENSD101-Ethernet32:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI09
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet32
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,1677,1683,1678,1684,1679,1680,1675,1516,1548,1704,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI16#RITM0466650-DEMEENSD101-Ethernet33:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI16#RITM0466650
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet33
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI16#RITM0466650-DEMEENSD101-Ethernet34:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI16#RITM0466650
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet34
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI11_NIC_1_VDS-DEMEENSD101-Ethernet35:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI11_NIC_1_VDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI11_NIC_2_NVDS-DEMEENSD101-Ethernet36:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI11_NIC_2_NVDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet36
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI09#RITM0496514-DEMEENSD101-Ethernet37:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI09#RITM0496514
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet37
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI09#RITM0496514-DEMEENSD101-Ethernet38:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI09#RITM0496514
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet38
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI14#RITM0496514-DEMEENSD101-Ethernet39:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI14#RITM0496514
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet39
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI14#RITM0496514-DEMEENSD101-Ethernet40:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI14#RITM0496514
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet40
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI10_NIC_1_VDS-DEMEENSD101-Ethernet41:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI10_NIC_1_VDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet41
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI10_NIC_2_NDVS-DEMEENSD101-Ethernet42:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI10_NIC_2_NDVS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet42
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI12_NIC_1_VDS-DEMEENSD101-Ethernet43:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI12_NIC_1_VDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet43
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI13#SN:H92ZRB3-DEMEENSD101-Ethernet44:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI13#SN:H92ZRB3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet44
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI13#SN:H92ZRB3-DEMEENSD101-Ethernet45:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI13#SN:H92ZRB3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet45
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1525,1526,1704'
+  DEMEESSLVRXI12_NIC_2_NVDS-DEMEENSD101-Ethernet46:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI12_NIC_2_NVDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet46
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI06_NIC_1-DEMEENSD101-Ethernet47:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI06_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI06_NIC_2-DEMEENSD101-Ethernet48:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI06_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - DEMEENSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704,2704'
+  DEMEESGOLDXI01_NIC_3-DEMEENSD102-Ethernet1:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI01_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet1
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,3517,3518,3519,1677,1683,1678,1684,1679,1680,1675,1515,1517,1518,1548,101,3520,3521,3522,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI01_NIC_4-DEMEENSD102-Ethernet2:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI01_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet2
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,1677,1683,1678,1684,1679,1680,1675,1516,1548,1704,2704,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI02_NIC_3-DEMEENSD102-Ethernet3:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI02_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet3
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,3517,3518,3519,1677,1683,1678,1684,1679,1680,1675,1515,1517,1518,1548,101,3520,3521,3522,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI02_NIC_4-DEMEENSD102-Ethernet4:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI02_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,1677,1683,1678,1684,1679,1680,1675,1516,1548,1704,2704,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI03_NIC_3-DEMEENSD102-Ethernet5:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI03_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,3517,3518,3519,1677,1683,1678,1684,1679,1680,1675,1515,1517,1518,1548,101,3520,3521,3522,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI03_NIC_4-DEMEENSD102-Ethernet6:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI03_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet6
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,1677,1683,1678,1684,1679,1680,1675,1516,1548,1704,2704,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI04_NIC_3-DEMEENSD102-Ethernet7:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI04_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet7
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,3517,3518,3519,1677,1683,1678,1684,1679,1680,1675,1515,1517,1518,1548,101,3520,3521,3522,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI04_NIC_4-DEMEENSD102-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI04_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,1677,1683,1678,1684,1679,1680,1675,1516,1548,1704,2704,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI01_NIC_3-DEMEENSD102-Ethernet9:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI01_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet9
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI01_NIC_4-DEMEENSD102-Ethernet10:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI01_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet10
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704,2704'
+  DEMEESSLVRXI02_NIC_3-DEMEENSD102-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI02_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI02_NIC_4-DEMEENSD102-Ethernet12:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI02_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet12
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1548,1676,1526,1704,2704'
+  DEMEESSLVRXI03_NIC_3-DEMEENSD102-Ethernet13:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI03_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet13
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI03_NIC_4-DEMEENSD102-Ethernet14:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI03_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet14
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704,2704'
+  DEMEESSLVRXI04_NIC_3-DEMEENSD102-Ethernet15:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI04_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet15
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI04_NIC_4-DEMEENSD102-Ethernet16:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI04_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet16
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704,2704'
+  DEMEESSLVRXI05_NIC_3-DEMEENSD102-Ethernet17:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI05_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet17
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI05_NIC_4-DEMEENSD102-Ethernet18:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI05_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet18
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704,2704'
+  DEMEESGOLDXI05_C2R0BB3_RITM0423306-DEMEENSD102-Ethernet19:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI05_C2R0BB3_RITM0423306
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet19
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,3517,3518,3519,1677,1683,1678,1684,1679,1680,1675,1515,1517,1518,1548,101,3520,3521,3522,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI05_C2R0BB3_RITM0423306-DEMEENSD102-Ethernet20:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI05_C2R0BB3_RITM0423306
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet20
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,1677,1683,1678,1684,1679,1680,1675,1516,1548,1704,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI06_F2R0BB3_RITM0423306-DEMEENSD102-Ethernet21:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI06_F2R0BB3_RITM0423306
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet21
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,3517,3518,3519,1677,1683,1678,1684,1679,1680,1675,1515,1517,1518,1548,101,3520,3521,3522,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI06_F2R0BB3_RITM0423306-DEMEENSD102-Ethernet22:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI06_F2R0BB3_RITM0423306
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet22
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,1677,1683,1678,1684,1679,1680,1675,1516,1548,1704,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI15-DEMEENSD102-Ethernet23:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI15
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet23
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI15-DEMEENSD102-Ethernet24:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI15
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet24
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704,2704'
+  DEMEESSLVRXI07#RITM0433119-DEMEENSD102-Ethernet25:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI07#RITM0433119
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet25
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI07#RITM0433119-DEMEENSD102-Ethernet26:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI07#RITM0433119
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet26
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704,2704'
+  DEMEESSLVRXI08#RITM0433119-DEMEENSD102-Ethernet27:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI08#RITM0433119
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet27
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI08#RITM0433119-DEMEENSD102-Ethernet28:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI08#RITM0433119
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet28
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704,2704'
+  DEMEESGOLDXI08-DEMEENSD102-Ethernet29:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI08
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet29
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,3517,3518,3519,1677,1683,1678,1684,1679,1680,1675,1515,1517,1518,1548,101,3520,3521,3522,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI08-DEMEENSD102-Ethernet30:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI08
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet30
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,1677,1683,1678,1684,1679,1680,1675,1516,1548,1704,2704,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI09-DEMEENSD102-Ethernet31:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI09
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet31
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,3517,3518,3519,1677,1683,1678,1684,1679,1680,1675,1515,1517,1518,1548,101,3520,3521,3522,1810,1820,1830,1840,1629,1644'
+  DEMEESGOLDXI09-DEMEENSD102-Ethernet32:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI09
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet32
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3375,3475,1677,1683,1678,1684,1679,1680,1675,1516,1548,1704,2704,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI16#RITM0466650-DEMEENSD102-Ethernet33:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI16#RITM0466650
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet33
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI16#RITM0466650-DEMEENSD102-Ethernet34:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI16#RITM0466650
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet34
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704,2704'
+  DEMEESMDCEXI02_DEMEESSLVRXI11#SN:J92ZRB3-DEMEENSD102-Ethernet35:
+    adapters:
+    - mode: trunk
+      description: DEMEESMDCEXI02_DEMEESSLVRXI11#SN:J92ZRB3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI11_NIC_4_NVDS-DEMEENSD102-Ethernet36:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI11_NIC_4_NVDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet36
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI09#RITM0496514-DEMEENSD102-Ethernet37:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI09#RITM0496514
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet37
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI09#RITM0496514-DEMEENSD102-Ethernet38:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI09#RITM0496514
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet38
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI14#RITM0496514-DEMEENSD102-Ethernet39:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI14#RITM0496514
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet39
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI14#RITM0496514-DEMEENSD102-Ethernet40:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI14#RITM0496514
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet40
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI10_NIC_3_VDS-DEMEENSD102-Ethernet41:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI10_NIC_3_VDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet41
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI10_NIC_4_NVDS-DEMEENSD102-Ethernet42:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI10_NIC_4_NVDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet42
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI12_NIC_3_VDS-DEMEENSD102-Ethernet43:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI12_NIC_3_VDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet43
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI13#SN:H92ZRB3-DEMEENSD102-Ethernet44:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI13#SN:H92ZRB3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet44
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI13#SN:H92ZRB3-DEMEENSD102-Ethernet45:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI13#SN:H92ZRB3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet45
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1525,1526,1704'
+  DEMEESSLVRXI12_NIC_4_NVDS-DEMEENSD102-Ethernet46:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI12_NIC_4_NVDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet46
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704'
+  DEMEESSLVRXI06_NIC_3-DEMEENSD102-Ethernet47:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI06_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,1505,1548,1681,1682,1685,1525,1527,1528,101,3520,3521,3522,1511,1810,1820,1830,1840,1629,1644'
+  DEMEESSLVRXI06_NIC_4-DEMEENSD102-Ethernet48:
+    adapters:
+    - mode: trunk
+      description: DEMEESSLVRXI06_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - DEMEENSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,1526,1704,2704'
+  OneMKSintHIDmee#TASK0170881-DEMEENSD103-Ethernet3:
+    adapters:
+    - mode: access
+      description: OneMKSintHIDmee#TASK0170881
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet3
+      switches:
+      - DEMEENSD103
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1581'
+  CISCO-Switch-DEMEENST003-NTP-DEMEENSD103-Ethernet4:
+    adapters:
+    - mode: access
+      description: CISCO-Switch-DEMEENST003-NTP
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - DEMEENSD103
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'
+  DEMEESPHV2011-(GRT6WC3)Single-DEMEENSD103-Ethernet15:
+    adapters:
+    - mode: access
+      description: DEMEESPHV2011-(GRT6WC3)Single
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet15
+      switches:
+      - DEMEENSD103
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1560'
+  DEMEESPHV2012-(-1ST6WC3)-single-DEMEENSD103-Ethernet16:
+    adapters:
+    - mode: access
+      description: DEMEESPHV2012-(-1ST6WC3)-single
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet16
+      switches:
+      - DEMEENSD103
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1560'
+  DEMEESPHV2001(DKQXD43)-DEMEENSD103-Ethernet39:
+    adapters:
+    - mode: access
+      description: DEMEESPHV2001(DKQXD43)
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet39
+      switches:
+      - DEMEENSD103
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  IBM_iSeries-DEMEENSD103-Ethernet46:
+    adapters:
+    - mode: trunk
+      description: IBM_iSeries
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet46
+      switches:
+      - DEMEENSD103
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1707,1706'
+  IBM_iSeries-DEMEENSD103-Ethernet47:
+    adapters:
+    - mode: trunk
+      description: IBM_iSeries
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - DEMEENSD103
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1707,1706'
+  DEMEESPHV2002-PowerEdge-R740-SN:-FKQXD43-DEMEENSD104-Ethernet2:
+    adapters:
+    - mode: access
+      description: DEMEESPHV2002-PowerEdge-R740-SN:-FKQXD43
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet2
+      switches:
+      - DEMEENSD104
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  OneMKSprodHIDmee#TASK0173351-DEMEENSD104-Ethernet3:
+    adapters:
+    - mode: access
+      description: OneMKSprodHIDmee#TASK0173351
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet3
+      switches:
+      - DEMEENSD104
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1582'
+  DEMEESPHV2011-(GRT6WC3)-Single-DEMEENSD104-Ethernet15:
+    adapters:
+    - mode: access
+      description: DEMEESPHV2011-(GRT6WC3)-Single
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet15
+      switches:
+      - DEMEENSD104
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1561'
+  DEMEESPHV2012-(1ST6WC3)-Single-DEMEENSD104-Ethernet16:
+    adapters:
+    - mode: access
+      description: DEMEESPHV2012-(1ST6WC3)-Single
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet16
+      switches:
+      - DEMEENSD104
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1561'
+  DEMEESPHV2003(CKQXD43)-DEMEENSD104-Ethernet39:
+    adapters:
+    - mode: access
+      description: DEMEESPHV2003(CKQXD43)
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet39
+      switches:
+      - DEMEENSD104
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  IBM_iSeries-DEMEENSD104-Ethernet46:
+    adapters:
+    - mode: trunk
+      description: IBM_iSeries
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet46
+      switches:
+      - DEMEENSD104
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1707,1706'
+  DEMEESPHV2011#GRT6WC3#TASK0105789-DEMEENSD105-Ethernet29:
+    adapters:
+    - mode: access
+      description: DEMEESPHV2011#GRT6WC3#TASK0105789
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet29
+      switches:
+      - DEMEENSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  MDC-Location---DEMEESPHV2013-(FRT6WC3)-#TASK0105848-DEMEENSD105-Ethernet30:
+    adapters:
+    - mode: access
+      description: MDC-Location---DEMEESPHV2013-(FRT6WC3)-#TASK0105848
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet30
+      switches:
+      - DEMEENSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  DEMEESDB0195#TASK0147082-DEMEENSD105-Ethernet31:
+    adapters:
+    - mode: access
+      description: DEMEESDB0195#TASK0147082
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet31
+      switches:
+      - DEMEENSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1540'
+  Infoblox_TASK0117264-DEMEENSD105-Ethernet41:
+    adapters:
+    - mode: access
+      description: Infoblox_TASK0117264
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet41
+      switches:
+      - DEMEENSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'
+  DNAC01_EMEA_ENTE-DEMEENSD105-Ethernet42:
+    adapters:
+    - mode: access
+      description: DNAC01_EMEA_ENTE
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet42
+      switches:
+      - DEMEENSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1802'
+  DNAC01_EMEA_CLUS-DEMEENSD105-Ethernet43:
+    adapters:
+    - mode: access
+      description: DNAC01_EMEA_CLUS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet43
+      switches:
+      - DEMEENSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1802'
+  DEMEESDB0195#TASK0147082-DEMEENSD105-Ethernet48:
+    adapters:
+    - mode: access
+      description: DEMEESDB0195#TASK0147082
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - DEMEENSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1543'
+  DEMEESPHV2012#1ST6WC3#TASK0105789-DEMEENSD106-Ethernet29:
+    adapters:
+    - mode: access
+      description: DEMEESPHV2012#1ST6WC3#TASK0105789
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet29
+      switches:
+      - DEMEENSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  MDC-Location---DEMEESPHV2014-(JRT6WC3)-#TASK0105848-DEMEENSD106-Ethernet30:
+    adapters:
+    - mode: access
+      description: MDC-Location---DEMEESPHV2014-(JRT6WC3)-#TASK0105848
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet30
+      switches:
+      - DEMEENSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  DEMEESDB0195#TASK0147082-DEMEENSD106-Ethernet31:
+    adapters:
+    - mode: access
+      description: DEMEESDB0195#TASK0147082
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet31
+      switches:
+      - DEMEENSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1540'
+  Infoblox_TASK0117264-DEMEENSD106-Ethernet41:
+    adapters:
+    - mode: access
+      description: Infoblox_TASK0117264
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet41
+      switches:
+      - DEMEENSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '3386'
+  DNAC01_EMEA_CIMC-DEMEENSD106-Ethernet42:
+    adapters:
+    - mode: access
+      description: DNAC01_EMEA_CIMC
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet42
+      switches:
+      - DEMEENSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1802'
+  Infoblox_TASK0117264-DEMEENSD106-Ethernet43:
+    adapters:
+    - mode: access
+      description: Infoblox_TASK0117264
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet43
+      switches:
+      - DEMEENSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '3386'
+  DEMEESDB0195#TASK0147082-DEMEENSD106-Ethernet48:
+    adapters:
+    - mode: access
+      description: DEMEESDB0195#TASK0147082
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - DEMEENSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1543'
+  RITM0489253#DEMEESPHV2020-DEMEENSD107-Ethernet1:
+    adapters:
+    - mode: access
+      description: RITM0489253#DEMEESPHV2020
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet1
+      switches:
+      - DEMEENSD107
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  TEMP_VPLEX_XIO_INC3361664-DEMEENSD107-Ethernet4:
+    adapters:
+    - mode: access
+      description: TEMP_VPLEX_XIO_INC3361664
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - DEMEENSD107
+      vlans: '1550'
+  DEMEESGOLDXI07#RITM0447329-DEMEENSD107-Ethernet5:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI07#RITM0447329
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - DEMEENSD107
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  DEMEESGOLDXI07#RITM0447329-DEMEENSD107-Ethernet6:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI07#RITM0447329
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet6
+      switches:
+      - DEMEENSD107
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XL_C1WFH73#RITM0454048-DEMEENSD107-Ethernet32:
+    adapters:
+    - mode: access
+      description: PH_XL_C1WFH73#RITM0454048
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet32
+      switches:
+      - DEMEENSD107
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  UNUSED-DEMEENSD108-Ethernet1:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet1
+      switches:
+      - DEMEENSD108
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  UNUSED-DEMEENSD108-Ethernet4:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - DEMEENSD108
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  DEMEESGOLDXI07#RITM0447329-DEMEENSD108-Ethernet5:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI07#RITM0447329
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - DEMEENSD108
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  DEMEESGOLDXI07#RITM0447329-DEMEENSD108-Ethernet6:
+    adapters:
+    - mode: trunk
+      description: DEMEESGOLDXI07#RITM0447329
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet6
+      switches:
+      - DEMEENSD108
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XL_C1WFH73#RITM0454048-DEMEENSD108-Ethernet32:
+    adapters:
+    - mode: access
+      description: PH_XL_C1WFH73#RITM0454048
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet32
+      switches:
+      - DEMEENSD108
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  demeesslvrxi17-|-RITM0484763-DEMEENSD109-Ethernet1:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi17-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet1
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi17-|-RITM0484763-DEMEENSD109-Ethernet2:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi17-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet2
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi18-|-RITM0484763-DEMEENSD109-Ethernet3:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi18-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet3
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi18-|-RITM0484763-DEMEENSD109-Ethernet4:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi18-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi19-|-|-RITM0484763-DEMEENSD109-Ethernet5:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi19-|-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi19-|-|-RITM0484763-DEMEENSD109-Ethernet6:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi19-|-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet6
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi20-|-RITM0484763-DEMEENSD109-Ethernet7:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi20-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet7
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi20-|-RITM0484763-DEMEENSD109-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi20-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesgoldxi10-|-RITM0484763-DEMEENSD109-Ethernet9:
+    adapters:
+    - mode: trunk
+      description: demeesgoldxi10-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet9
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesgoldxi10-|-RITM0484763-DEMEENSD109-Ethernet10:
+    adapters:
+    - mode: trunk
+      description: demeesgoldxi10-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet10
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi28|TASK0155281-DEMEENSD109-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi28|TASK0155281
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi28|TASK0155281-DEMEENSD109-Ethernet12:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi28|TASK0155281
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet12
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi29|TASK0155281-DEMEENSD109-Ethernet13:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi29|TASK0155281
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet13
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi29|TASK0155281-DEMEENSD109-Ethernet14:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi29|TASK0155281
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet14
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi21|RITM0476616|VDS-DEMEENSD109-Ethernet15:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi21|RITM0476616|VDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet15
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi21|RITM0476616|NVDS-DEMEENSD109-Ethernet16:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi21|RITM0476616|NVDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet16
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi22|RITM0476616|VDS-DEMEENSD109-Ethernet17:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi22|RITM0476616|VDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet17
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi22|RITM0476616|NVDS-DEMEENSD109-Ethernet18:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi22|RITM0476616|NVDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet18
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi23|RITM0476616|VDS-DEMEENSD109-Ethernet19:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi23|RITM0476616|VDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet19
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi23|RITM0476616|NVDS-DEMEENSD109-Ethernet20:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi23|RITM0476616|NVDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet20
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi24|RITM0476616|VDS-DEMEENSD109-Ethernet21:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi24|RITM0476616|VDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet21
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi24|RITM0476616|NVDS-DEMEENSD109-Ethernet22:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi24|RITM0476616|NVDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet22
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_CK0C4K3-RITM0476616|demeesslvrxi25-TASK0153291-DEMEENSD109-Ethernet23:
+    adapters:
+    - mode: trunk
+      description: PH_XD_CK0C4K3-RITM0476616|demeesslvrxi25-TASK0153291
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet23
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_CK0C4K3-RITM0476616|demeesslvrxi25-TASK0153291-DEMEENSD109-Ethernet24:
+    adapters:
+    - mode: trunk
+      description: PH_XD_CK0C4K3-RITM0476616|demeesslvrxi25-TASK0153291
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet24
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi26|TASK0155281-DEMEENSD109-Ethernet25:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi26|TASK0155281
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet25
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi26|TASK0155281-DEMEENSD109-Ethernet26:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi26|TASK0155281
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet26
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi27|TASK0155281-DEMEENSD109-Ethernet27:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi27|TASK0155281
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet27
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi27|TASK0155281-DEMEENSD109-Ethernet28:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi27|TASK0155281
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet28
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_1HXXQK3|TASK0157401-DEMEENSD109-Ethernet29:
+    adapters:
+    - mode: trunk
+      description: PH_XD_1HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet29
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_1HXXQK3|TASK0157401-DEMEENSD109-Ethernet30:
+    adapters:
+    - mode: trunk
+      description: PH_XD_1HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet30
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_2HXXQK3|TASK0157401-DEMEENSD109-Ethernet31:
+    adapters:
+    - mode: trunk
+      description: PH_XD_2HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet31
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_2HXXQK3|TASK0157401-DEMEENSD109-Ethernet32:
+    adapters:
+    - mode: trunk
+      description: PH_XD_2HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet32
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_3HXXQK3|TASK0157401-DEMEENSD109-Ethernet33:
+    adapters:
+    - mode: trunk
+      description: PH_XD_3HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet33
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_3HXXQK3|TASK0157401-DEMEENSD109-Ethernet34:
+    adapters:
+    - mode: trunk
+      description: PH_XD_3HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet34
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_4HXXQK3|TASK0157401-DEMEENSD109-Ethernet35:
+    adapters:
+    - mode: trunk
+      description: PH_XD_4HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_4HXXQK3|TASK0157401-DEMEENSD109-Ethernet36:
+    adapters:
+    - mode: trunk
+      description: PH_XD_4HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet36
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_5HXXQK3|TASK0157401-DEMEENSD109-Ethernet37:
+    adapters:
+    - mode: trunk
+      description: PH_XD_5HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet37
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_5HXXQK3|TASK0157401-DEMEENSD109-Ethernet38:
+    adapters:
+    - mode: trunk
+      description: PH_XD_5HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet38
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_6HXXQK3|TASK0157401-DEMEENSD109-Ethernet39:
+    adapters:
+    - mode: trunk
+      description: PH_XD_6HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet39
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_6HXXQK3|TASK0157401-DEMEENSD109-Ethernet40:
+    adapters:
+    - mode: trunk
+      description: PH_XD_6HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet40
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_7HXXQK3|TASK0157401-DEMEENSD109-Ethernet41:
+    adapters:
+    - mode: trunk
+      description: PH_XD_7HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet41
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_7HXXQK3|TASK0157401-DEMEENSD109-Ethernet42:
+    adapters:
+    - mode: trunk
+      description: PH_XD_7HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet42
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_8HXXQK3|TASK0157401-DEMEENSD109-Ethernet43:
+    adapters:
+    - mode: trunk
+      description: PH_XD_8HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet43
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_8HXXQK3|TASK0157401-DEMEENSD109-Ethernet44:
+    adapters:
+    - mode: trunk
+      description: PH_XD_8HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet44
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_9HXXQK3|TASK0157401-DEMEENSD109-Ethernet45:
+    adapters:
+    - mode: trunk
+      description: PH_XD_9HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet45
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_9HXXQK3|TASK0157401-DEMEENSD109-Ethernet46:
+    adapters:
+    - mode: trunk
+      description: PH_XD_9HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet46
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_BHXXQK3|TASK0157401-DEMEENSD109-Ethernet47:
+    adapters:
+    - mode: trunk
+      description: PH_XD_BHXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_BHXXQK3|TASK0157401-DEMEENSD109-Ethernet48:
+    adapters:
+    - mode: trunk
+      description: PH_XD_BHXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - DEMEENSD109
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi17-|-RITM0484763-DEMEENSD110-Ethernet1:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi17-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet1
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi17-|-RITM0484763-DEMEENSD110-Ethernet2:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi17-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet2
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi18-|-RITM0484763-DEMEENSD110-Ethernet3:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi18-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet3
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi18-|-RITM0484763-DEMEENSD110-Ethernet4:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi18-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi19-|-|-RITM0484763-DEMEENSD110-Ethernet5:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi19-|-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi19-|-|-RITM0484763-DEMEENSD110-Ethernet6:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi19-|-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet6
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi20-|-RITM0484763-DEMEENSD110-Ethernet7:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi20-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet7
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi20-|-RITM0484763-DEMEENSD110-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi20-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesgoldxi10-|-RITM0484763-DEMEENSD110-Ethernet9:
+    adapters:
+    - mode: trunk
+      description: demeesgoldxi10-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet9
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesgoldxi10-|-RITM0484763-DEMEENSD110-Ethernet10:
+    adapters:
+    - mode: trunk
+      description: demeesgoldxi10-|-RITM0484763
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet10
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi28|TASK0155281-DEMEENSD110-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi28|TASK0155281
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi28|TASK0155281-DEMEENSD110-Ethernet12:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi28|TASK0155281
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet12
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi29|TASK0155281-DEMEENSD110-Ethernet13:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi29|TASK0155281
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet13
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi29|TASK0155281-DEMEENSD110-Ethernet14:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi29|TASK0155281
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet14
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi21|RITM0476616|VDS-DEMEENSD110-Ethernet15:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi21|RITM0476616|VDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet15
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi21|RITM0476616|NVDS-DEMEENSD110-Ethernet16:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi21|RITM0476616|NVDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet16
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi22|RITM0476616|VDS-DEMEENSD110-Ethernet17:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi22|RITM0476616|VDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet17
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi22|RITM0476616|NVDS-DEMEENSD110-Ethernet18:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi22|RITM0476616|NVDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet18
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi23|RITM0476616|VDS-DEMEENSD110-Ethernet19:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi23|RITM0476616|VDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet19
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi23|RITM0476616|NVDS-DEMEENSD110-Ethernet20:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi23|RITM0476616|NVDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet20
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi24|RITM0476616|VDS-DEMEENSD110-Ethernet21:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi24|RITM0476616|VDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet21
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi24|RITM0476616|NVDS-DEMEENSD110-Ethernet22:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi24|RITM0476616|NVDS
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet22
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_CK0C4K3-RITM0476616|demeesslvrxi25-TASK0153291-DEMEENSD110-Ethernet23:
+    adapters:
+    - mode: trunk
+      description: PH_XD_CK0C4K3-RITM0476616|demeesslvrxi25-TASK0153291
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet23
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_CK0C4K3-RITM0476616|demeesslvrxi25-TASK0153291-DEMEENSD110-Ethernet24:
+    adapters:
+    - mode: trunk
+      description: PH_XD_CK0C4K3-RITM0476616|demeesslvrxi25-TASK0153291
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet24
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi26|TASK0155281-DEMEENSD110-Ethernet25:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi26|TASK0155281
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet25
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi26|TASK0155281-DEMEENSD110-Ethernet26:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi26|TASK0155281
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet26
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi27|TASK0155281-DEMEENSD110-Ethernet27:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi27|TASK0155281
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet27
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  demeesslvrxi27|TASK0155281-DEMEENSD110-Ethernet28:
+    adapters:
+    - mode: trunk
+      description: demeesslvrxi27|TASK0155281
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet28
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_1HXXQK3|TASK0157401-DEMEENSD110-Ethernet29:
+    adapters:
+    - mode: trunk
+      description: PH_XD_1HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet29
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_1HXXQK3|TASK0157401-DEMEENSD110-Ethernet30:
+    adapters:
+    - mode: trunk
+      description: PH_XD_1HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet30
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_2HXXQK3|TASK0157401-DEMEENSD110-Ethernet31:
+    adapters:
+    - mode: trunk
+      description: PH_XD_2HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet31
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_2HXXQK3|TASK0157401-DEMEENSD110-Ethernet32:
+    adapters:
+    - mode: trunk
+      description: PH_XD_2HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet32
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_3HXXQK3|TASK0157401-DEMEENSD110-Ethernet33:
+    adapters:
+    - mode: trunk
+      description: PH_XD_3HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet33
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_3HXXQK3|TASK0157401-DEMEENSD110-Ethernet34:
+    adapters:
+    - mode: trunk
+      description: PH_XD_3HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet34
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_4HXXQK3|TASK0157401-DEMEENSD110-Ethernet35:
+    adapters:
+    - mode: trunk
+      description: PH_XD_4HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_4HXXQK3|TASK0157401-DEMEENSD110-Ethernet36:
+    adapters:
+    - mode: trunk
+      description: PH_XD_4HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet36
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_5HXXQK3|TASK0157401-DEMEENSD110-Ethernet37:
+    adapters:
+    - mode: trunk
+      description: PH_XD_5HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet37
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_5HXXQK3|TASK0157401-DEMEENSD110-Ethernet38:
+    adapters:
+    - mode: trunk
+      description: PH_XD_5HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet38
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_6HXXQK3|TASK0157401-DEMEENSD110-Ethernet39:
+    adapters:
+    - mode: trunk
+      description: PH_XD_6HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet39
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_6HXXQK3|TASK0157401-DEMEENSD110-Ethernet40:
+    adapters:
+    - mode: trunk
+      description: PH_XD_6HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet40
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_7HXXQK3|TASK0157401-DEMEENSD110-Ethernet41:
+    adapters:
+    - mode: trunk
+      description: PH_XD_7HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet41
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_7HXXQK3|TASK0157401-DEMEENSD110-Ethernet42:
+    adapters:
+    - mode: trunk
+      description: PH_XD_7HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet42
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_8HXXQK3|TASK0157401-DEMEENSD110-Ethernet43:
+    adapters:
+    - mode: trunk
+      description: PH_XD_8HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet43
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_8HXXQK3|TASK0157401-DEMEENSD110-Ethernet44:
+    adapters:
+    - mode: trunk
+      description: PH_XD_8HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet44
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_9HXXQK3|TASK0157401-DEMEENSD110-Ethernet45:
+    adapters:
+    - mode: trunk
+      description: PH_XD_9HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet45
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_9HXXQK3|TASK0157401-DEMEENSD110-Ethernet46:
+    adapters:
+    - mode: trunk
+      description: PH_XD_9HXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet46
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_BHXXQK3|TASK0157401-DEMEENSD110-Ethernet47:
+    adapters:
+    - mode: trunk
+      description: PH_XD_BHXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_BHXXQK3|TASK0157401-DEMEENSD110-Ethernet48:
+    adapters:
+    - mode: trunk
+      description: PH_XD_BHXXQK3|TASK0157401
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - DEMEENSD110
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_1JXXQK3-#TASK0180856-DEMEENSD111-Ethernet1:
+    adapters:
+    - mode: trunk
+      description: PH_XD_1JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet1
+      switches:
+      - DEMEENSD111
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_1JXXQK3-#TASK0180856-DEMEENSD111-Ethernet2:
+    adapters:
+    - mode: trunk
+      description: PH_XD_1JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet2
+      switches:
+      - DEMEENSD111
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_2JXXQK3-#TASK0180856-DEMEENSD111-Ethernet3:
+    adapters:
+    - mode: trunk
+      description: PH_XD_2JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet3
+      switches:
+      - DEMEENSD111
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_2JXXQK3-#TASK0180856-DEMEENSD111-Ethernet4:
+    adapters:
+    - mode: trunk
+      description: PH_XD_2JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - DEMEENSD111
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_3JXXQK3-#TASK0180856-DEMEENSD111-Ethernet5:
+    adapters:
+    - mode: trunk
+      description: PH_XD_3JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - DEMEENSD111
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_3JXXQK3-#TASK0180856-DEMEENSD111-Ethernet6:
+    adapters:
+    - mode: trunk
+      description: PH_XD_3JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet6
+      switches:
+      - DEMEENSD111
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_4JXXQK3-#TASK0180856-DEMEENSD111-Ethernet7:
+    adapters:
+    - mode: trunk
+      description: PH_XD_4JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet7
+      switches:
+      - DEMEENSD111
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_4JXXQK3-#TASK0180856-DEMEENSD111-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: PH_XD_4JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - DEMEENSD111
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_4JXXQK3-#TASK0180856-DEMEENSD111-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: PH_XD_4JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - DEMEENSD111
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_4JXXQK3-#TASK0180856-DEMEENSD111-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: PH_XD_4JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - DEMEENSD111
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_1JXXQK3-#TASK0180856-DEMEENSD112-Ethernet1:
+    adapters:
+    - mode: trunk
+      description: PH_XD_1JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet1
+      switches:
+      - DEMEENSD112
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_1JXXQK3-#TASK0180856-DEMEENSD112-Ethernet2:
+    adapters:
+    - mode: trunk
+      description: PH_XD_1JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet2
+      switches:
+      - DEMEENSD112
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_2JXXQK3-#TASK0180856-DEMEENSD112-Ethernet3:
+    adapters:
+    - mode: trunk
+      description: PH_XD_2JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet3
+      switches:
+      - DEMEENSD112
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_2JXXQK3-#TASK0180856-DEMEENSD112-Ethernet4:
+    adapters:
+    - mode: trunk
+      description: PH_XD_2JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - DEMEENSD112
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_3JXXQK3-#TASK0180856-DEMEENSD112-Ethernet5:
+    adapters:
+    - mode: trunk
+      description: PH_XD_3JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - DEMEENSD112
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_3JXXQK3-#TASK0180856-DEMEENSD112-Ethernet6:
+    adapters:
+    - mode: trunk
+      description: PH_XD_3JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet6
+      switches:
+      - DEMEENSD112
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_4JXXQK3-#TASK0180856-DEMEENSD112-Ethernet7:
+    adapters:
+    - mode: trunk
+      description: PH_XD_4JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet7
+      switches:
+      - DEMEENSD112
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_4JXXQK3-#TASK0180856-DEMEENSD112-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: PH_XD_4JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - DEMEENSD112
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_4JXXQK3-#TASK0180856-DEMEENSD112-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: PH_XD_4JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - DEMEENSD112
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  PH_XD_4JXXQK3-#TASK0180856-DEMEENSD112-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: PH_XD_4JXXQK3-#TASK0180856
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - DEMEENSD112
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  DEMEEPAFW_LOG-DEMEENSE101-Ethernet5:
+    adapters:
+    - mode: access
+      description: DEMEEPAFW_LOG
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'
+  AT&T-MPLS-Circuit-1-DEMEENSE101-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: AT&T-MPLS-Circuit-1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1635,1850'
+  DEMEESMGMTXI05-#RITM0393035-DEMEENSE101-Ethernet12:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI05-#RITM0393035
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet12
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1560,1712,1550,3386,1505,1507,1508,1554,1510,1511,1512,3301,3387'
+  DEMEESMGMTXI05-#RITM0393035-DEMEENSE101-Ethernet17:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI05-#RITM0393035
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet17
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1712,3386,1506,3301,3387'
+  DEMEESMGMTXI06-#RITM0393035-DEMEENSE101-Ethernet18:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI06-#RITM0393035
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet18
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1560,1712,1550,3386,1505,1507,1508,1554,1510,1511,1512,3301,3387'
+  DEMEESMGMTXI06-#RITM0393035-DEMEENSE101-Ethernet19:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI06-#RITM0393035
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet19
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1712,3386,1506,3301,3387'
+  DEMEESMGMTXI01_NIC_1-DEMEENSE101-Ethernet21:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI01_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet21
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1560,1712,1550,3386,1505,1507,1508,1554,1510,1511,1512,3301,3387'
+  DEMEESMGMTXI01_NIC_2-DEMEENSE101-Ethernet22:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI01_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet22
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1712,3386,1506,3301,3387'
+  DEMEESMGMTXI02_NIC_1-DEMEENSE101-Ethernet23:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI02_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet23
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1560,1712,1550,3386,1505,1507,1508,1554,1510,1511,1512,3301,3387'
+  DEMEESMGMTXI02_NIC_2-DEMEENSE101-Ethernet24:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI02_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet24
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1712,3386,1506,3301,3387'
+  DEMEESMGMTXI03_NIC_1-DEMEENSE101-Ethernet25:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI03_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet25
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1560,1712,1550,3386,1505,1507,1508,1554,1510,1511,1512,3301,3387'
+  DEMEESMGMTXI03_NIC_2-DEMEENSE101-Ethernet26:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI03_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet26
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1712,3386,1506,3301,3387'
+  DEMEESMGMTXI04_NIC_1-DEMEENSE101-Ethernet27:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI04_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet27
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1560,1712,1550,3386,1505,1507,1508,1554,1510,1511,1512,3301,3387'
+  DEMEESMGMTXI04_NIC_2-DEMEENSE101-Ethernet28:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI04_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet28
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1712,3386,1506,3301,3387'
+  INFOBLOX-DEMEE-GSSC-Insight-Node-1-DEMEENSE101-Ethernet31:
+    adapters:
+    - mode: access
+      description: INFOBLOX-DEMEE-GSSC-Insight-Node-1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet31
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'
+  DEMEEXPDD001_Eth1a-DEMEENSE101-Ethernet32:
+    adapters:
+    - mode: access
+      description: DEMEEXPDD001_Eth1a
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet32
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  DEMEEXPDD001_Eth1b-DEMEENSE101-Ethernet33:
+    adapters:
+    - mode: access
+      description: DEMEEXPDD001_Eth1b
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet33
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  DEMEEXPDD001_Eth1c-DEMEENSE101-Ethernet34:
+    adapters:
+    - mode: access
+      description: DEMEEXPDD001_Eth1c
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet34
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  DEMEEXPDD001_Eth1d-DEMEENSE101-Ethernet35:
+    adapters:
+    - mode: access
+      description: DEMEEXPDD001_Eth1d
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1542'
+  SDWAN-VCE1-AVPN1-DEMEENSE101-Ethernet36:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-AVPN1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet36
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1850'
+  SDWAN-VCE1-AVPN2-DEMEENSE101-Ethernet37:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-AVPN2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet37
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1851'
+  SDWAN-VCE1-INTERNET-DEMEENSE101-Ethernet38:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-INTERNET
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet38
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1654'
+  SDWAN-VCE1-INTERNET-DEMEENSE101-Ethernet38:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-INTERNET
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet38
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1654'
+  INTERNET_CKT-1-DEMEENSE101-Ethernet43:
+    adapters:
+    - mode: access
+      description: INTERNET_CKT-1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet43
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1653'
+  INTERNET_CKT-1-DEMEENSE101-Ethernet43:
+    adapters:
+    - mode: access
+      description: INTERNET_CKT-1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet43
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1653'
+  ASSDEDUSSRTR01_Orange_GRE_RTR_WAN-DEMEENSE101-Ethernet47:
+    adapters:
+    - mode: access
+      description: ASSDEDUSSRTR01_Orange_GRE_RTR_WAN
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '3070'
+  ASSDEDUSSRTR01_Orange_GRE_RTR_LAN-DEMEENSE101-Ethernet48:
+    adapters:
+    - mode: access
+      description: ASSDEDUSSRTR01_Orange_GRE_RTR_LAN
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - DEMEENSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '3071'
+  DEMEEPAFW_LOG-DEMEENSE102-Ethernet5:
+    adapters:
+    - mode: access
+      description: DEMEEPAFW_LOG
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'
+  AT&T-MPLS-Circuit-2-DEMEENSE102-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: AT&T-MPLS-Circuit-2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1636,1851'
+  DEMEESMGMTXI05-#RITM0393035-DEMEENSE102-Ethernet12:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI05-#RITM0393035
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet12
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1560,1712,1550,3386,1505,1507,1508,1554,1510,1511,1512,3301,3387'
+  ***-reserved-for-infoblox-***-DEMEENSE102-Ethernet13:
+    adapters:
+    - mode: access
+      description: ***-reserved-for-infoblox-***
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet13
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'
+  DEMEESMGMTXI05-#RITM0393035-DEMEENSE102-Ethernet17:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI05-#RITM0393035
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet17
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1712,3386,1506,3301,3387'
+  DEMEESMGMTXI06-#RITM0393035-DEMEENSE102-Ethernet18:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI06-#RITM0393035
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet18
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1560,1712,1550,3386,1505,1507,1508,1554,1510,1511,1512,3301,3387'
+  DEMEESMGMTXI06-#RITM0393035-DEMEENSE102-Ethernet19:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI06-#RITM0393035
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet19
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1712,3386,1506,3301,3387'
+  DEMEESMGMTXI01_NIC_3-DEMEENSE102-Ethernet21:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI01_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet21
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1560,1712,1550,3386,1505,1507,1508,1554,1510,1511,1512,3301,3387'
+  DEMEESMGMTXI01_NIC_4-DEMEENSE102-Ethernet22:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI01_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet22
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1712,3386,1506,3301,3387'
+  DEMEESMGMTXI02_NIC_3-DEMEENSE102-Ethernet23:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI02_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet23
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1560,1712,1550,3386,1505,1507,1508,1554,1510,1511,1512,3301,3387'
+  DEMEESMGMTXI02_NIC_4-DEMEENSE102-Ethernet24:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI02_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet24
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1712,3386,1506,3301,3387'
+  DEMEESMGMTXI03_NIC_3-DEMEENSE102-Ethernet25:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI03_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet25
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1560,1712,1550,3386,1505,1507,1508,1554,1510,1511,1512,3301,3387'
+  DEMEESMGMTXI03_NIC_4-DEMEENSE102-Ethernet26:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI03_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet26
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1712,3386,1506,3301,3387'
+  DEMEESMGMTXI04_NIC_3-DEMEENSE102-Ethernet27:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI04_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet27
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1560,1712,1550,3386,1505,1507,1508,1554,1510,1511,1512,3301,3387'
+  DEMEESMGMTXI04_NIC_4-DEMEENSE102-Ethernet28:
+    adapters:
+    - mode: trunk
+      description: DEMEESMGMTXI04_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet28
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1700,1541,1801,3701,1712,3386,1506,3301,3387'
+  **INFOBLOX**-DEMEENSE102-Ethernet31:
+    adapters:
+    - mode: access
+      description: **INFOBLOX**
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet31
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'
+  DEMEEXPDD001_Eth4a-DEMEENSE102-Ethernet32:
+    adapters:
+    - mode: access
+      description: DEMEEXPDD001_Eth4a
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet32
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  DEMEEXPDD001_Eth4b-DEMEENSE102-Ethernet33:
+    adapters:
+    - mode: access
+      description: DEMEEXPDD001_Eth4b
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet33
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  DEMEEXPDD001_Eth4c-DEMEENSE102-Ethernet34:
+    adapters:
+    - mode: access
+      description: DEMEEXPDD001_Eth4c
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet34
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  DEMEEXPDD001_Eth4d-DEMEENSE102-Ethernet35:
+    adapters:
+    - mode: access
+      description: DEMEEXPDD001_Eth4d
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1542'
+  SDWAN-VCE1-AVPN1-DEMEENSE102-Ethernet36:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-AVPN1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet36
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1850'
+  SDWAN-VCE1-AVPN2-DEMEENSE102-Ethernet37:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-AVPN2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet37
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1851'
+  SDWAN-VCE1-INTERNET-DEMEENSE102-Ethernet38:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-INTERNET
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet38
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1654'
+  SDWAN-VCE1-INTERNET-DEMEENSE102-Ethernet38:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-INTERNET
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet38
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1654'
+  INTERNET_CKT-2-DEMEENSE102-Ethernet43:
+    adapters:
+    - mode: access
+      description: INTERNET_CKT-2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet43
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1653'
+  INTERNET_CKT-2-DEMEENSE102-Ethernet43:
+    adapters:
+    - mode: access
+      description: INTERNET_CKT-2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet43
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1653'
+  RITM0561737#RESERVED_FOR_IDC_NLATT-DEMEENSE102-Ethernet46:
+    adapters:
+    - mode: access
+      description: RITM0561737#RESERVED_FOR_IDC_NLATT
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet46
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'
+  DEMEEIPAM001-LAN1-DEMEENSE102-Ethernet47:
+    adapters:
+    - mode: access
+      description: DEMEEIPAM001-LAN1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'
+  DEMEEIPAM001-HA-DEMEENSE102-Ethernet48:
+    adapters:
+    - mode: access
+      description: DEMEEIPAM001-HA
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - DEMEENSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'

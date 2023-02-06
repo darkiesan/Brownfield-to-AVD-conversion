@@ -1,0 +1,2458 @@
+tenants:
+  ASSA:
+    mac_vrf_vni_base: 10000
+    l2vlans:
+      101:
+        name:  V2V_MIGRATION_LINK
+
+        tags:
+        - fabricwide
+      182:
+        name:  MIGRATION_LINK_REPLICATION_182
+
+        tags:
+        - fabricwide
+      1504:
+        name:  VLAN1504
+
+        tags:
+        - fabricwide
+      1840:
+        name:  WLC_HA_L2_VLAN
+
+        tags:
+        - fabricwide
+      2704:
+        name:  SPLUNK_SERVER
+
+        tags:
+        - fabricwide
+      3475:
+        name:  DMZ_GOLD_TEP_Pool
+
+        tags:
+        - fabricwide
+      3476:
+        name:  DMZ_SILV_TEP_Pool
+
+        tags:
+        - fabricwide
+      3477:
+        name:  DMZ_GOLD_EDGE1_BGP
+
+        tags:
+        - fabricwide
+      3478:
+        name:  DMZ_GOLD_EDGE2_BGP
+
+        tags:
+        - fabricwide
+      3481:
+        name:  DMZ_SILV_EDGE1_BGP
+
+        tags:
+        - fabricwide
+      3482:
+        name:  DMZ_SILV_EDGE2_BGP
+
+        tags:
+        - fabricwide
+      3483:
+        name:  DMZ_GOLD_EDGE1_TEP_Pool
+
+        tags:
+        - fabricwide
+      3484:
+        name:  DMZ_GOLD_EDGE2_TEP_Pool
+
+        tags:
+        - fabricwide
+      3485:
+        name:  DMZ_SILV_EDGE_TEP_Pool
+
+        tags:
+        - fabricwide
+      3517:
+        name:  F5_VLAN_5
+
+        tags:
+        - fabricwide
+      3518:
+        name:  F5_VLAN_6
+
+        tags:
+        - fabricwide
+      3519:
+        name:  F5_VLAN_7
+
+        tags:
+        - fabricwide
+      3520:
+        name:  VIRT_F5_VLAN_1
+
+        tags:
+        - fabricwide
+      3521:
+        name:  VIRT_F5_VLAN_2
+
+        tags:
+        - fabricwide
+      3522:
+        name:  VIRT_F5_VLAN_3
+
+        tags:
+        - fabricwide
+      3375,3475:
+        name:  DMZ_GOLD_TEP_Pool
+
+        tags:
+        - fabricwide
+      334:
+        name:  P2V_MIGRATION_LINK_334
+
+        tags:
+        - fabricwide
+      1552:
+        name:  SERVER_Heartbeat
+
+        tags:
+        - fabricwide
+      1551:
+        name:  VLAN1551
+
+        tags:
+        - fabricwide
+      1545:
+        name:  iSeries-AA-MDC
+
+        tags:
+        - fabricwide
+      2:
+        name:  VLAN2
+
+        tags:
+        - fabricwide
+      710:
+        name:  INTERCONNECT
+
+        tags:
+        - fabricwide
+      1600:
+        name:  Un-Trust_Zone
+
+        tags:
+        - fabricwide
+      1601:
+        name:  F5_Trust_Zone
+
+        tags:
+        - fabricwide
+      1602:
+        name:  Firewall_Trust_Zone
+
+        tags:
+        - fabricwide
+      1603:
+        name:  F5_HA
+
+        tags:
+        - fabricwide
+      1630:
+        name:  Netscaler_GSLB
+
+        tags:
+        - fabricwide
+      1650:
+        name:  INET
+
+        tags:
+        - fabricwide
+      1728:
+        name:  DCI_FW_INT
+
+        tags:
+        - fabricwide
+      1850:
+        name:  SDWAN-AVPN1
+
+        tags:
+        - fabricwide
+      1851:
+        name:  SDWAN-AVPN2
+
+        tags:
+        - fabricwide
+      3070:
+        name:  Orange_GRE_WAN_MDC
+
+        tags:
+        - fabricwide
+      3071:
+        name:  Orange_GRE_LAN_MDC
+
+        tags:
+        - fabricwide
+      3424:
+        name:  XMS_CVP_TRANSIT_FW
+
+        tags:
+        - fabricwide
+      3525:
+        name:  F5_MPLS_SNAT
+
+        tags:
+        - fabricwide
+      3704:
+        name:  F5_iQuery_Mesh
+
+        tags:
+        - fabricwide
+      3:
+        name:  VLAN3
+
+        tags:
+        - fabricwide
+    vrfs:
+      GOLD_TNT:
+        vrf_vni: 1
+        svis:
+          1516:
+            name: ESXi VXLAN VTEP for Tenant GOLD
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.16.1
+            nodes:
+              DEMEENSD101:
+                ip_address: 10.71.16.2/24
+              DEMEENSD102:
+                ip_address: 10.71.16.3/24
+              DEMEENSE101:
+                ip_address: 10.71.16.2/24
+              DEMEENSE102:
+                ip_address: 10.71.16.3/24
+      :
+        vrf_vni: 2
+        svis:
+          130:
+            name: 
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.230.141.222/24
+          1620:
+            name: DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.161/29
+              DEMEENSE102:
+                ip_address: 10.71.2.162/29
+      INFRA_Mgmt:
+        vrf_vni: 3
+        svis:
+          1506:
+            name: ESXi VXLAN for Tenant Mgmt
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.6.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.6.2/24
+              DEMEENSE102:
+                ip_address: 10.71.6.3/24
+          1507:
+            name: ESXi vMotion for Tenant Mgmt
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.7.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.7.2/24
+              DEMEENSE102:
+                ip_address: 10.71.7.3/24
+          1508:
+            name: ESXi vSAN for Tenant Mgmt
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.8.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.8.2/24
+              DEMEENSE102:
+                ip_address: 10.71.8.3/24
+          1512:
+            name: WITNESS_vSAN
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.12.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.12.2/24
+              DEMEENSE102:
+                ip_address: 10.71.12.3/24
+          1517:
+            name: ESXi vMotion for Tenant GOLD
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.17.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.17.2/24
+              DEMEENSE102:
+                ip_address: 10.71.17.3/24
+          1518:
+            name: ESXi vSAN for Tenant GOLD
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.18.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.18.2/24
+              DEMEENSE102:
+                ip_address: 10.71.18.3/24
+          1525:
+            name: ESXi Mgmt for Tenant SILV
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.25.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.25.2/24
+              DEMEENSE102:
+                ip_address: 10.71.25.3/24
+          1527:
+            name: ESXi vMotion for Tenant SILV
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.27.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.27.2/24
+              DEMEENSE102:
+                ip_address: 10.71.27.3/24
+          1528:
+            name: ESXi vSAN for Tenant SILV
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.28.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.28.2/24
+              DEMEENSE102:
+                ip_address: 10.71.28.3/24
+          1535:
+            name: ESXi Mgmt for Tenant EXCH
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.35.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.35.2/24
+              DEMEENSE102:
+                ip_address: 10.71.35.3/24
+          1536:
+            name: ESXi VXLAN VTEP for Tenant EXCH
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.36.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.36.2/24
+              DEMEENSE102:
+                ip_address: 10.71.36.3/24
+          1537:
+            name: ESXi vMotion for Tenant EXCH
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.37.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.37.2/24
+              DEMEENSE102:
+                ip_address: 10.71.37.3/24
+          1555:
+            name: Splunk_ESXi_Mgmt
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.55.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.55.2/24
+              DEMEENSE102:
+                ip_address: 10.71.55.3/24
+          1557:
+            name: Splunk_ESXi_vMotion
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.57.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.57.2/24
+              DEMEENSE102:
+                ip_address: 10.71.57.3/24
+          1558:
+            name: Splunk_ESXi_vSAN
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.58.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.58.2/24
+              DEMEENSE102:
+                ip_address: 10.71.58.3/24
+          1568:
+            name: Backup Workload for Silver
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.68.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.68.2/23
+              DEMEENSE102:
+                ip_address: 10.71.68.3/23
+          1611:
+            name: INFRA_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.2.90
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.91/29
+              DEMEENSE102:
+                ip_address: 10.71.2.92/29
+          1616:
+            name: INFRA_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.129/29
+              DEMEENSE102:
+                ip_address: 10.71.2.130/29
+          1801:
+            name: BIG_IQ
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.30.81
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.30.82/28
+              DEMEENSE102:
+                ip_address: 10.71.30.83/28
+      INTERNAL:
+        vrf_vni: 4
+        svis:
+          1554:
+            name: VxRail_SPLUNK_LOG_Mgmt
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.54.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.54.2/24
+              DEMEENSE102:
+                ip_address: 10.71.54.3/24
+          1559:
+            name: F5 VIPs
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.59.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.59.2/24
+              DEMEENSE102:
+                ip_address: 10.71.59.3/24
+          1610:
+            name: INTERNAL_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.2.82
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.83/29
+              DEMEENSE102:
+                ip_address: 10.71.2.84/29
+          1615:
+            name: INTERNAL_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.121/29
+              DEMEENSE102:
+                ip_address: 10.71.2.122/29
+          1652:
+            name: Arista_F5_MPLS_TRANSIT
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.30.49
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.30.50/29
+              DEMEENSE102:
+                ip_address: 10.71.30.51/29
+          3513:
+            name: F5_VLAN_1
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.13.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.13.2/29
+              DEMEENSE102:
+                ip_address: 10.71.13.3/29
+          3514:
+            name: F5_VLAN_1
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.13.9
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.13.10/29
+              DEMEENSE102:
+                ip_address: 10.71.13.11/29
+          3515:
+            name: F5_VLAN_1
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.13.17
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.13.18/29
+              DEMEENSE102:
+                ip_address: 10.71.13.19/29
+          3516:
+            name: F5_VLAN_1
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.13.25
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.13.26/29
+              DEMEENSE102:
+                ip_address: 10.71.13.27/29
+      SILV_TNT:
+        vrf_vni: 5
+        svis:
+          1526:
+            name: ESXi VXLAN VTEP for Tenant SILV
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.26.1
+            nodes:
+              DEMEENSD101:
+                ip_address: 10.71.26.2/24
+              DEMEENSD102:
+                ip_address: 10.71.26.3/24
+              DEMEENSE101:
+                ip_address: 10.71.26.2/24
+              DEMEENSE102:
+                ip_address: 10.71.26.3/24
+      mgmt:
+        vrf_vni: 6
+        svis:
+      CITRIX:
+        vrf_vni: 7
+        svis:
+          1553:
+            name: Citrix_NetScaler_GSLB
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.53.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.53.2/24
+              DEMEENSE102:
+                ip_address: 10.71.53.3/24
+          1560:
+            name: Citrix_VDI_Mgmt
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.60.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.60.2/24
+              DEMEENSE102:
+                ip_address: 10.71.60.3/24
+          1561:
+            name: Citrix_XenApp_Mgmt
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.61.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.61.2/24
+              DEMEENSE102:
+                ip_address: 10.71.61.3/24
+          1562:
+            name: Customer_VDI_WLD
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.62.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.62.2/24
+              DEMEENSE102:
+                ip_address: 10.71.62.3/24
+          1563:
+            name: Wipro_VDI_WLD
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.63.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.63.2/24
+              DEMEENSE102:
+                ip_address: 10.71.63.3/24
+          1565:
+            name: Citrix_VDI_France_Prod
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.76.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.76.2/22
+              DEMEENSE102:
+                ip_address: 10.71.76.3/22
+          1566:
+            name: Citrix_VDI_France_Test
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.80.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.80.2/26
+              DEMEENSE102:
+                ip_address: 10.71.80.3/26
+          1567:
+            name: Customer_VDI_WLD_Two
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.81.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.81.2/24
+              DEMEENSE102:
+                ip_address: 10.71.81.3/24
+          1571:
+            name: Customer_VDI_WLD_Security
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.21.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.21.2/25
+              DEMEENSE102:
+                ip_address: 10.71.21.3/25
+          1726:
+            name: CITRIX_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.22.74
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.22.75/29
+              DEMEENSE102:
+                ip_address: 10.71.22.76/29
+          1727:
+            name: CITRIX_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.22.81/29
+              DEMEENSE102:
+                ip_address: 10.71.22.82/29
+      CITRIX1:
+        vrf_vni: 8
+        svis:
+          3701:
+            name: CITRIX1_File_Server
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.29.17
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.29.18/28
+              DEMEENSE102:
+                ip_address: 10.71.29.19/28
+          3702:
+            name: CITRIX1_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.29.2
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.29.3/29
+              DEMEENSE102:
+                ip_address: 10.71.29.4/29
+          3703:
+            name: CITRIX1_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.29.9/29
+              DEMEENSE102:
+                ip_address: 10.71.29.10/29
+      DMZ:
+        vrf_vni: 9
+        svis:
+          3322:
+            name: DMZ_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.19.90
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.19.91/29
+              DEMEENSE102:
+                ip_address: 10.71.19.92/29
+          3323:
+            name: DMZ_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.19.97/29
+              DEMEENSE102:
+                ip_address: 10.71.19.98/29
+          3386:
+            name: DMZ_Mgmt
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.124.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.124.2/24
+              DEMEENSE102:
+                ip_address: 10.71.124.3/24
+      DMZ_INFRA_NSX:
+        vrf_vni: 10
+        svis:
+          3320:
+            name: DMZ_INFRA_NSX_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.19.74
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.19.75/29
+              DEMEENSE102:
+                ip_address: 10.71.19.76/29
+          3321:
+            name: DMZ_INFRA_NSX_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.19.81/29
+              DEMEENSE102:
+                ip_address: 10.71.19.82/29
+          3375:
+            name: DMZ Gold Cluster TEP Pool
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.9.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.9.2/26
+              DEMEENSE102:
+                ip_address: 10.71.9.3/26
+          3376:
+            name: DMZ Silver Cluster TEP Pool
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.9.65
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.9.66/26
+              DEMEENSE102:
+                ip_address: 10.71.9.67/26
+          3377:
+            name: DMZ Gold Edge Cluster-1 for BGP
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.9.129
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.9.130/29
+              DEMEENSE102:
+                ip_address: 10.71.9.131/29
+          3378:
+            name: DMZ Gold Edge Cluster-2 for BGP
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.9.137
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.9.138/29
+              DEMEENSE102:
+                ip_address: 10.71.9.139/29
+          3381:
+            name: DMZ Silver Edge Cluster-1 for BGP
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.9.161/28
+              DEMEENSE102:
+                ip_address: 10.71.9.162/28
+          3382:
+            name: DMZ Silver Edge Cluster-2 for BGP
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.9.177/28
+              DEMEENSE102:
+                ip_address: 10.71.9.178/28
+          3383:
+            name: DMZ Gold Edge Cluster-1 TEP Pool
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.9.193
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.9.194/29
+              DEMEENSE102:
+                ip_address: 10.71.9.195/29
+          3384:
+            name: DMZ Gold Edge Cluster-2 TEP Pool
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.9.201
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.9.202/29
+              DEMEENSE102:
+                ip_address: 10.71.9.203/29
+          3385:
+            name: DMZ Silver Edge Cluster TEP Pool
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.9.209
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.9.210/28
+              DEMEENSE102:
+                ip_address: 10.71.9.211/28
+      F5_TRANSIT:
+        vrf_vni: 11
+        svis:
+          1656:
+            name: F5Int_To_ARISTA
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 141.81.167.220
+            nodes:
+              DEMEENSE101:
+                ip_address: 141.81.167.221/29
+              DEMEENSE102:
+                ip_address: 141.81.167.222/29
+          1657:
+            name: ARISTA_To_PAN
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 141.81.167.225
+            nodes:
+              DEMEENSE101:
+                ip_address: 141.81.167.226/29
+              DEMEENSE102:
+                ip_address: 141.81.167.227/29
+          3524:
+            name: F5_iQuery_Mesh
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.34.6
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.34.4/29
+              DEMEENSE102:
+                ip_address: 10.71.34.5/29
+      IBM_iSeries:
+        vrf_vni: 12
+        svis:
+          1706:
+            name: IBM_iSeries_Test
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.101.17
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.101.18/28
+              DEMEENSE102:
+                ip_address: 10.71.101.19/28
+          1707:
+            name: IBM_iSeries_Prod
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.101.33
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.101.34/28
+              DEMEENSE102:
+                ip_address: 10.71.101.35/28
+          3318:
+            name: IBM_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.19.58
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.19.59/29
+              DEMEENSE102:
+                ip_address: 10.71.19.60/29
+          3319:
+            name: IBM_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.19.65/29
+              DEMEENSE102:
+                ip_address: 10.71.19.66/29
+      INFOBLOX:
+        vrf_vni: 13
+        svis:
+          1550:
+            name: DC_Mgmt
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.50.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.50.2/24
+              DEMEENSE102:
+                ip_address: 10.71.50.3/24
+          3312:
+            name: INFOBLOX_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.19.10
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.19.11/29
+              DEMEENSE102:
+                ip_address: 10.71.19.12/29
+          3313:
+            name: INFOBLOX_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.19.17/29
+              DEMEENSE102:
+                ip_address: 10.71.19.18/29
+      INFRA_NSX:
+        vrf_vni: 14
+        svis:
+          1675:
+            name: Gold Cluster TEP Pool
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.4.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.4.2/26
+              DEMEENSE102:
+                ip_address: 10.71.4.3/26
+          1676:
+            name: MDC-Silver01 Cluster TEP Pool
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.4.65
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.4.66/26
+              DEMEENSE102:
+                ip_address: 10.71.4.67/26
+          1677:
+            name: Gold Edge Cluster-1 for BGP
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.4.129
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.4.130/29
+              DEMEENSE102:
+                ip_address: 10.71.4.131/29
+          1678:
+            name: Gold Edge Cluster-2 for BGP
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.4.137
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.4.138/29
+              DEMEENSE102:
+                ip_address: 10.71.4.139/29
+          1679:
+            name: Gold Edge Cluster-3 for BGP
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.4.145
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.4.146/29
+              DEMEENSE102:
+                ip_address: 10.71.4.147/29
+          1680:
+            name: Gold Edge Cluster-4 for BGP
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.4.153
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.4.154/29
+              DEMEENSE102:
+                ip_address: 10.71.4.155/29
+          1681:
+            name: Silver Edge Cluster-1 for BGP
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.4.161/28
+              DEMEENSE102:
+                ip_address: 10.71.4.162/28
+          1682:
+            name: Silver Edge Cluster-2 for BGP
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.4.177/28
+              DEMEENSE102:
+                ip_address: 10.71.4.178/28
+          1683:
+            name: Gold Edge Cluster-1 TEP Pool
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.4.193
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.4.194/29
+              DEMEENSE102:
+                ip_address: 10.71.4.195/29
+          1684:
+            name: Gold Edge Cluster-2 TEP Pool
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.4.201
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.4.202/29
+              DEMEENSE102:
+                ip_address: 10.71.4.203/29
+          1685:
+            name: Silver Edge Cluster TEP Pool
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.4.209
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.4.210/28
+              DEMEENSE102:
+                ip_address: 10.71.4.211/28
+          1690:
+            name: MDC-Silver02 Cluster TEP Pool
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.14.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.14.2/26
+              DEMEENSE102:
+                ip_address: 10.71.14.3/26
+          3316:
+            name: INFRA_NSX_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.19.42
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.19.43/29
+              DEMEENSE102:
+                ip_address: 10.71.19.44/29
+          3317:
+            name: INFRA_NSX_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.19.49/29
+              DEMEENSE102:
+                ip_address: 10.71.19.50/29
+      INFRA_Std:
+        vrf_vni: 15
+        svis:
+          1505:
+            name: MGMT_ESXi_Mgmt
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.5.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.5.2/24
+              DEMEENSE102:
+                ip_address: 10.71.5.3/24
+          1510:
+            name: vRA_Mgmt
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.10.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.10.2/24
+              DEMEENSE102:
+                ip_address: 10.71.10.3/24
+          1511:
+            name: WITNESS_Management
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.11.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.11.2/24
+              DEMEENSE102:
+                ip_address: 10.71.11.3/24
+          1515:
+            name: GOLD_ESXi_Mgmt
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.15.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.15.2/24
+              DEMEENSE102:
+                ip_address: 10.71.15.3/24
+          1541:
+            name: BACK_Infra
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.41.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.41.2/24
+              DEMEENSE102:
+                ip_address: 10.71.41.3/24
+          1542:
+            name: Backup_Replication
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.42.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.42.2/24
+              DEMEENSE102:
+                ip_address: 10.71.42.3/24
+          1543:
+            name: BACK_Mgmt
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.43.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.43.2/24
+              DEMEENSE102:
+                ip_address: 10.71.43.3/24
+          1544:
+            name: BACK_Infra_2
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.38.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.38.2/23
+              DEMEENSE102:
+                ip_address: 10.71.38.3/23
+          1548:
+            name: PAFW_VM300
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.48.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.48.2/24
+              DEMEENSE102:
+                ip_address: 10.71.48.3/24
+          1564:
+            name: BACK_WLD_GOLD
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.64.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.64.2/22
+              DEMEENSE102:
+                ip_address: 10.71.64.3/22
+          1609:
+            name: INFRA_STD_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.2.74
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.75/29
+              DEMEENSE102:
+                ip_address: 10.71.2.76/29
+          1621:
+            name: INFRA_STD_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.169/29
+              DEMEENSE102:
+                ip_address: 10.71.2.170/29
+          1711:
+            name: VLAN1711
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.101.193
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.101.194/27
+              DEMEENSE102:
+                ip_address: 10.71.101.195/27
+          1712:
+            name: Cloudvision
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.30.17
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.30.18/28
+              DEMEENSE102:
+                ip_address: 10.71.30.19/28
+      INTERNAL_Com:
+        vrf_vni: 16
+        svis:
+          1613:
+            name: INTERNAL_Com_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.2.106
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.107/29
+              DEMEENSE102:
+                ip_address: 10.71.2.108/29
+          1622:
+            name: INTERNAL_Com_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.177/29
+              DEMEENSE102:
+                ip_address: 10.71.2.178/29
+      INTERNAL_Std:
+        vrf_vni: 17
+        svis:
+          1608:
+            name: INTERNAL_STD_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.2.66
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.67/29
+              DEMEENSE102:
+                ip_address: 10.71.2.68/29
+          1619:
+            name: INTERNAL_STD_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.153/29
+              DEMEENSE102:
+                ip_address: 10.71.2.154/29
+          1700:
+            name: AD_SERVERS
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.100.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.100.2/27
+              DEMEENSE102:
+                ip_address: 10.71.100.3/27
+          1701:
+            name: DMZ_SERVERS
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.100.33
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.100.34/27
+              DEMEENSE102:
+                ip_address: 10.71.100.35/27
+          1702:
+            name: SKYPE_SERVERS
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.100.65
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.100.66/26
+              DEMEENSE102:
+                ip_address: 10.71.100.67/26
+          1703:
+            name: EXCHANGE_SERVERS
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.100.129
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.100.130/25
+              DEMEENSE102:
+                ip_address: 10.71.100.131/25
+      INTERNET:
+        vrf_vni: 18
+        svis:
+          1653:
+            name: INTERNET
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 141.81.167.197/29
+              DEMEENSE102:
+                ip_address: 141.81.167.198/29
+          1654:
+            name: SDWAN-INTERNET
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 141.81.167.201
+            nodes:
+              DEMEENSE101:
+                ip_address: 141.81.167.202/29
+              DEMEENSE102:
+                ip_address: 141.81.167.203/29
+          1655:
+            name: ARISTA_To_F5Ext
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 141.81.167.209
+            nodes:
+              DEMEENSE101:
+                ip_address: 141.81.167.210/29
+              DEMEENSE102:
+                ip_address: 141.81.167.211/29
+      ISILON:
+        vrf_vni: 19
+        svis:
+          1709:
+            name: ISILON_DATA
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.101.65
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.101.66/26
+              DEMEENSE102:
+                ip_address: 10.71.101.67/26
+          1710:
+            name: ISILON_DMZ
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.101.129
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.101.130/26
+              DEMEENSE102:
+                ip_address: 10.71.101.131/26
+          1724:
+            name: ISILON_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.22.58
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.22.59/29
+              DEMEENSE102:
+                ip_address: 10.71.22.60/29
+          1725:
+            name: ISILON_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.22.65/29
+              DEMEENSE102:
+                ip_address: 10.71.22.66/29
+      Jump_Server:
+        vrf_vni: 20
+        svis:
+          1722:
+            name: JUMP_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.22.42
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.22.43/29
+              DEMEENSE102:
+                ip_address: 10.71.22.44/29
+          1723:
+            name: JUMP_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.22.49/29
+              DEMEENSE102:
+                ip_address: 10.71.22.50/29
+          3301:
+            name: Jump_Server
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.20.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.20.2/28
+              DEMEENSE102:
+                ip_address: 10.71.20.3/28
+          3390:
+            name: Log_Forwarding
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.20.49
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.20.50/28
+              DEMEENSE102:
+                ip_address: 10.71.20.51/28
+      MCAFEE:
+        vrf_vni: 21
+        svis:
+          3326:
+            name: MCAFEE_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.19.122
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.19.123/29
+              DEMEENSE102:
+                ip_address: 10.71.19.124/29
+          3327:
+            name: MCAFEE_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.19.129/29
+              DEMEENSE102:
+                ip_address: 10.71.19.130/29
+          3389:
+            name: MCAFEE
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.20.65
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.20.66/27
+              DEMEENSE102:
+                ip_address: 10.71.20.67/27
+      MPLS_AA:
+        vrf_vni: 22
+        svis:
+          1612:
+            name: MPLS_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.2.98
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.99/29
+              DEMEENSE102:
+                ip_address: 10.71.2.100/29
+          1618:
+            name: MPLS_DCI_eBGP
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.145/29
+              DEMEENSE102:
+                ip_address: 10.71.2.146/29
+          1635:
+            name: MPLS_CKT_1
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.241/30
+          1637:
+            name: MPLS_DC_iBGP
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.248/31
+              DEMEENSE102:
+                ip_address: 10.71.2.249/31
+          1636:
+            name: MPLS_CKT_2
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE102:
+                ip_address: 10.71.2.245/30
+      OOB_Mgmt:
+        vrf_vni: 23
+        svis:
+          1614:
+            name: OOB_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.2.114
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.115/29
+              DEMEENSE102:
+                ip_address: 10.71.2.116/29
+          1617:
+            name: OOB_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.137/29
+              DEMEENSE102:
+                ip_address: 10.71.2.138/29
+      OneMKS_PROD:
+        vrf_vni: 24
+        svis:
+          1582:
+            name: OneMKS_PROD_1582
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.96.17
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.96.18/28
+              DEMEENSE102:
+                ip_address: 10.71.96.19/28
+          1663:
+            name: OneMKS_PROD_Transit_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.70.106
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.70.107/29
+              DEMEENSE102:
+                ip_address: 10.71.70.108/29
+          1665:
+            name: OneMKS_PROD_DCI_BGP
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.70.121/29
+              DEMEENSE102:
+                ip_address: 10.71.70.122/29
+      OneMKS_UAT_TEST:
+        vrf_vni: 25
+        svis:
+          1581:
+            name: OneMKS_UAT_TEST_1581
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.96.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.96.2/28
+              DEMEENSE102:
+                ip_address: 10.71.96.3/28
+          1662:
+            name: OneMKS_UAT_TEST_Transit_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.70.98
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.70.99/29
+              DEMEENSE102:
+                ip_address: 10.71.70.100/29
+          1664:
+            name: OneMKS_UAT_TEST_DCI_BGP
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.70.113/29
+              DEMEENSE102:
+                ip_address: 10.71.70.114/29
+      PHY-VIR-iSAC:
+        vrf_vni: 26
+        svis:
+          134:
+            name: DC2-DC1 Transit DCI for EMEA Migration
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.230.70.4
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.230.70.5/29
+              DEMEENSE102:
+                ip_address: 10.230.70.6/29
+          1660:
+            name: NSX-Physical-iSAC_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.201/29
+              DEMEENSE102:
+                ip_address: 10.71.2.202/29
+          1661:
+            name: NSX-Physical-iSAC_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.2.194
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.195/29
+              DEMEENSE102:
+                ip_address: 10.71.2.196/29
+          1884:
+            name: NSX-Physical-iSAC_Server
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.84.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.84.2/24
+              DEMEENSE102:
+                ip_address: 10.71.84.3/24
+          1885:
+            name: ProdEMEIA-AX-2009
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.85.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.85.2/24
+              DEMEENSE102:
+                ip_address: 10.71.85.3/24
+          1886:
+            name: ProdEMEIA-AX-2012
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.86.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.86.2/24
+              DEMEENSE102:
+                ip_address: 10.71.86.3/24
+          1887:
+            name: EMEIA-AX-2009-Test
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.87.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.87.2/24
+              DEMEENSE102:
+                ip_address: 10.71.87.3/24
+          1888:
+            name: TestEMEIA-AX-2012
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.88.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.88.2/24
+              DEMEENSE102:
+                ip_address: 10.71.88.3/24
+      PHYSICAL_SERVER:
+        vrf_vni: 27
+        svis:
+          1540:
+            name: PHYSICAL_SERVER
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.40.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.40.2/24
+              DEMEENSE102:
+                ip_address: 10.71.40.3/24
+          1546:
+            name: EXCHANGE_PHY_SERVER
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.51.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.51.2/24
+              DEMEENSE102:
+                ip_address: 10.71.51.3/24
+          1882:
+            name: NSX-Physical-Server
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.82.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.82.2/23
+              DEMEENSE102:
+                ip_address: 10.71.82.3/23
+          3314:
+            name: PHYSICAL_SERVER_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.19.26
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.19.27/29
+              DEMEENSE102:
+                ip_address: 10.71.19.28/29
+          3315:
+            name: PHYSICAL_SERVER_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.19.33/29
+              DEMEENSE102:
+                ip_address: 10.71.19.34/29
+      REPLICATION:
+        vrf_vni: 28
+        svis:
+          1623:
+            name: REPLICATION_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.185/29
+              DEMEENSE102:
+                ip_address: 10.71.2.186/29
+          1626:
+            name: REPLICATION_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.2.210
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.2.211/29
+              DEMEENSE102:
+                ip_address: 10.71.2.212/29
+      Service_Now:
+        vrf_vni: 29
+        svis:
+          1704:
+            name: ServiceNow_Discovery
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.101.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.101.2/29
+              DEMEENSE102:
+                ip_address: 10.71.101.3/29
+          1720:
+            name: SNOW_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.22.26
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.22.27/29
+              DEMEENSE102:
+                ip_address: 10.71.22.28/29
+          1721:
+            name: SNOW_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.22.33/29
+              DEMEENSE102:
+                ip_address: 10.71.22.34/29
+      TEST-DIRECTFLOW:
+        vrf_vni: 30
+        svis:
+          50:
+            name: TEST_DF_Server_1
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.224.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.224.2/28
+              DEMEENSE102:
+                ip_address: 10.71.224.3/28
+          51:
+            name: TEST_DF_Server_2
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.224.17
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.224.18/28
+              DEMEENSE102:
+                ip_address: 10.71.224.19/28
+          52:
+            name: TEST_DF_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.224.34
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.224.35/29
+              DEMEENSE102:
+                ip_address: 10.71.224.36/29
+          53:
+            name: TEST_DF_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.224.41/29
+              DEMEENSE102:
+                ip_address: 10.71.224.42/29
+      TEST_GRE_OSD:
+        vrf_vni: 31
+        svis:
+      WLC_GUEST:
+        vrf_vni: 32
+        svis:
+          1629:
+            name: WLC_WiFi_Guest_Transit_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.44.26
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.44.27/29
+              DEMEENSE102:
+                ip_address: 10.71.44.28/29
+          1810:
+            name: WLC_WiFi_Guest
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.208.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.208.2/20
+              DEMEENSE102:
+                ip_address: 10.71.208.3/20
+      WLC_Mgmt:
+        vrf_vni: 33
+        svis:
+          1625:
+            name: WLC_Mgmt_Transit_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.44.2
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.44.3/29
+              DEMEENSE102:
+                ip_address: 10.71.44.4/29
+          1800:
+            name: WLC_Mgmt
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.30.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.30.2/28
+              DEMEENSE102:
+                ip_address: 10.71.30.3/28
+          1802:
+            name: Cisco_DNA
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.30.33
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.30.34/28
+              DEMEENSE102:
+                ip_address: 10.71.30.35/28
+      WLC_PROD_IOT:
+        vrf_vni: 34
+        svis:
+          1644:
+            name: Gobal WiFi VC_Prod_IoT_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.44.18
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.44.19/29
+              DEMEENSE102:
+                ip_address: 10.71.44.20/29
+          1820:
+            name: Global WiFi VC_Production
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.46.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.46.2/23
+              DEMEENSE102:
+                ip_address: 10.71.46.3/23
+          1830:
+            name: Global_WiFi_VC_IoT
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.128.1
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.128.2/20
+              DEMEENSE102:
+                ip_address: 10.71.128.3/20
+      XMS_CVP:
+        vrf_vni: 35
+        svis:
+          3324:
+            name: XMS_CVP_TRANSIT_FW
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.19.106
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.19.107/29
+              DEMEENSE102:
+                ip_address: 10.71.19.108/29
+          3325:
+            name: XMS_CVP_TRANSIT_DCI
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.19.113/29
+              DEMEENSE102:
+                ip_address: 10.71.19.114/29
+          3387:
+            name: XMS
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.20.17
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.20.18/28
+              DEMEENSE102:
+                ip_address: 10.71.20.19/28
+          3388:
+            name: CVP
+            enabled: true
+            mtu: 9000
+            arp_aging_timeout: 900
+            tags:
+            - fabricwide
+            ip_virtual_router_address: 10.71.20.33
+            nodes:
+              DEMEENSE101:
+                ip_address: 10.71.20.34/28
+              DEMEENSE102:
+                ip_address: 10.71.20.35/28

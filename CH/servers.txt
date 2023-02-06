@@ -1,0 +1,1084 @@
+servers:
+  PA-FW-1-CNIDCNSE001_CNIDCNSE002-Port-Channel51:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: PA-FW-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet31
+      - Ethernet32
+      - Ethernet31
+      - Ethernet32
+      switch_ports:
+      - Ethernet31
+      - Ethernet32
+      - Ethernet31
+      - Ethernet32
+      switches:
+      - CNIDCNSE001
+      - CNIDCNSE001
+      - CNIDCNSE002
+      - CNIDCNSE002
+      vlans: '1632,1657,1541,1543,1564,3321,3320,3381,3382,3385,3376,3322,1804,1608,1550,3312,1609,3316,3301,1505,1548,1803,1620,1806,1621,1619,1634,1704,1720,1554,1510'
+  PA-FW-2-CNIDCNSE001_CNIDCNSE002-Port-Channel52:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: PA-FW-2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet33
+      - Ethernet34
+      - Ethernet33
+      - Ethernet34
+      switch_ports:
+      - Ethernet33
+      - Ethernet34
+      - Ethernet33
+      - Ethernet34
+      switches:
+      - CNIDCNSE001
+      - CNIDCNSE001
+      - CNIDCNSE002
+      - CNIDCNSE002
+      vlans: '1632,1657,1541,1543,1564,3321,3320,3381,3382,3385,3376,3322,1804,1608,1550,3312,1609,3316,3301,1505,1548,1803,1620,1806,1621,1619,1634,1704,1720,1554,1510'
+  F5-iSeries-1-CNIDCNSE001_CNIDCNSE002-Port-Channel61:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: F5-iSeries-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet35
+      - Ethernet35
+      switch_ports:
+      - Ethernet35
+      - Ethernet35
+      switches:
+      - CNIDCNSE001
+      - CNIDCNSE002
+      vlans: '1652,1656,1559,3524,3513,3514,3515,3516,1554'
+  F5-iSeries-2-CNIDCNSE001_CNIDCNSE002-Port-Channel62:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: F5-iSeries-2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet36
+      - Ethernet36
+      switch_ports:
+      - Ethernet36
+      - Ethernet36
+      switches:
+      - CNIDCNSE001
+      - CNIDCNSE002
+      vlans: '1652,1656,1559,3524,3513,3514,3515,3516,1554'
+  F5-iSeries-1-CNIDCNSE001_CNIDCNSE002-Port-Channel63:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: F5-iSeries-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet3
+      - Ethernet3
+      switch_ports:
+      - Ethernet3
+      - Ethernet3
+      switches:
+      - CNIDCNSE001
+      - CNIDCNSE002
+      vlans: '1655'
+  F5-iSeries-2-CNIDCNSE001_CNIDCNSE002-Port-Channel64:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: F5-iSeries-2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet4
+      - Ethernet4
+      switch_ports:
+      - Ethernet4
+      - Ethernet4
+      switches:
+      - CNIDCNSE001
+      - CNIDCNSE002
+      vlans: '1655'
+  WLC2-CNIDCNSE001_CNIDCNSE002-Port-Channel145:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: WLC2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet45
+      - Ethernet45
+      switch_ports:
+      - Ethernet45
+      - Ethernet45
+      switches:
+      - CNIDCNSE001
+      - CNIDCNSE002
+      vlans: '1814,1815'
+  WLC2-CNIDCNSE001_CNIDCNSE002-Port-Channel146:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: WLC2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet46
+      - Ethernet46
+      switch_ports:
+      - Ethernet46
+      - Ethernet46
+      switches:
+      - CNIDCNSE001
+      - CNIDCNSE002
+      vlans: '1814,1815'
+  UNUSED-CNIDCNSE001-Ethernet2:
+    adapters:
+    - mode: access
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet2
+      switches:
+      - CNIDCNSE001
+      vlans: '1550'
+  CNIDCMGMTXI01-CNIDCNSE001-Ethernet5:
+    adapters:
+    - mode: trunk
+      description: CNIDCMGMTXI01
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1543,1801,1564,1804,3301,1505,1506,1507,1508,1548,1802,1554,3520,1510'
+  CNIDCMGMTXI01-CNIDCNSE001-Ethernet6:
+    adapters:
+    - mode: trunk
+      description: CNIDCMGMTXI01
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet6
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,1712,1804,3301,1505,1506,1507,1508,1802,1704,1554,3520,1510'
+  CNIDCMGMTXI02-CNIDCNSE001-Ethernet7:
+    adapters:
+    - mode: trunk
+      description: CNIDCMGMTXI02
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet7
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1543,1801,1564,1712,1804,3301,1505,1506,1507,1508,1548,1802,1554,3520,1510'
+  UNUSED-CNIDCNSE001-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,1712,1804,3301,1505,1506,1507,1508,1802,1704,1554,3520,1510'
+  UNUSED-CNIDCNSE001-Ethernet9:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet9
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1543,1801,1564,1712,1804,3301,1505,1506,1507,1508,1548,1802,1554,3520,1510'
+  UNUSED-CNIDCNSE001-Ethernet10:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet10
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,1712,1804,3301,1505,1506,1507,1508,1802,1704,1554,3520,1510'
+  UNUSED-CNIDCNSE001-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1543,1801,1564,1712,1804,3301,1505,1506,1507,1508,1548,1802,1554,3520,1510'
+  UNUSED-CNIDCNSE001-Ethernet12:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet12
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,1712,1804,3301,1505,1506,1507,1508,1802,1704,1554,3520,1510'
+  UNUSED-CNIDCNSE001-Ethernet13:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet13
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1525,1526,1527,1528,1676,3520'
+  UNUSED-CNIDCNSE001-Ethernet14:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet14
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3382,3385,3376,3518,3301,1505,1506,1507,1508,1548,1681,1682,1685,1525,1526,1527,1528,1676,3520'
+  UNUSED-CNIDCNSE001-Ethernet15:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet15
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1525,1526,1527,1528,1676,3520'
+  UNUSED-CNIDCNSE001-Ethernet16:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet16
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3382,3385,3376,3518,3301,1505,1506,1507,1508,1548,1681,1682,1685,1525,1526,1527,1528,1676,3520'
+  UNUSED-CNIDCNSE001-Ethernet17:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet17
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1525,1526,1527,1528,1676,3520'
+  UNUSED-CNIDCNSE001-Ethernet18:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet18
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3382,3385,3376,3518,3301,1505,1506,1507,1508,1548,1681,1682,1685,1525,1526,1527,1528,3520'
+  UNUSED-CNIDCNSE001-Ethernet19:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet19
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1525,1526,1527,1528,1676,3520'
+  UNUSED-CNIDCNSE001-Ethernet20:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet20
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3382,3385,3376,3518,3301,1505,1506,1507,1508,1548,1681,1682,1685,1525,1526,1527,1528,3520'
+  UNUSED-CNIDCNSE001-Ethernet21:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet21
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1525,1526,1527,1528,1676,3520'
+  UNUSED-CNIDCNSE001-Ethernet22:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet22
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3382,3385,3376,3518,3301,1505,1506,1507,1508,1548,1681,1682,1685,1525,1526,1527,1528,3520'
+  UNUSED-CNIDCNSE001-Ethernet23:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet23
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1525,1526,1527,1528,1676,3520'
+  UNUSED-CNIDCNSE001-Ethernet24:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet24
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3382,3385,3376,3518,3301,1505,1506,1507,1508,1548,1681,1682,1685,1525,1526,1527,1528,1676,3520'
+  UNUSED-CNIDCNSE001-Ethernet25:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet25
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1525,1526,1527,1528,1676,3520'
+  UNUSED-CNIDCNSE001-Ethernet26:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet26
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3382,3385,3376,3518,3301,1505,1506,1507,1508,1548,1681,1682,1685,1525,1526,1527,1528,3520'
+  UNUSED-CNIDCNSE001-Ethernet27:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet27
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1525,1526,1527,1528,1676,3520'
+  UNUSED-CNIDCNSE001-Ethernet28:
+    adapters:
+    - mode: trunk
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet28
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1681,1682,1685,1525,1526,1527,1528,3520'
+  UNUSED-CNIDCNSE001-Ethernet29:
+    adapters:
+    - mode: access
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet29
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  UNUSED-CNIDCNSE001-Ethernet30:
+    adapters:
+    - mode: access
+      description: UNUSED
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet30
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  CNIDCDNS01a-CNIDCNSE001-Ethernet37:
+    adapters:
+    - mode: access
+      description: CNIDCDNS01a
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet37
+      switches:
+      - CNIDCNSE001
+      vlans: '1550'
+  CNIDCDNS01a-CNIDCNSE001-Ethernet38:
+    adapters:
+    - mode: access
+      description: CNIDCDNS01a
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet38
+      switches:
+      - CNIDCNSE001
+      vlans: '1550'
+  CNIDCDNS02a-CNIDCNSE001-Ethernet39:
+    adapters:
+    - mode: access
+      description: CNIDCDNS02a
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet39
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '3386'
+  CNIDCDNS02a-CNIDCNSE001-Ethernet40:
+    adapters:
+    - mode: access
+      description: CNIDCDNS02a
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet40
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'
+  AT&T MPLS Circuit-1-CNIDCNSE001-Ethernet41:
+    adapters:
+    - mode: access
+      description: AT&T MPLS Circuit-1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet41
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1635'
+  CNIDC-GSSC-VPN01-mgmt-CNIDCNSE001-Ethernet42:
+    adapters:
+    - mode: access
+      description: CNIDC-GSSC-VPN01-mgmt
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet42
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1805'
+  CNIDC-GSSC-VPN01-CNIDCNSE001-Ethernet43:
+    adapters:
+    - mode: access
+      description: CNIDC-GSSC-VPN01
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet43
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1803'
+  CNIDC-GSSC-VPN01-Ext-CNIDCNSE001-Ethernet44:
+    adapters:
+    - mode: access
+      description: CNIDC-GSSC-VPN01-Ext
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet44
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1806'
+  INFOBLOX-CNIDCNSE001-Ethernet47:
+    adapters:
+    - mode: access
+      description: INFOBLOX
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - CNIDCNSE001
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '3386'
+  INTERNET_CKT-1-CNIDCNSE001-Ethernet48:
+    adapters:
+    - mode: access
+      description: INTERNET_CKT-1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - CNIDCNSE001
+      vlans: '1653'
+  CNIDCMGMTXI01-CNIDCNSE002-Ethernet5:
+    adapters:
+    - mode: trunk
+      description: CNIDCMGMTXI01
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1543,1801,1564,1804,3301,1505,1506,1507,1508,1548,1802,1554,3520,1510'
+  CNIDCMGMTXI01-CNIDCNSE002-Ethernet6:
+    adapters:
+    - mode: trunk
+      description: CNIDCMGMTXI01
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet6
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,1712,1804,3301,1505,1506,1507,1508,1802,1704,1554,3520,1510'
+  CNIDCMGMTXI02-CNIDCNSE002-Ethernet7:
+    adapters:
+    - mode: trunk
+      description: CNIDCMGMTXI02
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet7
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1543,1801,1564,1712,1804,3301,1505,1506,1507,1508,1548,1802,1554,3520,1510'
+  CNIDCMGMTXI02-CNIDCNSE002-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: CNIDCMGMTXI02
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,1712,1804,3301,1505,1506,1507,1508,1802,1704,1554,3520,1510'
+  CNIDCMGMTXI03-CNIDCNSE002-Ethernet9:
+    adapters:
+    - mode: trunk
+      description: CNIDCMGMTXI03
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet9
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1543,1801,1564,1712,1804,3301,1505,1506,1507,1508,1548,1802,1554,3520,1510'
+  CNIDCMGMTXI03-CNIDCNSE002-Ethernet10:
+    adapters:
+    - mode: trunk
+      description: CNIDCMGMTXI03
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet10
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,1712,1804,3301,1505,1506,1507,1508,1802,1704,1554,3520,1510'
+  CNIDCMGMTXI04-CNIDCNSE002-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: CNIDCMGMTXI04
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1543,1801,1564,1712,1804,3301,1505,1506,1507,1508,1548,1802,1554,3520,1510'
+  CNIDCMGMTXI04-CNIDCNSE002-Ethernet12:
+    adapters:
+    - mode: trunk
+      description: CNIDCMGMTXI04
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet12
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1801,1712,1804,3301,1505,1506,1507,1508,1802,1704,1554,3520,1510'
+  CNIDCSLVRXI01-CNIDCNSE002-Ethernet13:
+    adapters:
+    - mode: trunk
+      description: CNIDCSLVRXI01
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet13
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1525,1526,1527,1528,1676,3520'
+  CNIDCSLVRXI01-CNIDCNSE002-Ethernet14:
+    adapters:
+    - mode: trunk
+      description: CNIDCSLVRXI01
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet14
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3382,3385,3376,3518,3301,1505,1506,1507,1508,1548,1681,1682,1685,1525,1526,1527,1528,1676,3520'
+  CNIDCSLVRXI02-CNIDCNSE002-Ethernet15:
+    adapters:
+    - mode: trunk
+      description: CNIDCSLVRXI02
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet15
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1525,1526,1527,1528,1676,3520'
+  CNIDCSLVRXI02-CNIDCNSE002-Ethernet16:
+    adapters:
+    - mode: trunk
+      description: CNIDCSLVRXI02
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet16
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3382,3385,3376,3518,3301,1505,1506,1507,1508,1548,1681,1682,1685,1525,1526,1527,1528,1676,3520'
+  CNIDCSLVRXI03-CNIDCNSE002-Ethernet17:
+    adapters:
+    - mode: trunk
+      description: CNIDCSLVRXI03
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet17
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1525,1526,1527,1528,1676,3520'
+  CNIDCSLVRXI03-CNIDCNSE002-Ethernet18:
+    adapters:
+    - mode: trunk
+      description: CNIDCSLVRXI03
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet18
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3382,3385,3376,3518,3301,1505,1506,1507,1508,1548,1681,1682,1685,1525,1526,1527,1528,3520'
+  CNIDCSLVRXI04-CNIDCNSE002-Ethernet19:
+    adapters:
+    - mode: trunk
+      description: CNIDCSLVRXI04
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet19
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1525,1526,1527,1528,1676,3520'
+  CNIDCSLVRXI04-CNIDCNSE002-Ethernet20:
+    adapters:
+    - mode: trunk
+      description: CNIDCSLVRXI04
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet20
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3382,3385,3376,3518,3301,1505,1506,1507,1508,1548,1681,1682,1685,1525,1526,1527,1528,3520'
+  CNIDCSLVRXI05-CNIDCNSE002-Ethernet21:
+    adapters:
+    - mode: trunk
+      description: CNIDCSLVRXI05
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet21
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1525,1526,1527,1528,1676,3520'
+  CNIDCSLVRXI05-CNIDCNSE002-Ethernet22:
+    adapters:
+    - mode: trunk
+      description: CNIDCSLVRXI05
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet22
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3382,3385,3376,3518,3301,1505,1506,1507,1508,1548,1681,1682,1685,1525,1526,1527,1528,3520'
+  CNIDCSLVRXI06-CNIDCNSE002-Ethernet23:
+    adapters:
+    - mode: trunk
+      description: CNIDCSLVRXI06
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet23
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1525,1526,1527,1528,1676,3520'
+  CNIDCSLVRXI06-CNIDCNSE002-Ethernet24:
+    adapters:
+    - mode: trunk
+      description: CNIDCSLVRXI06
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet24
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3382,3385,3376,3518,3301,1505,1506,1507,1508,1548,1681,1682,1685,1525,1526,1527,1528,1676,3520'
+  CNIDCSLVRXI07-CNIDCNSE002-Ethernet25:
+    adapters:
+    - mode: trunk
+      description: CNIDCSLVRXI07
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet25
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1525,1526,1527,1528,1676,3520'
+  CNIDCSLVRXI07-CNIDCNSE002-Ethernet26:
+    adapters:
+    - mode: trunk
+      description: CNIDCSLVRXI07
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet26
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3382,3385,3376,3518,3301,1505,1506,1507,1508,1548,1681,1682,1685,1525,1526,1527,1528,3520'
+  CNIDCSLVRXI08-CNIDCNSE002-Ethernet27:
+    adapters:
+    - mode: trunk
+      description: CNIDCSLVRXI08
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet27
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1525,1526,1527,1528,1676,3520'
+  CNIDCSLVRXI08-CNIDCNSE002-Ethernet28:
+    adapters:
+    - mode: trunk
+      description: CNIDCSLVRXI08
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet28
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3518,3301,1505,1506,1507,1508,1548,1681,1682,1685,1525,1526,1527,1528,3520'
+  CNIDCXPDD001-CNIDCNSE002-Ethernet29:
+    adapters:
+    - mode: access
+      description: CNIDCXPDD001
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet29
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  CNIDCXPDD001-CNIDCNSE002-Ethernet30:
+    adapters:
+    - mode: access
+      description: CNIDCXPDD001
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet30
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  CNIDCDNS01b-CNIDCNSE002-Ethernet37:
+    adapters:
+    - mode: access
+      description: CNIDCDNS01b
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet37
+      switches:
+      - CNIDCNSE002
+      vlans: '1550'
+  CNIDCDNS01b-CNIDCNSE002-Ethernet38:
+    adapters:
+    - mode: access
+      description: CNIDCDNS01b
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet38
+      switches:
+      - CNIDCNSE002
+      vlans: '1550'
+  CNIDCDNS01b-CNIDCNSE002-Ethernet39:
+    adapters:
+    - mode: access
+      description: CNIDCDNS01b
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet39
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '3386'
+  CNIDCDNS02b-CNIDCNSE002-Ethernet40:
+    adapters:
+    - mode: access
+      description: CNIDCDNS02b
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet40
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'
+  AT&T MPLS Circuit-2-CNIDCNSE002-Ethernet41:
+    adapters:
+    - mode: access
+      description: AT&T MPLS Circuit-2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet41
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1636'
+  CNIDC-GSSC-VPN01-mgmt-CNIDCNSE002-Ethernet42:
+    adapters:
+    - mode: access
+      description: CNIDC-GSSC-VPN01-mgmt
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet42
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1805'
+  CNIDC-GSSC-VPN01-CNIDCNSE002-Ethernet43:
+    adapters:
+    - mode: access
+      description: CNIDC-GSSC-VPN01
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet43
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1803'
+  CNIDC-GSSC-VPN01-Ext-CNIDCNSE002-Ethernet44:
+    adapters:
+    - mode: access
+      description: CNIDC-GSSC-VPN01-Ext
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet44
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1806'
+  INFOBLOX-CNIDCNSE002-Ethernet47:
+    adapters:
+    - mode: access
+      description: INFOBLOX
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - CNIDCNSE002
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '3386'
+  INTERNET_CKT-2-CNIDCNSE002-Ethernet48:
+    adapters:
+    - mode: access
+      description: INTERNET_CKT-2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - CNIDCNSE002
+      vlans: '1653'

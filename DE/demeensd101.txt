@@ -1,0 +1,2120 @@
+! Startup-config last modified at Mon Aug  1 08:21:48 2022 by sac-tremar
+! device: DEMEENSD101 (DCS-7050SX3-48YC8, EOS-4.25.5.1M)
+!
+! boot system flash:/EOS-4.25.5.1M.swi
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$8/rPXHd81cL3dGsk$kANIsbUouIYa39Iutwv4NMUAEkFYCBghoF/5jnd66xnLkL5DOdk7f54GAUctK.BO6nW8D8EEqtCYa.8m/Z2LV/
+username cvpadmin privilege 15 role network-admin secret sha512 $6$9BpT6BSk5.PXVJ8E$MrE3xe/gIvrZUIUOf7wlOpeHD.RNNz4rSRaSAIeTTwUAWrvsCEqb0cZufjQ.hX5sd5c7NJqmQgZ4OlLV5lF3.1
+username netadmin privilege 15 role network-admin secret sha512 $6$CEis6ODzkRl4oyCg$myGNF2naNBYy9EzUJQuzSrp.wXTjEvUWjrL3zCpzIeuUFJG6uymA9dPGMFQQJso0OaauU0JdS7sv0o.FhOVpc/
+!
+terminal length 0
+!
+daemon SplunkForwarder
+   exec /usr/bin/SplunkAgent 
+   option eapi_protocol value socket
+   option index-data value gssc_emea_ops_network-switch
+   option index-interface-counters value on
+   option index-inventory value on
+   option index-lanz value on
+   option index-sflow value on
+   option index-syslog value on
+   option index-topology value on
+   option shutdown value disabled
+   option splunk-server value 10.71.54.15:9998
+   option vrf value mgmt
+   no shutdown
+!
+daemon TerminAttr
+   exec /usr/bin/TerminAttr -ingestgrpcurl=10.71.30.22:9910 -cvcompression=gzip -ingestauth=key,AAbm@130 -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -ingestvrf=mgmt -taillogs
+   no shutdown
+!
+event-monitor
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+queue-monitor length
+!
+logging buffered 10000
+logging trap notifications
+logging vrf mgmt host 10.71.20.11 514 protocol tcp
+logging facility local7
+logging vrf mgmt source-interface Management1
+!
+platform trident mmu queue profile test
+   egress unicast queue 0 reserved 4096
+   egress unicast queue 0 threshold 2
+   egress unicast queue 1 reserved 4096
+   egress unicast queue 1 threshold 2
+   egress multicast queue 0 reserved 4096
+   egress multicast queue 0 threshold 2
+   egress multicast queue 1 reserved 4096
+   egress multicast queue 1 threshold 2
+!
+hostname DEMEENSD101
+ip domain lookup vrf mgmt source-interface Management1
+ip name-server vrf mgmt 10.23.50.53
+ip name-server vrf mgmt 10.71.50.53
+dns domain ad.global
+!
+ntp server vrf mgmt 10.23.50.53 local-interface Management1
+ntp server vrf mgmt 10.71.50.53 prefer local-interface Management1
+!
+sflow polling-interval 10
+sflow vrf mgmt destination 10.71.114.67 2055
+sflow vrf mgmt source-interface Management1
+sflow run
+!
+snmp-server vrf mgmt local-interface Management1
+snmp-server community GSSC-SnmpV2Read ro
+snmp-server host 10.71.114.60 vrf mgmt informs version 2c GSSC-SnmpV2Read
+snmp-server enable traps
+no snmp-server vrf default
+snmp-server vrf mgmt
+!
+spanning-tree mode mstp
+no spanning-tree vlan-id 2000
+!
+vlan 50
+   name TEST_DF_Server_1
+!
+vlan 51
+   name TEST_DF_Server_2
+!
+vlan 101
+   name V2V_MIGRATION_LINK
+   trunk group V2V_MIGRATION_LINK
+!
+vlan 182
+   name MIGRATION_LINK_REPLICATION_182
+   trunk group MIGRATION_LINK_REPLICATION_182
+!
+vlan 1504
+!
+vlan 1505
+   name MGMT_TNT_ESXi_Mgmt
+   trunk group MGMT_TNT_ESXi_Mgmt
+!
+vlan 1511
+   name WITNESS_Mgmt
+   trunk group WITNESS_Mgmt
+!
+vlan 1515
+   name GOLD_TNT_ESXi_Mgmt
+   trunk group GOLD_TNT_ESXi_Mgmt
+!
+vlan 1516
+   name GOLD_TNT_VXLAN_VTEP
+   trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1517
+   name GOLD_TNT_ESXi_vMotion
+   trunk group GOLD_TNT_ESXi_vMotion
+!
+vlan 1518
+   name GOLD_TNT_ESXi_vSAN
+   trunk group GOLD_TNT_ESXi_vSAN
+!
+vlan 1525
+   name SILV_TNT_ESXi_Mgmt
+   trunk group SILV_TNT_ESXi_Mgmt
+!
+vlan 1526
+   name SILV_TNT_ESXi_VXLAN_VTEP
+   trunk group SILV_TNT_ESXi_VXLAN_VTEP
+!
+vlan 1527
+   name SILV_TNT_ESXi_vMotion
+   trunk group SILV_TNT_ESXi_vMotion
+!
+vlan 1528
+   name SILV_TNT_ESXi_vSAN
+   trunk group SILV_TNT_ESXi_vSAN
+!
+vlan 1540
+   name PHYSICAL_SERVER
+   trunk group PHYSICAL_SERVER
+!
+vlan 1541
+   name Backup-Infra
+   trunk group BACKUP_Infra
+!
+vlan 1543
+   name BACKUP_Mgmt
+   trunk group BACKUP_Mgmt
+!
+vlan 1544
+   name BACK_Infra_2
+!
+vlan 1546
+   name EXCHANGE_PHY_SERVER
+!
+vlan 1548
+   name PAFW_VM300
+   trunk group PAFW_VM300
+!
+vlan 1550
+   name DC_Mgmt
+   trunk group DC_Mgmt
+!
+vlan 1675
+   name GOLD_TEP_Pool
+   trunk group GOLD_TEP_Pool
+!
+vlan 1676
+   name SILV_TEP_Pool
+   trunk group SILV_TEP_Pool
+!
+vlan 1677
+   name GOLD_EDGE1_BGP
+   trunk group GOLD_EDGE1_BGP
+!
+vlan 1678
+   name GOLD_EDGE2_BGP
+   trunk group GOLD_EDGE2_BGP
+!
+vlan 1679
+   name GOLD_EDGE3_BGP
+   trunk group GOLD_EDGE3_BGP
+!
+vlan 1680
+   name GOLD_EDGE4_BGP
+   trunk group GOLD_EDGE4_BGP
+!
+vlan 1681
+   name SILV_EDGE1_BGP
+   trunk group SILV_EDGE1_BGP
+!
+vlan 1682
+   name SILV_EDGE2_BGP
+   trunk group SILV_EDGE2_BGP
+!
+vlan 1683
+   name GOLD_EDGE1_TEP_Pool
+   trunk group GOLD_EDGE1_TEP_Pool
+!
+vlan 1684
+   name GOLD_EDGE2_TEP_Pool
+   trunk group GOLD_EDGE2_TEP_Pool
+!
+vlan 1685
+   name SILV_EDGE_TEP_Pool
+   trunk group SILV_EDGE_TEP_Pool
+!
+vlan 1700
+   name AD_SERVER
+!
+vlan 1701
+   name DMZ_SERVER
+!
+vlan 1702
+   name SKYPE_SERVER
+!
+vlan 1703
+   name EXCHANGE_SERVER
+!
+vlan 1704
+   name Splunk
+   trunk group SPLUNK
+!
+vlan 1802
+   name Cisco_DNA
+   trunk group Cisco_DNA
+!
+vlan 1810
+   name WLC_WiFi_Guest
+   trunk group WiFi_GUEST_PROD_IOT
+!
+vlan 1820
+   name Global_WiFi_VC_Production
+   trunk group WiFi_GUEST_PROD_IOT
+!
+vlan 1830
+   name Global_WiFi_VC_IoT
+   trunk group WiFi_GUEST_PROD_IOT
+!
+vlan 1840
+   name WLC_HA_L2_VLAN
+   trunk group WiFi_GUEST_PROD_IOT
+!
+vlan 1882
+   name NSX-Physical-Server
+!
+vlan 1884
+   name NSX-Physical-iSAC_Server
+!
+vlan 1885
+   name Prod_EMEIA-AX-2009
+!
+vlan 1886
+   name ProdEMEIA-AX-2012
+!
+vlan 1887
+   name EMEIA-AX-2009-Test
+!
+vlan 2000
+   name MLAG
+   trunk group MLAG_PEER
+!
+vlan 2704
+   name SPLUNK_SERVER
+   trunk group SPLUNK_SERVER
+!
+vlan 3375,3475
+   name DMZ_GOLD_TEP_Pool
+   trunk group DMZ_GOLD_TEP_Pool
+!
+vlan 3376,3476
+   name DMZ_SILV_TEP_Pool
+   trunk group DMZ_SILV_TEP_Pool
+!
+vlan 3377,3477
+   name DMZ_GOLD_EDGE1_BGP
+   trunk group DMZ_GOLD_EDGE1_BGP
+!
+vlan 3378,3478
+   name DMZ_GOLD_EDGE2_BGP
+   trunk group DMZ_GOLD_EDGE2_BGP
+!
+vlan 3381,3481
+   name DMZ_SILV_EDGE1_BGP
+   trunk group DMZ_SILV_EDGE1_BGP
+!
+vlan 3382,3482
+   name DMZ_SILV_EDGE2_BGP
+   trunk group DMZ_SILV_EDGE2_BGP
+!
+vlan 3383,3483
+   name DMZ_GOLD_EDGE1_TEP_Pool
+   trunk group DMZ_GOLD_EDGE1_TEP_Pool
+!
+vlan 3384,3484
+   name DMZ_GOLD_EDGE2_TEP_Pool
+   trunk group DMZ_GOLD_EDGE2_TEP_Pool
+!
+vlan 3385,3485
+   name DMZ_SILV_EDGE_TEP_Pool
+   trunk group DMZ_SILV_EDGE_TEP_Pool
+!
+vlan 3386
+   name DMZ
+   trunk group DMZ
+!
+vlan 3387
+   name XMS
+   trunk group XMS
+!
+vlan 3388
+   name CVP
+   trunk group CVP
+!
+vlan 3389
+   name MCAFEE
+   trunk group MCAFEE
+!
+vlan 3390
+   name Log_Forwarding
+   trunk group Log_Forwarding
+!
+vlan 3517
+   name F5_VLAN_5
+   trunk group F5_VLAN_5
+!
+vlan 3518
+   name F5_VLAN_6
+   trunk group F5_VLAN_6
+!
+vlan 3519
+   name F5_VLAN_7
+   trunk group F5_VLAN_7
+!
+vlan 3520
+   name VIRT_F5_VLAN_1
+   trunk group VIRT_F5_VLAN_1
+!
+vlan 3521
+   name VIRT_F5_VLAN_2
+   trunk group VIRT_F5_VLAN_2
+!
+vlan 3522
+   name VIRT_F5_VLAN_3
+   trunk group VIRT_F5_VLAN_3
+!
+vrf instance GOLD_TNT
+   description vrf gold
+!
+vrf instance INFRA_Mgmt
+!
+vrf instance INTERNAL
+!
+vrf instance SILV_TNT
+   description vrf silv
+!
+vrf instance mgmt
+   description vrf mgmt
+!
+interface Port-Channel200
+   description 2020-Spare Server 15
+   shutdown
+   switchport access vlan 182
+   mlag 200
+!
+interface Port-Channel210
+   description 2020-Spare Server 16
+   shutdown
+   switchport access vlan 182
+   mlag 210
+!
+interface Port-Channel220
+   description 2020-Spare Server 17
+   shutdown
+   switchport access vlan 182
+   mlag 220
+!
+interface Port-Channel240
+   shutdown
+!
+interface Port-Channel290
+   shutdown
+!
+interface Port-Channel300
+   shutdown
+!
+interface Port-Channel310
+   shutdown
+!
+interface Port-Channel320
+   shutdown
+!
+interface Port-Channel330
+   shutdown
+!
+interface Port-Channel340
+   shutdown
+!
+interface Port-Channel370
+   shutdown
+!
+interface Port-Channel380
+   shutdown
+!
+interface Port-Channel2000
+   description MLAG_CHANNEL
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BACKUP_Mgmt
+   switchport trunk group CVP
+   switchport trunk group DMZ
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group Log_Forwarding
+   switchport trunk group MCAFEE
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group MIGRATION_LINK_REPLICATION_182
+   switchport trunk group MLAG_PEER
+   switchport trunk group PAFW_VM300
+   switchport trunk group PHYSICAL_SERVER
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group SPLUNK
+   switchport trunk group SPLUNK_SERVER
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   switchport trunk group XMS
+!
+interface Ethernet1
+   description DEMEESGOLDXI01_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DC_Mgmt
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet2
+   description DEMEESGOLDXI01_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet3
+   description DEMEESGOLDXI02_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DC_Mgmt
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet4
+   description DEMEESGOLDXI02_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet5
+   description DEMEESGOLDXI03_NIC_1_
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DC_Mgmt
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet6
+   description DEMEESGOLDXI03_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet7
+   description DEMEESGOLDXI04_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DC_Mgmt
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet8
+   description DEMEESGOLDXI04_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet9
+   description DEMEESSLVRXI01_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BIG_IQ
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+   platform trident mmu queue interface-profile test
+!
+interface Ethernet10
+   description DEMEESSLVRXI01_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet11
+   description DEMEESSLVRXI02_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BIG_IQ
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet12
+   description DEMEESSLVRXI02_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet13
+   description DEMEESSLVRXI03_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BIG_IQ
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet14
+   description DEMEESSLVRXI03_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet15
+   description DEMEESSLVRXI04_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BIG_IQ
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet16
+   description DEMEESSLVRXI04_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet17
+   description DEMEESSLVRXI05_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BIG_IQ
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet18
+   description DEMEESSLVRXI05_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   switchport trunk group SPLUNK_SERVER
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet19
+   description DEMEESGOLDXI05_C2R0BB3_RITM0423306
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DC_Mgmt
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet20
+   description DEMEESGOLDXI05_C2R0BB3_RITM0423306
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet21
+   description DEMEESGOLDXI06_F2R0BB3_RITM0423306
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DC_Mgmt
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet22
+   description DEMEESGOLDXI06_F2R0BB3_RITM0423306
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet23
+   description DEMEESSLVRXI15
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BIG_IQ
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet24
+   description DEMEESSLVRXI15
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet25
+   description DEMEESSLVRXI07#RITM0433119
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BIG_IQ
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet26
+   description DEMEESSLVRXI07#RITM0433119
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet27
+   description DEMEESSLVRXI08#RITM0433119
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BIG_IQ
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group SPLUNK
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet28
+   description DEMEESSLVRXI08#RITM0433119
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet29
+   description DEMEESGOLDXI08
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DC_Mgmt
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet30
+   description DEMEESGOLDXI08
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet31
+   description DEMEESGOLDXI09
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DC_Mgmt
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_Mgmt
+   switchport trunk group GOLD_TNT_ESXi_vMotion
+   switchport trunk group GOLD_TNT_ESXi_vSAN
+   switchport trunk group PAFW_VM300
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet32
+   description DEMEESGOLDXI09
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_GOLD_EDGE1_BGP
+   switchport trunk group DMZ_GOLD_EDGE1_TEP_Pool
+   switchport trunk group DMZ_GOLD_EDGE2_BGP
+   switchport trunk group DMZ_GOLD_EDGE2_TEP_Pool
+   switchport trunk group DMZ_GOLD_TEP_Pool
+   switchport trunk group GOLD_EDGE1_BGP
+   switchport trunk group GOLD_EDGE1_TEP_Pool
+   switchport trunk group GOLD_EDGE2_BGP
+   switchport trunk group GOLD_EDGE2_TEP_Pool
+   switchport trunk group GOLD_EDGE3_BGP
+   switchport trunk group GOLD_EDGE4_BGP
+   switchport trunk group GOLD_TEP_Pool
+   switchport trunk group GOLD_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group PAFW_VM300
+   switchport trunk group SPLUNK
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet33
+   description DEMEESSLVRXI16 #RITM0466650
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BIG_IQ
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet34
+   description DEMEESSLVRXI16 #RITM0466650
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet35
+   description DEMEESSLVRXI11_NIC_1_VDS
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BIG_IQ
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet36
+   description DEMEESSLVRXI11_NIC_2_NVDS
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet37
+   description DEMEESSLVRXI09|RITM0496514
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BIG_IQ
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+!
+interface Ethernet38
+   description DEMEESSLVRXI09|RITM0496514
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet39
+   description DEMEESSLVRXI14|RITM0496514
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BIG_IQ
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+!
+interface Ethernet40
+   description DEMEESSLVRXI14|RITM0496514
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet41
+   description DEMEESSLVRXI10_NIC_1_VDS
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BIG_IQ
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet42
+   description DEMEESSLVRXI10_NIC_2_NDVS
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   ip access-group isolated_1540 in
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet43
+   description DEMEESSLVRXI12_NIC_1_VDS
+   mtu 9214
+   switchport access vlan 1550
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BIG_IQ
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet44
+   description DEMEESSLVRXI13 SN: H92ZRB3
+   mtu 9214
+   switchport access vlan 1540
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BIG_IQ
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet45
+   description DEMEESSLVRXI13 SN: H92ZRB3
+   mtu 9214
+   switchport access vlan 1540
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   ip access-group isolated_1540 in
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet46
+   description DEMEESSLVRXI12_NIC_2_NVDS
+   mtu 9214
+   switchport access vlan 1540
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   ip access-group isolated_1540 in
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet47
+   description DEMEESSLVRXI06_NIC_1
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group BIG_IQ
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group F5_VLAN_5
+   switchport trunk group F5_VLAN_6
+   switchport trunk group F5_VLAN_7
+   switchport trunk group MGMT_TNT_ESXi_Mgmt
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_EDGE1_BGP
+   switchport trunk group SILV_EDGE2_BGP
+   switchport trunk group SILV_EDGE_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_Mgmt
+   switchport trunk group SILV_TNT_ESXi_vMotion
+   switchport trunk group SILV_TNT_ESXi_vSAN
+   switchport trunk group V2V_MIGRATION_LINK
+   switchport trunk group VIRT_F5_VLAN_1
+   switchport trunk group VIRT_F5_VLAN_2
+   switchport trunk group VIRT_F5_VLAN_3
+   switchport trunk group WITNESS_Mgmt
+   switchport trunk group WiFi_GUEST_PROD_IOT
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet48
+   description DEMEESSLVRXI06_NIC_2
+   mtu 9214
+   switchport mode trunk
+   switchport trunk group BACKUP_Infra
+   switchport trunk group DMZ_SILV_EDGE1_BGP
+   switchport trunk group DMZ_SILV_EDGE2_BGP
+   switchport trunk group DMZ_SILV_EDGE_TEP_Pool
+   switchport trunk group DMZ_SILV_TEP_Pool
+   switchport trunk group PAFW_VM300
+   switchport trunk group SILV_TEP_Pool
+   switchport trunk group SILV_TNT_ESXi_VXLAN_VTEP
+   switchport trunk group SPLUNK
+   switchport trunk group SPLUNK_SERVER
+   ip access-group isolated_1540 in
+   queue-monitor length thresholds 12000 6000
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet49/1
+   description to DEMEENSD002 Eth49/1
+   mtu 9214
+   channel-group 2000 mode active
+   queue-monitor length thresholds 12000 6000
+!
+interface Ethernet50/1
+   description to DEMEENSD002 Eth50/1
+   mtu 9214
+   channel-group 2000 mode active
+   queue-monitor length thresholds 12000 6000
+!
+interface Ethernet51/1
+   description to DEMEENSC001 Eth1
+   mtu 9214
+   no switchport
+   ip address 10.71.3.31/31
+   queue-monitor length thresholds 12000 6000
+!
+interface Ethernet52/1
+   description to DEMEENSC002 Eth1
+   mtu 9214
+   no switchport
+   ip address 10.71.3.61/31
+   queue-monitor length thresholds 12000 6000
+!
+interface Ethernet53/1
+   shutdown
+   queue-monitor length thresholds 12000 6000
+!
+interface Ethernet54/1
+   shutdown
+   queue-monitor length thresholds 12000 6000
+!
+interface Ethernet55/1
+   shutdown
+   queue-monitor length thresholds 12000 6000
+!
+interface Ethernet56/1
+   shutdown
+   queue-monitor length thresholds 12000 6000
+!
+interface Loopback0
+   description BGP_ROUTER_ID
+   ip address 10.71.3.13/32
+!
+interface Loopback1
+   description VTEP
+   ip address 10.71.3.202/32
+!
+interface Management1
+   vrf mgmt
+   ip address 10.71.0.13/24
+!
+interface Vlan1516
+   description ESXi VXLAN VTEP for Tenant GOLD
+   vrf GOLD_TNT
+   ip address 10.71.16.2/24
+   ip virtual-router address 10.71.16.1
+!
+interface Vlan1526
+   description ESXi VXLAN VTEP for Tenant SILV
+   vrf SILV_TNT
+   ip address 10.71.26.2/24
+   ip virtual-router address 10.71.26.1
+!
+interface Vlan2000
+   mtu 9214
+   no autostate
+   ip address 10.71.2.10/31
+!
+interface Vxlan1
+   vxlan source-interface Loopback1
+   vxlan udp-port 4789
+   vxlan vlan 50 vni 10050
+   vxlan vlan 51 vni 10051
+   vxlan vlan 101 vni 10101
+   vxlan vlan 182 vni 10182
+   vxlan vlan 1505 vni 11505
+   vxlan vlan 1511 vni 11511
+   vxlan vlan 1515 vni 11515
+   vxlan vlan 1516 vni 11516
+   vxlan vlan 1517 vni 11517
+   vxlan vlan 1518 vni 11518
+   vxlan vlan 1525 vni 11525
+   vxlan vlan 1526 vni 11526
+   vxlan vlan 1527 vni 11527
+   vxlan vlan 1528 vni 11528
+   vxlan vlan 1540 vni 11540
+   vxlan vlan 1541 vni 11541
+   vxlan vlan 1543 vni 11543
+   vxlan vlan 1544 vni 11544
+   vxlan vlan 1546 vni 11546
+   vxlan vlan 1548 vni 11548
+   vxlan vlan 1550 vni 11550
+   vxlan vlan 1675 vni 11675
+   vxlan vlan 1676 vni 11676
+   vxlan vlan 1677 vni 11677
+   vxlan vlan 1678 vni 11678
+   vxlan vlan 1679 vni 11679
+   vxlan vlan 1680 vni 11680
+   vxlan vlan 1681 vni 11681
+   vxlan vlan 1682 vni 11682
+   vxlan vlan 1683 vni 11683
+   vxlan vlan 1684 vni 11684
+   vxlan vlan 1685 vni 11685
+   vxlan vlan 1690 vni 11690
+   vxlan vlan 1700 vni 11700
+   vxlan vlan 1701 vni 11701
+   vxlan vlan 1702 vni 11702
+   vxlan vlan 1703 vni 11703
+   vxlan vlan 1704 vni 11704
+   vxlan vlan 1802 vni 11802
+   vxlan vlan 1810 vni 11810
+   vxlan vlan 1820 vni 11820
+   vxlan vlan 1830 vni 11830
+   vxlan vlan 1840 vni 11840
+   vxlan vlan 1882 vni 11882
+   vxlan vlan 1884 vni 11884
+   vxlan vlan 1885 vni 11885
+   vxlan vlan 1886 vni 11886
+   vxlan vlan 1887 vni 11887
+   vxlan vlan 3375 vni 13375
+   vxlan vlan 3376 vni 13376
+   vxlan vlan 3377 vni 13377
+   vxlan vlan 3378 vni 13378
+   vxlan vlan 3381 vni 13381
+   vxlan vlan 3382 vni 13382
+   vxlan vlan 3383 vni 13383
+   vxlan vlan 3384 vni 13384
+   vxlan vlan 3385 vni 13385
+   vxlan vlan 3386 vni 13386
+   vxlan vlan 3387 vni 13387
+   vxlan vlan 3388 vni 13388
+   vxlan vlan 3389 vni 13389
+   vxlan vlan 3390 vni 13390
+   vxlan vlan 3475 vni 13475
+   vxlan vlan 3476 vni 13476
+   vxlan vlan 3517 vni 13517
+   vxlan vlan 3518 vni 13518
+   vxlan vlan 3519 vni 13519
+   vxlan vlan 3520 vni 13520
+   vxlan vlan 3521 vni 13521
+   vxlan vlan 3522 vni 13522
+   vxlan flood vtep 10.71.3.202 10.71.3.204 10.71.3.206 10.71.3.207 10.71.3.208 10.71.3.209 10.71.3.210 10.71.3.211 10.72.3.202 10.72.3.204 10.72.3.206 10.72.3.208 10.72.3.209
+!
+event-handler TCP-TIMESTAMP
+   trigger on-boot
+   action bash sudo sysctl -w net.ipv4.tcp_timestamps=0
+!
+ip access-list custom-control-plane-acl
+   counters per-entry
+   5 deny icmp any any timestamp-request
+   7 deny icmp any any timestamp-reply
+   10 permit icmp any any
+   20 permit ip any any tracked
+   30 permit udp any any eq bfd ttl eq 255
+   40 permit udp any any eq bfd-echo ttl eq 254
+   50 permit udp any any eq multihop-bfd micro-bfd sbfd
+   60 permit udp any eq sbfd any eq sbfd-initiator
+   70 permit ospf any any
+   80 permit tcp any any eq ssh telnet www snmp bgp https msdp ldp netconf-ssh gnmi
+   90 permit udp any any eq bootps bootpc ntp snmp rip ldp
+   100 permit tcp any any eq mlag ttl eq 255
+   110 permit udp any any eq mlag ttl eq 255
+   120 permit vrrp any any
+   130 permit ahp any any
+   140 permit pim any any
+   150 permit igmp any any
+   160 permit tcp any any range 5900 5910
+   170 permit tcp any any range 50000 50100
+   180 permit udp any any range 51000 51100
+   190 permit tcp any any eq 3333
+   200 permit tcp any any eq nat ttl eq 255
+   210 permit tcp any eq bgp any
+   220 permit rsvp any any
+   230 permit tcp any any eq 6040
+   240 permit tcp any any eq 5541 ttl eq 255
+   250 permit tcp any any eq 5542 ttl eq 255
+!
+ip access-list isolated_1540
+   10 permit ip any 10.71.40.0/30
+   20 permit ip host 10.71.40.30 host 10.71.40.31
+   30 permit ip host 10.71.40.31 host 10.71.40.30
+   60 permit ip host 10.71.40.103 host 10.71.40.74
+   70 permit ip host 10.71.40.80 host 10.71.40.74
+   80 permit ip host 10.71.40.74 host 10.71.40.80
+   90 permit ip host 10.71.40.74 host 10.71.40.103
+   100 permit ip 10.71.40.0/30 any
+   110 permit ip any 10.71.40.4/31
+   120 permit ip 10.71.40.4/31 any
+   130 permit tcp host 10.71.40.58 host 10.71.40.48 eq ms-sql-s
+   140 permit tcp host 10.71.40.57 host 10.71.40.48 eq ms-sql-s
+   150 permit tcp host 10.71.40.84 host 10.71.40.48 eq ms-sql-s
+   160 permit tcp host 10.71.40.56 host 10.71.40.41 eq ms-sql-s
+   170 permit tcp host 10.71.40.48 eq ms-sql-s host 10.71.40.58
+   180 permit tcp host 10.71.40.48 eq ms-sql-s host 10.71.40.57
+   190 permit tcp host 10.71.40.48 eq ms-sql-s host 10.71.40.84
+   200 permit tcp host 10.71.40.41 eq ms-sql-s host 10.71.40.56
+   210 permit ip host 10.71.40.22 host 10.71.40.73
+   220 permit ip host 10.71.40.73 host 10.71.40.22
+   230 permit ip host 10.71.40.149 host 10.71.40.47
+   240 permit ip host 10.71.40.47 host 10.71.40.149
+   250 permit ip 10.71.40.38/31 host 10.71.40.68
+   260 permit ip host 10.71.40.68 10.71.40.38/31
+   270 permit ip host 10.71.40.68 host 10.71.40.37
+   280 permit ip host 10.71.40.68 host 10.71.40.75
+   290 permit ip host 10.71.40.73 host 10.71.40.72
+   300 permit ip host 10.71.40.72 host 10.71.40.73
+   310 permit ip host 10.71.40.103 host 10.71.40.80
+   320 permit ip host 10.71.40.80 host 10.71.40.103
+   330 permit ip host 10.71.40.37 host 10.71.40.68
+   340 permit ip host 10.71.40.75 host 10.71.40.68
+   350 permit ip host 10.71.40.69 host 10.71.40.39
+   360 permit ip host 10.71.40.39 host 10.71.40.69
+   370 permit ip host 10.71.40.75 host 10.71.40.69
+   380 permit ip host 10.71.40.69 host 10.71.40.75
+   390 permit ip host 10.71.40.69 host 10.71.40.37
+   400 permit ip host 10.71.40.37 host 10.71.40.69
+   410 permit ip host 10.71.40.69 host 10.71.40.38
+   420 permit ip host 10.71.40.38 host 10.71.40.69
+   430 permit ip host 10.71.40.72 host 10.71.40.22
+   440 permit ip host 10.71.40.22 host 10.71.40.72
+   450 permit ip 10.71.40.32/28 10.71.40.32/28
+   460 permit ip 10.71.40.96/28 10.71.40.96/28
+   470 permit ip 10.71.40.16/28 10.71.40.16/28
+   480 permit ip host 10.71.40.149 10.71.40.48/31
+   490 permit ip host 10.71.40.47 10.71.40.48/31
+   500 permit ip 10.71.40.48/31 host 10.71.40.149
+   510 permit ip 10.71.40.48/31 host 10.71.40.47
+   520 permit ip host 10.71.40.51 host 10.71.40.40
+   530 permit ip host 10.71.40.51 host 10.71.40.41
+   540 permit ip host 10.71.40.52 host 10.71.40.40
+   550 permit ip host 10.71.40.52 host 10.71.40.41
+   560 permit ip host 10.71.40.40 host 10.71.40.51
+   570 permit ip host 10.71.40.41 host 10.71.40.51
+   580 permit ip host 10.71.40.40 host 10.71.40.52
+   590 permit ip host 10.71.40.41 host 10.71.40.52
+   600 permit ip host 10.71.40.76 host 10.71.40.92
+   610 permit ip host 10.71.40.92 host 10.71.40.76
+   620 permit ip host 10.71.40.59 host 10.71.40.54
+   630 permit ip host 10.71.40.59 host 10.71.40.61
+   640 permit ip host 10.71.40.59 host 10.71.40.55
+   650 permit ip host 10.71.40.104 host 10.71.40.105
+   660 permit ip host 10.71.40.104 host 10.71.40.106
+   670 permit ip host 10.71.40.104 host 10.71.40.107
+   680 permit ip host 10.71.40.105 host 10.71.40.104
+   690 permit ip host 10.71.40.105 host 10.71.40.106
+   700 permit ip host 10.71.40.105 host 10.71.40.107
+   710 permit ip host 10.71.40.106 host 10.71.40.104
+   720 permit ip host 10.71.40.106 host 10.71.40.105
+   730 permit ip host 10.71.40.106 host 10.71.40.107
+   740 permit ip host 10.71.40.59 host 10.71.40.63
+   750 permit ip host 10.71.40.107 host 10.71.40.104
+   760 permit ip host 10.71.40.107 host 10.71.40.105
+   770 permit ip host 10.71.40.107 host 10.71.40.106
+   780 permit ip host 10.71.40.54 host 10.71.40.59
+   790 permit ip host 10.71.40.54 host 10.71.40.61
+   800 permit ip host 10.71.40.54 host 10.71.40.55
+   810 permit ip host 10.71.40.54 host 10.71.40.63
+   820 permit ip host 10.71.40.61 host 10.71.40.59
+   830 permit ip host 10.71.40.61 host 10.71.40.54
+   840 permit ip host 10.71.40.61 host 10.71.40.55
+   850 permit ip host 10.71.40.61 host 10.71.40.63
+   860 permit ip host 10.71.40.55 host 10.71.40.59
+   870 permit ip host 10.71.40.55 host 10.71.40.54
+   880 permit ip host 10.71.40.55 host 10.71.40.61
+   890 permit ip host 10.71.40.55 host 10.71.40.63
+   900 permit ip host 10.71.40.63 host 10.71.40.59
+   910 permit ip host 10.71.40.63 host 10.71.40.54
+   920 permit ip host 10.71.40.63 host 10.71.40.61
+   930 permit ip host 10.71.40.63 host 10.71.40.55
+   940 permit ip host 10.71.40.31 host 10.71.40.98
+   950 permit ip host 10.71.40.98 host 10.71.40.31
+   960 permit ip host 10.71.40.60 host 10.71.40.62
+   970 permit ip host 10.71.40.60 host 10.71.40.77
+   980 permit ip host 10.71.40.60 host 10.71.40.78
+   990 permit ip host 10.71.40.62 host 10.71.40.60
+   1000 permit ip host 10.71.40.62 host 10.71.40.77
+   1010 permit ip host 10.71.40.62 host 10.71.40.78
+   1020 permit ip host 10.71.40.77 host 10.71.40.60
+   1030 permit ip host 10.71.40.77 host 10.71.40.62
+   1040 permit ip host 10.71.40.77 host 10.71.40.78
+   1050 permit ip host 10.71.40.78 host 10.71.40.60
+   1060 permit ip host 10.71.40.78 host 10.71.40.62
+   1070 permit ip host 10.71.40.78 host 10.71.40.77
+   1080 permit ip 10.71.40.30/31 host 10.71.40.65
+   1090 permit ip host 10.71.40.65 10.71.40.30/31
+   1100 permit ip 10.71.40.92/30 10.71.40.92/30
+   1110 permit ip 10.71.40.92/30 host 10.71.40.96
+   1120 permit ip host 10.71.40.96 10.71.40.92/30
+   1130 permit ip 10.71.40.48/28 10.71.40.48/28
+   1140 permit ip 10.71.40.80/28 10.71.40.80/28
+   1150 permit ip 10.71.40.36/30 host 10.71.40.75
+   1160 permit ip host 10.71.40.75 10.71.40.36/30
+   1170 permit ip host 10.71.40.77 host 10.71.40.74
+   1180 permit ip host 10.71.40.74 host 10.71.40.77
+   1190 permit ip host 10.71.40.78 host 10.71.40.74
+   1200 permit ip host 10.71.40.74 host 10.71.40.78
+   1210 permit ip host 10.71.40.60 host 10.71.40.74
+   1220 permit ip host 10.71.40.74 host 10.71.40.60
+   1230 permit ip host 10.71.40.62 host 10.71.40.74
+   1240 permit ip host 10.71.40.74 host 10.71.40.62
+   9998 deny ip 10.71.40.0/24 10.71.40.0/24
+   9999 permit ip any any
+!
+ip access-list standard ALLOW_SSH_ACL
+   10 permit 10.230.0.0/16
+   20 permit 10.71.0.0/16
+   30 permit 10.72.0.0/16
+   40 permit 10.23.0.0/16
+   50 permit 10.24.0.0/16
+   60 permit 10.52.0.0/16
+   999 deny any
+!
+ip routing
+ip routing vrf GOLD_TNT
+no ip routing vrf INFRA_Mgmt
+ip routing vrf INTERNAL
+ip routing vrf SILV_TNT
+ip routing vrf mgmt
+!
+system control-plane
+   ip access-group custom-control-plane-acl in
+   ip access-group custom-control-plane-acl vrf mgmt in
+!
+mlag configuration
+   domain-id mlag1
+   local-interface Vlan2000
+   peer-address 10.71.2.11
+   peer-link Port-Channel2000
+!
+ip route vrf mgmt 0.0.0.0/0 10.71.0.1
+!
+route-map local permit 6
+   match source-protocol connected
+   match interface Loopback1
+!
+route-map underlay permit 10
+   match source-protocol connected
+   match interface Loopback0
+!
+route-map underlay permit 20
+   match source-protocol connected
+   match interface Loopback1
+!
+router bgp 65322
+   router-id 10.71.3.13
+   update wait-for-convergence
+   update wait-install
+   maximum-paths 4 ecmp 4
+   neighbor MLAG-iBGP peer group
+   neighbor MLAG-iBGP remote-as 65322
+   neighbor MLAG-iBGP next-hop-self
+   neighbor MLAG-iBGP update-source Vlan2000
+   neighbor MLAG-iBGP send-community standard extended
+   neighbor MLAG-iBGP maximum-routes 12000
+   neighbor SPINE peer group
+   neighbor SPINE remote-as 65321
+   neighbor SPINE send-community standard extended
+   neighbor SPINE maximum-routes 12000
+   neighbor 10.71.2.11 peer group MLAG-iBGP
+   neighbor 10.71.3.30 peer group SPINE
+   neighbor 10.71.3.60 peer group SPINE
+   redistribute connected route-map underlay
+!
+queue-monitor streaming
+   no shutdown
+!
+ip tacacs vrf mgmt source-interface Management1
+!
+management api http-commands
+   protocol unix-socket
+   protocol https ssl profile SW_SSL_PROFILE
+   no shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+management security
+   ssl profile SW_SSL_PROFILE
+      tls versions 1.2
+      cipher-list ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:!aNULL:!eNULL:!DES:!RC4:!3DES:!MD5:!PSK
+      certificate DEMEENSD101.crt key DEMEENSD101.key
+      trust certificate RootCA.crt
+      chain certificate intermediateCA.crt
+!
+tacacs-server timeout 15
+tacacs-server policy unknown-mandatory-attribute ignore
+tacacs-server host 10.71.112.215 vrf mgmt key 7 132A052B465E02110C626C172904155101262071
+tacacs-server host 10.23.112.144 vrf mgmt key 7 07203375035B1F3E30544F28180C2D723F161405
+!
+aaa group server tacacs+ ISE_test_TACACS
+   server 10.71.112.215 vrf mgmt
+   server 10.23.112.144 vrf mgmt
+!
+aaa authentication login default group ISE_test_TACACS local
+aaa authentication login console local
+aaa authorization exec default group ISE_test_TACACS local
+aaa authorization commands 0 default local
+aaa authorization commands 1-15 default group ISE_test_TACACS local
+aaa accounting system default start-stop group ISE_test_TACACS
+!
+management ssh
+   ip access-group ALLOW_SSH_ACL vrf mgmt in
+   idle-timeout 30
+   authentication mode password
+   mac hmac-sha2-512-etm@openssh.com hmac-sha2-256-etm@openssh.com hmac-sha2-512 hmac-sha2-256
+   shutdown
+   !
+   vrf mgmt
+      no shutdown
+!
+end

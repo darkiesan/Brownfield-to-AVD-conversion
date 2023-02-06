@@ -1,0 +1,1162 @@
+[
+    {
+        "description": "MGMT_TNT_ESXi_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.5.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.5.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.5.1", 
+        "vlanId": "1505", 
+        "vrfName": "INFRA_APP"
+    }, 
+    {
+        "description": "ESXi VXLAN for Tenant Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.6.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.6.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.6.1", 
+        "vlanId": "1506", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vMotion for Tenant Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.7.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.7.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.7.1", 
+        "vlanId": "1507", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vSAN for Tenant Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.8.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.8.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.8.1", 
+        "vlanId": "1508", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "VRA_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.10.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.10.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.10.1", 
+        "vlanId": "1510", 
+        "vrfName": "INFRA_APP"
+    }, 
+    {
+        "description": "ESXi Mgmt for Tenant SILV", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.25.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.25.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.25.1", 
+        "vlanId": "1525", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "SILV_TNT_ESXi_VXLAN_VTEP", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.26.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.26.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.26.1", 
+        "vlanId": "1526", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vMotion for Tenant SILV", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.27.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.27.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.27.1", 
+        "vlanId": "1527", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "ESXi vSAN for Tenant SILV", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.28.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.28.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.28.1", 
+        "vlanId": "1528", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "BACK_Infra", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.41.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.41.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.41.1", 
+        "vlanId": "1541", 
+        "vrfName": "INFRA_APP"
+    }, 
+    {
+        "description": "BACKUP_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.43.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.43.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.43.1", 
+        "vlanId": "1543", 
+        "vrfName": "INFRA_APP"
+    }, 
+    {
+        "description": "PAFW_VM300", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.48.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.48.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.48.1", 
+        "vlanId": "1548", 
+        "vrfName": "INFRA_APP"
+    }, 
+    {
+        "description": "INFOBLOX", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.50.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.50.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.50.1", 
+        "vlanId": "1550", 
+        "vrfName": "INFOBLOX"
+    }, 
+    {
+        "description": "VxRail_SPLUNK_LOG_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.54.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.54.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.54.1", 
+        "vlanId": "1554", 
+        "vrfName": "INFRA_APP"
+    }, 
+    {
+        "description": "F5 VIPs", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.59.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.59.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.59.1", 
+        "vlanId": "1559", 
+        "vrfName": "INFRA_APP"
+    }, 
+    {
+        "description": "BKP_WLD_Silver", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.64.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.64.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.64.1", 
+        "vlanId": "1564", 
+        "vrfName": "INFRA_APP"
+    }, 
+    {
+        "description": "EPO_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.67/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.68/29"
+            }
+        ], 
+        "virtualIp": "10.52.2.66", 
+        "vlanId": "1608", 
+        "vrfName": "EPO"
+    }, 
+    {
+        "description": "INFRA_APP_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.75/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.76/29"
+            }
+        ], 
+        "virtualIp": "10.52.2.74", 
+        "vlanId": "1609", 
+        "vrfName": "INFRA_APP"
+    }, 
+    {
+        "description": "F5_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.83/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.84/29"
+            }
+        ], 
+        "virtualIp": "10.52.2.82", 
+        "vlanId": "1610", 
+        "vrfName": "F5"
+    }, 
+    {
+        "description": "INFRA_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.91/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.92/29"
+            }
+        ], 
+        "virtualIp": "10.52.2.90", 
+        "vlanId": "1611", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "MPLS_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.99/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.100/29"
+            }
+        ], 
+        "virtualIp": "10.52.2.98", 
+        "vlanId": "1612", 
+        "vrfName": "MPLS_AA"
+    }, 
+    {
+        "description": "WLC_Transit_FW", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.123/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.124/29"
+            }
+        ], 
+        "virtualIp": "10.52.2.122", 
+        "vlanId": "1615", 
+        "vrfName": "WLC"
+    }, 
+    {
+        "description": "JUMP_SERVER_TRANSIT_FW_MW", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.131/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.132/29"
+            }
+        ], 
+        "virtualIp": "10.52.2.130", 
+        "vlanId": "1616", 
+        "vrfName": "JUMP_SERVER"
+    }, 
+    {
+        "description": "PULSE_SECURE TRANSIT FW", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.155/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.156/29"
+            }
+        ], 
+        "virtualIp": "10.52.2.154", 
+        "vlanId": "1619", 
+        "vrfName": "PULSE_SECURE_Management"
+    }, 
+    {
+        "description": "PULSE_SECURE INSIDE TRANSIT FW", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.107/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.108/29"
+            }
+        ], 
+        "virtualIp": "10.52.2.106", 
+        "vlanId": "1620", 
+        "vrfName": "PULSE_SECURE_INSIDE"
+    }, 
+    {
+        "description": "PULSE_SECURE_OUTSIDE_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.187/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.188/29"
+            }
+        ], 
+        "virtualIp": "10.52.2.186", 
+        "vlanId": "1621", 
+        "vrfName": "PULSE_SECURE_OUTSIDE"
+    }, 
+    {
+        "description": "WLC-WIFI_Guest_transit_Fw", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.139/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.140/29"
+            }
+        ], 
+        "virtualIp": "10.52.2.138", 
+        "vlanId": "1625", 
+        "vrfName": "WLC_WIFI_Guest"
+    }, 
+    {
+        "description": "AX_Wireless_transit_vlan", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.115/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.116/29"
+            }
+        ], 
+        "virtualIp": "10.52.2.114", 
+        "vlanId": "1630", 
+        "vrfName": "AX_Wireless"
+    }, 
+    {
+        "description": "Secure_Wireless_transit_vlan", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.163/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.164/29"
+            }
+        ], 
+        "virtualIp": "10.52.2.162", 
+        "vlanId": "1631", 
+        "vrfName": "Secure_Wireless"
+    }, 
+    {
+        "description": "AATech_Wireless_transit", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.171/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.172/29"
+            }
+        ], 
+        "virtualIp": "10.52.2.170", 
+        "vlanId": "1632", 
+        "vrfName": "AATech_Wireless"
+    }, 
+    {
+        "description": "Andon_Wireless_Transit_FW", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "virtual 10.52.2.194/30"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "virtual 10.52.2.194/30"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1633", 
+        "vrfName": "Andon_Wireless"
+    }, 
+    {
+        "description": "Plant_Wireless_transit_vlan", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.179/23"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.180/23"
+            }
+        ], 
+        "virtualIp": "10.52.2.178", 
+        "vlanId": "1634", 
+        "vrfName": "Plant_Wireless"
+    }, 
+    {
+        "description": "MPLS_CKT_1", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.241/30"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1635", 
+        "vrfName": "MPLS_AA"
+    }, 
+    {
+        "description": "MPLS_DC_iBGP", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.2.248/31"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.249/31"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1637", 
+        "vrfName": "MPLS_AA"
+    }, 
+    {
+        "description": "Arista_F5_MPLS_TRANSIT", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.30.178/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.30.179/29"
+            }
+        ], 
+        "virtualIp": "10.52.30.177", 
+        "vlanId": "1652", 
+        "vrfName": "F5"
+    }, 
+    {
+        "description": "INTERNET", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "116.214.40.197/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "116.214.40.198/29"
+            }
+        ], 
+        "virtualIp": "116.214.40.196", 
+        "vlanId": "1653", 
+        "vrfName": "INTERNET"
+    }, 
+    {
+        "description": "ARISTA_To_F5Ext", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "116.214.40.210/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "116.214.40.211/29"
+            }
+        ], 
+        "virtualIp": "116.214.40.209", 
+        "vlanId": "1655", 
+        "vrfName": "INTERNET"
+    }, 
+    {
+        "description": "F5Int_To_ARISTA", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "116.214.40.221/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "116.214.40.222/29"
+            }
+        ], 
+        "virtualIp": "116.214.40.220", 
+        "vlanId": "1656", 
+        "vrfName": "F5_TRANSIT"
+    }, 
+    {
+        "description": "ARISTA_To_PAN", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "116.214.40.226/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "116.214.40.227/29"
+            }
+        ], 
+        "virtualIp": "116.214.40.225", 
+        "vlanId": "1657", 
+        "vrfName": "F5_TRANSIT"
+    }, 
+    {
+        "description": "Silver Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.4.66/26"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.4.67/26"
+            }
+        ], 
+        "virtualIp": "10.52.4.65", 
+        "vlanId": "1676", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Silver Edge Cluster-1 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.4.161/28"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.4.162/28"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1681", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Silver Edge Cluster-2 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.4.177/28"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.4.178/28"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1682", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "Silver Edge Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.4.210/28"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.4.211/28"
+            }
+        ], 
+        "virtualIp": "10.52.4.209", 
+        "vlanId": "1685", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "SNOW_DISCOVERY", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.101.2/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.101.3/29"
+            }
+        ], 
+        "virtualIp": "10.52.101.1", 
+        "vlanId": "1704", 
+        "vrfName": "SNOW_DISCOVERY"
+    }, 
+    {
+        "description": "Cloudvision", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.30.2/27"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.30.3/27"
+            }
+        ], 
+        "virtualIp": "10.52.30.1", 
+        "vlanId": "1712", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "SNOW DISCOVERY TRANSIT FW", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.22.27/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.22.28/29"
+            }
+        ], 
+        "virtualIp": "10.52.22.26", 
+        "vlanId": "1720", 
+        "vrfName": "SNOW_DISCOVERY"
+    }, 
+    {
+        "description": "WLC", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.30.66/28"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.30.67/28"
+            }
+        ], 
+        "virtualIp": "10.52.30.65", 
+        "vlanId": "1800", 
+        "vrfName": "WLC"
+    }, 
+    {
+        "description": "BIG_IQ", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.30.82/28"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.30.83/28"
+            }
+        ], 
+        "virtualIp": "10.52.30.81", 
+        "vlanId": "1801", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "PANORAMA", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.30.98/28"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.30.99/28"
+            }
+        ], 
+        "virtualIp": "10.52.30.97", 
+        "vlanId": "1802", 
+        "vrfName": "INFRA_Mgmt"
+    }, 
+    {
+        "description": "PULSE_SECURE", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.30.114/28"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.30.115/28"
+            }
+        ], 
+        "virtualIp": "10.52.30.113", 
+        "vlanId": "1803", 
+        "vrfName": "PULSE_SECURE_INSIDE"
+    }, 
+    {
+        "description": "EPO", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.30.130/28"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.30.131/28"
+            }
+        ], 
+        "virtualIp": "10.52.30.129", 
+        "vlanId": "1804", 
+        "vrfName": "EPO"
+    }, 
+    {
+        "description": "PULSE_SECURE_MGMT", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.30.146/28"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.30.147/28"
+            }
+        ], 
+        "virtualIp": "10.52.30.145", 
+        "vlanId": "1805", 
+        "vrfName": "PULSE_SECURE_Management"
+    }, 
+    {
+        "description": "PULSE_SECURE_OUTSIDE", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.30.162/28"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.30.163/28"
+            }
+        ], 
+        "virtualIp": "10.52.30.161", 
+        "vlanId": "1806", 
+        "vrfName": "PULSE_SECURE_OUTSIDE"
+    }, 
+    {
+        "description": "WLC_WIFI_Guest", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.208.2/20"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.208.3/20"
+            }
+        ], 
+        "virtualIp": "10.52.208.1", 
+        "vlanId": "1810", 
+        "vrfName": "WLC_WIFI_Guest"
+    }, 
+    {
+        "description": "AX_Wireless", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.132.2/23"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.132.3/23"
+            }
+        ], 
+        "virtualIp": "10.52.132.1", 
+        "vlanId": "1811", 
+        "vrfName": "AX_Wireless"
+    }, 
+    {
+        "description": "Secure_Wireless", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.128.2/22"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.128.3/22"
+            }
+        ], 
+        "virtualIp": "10.52.128.1", 
+        "vlanId": "1812", 
+        "vrfName": "Secure_Wireless"
+    }, 
+    {
+        "description": "Andon_Wireless", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.136.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.136.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.136.1/24", 
+        "vlanId": "1813", 
+        "vrfName": "Andon_Wireless"
+    }, 
+    {
+        "description": "AATech_Wireless", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.134.2/23"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.134.3/23"
+            }
+        ], 
+        "virtualIp": "10.52.134.1", 
+        "vlanId": "1814", 
+        "vrfName": "AATech_Wireless"
+    }, 
+    {
+        "description": "Plant_Wireless", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.138.2/23"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.138.3/23"
+            }
+        ], 
+        "virtualIp": "10.52.138.1", 
+        "vlanId": "1815", 
+        "vrfName": "Plant_Wireless"
+    }, 
+    {
+        "description": "JUMP_SERVER", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.20.2/28"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.20.3/28"
+            }
+        ], 
+        "virtualIp": "10.52.20.1", 
+        "vlanId": "3301", 
+        "vrfName": "JUMP_SERVER"
+    }, 
+    {
+        "description": "INFOBLOX_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.19.11/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.19.12/29"
+            }
+        ], 
+        "virtualIp": "10.52.19.10", 
+        "vlanId": "3312", 
+        "vrfName": "INFOBLOX"
+    }, 
+    {
+        "description": "INFRA_NSX_FW", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.19.43/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.19.44/29"
+            }
+        ], 
+        "virtualIp": "10.52.19.42", 
+        "vlanId": "3316", 
+        "vrfName": "INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ_INFRA_NSX_FW", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.19.75/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.19.76/29"
+            }
+        ], 
+        "virtualIp": "10.52.19.74", 
+        "vlanId": "3320", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ_INFRA_NSX_DCI", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.19.81/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.19.82/29"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3321", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ_TRANSIT_FW", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.19.91/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.19.92/29"
+            }
+        ], 
+        "virtualIp": "10.52.19.90", 
+        "vlanId": "3322", 
+        "vrfName": "DMZ"
+    }, 
+    {
+        "description": "DMZ Silver Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.9.66/26"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.9.67/26"
+            }
+        ], 
+        "virtualIp": "10.52.9.65", 
+        "vlanId": "3376", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Silver Edge Cluster-1 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.9.161/28"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.9.162/28"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3381", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Silver Edge Cluster-2 for BGP", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.9.177/28"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.9.178/28"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "3382", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ Silver Edge Cluster TEP Pool", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.9.210/28"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.9.211/28"
+            }
+        ], 
+        "virtualIp": "10.52.9.209", 
+        "vlanId": "3385", 
+        "vrfName": "DMZ_INFRA_NSX"
+    }, 
+    {
+        "description": "DMZ_Mgmt", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.124.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.124.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.124.1", 
+        "vlanId": "3386", 
+        "vrfName": "DMZ"
+    }, 
+    {
+        "description": "F5_VLAN_1", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.13.2/24"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.13.3/24"
+            }
+        ], 
+        "virtualIp": "10.52.13.1", 
+        "vlanId": "3513", 
+        "vrfName": "F5"
+    }, 
+    {
+        "description": "F5_iQuery_Mesh", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE001", 
+                "ipAddress": "10.52.34.4/29"
+            }, 
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.34.5/29"
+            }
+        ], 
+        "virtualIp": "10.52.34.6", 
+        "vlanId": "3524", 
+        "vrfName": "F5_TRANSIT"
+    }, 
+    {
+        "description": "MPLS_CKT_2", 
+        "nodeList": [
+            {
+                "deviceName": "CNIDCNSE002", 
+                "ipAddress": "10.52.2.245/30"
+            }
+        ], 
+        "virtualIp": "None", 
+        "vlanId": "1636", 
+        "vrfName": "MPLS_AA"
+    }
+]

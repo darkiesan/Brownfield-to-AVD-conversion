@@ -1,0 +1,4453 @@
+servers:
+  USDC1SPHV2001-USDC1NSD101_USDC1NSD102-Port-Channel140:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: USDC1SPHV2001
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet40
+      - Ethernet40
+      switch_ports:
+      - Ethernet40
+      - Ethernet40
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1560,2560,1561,2561,1562,2562,1563,2563'
+  USDC1SPHV2002-USDC1NSD101_USDC1NSD102-Port-Channel141:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: USDC1SPHV2002
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet41
+      - Ethernet41
+      switch_ports:
+      - Ethernet41
+      - Ethernet41
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1561,2561,1562,2562,1563,2563'
+  USDC1SPHV2003-USDC1NSD101_USDC1NSD102-Port-Channel142:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: USDC1SPHV2003
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet42
+      - Ethernet42
+      switch_ports:
+      - Ethernet42
+      - Ethernet42
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1561,2561,1562,2562,1563,2563'
+  USDC1SPHV2001-USDC1NSD101_USDC1NSD102-Port-Channel143:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SPHV2001
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet43
+      - Ethernet43
+      switch_ports:
+      - Ethernet43
+      - Ethernet43
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1560'
+  USDC1SPHV2002-USDC1NSD101_USDC1NSD102-Port-Channel144:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SPHV2002
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet44
+      - Ethernet44
+      switch_ports:
+      - Ethernet44
+      - Ethernet44
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1560'
+  USDC1SPHV2003-USDC1NSD101_USDC1NSD102-Port-Channel145:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SPHV2003
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet45
+      - Ethernet45
+      switch_ports:
+      - Ethernet45
+      - Ethernet45
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1560'
+  USDC1SDB2184-USDC1NSD101_USDC1NSD102-Port-Channel180:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SDB2184
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet18
+      - Ethernet18
+      switch_ports:
+      - Ethernet18
+      - Ethernet18
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1543'
+  USDC1SDB2185-USDC1NSD101_USDC1NSD102-Port-Channel200:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SDB2185
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet20
+      - Ethernet20
+      switch_ports:
+      - Ethernet20
+      - Ethernet20
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1543'
+  USDC1SDB2184-USDC1NSD101_USDC1NSD102-Port-Channel217:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SDB2184
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet17
+      - Ethernet17
+      switch_ports:
+      - Ethernet17
+      - Ethernet17
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1540'
+  USDC1SDB2185-USDC1NSD101_USDC1NSD102-Port-Channel219:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SDB2185
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet19
+      - Ethernet19
+      switch_ports:
+      - Ethernet19
+      - Ethernet19
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1540'
+  USDC1SDB2186-USDC1NSD101_USDC1NSD102-Port-Channel220:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SDB2186
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet22
+      - Ethernet22
+      switch_ports:
+      - Ethernet22
+      - Ethernet22
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1543'
+  USDC1SDB2186-USDC1NSD101_USDC1NSD102-Port-Channel221:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SDB2186
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet21
+      - Ethernet21
+      switch_ports:
+      - Ethernet21
+      - Ethernet21
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1540'
+  PH_Medium_H2h3g73-USDC1NSD101_USDC1NSD102-Port-Channel223:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_Medium_H2h3g73
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet23
+      - Ethernet23
+      switch_ports:
+      - Ethernet23
+      - Ethernet23
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1540'
+  PH_Medium_H2h3g73-USDC1NSD101_USDC1NSD102-Port-Channel224:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_Medium_H2h3g73
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet24
+      - Ethernet24
+      switch_ports:
+      - Ethernet24
+      - Ethernet24
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1543'
+  PH_Medium_H2h5773-USDC1NSD101_USDC1NSD102-Port-Channel225:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_Medium_H2h5773
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet25
+      - Ethernet25
+      switch_ports:
+      - Ethernet25
+      - Ethernet25
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1540'
+  PH_Medium_H2h5773-USDC1NSD101_USDC1NSD102-Port-Channel226:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_Medium_H2h5773
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet26
+      - Ethernet26
+      switch_ports:
+      - Ethernet26
+      - Ethernet26
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1543'
+  PH_Medium_H2h4773-USDC1NSD101_USDC1NSD102-Port-Channel227:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_Medium_H2h4773
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet27
+      - Ethernet27
+      switch_ports:
+      - Ethernet27
+      - Ethernet27
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1540'
+  PH_Medium_H2h4773-USDC1NSD101_USDC1NSD102-Port-Channel228:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_Medium_H2h4773
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet28
+      - Ethernet28
+      switch_ports:
+      - Ethernet28
+      - Ethernet28
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1543'
+  USDC1SDB2196 (BZDVM83)-USDC1NSD101_USDC1NSD102-Port-Channel290:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SDB2196 (BZDVM83)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet29
+      - Ethernet29
+      switch_ports:
+      - Ethernet29
+      - Ethernet29
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1540'
+  USDC1SDB2196 (BZDVM83)-USDC1NSD101_USDC1NSD102-Port-Channel300:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SDB2196 (BZDVM83)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet30
+      - Ethernet30
+      switch_ports:
+      - Ethernet30
+      - Ethernet30
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1543'
+  USDC1SDB2197-USDC1NSD101_USDC1NSD102-Port-Channel310:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SDB2197
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet31
+      - Ethernet31
+      switch_ports:
+      - Ethernet31
+      - Ethernet31
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1540'
+  USDC1SDB2197-USDC1NSD101_USDC1NSD102-Port-Channel320:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SDB2197
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet32
+      - Ethernet32
+      switch_ports:
+      - Ethernet32
+      - Ethernet32
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1543'
+  PH_XL_BZDWM83-USDC1NSD101_USDC1NSD102-Port-Channel330:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_BZDWM83
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet33
+      - Ethernet33
+      switch_ports:
+      - Ethernet33
+      - Ethernet33
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1540'
+  PH_XL_BZDWM83-USDC1NSD101_USDC1NSD102-Port-Channel340:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_BZDWM83
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet34
+      - Ethernet34
+      switch_ports:
+      - Ethernet34
+      - Ethernet34
+      switches:
+      - USDC1NSD101
+      - USDC1NSD102
+      vlans: '1543'
+  Physical_servers1-USDC1NSD103_USDC1NSD104-Port-Channel129:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Physical_servers1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet29
+      - Ethernet29
+      switch_ports:
+      - Ethernet29
+      - Ethernet29
+      switches:
+      - USDC1NSD103
+      - USDC1NSD104
+      vlans: '1540'
+  Physical_servers1-USDC1NSD103_USDC1NSD104-Port-Channel130:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Physical_servers1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet30
+      - Ethernet30
+      - Ethernet30
+      - Ethernet30
+      - Ethernet30
+      - Ethernet30
+      - Ethernet30
+      switch_ports:
+      - Ethernet30
+      - Ethernet30
+      - Ethernet30
+      - Ethernet30
+      - Ethernet30
+      - Ethernet30
+      - Ethernet30
+      switches:
+      - USDC1NSD103
+      - USDC1NSD103
+      - USDC1NSD104
+      - USDC1NSD104
+      vlans: '1543'
+  reserved_for_USDC1SDB2199-1-USDC1NSD103_USDC1NSD104-Port-Channel210:
+    adapters:
+    - mode: access
+      port_channel:
+        description: reserved_for_USDC1SDB2199-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet21
+      - Ethernet21
+      switch_ports:
+      - Ethernet21
+      - Ethernet21
+      switches:
+      - USDC1NSD103
+      - USDC1NSD104
+      vlans: '1540'
+  reserved_for_USDC1SDB2199-1-USDC1NSD103_USDC1NSD104-Port-Channel220:
+    adapters:
+    - mode: access
+      port_channel:
+        description: reserved_for_USDC1SDB2199-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet22
+      - Ethernet22
+      - Ethernet22
+      switch_ports:
+      - Ethernet22
+      - Ethernet22
+      - Ethernet22
+      switches:
+      - USDC1NSD103
+      - USDC1NSD103
+      - USDC1NSD104
+      - USDC1NSD104
+      vlans: '1543'
+  USDC1SDB2202-USDC1NSD103_USDC1NSD104-Port-Channel250:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SDB2202
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet25
+      - Ethernet25
+      switch_ports:
+      - Ethernet25
+      - Ethernet25
+      switches:
+      - USDC1NSD103
+      - USDC1NSD104
+      vlans: '1540'
+  USDC1SDB2202-USDC1NSD103_USDC1NSD104-Port-Channel260:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SDB2202
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet26
+      - Ethernet26
+      - Ethernet26
+      - Ethernet26
+      switch_ports:
+      - Ethernet26
+      - Ethernet26
+      - Ethernet26
+      - Ethernet26
+      switches:
+      - USDC1NSD103
+      - USDC1NSD103
+      - USDC1NSD104
+      - USDC1NSD104
+      vlans: '1543'
+  PH_XL_B0GZJ93-USDC1NSD103_USDC1NSD104-Port-Channel450:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_B0GZJ93
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet45
+      switch_ports:
+      - Ethernet45
+      switches:
+      - USDC1NSD103
+      - USDC1NSD104
+      vlans: '1540'
+  PH_XL_B0GZJ93-USDC1NSD103_USDC1NSD104-Port-Channel460:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_B0GZJ93
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet46
+      switch_ports:
+      - Ethernet46
+      switches:
+      - USDC1NSD103
+      - USDC1NSD104
+      vlans: '1543'
+  PA-FW-1-USDC1NSE101_USDC1NSE102-Port-Channel51:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: PA-FW-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet1
+      - Ethernet2
+      - Ethernet1
+      - Ethernet2
+      switch_ports:
+      - Ethernet1
+      - Ethernet2
+      - Ethernet1
+      - Ethernet2
+      switches:
+      - USDC1NSE101
+      - USDC1NSE101
+      - USDC1NSE102
+      - USDC1NSE102
+      vlans: '1657,2657,3702,3802,1726,1726,2726,1553,2553,1560,2560,1561,2561,1562,2562,1728,3320,3420,3322,3422,3312,3412,3316,3416,1709,2709,1710,2710,1724,1724,2724,1722,1722,2722,3326,3426,3314,3414,1720,1720,2720,1625,1810,1820,1830,1840,2629,2644,3629,3644,3301,3401,1563,2563,3324,3424'
+  PA-FW-2-USDC1NSE101_USDC1NSE102-Port-Channel52:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: PA-FW-2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet3
+      - Ethernet4
+      - Ethernet3
+      - Ethernet4
+      switch_ports:
+      - Ethernet3
+      - Ethernet4
+      - Ethernet3
+      - Ethernet4
+      switches:
+      - USDC1NSE101
+      - USDC1NSE101
+      - USDC1NSE102
+      - USDC1NSE102
+      vlans: '1657,2657,3702,3802,1726,1726,2726,1553,2553,1560,2560,1561,2561,1562,2562,1728,3320,3420,3322,3422,3312,3412,3316,3416,1709,2709,1710,2710,1724,1724,2724,1722,1722,2722,3326,3426,3314,3414,1720,1720,2720,1625,1810,1820,1830,1840,2629,2644,3629,3644,3301,3401,1563,2563,3324,3424'
+  F5-iSeries-1-USDC1NSE101_USDC1NSE102-Port-Channel61:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: F5-iSeries-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet9
+      - Ethernet9
+      switch_ports:
+      - Ethernet9
+      - Ethernet9
+      switches:
+      - USDC1NSE101
+      - USDC1NSE102
+      vlans: '1652,2652,1656,2656,1559,3524,2559,3624,3513,3613,3514,3614,3515,3615,3516,3616,3517,3518,3519,3518,1554,2554,3520,3521,3522'
+  F5-iSeries-2-USDC1NSE101_USDC1NSE102-Port-Channel62:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: F5-iSeries-2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet10
+      - Ethernet10
+      switch_ports:
+      - Ethernet10
+      - Ethernet10
+      switches:
+      - USDC1NSE101
+      - USDC1NSE102
+      vlans: '1652,2652,1656,2656,1559,3524,2559,3624,3513,3613,3514,3614,3515,3615,3516,3616,3517,3518,3519,3518,1554,2554,3520,3521,3522'
+  F5-iSeries-1-USDC1NSE101_USDC1NSE102-Port-Channel63:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: F5-iSeries-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet44
+      - Ethernet44
+      switch_ports:
+      - Ethernet44
+      - Ethernet44
+      switches:
+      - USDC1NSE101
+      - USDC1NSE102
+      vlans: '1655,2655'
+  F5-iSeries-2-USDC1NSE101_USDC1NSE102-Port-Channel64:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: F5-iSeries-2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet46
+      - Ethernet46
+      switch_ports:
+      - Ethernet46
+      - Ethernet46
+      switches:
+      - USDC1NSE101
+      - USDC1NSE102
+      vlans: '1655,2655'
+  WLC1-USDC1NSE101_USDC1NSE102-Port-Channel145:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: WLC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet13
+      - Ethernet13
+      switch_ports:
+      - Ethernet13
+      - Ethernet13
+      switches:
+      - USDC1NSE101
+      - USDC1NSE102
+      vlans: '1800,1810,1820,1830,1840,2629,2644,3629,3644'
+  WLC2-USDC1NSE101_USDC1NSE102-Port-Channel146:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: WLC2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet14
+      - Ethernet14
+      switch_ports:
+      - Ethernet14
+      - Ethernet14
+      switches:
+      - USDC1NSE101
+      - USDC1NSE102
+      vlans: '1800,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SPHV2001-USDC2NSD101_USDC2NSD102-Port-Channel140:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: USDC1SPHV2001
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet40
+      - Ethernet40
+      switch_ports:
+      - Ethernet40
+      - Ethernet40
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '1561,2561,1562,2562,1563,2563'
+  USDC1SPHV2002-USDC2NSD101_USDC2NSD102-Port-Channel141:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: USDC1SPHV2002
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet41
+      - Ethernet41
+      switch_ports:
+      - Ethernet41
+      - Ethernet41
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '1561,2561,1562,2562,1563,2563'
+  USDC1SPHV2003-USDC2NSD101_USDC2NSD102-Port-Channel142:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: USDC1SPHV2003
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet42
+      - Ethernet42
+      switch_ports:
+      - Ethernet42
+      - Ethernet42
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '1561,2561,1562,2562,1563,2563'
+  USDC1SPHV2001-USDC2NSD101_USDC2NSD102-Port-Channel143:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SPHV2001
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet43
+      - Ethernet43
+      switch_ports:
+      - Ethernet43
+      - Ethernet43
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '2560'
+  USDC1SPHV2002-USDC2NSD101_USDC2NSD102-Port-Channel144:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SPHV2002
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet44
+      - Ethernet44
+      switch_ports:
+      - Ethernet44
+      - Ethernet44
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '2560'
+  USDC1SPHV2003-USDC2NSD101_USDC2NSD102-Port-Channel145:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SPHV2003
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet45
+      - Ethernet45
+      switch_ports:
+      - Ethernet45
+      - Ethernet45
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '2560'
+  Windows Server-USDC2NSD101_USDC2NSD102-Port-Channel170:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Windows Server
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet17
+      - Ethernet17
+      switch_ports:
+      - Ethernet17
+      - Ethernet17
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '1540'
+  Windows Server-USDC2NSD101_USDC2NSD102-Port-Channel180:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Windows Server
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet18
+      - Ethernet18
+      switch_ports:
+      - Ethernet18
+      - Ethernet18
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '1543'
+  Windows Server-USDC2NSD101_USDC2NSD102-Port-Channel220:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Windows Server
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet22
+      - Ethernet22
+      switch_ports:
+      - Ethernet22
+      - Ethernet22
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '1543'
+  Windows Server-USDC2NSD101_USDC2NSD102-Port-Channel230:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Windows Server
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet23
+      - Ethernet23
+      switch_ports:
+      - Ethernet23
+      - Ethernet23
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '1540'
+  Windows Server-USDC2NSD101_USDC2NSD102-Port-Channel240:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Windows Server
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet24
+      - Ethernet24
+      switch_ports:
+      - Ethernet24
+      - Ethernet24
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '1543'
+  USDC2SDB2193-2-USDC2NSD101_USDC2NSD102-Port-Channel280:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC2SDB2193-2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet28
+      - Ethernet28
+      switch_ports:
+      - Ethernet28
+      - Ethernet28
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '1540'
+  USDC2SDB2193-2-USDC2NSD101_USDC2NSD102-Port-Channel290:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC2SDB2193-2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet29
+      - Ethernet29
+      switch_ports:
+      - Ethernet29
+      - Ethernet29
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '1543'
+  USDC2SDB2188(BZDYM83)-USDC2NSD101_USDC2NSD102-Port-Channel300:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC2SDB2188(BZDYM83)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet30
+      - Ethernet30
+      switch_ports:
+      - Ethernet30
+      - Ethernet30
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '1540'
+  USDC2SDB2188(BZDYM83)-USDC2NSD101_USDC2NSD102-Port-Channel310:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC2SDB2188(BZDYM83)
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet31
+      - Ethernet31
+      switch_ports:
+      - Ethernet31
+      - Ethernet31
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '1543'
+  USDC2SDB2190-USDC2NSD101_USDC2NSD102-Port-Channel320:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC2SDB2190
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet32
+      - Ethernet32
+      switch_ports:
+      - Ethernet32
+      - Ethernet32
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '1540'
+  USDC2SDB2190-USDC2NSD101_USDC2NSD102-Port-Channel340:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC2SDB2190
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet34
+      - Ethernet34
+      switch_ports:
+      - Ethernet34
+      - Ethernet34
+      switches:
+      - USDC2NSD101
+      - USDC2NSD102
+      vlans: '1543'
+  **reserved for USDC2SDB2199-2**-USDC2NSD103_USDC2NSD104-Port-Channel210:
+    adapters:
+    - mode: access
+      port_channel:
+        description: **reserved for USDC2SDB2199-2**
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet21
+      - Ethernet21
+      switch_ports:
+      - Ethernet21
+      - Ethernet21
+      switches:
+      - USDC2NSD103
+      - USDC2NSD104
+      vlans: '1540'
+  **reserved for USDC2SDB2199-2**-USDC2NSD103_USDC2NSD104-Port-Channel220:
+    adapters:
+    - mode: access
+      port_channel:
+        description: **reserved for USDC2SDB2199-2**
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet22
+      - Ethernet22
+      switch_ports:
+      - Ethernet22
+      - Ethernet22
+      switches:
+      - USDC2NSD103
+      - USDC2NSD104
+      vlans: '1543'
+  PH_XL_9QSSK93-USDC2NSD103_USDC2NSD104-Port-Channel330:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_9QSSK93
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet33
+      - Ethernet33
+      switch_ports:
+      - Ethernet33
+      - Ethernet33
+      switches:
+      - USDC2NSD103
+      - USDC2NSD104
+      vlans: '1540'
+  PH_XL_9QSSK93-USDC2NSD103_USDC2NSD104-Port-Channel340:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_9QSSK93
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      switch_ports:
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      - Ethernet34
+      switches:
+      - USDC2NSD103
+      - USDC2NSD103
+      - USDC2NSD104
+      - USDC2NSD104
+      vlans: '1543'
+  PH_XL_9QSQK93-USDC2NSD103_USDC2NSD104-Port-Channel430:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_9QSQK93
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet43
+      - Ethernet43
+      switch_ports:
+      - Ethernet43
+      - Ethernet43
+      switches:
+      - USDC2NSD103
+      - USDC2NSD104
+      vlans: '1540'
+  PH_XL_9QSQK93-USDC2NSD103_USDC2NSD104-Port-Channel440:
+    adapters:
+    - mode: access
+      port_channel:
+        description: PH_XL_9QSQK93
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet44
+      - Ethernet44
+      switch_ports:
+      - Ethernet44
+      - Ethernet44
+      switches:
+      - USDC2NSD103
+      - USDC2NSD104
+      vlans: '1543'
+  PA-FW-1-USDC2NSE101_USDC2NSE102-Port-Channel51:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: PA-FW-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet1
+      - Ethernet2
+      - Ethernet1
+      - Ethernet2
+      switch_ports:
+      - Ethernet1
+      - Ethernet2
+      - Ethernet1
+      - Ethernet2
+      switches:
+      - USDC2NSE101
+      - USDC2NSE101
+      - USDC2NSE102
+      - USDC2NSE102
+      vlans: '1657,2657,3702,3802,1726,1726,2726,1553,2553,1560,2560,1561,2561,1562,2562,1728,3320,3420,3322,3422,3312,3412,3316,3416,1709,2709,1710,2710,1724,1724,2724,1722,1722,2722,3326,3426,3314,3414,1720,1720,2720,1810,1820,1830,1840,2629,2644,3629,3644,3301,3401,1563,2563,3324,3424'
+  PA-FW-2-USDC2NSE101_USDC2NSE102-Port-Channel52:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: PA-FW-2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet3
+      - Ethernet4
+      - Ethernet3
+      - Ethernet4
+      switch_ports:
+      - Ethernet3
+      - Ethernet4
+      - Ethernet3
+      - Ethernet4
+      switches:
+      - USDC2NSE101
+      - USDC2NSE101
+      - USDC2NSE102
+      - USDC2NSE102
+      vlans: '1657,2657,3702,3802,1726,1726,2726,1553,2553,1560,2560,1561,2561,1562,2562,1728,3320,3420,3322,3422,3312,3412,3316,3416,1709,2709,1710,2710,1724,1724,2724,1722,1722,2722,3326,3426,3314,3414,1720,1720,2720,1810,1820,1830,1840,2629,2644,3629,3644,3301,3401,1563,2563,3324,3424'
+  F5-iSeries-1-USDC2NSE101_USDC2NSE102-Port-Channel61:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: F5-iSeries-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet9
+      - Ethernet9
+      switch_ports:
+      - Ethernet9
+      - Ethernet9
+      switches:
+      - USDC2NSE101
+      - USDC2NSE102
+      vlans: '1652,2652,1656,2656,1559,3524,2559,3624,3513,3613,3514,3614,3515,3615,3516,3616,1554,2554'
+  F5-iSeries-2-USDC2NSE101_USDC2NSE102-Port-Channel62:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: F5-iSeries-2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet10
+      - Ethernet10
+      switch_ports:
+      - Ethernet10
+      - Ethernet10
+      switches:
+      - USDC2NSE101
+      - USDC2NSE102
+      vlans: '1652,2652,1656,2656,1559,3524,2559,3624,3513,3613,3514,3614,3515,3615,3516,3616,1554,2554'
+  F5-iSeries-1-USDC2NSE101_USDC2NSE102-Port-Channel63:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: F5-iSeries-1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet44
+      - Ethernet44
+      switch_ports:
+      - Ethernet44
+      - Ethernet44
+      switches:
+      - USDC2NSE101
+      - USDC2NSE102
+      vlans: '1655,2655'
+  F5-iSeries-2-USDC2NSE101_USDC2NSE102-Port-Channel64:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: F5-iSeries-2
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet46
+      - Ethernet46
+      switch_ports:
+      - Ethernet46
+      - Ethernet46
+      switches:
+      - USDC2NSE101
+      - USDC2NSE102
+      vlans: '1655,2655'
+  USDC1SDB2184-USDC1NSD101-Port-Channel218:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC1SDB2184
+        mode: active
+        state: present
+      server_ports:
+      switch_ports:
+      switches:
+      - USDC1NSD101
+      - USDC1NSD101
+      vlans: '1543'
+  ISILON1_NIC1-USDC1NSE101-Port-Channel111:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON1_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet38
+      switch_ports:
+      - Ethernet38
+      switches:
+      - USDC1NSE101
+      - USDC1NSE101
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON1_NIC1-USDC1NSE101-Port-Channel112:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON1_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet39
+      switch_ports:
+      - Ethernet39
+      switches:
+      - USDC1NSE101
+      - USDC1NSE101
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON3_NIC1-USDC1NSE101-Port-Channel113:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON3_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet40
+      switch_ports:
+      - Ethernet40
+      switches:
+      - USDC1NSE101
+      - USDC1NSE101
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON4_NIC1-USDC1NSE101-Port-Channel114:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON4_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet41
+      switch_ports:
+      - Ethernet41
+      switches:
+      - USDC1NSE101
+      - USDC1NSE101
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON5_NIC1-USDC1NSE101-Port-Channel115:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON5_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet42
+      switch_ports:
+      - Ethernet42
+      switches:
+      - USDC1NSE101
+      - USDC1NSE101
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON6_NIC1-USDC1NSE101-Port-Channel116:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON6_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet43
+      switch_ports:
+      - Ethernet43
+      switches:
+      - USDC1NSE101
+      - USDC1NSE101
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON1_NIC1-USDC1NSE102-Port-Channel111:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON1_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet38
+      switch_ports:
+      - Ethernet38
+      switches:
+      - USDC1NSE102
+      - USDC1NSE102
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON1_NIC1-USDC1NSE102-Port-Channel112:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON1_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet39
+      switch_ports:
+      - Ethernet39
+      switches:
+      - USDC1NSE102
+      - USDC1NSE102
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON3_NIC1-USDC1NSE102-Port-Channel113:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON3_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet40
+      switch_ports:
+      - Ethernet40
+      switches:
+      - USDC1NSE102
+      - USDC1NSE102
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON4_NIC1-USDC1NSE102-Port-Channel114:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON4_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet41
+      switch_ports:
+      - Ethernet41
+      switches:
+      - USDC1NSE102
+      - USDC1NSE102
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON5_NIC1-USDC1NSE102-Port-Channel115:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON5_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet42
+      switch_ports:
+      - Ethernet42
+      switches:
+      - USDC1NSE102
+      - USDC1NSE102
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON6_NIC1-USDC1NSE102-Port-Channel116:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON6_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet43
+      switch_ports:
+      - Ethernet43
+      switches:
+      - USDC1NSE102
+      - USDC1NSE102
+      vlans: '1542,2542,1709,2709,1710,2710'
+  USDC2SDB2187-USDC2NSD101-Port-Channel190:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC2SDB2187
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet19
+      switch_ports:
+      - Ethernet19
+      switches:
+      - USDC2NSD101
+      - USDC2NSD101
+      vlans: '1540'
+  USDC2SDB2187-USDC2NSD101-Port-Channel200:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC2SDB2187
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet20
+      switch_ports:
+      - Ethernet20
+      switches:
+      - USDC2NSD101
+      - USDC2NSD101
+      vlans: '1543'
+  Windows Server-USDC2NSD101-Port-Channel210:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Windows Server
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet21
+      switch_ports:
+      - Ethernet21
+      switches:
+      - USDC2NSD101
+      - USDC2NSD101
+      vlans: '1540'
+  USDC2SDB2187-USDC2NSD102-Port-Channel190:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC2SDB2187
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet19
+      switch_ports:
+      - Ethernet19
+      switches:
+      - USDC2NSD102
+      - USDC2NSD102
+      vlans: '1540'
+  USDC2SDB2187-USDC2NSD102-Port-Channel200:
+    adapters:
+    - mode: access
+      port_channel:
+        description: USDC2SDB2187
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet20
+      switch_ports:
+      - Ethernet20
+      switches:
+      - USDC2NSD102
+      - USDC2NSD102
+      vlans: '1543'
+  Windows Server-USDC2NSD102-Port-Channel210:
+    adapters:
+    - mode: access
+      port_channel:
+        description: Windows Server
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet21
+      switch_ports:
+      - Ethernet21
+      switches:
+      - USDC2NSD102
+      - USDC2NSD102
+      vlans: '1540'
+  ISILON1_NIC1-USDC2NSE101-Port-Channel121:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON1_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet38
+      switch_ports:
+      - Ethernet38
+      switches:
+      - USDC2NSE101
+      - USDC2NSE101
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON2_NIC-USDC2NSE101-Port-Channel122:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON2_NIC
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet39
+      switch_ports:
+      - Ethernet39
+      switches:
+      - USDC2NSE101
+      - USDC2NSE101
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON3_NIC1-USDC2NSE101-Port-Channel123:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON3_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet40
+      switch_ports:
+      - Ethernet40
+      switches:
+      - USDC2NSE101
+      - USDC2NSE101
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON4_NIC1-USDC2NSE101-Port-Channel124:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON4_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet41
+      switch_ports:
+      - Ethernet41
+      switches:
+      - USDC2NSE101
+      - USDC2NSE101
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON5_NIC1-USDC2NSE101-Port-Channel125:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON5_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet42
+      switch_ports:
+      - Ethernet42
+      switches:
+      - USDC2NSE101
+      - USDC2NSE101
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON6_NIC1-USDC2NSE101-Port-Channel126:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON6_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet43
+      switch_ports:
+      - Ethernet43
+      switches:
+      - USDC2NSE101
+      - USDC2NSE101
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON1_NIC1-USDC2NSE102-Port-Channel121:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON1_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet38
+      switch_ports:
+      - Ethernet38
+      switches:
+      - USDC2NSE102
+      - USDC2NSE102
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON2_NIC-USDC2NSE102-Port-Channel122:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON2_NIC
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet39
+      switch_ports:
+      - Ethernet39
+      switches:
+      - USDC2NSE102
+      - USDC2NSE102
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON3_NIC1-USDC2NSE102-Port-Channel123:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON3_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet40
+      switch_ports:
+      - Ethernet40
+      switches:
+      - USDC2NSE102
+      - USDC2NSE102
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON4_NIC1-USDC2NSE102-Port-Channel124:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON4_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet41
+      switch_ports:
+      - Ethernet41
+      switches:
+      - USDC2NSE102
+      - USDC2NSE102
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON5_NIC1-USDC2NSE102-Port-Channel125:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON5_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet42
+      switch_ports:
+      - Ethernet42
+      switches:
+      - USDC2NSE102
+      - USDC2NSE102
+      vlans: '1542,2542,1709,2709,1710,2710'
+  ISILON6_NIC1-USDC2NSE102-Port-Channel126:
+    adapters:
+    - mode: trunk
+      port_channel:
+        description: ISILON6_NIC1
+        mode: active
+        state: present
+      server_ports:
+      - Ethernet43
+      switch_ports:
+      - Ethernet43
+      switches:
+      - USDC2NSE102
+      - USDC2NSE102
+      vlans: '1542,2542,1709,2709,1710,2710'
+  USDC1SGOLDXI01_NIC_1-USDC1NSD101-Ethernet1:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI01_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet1
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,1704,3520,3521,3522,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI01_NIC_2-USDC1NSD101-Ethernet2:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI01_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet2
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,1704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI02_NIC_1-USDC1NSD101-Ethernet3:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI02_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet3
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,1704,3520,3521,3522,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI02_NIC_2-USDC1NSD101-Ethernet4:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI02_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,1704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI03_NIC_1-USDC1NSD101-Ethernet5:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI03_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,1704,3520,3521,3522,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI03_NIC_2-USDC1NSD101-Ethernet6:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI03_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet6
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,1704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI04_NIC_1-USDC1NSD101-Ethernet7:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI04_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet7
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,1704,3520,3521,3522,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI04_NIC_2-USDC1NSD101-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI04_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,1704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SSILVXI01_NIC_1-USDC1NSD101-Ethernet9:
+    adapters:
+    - mode: trunk
+      description: USDC1SSILVXI01_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet9
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1505,1548,1681,2681,1682,2682,1685,2685,1525,2525,1527,2527,1528,2528,3520,3521,3522,1511'
+  USDC1SSILVXI01_NIC_2-USDC1NSD101-Ethernet10:
+    adapters:
+    - mode: trunk
+      description: USDC1SSILVXI01_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet10
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1675,2675,1548,1676,2676,1526,2526,1704'
+  USDC1SSILVXI02_NIC_1-USDC1NSD101-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: USDC1SSILVXI02_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1548,1681,2681,1682,2682,1685,2685,1525,2525,1527,2527,1528,2528,3520,3521,3522,1511'
+  USDC1SSILVXI02_NIC_2-USDC1NSD101-Ethernet12:
+    adapters:
+    - mode: trunk
+      description: USDC1SSILVXI02_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet12
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,2676,1526,2526,1704'
+  USDC1SSILVXI03_NIC_1-USDC1NSD101-Ethernet13:
+    adapters:
+    - mode: trunk
+      description: USDC1SSILVXI03_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet13
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1548,1681,2681,1682,2682,1685,2685,1525,2525,1527,2527,1528,2528,3520,3521,3522,1511'
+  USDC1SSILVXI03_NIC_2-USDC1NSD101-Ethernet14:
+    adapters:
+    - mode: trunk
+      description: USDC1SSILVXI03_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet14
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,2676,1526,2526,1704'
+  USDC1SSILVXI04_NIC_1-USDC1NSD101-Ethernet15:
+    adapters:
+    - mode: trunk
+      description: USDC1SSILVXI04_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet15
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1548,1681,2681,1682,2682,1685,2685,1525,2525,1527,2527,1528,2528,3520,3521,3522,1511'
+  USDC1SSILVXI04_NIC_2-USDC1NSD101-Ethernet16:
+    adapters:
+    - mode: trunk
+      description: USDC1SSILVXI04_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet16
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,2676,1526,2526,1704'
+  USDC1SGOLDXI05_NIC_2-USDC1NSD101-Ethernet35:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI05_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,1704,3520,3521,3522,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI06_NIC_1-USDC1NSD101-Ethernet36:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI06_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet36
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,1704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI05_NIC_2-USDC1NSD101-Ethernet37:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI05_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet37
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,1704,3520,3521,3522,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI06_NIC_1-USDC1NSD101-Ethernet38:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI06_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet38
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,1704,1810,1820,1830,1840,2629,2644,3629,3644'
+  usdc1sslvrxi06-USDC1NSD101-Ethernet39:
+    adapters:
+    - mode: trunk
+      description: usdc1sslvrxi06
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet39
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1505,1548,1681,2681,1682,2682,1685,2685,1525,2525,1527,2527,1528,2528,3520,3521,3522,1511'
+  usdc1sslvrxi06-USDC1NSD101-Ethernet46:
+    adapters:
+    - mode: trunk
+      description: usdc1sslvrxi06
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet46
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1675,2675,1548,1676,2676,1526,2526,1704'
+  usdc1sslvrxi05-USDC1NSD101-Ethernet47:
+    adapters:
+    - mode: trunk
+      description: usdc1sslvrxi05
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1505,1548,1681,2681,1682,2682,1685,2685,1525,2525,1527,2527,1528,2528,3520,3521,3522,1511'
+  usdc1sslvrxi05-USDC1NSD101-Ethernet48:
+    adapters:
+    - mode: trunk
+      description: usdc1sslvrxi05
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - USDC1NSD101
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1675,2675,1548,1676,2676,1526,2526,1704'
+  USDC1SGOLDXI01_NIC_3-USDC1NSD102-Ethernet1:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI01_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet1
+      switches:
+      - USDC1NSD102
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,3520,3521,3522,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI01_NIC_4-USDC1NSD102-Ethernet2:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI01_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet2
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,1704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI02_NIC_3-USDC1NSD102-Ethernet3:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI02_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet3
+      switches:
+      - USDC1NSD102
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,3520,3521,3522,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI02_NIC_4-USDC1NSD102-Ethernet4:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI02_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,1704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI03_NIC_3-USDC1NSD102-Ethernet5:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI03_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - USDC1NSD102
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,3520,3521,3522,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI03_NIC_4-USDC1NSD102-Ethernet6:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI03_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet6
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,1704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI04_NIC_3-USDC1NSD102-Ethernet7:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI04_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet7
+      switches:
+      - USDC1NSD102
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,3520,3521,3522,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI04_NIC_4-USDC1NSD102-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI04_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,1704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SSILVXI01_NIC_3-USDC1NSD102-Ethernet9:
+    adapters:
+    - mode: trunk
+      description: USDC1SSILVXI01_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet9
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1505,1548,1681,2681,1682,2682,1685,2685,1525,2525,1527,2527,1528,2528,3520,3521,3522,1511'
+  USDC1SSILVXI01_NIC_4-USDC1NSD102-Ethernet10:
+    adapters:
+    - mode: trunk
+      description: USDC1SSILVXI01_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet10
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,2676,1526,2526,1704'
+  USDC1SSILVXI02_NIC_3-USDC1NSD102-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: USDC1SSILVXI02_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1548,1681,2681,1682,2682,1685,2685,1525,2525,1527,2527,1528,2528,3520,3521,3522,1511'
+  USDC1SSILVXI02_NIC_4-USDC1NSD102-Ethernet12:
+    adapters:
+    - mode: trunk
+      description: USDC1SSILVXI02_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet12
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,2676,1526,2526,1704'
+  USDC1SSILVXI03_NIC_3-USDC1NSD102-Ethernet13:
+    adapters:
+    - mode: trunk
+      description: USDC1SSILVXI03_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet13
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1548,1681,2681,1682,2682,1685,2685,1525,2525,1527,2527,1528,2528,3520,3521,3522,1511'
+  USDC1SSILVXI03_NIC_4-USDC1NSD102-Ethernet14:
+    adapters:
+    - mode: trunk
+      description: USDC1SSILVXI03_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet14
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,2676,1526,2526,1704'
+  USDC1SSILVXI04_NIC_3-USDC1NSD102-Ethernet15:
+    adapters:
+    - mode: trunk
+      description: USDC1SSILVXI04_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet15
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1548,1681,2681,1682,2682,1685,2685,1525,2525,1527,2527,1528,2528,3520,3521,3522,1511'
+  USDC1SSILVXI04_NIC_4-USDC1NSD102-Ethernet16:
+    adapters:
+    - mode: trunk
+      description: USDC1SSILVXI04_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet16
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,2676,1526,2526,1704'
+  USDC1SGOLDXI05_NIC_4-USDC1NSD102-Ethernet35:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI05_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - USDC1NSD102
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,3520,3521,3522,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI06_NIC_3-USDC1NSD102-Ethernet36:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI06_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet36
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,1704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI05_NIC_4-USDC1NSD102-Ethernet37:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI05_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet37
+      switches:
+      - USDC1NSD102
+      vlans: '1541,1550,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,3520,3521,3522,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC1SGOLDXI06_NIC_3-USDC1NSD102-Ethernet38:
+    adapters:
+    - mode: trunk
+      description: USDC1SGOLDXI06_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet38
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,1704,1810,1820,1830,1840,2629,2644,3629,3644'
+  usdc1sslvrxi06-USDC1NSD102-Ethernet39:
+    adapters:
+    - mode: trunk
+      description: usdc1sslvrxi06
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet39
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1505,1548,1681,2681,1682,2682,1685,2685,1525,2525,1527,2527,1528,2528,3520,3521,3522,1511'
+  usdc1sslvrxi06-USDC1NSD102-Ethernet46:
+    adapters:
+    - mode: trunk
+      description: usdc1sslvrxi06
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet46
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,2676,1526,2526,1704'
+  usdc1sslvrxi05-USDC1NSD102-Ethernet47:
+    adapters:
+    - mode: trunk
+      description: usdc1sslvrxi05
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1505,1548,1681,2681,1682,2682,1685,2685,1525,2525,1527,2527,1528,2528,3520,3521,3522,1511'
+  usdc1sslvrxi05-USDC1NSD102-Ethernet48:
+    adapters:
+    - mode: trunk
+      description: usdc1sslvrxi05
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - USDC1NSD102
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1676,2676,1526,2526,1704'
+  USDC1SDB2190-1-USDC1NSD103-Ethernet17:
+    adapters:
+    - mode: access
+      description: USDC1SDB2190-1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet17
+      switches:
+      - USDC1NSD103
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1540'
+  USDC1SDB2190-2-USDC1NSD103-Ethernet19:
+    adapters:
+    - mode: access
+      description: USDC1SDB2190-2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet19
+      switches:
+      - USDC1NSD103
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1540'
+  USDC1SDB2190-1-USDC1NSD104-Ethernet17:
+    adapters:
+    - mode: access
+      description: USDC1SDB2190-1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet17
+      switches:
+      - USDC1NSD104
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1540'
+  USDC1SDB2190-1-USDC1NSD104-Ethernet17:
+    adapters:
+    - mode: access
+      description: USDC1SDB2190-1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet17
+      switches:
+      - USDC1NSD104
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1540'
+  USDC1SDB2190-2-USDC1NSD104-Ethernet19:
+    adapters:
+    - mode: access
+      description: USDC1SDB2190-2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet19
+      switches:
+      - USDC1NSD104
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1540'
+  usdc1sgoldxi07-USDC1NSD105-Ethernet1:
+    adapters:
+    - mode: trunk
+      description: usdc1sgoldxi07
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet1
+      switches:
+      - USDC1NSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  usdc1sgoldxi07-USDC1NSD105-Ethernet2:
+    adapters:
+    - mode: trunk
+      description: usdc1sgoldxi07
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet2
+      switches:
+      - USDC1NSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  usdc1sgoldxi08-USDC1NSD105-Ethernet3:
+    adapters:
+    - mode: trunk
+      description: usdc1sgoldxi08
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet3
+      switches:
+      - USDC1NSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  usdc1sgoldxi08-USDC1NSD105-Ethernet4:
+    adapters:
+    - mode: trunk
+      description: usdc1sgoldxi08
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - USDC1NSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  usdc1sgoldxi09-USDC1NSD105-Ethernet5:
+    adapters:
+    - mode: trunk
+      description: usdc1sgoldxi09
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - USDC1NSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  usdc1sgoldxi09-USDC1NSD105-Ethernet6:
+    adapters:
+    - mode: trunk
+      description: usdc1sgoldxi09
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet6
+      switches:
+      - USDC1NSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  usdc1sgoldxi10-USDC1NSD105-Ethernet7:
+    adapters:
+    - mode: trunk
+      description: usdc1sgoldxi10
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet7
+      switches:
+      - USDC1NSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  usdc1sgoldxi10-USDC1NSD105-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: usdc1sgoldxi10
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - USDC1NSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  usdc1sgoldxi07-USDC1NSD106-Ethernet1:
+    adapters:
+    - mode: trunk
+      description: usdc1sgoldxi07
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet1
+      switches:
+      - USDC1NSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  usdc1sgoldxi07-USDC1NSD106-Ethernet2:
+    adapters:
+    - mode: trunk
+      description: usdc1sgoldxi07
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet2
+      switches:
+      - USDC1NSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  usdc1sgoldxi08-USDC1NSD106-Ethernet3:
+    adapters:
+    - mode: trunk
+      description: usdc1sgoldxi08
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet3
+      switches:
+      - USDC1NSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  usdc1sgoldxi08-USDC1NSD106-Ethernet4:
+    adapters:
+    - mode: trunk
+      description: usdc1sgoldxi08
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - USDC1NSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  usdc1sgoldxi09-USDC1NSD106-Ethernet5:
+    adapters:
+    - mode: trunk
+      description: usdc1sgoldxi09
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - USDC1NSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  usdc1sgoldxi09-USDC1NSD106-Ethernet6:
+    adapters:
+    - mode: trunk
+      description: usdc1sgoldxi09
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet6
+      switches:
+      - USDC1NSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  usdc1sgoldxi10-USDC1NSD106-Ethernet7:
+    adapters:
+    - mode: trunk
+      description: usdc1sgoldxi10
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet7
+      switches:
+      - USDC1NSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  usdc1sgoldxi10-USDC1NSD106-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: usdc1sgoldxi10
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - USDC1NSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  AT&T-MPLS-Circuit-USDC1NSE101-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: AT&T-MPLS-Circuit
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1635,2635,1850,2850'
+  AT&T-MPLS-Circuit-USDC1NSE101-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: AT&T-MPLS-Circuit
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1635,2635,1850,2850'
+  USDC1SMGMTXI01_NIC_1-USDC1NSE101-Ethernet21:
+    adapters:
+    - mode: trunk
+      description: USDC1SMGMTXI01_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet21
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1560,2560,1712,1550,1505,1507,1508,1500,2500,1554,2554,1510,1511,1512,3301,3401'
+  USDC1SMGMTXI01_NIC_2-USDC1NSE101-Ethernet22:
+    adapters:
+    - mode: trunk
+      description: USDC1SMGMTXI01_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet22
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1560,2560,1712,1506,3301,3401'
+  USDC1SMGMTXI02_NIC_1-USDC1NSE101-Ethernet23:
+    adapters:
+    - mode: trunk
+      description: USDC1SMGMTXI02_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet23
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1560,2560,1712,1550,1505,1507,1508,1500,2500,1554,2554,1510,1511,1512,3301,3401'
+  USDC1SMGMTXI02_NIC_2-USDC1NSE101-Ethernet24:
+    adapters:
+    - mode: trunk
+      description: USDC1SMGMTXI02_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet24
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1560,2560,1712,1506,3301,3401'
+  USDC1SMGMTXI03_NIC_1-USDC1NSE101-Ethernet25:
+    adapters:
+    - mode: trunk
+      description: USDC1SMGMTXI03_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet25
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1560,2560,1712,1550,1505,1507,1508,1500,2500,1554,2554,1510,1511,1512,3301,3401'
+  USDC1SMGMTXI03_NIC_2-USDC1NSE101-Ethernet26:
+    adapters:
+    - mode: trunk
+      description: USDC1SMGMTXI03_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet26
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1560,2560,1712,1506,3301,3401'
+  USDC1SMGMTXI04_NIC_1-USDC1NSE101-Ethernet27:
+    adapters:
+    - mode: trunk
+      description: USDC1SMGMTXI04_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet27
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1560,2560,1712,1550,1505,1507,1508,1500,2500,1554,2554,1510,1511,1512,3301,3401'
+  USDC1SMGMTXI04_NIC_2-USDC1NSE101-Ethernet28:
+    adapters:
+    - mode: trunk
+      description: USDC1SMGMTXI04_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet28
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1560,2560,1712,1506,3301,3401'
+  SDWAN-VCE1-AVPN1-USDC1NSE101-Ethernet29:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-AVPN1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet29
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1850'
+  SDWAN-VCE1-AVPN2-USDC1NSE101-Ethernet30:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-AVPN2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet30
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1851'
+  SDWAN-VCE1-INTERNET-USDC1NSE101-Ethernet31:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-INTERNET
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet31
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1654'
+  USDC1XPDD001_Eth1a-USDC1NSE101-Ethernet32:
+    adapters:
+    - mode: access
+      description: USDC1XPDD001_Eth1a
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet32
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  USDC1XPDD001_Eth1b-USDC1NSE101-Ethernet33:
+    adapters:
+    - mode: access
+      description: USDC1XPDD001_Eth1b
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet33
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  USDC1XPDD001_Eth1c-USDC1NSE101-Ethernet34:
+    adapters:
+    - mode: access
+      description: USDC1XPDD001_Eth1c
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet34
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  USDC1XPDD001_Eth1d-USDC1NSE101-Ethernet35:
+    adapters:
+    - mode: access
+      description: USDC1XPDD001_Eth1d
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1542'
+  USDC1XPDD001_Eth1d-USDC1NSE101-Ethernet35:
+    adapters:
+    - mode: access
+      description: USDC1XPDD001_Eth1d
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1542'
+  INFLOBOX_usdcsdns02a-MGMT-USDC1NSE101-Ethernet37:
+    adapters:
+    - mode: access
+      description: INFLOBOX_usdcsdns02a-MGMT
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet37
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'
+  USDC1SPNM2001-USDC1NSE101-Ethernet45:
+    adapters:
+    - mode: access
+      description: USDC1SPNM2001
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet45
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1553'
+  INFLOBOX_usdcsdns02a-LAN1-USDC1NSE101-Ethernet47:
+    adapters:
+    - mode: access
+      description: INFLOBOX_usdcsdns02a-LAN1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '3386'
+  INFLOBOX_usdcsdns02a-HA-USDC1NSE101-Ethernet48:
+    adapters:
+    - mode: access
+      description: INFLOBOX_usdcsdns02a-HA
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - USDC1NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '3386'
+  AT&T-MPLS-Circuit-USDC1NSE102-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: AT&T-MPLS-Circuit
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1636,2636,1851,2851'
+  AT&T-MPLS-Circuit-USDC1NSE102-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: AT&T-MPLS-Circuit
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1636,2636,1851,2851'
+  USDC1SMGMTXI01_NIC_3-USDC1NSE102-Ethernet21:
+    adapters:
+    - mode: trunk
+      description: USDC1SMGMTXI01_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet21
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1560,2560,1712,1550,1505,1507,1508,1500,2500,1554,2554,1510,1511,1512,3301,3401'
+  USDC1SMGMTXI02_NIC_3-USDC1NSE102-Ethernet23:
+    adapters:
+    - mode: trunk
+      description: USDC1SMGMTXI02_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet23
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1560,2560,1712,1550,1505,1507,1508,1500,2500,1554,2554,1510,1511,1512,3301,3401'
+  USDC1SMGMTXI03_NIC_3-USDC1NSE102-Ethernet25:
+    adapters:
+    - mode: trunk
+      description: USDC1SMGMTXI03_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet25
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1560,2560,1712,1550,1505,1507,1508,1500,2500,1554,2554,1510,1511,1512,3301,3401'
+  USDC1SMGMTXI04_NIC_3-USDC1NSE102-Ethernet27:
+    adapters:
+    - mode: trunk
+      description: USDC1SMGMTXI04_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet27
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1560,2560,1712,1550,1505,1507,1508,1500,2500,1554,2554,1510,1511,1512,3301,3401'
+  SDWAN-VCE1-AVPN1-USDC1NSE102-Ethernet29:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-AVPN1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet29
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1850'
+  SDWAN-VCE1-AVPN2-USDC1NSE102-Ethernet30:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-AVPN2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet30
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1851'
+  SDWAN-VCE1-INTERNET-USDC1NSE102-Ethernet31:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-INTERNET
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet31
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1654'
+  USDC1XPDD001_Eth4a-USDC1NSE102-Ethernet32:
+    adapters:
+    - mode: access
+      description: USDC1XPDD001_Eth4a
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet32
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  USDC1XPDD001_Eth4b-USDC1NSE102-Ethernet33:
+    adapters:
+    - mode: access
+      description: USDC1XPDD001_Eth4b
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet33
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  USDC1XPDD001_Eth4c-USDC1NSE102-Ethernet34:
+    adapters:
+    - mode: access
+      description: USDC1XPDD001_Eth4c
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet34
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  USDC1XPDD001_Eth4d-USDC1NSE102-Ethernet35:
+    adapters:
+    - mode: access
+      description: USDC1XPDD001_Eth4d
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1542'
+  USDC1XPDD001_Eth4d-USDC1NSE102-Ethernet35:
+    adapters:
+    - mode: access
+      description: USDC1XPDD001_Eth4d
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1542'
+  USDC1XPDD001_Eth4d-USDC1NSE102-Ethernet35:
+    adapters:
+    - mode: access
+      description: USDC1XPDD001_Eth4d
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1542'
+  USDC1SPNM2001-USDC1NSE102-Ethernet45:
+    adapters:
+    - mode: access
+      description: USDC1SPNM2001
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet45
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1553'
+  USDC1IPAM001-LAN1-USDC1NSE102-Ethernet47:
+    adapters:
+    - mode: access
+      description: USDC1IPAM001-LAN1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'
+  USDC1IPAM001-HA-USDC1NSE102-Ethernet48:
+    adapters:
+    - mode: access
+      description: USDC1IPAM001-HA
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - USDC1NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'
+  USDC2SGOLDXI01_NIC_1-USDC2NSD101-Ethernet1:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI01_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet1
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI01_NIC_2-USDC2NSD101-Ethernet2:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI01_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet2
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI02_NIC_1-USDC2NSD101-Ethernet3:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI02_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet3
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI02_NIC_2-USDC2NSD101-Ethernet4:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI02_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI03_NIC_1-USDC2NSD101-Ethernet5:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI03_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI03_NIC_2-USDC2NSD101-Ethernet6:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI03_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet6
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI04_NIC_1-USDC2NSD101-Ethernet7:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI04_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet7
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI04_NIC_2-USDC2NSD101-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI04_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SSILVXI01_NIC_1-USDC2NSD101-Ethernet9:
+    adapters:
+    - mode: trunk
+      description: USDC2SSILVXI01_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet9
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1505,1548,1681,2681,1682,2682,1685,2685,1676,2676,1525,2525,1527,2527,1528,2528,2704,3520,3521,3522,1511'
+  USDC2SSILVXI01_NIC_2-USDC2NSD101-Ethernet10:
+    adapters:
+    - mode: trunk
+      description: USDC2SSILVXI01_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet10
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1681,2681,1682,2682,1685,2685,1676,2676,1526,2526,2704'
+  USDC2SSILVXI02_NIC_1-USDC2NSD101-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: USDC2SSILVXI02_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1548,1681,2681,1682,2682,1685,2685,1676,2676,1525,2525,1527,2527,1528,2528,2704,3520,3521,3522,1511'
+  USDC2SSILVXI02_NIC_2-USDC2NSD101-Ethernet12:
+    adapters:
+    - mode: trunk
+      description: USDC2SSILVXI02_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet12
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1681,2681,1682,2682,1685,2685,1676,2676,1526,2526,2704'
+  USDC2SSILVXI03_NIC_1-USDC2NSD101-Ethernet13:
+    adapters:
+    - mode: trunk
+      description: USDC2SSILVXI03_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet13
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1548,1681,2681,1682,2682,1685,2685,1676,2676,1525,2525,1527,2527,1528,2528,2704,3520,3521,3522,1511'
+  USDC2SSILVXI03_NIC_2-USDC2NSD101-Ethernet14:
+    adapters:
+    - mode: trunk
+      description: USDC2SSILVXI03_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet14
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1681,2681,1682,2682,1685,2685,1676,2676,1526,2526,2704'
+  USDC2SSILVXI04_NIC_1-USDC2NSD101-Ethernet15:
+    adapters:
+    - mode: trunk
+      description: USDC2SSILVXI04_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet15
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1548,1681,2681,1682,2682,1685,2685,1676,2676,1525,2525,1527,2527,1528,2528,2704,3520,3521,3522,1511'
+  USDC2SSILVXI04_NIC_2-USDC2NSD101-Ethernet16:
+    adapters:
+    - mode: trunk
+      description: USDC2SSILVXI04_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet16
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1681,2681,1682,2682,1685,2685,1676,2676,1526,2526,2704'
+  USDC2SGOLDXI05_NIC_1-USDC2NSD101-Ethernet25:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI05_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet25
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI05_NIC_4-USDC2NSD101-Ethernet26:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI05_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet26
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI06_NIC_1-USDC2NSD101-Ethernet27:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI06_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet27
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI05-#RITM0439325-USDC2NSD101-Ethernet33:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI05-#RITM0439325
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet33
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI05-#RITM0439325-USDC2NSD101-Ethernet35:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI05-#RITM0439325
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI06-USDC2NSD101-Ethernet36:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI06
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet36
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI06-USDC2NSD101-Ethernet37:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI06
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet37
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  des-USDC2SGOLDXI06_NIC_2-USDC2NSD101-Ethernet38:
+    adapters:
+    - mode: trunk
+      description: des-USDC2SGOLDXI06_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet38
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI07-USDC2NSD101-Ethernet39:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI07
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet39
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI07-USDC2NSD101-Ethernet46:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI07
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet46
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI08-USDC2NSD101-Ethernet47:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI08
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI08-USDC2NSD101-Ethernet48:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI08
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - USDC2NSD101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI01_NIC_3-USDC2NSD102-Ethernet1:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI01_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet1
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI01_NIC_4-USDC2NSD102-Ethernet2:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI01_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet2
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI02_NIC_3-USDC2NSD102-Ethernet3:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI02_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet3
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI02_NIC_4-USDC2NSD102-Ethernet4:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI02_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI03_NIC_3-USDC2NSD102-Ethernet5:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI03_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet5
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI03_NIC_4-USDC2NSD102-Ethernet6:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI03_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet6
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI04_NIC_3-USDC2NSD102-Ethernet7:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI04_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet7
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI04_NIC_4-USDC2NSD102-Ethernet8:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI04_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet8
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SSILVXI01_NIC_3-USDC2NSD102-Ethernet9:
+    adapters:
+    - mode: trunk
+      description: USDC2SSILVXI01_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet9
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1505,1548,1681,2681,1682,2682,1685,2685,1676,2676,1525,2525,1527,2527,1528,2528,2704,3520,3521,3522,1511'
+  USDC2SSILVXI01_NIC_4-USDC2NSD102-Ethernet10:
+    adapters:
+    - mode: trunk
+      description: USDC2SSILVXI01_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet10
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1681,2681,1682,2682,1685,2685,1676,2676,1526,2526,2704'
+  USDC2SSILVXI02_NIC_3-USDC2NSD102-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: USDC2SSILVXI02_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1548,1681,2681,1682,2682,1685,2685,1676,2676,1525,2525,1527,2527,1528,2528,2704,3520,3521,3522,1511'
+  USDC2SSILVXI02_NIC_4-USDC2NSD102-Ethernet12:
+    adapters:
+    - mode: trunk
+      description: USDC2SSILVXI02_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet12
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1681,2681,1682,2682,1685,2685,1676,2676,1526,2526,2704'
+  USDC2SSILVXI03_NIC_3-USDC2NSD102-Ethernet13:
+    adapters:
+    - mode: trunk
+      description: USDC2SSILVXI03_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet13
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1548,1681,2681,1682,2682,1685,2685,1676,2676,1525,2525,1527,2527,1528,2528,2704,3520,3521,3522,1511'
+  USDC2SSILVXI03_NIC_4-USDC2NSD102-Ethernet14:
+    adapters:
+    - mode: trunk
+      description: USDC2SSILVXI03_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet14
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1681,2681,1682,2682,1685,2685,1676,2676,1526,2526,2704'
+  USDC2SSILVXI04_NIC_3-USDC2NSD102-Ethernet15:
+    adapters:
+    - mode: trunk
+      description: USDC2SSILVXI04_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet15
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,3517,3518,3519,3518,1548,1681,2681,1682,2682,1685,2685,1676,2676,1525,2525,1527,2527,1528,2528,2704,3520,3521,3522,1511'
+  USDC2SSILVXI04_NIC_4-USDC2NSD102-Ethernet16:
+    adapters:
+    - mode: trunk
+      description: USDC2SSILVXI04_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet16
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3381,3481,3382,3482,3385,3485,3376,3476,1548,1681,2681,1682,2682,1685,2685,1676,2676,1526,2526,2704'
+  USDC2SGOLDXI05_NIC_3-USDC2NSD102-Ethernet25:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI05_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet25
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI05_NIC_4-USDC2NSD102-Ethernet26:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI05_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet26
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  des-USDC2SGOLDXI06_NIC_1-USDC2NSD102-Ethernet27:
+    adapters:
+    - mode: trunk
+      description: des-USDC2SGOLDXI06_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet27
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI05-#RITM0439325-USDC2NSD102-Ethernet33:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI05-#RITM0439325
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet33
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI05-#RITM0439325-USDC2NSD102-Ethernet35:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI05-#RITM0439325
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI06-USDC2NSD102-Ethernet36:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI06
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet36
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI06-USDC2NSD102-Ethernet37:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI06
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet37
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  des-USDC2SGOLDXI06_NIC_2-USDC2NSD102-Ethernet38:
+    adapters:
+    - mode: trunk
+      description: des-USDC2SGOLDXI06_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet38
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI07-USDC2NSD102-Ethernet39:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI07
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet39
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI07-USDC2NSD102-Ethernet46:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI07
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet46
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI08-USDC2NSD102-Ethernet47:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI08
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,3517,3518,3519,3518,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1515,1517,1518,1548,2704,3520,3521,3522,1511,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SGOLDXI08-USDC2NSD102-Ethernet48:
+    adapters:
+    - mode: trunk
+      description: USDC2SGOLDXI08
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - USDC2NSD102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3377,3477,3383,3483,3378,3478,3384,3484,3375,3475,1677,2677,1683,2683,1678,2678,1684,2684,1679,2679,1680,2680,1675,2675,1516,1548,2704,1810,1820,1830,1840,2629,2644,3629,3644'
+  USDC2SPHXL2ID01_NIC_1-USDC2NSD103-Ethernet29:
+    adapters:
+    - mode: access
+      description: USDC2SPHXL2ID01_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet29
+      switches:
+      - USDC2NSD103
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '2560'
+  USDC2SPHXL2ID01_NIC_2-USDC2NSD103-Ethernet30:
+    adapters:
+    - mode: trunk
+      description: USDC2SPHXL2ID01_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet30
+      switches:
+      - USDC2NSD103
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1561,2561,1562,2562,1563,2563'
+  USDC2SPHXL2ID01_NIC_3-USDC2NSD104-Ethernet29:
+    adapters:
+    - mode: access
+      description: USDC2SPHXL2ID01_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet29
+      switches:
+      - USDC2NSD104
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '2560'
+  USDC2SPHXL2ID01_NIC_4-USDC2NSD104-Ethernet30:
+    adapters:
+    - mode: trunk
+      description: USDC2SPHXL2ID01_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet30
+      switches:
+      - USDC2NSD104
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1561,2561,1562,2562,1563,2563'
+  USDC2SSLVRXI05-#RITM0439325-USDC2NSD105-Ethernet1:
+    adapters:
+    - mode: trunk
+      description: USDC2SSLVRXI05-#RITM0439325
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet1
+      switches:
+      - USDC2NSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  USDC2SSLVRXI05-#RITM0439325-USDC2NSD105-Ethernet2:
+    adapters:
+    - mode: trunk
+      description: USDC2SSLVRXI05-#RITM0439325
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet2
+      switches:
+      - USDC2NSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  USDC2SSLVRXI06-#RITM0439325-USDC2NSD105-Ethernet3:
+    adapters:
+    - mode: trunk
+      description: USDC2SSLVRXI06-#RITM0439325
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet3
+      switches:
+      - USDC2NSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  USDC2SSLVRXI06-#RITM0439325-USDC2NSD105-Ethernet4:
+    adapters:
+    - mode: trunk
+      description: USDC2SSLVRXI06-#RITM0439325
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - USDC2NSD105
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  USDC2SSLVRXI05-#RITM0439325-USDC2NSD106-Ethernet1:
+    adapters:
+    - mode: trunk
+      description: USDC2SSLVRXI05-#RITM0439325
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet1
+      switches:
+      - USDC2NSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  USDC2SSLVRXI05-#RITM0439325-USDC2NSD106-Ethernet2:
+    adapters:
+    - mode: trunk
+      description: USDC2SSLVRXI05-#RITM0439325
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet2
+      switches:
+      - USDC2NSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  USDC2SSLVRXI06-#RITM0439325-USDC2NSD106-Ethernet3:
+    adapters:
+    - mode: trunk
+      description: USDC2SSLVRXI06-#RITM0439325
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet3
+      switches:
+      - USDC2NSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  USDC2SSLVRXI06-#RITM0439325-USDC2NSD106-Ethernet4:
+    adapters:
+    - mode: trunk
+      description: USDC2SSLVRXI06-#RITM0439325
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet4
+      switches:
+      - USDC2NSD106
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+  AT&T-MPLS-Circuit-USDC2NSE101-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: AT&T-MPLS-Circuit
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1635,2635,1850,2850'
+  AT&T-MPLS-Circuit-USDC2NSE101-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: AT&T-MPLS-Circuit
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1635,2635,1850,2850'
+  USDC2SSMGMTXL01_NIC_1-USDC2NSE101-Ethernet21:
+    adapters:
+    - mode: trunk
+      description: USDC2SSMGMTXL01_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet21
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1542,2542,3701,1560,2560,1712,1550,1505,1507,1508,1500,2500,1554,2554,1510,1511,3301,3401'
+  USDC2SSMGMTXL01_NIC_2-USDC2NSE101-Ethernet22:
+    adapters:
+    - mode: trunk
+      description: USDC2SSMGMTXL01_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet22
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1712,1506,3301,3401'
+  USDC2SSMGMTXL02_NIC_1-USDC2NSE101-Ethernet23:
+    adapters:
+    - mode: trunk
+      description: USDC2SSMGMTXL02_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet23
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1542,2542,3701,1560,2560,1712,1550,1505,1507,1508,1500,2500,1554,2554,1510,1511,3301,3401'
+  USDC2SSMGMTXL02_NIC_2-USDC2NSE101-Ethernet24:
+    adapters:
+    - mode: trunk
+      description: USDC2SSMGMTXL02_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet24
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1712,1506,3301,3401'
+  USDC2SSMGMTXL03_NIC_1-USDC2NSE101-Ethernet25:
+    adapters:
+    - mode: trunk
+      description: USDC2SSMGMTXL03_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet25
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1542,2542,3701,1560,2560,1712,1550,1505,1507,1508,1500,2500,1554,2554,1510,1511,3301,3401'
+  USDC2SSMGMTXL03_NIC_2-USDC2NSE101-Ethernet26:
+    adapters:
+    - mode: trunk
+      description: USDC2SSMGMTXL03_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet26
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1712,1506,3301,3401'
+  USDC2SSMGMTXL04_NIC_1-USDC2NSE101-Ethernet27:
+    adapters:
+    - mode: trunk
+      description: USDC2SSMGMTXL04_NIC_1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet27
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1542,2542,3701,1560,2560,1712,1550,1505,1507,1508,1500,2500,1554,2554,1510,1511,3301,3401'
+  USDC2SSMGMTXL04_NIC_2-USDC2NSE101-Ethernet28:
+    adapters:
+    - mode: trunk
+      description: USDC2SSMGMTXL04_NIC_2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet28
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1712,1506,3301,3401'
+  SDWAN-VCE1-AVPN1-USDC2NSE101-Ethernet29:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-AVPN1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet29
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '2850'
+  SDWAN-VCE1-AVPN2-USDC2NSE101-Ethernet30:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-AVPN2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet30
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '2851'
+  SDWAN-VCE1-INTERNET-USDC2NSE101-Ethernet31:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-INTERNET
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet31
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '2654'
+  USDC2SXPDD001_Eth1a-USDC2NSE101-Ethernet32:
+    adapters:
+    - mode: access
+      description: USDC2SXPDD001_Eth1a
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet32
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  USDC2SXPDD001_Eth1b-USDC2NSE101-Ethernet33:
+    adapters:
+    - mode: access
+      description: USDC2SXPDD001_Eth1b
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet33
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  USDC2SXPDD001_Eth1c-USDC2NSE101-Ethernet34:
+    adapters:
+    - mode: access
+      description: USDC2SXPDD001_Eth1c
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet34
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  USDC2SXPDD001_Eth1d-USDC2NSE101-Ethernet35:
+    adapters:
+    - mode: access
+      description: USDC2SXPDD001_Eth1d
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '2542'
+  USDC2SXPDD001_Eth1d-USDC2NSE101-Ethernet35:
+    adapters:
+    - mode: access
+      description: USDC2SXPDD001_Eth1d
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '2542'
+  INFOLBOX_usdcsdns02b-MGMT-USDC2NSE101-Ethernet37:
+    adapters:
+    - mode: access
+      description: INFOLBOX_usdcsdns02b-MGMT
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet37
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'
+  USDC2SPNM2001-USDC2NSE101-Ethernet45:
+    adapters:
+    - mode: access
+      description: USDC2SPNM2001
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet45
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '2553'
+  INFLOBOX_usdcsdns02b-LAN1-USDC2NSE101-Ethernet47:
+    adapters:
+    - mode: access
+      description: INFLOBOX_usdcsdns02b-LAN1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '3386'
+  INFLOBOX_usdcsdns02b-HA-USDC2NSE101-Ethernet48:
+    adapters:
+    - mode: access
+      description: INFLOBOX_usdcsdns02b-HA
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - USDC2NSE101
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '3386'
+  AT&T-MPLS-Circuit-USDC2NSE102-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: AT&T-MPLS-Circuit
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1636,2636,1851,2851'
+  AT&T-MPLS-Circuit-USDC2NSE102-Ethernet11:
+    adapters:
+    - mode: trunk
+      description: AT&T-MPLS-Circuit
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet11
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1636,2636,1851,2851'
+  USDC2SSMGMTXL01_NIC_3-USDC2NSE102-Ethernet21:
+    adapters:
+    - mode: trunk
+      description: USDC2SSMGMTXL01_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet21
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1542,2542,3701,1560,2560,1712,1550,1505,1507,1508,1500,2500,1554,2554,1510,1511,3301,3401'
+  USDC2SSMGMTXL01_NIC_4-USDC2NSE102-Ethernet22:
+    adapters:
+    - mode: trunk
+      description: USDC2SSMGMTXL01_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet22
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1712,1506,3301,3401'
+  USDC2SSMGMTXL02_NIC_3-USDC2NSE102-Ethernet23:
+    adapters:
+    - mode: trunk
+      description: USDC2SSMGMTXL02_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet23
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1542,2542,3701,1560,2560,1712,1550,1505,1507,1508,1500,2500,1554,2554,1510,1511,3301,3401'
+  USDC2SSMGMTXL02_NIC_4-USDC2NSE102-Ethernet24:
+    adapters:
+    - mode: trunk
+      description: USDC2SSMGMTXL02_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet24
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1712,1506,3301,3401'
+  USDC2SSMGMTXL03_NIC_3-USDC2NSE102-Ethernet25:
+    adapters:
+    - mode: trunk
+      description: USDC2SSMGMTXL03_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet25
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1542,2542,3701,1560,2560,1712,1550,1505,1507,1508,1500,2500,1554,2554,1510,1511,3301,3401'
+  USDC2SSMGMTXL03_NIC_4-USDC2NSE102-Ethernet26:
+    adapters:
+    - mode: trunk
+      description: USDC2SSMGMTXL03_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet26
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1712,1506,3301,3401'
+  USDC2SSMGMTXL04_NIC_3-USDC2NSE102-Ethernet27:
+    adapters:
+    - mode: trunk
+      description: USDC2SSMGMTXL04_NIC_3
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet27
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,1542,2542,3701,1560,2560,1712,1550,1505,1507,1508,1500,2500,1554,2554,1510,1511,3301,3401'
+  USDC2SSMGMTXL04_NIC_4-USDC2NSE102-Ethernet28:
+    adapters:
+    - mode: trunk
+      description: USDC2SSMGMTXL04_NIC_4
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet28
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541,3701,1712,1505,1506,1507,1508,1500,2500,1510,3301,3401'
+  SDWAN-VCE1-AVPN1-USDC2NSE102-Ethernet29:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-AVPN1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet29
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '2850'
+  SDWAN-VCE1-AVPN2-USDC2NSE102-Ethernet30:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-AVPN2
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet30
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '2851'
+  SDWAN-VCE1-INTERNET-USDC2NSE102-Ethernet31:
+    adapters:
+    - mode: access
+      description: SDWAN-VCE1-INTERNET
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet31
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '2654'
+  USDC2SXPDD001_Eth4a-USDC2NSE102-Ethernet32:
+    adapters:
+    - mode: access
+      description: USDC2SXPDD001_Eth4a
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet32
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  USDC2SXPDD001_Eth4b-USDC2NSE102-Ethernet33:
+    adapters:
+    - mode: access
+      description: USDC2SXPDD001_Eth4b
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet33
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  USDC2SXPDD001_Eth4c-USDC2NSE102-Ethernet34:
+    adapters:
+    - mode: access
+      description: USDC2SXPDD001_Eth4c
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet34
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1541'
+  USDC2SXPDD001_Eth4d-USDC2NSE102-Ethernet35:
+    adapters:
+    - mode: access
+      description: USDC2SXPDD001_Eth4d
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '2542'
+  USDC2SXPDD001_Eth4d-USDC2NSE102-Ethernet35:
+    adapters:
+    - mode: access
+      description: USDC2SXPDD001_Eth4d
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet35
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '2542'
+  USDC2SPNM2002-USDC2NSE102-Ethernet45:
+    adapters:
+    - mode: access
+      description: USDC2SPNM2002
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet45
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '2553'
+  USDC2IPAM001-LAN1-USDC2NSE102-Ethernet47:
+    adapters:
+    - mode: access
+      description: USDC2IPAM001-LAN1
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet47
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'
+  USDC2IPAM001-HA-USDC2NSE102-Ethernet48:
+    adapters:
+    - mode: access
+      description: USDC2IPAM001-HA
+      server_ports:
+      - ETH0
+      switch_ports:
+      - Ethernet48
+      switches:
+      - USDC2NSE102
+      spanning_tree_portfast: edge
+      spanning_tree_bpduguard: true
+      vlans: '1550'

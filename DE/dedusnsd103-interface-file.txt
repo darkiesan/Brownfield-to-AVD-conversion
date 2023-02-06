@@ -1,0 +1,649 @@
+interface Port-Channel10
+   description DEDUSSDB0248-2
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 10
+!
+interface Port-Channel20
+   description DEDUSSDB0248-2
+   switchport access vlan 1543
+   mlag 20
+!
+interface Port-Channel30
+   description PH_Medium_BRPTB73
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 30
+!
+interface Port-Channel40
+   description PH_Medium_BRPTB73
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 40
+!
+interface Port-Channel50
+   description PH_Medium_JRPTB73
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 50
+!
+interface Port-Channel60
+   description PH_Medium_JRPTB73
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 60
+!
+interface Port-Channel70
+   description PH_Medium_9RPTB73
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 70
+!
+interface Port-Channel80
+   description PH_Medium_9RPTB73
+   switchport access vlan 1543
+   mlag 80
+!
+interface Port-Channel90
+   description PH_Medium_FRPTB73
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 90
+!
+interface Port-Channel100
+   description PH_Medium_FRPTB73
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 100
+!
+interface Port-Channel110
+   description PH_Medium_GRPTB73
+   switchport access vlan 1884
+   ip access-group isolated_1540 in
+   mlag 110
+!
+interface Port-Channel120
+   description PH_Medium_GRPTB73
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 120
+!
+interface Port-Channel123
+   description IBM_iSeries
+   switchport trunk allowed vlan 1707
+   switchport mode trunk
+   switchport trunk group IBM_iSeries_Prod
+!
+interface Port-Channel130
+   description P2V_DEMEESEXCHXI07_130
+   shutdown
+   switchport access vlan 130
+   ip access-group isolated_1540 in
+   mlag 130
+!
+interface Port-Channel131
+   description P2V_DEMEESEXCHXI07_1541
+   shutdown
+   switchport access vlan 1541
+   ip access-group isolated_1540 in
+   mlag 131
+!
+interface Port-Channel139
+   description PH_XL_2WSGFV2 # TASK0166666
+   switchport access vlan 1886
+   mlag 139
+!
+interface Port-Channel140
+   description PH_XL_2WSGFV2 # TASK0166666
+   switchport access vlan 1543
+   mlag 140
+!
+interface Port-Channel141
+   description PH_XL_2MNFFV2
+   switchport access vlan 1885
+   mlag 141
+!
+interface Port-Channel142
+   description PH_XL_2MNFFV2
+   switchport access vlan 1543
+   mlag 142
+!
+interface Port-Channel143
+   description PH_XXL_FK6TNR2
+   switchport access vlan 1886
+   mlag 143
+!
+interface Port-Channel144
+   description PH_XXL_FK6TNR2
+   switchport access vlan 1543
+   mlag 144
+!
+interface Port-Channel150
+   description DEDUSSPHV2011 (3ST6WC3)
+   shutdown
+   switchport access vlan 2561
+   mlag 150
+!
+interface Port-Channel151
+   description PH_XL_9X70HZ2
+   switchport access vlan 1540
+   switchport trunk group PHYSICAL_SERVER
+   ip access-group isolated_1540 in
+   mlag 151
+!
+interface Port-Channel160
+   description DEDUSSPHV2012 (6ST6WC3)
+   shutdown
+   switchport mode trunk
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   mlag 160
+!
+interface Port-Channel161
+   description PH_XL_9X70HZ2
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 161
+!
+interface Port-Channel181
+   description DEDUSSPHXL1ID02
+   shutdown
+   switchport mode trunk
+   switchport trunk group BACKUP_Mgmt
+   switchport trunk group Citrix_XenApp_Mgmt
+   switchport trunk group Customer_VDI_WLD
+   switchport trunk group Wipro_VDI_WLD
+   ip access-group isolated_1540 in
+   mlag 181
+!
+interface Port-Channel230
+   description PH_XL_62WFH73
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 230
+!
+interface Port-Channel240
+   description PH_XL_62WFH73
+   switchport access vlan 1543
+   mlag 240
+!
+interface Port-Channel250
+   description PH_XL_12WFH73
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 250
+!
+interface Port-Channel260
+   description PH_XL_12WFH73
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 260
+!
+interface Port-Channel270
+   description PH_XL_H1WFH73
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 270
+!
+interface Port-Channel280
+   description PH_XL_H1WFH73
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 280
+!
+interface Port-Channel290
+   description PH_XL_G1WFH73
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 290
+!
+interface Port-Channel300
+   description PH_XL_G1WFH73
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 300
+!
+interface Port-Channel310
+   description DDC-Spare 16(J1WFH73)
+   shutdown
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 310
+!
+interface Port-Channel320
+   description DDC-Spare 16(J1WFH73)
+   shutdown
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 320
+!
+interface Port-Channel330
+   description PH_XL_42WFH73
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 330
+!
+interface Port-Channel340
+   description PH_XL_42WFH73
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 340
+!
+interface Port-Channel350
+   description PH_XL_52WFH73
+   switchport access vlan 1882
+   ip access-group isolated_1540 in
+   mlag 350
+!
+interface Port-Channel360
+   description PH_XL_52WFH73
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 360
+!
+interface Port-Channel370
+   description PH_XL_659BFV2
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 370
+!
+interface Port-Channel380
+   description PH_XL_659BFV2
+   switchport access vlan 1543
+   ip access-group isolated_1540 in
+   mlag 380
+!
+interface Port-Channel390
+   description PH_XXL_G6NN2T2
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   mlag 390
+!
+interface Port-Channel400
+   description PH_XXL_G6NN2T2
+   switchport access vlan 1543
+   mlag 400
+!
+interface Port-Channel515
+   description PH_XXL_2MNGFV2
+   switchport access vlan 1885
+   mlag 515
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Port-Channel616
+   description PH_XXL_2MNGFV2
+   switchport access vlan 1543
+   mlag 616
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet1
+   description CISCO Switch DEDUSNST005-NTP
+   switchport access vlan 1550
+   spanning-tree portfast
+   spanning-tree bpdufilter enable
+!
+interface Ethernet2
+   description TEMP_VPLEX_XIO_INC3361654
+   mtu 9214
+   switchport access vlan 1550
+!
+interface Ethernet3
+   description PH_Medium_BRPTB73
+   mtu 9214
+   channel-group 30 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet4
+   description PH_Medium_BRPTB73
+   mtu 9214
+   channel-group 40 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet5
+   description PH_Medium_JRPTB73
+   mtu 9214
+   channel-group 50 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet6
+   description PH_Medium_JRPTB73
+   mtu 9214
+   channel-group 60 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet7
+   description PH_Medium_9RPTB73
+   mtu 9214
+   channel-group 70 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet8
+   description PH_Medium_9RPTB73
+   mtu 9214
+   channel-group 80 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet9
+   description PH_Medium_FRPTB73
+   mtu 9214
+   channel-group 90 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet10
+   description PH_Medium_FRPTB73
+   mtu 9214
+   channel-group 100 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet11
+   description PH_Medium_GRPTB73
+   mtu 9214
+   channel-group 110 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet12
+   description PH_Medium_GRPTB73
+   mtu 9214
+   channel-group 120 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet13
+   description PH_XL_62WFH73
+   mtu 9214
+   switchport access vlan 1540
+   channel-group 230 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet14
+   description PH_XL_62WFH73
+   mtu 9214
+   switchport access vlan 1543
+   channel-group 240 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet15
+   description PH_XXL_2MNGFV2
+   mtu 9214
+   switchport access vlan 1885
+   channel-group 515 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet16
+   description PH_XXL_2MNGFV2
+   mtu 9214
+   switchport access vlan 1543
+   channel-group 616 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet17
+   description PH_XL_9X70HZ2
+   mtu 9214
+   switchport access vlan 1540
+   switchport trunk group PHYSICAL_SERVER
+   channel-group 151 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet18
+   description PH_XL_9X70HZ2
+   mtu 9214
+   switchport access vlan 1543
+   switchport trunk group BACKUP_Infra
+   channel-group 161 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet19
+   description PH_XL_7X70HZ2
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet20
+   description PH_XXL_7MBRXW2
+   mtu 9214
+   channel-group 10 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet21
+   description PH_XL_8X70HZ2
+   mtu 9214
+   switchport access vlan 1540
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet22
+   description PH_XXL_7MBRXW2
+   mtu 9214
+   channel-group 20 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet23
+   description PH_XL_29TYLX2
+   mtu 9214
+   switchport access vlan 1505
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet24
+   description PH_XL_29TYLX2
+   mtu 9214
+   switchport access vlan 1505
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet25
+   description PH_XL_12WFH73
+   mtu 9214
+   channel-group 250 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet26
+   description PH_XL_12WFH73
+   mtu 9214
+   channel-group 260 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet27
+   description PH_XL_H1WFH73
+   mtu 9214
+   channel-group 270 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet28
+   description PH_XL_H1WFH73
+   mtu 9214
+   channel-group 280 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet29
+   description PH_XL_G1WFH73
+   mtu 9214
+   channel-group 290 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet30
+   description PH_XL_G1WFH73
+   mtu 9214
+   channel-group 300 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet31
+   description PH_XXL_G6NN2T2
+   mtu 9214
+   channel-group 390 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet32
+   description PH_XXL_G6NN2T2
+   mtu 9214
+   channel-group 400 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet33
+   description PH_XL_42WFH73
+   mtu 9214
+   channel-group 330 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet34
+   description PH_XL_42WFH73
+   mtu 9214
+   channel-group 340 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet35
+   description PH_XL_52WFH73
+   mtu 9214
+   channel-group 350 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet36
+   description PH_XL_52WFH73
+   mtu 9214
+   channel-group 360 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet37
+   description PH_XL_659BFV2
+   mtu 9214
+   channel-group 370 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet38
+   description PH_XL_659BFV2
+   mtu 9214
+   channel-group 380 mode active
+   ip access-group isolated_1540 in
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet39
+   description PH_XL_2WSGFV2 # TASK0166666
+   mtu 9214
+   channel-group 139 mode on
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet40
+   description PH_XL_2WSGFV2 # TASK0166666
+   mtu 9214
+   channel-group 140 mode on
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet41
+   description PH_XL_2MNFFV2
+   mtu 9214
+   channel-group 141 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet42
+   description PH_XL_2MNFFV2
+   mtu 9214
+   channel-group 142 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet43
+   description PH_XXL_FK6TNR2
+   mtu 9214
+   channel-group 143 mode on
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet44
+   description PH_XXL_FK6TNR2
+   mtu 9214
+   channel-group 144 mode on
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet45
+   shutdown
+   mtu 9214
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet46
+   description IBM_iSeries
+   mtu 9214
+   switchport trunk allowed vlan 1707
+   switchport trunk group IBM_iSeries_Prod
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet47
+   description IBM_iSeries
+   mtu 9214
+   switchport trunk allowed vlan 1707
+   switchport trunk group IBM_iSeries_Prod
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
+interface Ethernet48
+   description IBM_iSeries
+   mtu 9214
+   switchport trunk allowed vlan 1707
+   switchport mode trunk
+   switchport trunk group IBM_iSeries_Prod
+   channel-group 123 mode active
+   spanning-tree portfast
+   spanning-tree bpduguard enable
+!
